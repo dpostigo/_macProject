@@ -1,5 +1,0 @@
-/* Localized versions of Info.plist keys */
-
-CFBundleName = "Sidebar Demo";
-NSHumanReadableCopyright = "Copyright © 2011 Apple Inc.\nAll rights reserved.";
-
