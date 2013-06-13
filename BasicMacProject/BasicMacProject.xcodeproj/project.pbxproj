@@ -218,15 +218,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		03D8CB231768AA17000CF88A /* Carts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		03D8CB231768AA17000CF88A /* BasicMacProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicMacProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03D8CB261768AA17000CF88A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		03D8CB291768AA17000CF88A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		03D8CB2A1768AA17000CF88A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		03D8CB2B1768AA17000CF88A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		03D8CB2E1768AA17000CF88A /* Carts-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Carts-Info.plist"; sourceTree = "<group>"; };
+		03D8CB2E1768AA17000CF88A /* BasicMacProject-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BasicMacProject-Info.plist"; sourceTree = "<group>"; };
 		03D8CB301768AA17000CF88A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		03D8CB321768AA17000CF88A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		03D8CB341768AA17000CF88A /* Carts-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Carts-Prefix.pch"; sourceTree = "<group>"; };
+		03D8CB341768AA17000CF88A /* BasicMacProject-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BasicMacProject-Prefix.pch"; sourceTree = "<group>"; };
 		03D8CB361768AA17000CF88A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		03D8CB3C1768AA17000CF88A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		03D8CB471768ACA6000CF88A /* BasicAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicAppDelegate.h; sourceTree = "<group>"; };
@@ -647,7 +647,7 @@
 		03D8CB241768AA17000CF88A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				03D8CB231768AA17000CF88A /* Carts.app */,
+				03D8CB231768AA17000CF88A /* BasicMacProject.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -693,10 +693,10 @@
 		03D8CB2D1768AA17000CF88A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				03D8CB2E1768AA17000CF88A /* Carts-Info.plist */,
+				03D8CB2E1768AA17000CF88A /* BasicMacProject-Info.plist */,
 				03D8CB2F1768AA17000CF88A /* InfoPlist.strings */,
 				03D8CB321768AA17000CF88A /* main.m */,
-				03D8CB341768AA17000CF88A /* Carts-Prefix.pch */,
+				03D8CB341768AA17000CF88A /* BasicMacProject-Prefix.pch */,
 				03D8CB351768AA17000CF88A /* Credits.rtf */,
 			);
 			name = "Supporting Files";
@@ -1596,9 +1596,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		03D8CB221768AA17000CF88A /* Carts */ = {
+		03D8CB221768AA17000CF88A /* BasicMacProject */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03D8CB401768AA17000CF88A /* Build configuration list for PBXNativeTarget "Carts" */;
+			buildConfigurationList = 03D8CB401768AA17000CF88A /* Build configuration list for PBXNativeTarget "BasicMacProject" */;
 			buildPhases = (
 				03D8CB1F1768AA17000CF88A /* Sources */,
 				03D8CB201768AA17000CF88A /* Frameworks */,
@@ -1608,9 +1608,9 @@
 			);
 			dependencies = (
 			);
-			name = Carts;
+			name = BasicMacProject;
 			productName = BasicMacProject;
-			productReference = 03D8CB231768AA17000CF88A /* Carts.app */;
+			productReference = 03D8CB231768AA17000CF88A /* BasicMacProject.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1622,7 +1622,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Elastic Creative";
 			};
-			buildConfigurationList = 03D8CB1E1768AA17000CF88A /* Build configuration list for PBXProject "Carts" */;
+			buildConfigurationList = 03D8CB1E1768AA17000CF88A /* Build configuration list for PBXProject "BasicMacProject" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1634,7 +1634,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				03D8CB221768AA17000CF88A /* Carts */,
+				03D8CB221768AA17000CF88A /* BasicMacProject */,
 			);
 		};
 /* End PBXProject section */
@@ -1950,9 +1950,9 @@
 					"\"$(SRCROOT)/_src/frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BasicMacProject/Carts-Prefix.pch";
-				INFOPLIST_FILE = "BasicMacProject/Carts-Info.plist";
-				PRODUCT_NAME = Carts;
+				GCC_PREFIX_HEADER = "BasicMacProject/BasicMacProject-Prefix.pch";
+				INFOPLIST_FILE = "BasicMacProject/BasicMacProject-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1966,9 +1966,9 @@
 					"\"$(SRCROOT)/_src/frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BasicMacProject/Carts-Prefix.pch";
-				INFOPLIST_FILE = "BasicMacProject/Carts-Info.plist";
-				PRODUCT_NAME = Carts;
+				GCC_PREFIX_HEADER = "BasicMacProject/BasicMacProject-Prefix.pch";
+				INFOPLIST_FILE = "BasicMacProject/BasicMacProject-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1976,7 +1976,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		03D8CB1E1768AA17000CF88A /* Build configuration list for PBXProject "Carts" */ = {
+		03D8CB1E1768AA17000CF88A /* Build configuration list for PBXProject "BasicMacProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03D8CB3E1768AA17000CF88A /* Debug */,
@@ -1985,7 +1985,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03D8CB401768AA17000CF88A /* Build configuration list for PBXNativeTarget "Carts" */ = {
+		03D8CB401768AA17000CF88A /* Build configuration list for PBXNativeTarget "BasicMacProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03D8CB411768AA17000CF88A /* Debug */,
