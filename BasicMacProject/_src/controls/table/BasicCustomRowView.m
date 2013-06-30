@@ -105,7 +105,8 @@
     [roundedPath drawShadow: shadow shadowOpacity: shadowOpacity];
 
 
-    NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect: dirtyRect corners: cornerOptions radius: cornerRadius];
+    NSBezierPath *path = [NSBezierPath bezierPathWithRect: dirtyRect cornerRadius: cornerRadius options: NSBezierPathLowerLeft | NSBezierPathLowerRight | NSBezierPathUpperRight | NSBezierPathUpperLeft];
+
     [path drawGradient: self.selected ? selectedGradient : gradient angle: -90];
     [path drawStroke: borderColor width: borderWidth];
 }

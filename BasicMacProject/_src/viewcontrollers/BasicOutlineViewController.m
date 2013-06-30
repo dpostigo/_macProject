@@ -20,7 +20,6 @@
     outline.dataSource = self;
     outline.floatsGroupRows = NO;
 
-    outline.enclosingScrollView.borderType = NSNoBorder;
     [outline reloadData];
 }
 
@@ -194,6 +193,8 @@
 - (CGFloat) heightForRowObject: (TableRowObject *) rowObject outlineSection: (OutlineSection *) outlineSection {
     return outline.rowHeight;
 }
+
+
 
 - (void) configureCell: (BasicTableCellView *) tableCell forRowObject: (TableRowObject *) rowObject outlineSection: (OutlineSection *) outlineSection {
     tableCell.textField.stringValue = rowObject.textLabel;

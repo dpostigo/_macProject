@@ -105,15 +105,18 @@
     }
 }
 
+
 - (void) drawRect: (NSRect) rect {
     [[NSColor clearColor] set];
     NSRectFill(rect);
 
-    NSBezierPath *circlePath = [NSBezierPath bezierPathWithRect: self.bounds];
+    NSBezierPath *path;
+    path = [NSBezierPath bezierPathWithRect: self.bounds cornerRadius: 10.0 options: NSBezierPathLowerLeft | NSBezierPathLowerRight | NSBezierPathUpperRight | NSBezierPathUpperLeft];
+
 
     NSGradient *aGradient = [[NSGradient alloc] initWithColorsAndLocations: [NSColor darkGrayColor], (CGFloat) 0.0, [NSColor lightGrayColor], (CGFloat) 1.0, nil];
-    [aGradient drawInBezierPath: circlePath angle: 90];
-    [circlePath drawStroke: [NSColor lightGrayColor]];
+    [aGradient drawInBezierPath: path angle: 90];
+    [path drawStroke: [NSColor lightGrayColor]];
 
     NSRect resizeRect = self.resizeRect;
     NSBezierPath *resizePath = [NSBezierPath bezierPathWithRect: resizeRect];

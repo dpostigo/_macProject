@@ -42,21 +42,22 @@
     <file path="/BasicOutlineViewController.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372034209535" ignored="false" />
     <file path="/BasicOutlineView.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372032928185" ignored="false" />
     <file path="/BasicOutlineView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372032956592" ignored="false" />
-    <file path="/NSBezierPath+DPUtils.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372035169284" ignored="false" />
+    <file path="/NSBezierPath+DPUtils.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372570348119" ignored="false" />
     <file path="/BasicBackgroundView.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372036857587" ignored="false" />
     <file path="/BasicBackgroundView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372036868645" ignored="false" />
-    <file path="/BasicCustomRowView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372539671254" ignored="false" />
+    <file path="/BasicCustomRowView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372570406593" ignored="false" />
     <file path="/BasicCustomRowView.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372051206279" ignored="false" />
     <file path="/NewCustomWindow.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372537616547" ignored="false" />
     <file path="/NSAttributedString+DPUtils.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372091784983" ignored="false" />
     <file path="/NewCustomWindow.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372538117166" ignored="false" />
     <file path="/TaskDiscussionViewController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372089516664" ignored="false" />
     <file path="/BasicCustomWindowFrame.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372537140549" ignored="false" />
-    <file path="/BasicCustomWindowFrame.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372538502948" ignored="false" />
+    <file path="/BasicCustomWindowFrame.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372570371270" ignored="false" />
     <file path="/Dummy.txt" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372092079477" ignored="false" />
     <file path="/NSParagraphStyle+DPUtils.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372092187561" ignored="false" />
     <file path="/CartsCustomWindow.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372529505292" ignored="false" />
     <file path="/CartsCustomWindow.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372529543755" ignored="false" />
+    <file path="/NSBezierPath+DPUtils.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372567476911" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,15 +77,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="NSAttributedString+DPUtils.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/utils/NSAttributedString+DPUtils.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="563" selection-end="563" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BasicCustomRowView.h" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_src/controls/table/BasicCustomRowView.h">
           <provider selected="true" editor-type-id="text-editor">
@@ -94,70 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasicCustomRowView.m" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="BasicCustomRowView.m" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_src/controls/table/BasicCustomRowView.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="107" column="56" selection-start="3409" selection-end="3409" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#initWithFrame:#0;n#BasicCustomRowView#0" expanded="true" />
-                <element signature="n#setFrame:#0;n#BasicCustomRowView#0" expanded="true" />
-                <element signature="n#modifiedRect:#0;n#BasicCustomRowView#0" expanded="true" />
-                <element signature="n#drawBackgroundInRect:#0;n#BasicCustomRowView#0" expanded="true" />
-                <element signature="n#isOpaque#0;n#BasicCustomRowView#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NSBezierPath+Additions.m" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_src/libs/DEGS Classes/NSBezierPath+Additions.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="9" selection-start="460" selection-end="460" vertical-scroll-proportion="-0.06521739">
-              <folding>
-                <element signature="n#bezierPathWithRoundedRect:corners:radius:#0;n#NSBezierPath#0" expanded="true" />
-                <element signature="n#appendBezierPathWithRoundedRect:corners:radius:#0;n#NSBezierPath#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewCustomWindow.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/windows/NewCustomWindow.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="29" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0">
+            <state line="103" column="35" selection-start="3190" selection-end="3190" vertical-scroll-proportion="0.6913043">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewCustomWindow.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/windows/NewCustomWindow.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="129" column="31" selection-start="4077" selection-end="4077" vertical-scroll-proportion="-3.1538463">
-              <folding>
-                <element signature="n#initWithContentRect:styleMask:backing:defer:#0;n#NewCustomWindow#0" expanded="true" />
-                <element signature="n#setFrameClass:#0;n#NewCustomWindow#0" expanded="true" />
-                <element signature="n#frameClass#0;n#NewCustomWindow#0" expanded="true" />
-                <element signature="n#contentView#0;n#NewCustomWindow#0" expanded="true" />
-                <element signature="n#canBecomeKeyWindow#0;n#NewCustomWindow#0" expanded="true" />
-                <element signature="n#canBecomeMainWindow#0;n#NewCustomWindow#0" expanded="true" />
-                <element signature="n#setContentSize:#0;n#NewCustomWindow#0" expanded="true" />
-                <element signature="n#contentRectForFrameRect:#0;n#NewCustomWindow#0" expanded="true" />
-                <element signature="n#mainWindowChanged:#0;n#NewCustomWindow#0" expanded="true" />
-                <element signature="n#windowFramePadding#0;n#NewCustomWindow#0" expanded="true" />
-                <element signature="n#frameRectForContentRect:styleMask:#0;n#NewCustomWindow#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CartsSidebarViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsSidebarViewController.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="319" selection-end="319" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#prepareDataSource#0;n#CartsSidebarViewController#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -183,7 +116,16 @@
       <file leaf-file-name="BasicOutlineViewController.h" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_src/viewcontrollers/BasicOutlineViewController.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="11" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0">
+            <state line="19" column="21" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasicOutlineView.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/views/BasicOutlineView.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="0" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -192,11 +134,10 @@
       <file leaf-file-name="BasicStyledOutlineViewController.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_src/viewcontrollers/outlineViewController/BasicStyledOutlineViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="0" selection-start="564" selection-end="782" vertical-scroll-proportion="0.0">
+            <state line="41" column="42" selection-start="913" selection-end="913" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="n#loadView#0;n#BasicStyledOutlineViewController#0" expanded="true" />
                 <element signature="n#rowViewForRowObject:outlineSection:#0;n#BasicStyledOutlineViewController#0" expanded="true" />
-                <element signature="n#rowViewForOutlineSection:#0;n#BasicStyledOutlineViewController#0" expanded="true" />
                 <element signature="n#headerCellForOutlineSection:#0;n#BasicStyledOutlineViewController#0" expanded="true" />
               </folding>
             </state>
@@ -207,9 +148,7 @@
         <entry file="file://$PROJECT_DIR$/_src/projects/carts/windows/CartsCustomWindow.m">
           <provider selected="true" editor-type-id="text-editor">
             <state line="25" column="0" selection-start="532" selection-end="532" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#initWithContentRect:styleMask:backing:defer:#0;n#CartsCustomWindow#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -235,13 +174,66 @@
       <file leaf-file-name="BasicCustomWindowFrame.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_src/windows/BasicCustomWindowFrame.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="0" selection-start="4111" selection-end="4111" vertical-scroll-proportion="0.0">
+            <state line="113" column="11" selection-start="3560" selection-end="3732" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="n#initWithFrame:#0;n#BasicCustomWindowFrame#0" expanded="true" />
                 <element signature="n#resizeRect#0;n#BasicCustomWindowFrame#0" expanded="true" />
                 <element signature="n#mouseDown:#0;n#BasicCustomWindowFrame#0" expanded="true" />
                 <element signature="n#drawTitle#0;n#BasicCustomWindowFrame#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NSBezierPath+DPUtils.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/utils/NSBezierPath+DPUtils.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="35" selection-start="1704" selection-end="1704" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#drawWithFill:#0;n#NSBezierPath#0" expanded="true" />
+                <element signature="n#drawGradient:#0;n#NSBezierPath#0" expanded="true" />
+                <element signature="n#drawGradient:angle:#0;n#NSBezierPath#0" expanded="true" />
+                <element signature="n#drawStroke:#0;n#NSBezierPath#0" expanded="true" />
+                <element signature="n#drawStroke:width:#0;n#NSBezierPath#0" expanded="true" />
+                <element signature="n#drawShadow:#0;n#NSBezierPath#0" expanded="true" />
+                <element signature="n#drawShadow:shadowOpacity:#0;n#NSBezierPath#0" expanded="true" />
+                <element signature="n#drawShadowColor:shadowRadius:shadowOffset:shadowOpacity:#0;n#NSBezierPath#0" expanded="true" />
+                <element signature="n#drawImage:#0;n#NSBezierPath#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NSBezierPath+DPUtils.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/utils/NSBezierPath+DPUtils.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="19" selection-start="441" selection-end="441" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NSBezierPath+Additions.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/utils/NSBezierPath+Additions.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="17" selection-start="1083" selection-end="1084" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#bezierPathWithRoundedRect:corners:radius:#0;n#NSBezierPath#0" expanded="true" />
+                <element signature="n#pathWithStrokeWidth:#0;n#NSBezierPath#0" expanded="true" />
+                <element signature="n#fillWithInnerShadow:#0;n#NSBezierPath#0" expanded="true" />
+                <element signature="n#drawBlurWithColor:radius:#0;n#NSBezierPath#0" expanded="true" />
+                <element signature="n#strokeInside#0;n#NSBezierPath#0" expanded="true" />
+                <element signature="n#strokeInsideWithinRect:#0;n#NSBezierPath#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NSBezierPath+Additions.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/libs/DEGS Classes/NSBezierPath+Additions.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="0" selection-start="95" selection-end="119" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -276,7 +268,7 @@
       <file leaf-file-name="BasicOutlineViewController.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_src/viewcontrollers/BasicOutlineViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="198" column="46" selection-start="6133" selection-end="6133" vertical-scroll-proportion="-10.346154">
+            <state line="113" column="5" selection-start="3324" selection-end="3324" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="n#loadView#0;n#BasicOutlineViewController#0" expanded="true" />
                 <element signature="n#expand#0;n#BasicOutlineViewController#0" expanded="true" />
@@ -286,7 +278,6 @@
                 <element signature="n#outlineView:rowViewForItem:#0;n#BasicOutlineViewController#0" expanded="true" />
                 <element signature="n#outlineView:child:ofItem:#0;n#BasicOutlineViewController#0" expanded="true" />
                 <element signature="n#outlineView:numberOfChildrenOfItem:#0;n#BasicOutlineViewController#0" expanded="true" />
-                <element signature="n#outlineView:shouldShowOutlineCellForItem:#0;n#BasicOutlineViewController#0" expanded="true" />
                 <element signature="n#outlineView:isGroupItem:#0;n#BasicOutlineViewController#0" expanded="true" />
                 <element signature="n#outlineView:isItemExpandable:#0;n#BasicOutlineViewController#0" expanded="true" />
                 <element signature="n#outlineView:heightOfRowByItem:#0;n#BasicOutlineViewController#0" expanded="true" />
@@ -297,6 +288,7 @@
                 <element signature="n#rowViewForOutlineSection:#0;n#BasicOutlineViewController#0" expanded="true" />
                 <element signature="n#heightForHeaderSection:#0;n#BasicOutlineViewController#0" expanded="true" />
                 <element signature="n#heightForRowObject:outlineSection:#0;n#BasicOutlineViewController#0" expanded="true" />
+                <element signature="n#configureCell:forRowObject:outlineSection:#0;n#BasicOutlineViewController#0" expanded="true" />
                 <element signature="n#cellSelectedForRowObject:outlineSection:#0;n#BasicOutlineViewController#0" expanded="true" />
               </folding>
             </state>
@@ -322,8 +314,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/_src/utils/NSAttributedString+DPUtils.h" />
-        <option value="$PROJECT_DIR$/_src/utils/NSAttributedString+DPUtils.m" />
         <option value="$PROJECT_DIR$/_src/utils/NSParagraphStyle+DPUtils.m" />
         <option value="$PROJECT_DIR$/_src/projects/carts/windows/CartsCustomWindow.h" />
         <option value="$PROJECT_DIR$/_src/windows/BasicCustomWindowFrame.h" />
@@ -331,12 +321,14 @@
         <option value="$PROJECT_DIR$/_src/projects/carts/app/CartsAppDelegate.h" />
         <option value="$PROJECT_DIR$/_src/windows/NewCustomWindow.h" />
         <option value="$PROJECT_DIR$/_src/projects/carts/windows/CartsCustomWindow.m" />
-        <option value="$PROJECT_DIR$/_src/windows/BasicCustomWindowFrame.m" />
         <option value="$PROJECT_DIR$/_src/windows/NewCustomWindow.m" />
-        <option value="$PROJECT_DIR$/_src/viewcontrollers/BasicOutlineViewController.m" />
         <option value="$PROJECT_DIR$/_src/controls/rowViews/BasicStyledRowView.m" />
         <option value="$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsSidebarViewController.m" />
         <option value="$PROJECT_DIR$/_src/viewcontrollers/outlineViewController/BasicStyledOutlineViewController.m" />
+        <option value="$PROJECT_DIR$/_src/viewcontrollers/BasicOutlineViewController.m" />
+        <option value="$PROJECT_DIR$/_src/utils/NSBezierPath+DPUtils.h" />
+        <option value="$PROJECT_DIR$/_src/utils/NSBezierPath+DPUtils.m" />
+        <option value="$PROJECT_DIR$/_src/windows/BasicCustomWindowFrame.m" />
         <option value="$PROJECT_DIR$/_src/controls/table/BasicCustomRowView.m" />
       </list>
     </option>
@@ -397,6 +389,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="DirectoryView.Xcode" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -601,18 +594,17 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="DirectoryView.Xcode" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="preferences.sourceCode.Objective-C" />
+    <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="FullScreen" value="false" />
     <property name="OBJC.PRESERVED_TARGET_SELECTION" value="Carts" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager" selected="Application.Carts">
     <configuration default="true" type="AppleRunConfiguration" factoryName="Application" PROJECT_NAME="BasicMacProject" TARGET_NAME="BasicMacProject" CONFIG_NAME="Debug" PASS_PARENT_ENVS="FALSE" RUN_TARGET_PROJECT_NAME="BasicMacProject" RUN_TARGET_NAME="BasicMacProject" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
@@ -650,14 +642,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="801" extended-state="0" />
+    <frame x="0" y="22" width="1440" height="801" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32673267" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.04806313" sideWeight="0.67043847" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14705883" sideWeight="0.67043847" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10903874" sideWeight="0.67043847" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1492109" sideWeight="0.67043847" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956153" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13761468" sideWeight="0.50070524" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -733,72 +725,31 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_src/libs/CustomWindowController/INAppStoreWindow.h">
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSBezierPath.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="44" selection-start="1200" selection-end="1200" vertical-scroll-proportion="0.0">
+        <state line="101" column="8" selection-start="2630" selection-end="2630" vertical-scroll-proportion="0.3326087">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/projects/carts/app/CartsAppDelegate.h">
+    <entry file="file://$PROJECT_DIR$/_src/utils/NSParagraphStyle+DPUtils.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="30" selection-start="396" selection-end="396" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/projects/carts/app/CartsAppDelegate.m">
+    <entry file="file://$PROJECT_DIR$/_src/utils/NSParagraphStyle+DPUtils.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="564" selection-end="564" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#applicationDelegateDidFinishLaunching:#0;n#CartsAppDelegate#0" expanded="true" />
-            <element signature="n#setupTitleBar#0;n#CartsAppDelegate#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_src/controls/rowViews/BasicStyledRowView.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="16" selection-start="232" selection-end="232" vertical-scroll-proportion="-0.4347826">
-          <folding>
-            <element signature="n#initWithFrame:#0;n#BasicStyledRowView#0" expanded="true" />
-            <element signature="n#drawBackgroundInRect:selected:#0;n#BasicStyledRowView#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_src/controls/rowViews/BasicStyledRowView.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="11" selection-start="228" selection-end="228" vertical-scroll-proportion="0.38054967">
+        <state line="14" column="33" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/viewcontrollers/BasicOutlineViewController.m">
+    <entry file="file://$PROJECT_DIR$/_src/windows/BasicCustomWindowFrame.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="198" column="46" selection-start="6133" selection-end="6133" vertical-scroll-proportion="-10.346154">
-          <folding>
-            <element signature="n#loadView#0;n#BasicOutlineViewController#0" expanded="true" />
-            <element signature="n#expand#0;n#BasicOutlineViewController#0" expanded="true" />
-            <element signature="n#selectionShouldChangeInOutlineView:#0;n#BasicOutlineViewController#0" expanded="true" />
-            <element signature="n#outlineView:shouldSelectItem:#0;n#BasicOutlineViewController#0" expanded="true" />
-            <element signature="n#outlineView:viewForTableColumn:item:#0;n#BasicOutlineViewController#0" expanded="true" />
-            <element signature="n#outlineView:rowViewForItem:#0;n#BasicOutlineViewController#0" expanded="true" />
-            <element signature="n#outlineView:child:ofItem:#0;n#BasicOutlineViewController#0" expanded="true" />
-            <element signature="n#outlineView:numberOfChildrenOfItem:#0;n#BasicOutlineViewController#0" expanded="true" />
-            <element signature="n#outlineView:shouldShowOutlineCellForItem:#0;n#BasicOutlineViewController#0" expanded="true" />
-            <element signature="n#outlineView:isGroupItem:#0;n#BasicOutlineViewController#0" expanded="true" />
-            <element signature="n#outlineView:isItemExpandable:#0;n#BasicOutlineViewController#0" expanded="true" />
-            <element signature="n#outlineView:heightOfRowByItem:#0;n#BasicOutlineViewController#0" expanded="true" />
-            <element signature="n#outlineView:willDisplayCell:forTableColumn:item:#0;n#BasicOutlineViewController#0" expanded="true" />
-            <element signature="n#cellForRowObject:outlineSection:#0;n#BasicOutlineViewController#0" expanded="true" />
-            <element signature="n#headerCellForOutlineSection:#0;n#BasicOutlineViewController#0" expanded="true" />
-            <element signature="n#rowViewForRowObject:outlineSection:#0;n#BasicOutlineViewController#0" expanded="true" />
-            <element signature="n#rowViewForOutlineSection:#0;n#BasicOutlineViewController#0" expanded="true" />
-            <element signature="n#heightForHeaderSection:#0;n#BasicOutlineViewController#0" expanded="true" />
-            <element signature="n#heightForRowObject:outlineSection:#0;n#BasicOutlineViewController#0" expanded="true" />
-            <element signature="n#cellSelectedForRowObject:outlineSection:#0;n#BasicOutlineViewController#0" expanded="true" />
-          </folding>
+        <state line="15" column="24" selection-start="320" selection-end="320" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -809,23 +760,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/viewcontrollers/BasicOutlineViewController.h">
+    <entry file="file://$PROJECT_DIR$/_src/projects/carts/windows/CartsCustomWindow.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="11" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0">
+        <state line="25" column="0" selection-start="532" selection-end="532" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/viewcontrollers/outlineViewController/BasicStyledOutlineViewController.h">
+    <entry file="file://$PROJECT_DIR$/_src/libs/DEGS Classes/NSBezierPath+Additions.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="52" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0">
+        <state line="7" column="0" selection-start="95" selection-end="119" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/controls/cells/BasicTableCellView.h">
+    <entry file="file://$PROJECT_DIR$/_src/utils/NSBezierPath+DPUtils.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="11" selection-start="229" selection-end="229" vertical-scroll-proportion="0.38054967">
+        <state line="22" column="19" selection-start="441" selection-end="441" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_src/utils/NSBezierPath+Additions.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="17" selection-start="1083" selection-end="1084" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#bezierPathWithRoundedRect:corners:radius:#0;n#NSBezierPath#0" expanded="true" />
+            <element signature="n#pathWithStrokeWidth:#0;n#NSBezierPath#0" expanded="true" />
+            <element signature="n#fillWithInnerShadow:#0;n#NSBezierPath#0" expanded="true" />
+            <element signature="n#drawBlurWithColor:radius:#0;n#NSBezierPath#0" expanded="true" />
+            <element signature="n#strokeInside#0;n#NSBezierPath#0" expanded="true" />
+            <element signature="n#strokeInsideWithinRect:#0;n#NSBezierPath#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_src/utils/NSBezierPath+DPUtils.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="35" selection-start="1704" selection-end="1704" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#drawWithFill:#0;n#NSBezierPath#0" expanded="true" />
+            <element signature="n#drawGradient:#0;n#NSBezierPath#0" expanded="true" />
+            <element signature="n#drawGradient:angle:#0;n#NSBezierPath#0" expanded="true" />
+            <element signature="n#drawStroke:#0;n#NSBezierPath#0" expanded="true" />
+            <element signature="n#drawStroke:width:#0;n#NSBezierPath#0" expanded="true" />
+            <element signature="n#drawShadow:#0;n#NSBezierPath#0" expanded="true" />
+            <element signature="n#drawShadow:shadowOpacity:#0;n#NSBezierPath#0" expanded="true" />
+            <element signature="n#drawShadowColor:shadowRadius:shadowOffset:shadowOpacity:#0;n#NSBezierPath#0" expanded="true" />
+            <element signature="n#drawImage:#0;n#NSBezierPath#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_src/windows/BasicCustomWindowFrame.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="11" selection-start="3560" selection-end="3732" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#initWithFrame:#0;n#BasicCustomWindowFrame#0" expanded="true" />
+            <element signature="n#resizeRect#0;n#BasicCustomWindowFrame#0" expanded="true" />
+            <element signature="n#mouseDown:#0;n#BasicCustomWindowFrame#0" expanded="true" />
+            <element signature="n#drawTitle#0;n#BasicCustomWindowFrame#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_src/viewcontrollers/outlineViewController/BasicStyledOutlineViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="42" selection-start="913" selection-end="913" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#loadView#0;n#BasicStyledOutlineViewController#0" expanded="true" />
+            <element signature="n#rowViewForRowObject:outlineSection:#0;n#BasicStyledOutlineViewController#0" expanded="true" />
+            <element signature="n#headerCellForOutlineSection:#0;n#BasicStyledOutlineViewController#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_src/libs/DEGS Classes/NSBezierPath+Additions.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="9" selection-start="460" selection-end="460" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -840,51 +852,14 @@
     <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsSidebarViewController.m">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="0" selection-start="319" selection-end="319" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#prepareDataSource#0;n#CartsSidebarViewController#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_src/viewcontrollers/outlineViewController/BasicStyledOutlineViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="564" selection-end="782" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#loadView#0;n#BasicStyledOutlineViewController#0" expanded="true" />
-            <element signature="n#rowViewForRowObject:outlineSection:#0;n#BasicStyledOutlineViewController#0" expanded="true" />
-            <element signature="n#rowViewForOutlineSection:#0;n#BasicStyledOutlineViewController#0" expanded="true" />
-            <element signature="n#headerCellForOutlineSection:#0;n#BasicStyledOutlineViewController#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_src/controls/table/BasicCustomRowView.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="56" selection-start="3409" selection-end="3409" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#initWithFrame:#0;n#BasicCustomRowView#0" expanded="true" />
-            <element signature="n#setFrame:#0;n#BasicCustomRowView#0" expanded="true" />
-            <element signature="n#modifiedRect:#0;n#BasicCustomRowView#0" expanded="true" />
-            <element signature="n#drawBackgroundInRect:#0;n#BasicCustomRowView#0" expanded="true" />
-            <element signature="n#isOpaque#0;n#BasicCustomRowView#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_src/utils/NSAttributedString+DPUtils.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="800" selection-end="800" vertical-scroll-proportion="0.0">
+        <state line="103" column="35" selection-start="3190" selection-end="3190" vertical-scroll-proportion="0.6913043">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_src/libs/DEGS Classes/NSBezierPath+Additions.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="9" selection-start="460" selection-end="460" vertical-scroll-proportion="-0.06521739">
-          <folding>
-            <element signature="n#bezierPathWithRoundedRect:corners:radius:#0;n#NSBezierPath#0" expanded="true" />
-            <element signature="n#appendBezierPathWithRoundedRect:corners:radius:#0;n#NSBezierPath#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
