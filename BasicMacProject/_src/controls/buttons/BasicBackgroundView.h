@@ -11,14 +11,14 @@
 @interface BasicBackgroundView : NSView {
 
 
-    NSColor *borderColor;
-    NSGradient *gradient;
-    NSColor *backgroundColor;
-
-    CGFloat cornerRadius;
     CGFloat borderWidth;
-
+    CGFloat cornerRadius;
     CGFloat shadowOpacity;
+    CGFloat gradientRotation;
+
+    NSColor *borderColor;
+    NSColor *backgroundColor;
+    NSGradient *gradient;
     NSShadow *shadow;
 }
 
@@ -30,5 +30,6 @@
 @property(nonatomic) CGFloat borderWidth;
 @property(nonatomic) CGFloat shadowOpacity;
 @property(nonatomic, strong) NSShadow *shadow;
+@property(nonatomic) CGFloat gradientRotation;
 - (void) setup;
 @end

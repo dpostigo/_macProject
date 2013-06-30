@@ -10,15 +10,12 @@
 
 @interface BasicOutlineView : NSOutlineView {
 
-    NSArray *topLevelItems;
-    NSMutableDictionary *childrenDictionary;
+    BOOL showsDisclosureTriangles;
+    NSRect disclosureRect;
+
 }
 
 
-@property(nonatomic, strong) NSArray *topLevelItems;
-@property(nonatomic, strong) NSMutableDictionary *childrenDictionary;
-- (void) expandParentsOfItem: (id) item;
-- (void) selectItem: (id) item;
-- (NSArray *) childrenForItem: (id) item;
-
+@property(nonatomic) BOOL showsDisclosureTriangles;
+@property(nonatomic) NSRect disclosureRect;
 @end

@@ -13,8 +13,9 @@
      BOOL isExpandable;
 }
 
-
 @property(nonatomic) BOOL isExpandable;
+
+- (id) initWithTitle: (NSString *) aTitle;
 - (id) initWithTitle: (NSString *) aTitle isExpandable: (BOOL) aIsExpandable;
 - (id) initWithTitle: (NSString *) aTitle isExpandable: (BOOL) aIsExpandable cellIdentifier: (NSString *) aIdentifier;
 @end

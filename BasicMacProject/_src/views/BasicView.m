@@ -44,15 +44,15 @@
 
 
 - (void) drawRect: (NSRect) dirtyRect {
-        [super drawRect: dirtyRect];
+    [super drawRect: dirtyRect];
 
     [backgroundColor setFill];
     NSRectFillUsingOperation(dirtyRect, NSCompositeSourceOver);
 
-//
-//    CGContextRef context = (CGContextRef) [[NSGraphicsContext currentContext] graphicsPort];
-//    CGContextSetFillColorWithColor(context, backgroundColor.CGColor);
-//    CGContextFillRect(context, NSRectToCGRect(dirtyRect));
+    //
+    //    CGContextRef context = (CGContextRef) [[NSGraphicsContext currentContext] graphicsPort];
+    //    CGContextSetFillColorWithColor(context, backgroundColor.CGColor);
+    //    CGContextFillRect(context, NSRectToCGRect(dirtyRect));
 
 }
 

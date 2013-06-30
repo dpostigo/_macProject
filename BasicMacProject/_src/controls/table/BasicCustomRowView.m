@@ -30,19 +30,17 @@
 @synthesize cornerRadius;
 @synthesize cornerOptions;
 @synthesize borderColor;
-@synthesize gradientColor;
+@synthesize borderWidth;
+@synthesize gradient;
+@synthesize selectedGradient;
 @synthesize backgroundFillColor;
 
 @synthesize shadow;
 @synthesize shadowOpacity;
 
-@synthesize noiseOpacity;
-@synthesize selectedNoiseOpacity;
-
 
 @synthesize insetRect;
 
-@synthesize borderWidth;
 
 - (id) initWithFrame: (NSRect) frameRect {
     self = [super initWithFrame: frameRect];
@@ -61,7 +59,7 @@
         backgroundFillColor = [NSColor colorWithCalibratedWhite: 0.89 alpha: 1.0];
         borderColor = [NSColor whiteColor];
         borderWidth = 1.0;
-        gradientColor = [[NSGradient alloc] initWithColorsAndLocations:
+        gradient = [[NSGradient alloc] initWithColorsAndLocations:
                 [NSColor colorWithDeviceWhite: 0.85f alpha: 1.0f], 0.0f,
                 [NSColor colorWithDeviceWhite: 0.90f alpha: 1.0f], 0.2f,
                 [NSColor colorWithDeviceWhite: 0.93f alpha: 1.0f], 0.5f,
@@ -69,11 +67,20 @@
                 [NSColor colorWithDeviceWhite: 0.95f alpha: 1.0f], 1.0f,
                 nil];
 
-        noiseOpacity = 0.25;
-        selectedNoiseOpacity = 0.1;
+        selectedGradient = [[NSGradient alloc] initWithColorsAndLocations:
+                [NSColor colorWithDeviceWhite: 0.2 alpha: 1.0f], 0.0,
+                [NSColor colorWithDeviceWhite: 0.3 alpha: 1.0f], 0.2,
+                [NSColor colorWithDeviceWhite: 0.2 alpha: 1.0f], 1.0,
+                nil];
+
     }
 
     return self;
+}
+
+- (void) setFrame: (NSRect) frameRect {
+    [super setFrame: frameRect];
+    [self setNeedsDisplay: YES];
 }
 
 
@@ -86,7 +93,7 @@
 }
 
 - (void) drawBackgroundInRect: (NSRect) dirtyRect {
-    BOOL selected = self.selected;
+    BOOL selected = self.isSelected;
     NSRect rect = [self modifiedRect: self.bounds];
     [self drawBackgroundInRect: rect selected: selected];
 }
@@ -97,24 +104,17 @@
     NSBezierPath *roundedPath = [NSBezierPath bezierPathWithRoundedRect: dirtyRect corners: cornerOptions radius: cornerRadius];
     [roundedPath drawShadow: shadow shadowOpacity: shadowOpacity];
 
-    //    NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect: dirtyRect xRadius: cornerRadius yRadius: cornerRadius];
+
     NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect: dirtyRect corners: cornerOptions radius: cornerRadius];
-
-
-    [path drawGradient: gradientColor angle: -90];
-    //
-    //    if (!selected) [KGNoise drawNoiseWithOpacity: noiseOpacity];
-    //    else [KGNoise drawNoiseWithOpacity: selectedNoiseOpacity];
-
+    [path drawGradient: self.selected ? selectedGradient : gradient angle: -90];
     [path drawStroke: borderColor width: borderWidth];
-
 }
 
-
-- (void) setSelected: (BOOL) selected {
-    if (selected != self.isSelected) [self setNeedsDisplay: YES];
-    [super setSelected: selected];
-}
+//
+//- (void) setSelected: (BOOL) selected {
+//    if (selected != self.isSelected) [self setNeedsDisplay: YES];
+//    [super setSelected: selected];
+//}
 
 
 - (BOOL) isOpaque {

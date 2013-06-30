@@ -26,10 +26,10 @@
     NSMutableArray *controlsArray;
     NavigationController *navigationController;
 
-    IBOutlet NSButton *submitButton;
-    IBOutlet NavigationBar *navigationBar;
-    IBOutlet BasicBackgroundView *backgroundView;
+    NavigationBar *navigationBar;
     IBOutlet BasicCustomWindow *modalWindow;
+    IBOutlet BasicBackgroundView *backgroundView;
+    IBOutlet NSButton *submitButton;
 }
 
 

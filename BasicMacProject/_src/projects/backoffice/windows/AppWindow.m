@@ -6,7 +6,7 @@
 
 
 #import "AppWindow.h"
-#import "SidebarViewController.h"
+#import "BOSidebarViewController.h"
 #import "BottomViewController.h"
 #import "TasksViewController.h"
 #import "BONavigationBar.h"
@@ -22,7 +22,7 @@
 @implementation AppWindow {
     BOOL sidebarIsOpen;
     CGFloat originalWidth;
-    SidebarViewController *sidebarViewController;
+    BOSidebarViewController *sidebarViewController;
     BOOL isToggling;
     CGFloat currentSidebarWidth;
     CGFloat lastSidebarWidth;
@@ -47,7 +47,7 @@
     sidebarIsOpen = YES;
     originalWidth = self.frame.size.width;
 
-    sidebarViewController = [[SidebarViewController alloc] initWithDefaultNib];
+    sidebarViewController = [[BOSidebarViewController alloc] initWithDefaultNib];
     NavigationController *navigationController = [[NavigationController alloc] initWithRootViewController: [[TasksViewController alloc] initWithDefaultNib]];
     navigationController.navigationBar = [[BONavigationBar alloc] initWithFrame: NSZeroRect];
 

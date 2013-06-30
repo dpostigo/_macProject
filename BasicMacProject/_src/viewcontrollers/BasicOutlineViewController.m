@@ -18,6 +18,9 @@
     [super loadView];
     outline.delegate = self;
     outline.dataSource = self;
+    outline.floatsGroupRows = NO;
+
+    outline.enclosingScrollView.borderType = NSNoBorder;
     [outline reloadData];
 }
 
@@ -25,16 +28,11 @@
     [outline expandItem: nil expandChildren: YES];
 }
 
+
+
 #pragma mark IBActions
 
-
 #pragma mark Callbacks
-
-
-
-
-
-
 
 #pragma mark Selection
 - (BOOL) selectionShouldChangeInOutlineView: (NSOutlineView *) outlineView {
@@ -73,7 +71,6 @@
         return cell;
     }
 }
-
 
 - (NSTableRowView *) outlineView: (NSOutlineView *) outlineView rowViewForItem: (id) item {
     NSTableRowView *rowView = nil;
@@ -132,7 +129,6 @@
     return NO;
 }
 
-
 - (CGFloat) outlineView: (NSOutlineView *) outlineView heightOfRowByItem: (id) item {
     if ([item isKindOfClass: [OutlineSection class]]) {
         OutlineSection *outlineSection = item;
@@ -142,6 +138,13 @@
         OutlineSection *outlineSection = [outline parentForItem: item];
         return [self heightForRowObject: rowObject outlineSection: outlineSection];
     }
+}
+
+
+- (void) outlineView: (NSOutlineView *) outlineView willDisplayCell: (id) cell forTableColumn: (NSTableColumn *) tableColumn item: (id) item {
+
+
+
 }
 
 
@@ -157,7 +160,6 @@
             BasicTextFieldCellView *textFieldCell = [outline makeViewWithIdentifier: rowObject.cellIdentifier owner: self];
             cell = textFieldCell;
 
-            NSLog(@"made textfieldcell");
         } else {
             cell = [outline makeViewWithIdentifier: rowObject.cellIdentifier owner: self];
         }
@@ -166,7 +168,6 @@
     }
     return cell;
 }
-
 
 - (BasicTableCellView *) headerCellForOutlineSection: (OutlineSection *) outlineSection {
     BasicTableCellView *cell;
@@ -178,11 +179,9 @@
     return cell;
 }
 
-
 - (BasicTableRowView *) rowViewForRowObject: (TableRowObject *) rowObject outlineSection: (OutlineSection *) outlineSection {
     return nil;
 }
-
 
 - (BasicTableRowView *) rowViewForOutlineSection: (OutlineSection *) outlineSection {
     return nil;
@@ -195,7 +194,6 @@
 - (CGFloat) heightForRowObject: (TableRowObject *) rowObject outlineSection: (OutlineSection *) outlineSection {
     return outline.rowHeight;
 }
-
 
 - (void) configureCell: (BasicTableCellView *) tableCell forRowObject: (TableRowObject *) rowObject outlineSection: (OutlineSection *) outlineSection {
     tableCell.textField.stringValue = rowObject.textLabel;

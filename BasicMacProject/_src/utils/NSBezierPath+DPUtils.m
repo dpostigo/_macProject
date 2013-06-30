@@ -12,6 +12,16 @@
 
 
 #pragma mark Gradient
+
+
+- (void) drawWithFill: (NSColor *) aColor {
+    [NSGraphicsContext saveGraphicsState];
+    [aColor setFill];
+    [self fill];
+    [NSGraphicsContext restoreGraphicsState];
+
+}
+
 - (void) drawGradient: (NSGradient *) gradient {
     [self drawGradient: gradient angle: 90.0f];
 

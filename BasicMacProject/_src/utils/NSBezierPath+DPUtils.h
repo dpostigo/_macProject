@@ -11,6 +11,7 @@
 @interface NSBezierPath (DPUtils)
 
 
+- (void) drawWithFill: (NSColor *) aColor;
 - (void) drawGradient: (NSGradient *) gradient;
 - (void) drawGradient: (NSGradient *) gradient angle: (CGFloat) angle;
 - (void) drawStroke: (NSColor *) strokeColor;

@@ -17,7 +17,6 @@
     IBOutlet NSButton *secondButton;
     IBOutlet NSButton *accessoryButton;
     IBOutlet BasicTextField *captionLabel;
-
     IBOutlet BasicBackgroundView *backgroundView;
 }
 

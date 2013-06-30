@@ -15,12 +15,39 @@
 
 @synthesize dividerEnabled;
 @synthesize splitView;
+@synthesize sidebar;
+@synthesize contentView;
+@synthesize footer;
+
+@synthesize defaultSidebarWidth;
+
+- (id) initWithDefaultNib {
+    self = [super initWithDefaultNib];
+    if (self) {
+        defaultSidebarWidth = 200.0;
+
+    }
+
+    return self;
+}
+
 
 - (void) loadView {
     [super loadView];
-    splitView.delegate = self;
+    splitView.dividerStyle = NSSplitViewDividerStyleThin;
     self.dividerEnabled = YES;
+
+    if (sidebar == nil) sidebar = [splitView.subviews objectAtIndex: 0];
+    if (contentView == nil) contentView = [splitView.subviews objectAtIndex: 1];
+
+    sidebar.width = defaultSidebarWidth;
+    sidebar.minimumWidth = defaultSidebarWidth;
+    sidebar.isLocked = YES;
+
+    splitView.delegate = self;
 }
+
+
 
 
 #pragma mark Helpers

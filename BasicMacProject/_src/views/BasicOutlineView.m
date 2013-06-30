@@ -12,66 +12,46 @@
 }
 
 
-@synthesize topLevelItems;
-@synthesize childrenDictionary;
-
+@synthesize showsDisclosureTriangles;
+@synthesize disclosureRect;
 
 - (id) initWithCoder: (NSCoder *) aDecoder {
     self = [super initWithCoder: aDecoder];
     if (self) {
+        self.showsDisclosureTriangles = NO;
 
-        childrenDictionary = [NSMutableDictionary new];
-        [self sizeLastColumnToFit];
-
-        self.floatsGroupRows = NO;
-
-        [NSAnimationContext beginGrouping];
-        [[NSAnimationContext currentContext] setDuration: 0];
-        [self expandItem: nil expandChildren: YES];
-        [NSAnimationContext endGrouping];
     }
 
     return self;
 }
 
-
-- (void) expandParentsOfItem: (id) item {
-    while (item != nil) {
-        id parent = [self parentForItem: item];
-        if (![self isExpandable: parent])
-            break;
-        if (![self isItemExpanded: parent])
-            [self expandItem: parent];
-        item = parent;
-    }
-}
-
-
-- (void) selectItem: (id) item {
-    NSInteger itemIndex = [self rowForItem: item];
-    if (itemIndex < 0) {
-        [self expandParentsOfItem: item];
-        itemIndex = [self rowForItem: item];
-        if (itemIndex < 0)
-            return;
-    }
-
-    [self selectRowIndexes: [NSIndexSet indexSetWithIndex: itemIndex] byExtendingSelection: NO];
-}
+//
+//- (void) setShowsDisclosureTriangles: (BOOL) showsDisclosureTriangles1 {
+//    showsDisclosureTriangles = showsDisclosureTriangles1;
+//    if (!showsDisclosureTriangles) disclosureRect = NSZeroRect;
+//}
+//
+//
+//- (NSRect) frameOfOutlineCellAtRow: (NSInteger) row {
+//    return disclosureRect;
+//}
 
 
-- (NSArray *) childrenForItem: (id) item {
-    NSArray *children;
-
-    if (item == nil) {
-        children = topLevelItems;
-    } else {
-        children = [childrenDictionary objectForKey: item];
-    }
-
-    return children;
-}
-
+//
+//
+//- (NSRect) frameOfCellAtColumn: (NSInteger) column row: (NSInteger) row {
+//    NSRect superFrame = [super frameOfCellAtColumn: column row: row];
+//
+//    //
+//    //    if ((column == 0) /* && isGroupRow */) {
+//    //        return NSMakeRect(0, superFrame.origin.y, [self bounds].size.width, superFrame.size.height);
+//    //    }
+//
+//    if (column == 0) {
+//        return NSMakeRect(0, superFrame.origin.y, [self bounds].size.width, superFrame.size.height);
+//    }
+//    return superFrame;
+//}
 
 
 @end

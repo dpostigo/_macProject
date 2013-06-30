@@ -23,6 +23,8 @@
 
 @synthesize shadow;
 
+@synthesize gradientRotation;
+
 - (void) setup {
     self.cornerRadius = 0.0;
     self.borderWidth = 0.0;
@@ -36,6 +38,7 @@
     shadow.shadowOffset = NSMakeSize(0, -1);
     shadowOpacity = 0.5;
 
+    gradientRotation = 90.0;
 
 }
 
@@ -78,9 +81,8 @@
 
         NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect: newRect xRadius: cornerRadius yRadius: cornerRadius];
         [path drawShadow: shadow shadowOpacity: shadowOpacity];
-        [path drawGradient: gradient angle: 90.0f];
+        [path drawGradient: gradient angle: gradientRotation];
         [path drawStroke: borderColor width: borderWidth];
-
 
     } else {
 
@@ -88,7 +90,7 @@
         NSRect bounds = self.bounds;
         NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect: self.bounds xRadius: cornerRadius yRadius: cornerRadius];
 
-        [path drawGradient: gradient angle: 90.0f];
+        [path drawGradient: gradient angle: gradientRotation];
         [path drawStroke: borderColor];
 
     }

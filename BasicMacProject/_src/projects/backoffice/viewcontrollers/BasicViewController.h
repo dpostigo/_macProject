@@ -11,8 +11,7 @@
 
 @interface BasicViewController : VeryBasicViewController {
 
-    IBOutlet NSScrollView *mainScrollView;
-    IBOutlet NSTextField *titleLabel;
+    NSTextField *titleLabel;
 }
 
 

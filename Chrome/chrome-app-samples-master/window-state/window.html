@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="window.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Window State Sample</h1>
+  <div id="fullscreen-area">
+    <p><b>HTML5 Fullscreen</b>:
+      <button id="html-fullscreen-enter">Enter</button>
+      <button id="html-fullscreen-exit">Exit</button>
+      <span id="html-fullscreen-label"></span>
+    </p>
+    <p>chrome.app.<b>window actions</b>, delayed:
+      <input id="delay-slider" type ="range" min ="0000" max="10000" step="1000" value="2000"/>
+      <span id="delay-label"></span>
+      <br>
+      <button id="fullscreen">Fullscreen</button>
+      <button id="maximize">Maximize</button>
+      <button id="minimize">Minimize</button>
+      <button id="restore">Restore</button>
+      <button id="hide">Hide</button>
+      <button id="show">Show</button>
+    </p>
+    <p><b>Create</b> a new window:<br>
+      <label><input type="radio" name="newWindowId" value="ID1" checked/>id = ID1</label>
+      <label><input type="radio" name="newWindowId" value="ID2" />id = ID2</label>
+      <label><input type="radio" name="newWindowId" value="none" />Without id</label>
+      : The id will restore previous position.
+      <br>
+      <label><input type="radio" name="newWindowSingleton" value="singleton" checked/>Singleton</label>
+      <label><input type="radio" name="newWindowSingleton" value="notsingleton" />Not a singleton</label>
+      : Only create one window (requires an id).
+      <br>
+      <label><input type="radio" name="newWindowHidden" value="visible" checked/>Visible</label>
+      <label><input type="radio" name="newWindowHidden" value="hidden" />Hidden, then shown</label>
+      <br>
+      <button id="newWindowNormal">Normal</button>
+      <button id="newWindowFullscreen">Fullscreen</button>
+      <button id="newWindowMaximized">Maximized</button>
+      <button id="newWindowMinimized">Minimized</button>
+    </p>
+    <p>Current window state:
+      <input type="checkbox" id="isFullscreen">isFullscreen
+      <input type="checkbox" id="isMaximized" >isMaximized
+      <input type="checkbox" id="isMinimized" >isMinimized
+    </p>
+    <p>Last 10 seconds state:
+      <input type="checkbox" id="wasFullscreen">wasFullscreen
+      <input type="checkbox" id="wasMaximized" >wasMaximized
+      <input type="checkbox" id="wasMinimized" >wasMinimized
+    </p>
+  </div>
+  This text is outside of the HTML5 fullscreen area.
+</body>
+<script src="window.js"></script>
+</html>

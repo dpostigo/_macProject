@@ -12,6 +12,7 @@
 #import "OutlineSection.h"
 #import "BasicTableRowView.h"
 #import "BasicTableCellView.h"
+#import "BasicOutlineView.h"
 
 
 @interface BasicOutlineViewController : BasicListViewController <NSOutlineViewDelegate, NSOutlineViewDataSource> {

@@ -30,6 +30,7 @@
     self = [super initWithCoder: coder];
     if (self) {
         modalSize = CGSizeMake(700, 365);
+        NSLog(@"%s", __PRETTY_FUNCTION__);
     }
     return self;
 }

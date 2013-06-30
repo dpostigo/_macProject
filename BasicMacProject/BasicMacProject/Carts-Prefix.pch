@@ -1,0 +1,10 @@
+//
+// Prefix header for all source files of the 'BasicMacProject' target in the 'BasicMacProject' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+    #import "BOAppConstants.h"
+    #import "NSView+Utils.h"
+    #import "NSColor+Utils.h"
+#endif

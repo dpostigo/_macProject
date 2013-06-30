@@ -138,7 +138,7 @@
 
         [self subscribeControl: cell.textField];
 
-        [cell.textField.cell setPlaceholderAttributedString: [NSAttributedString attributedString: @"Add a comment..." textColor: [NSColor colorWithDeviceWhite: 0.0 alpha: 0.6]]];
+        [cell.textField.cell setPlaceholderAttributedString: [NSAttributedString attributedStringWithString: @"Add a comment..." textColor: [NSColor colorWithDeviceWhite: 0.0 alpha: 0.6]]];
         //        [cell.textField.cell setPlaceholderString: @"Add a comment..."];
         commentTextField = (BasicTextField *) cell.textField;
         commentTextField.delegate = self;
@@ -178,7 +178,7 @@
     NSButton *button = sender;
     button.enabled = NO;
     [commentTextField resignFirstResponder];
-//    [self resignAllTextFields];
+    //    [self resignAllTextFields];
     selectedCommentText = commentTextField.stringValue;
     commentTextField.stringValue = @"";
     [commentTextField setEditable: NO];
@@ -216,7 +216,6 @@
 
     [self prepareDataSource];
     [table reloadData];
-
 
 }
 

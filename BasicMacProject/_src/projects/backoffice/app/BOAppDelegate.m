@@ -6,7 +6,7 @@
 
 
 #import "BOAppDelegate.h"
-#import "SidebarViewController.h"
+#import "BOSidebarViewController.h"
 #import "LoginOutlineViewController.h"
 #import "LoginTableViewController.h"
 #import "TitleBarViewController.h"
@@ -21,6 +21,8 @@
 - (void) applicationDelegateDidFinishLaunching: (NSNotification *) notification {
     [super applicationDelegateDidFinishLaunching: notification];
 
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+
     newTaskWindow.titleBarHeight = 0;
     newTaskWindow.cornerRadius = 30;
 
@@ -33,7 +35,7 @@
 
     [self embedViewController: [[LoginTableViewController alloc] initWithDefaultNib] inView: loginWindow.contentView];
     [self embedViewController: [[LoginTableViewController alloc] initWithDefaultNib] inView: loginPanel.contentView];
-    //    [self embedViewController: [[SidebarViewController alloc] initWithDefaultNib] inView: leftView];
+    //    [self embedViewController: [[BOSidebarViewController alloc] initWithDefaultNib] inView: leftView];
 
 //    [loginWindow makeKeyWindow];
     [loginPanel makeKeyWindow];

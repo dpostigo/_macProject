@@ -20,7 +20,6 @@
     _model = [Model sharedModel];
 }
 
-
 - (void) embedViewController: (NSViewController *) viewController inView: (NSView *) aSuperview {
     viewController.view.frame = aSuperview.bounds;
     viewController.view.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;

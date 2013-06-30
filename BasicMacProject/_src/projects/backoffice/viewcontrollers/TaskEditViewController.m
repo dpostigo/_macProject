@@ -19,6 +19,7 @@
 
 - (void) loadView {
     [super loadView];
+    NSLog(@"%s", __PRETTY_FUNCTION__);
 
     submitButton.title = @"Update Task";
     [imageDictionary setObject: [NSImage newImageFromResource: @"invisible-icon.png"] forKey: @"Task"];
