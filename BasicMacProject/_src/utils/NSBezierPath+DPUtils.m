@@ -17,6 +17,7 @@
     NSPoint endPoint;
     NSPoint thruPoint;
 
+    rect = NSInsetRect(rect, 0.5, 0.5);
 
     [path moveToPoint: NSMakePoint(radius, 0)];
     [path lineToPoint: NSMakePoint(rect.size.width - radius, 0)];
@@ -184,8 +185,9 @@
 - (void) drawStroke: (NSColor *) strokeColor width: (CGFloat) borderWidth {
     [NSGraphicsContext saveGraphicsState];
     [strokeColor setStroke];
-    //    [self setLineWidth: borderWidth];
-    //    [self setLineCapStyle: NSRoundLineCapStyle];
+    [self setLineWidth: borderWidth];
+    [self setLineCapStyle: NSRoundLineCapStyle];
+    [self setLineJoinStyle: NSBevelLineJoinStyle];
     [self stroke];
     [NSGraphicsContext restoreGraphicsState];
 }

@@ -11,6 +11,7 @@
 @interface NSColor (Utils)
 
 
++ (NSColor *) colorWithWhite: (CGFloat) white;
 + (NSColor *) colorWithWhite: (CGFloat) white alpha: (CGFloat) alpha;
 + (CGFloat) colorComponentFrom: (NSString *) string start: (NSUInteger) start length: (NSUInteger) length;
 + (NSColor *) colorWithString: (NSString *) hexString;

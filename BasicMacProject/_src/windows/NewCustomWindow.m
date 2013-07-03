@@ -16,21 +16,15 @@
 
 
 @synthesize childContentView;
-
-@synthesize closeButton;
-@synthesize minimizeButton;
-@synthesize maximizeButton;
-
-
 @synthesize frameClassString;
 
-@synthesize buttonPadding;
 @synthesize windowButtons;
 @synthesize showsCloseButton;
 @synthesize showsMinimizeButton;
 @synthesize showsMaximizeButton;
 
-
+@synthesize buttonPadding;
+@synthesize buttonHeight;
 @synthesize windowFramePadding;
 
 - (id) initWithContentRect: (NSRect) contentRect styleMask: (NSUInteger) aStyle backing: (NSBackingStoreType) bufferingType defer: (BOOL) flag {

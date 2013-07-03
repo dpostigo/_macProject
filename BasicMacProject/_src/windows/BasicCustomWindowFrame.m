@@ -18,10 +18,28 @@
 @synthesize bottomRightRect;
 @synthesize resizeRectSize;
 
+
+@synthesize pathOptions;
+@synthesize innerPathOptions;
+
 - (id) initWithFrame: (NSRect) frameRect {
     self = [super initWithFrame: frameRect];
     if (self) {
         resizeRectSize = NSMakeSize(16, 16);
+
+        innerPathOptions = [[PathOptions alloc] init];
+        innerPathOptions.borderColor = [NSColor colorWithDeviceWhite: 1.0 alpha: 0.5];
+
+        pathOptions = [[PathOptions alloc] init];
+        pathOptions.cornerRadius = 5.0;
+        pathOptions.borderWidth = 0.5;
+        pathOptions.borderColor = [NSColor blackColor];
+        pathOptions.cornerOptions = NSBezierPathLowerLeft | NSBezierPathLowerRight | NSBezierPathUpperRight | NSBezierPathUpperLeft;
+        pathOptions.gradient = [[NSGradient alloc] initWithColorsAndLocations: [NSColor colorWithWhite: 0.3], 0.0,
+                                                                               [NSColor colorWithWhite: 0.2], 0.1,
+                                                                               [NSColor colorWithWhite: 0.2], 0.9,
+                                                                               [NSColor colorWithWhite: 0.3], 1.0,
+                                                                               nil];
 
     }
 
@@ -110,13 +128,14 @@
     [[NSColor clearColor] set];
     NSRectFill(rect);
 
-    NSBezierPath *path;
-    path = [NSBezierPath bezierPathWithRect: self.bounds cornerRadius: 10.0 options: NSBezierPathLowerLeft | NSBezierPathLowerRight | NSBezierPathUpperRight | NSBezierPathUpperLeft];
+
+    NSBezierPath *path = [NSBezierPath bezierPathWithRect: self.bounds cornerRadius: self.cornerRadius options: self.cornerOptions];
+    NSBezierPath *innerBorderPath = [NSBezierPath bezierPathWithRect: NSInsetRect(self.bounds, self.borderWidth, self.borderWidth) cornerRadius: self.cornerRadius options: self.cornerOptions];
 
 
-    NSGradient *aGradient = [[NSGradient alloc] initWithColorsAndLocations: [NSColor darkGrayColor], (CGFloat) 0.0, [NSColor lightGrayColor], (CGFloat) 1.0, nil];
-    [aGradient drawInBezierPath: path angle: 90];
-    [path drawStroke: [NSColor lightGrayColor]];
+    [self.gradient drawInBezierPath: path angle: 90];
+    [path drawStroke: self.borderColor width: self.borderWidth];
+    [innerBorderPath drawStroke: self.innerBorderColor width: self.borderWidth];
 
     NSRect resizeRect = self.resizeRect;
     NSBezierPath *resizePath = [NSBezierPath bezierPathWithRect: resizeRect];
@@ -139,5 +158,58 @@
     [attributedString drawWithRect: titleRect options: 0];
 
 }
+
+
+#pragma mark Getters / Setters
+
+- (void) setCornerOptions: (NSBezierPathCornerOptions) cornerOptions1 {
+    pathOptions.cornerOptions = cornerOptions1;
+}
+
+- (NSBezierPathCornerOptions) cornerOptions {
+    return pathOptions.cornerOptions;
+}
+
+
+- (CGFloat) cornerRadius {
+    return pathOptions.cornerRadius;
+}
+
+- (void) setCornerRadius: (CGFloat) cornerRadius1 {
+    pathOptions.cornerRadius = cornerRadius1;
+}
+
+- (NSColor *) borderColor {
+    return pathOptions.borderColor;
+}
+
+- (void) setBorderColor: (NSColor *) borderColor1 {
+    pathOptions.borderColor = borderColor1;
+}
+
+- (CGFloat) borderWidth {
+    return pathOptions.borderWidth;
+}
+
+- (void) setBorderWidth: (CGFloat) borderWidth1 {
+    pathOptions.borderWidth = borderWidth1;
+}
+
+- (NSGradient *) gradient {
+    return pathOptions.gradient;
+}
+
+- (void) setGradient: (NSGradient *) gradient1 {
+    pathOptions.gradient = gradient1;
+}
+
+- (NSColor *) innerBorderColor {
+    return innerPathOptions.borderColor;
+}
+
+- (void) setInnerBorderColor: (NSColor *) innerBorderColor1 {
+    innerPathOptions.borderColor = innerBorderColor1;
+}
+
 
 @end

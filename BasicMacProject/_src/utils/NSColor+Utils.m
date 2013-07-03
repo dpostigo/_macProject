@@ -10,6 +10,10 @@
 
 @implementation NSColor (Utils)
 
++ (NSColor *) colorWithWhite: (CGFloat) white {
+    return [NSColor colorWithDeviceWhite: white alpha: 1.0];
+}
+
 
 + (NSColor *) colorWithWhite: (CGFloat) white alpha: (CGFloat) alpha {
     return [NSColor colorWithDeviceWhite: white alpha: alpha];
@@ -17,7 +21,7 @@
 
 + (CGFloat) colorComponentFrom: (NSString *) string start: (NSUInteger) start length: (NSUInteger) length {
     NSString *substring = [string substringWithRange: NSMakeRange(start, length)];
-    NSString *fullHex = length == 2 ? substring: [NSString stringWithFormat: @"%@%@", substring, substring];
+    NSString *fullHex = length == 2 ? substring : [NSString stringWithFormat: @"%@%@", substring, substring];
     unsigned hexComponent;
     [[NSScanner scannerWithString: fullHex] scanHexInt: &hexComponent];
     return hexComponent / 255.0;
@@ -59,7 +63,6 @@
 
     return [NSColor colorWithDeviceRed: red green: green blue: blue alpha: alpha];
 }
-
 
 
 @end
