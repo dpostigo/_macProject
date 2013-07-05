@@ -36,7 +36,6 @@
     if (self) {
         self.queue = [[NSOperationQueue alloc] init];
 
-
     }
 
     return self;

@@ -11,26 +11,23 @@
 
 @implementation NSScanner (UKSkipUpToCharset)
 
-- (BOOL)skipUpToCharactersFromSet:(NSCharacterSet *)set
-{
-	NSString *string = [self string];
-	NSUInteger x = [self scanLocation];
-	
-	while( x < [string length] )
-	{
-		if( ![set characterIsMember:[string characterAtIndex:x]] )
-			x++;
-		else
-			break;
-	}
-	
-	if( x > [self scanLocation] )
-	{
-		[self setScanLocation:x];
-		return YES;
-	}
-	else
-		return NO;
+- (BOOL) skipUpToCharactersFromSet: (NSCharacterSet *) set {
+    NSString *string = [self string];
+    NSUInteger x = [self scanLocation];
+
+    while (x < [string length]) {
+        if (![set characterIsMember: [string characterAtIndex: x]])
+            x++;
+        else
+            break;
+    }
+
+    if (x > [self scanLocation]) {
+        [self setScanLocation: x];
+        return YES;
+    }
+    else
+        return NO;
 }
 
 @end

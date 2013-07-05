@@ -18,10 +18,10 @@
 - (void) loadView {
     [super loadView];
 
-    outline.backgroundColor = [NSColor colorWithString: @"F2F2F2"];
+    outline.backgroundColor     = [NSColor colorWithString: @"F2F2F2"];
     outline.top -= 10;
     outline.indentationPerLevel = 0.5;
-    self.allowsSelection = YES;
+    self.allowsSelection        = YES;
     [self expand];
 }
 
@@ -40,7 +40,7 @@
 
 - (BasicTableRowView *) rowViewForOutlineSection: (OutlineSection *) outlineSection {
     BasicCustomRowView *rowView = [[BasicCustomRowView alloc] init];
-    rowView.borderColor = [NSColor lightGrayColor];
+    rowView.borderColor = [NSColor redColor];
     return rowView;
 }
 

@@ -10,8 +10,7 @@
 @interface NSImageView (DPImageManager)
 
 
-
-- (void)setImageWithURL:(NSURL *)url;
+- (void) setImageWithURL: (NSURL *) url;
 
 
 @end

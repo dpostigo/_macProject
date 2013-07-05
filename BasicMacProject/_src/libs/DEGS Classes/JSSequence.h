@@ -12,15 +12,15 @@
 
 @property NSUInteger cycles;
 
-@property (readonly) NSArray *operations;
-@property (readonly) NSUInteger numberOfElements;
+@property(readonly) NSArray *operations;
+@property(readonly) NSUInteger numberOfElements;
 
-- (void)addElement:(JSNode *)element;
-- (void)addElement:(JSNode *)element atIndex:(NSUInteger)index;
-- (void)deleteElementAtIndex:(NSUInteger)index;
-- (void)deleteElementsAtIndexes:(NSIndexSet *)indexes;
+- (void) addElement: (JSNode *) element;
+- (void) addElement: (JSNode *) element atIndex: (NSUInteger) index;
+- (void) deleteElementAtIndex: (NSUInteger) index;
+- (void) deleteElementsAtIndexes: (NSIndexSet *) indexes;
 
-- (id)initFromXML:(NSXMLElement *)anElement;
-- (NSXMLElement *)exportAsXML;
+- (id) initFromXML: (NSXMLElement *) anElement;
+- (NSXMLElement *) exportAsXML;
 
 @end

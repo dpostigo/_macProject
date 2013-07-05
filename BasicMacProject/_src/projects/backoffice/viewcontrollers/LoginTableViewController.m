@@ -57,9 +57,9 @@
 
     if ([cell.textField isKindOfClass: [BasicTextField class]]) {
         BasicTextField *basicTextField = (BasicTextField *) cell.textField;
-        basicTextField.rowObject = rowObject;
+        basicTextField.rowObject    = rowObject;
         basicTextField.tableSection = tableSection;
-        cell.imageView.image = [NSImage imageNamed: @"assignee-icon"];
+        cell.imageView.image        = [NSImage imageNamed: @"assignee-icon"];
 
 
         BasicTextFieldCell *textFieldCell = cell.textField.cell;
@@ -67,12 +67,11 @@
 
         [self subscribeControl: cell.textField];
 
-
     } else if ([cell.textField isKindOfClass: [BasicSecureTextField class]]) {
         BasicSecureTextField *secureTextField = (BasicSecureTextField *) cell.textField;
-        secureTextField.rowObject = rowObject;
+        secureTextField.rowObject    = rowObject;
         secureTextField.tableSection = tableSection;
-        cell.imageView.image = [NSImage imageNamed: @"key-icon-alpha"];
+        cell.imageView.image         = [NSImage imageNamed: @"key-icon-alpha"];
 
 
         BasicSecureTextFieldCell *textFieldCell = (BasicSecureTextFieldCell *) cell.textField.cell;
@@ -81,7 +80,6 @@
         //        [textFieldCell setValue: [NSNumber numberWithFloat: 20] forKey: @"cellPadding"];
         //
         [self subscribeControl: cell.textField];
-
 
     }
 
@@ -96,7 +94,6 @@
         usernameField.nextKeyView = passwordField;
         passwordField.nextKeyView = submitButton;
     }
-
 
 }
 

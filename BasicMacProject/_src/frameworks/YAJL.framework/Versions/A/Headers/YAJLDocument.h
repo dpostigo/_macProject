@@ -31,9 +31,9 @@
 #include "YAJLParser.h"
 
 typedef enum {
-  YAJLDecoderCurrentTypeNone,
-  YAJLDecoderCurrentTypeArray,
-  YAJLDecoderCurrentTypeDict
+    YAJLDecoderCurrentTypeNone,
+    YAJLDecoderCurrentTypeArray,
+    YAJLDecoderCurrentTypeDict
 } YAJLDecoderCurrentType;
 
 extern NSInteger YAJLDocumentStackCapacity;
@@ -44,20 +44,21 @@ extern NSInteger YAJLDocumentStackCapacity;
  YAJLDocument delegate notified when objects are added.
  */
 @protocol YAJLDocumentDelegate <NSObject>
+
 @optional
 /*!
  Did add dictionary.
  @param document Sender
  @param dict Dictionary that was added
  */
-- (void)document:(YAJLDocument *)document didAddDictionary:(NSDictionary *)dict;
+- (void) document: (YAJLDocument *) document didAddDictionary: (NSDictionary *) dict;
 
 /*!
  Did add array.
  @param document Sender
  @param array Array that was added
  */
-- (void)document:(YAJLDocument *)document didAddArray:(NSArray *)array;
+- (void) document: (YAJLDocument *) document didAddArray: (NSArray *) array;
 
 /*!
  Did add object to array.
@@ -65,7 +66,7 @@ extern NSInteger YAJLDocumentStackCapacity;
  @param object Object added
  @param array Array objct was added to
  */
-- (void)document:(YAJLDocument *)document didAddObject:(id)object toArray:(NSArray *)array;
+- (void) document: (YAJLDocument *) document didAddObject: (id) object toArray: (NSArray *) array;
 
 /*!
  Did set object for key on dictionary.
@@ -74,7 +75,7 @@ extern NSInteger YAJLDocumentStackCapacity;
  @param key Key
  @param dict Dictionary object was set for key on
  */
-- (void)document:(YAJLDocument *)document didSetObject:(id)object forKey:(id)key inDictionary:(NSDictionary *)dict;
+- (void) document: (YAJLDocument *) document didSetObject: (id) object forKey: (id) key inDictionary: (NSDictionary *) dict;
 @end
 
 /*!
@@ -111,29 +112,29 @@ extern NSInteger YAJLDocumentStackCapacity;
  @endcode
  */
 @interface YAJLDocument : NSObject <YAJLParserDelegate> {
-  
-  id root_; // NSArray or NSDictionary
-  YAJLParser *parser_;
-  
-  // TODO(gabe): This should be __weak
-  id<YAJLDocumentDelegate> delegate_;
-  
-  __weak NSMutableDictionary *dict_; // weak; if map in progress, points to the current map 
-  __weak NSMutableArray *array_; // weak; If array in progress, points the current array
-  __weak NSString *key_; // weak; If map in progress, points to current key
-  
-  NSMutableArray *stack_;
-  NSMutableArray *keyStack_;
-  
-  YAJLDecoderCurrentType currentType_;
-  
-  YAJLParserStatus parserStatus_;
-  
+
+    id root_; // NSArray or NSDictionary
+    YAJLParser *parser_;
+
+    // TODO(gabe): This should be __weak
+    id <YAJLDocumentDelegate> delegate_;
+
+    __weak NSMutableDictionary *dict_; // weak; if map in progress, points to the current map
+    __weak NSMutableArray      *array_; // weak; If array in progress, points the current array
+    __weak NSString            *key_; // weak; If map in progress, points to current key
+
+    NSMutableArray *stack_;
+    NSMutableArray *keyStack_;
+
+    YAJLDecoderCurrentType currentType_;
+
+    YAJLParserStatus parserStatus_;
+
 }
 
-@property (readonly, nonatomic) id root; //! The root element of the document, either NSArray or NSDictionary
-@property (readonly, nonatomic) YAJLParserStatus parserStatus; //! The current status of parsing
-@property (assign, nonatomic) id<YAJLDocumentDelegate> delegate; //! Delegate
+@property(readonly, nonatomic) id                      root; //! The root element of the document, either NSArray or NSDictionary
+@property(readonly, nonatomic) YAJLParserStatus        parserStatus; //! The current status of parsing
+@property(assign, nonatomic) id <YAJLDocumentDelegate> delegate; //! Delegate
 
 /*!
  Create document from data.
@@ -145,7 +146,7 @@ extern NSInteger YAJLDocumentStackCapacity;
   - YAJLParserOptionsStrictPrecision: If YES will force strict precision and return integer overflow error
  @param error Error to set on failure
  */
-- (id)initWithData:(NSData *)data parserOptions:(YAJLParserOptions)parserOptions error:(NSError **)error;
+- (id) initWithData: (NSData *) data parserOptions: (YAJLParserOptions) parserOptions error: (NSError **) error;
 
 /*!
  Create empty document with parser options.
@@ -155,7 +156,7 @@ extern NSInteger YAJLDocumentStackCapacity;
   - YAJLParserOptionsCheckUTF8: Invalid UTF8 strings will cause a parse error
   - YAJLParserOptionsStrictPrecision: If YES will force strict precision and return integer overflow error
  */
-- (id)initWithParserOptions:(YAJLParserOptions)parserOptions;
+- (id) initWithParserOptions: (YAJLParserOptions) parserOptions;
 
 /*!
  Parse data.
@@ -167,6 +168,6 @@ extern NSInteger YAJLDocumentStackCapacity;
   - YAJLParserStatusInsufficientData: There was insufficient data
   - YAJLParserStatusError: Parser errored
  */
-- (YAJLParserStatus)parse:(NSData *)data error:(NSError **)error;
+- (YAJLParserStatus) parse: (NSData *) data error: (NSError **) error;
 
 @end

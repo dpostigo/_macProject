@@ -20,10 +20,10 @@
 - (id) initWithCoder: (NSCoder *) coder {
     self = [super initWithCoder: coder];
     if (self) {
-        self.shadow = [[NSShadow alloc] init];
+        self.shadow           = [[NSShadow alloc] init];
         self.shadowBlurRadius = 0;
-        self.shadowColor = [NSColor clearColor];
-        self.shadowOffset = NSMakeSize(0, 0);
+        self.shadowColor      = [NSColor clearColor];
+        self.shadowOffset     = NSMakeSize(0, 0);
     }
 
     return self;

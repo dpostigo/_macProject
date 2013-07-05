@@ -27,20 +27,12 @@
 @implementation BasicCustomRowView
 
 
-@synthesize cornerRadius;
-@synthesize cornerOptions;
-@synthesize borderColor;
-@synthesize borderWidth;
-@synthesize gradient;
 @synthesize selectedGradient;
-@synthesize backgroundFillColor;
-
-@synthesize shadow;
-@synthesize shadowOpacity;
-
 
 @synthesize insetRect;
+@synthesize pathOptions;
 
+@synthesize selectedPathOptions;
 
 - (id) initWithFrame: (NSRect) frameRect {
     self = [super initWithFrame: frameRect];
@@ -48,24 +40,24 @@
 
         insetRect = NSZeroRect;
 
-        shadow = [[NSShadow alloc] init];
-        shadow.shadowColor = [NSColor blackColor];
-        shadow.shadowBlurRadius = 2.0;
-        shadow.shadowOffset = NSMakeSize(0, -1);
-        shadowOpacity = 0.5;
-
-        cornerRadius = 2.0;
-        cornerOptions = JSUpperLeftCorner | JSUpperRightCorner | JSLowerLeftCorner | JSLowerRightCorner;
-        backgroundFillColor = [NSColor colorWithCalibratedWhite: 0.89 alpha: 1.0];
-        borderColor = [NSColor whiteColor];
-        borderWidth = 1.0;
-        gradient = [[NSGradient alloc] initWithColorsAndLocations:
+        pathOptions = [[PathOptions alloc] init];
+        pathOptions.cornerRadius  = 2.0;
+        pathOptions.cornerOptions = NSBezierPathUpperLeft | NSBezierPathUpperRight | NSBezierPathLowerLeft | NSBezierPathLowerRight;
+        pathOptions.borderColor   = [NSColor whiteColor];
+        pathOptions.borderWidth   = 1.0;
+        pathOptions.gradient      = [[NSGradient alloc] initWithColorsAndLocations:
                 [NSColor colorWithDeviceWhite: 0.85f alpha: 1.0f], 0.0f,
                 [NSColor colorWithDeviceWhite: 0.90f alpha: 1.0f], 0.2f,
                 [NSColor colorWithDeviceWhite: 0.93f alpha: 1.0f], 0.5f,
                 [NSColor colorWithDeviceWhite: 0.94f alpha: 1.0f], 0.7f,
                 [NSColor colorWithDeviceWhite: 0.95f alpha: 1.0f], 1.0f,
                 nil];
+
+        pathOptions.outerShadow                  = [[NSShadow alloc] init];
+        pathOptions.outerShadow.shadowColor      = [NSColor blackColor];
+        pathOptions.outerShadow.shadowBlurRadius = 2.0;
+        pathOptions.outerShadow.shadowOffset     = NSMakeSize(0, -1);
+
 
         selectedGradient = [[NSGradient alloc] initWithColorsAndLocations:
                 [NSColor colorWithDeviceWhite: 0.2 alpha: 1.0f], 0.0,
@@ -93,33 +85,87 @@
 }
 
 - (void) drawBackgroundInRect: (NSRect) dirtyRect {
-    BOOL selected = self.isSelected;
-    NSRect rect = [self modifiedRect: self.bounds];
+    BOOL   selected = self.isSelected;
+    NSRect rect     = [self modifiedRect: self.bounds];
     [self drawBackgroundInRect: rect selected: selected];
 }
 
 
 - (void) drawBackgroundInRect: (NSRect) dirtyRect selected: (BOOL) selected {
 
-    NSBezierPath *roundedPath = [NSBezierPath bezierPathWithRoundedRect: dirtyRect corners: cornerOptions radius: cornerRadius];
-    [roundedPath drawShadow: shadow shadowOpacity: shadowOpacity];
+    NSBezierPath *roundedPath = [NSBezierPath bezierPathWithRoundedRect: dirtyRect corners: self.cornerOptions radius: self.cornerRadius];
+    [roundedPath drawShadow: self.shadow shadowOpacity: shadowOpacity];
 
 
-    NSBezierPath *path = [NSBezierPath bezierPathWithRect: dirtyRect cornerRadius: cornerRadius options: NSBezierPathLowerLeft | NSBezierPathLowerRight | NSBezierPathUpperRight | NSBezierPathUpperLeft];
+    NSBezierPath *path = [NSBezierPath bezierPathWithRect: dirtyRect cornerRadius: self.cornerRadius options: NSBezierPathLowerLeft | NSBezierPathLowerRight | NSBezierPathUpperRight | NSBezierPathUpperLeft];
 
-    [path drawGradient: self.selected ? selectedGradient : gradient angle: -90];
-    [path drawStroke: borderColor width: borderWidth];
+    [path drawGradient: self.selected ? selectedGradient : self.gradient angle: -90];
+    [path drawStroke: self.borderColor width: self.borderWidth];
 }
-
-//
-//- (void) setSelected: (BOOL) selected {
-//    if (selected != self.isSelected) [self setNeedsDisplay: YES];
-//    [super setSelected: selected];
-//}
 
 
 - (BOOL) isOpaque {
     return NO;
+}
+
+
+#pragma mark Getters / Setters
+
+- (void) setCornerOptions: (NSBezierPathCornerOptions) cornerOptions1 {
+    pathOptions.cornerOptions = cornerOptions1;
+}
+
+- (NSBezierPathCornerOptions) cornerOptions {
+    return pathOptions.cornerOptions;
+}
+
+
+- (CGFloat) cornerRadius {
+    return pathOptions.cornerRadius;
+}
+
+- (void) setCornerRadius: (CGFloat) cornerRadius1 {
+    pathOptions.cornerRadius = cornerRadius1;
+}
+
+- (NSColor *) borderColor {
+    return pathOptions.borderColor;
+}
+
+- (void) setBorderColor: (NSColor *) borderColor1 {
+    pathOptions.borderColor = borderColor1;
+}
+
+- (CGFloat) borderWidth {
+    return pathOptions.borderWidth;
+}
+
+- (void) setBorderWidth: (CGFloat) borderWidth1 {
+    pathOptions.borderWidth = borderWidth1;
+}
+
+- (NSGradient *) gradient {
+    return pathOptions.gradient;
+}
+
+- (void) setGradient: (NSGradient *) gradient1 {
+    pathOptions.gradient = gradient1;
+}
+
+- (NSShadow *) innerShadow {
+    return pathOptions.innerShadow;
+}
+
+- (void) setInnerShadow: (NSShadow *) innerShadow {
+    pathOptions.innerShadow = innerShadow;
+}
+
+- (NSShadow *) outerShadow {
+    return pathOptions.outerShadow;
+}
+
+- (void) setOuterShadow: (NSShadow *) outerShadow {
+    pathOptions.outerShadow = outerShadow;
 }
 
 @end

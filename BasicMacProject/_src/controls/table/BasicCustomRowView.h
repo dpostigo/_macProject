@@ -8,38 +8,38 @@
 #import <Foundation/Foundation.h>
 #import "NSBezierPath+Additions.h"
 #import "BasicTableRowView.h"
+#import "PathOptions.h"
 
 
 @interface BasicCustomRowView : BasicTableRowView {
 
-    CGFloat borderWidth;
-    CGFloat cornerRadius;
     CGFloat shadowOpacity;
 
-    NSColor *borderColor;
-    NSColor *backgroundFillColor;
-    NSGradient *gradient;
     NSGradient *selectedGradient;
-    JSRoundedCornerOptions cornerOptions;
 
-    NSShadow *shadow;
     NSRect insetRect;
+    PathOptions *pathOptions;
+    PathOptions *selectedPathOptions;
 }
 
 
-@property(nonatomic) JSRoundedCornerOptions cornerOptions;
 @property(nonatomic) CGFloat cornerRadius;
+@property(nonatomic) CGFloat borderWidth;
+@property(nonatomic, strong) NSGradient  *gradient;
+@property(nonatomic, strong) NSGradient  *horizontalGradient;
+@property(nonatomic, strong) NSColor     *borderColor;
+@property(nonatomic, strong) NSColor     *innerBorderColor;
+@property(nonatomic, strong) PathOptions *pathOptions;
+@property(nonatomic, strong) NSShadow    *innerShadow;
+@property(nonatomic, strong) NSShadow    *outerShadow;
+@property(nonatomic) NSBezierPathCornerOptions cornerOptions;
 
-@property(nonatomic, strong) NSColor *borderColor;
-@property(nonatomic, strong) NSGradient *gradient;
-@property(nonatomic, strong) NSColor *backgroundFillColor;
 
-@property(nonatomic) CGFloat shadowOpacity;
-@property(nonatomic, strong) NSShadow *shadow;
+@property(nonatomic, strong) NSGradient *selectedGradient;
+
 
 @property(nonatomic) NSRect insetRect;
-@property(nonatomic) CGFloat borderWidth;
-@property(nonatomic, strong) NSGradient *selectedGradient;
+@property(nonatomic, strong) PathOptions *selectedPathOptions;
 - (NSRect) modifiedRect: (NSRect) rect;
 - (void) drawBackgroundInRect: (NSRect) dirtyRect selected: (BOOL) selected;
 @end

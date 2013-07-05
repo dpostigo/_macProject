@@ -12,10 +12,10 @@
 
     BOOL shouldCache;
     NSMutableDictionary *imageDictionary;
-    NSOperationQueue *queue;
+    NSOperationQueue    *queue;
 }
 
-@property(nonatomic, strong) NSOperationQueue *queue;
+@property(nonatomic, strong) NSOperationQueue    *queue;
 @property(nonatomic, strong) NSMutableDictionary *imageDictionary;
 @property(nonatomic) BOOL shouldCache;
 + (DPImageManager *) sharedManager;

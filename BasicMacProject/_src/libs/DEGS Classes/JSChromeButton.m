@@ -11,8 +11,7 @@
 
 @implementation JSChromeButton
 
-+ (Class)cellClass
-{
++ (Class) cellClass {
     return [JSChromeButtonCell class];
 }
 

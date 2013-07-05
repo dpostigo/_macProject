@@ -43,15 +43,14 @@
 //		2004-05-18  witness documented.
 // -----------------------------------------------------------------------------
 
-+(NSArray*)		arrayWithColor: (NSColor*) col
-{
-	CGFloat			fRed = 0, fGreen = 0, fBlue = 0, fAlpha = 1.0;
-	
-	col = [col colorUsingColorSpaceName: NSCalibratedRGBColorSpace];
-	[col getRed: &fRed green: &fGreen blue: &fBlue alpha: &fAlpha];
-	
-	return [self arrayWithObjects: [NSNumber numberWithFloat:fRed], [NSNumber numberWithFloat:fGreen],
-									[NSNumber numberWithFloat:fBlue], [NSNumber numberWithFloat:fAlpha], nil];
++ (NSArray *) arrayWithColor: (NSColor *) col {
+    CGFloat fRed = 0, fGreen = 0, fBlue = 0, fAlpha = 1.0;
+
+    col = [col colorUsingColorSpaceName: NSCalibratedRGBColorSpace];
+    [col getRed: &fRed green: &fGreen blue: &fBlue alpha: &fAlpha];
+
+    return [self arrayWithObjects: [NSNumber numberWithFloat: fRed], [NSNumber numberWithFloat: fGreen],
+                                   [NSNumber numberWithFloat: fBlue], [NSNumber numberWithFloat: fAlpha], nil];
 }
 
 
@@ -64,20 +63,18 @@
 //		2004-05-18  witness documented.
 // -----------------------------------------------------------------------------
 
--(NSColor*)		colorValue
-{
-	float			fRed = 0, fGreen = 0, fBlue = 0, fAlpha = 1.0;
-	
-	if( [self count] >= 3 )
-	{
-		fRed = [self[0] floatValue];
-		fGreen = [self[1] floatValue];
-		fBlue = [self[2] floatValue];
-	}
-	if( [self count] > 3 )	// Have alpha info?
-		fAlpha = [self[3] floatValue];
-	
-	return [NSColor colorWithCalibratedRed: fRed green: fGreen blue: fBlue alpha: fAlpha];
+- (NSColor *) colorValue {
+    float fRed = 0, fGreen = 0, fBlue = 0, fAlpha = 1.0;
+
+    if ([self count] >= 3) {
+        fRed   = [self[0] floatValue];
+        fGreen = [self[1] floatValue];
+        fBlue  = [self[2] floatValue];
+    }
+    if ([self count] > 3)    // Have alpha info?
+        fAlpha = [self[3] floatValue];
+
+    return [NSColor colorWithCalibratedRed: fRed green: fGreen blue: fBlue alpha: fAlpha];
 }
 
 @end

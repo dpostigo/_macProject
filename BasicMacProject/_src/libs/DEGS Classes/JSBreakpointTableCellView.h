@@ -12,10 +12,10 @@
 
 @interface JSBreakpointTableCellView : JSTableCellView
 
-@property (strong) IBOutlet JSTextField *nameTextField;
-@property (strong) IBOutlet JSTextField *filenameTextField;
-@property (strong) IBOutlet NSPopUpButton *formatButton;
-@property (strong) IBOutlet JSTokenField *dependenciesTokenField;
-@property (strong) IBOutlet JSTokenField *dependenciesBasisTokenField;
+@property(strong) IBOutlet JSTextField   *nameTextField;
+@property(strong) IBOutlet JSTextField   *filenameTextField;
+@property(strong) IBOutlet NSPopUpButton *formatButton;
+@property(strong) IBOutlet JSTokenField  *dependenciesTokenField;
+@property(strong) IBOutlet JSTokenField  *dependenciesBasisTokenField;
 
 @end

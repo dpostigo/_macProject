@@ -30,7 +30,7 @@
     self = [super init];
     if (self) {
         timeStarted = aTimeStarted;
-        projectId = aProjectId;
+        projectId   = aProjectId;
     }
 
     return self;
@@ -48,13 +48,12 @@
     self = [super init];
     if (self) {
         self.timeStarted = [aDecoder decodeObjectForKey: @"timeStarted"];
-        self.timeEnded = [aDecoder decodeObjectForKey: @"timeEnded"];
-        self.projectId = [aDecoder decodeObjectForKey: @"projectId"];
+        self.timeEnded   = [aDecoder decodeObjectForKey: @"timeEnded"];
+        self.projectId   = [aDecoder decodeObjectForKey: @"projectId"];
     }
 
     return self;
 }
-
 
 
 @end

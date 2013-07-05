@@ -10,7 +10,7 @@
 #import "BasicBackOfficeOperation.h"
 
 
-@interface GetDiscussionProcess : BasicBackOfficeOperation  {
+@interface GetDiscussionProcess : BasicBackOfficeOperation {
     Task *task;
 }
 

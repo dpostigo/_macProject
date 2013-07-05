@@ -109,10 +109,10 @@
     BOModalTableRowView *rowView = [[BOModalTableRowView alloc] init];
     if ([rowObject.textLabel isEqualToString: @"Task"]) {
         rowView.cornerOptions = JSUpperLeftCorner | JSUpperRightCorner;
-        rowView.cornerRadius = MODAL_CORNER_RADIUS * 0.5;
+        rowView.cornerRadius  = MODAL_CORNER_RADIUS * 0.5;
     } else if ([rowObject.textLabel isEqualToString: @"Observers"]) {
         rowView.cornerOptions = JSLowerLeftCorner | JSLowerRightCorner;
-        rowView.cornerRadius = MODAL_CORNER_RADIUS * 0.5;
+        rowView.cornerRadius  = MODAL_CORNER_RADIUS * 0.5;
     }
     return rowView;
 }
@@ -126,8 +126,8 @@
         BasicTokenCell *tokenCell = (BasicTokenCell *) tableCell;
         [tokenCell.tokenField.cell setPlaceholderString: rowObject.textLabel];
         tokenCell.tokenField.delegate = self;
-        tokenCell.imageView.image = image;
-        tokenCell.tokenField.enabled = NO;
+        tokenCell.imageView.image     = image;
+        tokenCell.tokenField.enabled  = NO;
 
         if (rowObject.detailTextLabel != nil) {
             tokenCell.tokenField.stringValue = rowObject.detailTextLabel;
@@ -153,7 +153,7 @@
         if (rowObject.detailTextLabel != nil) cell.textLabel.stringValue = rowObject.detailTextLabel;
 
 
-        cell.imageView.image = image;
+        cell.imageView.image   = image;
         cell.textField.enabled = NO;
 
         if (image == nil || [rowObject.textLabel isEqualToString: @"Task"]) {

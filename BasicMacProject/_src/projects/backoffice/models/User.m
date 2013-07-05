@@ -19,15 +19,15 @@
     self = [super init];
     if (self) {
 
-        self.id = [NSString stringWithFormat: @"%@", [dictionary objectForKey: @"id"]];
-        self.firstName = [dictionary objectForKey: @"first_name"];
-        self.lastName = [dictionary objectForKey: @"last_name"];
-        self.username = [dictionary objectForKey: @"primary_email"];
+        self.id           = [NSString stringWithFormat: @"%@", [dictionary objectForKey: @"id"]];
+        self.firstName    = [dictionary objectForKey: @"first_name"];
+        self.lastName     = [dictionary objectForKey: @"last_name"];
+        self.username     = [dictionary objectForKey: @"primary_email"];
         self.thumbnailURL = [dictionary objectForKey: @"avatar_url"];
 
-        self.userType = [[dictionary objectForKey: @"contact_type"] objectForKey: @"name"];
+        self.userType    = [[dictionary objectForKey: @"contact_type"] objectForKey: @"name"];
         self.displayName = [NSString stringWithFormat: @"%@ %@", firstName, lastName];
-        self.title = self.displayName;
+        self.title       = self.displayName;
     }
     return self;
 }

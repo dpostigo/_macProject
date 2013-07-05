@@ -11,10 +11,10 @@
 
 @interface JSDependencies : JSNode
 
-@property (nonatomic, strong) NSArray *vectors;
-@property (nonatomic, strong) NSArray *basis;
+@property(nonatomic, strong) NSArray *vectors;
+@property(nonatomic, strong) NSArray *basis;
 
-- (NSXMLElement *)exportAsXML;
-- (id)initFromXML:(NSXMLElement *)anElement;
+- (NSXMLElement *) exportAsXML;
+- (id) initFromXML: (NSXMLElement *) anElement;
 
 @end

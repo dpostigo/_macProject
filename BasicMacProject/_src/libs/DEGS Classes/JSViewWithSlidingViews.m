@@ -48,28 +48,28 @@ NSString *const JSViewWithSlidingViewDidChangedView = @"JSViewWithSlidingViewDid
         // first based on the passed direction we calculate how much we have to shift the current view to take it off screen
         // second we compute the initial point (offset) at which place the new view
         // third we decide if we want an horizontal or vertical slide (JSAnimationType)
-        CGFloat shift;
-        NSPoint offset;
+        CGFloat         shift;
+        NSPoint         offset;
         JSAnimationType animationType;
         switch (direction) {
             case JSSlidingFromTop:
-                shift = placeholder.bounds.size.height;
-                offset = NSMakePoint(0.0, shift);
+                shift         = placeholder.bounds.size.height;
+                offset        = NSMakePoint(0.0, shift);
                 animationType = JSSlidingUpAndDownAnimation;
                 break;
             case JSSlidingFromBottom:
-                shift = -placeholder.bounds.size.height;
-                offset = NSMakePoint(0.0, shift);
+                shift         = -placeholder.bounds.size.height;
+                offset        = NSMakePoint(0.0, shift);
                 animationType = JSSlidingUpAndDownAnimation;
                 break;
             case JSSlidingFromLeft:
-                shift = -placeholder.bounds.size.width;
-                offset = NSMakePoint(shift, 0.0);
+                shift         = -placeholder.bounds.size.width;
+                offset        = NSMakePoint(shift, 0.0);
                 animationType = JSSlidingLeftAndRightAnimation;
                 break;
             case JSSlidingFromRight:
-                shift = placeholder.bounds.size.width;
-                offset = NSMakePoint(shift, 0.0);
+                shift         = placeholder.bounds.size.width;
+                offset        = NSMakePoint(shift, 0.0);
                 animationType = JSSlidingLeftAndRightAnimation;
                 break;
         }
@@ -111,8 +111,8 @@ NSString *const JSViewWithSlidingViewDidChangedView = @"JSViewWithSlidingViewDid
 // create the constraints for placing the new view in the placeholder view
 // We always return constraints in order: left, width, top, height.
 - (NSArray *) layoutConstraintsForView: (NSView *) view offsetBy: (NSPoint) offset {
-    NSMutableArray *result = [NSMutableArray arrayWithCapacity: 4];
-    NSView *placeholder = self;
+    NSMutableArray *result      = [NSMutableArray arrayWithCapacity: 4];
+    NSView         *placeholder = self;
     [result addObject: [NSLayoutConstraint constraintWithItem: view
                                                     attribute: NSLayoutAttributeLeft
                                                     relatedBy: NSLayoutRelationEqual
@@ -145,7 +145,7 @@ NSString *const JSViewWithSlidingViewDidChangedView = @"JSViewWithSlidingViewDid
     // Finally prepare a new animation for the transition; we need it so that we can intercept animationDidStop:finished: and remove old view.
     CABasicAnimation *animation = [CABasicAnimation animation];
     animation.timingFunction = [CAMediaTimingFunction functionWithName: kCAMediaTimingFunctionEaseInEaseOut];
-    animation.delegate = self;
+    animation.delegate       = self;
 
     // The 4 constraints are ordered: offsetX, width, offsetY, height
     // NSSlidingUpAndDownAnimation has value 2 because we want to modify the y component

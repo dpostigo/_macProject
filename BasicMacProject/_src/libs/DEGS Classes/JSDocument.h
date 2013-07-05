@@ -19,18 +19,18 @@
 @interface JSDocument : NSDocument <JSSideBarDelegate, JSTreeControllerDelegate>
 
 // side view that allows the user to switch section
-@property (strong) IBOutlet JSSideBar *sideBar;
+@property(strong) IBOutlet JSSideBar *sideBar;
 
 // tree controller
-@property (nonatomic, strong) JSTreeController *treeController;
+@property(nonatomic, strong) JSTreeController *treeController;
 
 // compile the open document and handles eventual errors
-- (IBAction)compileScript:(id)sender;
+- (IBAction) compileScript: (id) sender;
 
 // run the compiled executable of the open document
-- (IBAction)runScript:(id)sender;
+- (IBAction) runScript: (id) sender;
 
 // process the output of the script execution
-- (IBAction)processOutputOfScript:(id)sender;
+- (IBAction) processOutputOfScript: (id) sender;
 
 @end

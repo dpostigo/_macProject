@@ -25,10 +25,10 @@
     self = [super init];
     if (self) {
 
-        self.id = [dictionary objectForKey: @"id"];
-        self.text = [dictionary objectForKey: @"comment_text"];
+        self.id        = [dictionary objectForKey: @"id"];
+        self.text      = [dictionary objectForKey: @"comment_text"];
         self.contactId = [NSString stringWithFormat: @"%@", [dictionary objectForKey: @"contact_id"]];
-        self.contact = [[Model sharedModel] contactForId: contactId];
+        self.contact   = [[Model sharedModel] contactForId: contactId];
 
         self.createdDate = [[Model sharedModel].defaultFormatter dateFromString: [dictionary objectForKey: @"created_at"]];
         self.attachments = [[NSMutableArray alloc] init];

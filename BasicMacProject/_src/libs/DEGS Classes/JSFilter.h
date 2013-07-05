@@ -12,11 +12,11 @@
 
 @interface JSFilter : JSNode
 
-@property (nonatomic, strong) JSDependencies *dependencies;
-@property (nonatomic, strong) NSString *evaluation;
-@property (nonatomic, strong) NSString *name;
+@property(nonatomic, strong) JSDependencies *dependencies;
+@property(nonatomic, strong) NSString       *evaluation;
+@property(nonatomic, strong) NSString       *name;
 
-- (NSXMLElement *)exportAsXML;
-- (id)initFromXML:(NSXMLElement *)anElement;
+- (NSXMLElement *) exportAsXML;
+- (id) initFromXML: (NSXMLElement *) anElement;
 
 @end

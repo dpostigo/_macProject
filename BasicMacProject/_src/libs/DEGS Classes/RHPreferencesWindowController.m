@@ -30,35 +30,42 @@
 
 #import "RHPreferencesWindowController.h"
 
-static NSString * const RHPreferencesWindowControllerSelectedItemIdentifier = @"RHPreferencesWindowControllerSelectedItemIdentifier";
+static NSString *const RHPreferencesWindowControllerSelectedItemIdentifier = @"RHPreferencesWindowControllerSelectedItemIdentifier";
 static const CGFloat RHPreferencesWindowControllerResizeAnimationDurationPer100Pixels = 0.13f;
 
 #pragma mark - Custom Item Placeholder Controller
 @interface RHPreferencesCustomPlaceholderController : NSObject <RHPreferencesViewControllerProtocol> {
     NSString *_identifier;
 }
-+(id)controllerWithIdentifier:(NSString*)identifier;
-@property (readwrite, nonatomic, retain) NSString *identifier;
+
++ (id) controllerWithIdentifier: (NSString *) identifier;
+@property(readwrite, nonatomic, retain) NSString *identifier;
 @end
 
 @implementation RHPreferencesCustomPlaceholderController
-@synthesize identifier=_identifier;
-+(id)controllerWithIdentifier:(NSString*)identifier{
-    RHPreferencesCustomPlaceholderController * placeholder = [[RHPreferencesCustomPlaceholderController alloc] init];
+
+@synthesize identifier = _identifier;
+
++ (id) controllerWithIdentifier: (NSString *) identifier {
+    RHPreferencesCustomPlaceholderController *placeholder = [[RHPreferencesCustomPlaceholderController alloc] init];
     placeholder.identifier = identifier;
     return placeholder;
 }
--(NSToolbarItem*)toolbarItem{
-    NSToolbarItem *item = [[NSToolbarItem alloc] initWithItemIdentifier:_identifier];
+
+- (NSToolbarItem *) toolbarItem {
+    NSToolbarItem *item = [[NSToolbarItem alloc] initWithItemIdentifier: _identifier];
     return item;
 }
--(NSString*)identifier{
+
+- (NSString *) identifier {
     return _identifier;
 }
--(NSImage*)toolbarItemImage{
+
+- (NSImage *) toolbarItemImage {
     return nil;
 }
--(NSString*)toolbarItemLabel{
+
+- (NSString *) toolbarItemLabel {
     return nil;
 }
 @end
@@ -69,83 +76,84 @@ static const CGFloat RHPreferencesWindowControllerResizeAnimationDurationPer100P
 @interface RHPreferencesWindowController ()
 
 //items
--(NSToolbarItem*)toolbarItemWithItemIdentifier:(NSString*)identifier;
--(NSToolbarItem*)newToolbarItemForViewController:(NSViewController<RHPreferencesViewControllerProtocol>*)controller;
--(void)reloadToolbarItems;
--(IBAction)selectToolbarItem:(NSToolbarItem*)itemToBeSelected;
--(NSArray*)toolbarItemIdentifiers;
+- (NSToolbarItem *) toolbarItemWithItemIdentifier: (NSString *) identifier;
+- (NSToolbarItem *) newToolbarItemForViewController: (NSViewController <RHPreferencesViewControllerProtocol> *) controller;
+- (void) reloadToolbarItems;
+- (IBAction) selectToolbarItem: (NSToolbarItem *) itemToBeSelected;
+- (NSArray *) toolbarItemIdentifiers;
 
 //NSWindowController methods
--(void)resizeWindowForContentSize:(NSSize)size duration:(CGFloat)duration;
+- (void) resizeWindowForContentSize: (NSSize) size duration: (CGFloat) duration;
 
 @end
 
-@implementation RHPreferencesWindowController 
+@implementation RHPreferencesWindowController
 
-@synthesize toolbar=_toolbar;
-@synthesize viewControllers=_viewControllers;
-@synthesize windowTitleShouldAutomaticlyUpdateToReflectSelectedViewController=_windowTitleShouldAutomaticlyUpdateToReflectSelectedViewController;
+@synthesize toolbar = _toolbar;
+@synthesize viewControllers = _viewControllers;
+@synthesize windowTitleShouldAutomaticlyUpdateToReflectSelectedViewController = _windowTitleShouldAutomaticlyUpdateToReflectSelectedViewController;
 
 #pragma mark - setup
--(id)initWithViewControllers:(NSArray*)controllers {
-    return [self initWithViewControllers:controllers andTitle:nil];
+- (id) initWithViewControllers: (NSArray *) controllers {
+    return [self initWithViewControllers: controllers andTitle: nil];
 }
 
--(id)initWithViewControllers:(NSArray*)controllers andTitle:(NSString*)title{
-    self = [super initWithWindowNibName:@"RHPreferencesWindow"];
-    if (self){
-        
+- (id) initWithViewControllers: (NSArray *) controllers andTitle: (NSString *) title {
+    self = [super initWithWindowNibName: @"RHPreferencesWindow"];
+    if (self) {
+
         //default settings
         _windowTitleShouldAutomaticlyUpdateToReflectSelectedViewController = YES;
 
         //store the controllers
-        [self setViewControllers:controllers];
+        [self setViewControllers: controllers];
         _unloadedWindowTitle = [title copy];
-        
+
     }
-    
+
     return self;
 }
 
 #pragma mark - properties
 
--(NSString*)windowTitle{
+- (NSString *) windowTitle {
     return [self isWindowLoaded] ? self.window.title : _unloadedWindowTitle;
 }
--(void)setWindowTitle:(NSString *)windowTitle{
-    if ([self isWindowLoaded]){
+
+- (void) setWindowTitle: (NSString *) windowTitle {
+    if ([self isWindowLoaded]) {
         self.window.title = windowTitle;
     } else {
         _unloadedWindowTitle = [windowTitle copy];
     }
 }
 
--(NSArray*)viewControllers{
+- (NSArray *) viewControllers {
     return _viewControllers;
 }
 
--(void)setViewControllers:(NSArray *)viewControllers{
-    if (_viewControllers != viewControllers){
+- (void) setViewControllers: (NSArray *) viewControllers {
+    if (_viewControllers != viewControllers) {
         NSUInteger oldSelectedIndex = [self selectedIndex];
-        
+
         _viewControllers = viewControllers;
-        
+
         //update the selected controller if we had one previously.
-        if (_selectedViewController){
-            if ([_viewControllers containsObject:_selectedViewController]){
+        if (_selectedViewController) {
+            if ([_viewControllers containsObject: _selectedViewController]) {
                 //cool, nothing to do
             } else {
-                [self setSelectedIndex:oldSelectedIndex]; //reset the currently selected view controller
+                [self setSelectedIndex: oldSelectedIndex]; //reset the currently selected view controller
             }
         } else {
             //initial launch state (need to select previously selected tab)
-            
+
             //set the selected controller 
-            NSViewController *selectedController = [self viewControllerWithIdentifier:[[NSUserDefaults standardUserDefaults] stringForKey:RHPreferencesWindowControllerSelectedItemIdentifier]];
-            if (selectedController){
-                [self setSelectedViewController:(id)selectedController];
+            NSViewController *selectedController = [self viewControllerWithIdentifier: [[NSUserDefaults standardUserDefaults] stringForKey: RHPreferencesWindowControllerSelectedItemIdentifier]];
+            if (selectedController) {
+                [self setSelectedViewController: (id) selectedController];
             } else {
-                [self setSelectedIndex:0]; // unknown, default to zero. 
+                [self setSelectedIndex: 0]; // unknown, default to zero.
             }
 
         }
@@ -154,11 +162,11 @@ static const CGFloat RHPreferencesWindowControllerResizeAnimationDurationPer100P
     }
 }
 
--(NSViewController<RHPreferencesViewControllerProtocol>*)selectedViewController{
+- (NSViewController <RHPreferencesViewControllerProtocol> *) selectedViewController {
     return _selectedViewController;
 }
 
--(void)setSelectedViewController:(NSViewController<RHPreferencesViewControllerProtocol> *)new{
+- (void) setSelectedViewController: (NSViewController <RHPreferencesViewControllerProtocol> *) new {
     //alias
     NSViewController *old = _selectedViewController;
 
@@ -166,115 +174,115 @@ static const CGFloat RHPreferencesWindowControllerResizeAnimationDurationPer100P
     _selectedViewController = new; //weak because we retain it in our array
 
     //stash to defaults also
-    [[NSUserDefaults standardUserDefaults] setObject:[self toolbarItemIdentifierForViewController:new] forKey:RHPreferencesWindowControllerSelectedItemIdentifier];
-    
+    [[NSUserDefaults standardUserDefaults] setObject: [self toolbarItemIdentifierForViewController: new] forKey: RHPreferencesWindowControllerSelectedItemIdentifier];
+
     //bail if not yet loaded
-    if (![self isWindowLoaded]){
+    if (![self isWindowLoaded]) {
         return;
-    }    
-    
-    if (old != new){
-                
+    }
+
+    if (old != new) {
+
         //notify the old vc that its going away
-        if ([old respondsToSelector:@selector(viewWillDisappear)]){
-            [(id)old viewWillDisappear];
+        if ([old respondsToSelector: @selector(viewWillDisappear)]) {
+            [(id) old viewWillDisappear];
         }
-        
+
         [old.view removeFromSuperview];
-        
-        if ([old respondsToSelector:@selector(viewDidDisappear)]){
-            [(id)old viewDidDisappear];
+
+        if ([old respondsToSelector: @selector(viewDidDisappear)]) {
+            [(id) old viewDidDisappear];
         }
-        
+
         //notify the new vc of its appearance
-        if ([new respondsToSelector:@selector(viewWillAppear)]){
-            [(id)new viewWillAppear];
-        }   
-                
+        if ([new respondsToSelector: @selector(viewWillAppear)]) {
+            [(id) new viewWillAppear];
+        }
+
         //resize to Preferred window size for given view (duration is determined by difference between current and new sizes)
         float hDifference = fabs(new.view.bounds.size.height - old.view.bounds.size.height);
         float wDifference = fabs(new.view.bounds.size.width - old.view.bounds.size.width);
-        float difference = MAX(hDifference, wDifference);
-        float duration = MAX(RHPreferencesWindowControllerResizeAnimationDurationPer100Pixels * ( difference / 100), 0.10); // we always want a slight animation        
-        [self resizeWindowForContentSize:new.view.bounds.size duration:duration];
+        float difference  = MAX(hDifference, wDifference);
+        float duration    = MAX(RHPreferencesWindowControllerResizeAnimationDurationPer100Pixels * (difference / 100), 0.10); // we always want a slight animation
+        [self resizeWindowForContentSize: new.view.bounds.size duration: duration];
 
-        double delayInSeconds = duration + 0.02; // +.02 to give time for resize to finish before appearing
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        double          delayInSeconds = duration + 0.02; // +.02 to give time for resize to finish before appearing
+        dispatch_time_t popTime        = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
 
             //make sure our "new" vc is still the selected vc before we add it as a subview, otherwise it's possible we could add more than one vc to the window. (the user has likely clicked to another tab during resizing.)
-            if (_selectedViewController == new){
-                [self.window.contentView addSubview:new.view];
-                
-                if ([new respondsToSelector:@selector(viewDidAppear)]){
-                    [(id)new viewDidAppear];
+            if (_selectedViewController == new) {
+                [self.window.contentView addSubview: new.view];
+
+                if ([new respondsToSelector: @selector(viewDidAppear)]) {
+                    [(id) new viewDidAppear];
                 }
 
                 //if there is a initialKeyView set it as key
-                if ([new respondsToSelector:@selector(initialKeyView)]){
+                if ([new respondsToSelector: @selector(initialKeyView)]) {
                     [[new initialKeyView] becomeFirstResponder];
                 }
             }
         });
-        
 
-        [new.view setFrameOrigin:NSMakePoint(0, 0)]; // force our view to a 0,0 origin, fixed in the lower right corner.
-        [new.view setAutoresizingMask:NSViewMaxXMargin|NSViewMaxYMargin];
-        
+
+        [new.view setFrameOrigin: NSMakePoint(0, 0)]; // force our view to a 0,0 origin, fixed in the lower right corner.
+        [new.view setAutoresizingMask: NSViewMaxXMargin | NSViewMaxYMargin];
+
         //set the currently selected toolbar item
-        [_toolbar setSelectedItemIdentifier:[self toolbarItemIdentifierForViewController:new]];
-                
+        [_toolbar setSelectedItemIdentifier: [self toolbarItemIdentifierForViewController: new]];
+
         //if we should auto-update window title, do it now 
-        if (_windowTitleShouldAutomaticlyUpdateToReflectSelectedViewController){
-            NSString *identifier = [self toolbarItemIdentifierForViewController:new];
-            NSString *title = [[self toolbarItemWithItemIdentifier:identifier] label];
-            if (title)[self setWindowTitle:title];
+        if (_windowTitleShouldAutomaticlyUpdateToReflectSelectedViewController) {
+            NSString *identifier = [self toolbarItemIdentifierForViewController: new];
+            NSString *title      = [[self toolbarItemWithItemIdentifier: identifier] label];
+            if (title)[self setWindowTitle: title];
         }
     }
 }
 
--(NSUInteger)selectedIndex{
-    return [_viewControllers indexOfObject:[self selectedViewController]];
+- (NSUInteger) selectedIndex {
+    return [_viewControllers indexOfObject: [self selectedViewController]];
 }
 
--(void)setSelectedIndex:(NSUInteger)selectedIndex{
-    id newSelection = (selectedIndex >= [_viewControllers count]) ? [_viewControllers lastObject] : [_viewControllers objectAtIndex:selectedIndex];
-    [self setSelectedViewController:newSelection];
+- (void) setSelectedIndex: (NSUInteger) selectedIndex {
+    id newSelection = (selectedIndex >= [_viewControllers count]) ? [_viewControllers lastObject] : [_viewControllers objectAtIndex: selectedIndex];
+    [self setSelectedViewController: newSelection];
 }
 
--(NSViewController <RHPreferencesViewControllerProtocol>*)viewControllerWithIdentifier:(NSString*)identifier{
-    for (NSViewController <RHPreferencesViewControllerProtocol>* vc in _viewControllers){
+- (NSViewController <RHPreferencesViewControllerProtocol> *) viewControllerWithIdentifier: (NSString *) identifier {
+    for (NSViewController <RHPreferencesViewControllerProtocol> *vc in _viewControllers) {
 
         //set the toolbar back to the current controllers selection
-        if ([vc respondsToSelector:@selector(toolbarItem)] && [[[vc toolbarItem] itemIdentifier] isEqualToString:identifier]){
-            return vc;
-        } 
-        
-        if ([[vc identifier] isEqualToString:identifier]){
+        if ([vc respondsToSelector: @selector(toolbarItem)] && [[[vc toolbarItem] itemIdentifier] isEqualToString: identifier]) {
             return vc;
         }
-    }    
+
+        if ([[vc identifier] isEqualToString: identifier]) {
+            return vc;
+        }
+    }
     return nil;
 }
 
 
 #pragma mark - View Controller Methods
 
--(void)resizeWindowForContentSize:(NSSize)size duration:(CGFloat)duration{
+- (void) resizeWindowForContentSize: (NSSize) size duration: (CGFloat) duration {
     NSWindow *window = [self window];
-    
-    NSRect frame = [window contentRectForFrameRect:[window frame]];
-    
-    CGFloat newX = NSMinX(frame) + (0.5* (NSWidth(frame) - size.width));
-    NSRect newFrame = [window frameRectForContentRect:NSMakeRect(newX, NSMaxY(frame) - size.height, size.width, size.height)];
-    
-    if (duration > 0.0f){
+
+    NSRect frame = [window contentRectForFrameRect: [window frame]];
+
+    CGFloat newX     = NSMinX(frame) + (0.5 * (NSWidth(frame) - size.width));
+    NSRect  newFrame = [window frameRectForContentRect: NSMakeRect(newX, NSMaxY(frame) - size.height, size.width, size.height)];
+
+    if (duration > 0.0f) {
         [NSAnimationContext beginGrouping];
-        [[NSAnimationContext currentContext] setDuration:duration];
-            [[window animator] setFrame:newFrame display:YES];
+        [[NSAnimationContext currentContext] setDuration: duration];
+        [[window animator] setFrame: newFrame display: YES];
         [NSAnimationContext endGrouping];
     } else {
-        [window setFrame:newFrame display:YES];
+        [window setFrame: newFrame display: YES];
     }
 
 }
@@ -282,36 +290,36 @@ static const CGFloat RHPreferencesWindowControllerResizeAnimationDurationPer100P
 
 #pragma mark - Toolbar Items
 
--(NSToolbarItem*)toolbarItemWithItemIdentifier:(NSString*)identifier{
-    for (NSToolbarItem *item in _toolbarItems){
-        if ([[item itemIdentifier] isEqualToString:identifier]){
+- (NSToolbarItem *) toolbarItemWithItemIdentifier: (NSString *) identifier {
+    for (NSToolbarItem *item in _toolbarItems) {
+        if ([[item itemIdentifier] isEqualToString: identifier]) {
             return item;
         }
-    }    
+    }
     return nil;
 }
 
--(NSString*)toolbarItemIdentifierForViewController:(NSViewController*)controller{
-    if ([controller respondsToSelector:@selector(toolbarItem)]){
-        NSToolbarItem *item = [(id)controller toolbarItem];
-        if (item){
+- (NSString *) toolbarItemIdentifierForViewController: (NSViewController *) controller {
+    if ([controller respondsToSelector: @selector(toolbarItem)]) {
+        NSToolbarItem *item = [(id) controller toolbarItem];
+        if (item) {
             return item.itemIdentifier;
         }
     }
-    
-    if ([controller respondsToSelector:@selector(identifier)]){
-        return [(id)controller identifier];
+
+    if ([controller respondsToSelector: @selector(identifier)]) {
+        return [(id) controller identifier];
     }
-    
+
     return nil;
 }
 
 
--(NSToolbarItem*)newToolbarItemForViewController:(NSViewController<RHPreferencesViewControllerProtocol>*)controller{
+- (NSToolbarItem *) newToolbarItemForViewController: (NSViewController <RHPreferencesViewControllerProtocol> *) controller {
     //if the controller wants to provide a toolbar item, return that
-    if ([controller respondsToSelector:@selector(toolbarItem)]){
+    if ([controller respondsToSelector: @selector(toolbarItem)]) {
         NSToolbarItem *item = [controller toolbarItem];
-        if (item){
+        if (item) {
             item = [item copy]; //we copy the item because it needs to be unique for a specific toolbar
             item.target = self;
             item.action = @selector(selectToolbarItem:);
@@ -320,164 +328,170 @@ static const CGFloat RHPreferencesWindowControllerResizeAnimationDurationPer100P
     }
 
     //otherwise, default to creation of a new item.
-    
-    NSToolbarItem *new = [[NSToolbarItem alloc] initWithItemIdentifier:controller.identifier];
-    new.image = controller.toolbarItemImage;
-    new.label = controller.toolbarItemLabel;
+
+    NSToolbarItem *new = [[NSToolbarItem alloc] initWithItemIdentifier: controller.identifier];
+    new.image  = controller.toolbarItemImage;
+    new.label  = controller.toolbarItemLabel;
     new.target = self;
-    new.action = @selector(selectToolbarItem:);    
+    new.action = @selector(selectToolbarItem:);
     return new;
 }
 
--(void)reloadToolbarItems{
-    NSMutableArray *newItems = [NSMutableArray arrayWithCapacity:[_viewControllers count]];
-    
-    for (NSViewController<RHPreferencesViewControllerProtocol>* vc in _viewControllers){
+- (void) reloadToolbarItems {
+    NSMutableArray *newItems = [NSMutableArray arrayWithCapacity: [_viewControllers count]];
 
-        NSToolbarItem *insertItem = [self toolbarItemWithItemIdentifier:vc.identifier];
-        if (!insertItem){
+    for (NSViewController <RHPreferencesViewControllerProtocol> *vc in _viewControllers) {
+
+        NSToolbarItem *insertItem = [self toolbarItemWithItemIdentifier: vc.identifier];
+        if (!insertItem) {
             //create a new one
-            insertItem = [self newToolbarItemForViewController:vc];
+            insertItem = [self newToolbarItemForViewController: vc];
         }
-        [newItems addObject:insertItem];
+        [newItems addObject: insertItem];
     }
-    
-    _toolbarItems = [NSArray arrayWithArray:newItems];
+
+    _toolbarItems = [NSArray arrayWithArray: newItems];
 }
 
 
--(IBAction)selectToolbarItem:(NSToolbarItem*)itemToBeSelected{
-    if ([_selectedViewController commitEditing] && [[NSUserDefaultsController sharedUserDefaultsController] commitEditing]){
-        NSUInteger index = [_toolbarItems indexOfObject:itemToBeSelected];
-        if (index != NSNotFound){
-            [self setSelectedViewController:[_viewControllers objectAtIndex:index]];
+- (IBAction) selectToolbarItem: (NSToolbarItem *) itemToBeSelected {
+    if ([_selectedViewController commitEditing] && [[NSUserDefaultsController sharedUserDefaultsController] commitEditing]) {
+        NSUInteger index = [_toolbarItems indexOfObject: itemToBeSelected];
+        if (index != NSNotFound) {
+            [self setSelectedViewController: [_viewControllers objectAtIndex: index]];
         }
     } else {
         //set the toolbar back to the current controllers selection
-        if ([_selectedViewController respondsToSelector:@selector(toolbarItem)] && [[_selectedViewController toolbarItem] itemIdentifier]){
-            [_toolbar setSelectedItemIdentifier:[[_selectedViewController toolbarItem] itemIdentifier]];
-        } else if ([_selectedViewController respondsToSelector:@selector(identifier)]){
-            [_toolbar setSelectedItemIdentifier:[_selectedViewController identifier]];
+        if ([_selectedViewController respondsToSelector: @selector(toolbarItem)] && [[_selectedViewController toolbarItem] itemIdentifier]) {
+            [_toolbar setSelectedItemIdentifier: [[_selectedViewController toolbarItem] itemIdentifier]];
+        } else if ([_selectedViewController respondsToSelector: @selector(identifier)]) {
+            [_toolbar setSelectedItemIdentifier: [_selectedViewController identifier]];
         }
 
     }
 }
 
--(NSArray*)toolbarItemIdentifiers{
-    NSMutableArray *identifiers = [NSMutableArray arrayWithCapacity:[_viewControllers count]];
-    
-    for (id viewController in _viewControllers){
-        [identifiers addObject:[self toolbarItemIdentifierForViewController:viewController]];
+- (NSArray *) toolbarItemIdentifiers {
+    NSMutableArray *identifiers = [NSMutableArray arrayWithCapacity: [_viewControllers count]];
+
+    for (id viewController in _viewControllers) {
+        [identifiers addObject: [self toolbarItemIdentifierForViewController: viewController]];
     }
-    
-    return [NSArray arrayWithArray:identifiers];
+
+    return [NSArray arrayWithArray: identifiers];
 }
 
 #pragma mark - Custom Placeholder Controller Toolbar Items
 
-+(id)separatorPlaceholderController{
-    return [RHPreferencesCustomPlaceholderController controllerWithIdentifier:NSToolbarSeparatorItemIdentifier];
++ (id) separatorPlaceholderController {
+    return [RHPreferencesCustomPlaceholderController controllerWithIdentifier: NSToolbarSeparatorItemIdentifier];
 }
-+(id)flexibleSpacePlaceholderController{ 
-    return [RHPreferencesCustomPlaceholderController controllerWithIdentifier:NSToolbarFlexibleSpaceItemIdentifier];
+
++ (id) flexibleSpacePlaceholderController {
+    return [RHPreferencesCustomPlaceholderController controllerWithIdentifier: NSToolbarFlexibleSpaceItemIdentifier];
 }
-+(id)spacePlaceholderController{ 
-    return [RHPreferencesCustomPlaceholderController controllerWithIdentifier:NSToolbarSpaceItemIdentifier]; 
+
++ (id) spacePlaceholderController {
+    return [RHPreferencesCustomPlaceholderController controllerWithIdentifier: NSToolbarSpaceItemIdentifier];
 }
-+(id)showColorsPlaceholderController{ 
-    return [RHPreferencesCustomPlaceholderController controllerWithIdentifier:NSToolbarShowColorsItemIdentifier]; 
+
++ (id) showColorsPlaceholderController {
+    return [RHPreferencesCustomPlaceholderController controllerWithIdentifier: NSToolbarShowColorsItemIdentifier];
 }
-+(id)showFontsPlaceholderController{ 
-    return [RHPreferencesCustomPlaceholderController controllerWithIdentifier:NSToolbarShowFontsItemIdentifier]; 
+
++ (id) showFontsPlaceholderController {
+    return [RHPreferencesCustomPlaceholderController controllerWithIdentifier: NSToolbarShowFontsItemIdentifier];
 }
-+(id)customizeToolbarPlaceholderController{ 
-    return [RHPreferencesCustomPlaceholderController controllerWithIdentifier:NSToolbarCustomizeToolbarItemIdentifier]; 
+
++ (id) customizeToolbarPlaceholderController {
+    return [RHPreferencesCustomPlaceholderController controllerWithIdentifier: NSToolbarCustomizeToolbarItemIdentifier];
 }
-+(id)printPlaceholderController{ 
-    return [RHPreferencesCustomPlaceholderController controllerWithIdentifier:NSToolbarPrintItemIdentifier]; 
+
++ (id) printPlaceholderController {
+    return [RHPreferencesCustomPlaceholderController controllerWithIdentifier: NSToolbarPrintItemIdentifier];
 }
 
 #pragma mark - NSWindowController
 
--(void)loadWindow{
+- (void) loadWindow {
     [super loadWindow];
-    
-    if (_unloadedWindowTitle){
+
+    if (_unloadedWindowTitle) {
         self.window.title = _unloadedWindowTitle;
         _unloadedWindowTitle = nil;
     }
-    
-    if (_selectedViewController){
-        
+
+    if (_selectedViewController) {
+
         //add the view to the windows content view
-        if ([_selectedViewController respondsToSelector:@selector(viewWillAppear)]){
+        if ([_selectedViewController respondsToSelector: @selector(viewWillAppear)]) {
             [_selectedViewController viewWillAppear];
-        }        
-        
-        [self.window.contentView addSubview:[_selectedViewController view]];
-        
-        if ([_selectedViewController respondsToSelector:@selector(viewDidAppear)]){
+        }
+
+        [self.window.contentView addSubview: [_selectedViewController view]];
+
+        if ([_selectedViewController respondsToSelector: @selector(viewDidAppear)]) {
             [_selectedViewController viewDidAppear];
-        }        
-        
+        }
+
         //resize to Preferred window size for given view    
-        [self resizeWindowForContentSize:_selectedViewController.view.bounds.size duration:0.0f];
-        
-        [_selectedViewController.view setFrameOrigin:NSMakePoint(0, 0)];
-        [_selectedViewController.view setAutoresizingMask:NSViewMaxXMargin|NSViewMaxYMargin];
-        
-        
+        [self resizeWindowForContentSize: _selectedViewController.view.bounds.size duration: 0.0f];
+
+        [_selectedViewController.view setFrameOrigin: NSMakePoint(0, 0)];
+        [_selectedViewController.view setAutoresizingMask: NSViewMaxXMargin | NSViewMaxYMargin];
+
+
         //set the current controllers tab to selected    
-        [_toolbar setSelectedItemIdentifier:[self toolbarItemIdentifierForViewController:_selectedViewController]];
-        
+        [_toolbar setSelectedItemIdentifier: [self toolbarItemIdentifierForViewController: _selectedViewController]];
+
         //if there is a initialKeyView set it as key
-        if ([_selectedViewController respondsToSelector:@selector(initialKeyView)]){
+        if ([_selectedViewController respondsToSelector: @selector(initialKeyView)]) {
             [[_selectedViewController initialKeyView] becomeFirstResponder];
         }
-        
+
         //if we should auto-update window title, do it now 
-        if (_windowTitleShouldAutomaticlyUpdateToReflectSelectedViewController){
-            NSString *identifier = [self toolbarItemIdentifierForViewController:_selectedViewController];
-            NSString *title = [[self toolbarItemWithItemIdentifier:identifier] label];
-            if (title)[self setWindowTitle:title];
+        if (_windowTitleShouldAutomaticlyUpdateToReflectSelectedViewController) {
+            NSString *identifier = [self toolbarItemIdentifierForViewController: _selectedViewController];
+            NSString *title      = [[self toolbarItemWithItemIdentifier: identifier] label];
+            if (title)[self setWindowTitle: title];
         }
     }
 }
 
--(void)windowDidLoad{
+- (void) windowDidLoad {
     [super windowDidLoad];
 }
 
 #pragma mark - NSWindowDelegate
 
--(BOOL)windowShouldClose:(id)sender{
-    if (_selectedViewController){
+- (BOOL) windowShouldClose: (id) sender {
+    if (_selectedViewController) {
         return [_selectedViewController commitEditing];
     }
-    
+
     return YES;
 }
 
--(void)windowWillClose:(NSNotification *)notification{
+- (void) windowWillClose: (NSNotification *) notification {
     // steal firstResponder away from text fields, to commit editing to bindings
-    [self.window makeFirstResponder:self];
+    [self.window makeFirstResponder: self];
 }
 
 #pragma mark - NSToolbarDelegate
 
--(NSToolbarItem *)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSString *)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag{
-   return [self toolbarItemWithItemIdentifier:itemIdentifier];
+- (NSToolbarItem *) toolbar: (NSToolbar *) toolbar itemForItemIdentifier: (NSString *) itemIdentifier willBeInsertedIntoToolbar: (BOOL) flag {
+    return [self toolbarItemWithItemIdentifier: itemIdentifier];
 }
 
--(NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar*)toolbar{
+- (NSArray *) toolbarDefaultItemIdentifiers: (NSToolbar *) toolbar {
     return [self toolbarItemIdentifiers];
 }
 
--(NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar*)toolbar{
+- (NSArray *) toolbarAllowedItemIdentifiers: (NSToolbar *) toolbar {
     return [self toolbarItemIdentifiers];
 }
 
--(NSArray *)toolbarSelectableItemIdentifiers:(NSToolbar *)toolbar{
+- (NSArray *) toolbarSelectableItemIdentifiers: (NSToolbar *) toolbar {
     return [self toolbarItemIdentifiers];
 }
 

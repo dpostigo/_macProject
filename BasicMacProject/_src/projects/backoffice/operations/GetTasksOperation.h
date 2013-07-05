@@ -12,6 +12,5 @@
 
 @interface GetTasksOperation : BasicBackOfficeOperation {
 
-
 }
 @end

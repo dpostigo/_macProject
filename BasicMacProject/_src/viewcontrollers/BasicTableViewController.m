@@ -26,8 +26,8 @@
 - (void) loadView {
     [super loadView];
     tableDelegate = [[BasicTableViewDelegate alloc] initWithViewController: self];
-    table.delegate = tableDelegate;
-    table.dataSource = tableDelegate;
+    table.delegate       = tableDelegate;
+    table.dataSource     = tableDelegate;
     self.allowsSelection = YES;
 }
 
@@ -41,22 +41,22 @@
 
 - (id) tableView: (NSTableView *) tableView objectValueForTableColumn: (NSTableColumn *) tableColumn row: (NSInteger) row {
     NSUInteger columnIndex = [table.tableColumns indexOfObject: tableColumn];
-    TableSection *tableSection = [dataSource objectAtIndex: columnIndex];
-    TableRowObject *rowObject = [tableSection.rows objectAtIndex: row];
+    TableSection   *tableSection = [dataSource objectAtIndex: columnIndex];
+    TableRowObject *rowObject    = [tableSection.rows objectAtIndex: row];
     return [self objectValueForTableSection: tableSection andRow: rowObject];
 }
 
 - (NSView *) tableView: (NSTableView *) tableView viewForTableColumn: (NSTableColumn *) tableColumn row: (NSInteger) row {
     NSUInteger columnIndex = [table.tableColumns indexOfObject: tableColumn];
-    TableSection *tableSection = [dataSource objectAtIndex: columnIndex];
-    TableRowObject *rowObject = [tableSection.rows objectAtIndex: row];
+    TableSection   *tableSection = [dataSource objectAtIndex: columnIndex];
+    TableRowObject *rowObject    = [tableSection.rows objectAtIndex: row];
     return [self cellForRowObject: rowObject tableSection: tableSection];
 }
 
 - (CGFloat) tableView: (NSTableView *) tableView heightOfRow: (NSInteger) row {
 
-    TableSection *tableSection = [dataSource objectAtIndex: 0];
-    TableRowObject *rowObject = [tableSection.rows objectAtIndex: row];
+    TableSection   *tableSection = [dataSource objectAtIndex: 0];
+    TableRowObject *rowObject    = [tableSection.rows objectAtIndex: row];
     return [self heightForRowObject: rowObject tableSection: tableSection];
 }
 
@@ -65,8 +65,8 @@
 }
 
 - (NSTableRowView *) tableView: (NSTableView *) tableView rowViewForRow: (NSInteger) row {
-    TableSection *tableSection = [dataSource objectAtIndex: 0];
-    TableRowObject *rowObject = [tableSection.rows objectAtIndex: row];
+    TableSection   *tableSection = [dataSource objectAtIndex: 0];
+    TableRowObject *rowObject    = [tableSection.rows objectAtIndex: row];
     return [self tableRowView: rowObject tableSection: tableSection];
 }
 

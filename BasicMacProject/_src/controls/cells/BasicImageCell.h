@@ -21,6 +21,6 @@
 
 @property(nonatomic) CGFloat cornerRadius;
 @property(nonatomic, strong) NSShadow *shadow;
-@property(nonatomic, strong) NSColor *borderColor;
+@property(nonatomic, strong) NSColor  *borderColor;
 @property(nonatomic) CGFloat borderWidth;
 @end

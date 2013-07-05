@@ -17,7 +17,7 @@
 - (void) loadView {
     [super loadView];
 
-    self.allowsSelection = YES;
+    self.allowsSelection    = YES;
     outline.backgroundColor = [NSColor colorWithString: @"292D35"];
     [self expand];
 }
@@ -36,7 +36,7 @@
 - (BasicTableCellView *) headerCellForOutlineSection: (OutlineSection *) outlineSection {
     BasicTableCellView *cell = [super headerCellForOutlineSection: outlineSection];
     cell.textLabel.textColor = [NSColor whiteColor];
-    cell.textLabel.text = outlineSection.title;
+    cell.textLabel.text      = outlineSection.title;
 
     return cell;
 }

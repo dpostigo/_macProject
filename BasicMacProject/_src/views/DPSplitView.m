@@ -52,7 +52,7 @@
 
 
 - (void) splitContainerUpdatedMaxHeight: (SplitViewContainer *) container {
-    CGFloat currentHeight = self.frame.size.height;
+    CGFloat currentHeight   = self.frame.size.height;
     CGFloat allowableHeight = currentHeight - container.maximumHeight;
     SplitViewContainer *otherContainer = [self otherSplitContainer: container];
     [otherContainer setMinimumHeight: allowableHeight shouldUpdate: YES];
@@ -60,7 +60,7 @@
 
 
 - (void) splitContainerUpdatedMinHeight: (SplitViewContainer *) container {
-    CGFloat currentHeight = self.frame.size.height;
+    CGFloat currentHeight   = self.frame.size.height;
     CGFloat allowableHeight = currentHeight - container.minimumHeight;
     SplitViewContainer *otherContainer = [self otherSplitContainer: container];
     [otherContainer setMaximumHeight: allowableHeight shouldUpdate: NO];
@@ -68,7 +68,7 @@
 }
 
 - (void) splitContainerUpdatedMaxWidth: (SplitViewContainer *) container {
-    CGFloat currentHeight = self.frame.size.width;
+    CGFloat currentHeight   = self.frame.size.width;
     CGFloat allowableHeight = currentHeight - container.maximumWidth;
     SplitViewContainer *otherContainer = [self otherSplitContainer: container];
 
@@ -79,11 +79,10 @@
 
 
 - (void) splitContainerUpdatedMinWidth: (SplitViewContainer *) container {
-    CGFloat currentHeight = self.frame.size.width;
+    CGFloat currentHeight   = self.frame.size.width;
     CGFloat allowableHeight = currentHeight - container.minimumWidth;
     SplitViewContainer *otherContainer = [self otherSplitContainer: container];
     [otherContainer setMaximumWidth: allowableHeight shouldUpdate: NO];
-
 
 }
 

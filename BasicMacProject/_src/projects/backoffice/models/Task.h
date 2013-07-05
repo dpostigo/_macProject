@@ -15,15 +15,15 @@
 
 @interface Task : BasicObject {
 
-    User *assignee;
-    Job *job;
+    User           *assignee;
+    Job            *job;
     NSMutableArray *observerIds;
-    NSString *addedById;
-    NSString *notes;
-    NSString *dueDateString;
-    NSString *startDateString;
-    NSString *completedDateString;
-    ServiceItem *serviceItem;
+    NSString       *addedById;
+    NSString       *notes;
+    NSString       *dueDateString;
+    NSString       *startDateString;
+    NSString       *completedDateString;
+    ServiceItem    *serviceItem;
 
     NSDate *dueDate;
     NSDate *startDate;
@@ -33,15 +33,15 @@
 }
 
 
-@property(nonatomic, strong) Job *job;
-@property(nonatomic, strong) User *assignee;
-@property(nonatomic, strong) ServiceItem *serviceItem;
-@property(nonatomic, retain) NSString *addedById;
-@property(nonatomic, retain) NSString *notes;
+@property(nonatomic, strong) Job            *job;
+@property(nonatomic, strong) User           *assignee;
+@property(nonatomic, strong) ServiceItem    *serviceItem;
+@property(nonatomic, retain) NSString       *addedById;
+@property(nonatomic, retain) NSString       *notes;
 @property(nonatomic, strong) NSMutableArray *observerIds;
-@property(nonatomic, strong) NSDate *startDate;
-@property(nonatomic, strong) NSDate *dueDate;
-@property(nonatomic, strong) NSDate *completedDate;
+@property(nonatomic, strong) NSDate         *startDate;
+@property(nonatomic, strong) NSDate         *dueDate;
+@property(nonatomic, strong) NSDate         *completedDate;
 @property(nonatomic, strong) NSMutableArray *discussion;
 - (id) initWithDictionary: (NSDictionary *) dictionary;
 @end

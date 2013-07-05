@@ -42,16 +42,16 @@ static inline CGPathRef createClippingPathWithRectAndRadius(NSRect rect, CGFloat
 }
 
 static inline CGGradientRef createGradientWithColors(NSColor *startingColor, NSColor *endingColor) {
-    CGFloat locations[2] = {0.0f, 1.0f,};
+    CGFloat    locations[2]    = {0.0f, 1.0f,};
     CGColorRef cgStartingColor = [startingColor IN_CGColorCreate];
-    CGColorRef cgEndingColor = [endingColor IN_CGColorCreate];
+    CGColorRef cgEndingColor   = [endingColor IN_CGColorCreate];
 #if __has_feature(objc_arc)
     CFArrayRef colors = (__bridge CFArrayRef) [NSArray arrayWithObjects: (__bridge id) cgStartingColor, (__bridge id) cgEndingColor, nil];
 #else
     CFArrayRef colors = (CFArrayRef)[NSArray arrayWithObjects:(id)cgStartingColor, (id)cgEndingColor, nil];
     #endif
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, colors, locations);
+    CGGradientRef   gradient   = CGGradientCreateWithColors(colorSpace, colors, locations);
     CGColorSpaceRelease(colorSpace);
     CGColorRelease(cgStartingColor);
     CGColorRelease(cgEndingColor);
@@ -75,23 +75,23 @@ static inline CGGradientRef createGradientWithColors(NSColor *startingColor, NSC
 }
 
 - (void) drawNoiseWithOpacity: (CGFloat) opacity {
-    static CGImageRef noiseImageRef = nil;
+    static CGImageRef      noiseImageRef = nil;
     static dispatch_once_t oncePredicate;
     dispatch_once(&oncePredicate, ^{
         NSUInteger width = 124, height = width;
-        NSUInteger size = width * height;
+        NSUInteger size  = width * height;
         char *rgba = (char *) malloc(size);
         srand(120);
-        for (NSUInteger i = 0; i < size; ++i) {rgba[i] = rand() % 256;}
-        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceGray();
-        CGContextRef bitmapContext =
-                CGBitmapContextCreate(rgba, width, height, 8, width, colorSpace, kCGImageAlphaNone);
+        for (NSUInteger i             = 0; i < size; ++i) {rgba[i] = rand() % 256;}
+        CGColorSpaceRef colorSpace    = CGColorSpaceCreateDeviceGray();
+        CGContextRef    bitmapContext =
+                                CGBitmapContextCreate(rgba, width, height, 8, width, colorSpace, kCGImageAlphaNone);
         CFRelease(colorSpace);
         noiseImageRef = CGBitmapContextCreateImage(bitmapContext);
         CFRelease(bitmapContext);
         free(rgba);
     });
-    CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
+    CGContextRef           context       = [[NSGraphicsContext currentContext] graphicsPort];
     CGContextSaveGState(context);
     CGContextSetAlpha(context, opacity);
     CGContextSetBlendMode(context, kCGBlendModeScreen);
@@ -99,7 +99,7 @@ static inline CGGradientRef createGradientWithColors(NSColor *startingColor, NSC
         CGFloat scaleFactor = [[self window] backingScaleFactor];
         CGContextScaleCTM(context, 1 / scaleFactor, 1 / scaleFactor);
     }
-    CGRect imageRect = (CGRect) {CGPointZero, CGImageGetWidth(noiseImageRef), CGImageGetHeight(noiseImageRef)};
+    CGRect                 imageRect     = (CGRect) {CGPointZero, CGImageGetWidth(noiseImageRef), CGImageGetHeight(noiseImageRef)};
     CGContextDrawTiledImage(context, imageRect, noiseImageRef);
     CGContextRestoreGState(context);
 }
@@ -107,22 +107,22 @@ static inline CGGradientRef createGradientWithColors(NSColor *startingColor, NSC
 - (void) drawRect: (NSRect) dirtyRect {
     NSLog(@"%s", __PRETTY_FUNCTION__);
     DPCustomWindow *window = (DPCustomWindow *) [self window];
-    BOOL drawsAsMainWindow = ([window isMainWindow] && [[NSApplication sharedApplication] isActive]);
-    NSRect drawingRect = [self bounds];
+    BOOL   drawsAsMainWindow = ([window isMainWindow] && [[NSApplication sharedApplication] isActive]);
+    NSRect drawingRect       = [self bounds];
     if (window.titleBarDrawingBlock) {
         CGPathRef clippingPath = createClippingPathWithRectAndRadius(drawingRect, self.cornerRadius);
         window.titleBarDrawingBlock(drawsAsMainWindow, NSRectToCGRect(drawingRect), clippingPath);
         CGPathRelease(clippingPath);
     } else {
         CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
-        NSColor *startColor = drawsAsMainWindow ? window.titleBarStartColor: window.inactiveTitleBarStartColor;
-        NSColor *endColor = drawsAsMainWindow ? window.titleBarEndColor: window.inactiveTitleBarEndColor;
+        NSColor *startColor = drawsAsMainWindow ? window.titleBarStartColor : window.inactiveTitleBarStartColor;
+        NSColor *endColor   = drawsAsMainWindow ? window.titleBarEndColor : window.inactiveTitleBarEndColor;
         if (IN_RUNNING_LION) {
-            startColor = startColor ? : (drawsAsMainWindow ? IN_COLOR_MAIN_START_L: IN_COLOR_NOTMAIN_START_L);
-            endColor = endColor ? : (drawsAsMainWindow ? IN_COLOR_MAIN_END_L: IN_COLOR_NOTMAIN_END_L);
+            startColor = startColor ? : (drawsAsMainWindow ? IN_COLOR_MAIN_START_L : IN_COLOR_NOTMAIN_START_L);
+            endColor   = endColor ? : (drawsAsMainWindow ? IN_COLOR_MAIN_END_L : IN_COLOR_NOTMAIN_END_L);
         } else {
-            startColor = startColor ? : (drawsAsMainWindow ? IN_COLOR_MAIN_START: IN_COLOR_NOTMAIN_START);
-            endColor = endColor ? : (drawsAsMainWindow ? IN_COLOR_MAIN_END: IN_COLOR_NOTMAIN_END);
+            startColor = startColor ? : (drawsAsMainWindow ? IN_COLOR_MAIN_START : IN_COLOR_NOTMAIN_START);
+            endColor   = endColor ? : (drawsAsMainWindow ? IN_COLOR_MAIN_END : IN_COLOR_NOTMAIN_END);
         }
         NSRect clippingRect = drawingRect;
 #if IN_COMPILING_LION
@@ -141,11 +141,11 @@ static inline CGGradientRef createGradientWithColors(NSColor *startingColor, NSC
                 CGPointMake(NSMidX(drawingRect), NSMaxY(drawingRect)), 0);
         CGGradientRelease(gradient);
         if ([window showsBaselineSeparator]) {
-            NSColor *bottomColor = drawsAsMainWindow ? window.baselineSeparatorColor: window.inactiveBaselineSeparatorColor;
+            NSColor *bottomColor = drawsAsMainWindow ? window.baselineSeparatorColor : window.inactiveBaselineSeparatorColor;
             if (IN_RUNNING_LION) {
-                bottomColor = bottomColor ? bottomColor: drawsAsMainWindow ? IN_COLOR_MAIN_BOTTOM_L: IN_COLOR_NOTMAIN_BOTTOM_L;
+                bottomColor = bottomColor ? bottomColor : drawsAsMainWindow ? IN_COLOR_MAIN_BOTTOM_L : IN_COLOR_NOTMAIN_BOTTOM_L;
             } else {
-                bottomColor = bottomColor ? bottomColor: drawsAsMainWindow ? IN_COLOR_MAIN_BOTTOM: IN_COLOR_NOTMAIN_BOTTOM;
+                bottomColor = bottomColor ? bottomColor : drawsAsMainWindow ? IN_COLOR_MAIN_BOTTOM : IN_COLOR_NOTMAIN_BOTTOM;
             }
             NSRect bottomRect = NSMakeRect(0.0, NSMinY(drawingRect), NSWidth(drawingRect), 1.0);
             [bottomColor set];
@@ -179,15 +179,15 @@ static inline CGGradientRef createGradientWithColors(NSColor *startingColor, NSC
 
 - (void) getTitleFrame: (out NSRect *) frame textAttributes: (out NSDictionary **) attributes forWindow: (DPCustomWindow *) window {
     BOOL drawsAsMainWindow = ([window isMainWindow] && [[NSApplication sharedApplication] isActive]);
-    NSShadow *titleTextShadow = drawsAsMainWindow ? window.titleTextShadow: window.inactiveTitleTextShadow;
+    NSShadow *titleTextShadow = drawsAsMainWindow ? window.titleTextShadow : window.inactiveTitleTextShadow;
     if (titleTextShadow == nil) {
         titleTextShadow = [[NSShadow alloc] init];
         titleTextShadow.shadowBlurRadius = 0.0;
-        titleTextShadow.shadowOffset = NSMakeSize(0, -1);
-        titleTextShadow.shadowColor = [NSColor colorWithDeviceWhite: 1.0 alpha: 0.5];
+        titleTextShadow.shadowOffset     = NSMakeSize(0, -1);
+        titleTextShadow.shadowColor      = [NSColor colorWithDeviceWhite: 1.0 alpha: 0.5];
     }
-    NSColor *titleTextColor = drawsAsMainWindow ? window.titleTextColor: window.inactiveTitleTextColor;
-    titleTextColor = titleTextColor ? titleTextColor: drawsAsMainWindow ? IN_COLOR_MAIN_TITLE_TEXT: IN_COLOR_NOTMAIN_TITLE_TEXT;
+    NSColor *titleTextColor = drawsAsMainWindow ? window.titleTextColor : window.inactiveTitleTextColor;
+    titleTextColor = titleTextColor ? titleTextColor : drawsAsMainWindow ? IN_COLOR_MAIN_TITLE_TEXT : IN_COLOR_NOTMAIN_TITLE_TEXT;
     NSDictionary *titleTextStyles = [NSDictionary dictionaryWithObjectsAndKeys:
             [NSFont titleBarFontOfSize: [NSFont systemFontSizeForControlSize: NSRegularControlSize]], NSFontAttributeName,
             titleTextColor, NSForegroundColorAttributeName,
@@ -196,7 +196,7 @@ static inline CGGradientRef createGradientWithColors(NSColor *startingColor, NSC
     NSSize titleSize = [window.title sizeWithAttributes: titleTextStyles];
     NSRect titleTextRect;
     titleTextRect.size = titleSize;
-    NSButton *docIconButton = [window standardWindowButton: NSWindowDocumentIconButton];
+    NSButton *docIconButton  = [window standardWindowButton: NSWindowDocumentIconButton];
     NSButton *versionsButton = [window standardWindowButton: NSWindowDocumentVersionsButton];
     if (docIconButton) {
         NSRect docIconButtonFrame = [self convertRect: docIconButton.frame fromView: docIconButton.superview];
@@ -214,7 +214,7 @@ static inline CGGradientRef createGradientWithColors(NSColor *startingColor, NSC
     else {
         titleTextRect.origin.x = NSMidX(self.bounds) - titleSize.width / 2;
     }
-    titleTextRect.origin.y = NSMaxY(self.bounds) - titleSize.height - 2.0;
+    titleTextRect.origin.y   = NSMaxY(self.bounds) - titleSize.height - 2.0;
     if (frame) {
         *frame = titleTextRect;
     }

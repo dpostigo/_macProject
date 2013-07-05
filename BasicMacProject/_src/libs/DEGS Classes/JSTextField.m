@@ -8,21 +8,20 @@
 
 #import "JSTextField.h"
 
-NSString * const JSTextFieldDidBecomeFirstResponderNotification = @"JSTextFieldDidBecomeFirstResponderNotification";
+NSString *const JSTextFieldDidBecomeFirstResponderNotification = @"JSTextFieldDidBecomeFirstResponderNotification";
 
 @implementation JSTextField
 
 @dynamic delegate;
 
-- (BOOL)becomeFirstResponder;
-{
+- (BOOL) becomeFirstResponder; {
     // If the control's delegate responds to controlDidBecomeFirstResponder, invoke it. Also post a notification.
     BOOL didBecomeFirstResponder = [super becomeFirstResponder];
-    NSNotification *notification = [NSNotification notificationWithName:JSTextFieldDidBecomeFirstResponderNotification object:self];
-    if ( [self delegate] && [[self delegate] respondsToSelector:@selector(textFieldDidBecomeFirstResponder:)] ) {
-        [[self delegate] textFieldDidBecomeFirstResponder:notification];
+    NSNotification *notification = [NSNotification notificationWithName: JSTextFieldDidBecomeFirstResponderNotification object: self];
+    if ([self delegate] && [[self delegate] respondsToSelector: @selector(textFieldDidBecomeFirstResponder:)]) {
+        [[self delegate] textFieldDidBecomeFirstResponder: notification];
     }
-    [[NSNotificationCenter defaultCenter] postNotification:notification];
+    [[NSNotificationCenter defaultCenter] postNotification: notification];
     return didBecomeFirstResponder;
 }
 

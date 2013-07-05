@@ -6,7 +6,7 @@
 
 @implementation JSPathbarCell
 
-+ (Class)pathComponentCellClass {
++ (Class) pathComponentCellClass {
     return [JSPathbarComponentCell class];
 }
 

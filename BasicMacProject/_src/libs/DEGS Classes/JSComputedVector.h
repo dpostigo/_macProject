@@ -12,10 +12,10 @@
 
 @interface JSComputedVector : JSGeneralVector
 
-@property (nonatomic, strong) JSDependencies *dependencies;
-@property (nonatomic, strong) NSString *definition;
+@property(nonatomic, strong) JSDependencies *dependencies;
+@property(nonatomic, strong) NSString       *definition;
 
-- (NSXMLElement *)exportAsXML;
-- (id)initFromXML:(NSXMLElement *)anElement;
+- (NSXMLElement *) exportAsXML;
+- (id) initFromXML: (NSXMLElement *) anElement;
 
 @end

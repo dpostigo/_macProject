@@ -24,12 +24,12 @@
     NSLog(@"%s", __PRETTY_FUNCTION__);
 
     newTaskWindow.titleBarHeight = 0;
-    newTaskWindow.cornerRadius = 30;
+    newTaskWindow.cornerRadius   = 30;
 
     [_model subscribeDelegate: self];
-//    [contentWindow resetBottomView: self];
-//    [contentWindow resetMainView: self];
-//    [contentWindow resetSidebarView: self];
+    //    [contentWindow resetBottomView: self];
+    //    [contentWindow resetMainView: self];
+    //    [contentWindow resetSidebarView: self];
 
     [self setupTitleBar];
 
@@ -37,14 +37,14 @@
     [self embedViewController: [[LoginTableViewController alloc] initWithDefaultNib] inView: loginPanel.contentView];
     //    [self embedViewController: [[BOSidebarViewController alloc] initWithDefaultNib] inView: leftView];
 
-//    [loginWindow makeKeyWindow];
+    //    [loginWindow makeKeyWindow];
     [loginPanel makeKeyWindow];
     if (_model.loggedIn) {
         [contentWindow makeKeyAndOrderFront: self];
         addTaskController = [[AddTaskViewController alloc] initWithDefaultNib];
     } else {
         [loginWindow makeKeyAndOrderFront: self];
-//        [loginPanel makeKeyAndOrderFront: self];
+        //        [loginPanel makeKeyAndOrderFront: self];
     }
 
 }

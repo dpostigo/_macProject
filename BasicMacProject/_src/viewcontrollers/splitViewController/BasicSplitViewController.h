@@ -25,7 +25,7 @@
 
 
 @property(nonatomic) BOOL dividerEnabled;
-@property(nonatomic, strong) NSSplitView *splitView;
+@property(nonatomic, strong) DPSplitView        *splitView;
 @property(nonatomic, strong) SplitViewContainer *sidebar;
 @property(nonatomic, strong) SplitViewContainer *contentView;
 @property(nonatomic, strong) SplitViewContainer *footer;

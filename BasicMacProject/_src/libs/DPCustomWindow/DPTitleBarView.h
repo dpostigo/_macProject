@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface DPTitleBarView : NSView   {
+@interface DPTitleBarView : NSView {
 
     CGFloat cornerRadius;
 }

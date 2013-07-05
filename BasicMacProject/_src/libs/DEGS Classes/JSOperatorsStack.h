@@ -14,15 +14,15 @@
 
 @interface JSOperatorsStack : JSNode
 
-@property (readonly) NSArray *operators;
+@property(readonly) NSArray *operators;
 
-@property (readonly) NSUInteger numberOfOperators;
-- (void)addOperators:(JSOperators *)operators;
-- (void)addOperators:(JSOperators *)operators atIndex:(NSUInteger)index;
-- (void)deleteOperatorsAtIndex:(NSUInteger)index;
-- (void)deleteOperatorsAtIndexes:(NSIndexSet *)indexes;
+@property(readonly) NSUInteger numberOfOperators;
+- (void) addOperators: (JSOperators *) operators;
+- (void) addOperators: (JSOperators *) operators atIndex: (NSUInteger) index;
+- (void) deleteOperatorsAtIndex: (NSUInteger) index;
+- (void) deleteOperatorsAtIndexes: (NSIndexSet *) indexes;
 
-- (NSArray *)exportAsXMLElements;
-- (id)initFromXMLElements:(NSArray *)elements;
+- (NSArray *) exportAsXMLElements;
+- (id) initFromXMLElements: (NSArray *) elements;
 
 @end

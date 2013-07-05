@@ -16,10 +16,9 @@
 
 @class RoundWindowFrameView;
 
-@interface RoundWindow : NSWindow
-{
-	NSView *childContentView;
-	NSButton *closeButton;
+@interface RoundWindow : NSWindow {
+    NSView   *childContentView;
+    NSButton *closeButton;
 }
 
 @end

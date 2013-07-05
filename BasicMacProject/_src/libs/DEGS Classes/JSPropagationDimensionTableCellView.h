@@ -12,6 +12,6 @@
 
 @interface JSPropagationDimensionTableCellView : JSTableCellView
 
-@property (strong) IBOutlet JSTextField *nameTextField;
+@property(strong) IBOutlet JSTextField *nameTextField;
 
 @end

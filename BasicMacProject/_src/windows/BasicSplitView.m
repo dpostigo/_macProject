@@ -48,7 +48,7 @@
     if (isCollapsed) {
         [self constrainCollapsedView: aView toSize: 0];
     } else {
-        CGFloat currentSize = self.isVertical ? aView.width: aView.height;
+        CGFloat currentSize = self.isVertical ? aView.width : aView.height;
         [self constrainExpandedView: aView toSize: currentSize];
     }
 }
@@ -69,7 +69,7 @@
     NSUInteger index = [self.subviews indexOfObject: aView];
     if (index != -1) {
 
-        CGPoint point = [[unconstrainedSizes objectAtIndex: index] pointValue];
+        CGPoint point   = [[unconstrainedSizes objectAtIndex: index] pointValue];
         CGFloat minSize = point.x;
         CGFloat maxSize = point.y;
         [self setMinSize: minSize ofSubviewAtIndex: index];
@@ -80,10 +80,10 @@
 - (void) storeMinMax {
     unconstrainedSizes = [[NSMutableArray alloc] init];
     for (NSView *subview in self.subviews) {
-        NSUInteger index = [self.subviews indexOfObject: subview];
-        CGFloat maxSize = [self maxSizeForSubviewAtIndex: index];
-        CGFloat minSize = [self minSizeForSubviewAtIndex: index];
-        CGPoint point = CGPointMake(minSize, maxSize);
+        NSUInteger index   = [self.subviews indexOfObject: subview];
+        CGFloat    maxSize = [self maxSizeForSubviewAtIndex: index];
+        CGFloat    minSize = [self minSizeForSubviewAtIndex: index];
+        CGPoint    point   = CGPointMake(minSize, maxSize);
         [unconstrainedSizes addObject: [NSValue valueWithPoint: point]];
     }
 }

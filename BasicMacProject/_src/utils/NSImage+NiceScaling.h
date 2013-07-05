@@ -56,23 +56,23 @@
 @interface NSImage (NiceScaling)
 
 // NSImage -> NSImage (fit):
--(NSImage*) scaledImageToFitSize: (NSSize)fitIn;
--(NSImage*) scaledImageToFitSize: (NSSize)fitIn withInterpolation: (NSImageInterpolation)inter;
--(NSImage*) scaledImageToFitSize: (NSSize)fitIn withInterpolation: (NSImageInterpolation)inter andBox: (BOOL)doBox;
+- (NSImage *) scaledImageToFitSize: (NSSize) fitIn;
+- (NSImage *) scaledImageToFitSize: (NSSize) fitIn withInterpolation: (NSImageInterpolation) inter;
+- (NSImage *) scaledImageToFitSize: (NSSize) fitIn withInterpolation: (NSImageInterpolation) inter andBox: (BOOL) doBox;
 
 // NSImage -> NSImage (cover):
--(NSImage*) scaledImageToCoverSize: (NSSize)fitIn;
--(NSImage*) scaledImageToCoverSize: (NSSize)fitIn withInterpolation: (NSImageInterpolation)inter;
--(NSImage*) scaledImageToCoverSize: (NSSize)fitIn withInterpolation: (NSImageInterpolation)inter andBox: (BOOL)doBox;
--(NSImage*) scaledImageToCoverSize: (NSSize)fitIn withInterpolation: (NSImageInterpolation)inter
-						andBox: (BOOL)doBox align: (NSImageAlignment)align;
+- (NSImage *) scaledImageToCoverSize: (NSSize) fitIn;
+- (NSImage *) scaledImageToCoverSize: (NSSize) fitIn withInterpolation: (NSImageInterpolation) inter;
+- (NSImage *) scaledImageToCoverSize: (NSSize) fitIn withInterpolation: (NSImageInterpolation) inter andBox: (BOOL) doBox;
+- (NSImage *) scaledImageToCoverSize: (NSSize) fitIn withInterpolation: (NSImageInterpolation) inter
+                              andBox: (BOOL) doBox align: (NSImageAlignment) align;
 
 // [NSImage size] -> NSSize:
--(NSSize)   scaledSizeToFitSize: (NSSize)size;
--(NSSize)   scaledSizeToCoverSize: (NSSize)size;
+- (NSSize) scaledSizeToFitSize: (NSSize) size;
+- (NSSize) scaledSizeToCoverSize: (NSSize) size;
 
 // NSSize -> NSSize:
-+(NSSize)   scaledSize: (NSSize)imgSize toFitSize: (NSSize)size;
-+(NSSize)   scaledSize: (NSSize)imgSize toCoverSize: (NSSize)size;
++ (NSSize) scaledSize: (NSSize) imgSize toFitSize: (NSSize) size;
++ (NSSize) scaledSize: (NSSize) imgSize toCoverSize: (NSSize) size;
 
 @end

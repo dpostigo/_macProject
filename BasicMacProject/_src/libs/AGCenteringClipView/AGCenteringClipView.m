@@ -13,7 +13,7 @@
 
 
 - (void) centerDocument {
-    NSRect docRect = [[self documentView] frame];
+    NSRect docRect  = [[self documentView] frame];
     NSRect clipRect = [self bounds];
 
     // The origin point should have integral values or drawing anomalies will occur.
@@ -40,10 +40,10 @@
 // ----------------------------------------
 // We need to override this so that the superclass doesn't override our new origin point.
 - (NSPoint) constrainScrollPoint: (NSPoint) proposedNewOrigin {
-    NSRect docRect = [[self documentView] frame];
-    NSRect clipRect = [self bounds];
-    CGFloat maxX = docRect.size.width - clipRect.size.width;
-    CGFloat maxY = docRect.size.height - clipRect.size.height;
+    NSRect  docRect  = [[self documentView] frame];
+    NSRect  clipRect = [self bounds];
+    CGFloat maxX     = docRect.size.width - clipRect.size.width;
+    CGFloat maxY     = docRect.size.height - clipRect.size.height;
 
     clipRect.origin = proposedNewOrigin; // shift origin to proposed location
 

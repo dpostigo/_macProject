@@ -14,15 +14,15 @@
     NSColor *imageShadowColor;
 
     CGFloat cornerRadius;
-    NSColor *strokeColor;
-    NSColor *innerStrokeColor;
+    NSColor    *strokeColor;
+    NSColor    *innerStrokeColor;
     NSGradient *gradientColor;
 
 
     BOOL autoAdjustsCornerRadius;
 
-    NSColor *disabledStrokeColor;
-    NSColor *disabledInnerStrokeColor;
+    NSColor    *disabledStrokeColor;
+    NSColor    *disabledInnerStrokeColor;
     NSGradient *disabledGradientColor;
 }
 
@@ -36,8 +36,8 @@
 @property(nonatomic) BOOL autoAdjustsCornerRadius;
 @property(nonatomic, strong) NSGradient *gradientColor;
 @property(nonatomic, strong) NSGradient *disabledGradientColor;
-@property(nonatomic, strong) NSColor *disabledStrokeColor;
-@property(nonatomic, strong) NSColor *disabledInnerStrokeColor;
+@property(nonatomic, strong) NSColor    *disabledStrokeColor;
+@property(nonatomic, strong) NSColor    *disabledInnerStrokeColor;
 - (void) setup;
 - (void) drawOuter: (NSGraphicsContext *) context frame: (NSRect) frame;
 - (void) drawStroke: (NSGraphicsContext *) context frame: (NSRect) frame;

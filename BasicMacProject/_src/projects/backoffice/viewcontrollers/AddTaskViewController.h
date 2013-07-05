@@ -20,14 +20,14 @@
 {
 
     IBOutlet NSDatePicker *datePicker;
-    NSString *selectedJobId;
-    NSString *selectedTaskTitle;
-    NSString *selectedNotes;
-    NSString *selectedStartDate;
-    NSString *selectedDueDate;
-    NSString *selectedServiceItemId;
-    NSString *selectedAssigneeId;
-    NSMutableArray *selectedObserverIds;
+    NSString              *selectedJobId;
+    NSString              *selectedTaskTitle;
+    NSString              *selectedNotes;
+    NSString              *selectedStartDate;
+    NSString              *selectedDueDate;
+    NSString              *selectedServiceItemId;
+    NSString              *selectedAssigneeId;
+    NSMutableArray        *selectedObserverIds;
 
 
     BasicTokenField *assigneeTokenField;
@@ -38,7 +38,7 @@
 
     NSMutableDictionary *textFieldDict;
 
-    NSArray *assigneesSource;
+    NSArray      *assigneesSource;
     ActivityView *assigneeActivityView;
 
     CGSize modalSize;

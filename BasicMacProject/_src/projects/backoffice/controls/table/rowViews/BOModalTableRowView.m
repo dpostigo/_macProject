@@ -17,15 +17,15 @@
     self = [super initWithFrame: frameRect];
     if (self) {
 
-        shadow.shadowBlurRadius = 2.0;
-        shadow.shadowOffset = NSMakeSize(0, -1);
-        shadow.shadowColor = [NSColor lightGrayColor];
+        self.shadow.shadowBlurRadius = 2.0;
+        self.shadow.shadowOffset     = NSMakeSize(0, -1);
+        self.shadow.shadowColor      = [NSColor lightGrayColor];
 
-        cornerRadius = 0.0;
-        backgroundFillColor = [NSColor colorWithCalibratedWhite: 0.95 alpha: 1.0];
-        borderColor = [NSColor clearColor];
+        self.cornerRadius    = 0.0;
+        self.backgroundColor = [NSColor colorWithCalibratedWhite: 0.95 alpha: 1.0];
+        self.borderColor     = [NSColor clearColor];
 
-        gradient = [[NSGradient alloc] initWithColorsAndLocations:
+        self.gradient = [[NSGradient alloc] initWithColorsAndLocations:
                 [NSColor colorWithDeviceWhite: 0.85 alpha: 1.0f], 0.0,
                 [NSColor colorWithDeviceWhite: 0.90 alpha: 1.0f], 0.2,
                 [NSColor colorWithDeviceWhite: 0.93 alpha: 1.0f], 0.5,

@@ -15,6 +15,6 @@
 @interface JSFeaturesViewController : JSSectionViewController <JSSyntaxHighlighterDelegate>
 
 // designated initialiser
-- (id)initWithFeatures:(JSFeatures *)features driver:(JSDriver *)driver;
+- (id) initWithFeatures: (JSFeatures *) features driver: (JSDriver *) driver;
 
 @end

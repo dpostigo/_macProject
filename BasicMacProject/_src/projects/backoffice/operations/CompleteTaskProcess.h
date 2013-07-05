@@ -14,14 +14,14 @@
 @interface CompleteTaskProcess : BasicBackOfficeOperation {
 
     NSString *taskId;
-    NSDate *completedDate;
+    NSDate   *completedDate;
     CGFloat taskTime;
     Task *task;
 }
 
 
 @property(nonatomic, retain) NSString *taskId;
-@property(nonatomic, strong) NSDate *completedDate;
+@property(nonatomic, strong) NSDate   *completedDate;
 @property(nonatomic) CGFloat taskTime;
 @property(nonatomic, strong) Task *task;
 - (id) initWithTask: (Task *) aTask completedDate: (NSDate *) aCompletedDate;

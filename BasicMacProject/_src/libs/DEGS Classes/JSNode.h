@@ -13,15 +13,15 @@
 @interface JSNode : NSObject
 
 // the parent of the current leaf
-@property (nonatomic, strong) id parent;
+@property(nonatomic, strong) id parent;
 
 // the root element of the tree
-@property (readonly) JSXMDS *root;
+@property(readonly) JSXMDS *root;
 
 // The following property and method are used to provide a mapping by the name of an element in the xmds specification and the name of the equivalent property in DEGS implementation.
-- (BOOL)addObjectsFromPathComponents:(NSMutableArray *)components toPathObjects:(NSMutableArray *)pathObjects;
+- (BOOL) addObjectsFromPathComponents: (NSMutableArray *) components toPathObjects: (NSMutableArray *) pathObjects;
 
 // return the chain of objects from the current node to the root node
-- (NSArray *)pathObjects;
+- (NSArray *) pathObjects;
 
 @end

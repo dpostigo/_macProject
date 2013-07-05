@@ -6,10 +6,10 @@
 
 
 #import <Foundation/Foundation.h>
-#import "BasicBackgroundView.h"
+#import "BasicBackgroundViewOld.h"
 
 
-@interface BasicWhiteView : BasicBackgroundView {
+@interface BasicWhiteView : BasicBackgroundViewOld {
 
 }
 @end

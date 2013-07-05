@@ -18,11 +18,11 @@
 @implementation RoundWindowFrameView
 
 - (NSRect) resizeRect {
-    const CGFloat resizeBoxSize = 16.0;
+    const CGFloat resizeBoxSize      = 16.0;
     const CGFloat contentViewPadding = 5.5;
 
     NSRect contentViewRect = [[self window] contentRectForFrameRect: [[self window] frame]];
-    NSRect resizeRect = NSMakeRect(
+    NSRect resizeRect      = NSMakeRect(
             NSMaxX(contentViewRect) + contentViewPadding,
             NSMinY(contentViewRect) - resizeBoxSize - contentViewPadding,
             resizeBoxSize,
@@ -48,7 +48,7 @@
 
     NSWindow *window = [self window];
     NSPoint originalMouseLocation = [window convertBaseToScreen: [event locationInWindow]];
-    NSRect originalFrame = [window frame];
+    NSRect  originalFrame         = [window frame];
 
     while (YES) {
         //
@@ -66,7 +66,7 @@
         // Work out how much the mouse has moved
         //
         NSPoint newMouseLocation = [window convertBaseToScreen: [newEvent locationInWindow]];
-        NSPoint delta = NSMakePoint(
+        NSPoint delta            = NSMakePoint(
                 newMouseLocation.x - originalMouseLocation.x,
                 newMouseLocation.y - originalMouseLocation.y);
 
@@ -91,8 +91,8 @@
             // Constrain to the window's min and max size
             //
             NSRect newContentRect = [window contentRectForFrameRect: newFrame];
-            NSSize maxSize = [window maxSize];
-            NSSize minSize = [window minSize];
+            NSSize maxSize        = [window maxSize];
+            NSSize minSize        = [window minSize];
             if (newContentRect.size.width > maxSize.width) {
                 newFrame.size.width -= newContentRect.size.width - maxSize.width;
             }
@@ -125,11 +125,11 @@
     NSBezierPath *circlePath = [NSBezierPath bezierPathWithOvalInRect: [self bounds]];
 
     NSGradient *aGradient =
-            [[NSGradient alloc]
-                    initWithColorsAndLocations:
-                            [NSColor whiteColor], (CGFloat) 0.0,
-                            [NSColor lightGrayColor], (CGFloat) 1.0,
-                            nil];
+                       [[NSGradient alloc]
+                               initWithColorsAndLocations:
+                                       [NSColor whiteColor], (CGFloat) 0.0,
+                                       [NSColor lightGrayColor], (CGFloat) 1.0,
+                                       nil];
     [aGradient drawInBezierPath: circlePath angle: 90];
 
     [[NSColor whiteColor] set];
@@ -147,7 +147,7 @@
     [[NSColor blackColor] set];
     NSString *windowTitle = [[self window] title];
     NSRect titleRect = [self bounds];
-    titleRect.origin.y = titleRect.size.height - (WINDOW_FRAME_PADDING - 7);
+    titleRect.origin.y    = titleRect.size.height - (WINDOW_FRAME_PADDING - 7);
     titleRect.size.height = (WINDOW_FRAME_PADDING - 7);
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphStyle setAlignment: NSCenterTextAlignment];

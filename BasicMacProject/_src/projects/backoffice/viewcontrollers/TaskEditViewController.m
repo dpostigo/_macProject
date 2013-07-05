@@ -97,7 +97,6 @@
                 || [rowObject.textLabel isEqualToString: @"Assignee"]) {
             tokenCell.tokenField.objectValue = rowObject.detailTextLabel;
 
-
         } else if ([rowObject.textLabel isEqualToString: @"Observers"]) {
             //            tokenCell.tokenField.tokenLimit = 9999;
 
@@ -139,13 +138,13 @@
     //    [self returnAllTextFields];
 
     Task *task = _model.selectedTask;
-    task.title = selectedTaskTitle;
-    task.startDate = [_model.slugFormatter dateFromString: selectedStartDate];
-    task.dueDate = [_model.slugFormatter dateFromString: selectedDueDate];
-    task.job = [_model jobForId: selectedJobId];
+    task.title       = selectedTaskTitle;
+    task.startDate   = [_model.slugFormatter dateFromString: selectedStartDate];
+    task.dueDate     = [_model.slugFormatter dateFromString: selectedDueDate];
+    task.job         = [_model jobForId: selectedJobId];
     task.serviceItem = [_model serviceItemForId: selectedServiceItemId];
-    task.assignee = [_model contactForId: selectedAssigneeId];
-    task.notes = selectedNotes;
+    task.assignee    = [_model contactForId: selectedAssigneeId];
+    task.notes       = selectedNotes;
     [_queue addOperation: [[UpdateTaskProcess alloc] initWithTask: _model.selectedTask]];
 }
 

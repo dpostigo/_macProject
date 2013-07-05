@@ -15,11 +15,18 @@
 
 
 @synthesize gradient;
+@synthesize horizontalGradient;
+@synthesize backgroundColor;
+
+@synthesize cornerRadius;
 @synthesize cornerOptions;
 @synthesize borderColor;
 @synthesize borderWidth;
-@synthesize cornerRadius;
 
+@synthesize innerShadow;
+
+
+@synthesize outerShadow;
 
 - (id) initWithGradient: (NSGradient *) aGradient {
     return [self initWithGradient: aGradient borderColor: nil borderWidth: 0 cornerRadius: 0 cornerOptions: 0];
@@ -37,18 +44,18 @@
     return [self initWithGradient: aGradient borderColor: aBorderColor borderWidth: aBorderWidth cornerRadius: aCornerRadius cornerOptions: 0];
 }
 
-
 - (id) initWithGradient: (NSGradient *) aGradient borderColor: (NSColor *) aBorderColor borderWidth: (CGFloat) aBorderWidth
            cornerRadius: (CGFloat) aCornerRadius cornerOptions: (NSBezierPathCornerOptions) aCornerOptions {
     self = [super init];
     if (self) {
-        if (aGradient == nil) aGradient = [[NSGradient alloc] initWithColors: [NSArray arrayWithObject: [NSColor clearColor]]];
+        //        if (aGradient == nil) aGradient = [[NSGradient alloc] initWithColors: [NSArray arrayWithObject: [NSColor clearColor]]];
         if (aBorderColor == nil) aBorderColor = [NSColor clearColor];
-        self.gradient = aGradient;
-        self.borderColor = aBorderColor;
-        self.borderWidth = aBorderWidth;
-        self.cornerRadius = aCornerRadius;
-        self.cornerOptions = aCornerOptions;
+        self.backgroundColor = [NSColor whiteColor];
+        self.gradient        = aGradient;
+        self.borderColor     = aBorderColor;
+        self.borderWidth     = aBorderWidth;
+        self.cornerRadius    = aCornerRadius;
+        self.cornerOptions   = aCornerOptions;
     }
 
     return self;
@@ -62,4 +69,12 @@
 - (void) draw {
 
 }
+
+- (id) copy {
+
+    PathOptions *copy = [[PathOptions alloc] init];
+    copy.backgroundColor = self.backgroundColor;
+    return [super copy];
+}
+
 @end

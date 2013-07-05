@@ -75,24 +75,19 @@
 }
 
 - (void) embedViewController: (NSViewController *) viewController inView: (NSView *) aSuperview {
-    viewController.view.frame = aSuperview.bounds;
-    //    [viewController.view setAutoresizingMask: aSuperview.autoresizingMask];
-
-    //    if ([aSuperview superview]) [aSuperview removeFromSuperview];
-    [aSuperview addSubview: viewController.view];
+    [self embedView: viewController.view inView: aSuperview];
 }
 
-- (void) replaceViewControllerView: (NSViewController *) viewController asView: (NSView *) aSuperview; {
 
-    viewController.view.frame = aSuperview.bounds;
-    [viewController.view setAutoresizingMask: aSuperview.autoresizingMask];
-
-    if ([aSuperview superview]) [aSuperview removeFromSuperview];
-    [self.view addSubview: viewController.view];
+- (void) embedView: (NSView *) view inView: (NSView *) aSuperview {
+    view.frame            = aSuperview.bounds;
+    view.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    [aSuperview addSubview: view];
 }
+
 
 - (void) replaceView: (NSView *) newView asView: (NSView *) oldView; {
-    newView.frame = oldView.frame;
+    newView.frame            = oldView.frame;
     newView.autoresizingMask = oldView.autoresizingMask;
     if ([oldView superview]) {
         NSView *superView = [oldView superview];

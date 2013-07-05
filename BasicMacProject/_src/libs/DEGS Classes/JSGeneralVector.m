@@ -12,15 +12,13 @@
 
 # pragma mark - Setters and getters
 
--(void)setType:(NSUInteger)type
-{
-    if (type <= ([self.typeOptions count]-1)) {
+- (void) setType: (NSUInteger) type {
+    if (type <= ([self.typeOptions count] - 1)) {
         _type = type;
     }
 }
 
-- (NSArray *)typeOptions
-{
+- (NSArray *) typeOptions {
     return @[@"real", @"complex"];
 }
 

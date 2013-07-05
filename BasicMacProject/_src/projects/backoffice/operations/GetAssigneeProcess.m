@@ -32,7 +32,7 @@
     NSLog(@"%s", __PRETTY_FUNCTION__);
 
     self.urlString = [NSString stringWithFormat: @"%@/jobs/%@/jobs_people.json", STAGING_URL, jobId];
-    self.url = [NSURL URLWithString: urlString];
+    self.url       = [NSURL URLWithString: urlString];
 
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL: url];
     request.requestMethod = @"GET";
@@ -42,7 +42,7 @@
 
     if (!request.error) {
 
-        NSError *error;
+        NSError      *error;
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData: request.responseData options: kNilOptions error: &error];
 
         if (dictionary == nil) {
@@ -50,7 +50,7 @@
         } else {
 
             NSLog(@"%@ succeeded.", NSStringFromClass([self class]));
-            NSMutableArray *array = [[NSMutableArray alloc] init];
+            NSMutableArray    *array = [[NSMutableArray alloc] init];
             for (NSDictionary *dict in dictionary) {
                 User *user = [[User alloc] initWithDictionary: [dict objectForKey: @"contact"]];
                 [array addObject: user];

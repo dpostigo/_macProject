@@ -25,9 +25,9 @@
 
         self.cornerRadius = 3.0;
         self.shadowRadius = 5.0;
-        self.fillColor = [NSColor colorWithDeviceWhite: 0.8 alpha: 0.05];
-        self.borderColor = [NSColor whiteColor];
-        self.shadowColor = [NSColor grayColor];
+        self.fillColor    = [NSColor colorWithDeviceWhite: 0.8 alpha: 0.05];
+        self.borderColor  = [NSColor whiteColor];
+        self.shadowColor  = [NSColor grayColor];
     }
 
     return self;
@@ -51,7 +51,7 @@
     [borderColor setStroke];
 
     NSShadow *shadow = [[NSShadow alloc] init];
-    shadow.shadowColor = self.shadowColor;
+    shadow.shadowColor      = self.shadowColor;
     shadow.shadowBlurRadius = self.shadowRadius;
 
     [shadow set];

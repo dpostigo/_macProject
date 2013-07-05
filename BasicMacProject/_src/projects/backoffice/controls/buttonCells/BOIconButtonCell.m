@@ -25,9 +25,9 @@
 
     cornerRadius = 2.0;
     self.highlightedColor = [NSColor colorWithString: GOLD_COLOR];
-    self.strokeColor = [NSColor lightGrayColor];
+    self.strokeColor      = [NSColor lightGrayColor];
     self.innerStrokeColor = [NSColor whiteColor];
-    self.imageColor = [NSColor darkGrayColor];
+    self.imageColor       = [NSColor darkGrayColor];
     self.imageShadowColor = [NSColor whiteColor];
 
     [self setButtonType: NSMomentaryPushButton];

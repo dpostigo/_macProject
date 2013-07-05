@@ -23,7 +23,7 @@
 @synthesize showsMinimizeButton;
 @synthesize showsMaximizeButton;
 
-@synthesize buttonPadding;
+@synthesize buttonSpacing;
 @synthesize buttonHeight;
 @synthesize windowFramePadding;
 
@@ -31,16 +31,17 @@
     self = [super initWithContentRect: contentRect styleMask: NSBorderlessWindowMask backing: bufferingType defer: flag];
     if (self) {
         [self setOpaque: NO];
-        self.backgroundColor = [NSColor clearColor];
-        self.frameClass = [BasicCustomWindowFrame class];
-        self.windowButtons = [[NSMutableArray alloc] init];
-        self.showsCloseButton = YES;
+        self.backgroundColor     = [NSColor clearColor];
+        self.frameClass          = [BasicCustomWindowFrame class];
+        self.windowButtons       = [[NSMutableArray alloc] init];
+        self.showsCloseButton    = YES;
         self.showsMaximizeButton = YES;
         self.showsMinimizeButton = YES;
 
         windowFramePadding = [[self class] windowFramePadding];
-        buttonPadding = 5;
-        buttonHeight = 25;
+        buttonSpacing      = 5;
+        buttonHeight       = 25;
+
 
         [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(mainWindowChanged:) name: NSWindowDidBecomeMainNotification object: self];
         [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(mainWindowChanged:) name: NSWindowDidResignMainNotification object: self];
@@ -75,7 +76,7 @@
 
 
 - (void) setContentSize: (NSSize) newSize {
-    NSSize sizeDelta = newSize;
+    NSSize sizeDelta       = newSize;
     NSSize childBoundsSize = [childContentView bounds].size;
     sizeDelta.width -= childBoundsSize.width;
     sizeDelta.height -= childBoundsSize.height;
@@ -108,21 +109,21 @@
     if (!frameView) {
         frameView = [[self.frameClass alloc] initWithFrame: bounds];
         frameView.windowFramePadding = windowFramePadding;
-        super.contentView = frameView;
+        super.contentView            = frameView;
 
 
         if (showsCloseButton) [windowButtons addObject: [NSWindow standardWindowButton: NSWindowCloseButton forStyleMask: NSTitledWindowMask]];
         if (showsMinimizeButton) [windowButtons addObject: [NSWindow standardWindowButton: NSWindowMiniaturizeButton forStyleMask: NSTitledWindowMask]];
         if (showsMaximizeButton) [windowButtons addObject: [NSWindow standardWindowButton: NSWindowZoomButton forStyleMask: NSTitledWindowMask]];
 
-        CGFloat prevX = windowFramePadding + buttonPadding;
+        CGFloat prevX = windowFramePadding + buttonSpacing;
         for (NSButton *button in windowButtons) {
             NSRect buttonRect = button.frame;
-            buttonRect.origin.x = prevX;
-            buttonRect.origin.y = bounds.size.height - buttonRect.size.height - 5;
-            button.frame = buttonRect;
+            buttonRect.origin.x     = prevX;
+            buttonRect.origin.y     = bounds.size.height - buttonRect.size.height - ((buttonHeight - button.size.height) / 2);
+            button.frame            = buttonRect;
             button.autoresizingMask = NSViewMinYMargin;
-            prevX += button.width + buttonPadding;
+            prevX += button.width + buttonSpacing;
             [frameView addSubview: button];
         }
 
@@ -130,7 +131,7 @@
 
     if (childContentView) [childContentView removeFromSuperview];
     childContentView = aView;
-    childContentView.frame = [self contentRectForFrameRect: bounds];
+    childContentView.frame            = [self contentRectForFrameRect: bounds];
     childContentView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     [frameView addSubview: childContentView];
 }

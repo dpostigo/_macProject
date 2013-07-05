@@ -10,7 +10,8 @@
 
 
 @interface Person : NSObject {
-	NSString *firstName, *lastName;
+    NSString *firstName, *lastName;
 }
-@property (readwrite, retain) NSString *firstName, *lastName;
+
+@property(readwrite, retain) NSString *firstName, *lastName;
 @end

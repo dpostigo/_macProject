@@ -25,10 +25,10 @@
 - (id) initWithTask: (Task *) aTask completedDate: (NSDate *) aCompletedDate {
     self = [super init];
     if (self) {
-        self.task = aTask;
-        self.taskId = task.id;
+        self.task          = aTask;
+        self.taskId        = task.id;
         self.completedDate = aCompletedDate;
-        self.taskTime = 0;
+        self.taskTime      = 0;
     }
     return self;
 }
@@ -69,12 +69,12 @@
 
 
     [self operationBeganWithString: @"Completing task..."];
-    ASIFormDataRequest *request = [self createDataRequest];
-    NSDictionary *jsonDict = [self createJSONDictionary];
+    ASIFormDataRequest *request  = [self createDataRequest];
+    NSDictionary       *jsonDict = [self createJSONDictionary];
     NSLog(@"jsonDict = %@", jsonDict);
 
-    NSError *error = nil;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject: jsonDict options: NSJSONWritingPrettyPrinted error: &error];
+    NSError *error    = nil;
+    NSData  *jsonData = [NSJSONSerialization dataWithJSONObject: jsonDict options: NSJSONWritingPrettyPrinted error: &error];
     if (error) {
         NSLog(@"error = %@", error);
     }

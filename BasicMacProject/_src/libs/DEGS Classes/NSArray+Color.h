@@ -46,7 +46,7 @@
 
 @interface NSArray (UKColor)
 
-+(NSArray*)		arrayWithColor: (NSColor*) col;
--(NSColor*)		colorValue;
++ (NSArray *) arrayWithColor: (NSColor *) col;
+- (NSColor *) colorValue;
 
 @end

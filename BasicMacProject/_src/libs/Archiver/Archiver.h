@@ -13,9 +13,9 @@
 
 }
 
-+ (id)retrieve:(NSString *)key;
-+ (BOOL)persist:(id)object key:(NSString *)key;
-+ (BOOL)delete:(NSString *)key;
-+ (BOOL)deleteEverything;
++ (id) retrieve: (NSString *) key;
++ (BOOL) persist: (id) object key: (NSString *) key;
++ (BOOL) delete: (NSString *) key;
++ (BOOL) deleteEverything;
 
 @end

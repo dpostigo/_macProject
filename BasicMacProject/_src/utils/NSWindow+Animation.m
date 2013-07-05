@@ -20,7 +20,7 @@
     self.alphaValue = fromAlpha;
 
     [NSAnimationContext runAnimationGroup: ^(NSAnimationContext *context) {
-        context.duration = duration;
+        context.duration       = duration;
         context.timingFunction = [CAMediaTimingFunction functionWithName: kCAMediaTimingFunctionEaseInEaseOut];
         [self.animator setAlphaValue: toAlpha];
     }                   completionHandler: completionHandler];

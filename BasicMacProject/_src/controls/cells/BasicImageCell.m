@@ -29,13 +29,12 @@
     cornerRadius = 4.0;
 
     shadow = [[NSShadow alloc] init];
-    shadow.shadowColor = [NSColor blackColor];
+    shadow.shadowColor      = [NSColor blackColor];
     shadow.shadowBlurRadius = 2.0;
-    shadow.shadowOffset = NSMakeSize(0, -1);
+    shadow.shadowOffset     = NSMakeSize(0, -1);
 
     borderColor = [NSColor colorWithDeviceWhite: 1.0 alpha: 0.1];
     borderWidth = 0.5;
-
 
 }
 

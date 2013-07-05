@@ -15,7 +15,7 @@
     [super loadView];
 
     table.dataSource = self;
-    table.delegate = self;
+    table.delegate   = self;
 }
 
 

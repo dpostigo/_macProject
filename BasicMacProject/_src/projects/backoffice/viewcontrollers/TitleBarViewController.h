@@ -9,7 +9,7 @@
 #import "BasicViewController.h"
 
 
-@interface TitleBarViewController : BasicViewController  {
+@interface TitleBarViewController : BasicViewController {
 
 }
 

@@ -15,23 +15,23 @@
 
 
 - (void) applicationDidFinishLaunching: (NSNotification *) aNotification {
-    self.windowControllers = [NSMutableArray array];
+    self.windowControllers                    = [NSMutableArray array];
     // The class of the window has been set in INAppStoreWindow in Interface Builder
     self.window.trafficLightButtonsLeftMargin = 7.0;
-    self.window.fullScreenButtonRightMargin = 7.0;
-    self.window.centerFullScreenButton = YES;
-    self.window.titleBarHeight = 60.0;
+    self.window.fullScreenButtonRightMargin   = 7.0;
+    self.window.centerFullScreenButton        = YES;
+    self.window.titleBarHeight                = 60.0;
 
-    self.window.titleBarHeight = 40.0;
+    self.window.titleBarHeight                = 40.0;
     self.window.trafficLightButtonsLeftMargin = 13.0;
-    self.window.titleBarDrawingBlock = ^(BOOL drawsAsMainWindow, CGRect drawingRect, CGPathRef clippingPath) {
+    self.window.titleBarDrawingBlock          = ^(BOOL drawsAsMainWindow, CGRect drawingRect, CGPathRef clippingPath) {
         CGContextRef ctx = [[NSGraphicsContext currentContext] graphicsPort];
         CGContextAddPath(ctx, clippingPath);
         CGContextClip(ctx);
 
 
         NSColor *chromeStartingColor = [NSColor colorWithCalibratedRed: 0 green: 0.319 blue: 1 alpha: 1];
-        NSColor *chromeEndingColor = [NSColor colorWithCalibratedRed: 0 green: 0.627 blue: 1 alpha: 1];
+        NSColor *chromeEndingColor   = [NSColor colorWithCalibratedRed: 0 green: 0.627 blue: 1 alpha: 1];
 
 
         NSGradient *gradient = nil;
@@ -51,53 +51,53 @@
 
 
     // set checkboxes
-    self.centerFullScreen.state = self.window.centerFullScreenButton;
-    self.centerTrafficLight.state = self.window.centerTrafficLightButtons;
-    self.verticalTrafficLight.state = self.window.verticalTrafficLightButtons;
-    self.showsBaselineSeparator.state = self.window.showsBaselineSeparator;
+    self.centerFullScreen.state                  = self.window.centerFullScreenButton;
+    self.centerTrafficLight.state                = self.window.centerTrafficLightButtons;
+    self.verticalTrafficLight.state              = self.window.verticalTrafficLightButtons;
+    self.showsBaselineSeparator.state            = self.window.showsBaselineSeparator;
     self.fullScreenRightMarginSlider.doubleValue = self.window.fullScreenButtonRightMargin;
-    self.trafficLightLeftMargin.doubleValue = self.window.trafficLightButtonsLeftMargin;
-    self.trafficLightSeparation.doubleValue = self.window.trafficLightSeparation;
+    self.trafficLightLeftMargin.doubleValue      = self.window.trafficLightButtonsLeftMargin;
+    self.trafficLightSeparation.doubleValue      = self.window.trafficLightSeparation;
 
     self.window.showsTitle = YES;
     [self setupCloseButton];
     [self setupMinimizeButton];
     [self setupZoomButton];
 
-    [self createWindowController:nil];
+    [self createWindowController: nil];
 }
 
 
 - (void) setupCloseButton {
     INWindowButton *closeButton = [INWindowButton windowButtonWithSize: NSMakeSize(14, 16) groupIdentifier: nil];
-    closeButton.activeImage = [NSImage imageNamed: @"close-active-color.tiff"];
+    closeButton.activeImage             = [NSImage imageNamed: @"close-active-color.tiff"];
     closeButton.activeNotKeyWindowImage = [NSImage imageNamed: @"close-activenokey-color.tiff"];
-    closeButton.inactiveImage = [NSImage imageNamed: @"close-inactive-disabled-color.tiff"];
-    closeButton.pressedImage = [NSImage imageNamed: @"close-pd-color.tiff"];
-    closeButton.rolloverImage = [NSImage imageNamed: @"close-rollover-color.tiff"];
-    self.window.closeButton = closeButton;
+    closeButton.inactiveImage           = [NSImage imageNamed: @"close-inactive-disabled-color.tiff"];
+    closeButton.pressedImage            = [NSImage imageNamed: @"close-pd-color.tiff"];
+    closeButton.rolloverImage           = [NSImage imageNamed: @"close-rollover-color.tiff"];
+    self.window.closeButton             = closeButton;
 }
 
 
 - (void) setupMinimizeButton {
     INWindowButton *button = [INWindowButton windowButtonWithSize: NSMakeSize(14, 16) groupIdentifier: nil];
-    button.activeImage = [NSImage imageNamed: @"minimize-active-color.tiff"];
+    button.activeImage             = [NSImage imageNamed: @"minimize-active-color.tiff"];
     button.activeNotKeyWindowImage = [NSImage imageNamed: @"minimize-activenokey-color.tiff"];
-    button.inactiveImage = [NSImage imageNamed: @"minimize-inactive-disabled-color.tiff"];
-    button.pressedImage = [NSImage imageNamed: @"minimize-pd-color.tiff"];
-    button.rolloverImage = [NSImage imageNamed: @"minimize-rollover-color.tiff"];
-    self.window.minimizeButton = button;
+    button.inactiveImage           = [NSImage imageNamed: @"minimize-inactive-disabled-color.tiff"];
+    button.pressedImage            = [NSImage imageNamed: @"minimize-pd-color.tiff"];
+    button.rolloverImage           = [NSImage imageNamed: @"minimize-rollover-color.tiff"];
+    self.window.minimizeButton     = button;
 }
 
 
 - (void) setupZoomButton {
     INWindowButton *button = [INWindowButton windowButtonWithSize: NSMakeSize(14, 16) groupIdentifier: nil];
-    button.activeImage = [NSImage imageNamed: @"zoom-active-color.tiff"];
+    button.activeImage             = [NSImage imageNamed: @"zoom-active-color.tiff"];
     button.activeNotKeyWindowImage = [NSImage imageNamed: @"zoom-activenokey-color.tiff"];
-    button.inactiveImage = [NSImage imageNamed: @"zoom-inactive-disabled-color.tiff"];
-    button.pressedImage = [NSImage imageNamed: @"zoom-pd-color.tiff"];
-    button.rolloverImage = [NSImage imageNamed: @"zoom-rollover-color.tiff"];
-    self.window.zoomButton = button;
+    button.inactiveImage           = [NSImage imageNamed: @"zoom-inactive-disabled-color.tiff"];
+    button.pressedImage            = [NSImage imageNamed: @"zoom-pd-color.tiff"];
+    button.rolloverImage           = [NSImage imageNamed: @"zoom-rollover-color.tiff"];
+    self.window.zoomButton         = button;
 }
 
 

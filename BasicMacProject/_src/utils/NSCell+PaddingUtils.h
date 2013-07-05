@@ -10,11 +10,11 @@
 
 @interface NSCell (PaddingUtils)
 
-@property (nonatomic, assign) CGFloat cellPadding;
-@property (nonatomic, assign) CGFloat paddingTop;
-@property (nonatomic, assign) CGFloat paddingBottom;
-@property (nonatomic, assign) CGFloat paddingLeft;
-@property (nonatomic, assign) CGFloat paddingRight;
+@property(nonatomic, assign) CGFloat cellPadding;
+@property(nonatomic, assign) CGFloat paddingTop;
+@property(nonatomic, assign) CGFloat paddingBottom;
+@property(nonatomic, assign) CGFloat paddingLeft;
+@property(nonatomic, assign) CGFloat paddingRight;
 
 //- (void) setPaddingTop: (CGFloat) aFloat;
 //- (void) setPaddingBottom: (CGFloat) aFloat;

@@ -13,6 +13,6 @@
 @interface JSColorfulTextField : JSExpandingTextField
 
 // we get assigned a syntaxHighlighter. If the reference is nil the control behaves like a normal JSExpandingTextField
-@property (nonatomic, weak) JSSyntaxHighlighter *syntaxHighlighter;
+@property(nonatomic, weak) JSSyntaxHighlighter *syntaxHighlighter;
 
 @end

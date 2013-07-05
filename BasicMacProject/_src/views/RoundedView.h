@@ -6,11 +6,11 @@
 
 
 #import <Foundation/Foundation.h>
-#import "BasicBackgroundView.h"
+#import "BasicBackgroundViewOld.h"
 #import "NSBezierPath+Additions.h"
 
 
-@interface RoundedView : BasicBackgroundView {
+@interface RoundedView : BasicBackgroundViewOld {
     JSRoundedCornerOptions cornerOptions;
 }
 

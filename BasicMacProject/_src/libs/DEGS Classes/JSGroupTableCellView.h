@@ -13,13 +13,13 @@
 
 @interface JSGroupTableCellView : JSTableCellView
 
-@property (strong) IBOutlet JSTextField *nameTextField;
-@property (strong) IBOutlet JSTokenField *basisTokenField;
-@property (strong) IBOutlet NSButton *initialSampleCheckBox;
-@property (strong) IBOutlet JSTokenField *momentsTokenField;
-@property (strong) IBOutlet JSTokenField *dependenciesTokenField;
-@property (strong) IBOutlet JSColorfulTextField *definitionTextField;
-@property (strong) IBOutlet NSButton *computedVectorsButton;
-@property (strong) IBOutlet NSButton *operatorButton;
+@property(strong) IBOutlet JSTextField         *nameTextField;
+@property(strong) IBOutlet JSTokenField        *basisTokenField;
+@property(strong) IBOutlet NSButton            *initialSampleCheckBox;
+@property(strong) IBOutlet JSTokenField        *momentsTokenField;
+@property(strong) IBOutlet JSTokenField        *dependenciesTokenField;
+@property(strong) IBOutlet JSColorfulTextField *definitionTextField;
+@property(strong) IBOutlet NSButton            *computedVectorsButton;
+@property(strong) IBOutlet NSButton            *operatorButton;
 
 @end

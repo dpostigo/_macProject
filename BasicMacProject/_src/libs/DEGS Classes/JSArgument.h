@@ -11,12 +11,12 @@
 
 @interface JSArgument : JSNode
 
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *defaultValue;
-@property (nonatomic) NSInteger type;
-@property (readonly, nonatomic, strong) NSArray *typeOptions;
+@property(nonatomic, strong) NSString *name;
+@property(nonatomic, strong) NSString *defaultValue;
+@property(nonatomic) NSInteger type;
+@property(readonly, nonatomic, strong) NSArray *typeOptions;
 
-- (NSXMLElement *)exportAsXML;
-- (id)initFromXML:(NSXMLElement *)anElement;
+- (NSXMLElement *) exportAsXML;
+- (id) initFromXML: (NSXMLElement *) anElement;
 
 @end

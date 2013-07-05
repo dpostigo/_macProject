@@ -13,20 +13,19 @@
 
 @interface DiscussionItem : BasicObject {
 
-NSDate *createdDate;
-NSString *text;
-NSMutableArray *attachments;
-User *contact;
-NSString *contactId;
-
+    NSDate         *createdDate;
+    NSString       *text;
+    NSMutableArray *attachments;
+    User           *contact;
+    NSString       *contactId;
 
 }
 
 
-@property(nonatomic, strong) NSDate *createdDate;
-@property(nonatomic, retain) NSString *text;
+@property(nonatomic, strong) NSDate         *createdDate;
+@property(nonatomic, retain) NSString       *text;
 @property(nonatomic, strong) NSMutableArray *attachments;
-@property(nonatomic, strong) User *contact;
-@property(nonatomic, retain) NSString *contactId;
+@property(nonatomic, strong) User           *contact;
+@property(nonatomic, retain) NSString       *contactId;
 - (id) initWithDictionary: (NSDictionary *) dictionary;
 @end

@@ -10,6 +10,6 @@
 
 @interface JSWhereTableCellView : JSTableCellView
 
-@property (strong) IBOutlet NSPopUpButton *whereButton;
+@property(strong) IBOutlet NSPopUpButton *whereButton;
 
 @end

@@ -14,8 +14,8 @@
 
 @implementation JSShortcutsWindowController
 
-- (id)init {
-    self = [super initWithWindowNibName:@"JSShortcutsWindowController"];
+- (id) init {
+    self = [super initWithWindowNibName: @"JSShortcutsWindowController"];
     return self;
 }
 

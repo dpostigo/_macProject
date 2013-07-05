@@ -3,8 +3,10 @@
 //
 
 #ifdef __OBJC__
-    #import <Cocoa/Cocoa.h>
-    #import "BOAppConstants.h"
-    #import "NSView+Utils.h"
-    #import "NSColor+Utils.h"
+
+#import <Cocoa/Cocoa.h>
+#import "BOAppConstants.h"
+#import "NSView+Utils.h"
+#import "NSColor+Utils.h"
+
 #endif

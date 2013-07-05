@@ -92,12 +92,12 @@
 - (void) fillWithInnerShadow: (NSShadow *) shadow {
     [NSGraphicsContext saveGraphicsState];
 
-    NSSize offset = shadow.shadowOffset;
-    NSSize originalOffset = offset;
-    CGFloat radius = shadow.shadowBlurRadius;
-    NSRect bounds = NSInsetRect(self.bounds, -(ABS(offset.width) + radius), -(ABS(offset.height) + radius));
+    NSSize  offset         = shadow.shadowOffset;
+    NSSize  originalOffset = offset;
+    CGFloat radius         = shadow.shadowBlurRadius;
+    NSRect  bounds         = NSInsetRect(self.bounds, -(ABS(offset.width) + radius), -(ABS(offset.height) + radius));
     offset.height += bounds.size.height;
-    shadow.shadowOffset = offset;
+    shadow.shadowOffset    = offset;
     NSAffineTransform *transform = [NSAffineTransform transform];
     if ([[NSGraphicsContext currentContext] isFlipped])
         [transform translateXBy: 0 yBy: bounds.size.height];
@@ -122,10 +122,10 @@
 - (void) drawBlurWithColor: (NSColor *) color radius: (CGFloat) radius {
     NSRect bounds = NSInsetRect(self.bounds, -radius, -radius);
     NSShadow *shadow = [[NSShadow alloc] init];
-    shadow.shadowOffset = NSMakeSize(0, bounds.size.height);
+    shadow.shadowOffset     = NSMakeSize(0, bounds.size.height);
     shadow.shadowBlurRadius = radius;
-    shadow.shadowColor = color;
-    NSBezierPath *path = [self copy];
+    shadow.shadowColor      = color;
+    NSBezierPath      *path      = [self copy];
     NSAffineTransform *transform = [NSAffineTransform transform];
     if ([[NSGraphicsContext currentContext] isFlipped])
         [transform translateXBy: 0 yBy: bounds.size.height];

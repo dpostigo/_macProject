@@ -9,18 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "JSNode.h"
 
-@interface JSOperator : JSNode  
+@interface JSOperator : JSNode
 
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic) NSUInteger kind;
-@property (readonly, nonatomic, strong) NSArray *kindOptions;
-@property (nonatomic) NSUInteger type;
-@property (readonly, nonatomic, strong) NSArray *typeOptions;
+@property(nonatomic, strong) NSString *name;
+@property(nonatomic) NSUInteger kind;
+@property(readonly, nonatomic, strong) NSArray *kindOptions;
+@property(nonatomic) NSUInteger type;
+@property(readonly, nonatomic, strong) NSArray *typeOptions;
 @property BOOL constant;
-@property (nonatomic, strong) NSArray *names;
-@property (nonatomic, strong) NSString *definition;
+@property(nonatomic, strong) NSArray  *names;
+@property(nonatomic, strong) NSString *definition;
 
-- (NSXMLElement *)exportAsXML;
-- (id)initFromXML:(NSXMLElement *)anElement;
+- (NSXMLElement *) exportAsXML;
+- (id) initFromXML: (NSXMLElement *) anElement;
 
 @end

@@ -13,25 +13,25 @@
 
 @interface JSGeometry : JSNode
 
-@property (nonatomic, strong) NSString *propagationDimension;
-@property (readonly) NSArray *transverseDimension;
+@property(nonatomic, strong) NSString *propagationDimension;
+@property(readonly) NSArray           *transverseDimension;
 
-- (NSXMLElement *)exportAsXML;
-- (id)initFromXML:(NSXMLElement *)anElement;
+- (NSXMLElement *) exportAsXML;
+- (id) initFromXML: (NSXMLElement *) anElement;
 
-@property (readonly) NSUInteger numberOfTransverseDimensions;
-- (void)addTransverseDimension:(JSDimension *)dimension;
-- (void)addTransverseDimension:(JSDimension *)dimension atIndex:(NSUInteger)index;
-- (void)deleteTransverseDimensionAtIndex:(NSUInteger)index;
-- (void)deleteTransverseDimensionsAtIndexes:(NSIndexSet *)indexes;
+@property(readonly) NSUInteger numberOfTransverseDimensions;
+- (void) addTransverseDimension: (JSDimension *) dimension;
+- (void) addTransverseDimension: (JSDimension *) dimension atIndex: (NSUInteger) index;
+- (void) deleteTransverseDimensionAtIndex: (NSUInteger) index;
+- (void) deleteTransverseDimensionsAtIndexes: (NSIndexSet *) indexes;
 
 // compile a dictionary of all transverse dimension identifiers with their related dimension object
-- (NSDictionary *)dictionaryOfDimensionIdentifiers;
+- (NSDictionary *) dictionaryOfDimensionIdentifiers;
 
 // compile a list of identifiers for the transverse dimensions
-- (NSArray *)listOfDimensionsIdentifiersForBasis;
-- (NSArray *)listOfDimensionsIdentifiersForDimensions;
+- (NSArray *) listOfDimensionsIdentifiersForBasis;
+- (NSArray *) listOfDimensionsIdentifiersForDimensions;
 
-- (NSNumber *)gridPointsForDimension:(NSString *)dimensionName;
+- (NSNumber *) gridPointsForDimension: (NSString *) dimensionName;
 
 @end

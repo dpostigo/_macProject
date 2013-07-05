@@ -13,13 +13,13 @@
 
 @interface JSBreakpoint : JSNode
 
-@property (nonatomic, strong) NSString *filename;
-@property (nonatomic) NSUInteger format;
-@property (readonly, nonatomic, strong) NSArray *formatOptions;
-@property (nonatomic, strong) JSDependencies *dependencies;
-@property (nonatomic, strong) NSString *name;
+@property(nonatomic, strong) NSString *filename;
+@property(nonatomic) NSUInteger format;
+@property(readonly, nonatomic, strong) NSArray *formatOptions;
+@property(nonatomic, strong) JSDependencies    *dependencies;
+@property(nonatomic, strong) NSString          *name;
 
-- (NSXMLElement *)exportAsXML;
-- (id)initFromXML:(NSXMLElement *)anElement;
+- (NSXMLElement *) exportAsXML;
+- (id) initFromXML: (NSXMLElement *) anElement;
 
 @end

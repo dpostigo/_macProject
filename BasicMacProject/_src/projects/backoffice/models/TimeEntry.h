@@ -10,15 +10,15 @@
 
 @interface TimeEntry : NSObject <NSCoding> {
 
-    NSDate *timeStarted;
-    NSDate *timeEnded;
+    NSDate   *timeStarted;
+    NSDate   *timeEnded;
     NSString *projectId;
 
 }
 
 
-@property(nonatomic, strong) NSDate *timeStarted;
-@property(nonatomic, strong) NSDate *timeEnded;
+@property(nonatomic, strong) NSDate   *timeStarted;
+@property(nonatomic, strong) NSDate   *timeEnded;
 @property(nonatomic, strong) NSString *projectId;
 
 - (id) initWithTimeStarted: (NSDate *) aTimeStarted;

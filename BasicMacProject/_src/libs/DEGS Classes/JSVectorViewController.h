@@ -14,6 +14,6 @@
 
 @interface JSVectorViewController : JSSectionViewController <JSSyntaxHighlighterDelegate>
 
-- (id)initWithVectors:(JSVectors *)vectors;
+- (id) initWithVectors: (JSVectors *) vectors;
 
 @end

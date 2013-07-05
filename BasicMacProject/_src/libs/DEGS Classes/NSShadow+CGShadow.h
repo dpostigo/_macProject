@@ -10,7 +10,7 @@
 
 @interface NSShadow (CGShadow)
 
-- (void)setInCGContext:(CGContextRef)context;
-+ (void)setShadow:(NSShadow *)shadow inCGContext:(CGContextRef)context;
+- (void) setInCGContext: (CGContextRef) context;
++ (void) setShadow: (NSShadow *) shadow inCGContext: (CGContextRef) context;
 
 @end

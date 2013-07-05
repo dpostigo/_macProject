@@ -23,7 +23,6 @@
 
     NSLog(@"%s", __PRETTY_FUNCTION__);
 
-
 }
 
 - (void) awakeFromNib {
@@ -45,22 +44,21 @@
 
     sidebar.minimumWidth = 150.0;
     sidebar.maximumWidth = 250.0;
-    sidebar.isLocked = YES;
+    sidebar.isLocked     = YES;
 
     bottomView.minimumHeight = 40.0f;
     bottomView.maximumHeight = 60.0f;
-    bottomView.height = 40.0f;
-    bottomView.isLocked = YES;
+    bottomView.height        = 40.0f;
+    bottomView.isLocked      = YES;
 
 
-    splitView.delegate = self;
-    splitView.dividerColor = [NSColor blackColor];
+    splitView.delegate        = self;
+    splitView.dividerColor    = [NSColor blackColor];
     contentSplitView.delegate = self;
-    self.dividerEnabled = YES;
+    self.dividerEnabled       = YES;
 
     [contentSplitView setHoldingPriority: 2 forSubviewAtIndex: 0];
     [contentSplitView setHoldingPriority: 1 forSubviewAtIndex: 1];
-
 
 }
 

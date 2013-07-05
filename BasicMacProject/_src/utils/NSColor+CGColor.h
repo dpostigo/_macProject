@@ -10,6 +10,6 @@
 
 @interface NSColor (CGColor)
 
-- (CGColorRef)CGColorCreate;
+- (CGColorRef) CGColorCreate;
 
 @end

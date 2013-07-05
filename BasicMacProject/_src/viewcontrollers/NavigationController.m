@@ -11,7 +11,7 @@
 
 
 @implementation NavigationController {
-    BasicBackgroundView *modalBackground;
+    BasicBackgroundViewOld *modalBackground;
 }
 
 
@@ -31,19 +31,19 @@
 
 
         self.rootViewController = aRootViewController;
-        self.view = [[NSView alloc] init];
-        self.viewControllers = [[NSMutableArray alloc] init];
+        self.view               = [[NSView alloc] init];
+        self.viewControllers    = [[NSMutableArray alloc] init];
 
 
         defaultAnimationDuration = 0.2;
-        contentView = [[NSView alloc] initWithFrame: self.view.bounds];
+        contentView              = [[NSView alloc] initWithFrame: self.view.bounds];
         contentView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
         [self.view addSubview: contentView];
         [self addViewController: rootViewController animated: NO completion: nil];
 
 
         navigationBarHeight = 30;
-        navigationBar = [[NavigationBar alloc] initWithFrame: NSMakeRect(0, 0, self.view.width, 40)];
+        navigationBar       = [[NavigationBar alloc] initWithFrame: NSMakeRect(0, 0, self.view.width, 40)];
     }
 
     return self;
@@ -88,7 +88,6 @@
         [controller.view removeFromSuperview];
     }
 
-
 }
 
 - (void) pushViewController: (VeryBasicViewController *) controller animated: (BOOL) isAnimated {
@@ -110,7 +109,7 @@
     navigationBarHidden = navigationBarHidden1;
     navigationBar.autoresizingMask = NSViewWidthSizable | NSViewMinYMargin;
 
-    NSRect toRect = [self navigationBarVisibleRect];
+    NSRect toRect     = [self navigationBarVisibleRect];
     NSRect hiddenRect = [self navigationBarHiddenRect];
 
     navigationBar.frame = hiddenRect;
@@ -143,8 +142,8 @@
     if (isAnimating) return;
     isAnimating = YES;
 
-    newController.navigationController = self;
-    newController.view.frame = self.view.bounds;
+    newController.navigationController  = self;
+    newController.view.frame            = self.view.bounds;
     newController.view.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable | NSViewMaxYMargin;
 
 
@@ -156,7 +155,6 @@
     if (isAnimated) {
         if (currentController) {
             [currentController.view animateInDirection: NSViewAnimationDirectionToLeft amount: currentController.view.width duration: defaultAnimationDuration alpha: 1 completionHandler: ^{
-
 
             }];
         }
@@ -199,23 +197,23 @@
 
 - (NSRect) viewControllerHiddenRightRect: (VeryBasicViewController *) controller {
     NSRect rect = NSZeroRect;
-    rect.size.width = self.view.width;
+    rect.size.width  = self.view.width;
     rect.size.height = controller.showsNavigationBar ? self.view.height - navigationBarHeight : self.view.height;
-    rect.origin.x = self.view.width;
+    rect.origin.x    = self.view.width;
     return rect;
 }
 
 - (NSRect) viewControllerHiddenLeftRect: (VeryBasicViewController *) controller {
     NSRect rect = NSZeroRect;
-    rect.size.width = self.view.width;
+    rect.size.width  = self.view.width;
     rect.size.height = controller.showsNavigationBar ? self.view.height - navigationBarHeight : self.view.height;
-    rect.origin.x = -self.view.width;
+    rect.origin.x    = -self.view.width;
     return rect;
 }
 
 - (NSRect) viewControllerVisibleRect: (VeryBasicViewController *) controller {
     NSRect rect = NSZeroRect;
-    rect.size.width = self.view.width;
+    rect.size.width  = self.view.width;
     rect.size.height = controller.showsNavigationBar ? self.view.height - navigationBarHeight : self.view.height;
     return rect;
 }
@@ -223,18 +221,18 @@
 
 - (NSRect) navigationBarHiddenRect {
     NSRect hiddenRect = NSZeroRect;
-    hiddenRect.size.width = self.view.width;
-    hiddenRect.size.width = self.view.width;
+    hiddenRect.size.width  = self.view.width;
+    hiddenRect.size.width  = self.view.width;
     hiddenRect.size.height = navigationBarHeight;
-    hiddenRect.origin.y = self.view.height + navigationBarHeight;
+    hiddenRect.origin.y    = self.view.height + navigationBarHeight;
     return hiddenRect;
 }
 
 - (NSRect) navigationBarVisibleRect {
     NSRect toRect = NSZeroRect;
-    toRect.size.width = self.view.width;
+    toRect.size.width  = self.view.width;
     toRect.size.height = navigationBarHeight;
-    toRect.origin.y = self.view.height - navigationBarHeight;
+    toRect.origin.y    = self.view.height - navigationBarHeight;
     return toRect;
 }
 @end

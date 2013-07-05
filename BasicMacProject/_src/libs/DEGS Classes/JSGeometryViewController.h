@@ -13,6 +13,6 @@
 
 @interface JSGeometryViewController : JSSectionViewController
 
-- (id)initWithGeometry:(JSGeometry *)geometry;
+- (id) initWithGeometry: (JSGeometry *) geometry;
 
 @end

@@ -10,12 +10,12 @@
 
 @interface BasicOutlineView : NSOutlineView {
 
-    BOOL showsDisclosureTriangles;
+    BOOL   showsDisclosureTriangles;
     NSRect disclosureRect;
 
 }
 
 
-@property(nonatomic) BOOL showsDisclosureTriangles;
+@property(nonatomic) BOOL   showsDisclosureTriangles;
 @property(nonatomic) NSRect disclosureRect;
 @end

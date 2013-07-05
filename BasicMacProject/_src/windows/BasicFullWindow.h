@@ -22,7 +22,7 @@
 }
 
 
-@property(nonatomic, strong) NSView *mainView;
+@property(nonatomic, strong) NSView         *mainView;
 @property(nonatomic, strong) BasicSplitView *mainSplitView;
 @property(nonatomic, strong) BasicSplitView *bottomSplitView;
 @end

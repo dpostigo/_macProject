@@ -8,17 +8,17 @@
 
 #import <Cocoa/Cocoa.h>
 
-extern NSString * const JSTextFieldDidBecomeFirstResponderNotification;
+extern NSString *const JSTextFieldDidBecomeFirstResponderNotification;
 
 @protocol JSTextFieldDelegate <NSTextFieldDelegate>
 
 // We notify our delegate that we became first responder (used for scrolling cells to visible when the user tab between textfields)
-- (void)textFieldDidBecomeFirstResponder:(NSNotification *)aNotification;
+- (void) textFieldDidBecomeFirstResponder: (NSNotification *) aNotification;
 
 @end
 
 @interface JSTextField : NSTextField
 
-@property (nonatomic,weak) id <JSTextFieldDelegate> delegate;
+@property(nonatomic, weak) id <JSTextFieldDelegate> delegate;
 
 @end

@@ -18,7 +18,7 @@
 
 @implementation BOSidebarViewController {
     NSMutableDictionary *labelsDictionary;
-    NSArray *jobModeLabels;
+    NSArray             *jobModeLabels;
 }
 
 
@@ -70,22 +70,22 @@
 
     if ([_model.tasks count] > 0) {
         tableSection = [[OutlineSection alloc] initWithTitle: @"Potential"];
-        NSArray *potentialJobs = _model.potentialJobs;
+        NSArray  *potentialJobs = _model.potentialJobs;
         for (Job *job in potentialJobs) [tableSection.rows addObject: [[TableRowObject alloc] initWithTextLabel: job.title image: [NSImage imageNamed: @"job-icon.png"] content: job]];
         [self.dataSource addObject: tableSection];
 
         tableSection = [[OutlineSection alloc] initWithTitle: @"Quote"];
-        NSArray *quoteJobs = _model.quoteJobs;
+        NSArray  *quoteJobs = _model.quoteJobs;
         for (Job *job in quoteJobs) [tableSection.rows addObject: [[TableRowObject alloc] initWithTextLabel: job.title image: [NSImage imageNamed: @"job-icon.png"] content: job]];
         [self.dataSource addObject: tableSection];
 
         tableSection = [[OutlineSection alloc] initWithTitle: @"Active"];
-        NSArray *activeJobs = _model.activeJobs;
+        NSArray  *activeJobs = _model.activeJobs;
         for (Job *job in activeJobs) [tableSection.rows addObject: [[TableRowObject alloc] initWithTextLabel: job.title image: [NSImage imageNamed: @"job-icon.png"] content: job]];
         [self.dataSource addObject: tableSection];
 
         tableSection = [[OutlineSection alloc] initWithTitle: @"Artists"];
-        NSArray *artists = _model.artists;
+        NSArray   *artists = _model.artists;
         for (User *artist in artists) [tableSection.rows addObject: [[TableRowObject alloc] initWithTextLabel: artist.title image: [NSImage imageNamed: @"assignee-icon.png"] content: artist]];
         [self.dataSource addObject: tableSection];
     }
@@ -118,8 +118,8 @@
     //        cell.imageView.highlightedImage = rowObject.selectedImage;
 
 
-    cell.textLabel.stringValue = rowObject.textLabel;
-    cell.textLabel.shadowColor = [NSColor blackColor];
+    cell.textLabel.stringValue  = rowObject.textLabel;
+    cell.textLabel.shadowColor  = [NSColor blackColor];
     cell.textLabel.shadowOffset = CGSizeMake(0, 1);
     //    cell.textLabel.highlightedTextColor = [UIColor blackColor];
 
@@ -196,10 +196,10 @@
 }
 
 - (void) selectCurrentTaskMode {
-   // NSLog(@"_model.currentTaskMode = %@", _model.currentTaskMode);
+    // NSLog(@"_model.currentTaskMode = %@", _model.currentTaskMode);
 
     NSUInteger rowIndex = 3;
-    TableSection *tableSection = [dataSource objectAtIndex: 0];
+    TableSection        *tableSection = [dataSource objectAtIndex: 0];
     for (TableRowObject *rowObject in tableSection.rows) {
         if ([rowObject.textLabel isEqualToString: _model.currentTaskMode]) {
             rowIndex = [tableSection.rows indexOfObject: rowObject];

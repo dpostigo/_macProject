@@ -18,11 +18,11 @@
 
     Class frameClass;
     NSString *frameClassString;
-    NSView *childContentView;
+    NSView   *childContentView;
 
 
     CGFloat buttonHeight;
-    CGFloat buttonPadding;
+    CGFloat buttonSpacing;
     CGFloat windowFramePadding;
 
 }
@@ -32,10 +32,10 @@
 @property(nonatomic) BOOL showsMaximizeButton;
 
 @property(nonatomic, strong) Class frameClass;
-@property(nonatomic, strong) NSView *childContentView;
+@property(nonatomic, strong) NSView   *childContentView;
 @property(nonatomic, retain) NSString *frameClassString;
-@property(nonatomic) NSMutableArray *windowButtons;
-@property(nonatomic) CGFloat buttonPadding;
+@property(nonatomic) NSMutableArray   *windowButtons;
+@property(nonatomic) CGFloat buttonSpacing;
 @property(nonatomic) CGFloat buttonHeight;
 @property(nonatomic) CGFloat windowFramePadding;
 

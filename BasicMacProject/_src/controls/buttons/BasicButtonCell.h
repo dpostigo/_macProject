@@ -21,8 +21,8 @@
 }
 
 
-@property(nonatomic, strong) NSColor *textColor;
-@property(nonatomic, strong) NSColor *disabledTextColor;
+@property(nonatomic, strong) NSColor  *textColor;
+@property(nonatomic, strong) NSColor  *disabledTextColor;
 @property(nonatomic, strong) NSShadow *textShadow;
 @property(nonatomic, strong) NSShadow *disabledTextShadow;
 @end

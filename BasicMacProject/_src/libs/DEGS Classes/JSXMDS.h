@@ -49,48 +49,48 @@
 @interface JSXMDS : JSNode
 
 // main sections of an xmds script
-@property (nonatomic, strong) JSPreamble *preamble;
-@property (nonatomic, strong) JSFeatures *features;
-@property (nonatomic, strong) JSDriver *driver;
-@property (nonatomic, strong) JSGeometry *geometry;
-@property (nonatomic, strong) JSVectors *vectors;
-@property (nonatomic, strong) JSSequence *sequence;
-@property (nonatomic, strong) JSOutput *output;
+@property(nonatomic, strong) JSPreamble *preamble;
+@property(nonatomic, strong) JSFeatures *features;
+@property(nonatomic, strong) JSDriver   *driver;
+@property(nonatomic, strong) JSGeometry *geometry;
+@property(nonatomic, strong) JSVectors  *vectors;
+@property(nonatomic, strong) JSSequence *sequence;
+@property(nonatomic, strong) JSOutput   *output;
 
 // the dictionary holds a global list of nodes in the tree that can be accessed through their identifiers. It is useful to directly access some nodes without having to walk the entire tree.
-@property (nonatomic, readonly) NSDictionary *globalIdentifiers;
+@property(nonatomic, readonly) NSDictionary *globalIdentifiers;
 
 // export method
-- (NSXMLDocument *)exportAsXMLDocument;
+- (NSXMLDocument *) exportAsXMLDocument;
 
 // designated initiliaser
-- (id)initFromXMLDocument:(NSXMLDocument *)aDocument;
+- (id) initFromXMLDocument: (NSXMLDocument *) aDocument;
 
 // compile dictionary of identifiers and object to trace click on tokens back to their related object
-- (NSDictionary *)dimensionIdentifiesDictionary;
-- (NSDictionary *)vectorsIdentifiesDictionary;
+- (NSDictionary *) dimensionIdentifiesDictionary;
+- (NSDictionary *) vectorsIdentifiesDictionary;
 
 // high level methods that provides the section view controller with arrays containing lists of the various entities defined in an xmds script
 // their implementation calls the low level methods in the respective sections
 // the lists are used by the syntaxHighlither for coloring or by the tokenFields for suggestion
-- (NSArray *)listOfDimensionsIdentifiersForBasis;
-- (NSArray *)listOfDimensionsIdentifiersForDimensions;
-- (NSArray *)listOfVectorsIdentifiers;
-- (NSArray *)listOfVectorComponentsIdentifiers;
-- (NSArray *)listOfArgumentsIdentifiers;
-- (NSArray *)listOfMomentsIdentifiers;
+- (NSArray *) listOfDimensionsIdentifiersForBasis;
+- (NSArray *) listOfDimensionsIdentifiersForDimensions;
+- (NSArray *) listOfVectorsIdentifiers;
+- (NSArray *) listOfVectorComponentsIdentifiers;
+- (NSArray *) listOfArgumentsIdentifiers;
+- (NSArray *) listOfMomentsIdentifiers;
 
-- (NSArray *)listOfDimensionsForSubstring:(NSString *)substring;
-- (NSArray *)listOfBasisForSubstring:(NSString *)substring;
-- (NSArray *)listOfVectorsForSubstring:(NSString *)substring;
-- (NSArray *)listOfComponentsForSubstring:(NSString *)substring;
-- (NSArray *)listOfArgumentsForSubstring:(NSString *)substring;
-- (NSArray *)listOfMomentsForSubstring:(NSString *)substring;
+- (NSArray *) listOfDimensionsForSubstring: (NSString *) substring;
+- (NSArray *) listOfBasisForSubstring: (NSString *) substring;
+- (NSArray *) listOfVectorsForSubstring: (NSString *) substring;
+- (NSArray *) listOfComponentsForSubstring: (NSString *) substring;
+- (NSArray *) listOfArgumentsForSubstring: (NSString *) substring;
+- (NSArray *) listOfMomentsForSubstring: (NSString *) substring;
 
 // high level method to extract the lattice of dimension with name dimensionName
-- (NSNumber *)gridPointsForDimension:(NSString *)dimensionName;
+- (NSNumber *) gridPointsForDimension: (NSString *) dimensionName;
 
 // create the object path
-- (NSArray *)objectPathForString:(NSString *)XPath error:(NSError **)error;
+- (NSArray *) objectPathForString: (NSString *) XPath error: (NSError **) error;
 
 @end

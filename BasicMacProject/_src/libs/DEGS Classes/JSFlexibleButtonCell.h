@@ -15,9 +15,9 @@
 @interface JSFlexibleButtonCell : NSButtonCell
 
 // this property is updated by the control of the cell and decides the look of the cell
-@property (nonatomic) BOOL isMouseOver;
+@property(nonatomic) BOOL isMouseOver;
 
 // look of the cell
-@property (nonatomic, strong) JSButtonStyle *style;
+@property(nonatomic, strong) JSButtonStyle *style;
 
 @end

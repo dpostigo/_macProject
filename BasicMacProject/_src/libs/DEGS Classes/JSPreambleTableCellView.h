@@ -11,8 +11,8 @@
 
 @interface JSPreambleTableCellView : JSTableCellView
 
-@property (nonatomic, strong) IBOutlet JSTextField *nameTextField;
-@property (nonatomic, strong) IBOutlet JSExpandingTextField *authorTextField;
-@property (nonatomic, strong) IBOutlet JSExpandingTextField *descriptionTextField;
+@property(nonatomic, strong) IBOutlet JSTextField          *nameTextField;
+@property(nonatomic, strong) IBOutlet JSExpandingTextField *authorTextField;
+@property(nonatomic, strong) IBOutlet JSExpandingTextField *descriptionTextField;
 
 @end

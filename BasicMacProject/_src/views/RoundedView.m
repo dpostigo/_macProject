@@ -23,8 +23,8 @@
 
 - (void) drawRect: (NSRect) rect {
 
-    NSGraphicsContext *ctx = [NSGraphicsContext currentContext];
-    NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect: rect corners: cornerOptions radius: cornerRadius];
+    NSGraphicsContext *ctx  = [NSGraphicsContext currentContext];
+    NSBezierPath      *path = [NSBezierPath bezierPathWithRoundedRect: rect corners: cornerOptions radius: cornerRadius];
 
     if (shadow.shadowColor != [NSColor clearColor]) {
         NSRect newRect = self.bounds;

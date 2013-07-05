@@ -19,6 +19,7 @@
 
 #if !TARGET_OS_IPHONE
 #import <AppKit/AppKit.h>
+
 #ifndef UIImage
 #define UIImage NSImage
 #endif
@@ -39,7 +40,7 @@
         #define SDDispatchQueueSetterSementics strong
     #endif
 #else
-    #if MAC_OS_X_VERSION_MIN_REQUIRED >= 1080
+#if MAC_OS_X_VERSION_MIN_REQUIRED >= 1080
         #undef SDDispatchQueueRelease
         #define SDDispatchQueueRelease(q)
         #undef SDDispatchQueueSetterSementics
@@ -50,7 +51,7 @@
 #if OS_OBJECT_USE_OBJC
     #define SDDispatchQueueSetterSementics strong
 #else
-    #define SDDispatchQueueSetterSementics assign
+#define SDDispatchQueueSetterSementics assign
 #endif
 
 extern UIImage *SDScaledImageForPath(NSString *path, NSObject *imageOrData);

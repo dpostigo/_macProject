@@ -33,7 +33,7 @@
 
 - (NSString *) sha1: (NSString *) input {
     const char *cstr = [input cStringUsingEncoding: NSUTF8StringEncoding];
-    NSData *data = [NSData dataWithBytes: cstr length: input.length];
+    NSData     *data = [NSData dataWithBytes: cstr length: input.length];
 
     uint8_t digest[CC_SHA1_DIGEST_LENGTH];
 
@@ -54,7 +54,6 @@
 
 - (void) operationFailedWithString: (NSString *) string {
     [_model notifyDelegates: @selector(progressStatusEndedWithString:) object: string];
-
 
 }
 

@@ -34,7 +34,7 @@
 }
 
 - (void) setContentSize: (NSSize) newSize {
-    NSSize sizeDelta = newSize;
+    NSSize sizeDelta       = newSize;
     NSSize childBoundsSize = [childContentView bounds].size;
     sizeDelta.width -= childBoundsSize.width;
     sizeDelta.height -= childBoundsSize.height;

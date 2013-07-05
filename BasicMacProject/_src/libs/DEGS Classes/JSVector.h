@@ -12,14 +12,14 @@
 
 @interface JSVector : JSGeneralVector
 
-@property (nonatomic, strong) NSArray *initialBasis;
-@property (nonatomic) NSInteger initialisation;
-@property (nonatomic, strong, readonly) NSArray *initialisationOptions;
-@property (nonatomic, strong) NSString *filename;
-@property (nonatomic, strong) NSString *cdataString;
-@property (nonatomic, strong) JSDependencies *dependencies;
+@property(nonatomic, strong) NSArray *initialBasis;
+@property(nonatomic) NSInteger initialisation;
+@property(nonatomic, strong, readonly) NSArray *initialisationOptions;
+@property(nonatomic, strong) NSString          *filename;
+@property(nonatomic, strong) NSString          *cdataString;
+@property(nonatomic, strong) JSDependencies    *dependencies;
 
-- (NSXMLElement *)exportAsXML;
-- (id)initFromXML:(NSXMLElement *)anElement;
+- (NSXMLElement *) exportAsXML;
+- (id) initFromXML: (NSXMLElement *) anElement;
 
 @end

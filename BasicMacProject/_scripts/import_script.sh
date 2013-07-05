@@ -1,4 +1,4 @@
-find -L "${SRCROOT}/assets" \
+find -L "${SRCROOT}/_assets" \
 -type f -not -name ".*" \
 -not -name "`basename ${INFOPLIST_FILE}`" \
 | xargs -t -I {} \

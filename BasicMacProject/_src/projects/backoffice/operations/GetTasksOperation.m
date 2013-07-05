@@ -23,7 +23,7 @@
 
     NSLog(@"_model.currentUser.id = %@", _model.currentUser.id);
     self.urlString = [NSString stringWithFormat: @"%@/tasks.json?contact_id=%@", STAGING_URL, _model.currentUser.id];
-    self.url = [NSURL URLWithString: urlString];
+    self.url       = [NSURL URLWithString: urlString];
 
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL: url];
     request.requestMethod = @"GET";
@@ -32,7 +32,7 @@
 
     if (!request.error) {
 
-        NSError *error;
+        NSError      *error;
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData: request.responseData options: kNilOptions error: &error];
 
         if (dictionary == nil) {
@@ -60,7 +60,7 @@
 
             _model.jobs = [[NSMutableArray alloc] init];
             NSMutableArray *jobIds = [[NSMutableArray alloc] init];
-            for (Task *task in _model.tasks) {
+            for (Task      *task in _model.tasks) {
                 Job *job = task.job;
                 if (![jobIds containsObject: job.id]) {
                     [jobIds addObject: job.id];

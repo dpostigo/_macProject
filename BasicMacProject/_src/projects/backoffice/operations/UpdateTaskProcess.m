@@ -29,7 +29,7 @@
     [super main];
 
     self.urlString = [NSString stringWithFormat: @"%@/tasks/%@.json", STAGING_URL, task.id];
-    self.url = [NSURL URLWithString: urlString];
+    self.url       = [NSURL URLWithString: urlString];
 
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL: url];
     request.requestMethod = @"PUT";
@@ -49,14 +49,14 @@
     [jsonDict setObject: task.observerIds forKey: @"task_observers"];
     [jsonDict setObject: _model.currentUser.id forKey: @"contact_id"];
 
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject: jsonDict options: kNilOptions error: nil];
+    NSData   *jsonData   = [NSJSONSerialization dataWithJSONObject: jsonDict options: kNilOptions error: nil];
     NSString *jsonString = [[NSString alloc] initWithData: jsonData encoding: NSUTF8StringEncoding];
-    NSString *postStr = [NSString stringWithFormat: @"%@", jsonString];
+    NSString *postStr    = [NSString stringWithFormat: @"%@", jsonString];
     [request appendPostData: [postStr dataUsingEncoding: NSUTF8StringEncoding]];
     [request startSynchronous];
 
     if (!request.error) {
-        NSError *error;
+        NSError      *error;
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData: request.responseData options: kNilOptions error: &error];
         if (dictionary == nil) {
             NSLog(@"%@ failed.", NSStringFromClass([self class]));

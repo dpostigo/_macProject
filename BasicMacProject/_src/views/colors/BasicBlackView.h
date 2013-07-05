@@ -6,8 +6,8 @@
 
 
 #import <Foundation/Foundation.h>
-#import "BasicBackgroundView.h"
+#import "BasicBackgroundViewOld.h"
 
 
-@interface BasicBlackView : BasicBackgroundView
+@interface BasicBlackView : BasicBackgroundViewOld
 @end

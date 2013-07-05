@@ -11,12 +11,12 @@
 
 
 @interface CreateTaskOperation : BasicBackOfficeOperation {
-    NSDictionary *taskDictionary;
+    NSDictionary   *taskDictionary;
     NSMutableArray *taskObservers;
 }
 
 
-@property(nonatomic, strong) NSDictionary *taskDictionary;
+@property(nonatomic, strong) NSDictionary   *taskDictionary;
 @property(nonatomic, strong) NSMutableArray *taskObservers;
 - (id) initWithTaskDictionary: (NSDictionary *) aTaskDictionary taskObservers: (NSMutableArray *) aTaskObservers;
 

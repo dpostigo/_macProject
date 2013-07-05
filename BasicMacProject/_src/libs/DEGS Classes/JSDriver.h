@@ -11,11 +11,11 @@
 
 @interface JSDriver : JSNode
 
-@property (nonatomic) NSUInteger type;
-@property (readonly, nonatomic, strong) NSArray *typeOptions;
-@property (nonatomic, strong) NSString *paths;
+@property(nonatomic) NSUInteger type;
+@property(readonly, nonatomic, strong) NSArray *typeOptions;
+@property(nonatomic, strong) NSString          *paths;
 
-- (NSXMLElement *)exportAsXML;
-- (id)initFromXML:(NSXMLElement *)anElement;
+- (NSXMLElement *) exportAsXML;
+- (id) initFromXML: (NSXMLElement *) anElement;
 
 @end

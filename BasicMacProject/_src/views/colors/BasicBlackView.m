@@ -17,7 +17,7 @@
     [super setup];
 
     self.borderColor = [NSColor blackColor];
-    self.gradient = [[NSGradient alloc] initWithColorsAndLocations:
+    self.gradient    = [[NSGradient alloc] initWithColorsAndLocations:
             [NSColor colorWithDeviceWhite: 0.15f alpha: 1.0f], 0.0f,
             [NSColor colorWithDeviceWhite: 0.19f alpha: 1.0f], 0.5f,
             [NSColor colorWithDeviceWhite: 0.20f alpha: 1.0f], 0.5f,

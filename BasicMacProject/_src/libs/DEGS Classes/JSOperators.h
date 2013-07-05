@@ -24,14 +24,14 @@
 
 @interface JSOperators : JSNode
 
-@property (nonatomic, strong) JSOperatorStack *operators;
-@property (nonatomic, strong) NSArray *integrationVectors;
-@property (nonatomic, strong) JSDependencies *dependencies;
-@property (nonatomic, strong) NSString *evaluation;
-@property (nonatomic, strong) NSArray *dimensions;
-@property (nonatomic, strong) NSString *name;
+@property(nonatomic, strong) JSOperatorStack *operators;
+@property(nonatomic, strong) NSArray         *integrationVectors;
+@property(nonatomic, strong) JSDependencies  *dependencies;
+@property(nonatomic, strong) NSString        *evaluation;
+@property(nonatomic, strong) NSArray         *dimensions;
+@property(nonatomic, strong) NSString        *name;
 
-- (NSXMLElement *)exportAsXML;
-- (id)initFromXML:(NSXMLElement *)anElement;
+- (NSXMLElement *) exportAsXML;
+- (id) initFromXML: (NSXMLElement *) anElement;
 
 @end

@@ -10,7 +10,7 @@
 #import "BasicCustomRowView.h"
 
 
-@interface BasicStyledRowView : BasicCustomRowView  {
+@interface BasicStyledRowView : BasicCustomRowView {
 
 }
 @end

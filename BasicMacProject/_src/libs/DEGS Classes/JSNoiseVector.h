@@ -11,15 +11,15 @@
 
 @interface JSNoiseVector : JSGeneralVector
 
-@property (nonatomic, strong) NSArray *initialBasis;
-@property (nonatomic) NSUInteger method;
-@property (nonatomic, strong, readonly) NSArray *methodOptions;
-@property (nonatomic, strong) NSString *seed;
-@property (nonatomic) NSUInteger kind;
-@property (nonatomic, strong, readonly) NSArray *kindOptions;
-@property (nonatomic, strong) NSString *mean;
+@property(nonatomic, strong) NSArray *initialBasis;
+@property(nonatomic) NSUInteger method;
+@property(nonatomic, strong, readonly) NSArray *methodOptions;
+@property(nonatomic, strong) NSString          *seed;
+@property(nonatomic) NSUInteger kind;
+@property(nonatomic, strong, readonly) NSArray *kindOptions;
+@property(nonatomic, strong) NSString          *mean;
 
-- (NSXMLElement *)exportAsXML;
-- (id)initFromXML:(NSXMLElement *)anElement;
+- (NSXMLElement *) exportAsXML;
+- (id) initFromXML: (NSXMLElement *) anElement;
 
 @end

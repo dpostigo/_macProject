@@ -11,15 +11,13 @@
 
 @implementation JSPreamble
 
-- (NSString *)description
-{
+- (NSString *) description {
     return @"Preamble";
 }
 
-- (BOOL)addObjectsFromPathComponents:(NSMutableArray *)components toPathObjects:(NSMutableArray *)pathObjects
-{
-    if ([[components objectAtIndex:0] isEqualToString:@"description"]) [components replaceObjectAtIndex:0 withObject:@"scriptDescription"];
-    return [super addObjectsFromPathComponents:components toPathObjects:pathObjects];
+- (BOOL) addObjectsFromPathComponents: (NSMutableArray *) components toPathObjects: (NSMutableArray *) pathObjects {
+    if ([[components objectAtIndex: 0] isEqualToString: @"description"]) [components replaceObjectAtIndex: 0 withObject: @"scriptDescription"];
+    return [super addObjectsFromPathComponents: components toPathObjects: pathObjects];
 }
 
 @end

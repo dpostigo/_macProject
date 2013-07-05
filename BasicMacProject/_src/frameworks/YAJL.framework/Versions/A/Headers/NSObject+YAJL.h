@@ -67,7 +67,7 @@
  @throws YAJLGenInvalidObjectException If object is invalid
  @result JSON String
  */
-- (NSString *)yajl_JSONString;
+- (NSString *) yajl_JSONString;
 
 /*!
  Create JSON string from object.
@@ -83,7 +83,7 @@
  @param indentString
  @result JSON String
  */
-- (NSString *)yajl_JSONStringWithOptions:(YAJLGenOptions)options indentString:(NSString *)indentString;
+- (NSString *) yajl_JSONStringWithOptions: (YAJLGenOptions) options indentString: (NSString *) indentString;
 
 
 #pragma mark Parsing
@@ -102,7 +102,7 @@
  id JSONValue = [JSONData yajl_JSON];
  @endcode
  */
-- (id)yajl_JSON;
+- (id) yajl_JSON;
 
 /*!
  Parse JSON (NSString or NSData or dataUsingEncoding:) with out error.
@@ -122,7 +122,7 @@
  if (error) ...;
  @endcode
  */
-- (id)yajl_JSON:(NSError **)error;
+- (id) yajl_JSON: (NSError **) error;
 
 /*!
  Parse JSON (NSString or NSData or dataUsingEncoding:) with options and out error.
@@ -148,7 +148,7 @@
  if (error) ...;
  @endcode
  */
-- (id)yajl_JSONWithOptions:(YAJLParserOptions)options error:(NSError **)error;
+- (id) yajl_JSONWithOptions: (YAJLParserOptions) options error: (NSError **) error;
 
 @end
 

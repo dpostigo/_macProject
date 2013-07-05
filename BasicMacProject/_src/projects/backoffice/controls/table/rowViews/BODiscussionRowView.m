@@ -18,10 +18,10 @@
     self = [super initWithFrame: frameRect];
     if (self) {
 
-        NSColor *yellow = [NSColor colorWithString: PALE_YELLOW];
+        NSColor *yellow    = [NSColor colorWithString: PALE_YELLOW];
         NSColor *darkColor = [NSColor colorWithString: @"be955b"];
 
-        gradient = [[NSGradient alloc] initWithColorsAndLocations:
+        self.gradient = [[NSGradient alloc] initWithColorsAndLocations:
                 [yellow blendedColorWithFraction: 0.45f ofColor: darkColor], 0.0f,
                 [yellow blendedColorWithFraction: 0.44f ofColor: darkColor], 0.2f,
                 [yellow blendedColorWithFraction: 0.43f ofColor: darkColor], 0.5f,
@@ -31,8 +31,8 @@
 
 
         //        borderColor = [NSColor colorWithDeviceWhite: 1.0 alpha: 0.8];
-        borderColor = [yellow colorWithAlphaComponent: 0.5];
-        cornerRadius = 5.0;
+        self.borderColor  = [yellow colorWithAlphaComponent: 0.5];
+        self.cornerRadius = 5.0;
     }
 
     return self;

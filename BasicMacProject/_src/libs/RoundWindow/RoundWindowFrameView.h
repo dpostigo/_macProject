@@ -16,8 +16,7 @@
 
 #define WINDOW_FRAME_PADDING 75
 
-@interface RoundWindowFrameView : NSView
-{
+@interface RoundWindowFrameView : NSView {
 
 }
 

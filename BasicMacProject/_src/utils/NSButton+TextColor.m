@@ -13,10 +13,10 @@
 
 - (NSColor *) textColor {
     NSAttributedString *attrTitle = [self attributedTitle];
-    int len = [attrTitle length];
+    int     len   = [attrTitle length];
     NSRange range = NSMakeRange(0, MIN(len, 1)); // take color from first char
-    NSDictionary *attrs = [attrTitle fontAttributesInRange: range];
-    NSColor *textColor = [NSColor controlTextColor];
+    NSDictionary *attrs     = [attrTitle fontAttributesInRange: range];
+    NSColor      *textColor = [NSColor controlTextColor];
     if (attrs) {
         textColor = [attrs objectForKey: NSForegroundColorAttributeName];
     }
@@ -25,7 +25,7 @@
 
 - (void) setTextColor: (NSColor *) textColor {
     NSMutableAttributedString *attrTitle = [[NSMutableAttributedString alloc] initWithAttributedString: [self attributedTitle]];
-    int len = [attrTitle length];
+    int     len   = [attrTitle length];
     NSRange range = NSMakeRange(0, len);
     [attrTitle addAttribute: NSForegroundColorAttributeName
                       value: textColor
@@ -36,7 +36,7 @@
 
 - (void) setFont: (NSFont *) font {
     NSMutableAttributedString *attrTitle = [[NSMutableAttributedString alloc] initWithAttributedString: [self attributedTitle]];
-    int len = [attrTitle length];
+    int     len   = [attrTitle length];
     NSRange range = NSMakeRange(0, len);
     [attrTitle addAttribute: NSFontAttributeName value: font range: range];
     [attrTitle fixAttributesInRange: range];
@@ -45,10 +45,10 @@
 
 - (NSColor *) shadowColor {
     NSAttributedString *attrTitle = [self attributedTitle];
-    int len = [attrTitle length];
+    int     len   = [attrTitle length];
     NSRange range = NSMakeRange(0, MIN(len, 1)); // take color from first char
     NSDictionary *attrs = [attrTitle fontAttributesInRange: range];
-    NSShadow *shadow;
+    NSShadow     *shadow;
     if (attrs) {
         shadow = [attrs objectForKey: NSShadowAttributeName];
     }
@@ -58,7 +58,7 @@
 
 - (void) setShadow: (NSShadow *) shadow {
     NSMutableAttributedString *attrTitle = [[NSMutableAttributedString alloc] initWithAttributedString: [self attributedTitle]];
-    int len = [attrTitle length];
+    int     len   = [attrTitle length];
     NSRange range = NSMakeRange(0, len);
 
     [attrTitle addAttribute: NSShadowAttributeName value: shadow range: range];

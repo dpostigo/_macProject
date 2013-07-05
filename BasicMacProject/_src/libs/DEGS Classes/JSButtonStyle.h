@@ -12,20 +12,20 @@
 @interface JSButtonStyle : NSObject
 
 // decorations is a dictionary where the key represent the type of decoration and the value is the decoration itself
-- (id)initWithDecorations:(NSDictionary *)decorations;
+- (id) initWithDecorations: (NSDictionary *) decorations;
 
 // returns a style where all the decorations and text are white
-+ (id)defaultLightStyle;
++ (id) defaultLightStyle;
 
 // returns a style where all the decorations and text are black
-+ (id)defaultDarkStyle;
++ (id) defaultDarkStyle;
 
 // properties describing the decoration of button in all its possible states
-@property (nonatomic, strong) JSButtonDecoration *highlightDecoration;
-@property (nonatomic, strong) JSButtonDecoration *normalDecoration;
-@property (nonatomic, strong) JSButtonDecoration *selectionDecoration;
-@property (nonatomic, strong) JSButtonDecoration *mouseOverDecoration;
+@property(nonatomic, strong) JSButtonDecoration *highlightDecoration;
+@property(nonatomic, strong) JSButtonDecoration *normalDecoration;
+@property(nonatomic, strong) JSButtonDecoration *selectionDecoration;
+@property(nonatomic, strong) JSButtonDecoration *mouseOverDecoration;
 
-@property (nonatomic, strong) NSColor *textColor;
+@property(nonatomic, strong) NSColor *textColor;
 
 @end

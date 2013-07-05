@@ -19,7 +19,7 @@
     [super main];
 
     self.urlString = [NSString stringWithFormat: @"%@/service_items.json", STAGING_URL];
-    self.url = [NSURL URLWithString: urlString];
+    self.url       = [NSURL URLWithString: urlString];
 
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL: url];
     request.requestMethod = @"GET";
@@ -28,7 +28,7 @@
 
     if (!request.error) {
 
-        NSError *error;
+        NSError      *error;
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData: request.responseData options: kNilOptions error: &error];
 
         if (dictionary == nil) {

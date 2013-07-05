@@ -8,19 +8,21 @@
 #import <Cocoa/Cocoa.h>
 #import <Foundation/Foundation.h>
 
+@class PathOptions;
 
-enum {
+typedef enum {
     NSBezierPathUpperRight = 1 << 0,
     NSBezierPathLowerRight = 1 << 1,
-    NSBezierPathLowerLeft = 1 << 2,
-    NSBezierPathUpperLeft = 1 << 3,
-};
-typedef NSUInteger NSBezierPathCornerOptions;
+    NSBezierPathLowerLeft  = 1 << 2,
+    NSBezierPathUpperLeft  = 1 << 3,
+} NSBezierPathCornerOptions;
+
 
 @interface NSBezierPath (DPUtils)
 
 
 + (NSBezierPath *) bezierPathWithRect: (NSRect) rect cornerRadius: (CGFloat) radius options: (NSBezierPathCornerOptions) options;
+- (void) drawWithPathOptions: (PathOptions *) pathOptions;
 - (void) drawWithFill: (NSColor *) aColor;
 - (void) drawGradient: (NSGradient *) gradient;
 - (void) drawGradient: (NSGradient *) gradient angle: (CGFloat) angle;

@@ -15,16 +15,17 @@ static NSUInteger const kKGNoiseImageSize = 128;
 #if TARGET_OS_IPHONE
 static inline CGFloat *gradientComponentsForColors(UIColor *color1, UIColor *color2){
 #else
-static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *color2){
+
+static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *color2) {
 #endif
-    CGFloat *components = malloc(8*sizeof(CGFloat));
+    CGFloat       *components                    = malloc(8 * sizeof(CGFloat));
     const CGFloat *alternateBackgroundComponents = CGColorGetComponents([color1 CGColorCreate]);
-    if(CGColorGetNumberOfComponents([color1 CGColorCreate]) == 2){
+    if (CGColorGetNumberOfComponents([color1 CGColorCreate]) == 2) {
         components[0] = alternateBackgroundComponents[0];
         components[1] = alternateBackgroundComponents[0];
         components[2] = alternateBackgroundComponents[0];
         components[3] = alternateBackgroundComponents[1];
-    }else{
+    } else {
         components[0] = alternateBackgroundComponents[0];
         components[1] = alternateBackgroundComponents[1];
         components[2] = alternateBackgroundComponents[2];
@@ -32,12 +33,12 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
     }
 
     const CGFloat *backgroundComponents = CGColorGetComponents([color2 CGColorCreate]);
-    if(CGColorGetNumberOfComponents([color2 CGColorCreate]) == 2){
+    if (CGColorGetNumberOfComponents([color2 CGColorCreate]) == 2) {
         components[4] = backgroundComponents[0];
         components[5] = backgroundComponents[0];
         components[6] = backgroundComponents[0];
         components[7] = backgroundComponents[1];
-    }else{
+    } else {
         components[4] = backgroundComponents[0];
         components[5] = backgroundComponents[1];
         components[6] = backgroundComponents[2];
@@ -50,21 +51,22 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
 
 @implementation KGNoise
 
-+ (void)drawNoiseWithOpacity:(CGFloat)opacity{
-    [self drawNoiseWithOpacity:opacity andBlendMode:kCGBlendModeScreen];
++ (void) drawNoiseWithOpacity: (CGFloat) opacity {
+    [self drawNoiseWithOpacity: opacity andBlendMode: kCGBlendModeScreen];
 }
 
-+ (void)drawNoiseWithOpacity:(CGFloat)opacity andBlendMode:(CGBlendMode)blendMode{
-    static CGImageRef noiseImageRef = nil;
++ (void) drawNoiseWithOpacity: (CGFloat) opacity andBlendMode: (CGBlendMode) blendMode {
+    static CGImageRef      noiseImageRef = nil;
     static dispatch_once_t oncePredicate;
     dispatch_once(&oncePredicate, ^{
         NSUInteger width = kKGNoiseImageSize, height = width;
-        NSUInteger size = width*height;
-        char *rgba = (char *)malloc(size); srand(115);
-        for(NSUInteger i=0; i < size; ++i){rgba[i] = rand()%256;}
-        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceGray();
-        CGContextRef bitmapContext =
-        CGBitmapContextCreate(rgba, width, height, 8, width, colorSpace, kCGImageAlphaNone);
+        NSUInteger size  = width * height;
+        char *rgba = (char *) malloc(size);
+        srand(115);
+        for (NSUInteger i             = 0; i < size; ++i) {rgba[i] = rand() % 256;}
+        CGColorSpaceRef colorSpace    = CGColorSpaceCreateDeviceGray();
+        CGContextRef    bitmapContext =
+                                CGBitmapContextCreate(rgba, width, height, 8, width, colorSpace, kCGImageAlphaNone);
         CFRelease(colorSpace);
         noiseImageRef = CGBitmapContextCreateImage(bitmapContext);
         CFRelease(bitmapContext);
@@ -87,13 +89,13 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
         CGContextScaleCTM(context, 1/scaleFactor, 1/scaleFactor);
     }
 #else
-    if([[NSScreen mainScreen] respondsToSelector:@selector(backingScaleFactor)]){
+    if ([[NSScreen mainScreen] respondsToSelector: @selector(backingScaleFactor)]) {
         CGFloat scaleFactor = [[NSScreen mainScreen] backingScaleFactor];
-        CGContextScaleCTM(context, 1/scaleFactor, 1/scaleFactor);
+        CGContextScaleCTM(context, 1 / scaleFactor, 1 / scaleFactor);
     }
 #endif
 
-    CGRect imageRect = (CGRect){CGPointZero, CGImageGetWidth(noiseImageRef), CGImageGetHeight(noiseImageRef)};
+    CGRect imageRect = (CGRect) {CGPointZero, CGImageGetWidth(noiseImageRef), CGImageGetHeight(noiseImageRef)};
     CGContextDrawTiledImage(context, imageRect, noiseImageRef);
     CGContextRestoreGState(context);
 }
@@ -119,21 +121,26 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
 }
 @end
 #else
-@implementation NSColor(KGNoise)
-- (NSColor *)colorWithNoiseWithOpacity:(CGFloat)opacity{
-    return [self colorWithNoiseWithOpacity:opacity andBlendMode:kCGBlendModeScreen];    
+
+@implementation NSColor (KGNoise)
+
+- (NSColor *) colorWithNoiseWithOpacity: (CGFloat) opacity {
+    return [self colorWithNoiseWithOpacity: opacity andBlendMode: kCGBlendModeScreen];
 }
-- (NSColor *)colorWithNoiseWithOpacity:(CGFloat)opacity andBlendMode:(CGBlendMode)blendMode{
+
+- (NSColor *) colorWithNoiseWithOpacity: (CGFloat) opacity andBlendMode: (CGBlendMode) blendMode {
     CGRect rect = {CGPointZero, kKGNoiseImageSize, kKGNoiseImageSize};
-    NSImage *image = [[NSImage alloc] initWithSize:rect.size];
+    NSImage *image = [[NSImage alloc] initWithSize: rect.size];
     [image lockFocus];
-    CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];  
-    [self setFill]; CGContextFillRect(context, rect);
-    [KGNoise drawNoiseWithOpacity:opacity andBlendMode:blendMode];
+    CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
+    [self setFill];
+    CGContextFillRect(context, rect);
+    [KGNoise drawNoiseWithOpacity: opacity andBlendMode: blendMode];
     [image unlockFocus];
-    return [NSColor colorWithPatternImage:image];
+    return [NSColor colorWithPatternImage: image];
 }
 @end
+
 #endif
 
 #pragma mark - KGNoiseView
@@ -143,59 +150,62 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
 #if TARGET_OS_IPHONE
 - (id)initWithFrame:(CGRect)frameRect{
 #else
-- (id)initWithFrame:(NSRect)frameRect{
+
+- (id) initWithFrame: (NSRect) frameRect {
 #endif
-    if((self = [super initWithFrame:frameRect])){
+    if ((self = [super initWithFrame: frameRect])) {
         [self setup];
     }
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder{
-    if((self = [super initWithCoder:aDecoder])){
+- (id) initWithCoder: (NSCoder *) aDecoder {
+    if ((self = [super initWithCoder: aDecoder])) {
         [self setup];
     }
     return self;
 }
 
-- (void)setup{
+- (void) setup {
 #if TARGET_OS_IPHONE
     self.backgroundColor = [UIColor grayColor];
 #else
     self.backgroundColor = [NSColor grayColor];
 #endif
-    self.noiseOpacity = 0.1;
+    self.noiseOpacity   = 0.1;
     self.noiseBlendMode = kCGBlendModeScreen;
 }
 
 #if TARGET_OS_IPHONE
 #else
-- (void)setBackgroundColor:(NSColor *)backgroundColor{
-    if(_backgroundColor != backgroundColor){
+
+- (void) setBackgroundColor: (NSColor *) backgroundColor {
+    if (_backgroundColor != backgroundColor) {
         _backgroundColor = backgroundColor;
-        [self setNeedsDisplay:YES];
+        [self setNeedsDisplay: YES];
     }
 }
+
 #endif
 
-- (void)setNoiseOpacity:(CGFloat)noiseOpacity{
-    if(_noiseOpacity != noiseOpacity){
+- (void) setNoiseOpacity: (CGFloat) noiseOpacity {
+    if (_noiseOpacity != noiseOpacity) {
         _noiseOpacity = noiseOpacity;
 #if TARGET_OS_IPHONE        
         [self setNeedsDisplay];
 #else
-        [self setNeedsDisplay:YES];
+        [self setNeedsDisplay: YES];
 #endif
     }
 }
 
-- (void)setNoiseBlendMode:(CGBlendMode)noiseBlendMode{
-    if(_noiseBlendMode != noiseBlendMode){
+- (void) setNoiseBlendMode: (CGBlendMode) noiseBlendMode {
+    if (_noiseBlendMode != noiseBlendMode) {
         _noiseBlendMode = noiseBlendMode;
 #if TARGET_OS_IPHONE
         [self setNeedsDisplay];
 #else
-        [self setNeedsDisplay:YES];
+        [self setNeedsDisplay: YES];
 #endif
     }
 }
@@ -204,40 +214,41 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
 - (void)drawRect:(CGRect)dirtyRect{
     CGContextRef context = UIGraphicsGetCurrentContext();    
 #else
-- (void)drawRect:(NSRect)dirtyRect{
-    CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];    
+
+- (void) drawRect: (NSRect) dirtyRect {
+    CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
 #endif
     [self.backgroundColor setFill];
     CGContextFillRect(context, self.bounds);
-    [KGNoise drawNoiseWithOpacity:self.noiseOpacity andBlendMode:self.noiseBlendMode];
-    
+    [KGNoise drawNoiseWithOpacity: self.noiseOpacity andBlendMode: self.noiseBlendMode];
+
 #if !TARGET_OS_IPHONE
     if (_shadow) {
-        
-//        [NSGraphicsContext saveGraphicsState];        
-//        [self.shadow set];
-//        
-//        NSColor *backgroundColor = [[NSColor blackColor] colorWithAlphaComponent:1.0];
-//        [backgroundColor setFill];
-//        
-//        if (self.shadow.shadowOffset.width!=0) {
-//            CGFloat horShadowOrigin;
-//            if (self.shadow.shadowOffset.width > 0) horShadowOrigin = -self.shadow.shadowOffset.width;
-//            else horShadowOrigin = self.bounds.size.width;
-//            NSRect horShadowRect = NSMakeRect(horShadowOrigin, 0.0, abs(self.shadow.shadowOffset.width), [self bounds].size.height);
-//            [[NSBezierPath bezierPathWithRect:horShadowRect] fill];
-//        }
-//        if (self.shadow.shadowOffset.height!=0) {
-//            CGFloat verShadowOrigin;
-//            if (self.shadow.shadowOffset.height > 0) verShadowOrigin = -self.shadow.shadowOffset.height;
-//            else verShadowOrigin = self.bounds.size.height;
-//            NSRect verShadowRect = NSMakeRect(verShadowOrigin, 0.0, [self bounds].size.width, abs(self.shadow.shadowOffset.height));
-//            [[NSBezierPath bezierPathWithRect:verShadowRect] fill];
-//        }
-//        
-//        [NSGraphicsContext restoreGraphicsState];
+
+        //        [NSGraphicsContext saveGraphicsState];
+        //        [self.shadow set];
+        //
+        //        NSColor *backgroundColor = [[NSColor blackColor] colorWithAlphaComponent:1.0];
+        //        [backgroundColor setFill];
+        //
+        //        if (self.shadow.shadowOffset.width!=0) {
+        //            CGFloat horShadowOrigin;
+        //            if (self.shadow.shadowOffset.width > 0) horShadowOrigin = -self.shadow.shadowOffset.width;
+        //            else horShadowOrigin = self.bounds.size.width;
+        //            NSRect horShadowRect = NSMakeRect(horShadowOrigin, 0.0, abs(self.shadow.shadowOffset.width), [self bounds].size.height);
+        //            [[NSBezierPath bezierPathWithRect:horShadowRect] fill];
+        //        }
+        //        if (self.shadow.shadowOffset.height!=0) {
+        //            CGFloat verShadowOrigin;
+        //            if (self.shadow.shadowOffset.height > 0) verShadowOrigin = -self.shadow.shadowOffset.height;
+        //            else verShadowOrigin = self.bounds.size.height;
+        //            NSRect verShadowRect = NSMakeRect(verShadowOrigin, 0.0, [self bounds].size.width, abs(self.shadow.shadowOffset.height));
+        //            [[NSBezierPath bezierPathWithRect:verShadowRect] fill];
+        //        }
+        //
+        //        [NSGraphicsContext restoreGraphicsState];
         [[NSColor clearColor] setFill];
-        [[NSBezierPath bezierPathWithRect:dirtyRect] fillWithInnerShadow:self.shadow];
+        [[NSBezierPath bezierPathWithRect: dirtyRect] fillWithInnerShadow: self.shadow];
     }
 #endif
 }
@@ -247,8 +258,8 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
 #pragma mark - KGNoiseLinearGradientView
 
 @implementation KGNoiseLinearGradientView
-    
-- (void)setup{
+
+- (void) setup {
     [super setup];
     self.gradientDirection = KGLinearGradientDirection270Degrees;
 }
@@ -261,31 +272,34 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
     }
 }
 #else
-- (void)setAlternateBackgroundColor:(NSColor *)alternateBackgroundColor{
-    if(_alternateBackgroundColor != alternateBackgroundColor){
+
+- (void) setAlternateBackgroundColor: (NSColor *) alternateBackgroundColor {
+    if (_alternateBackgroundColor != alternateBackgroundColor) {
         _alternateBackgroundColor = alternateBackgroundColor;
-        [self setNeedsDisplay:YES];
+        [self setNeedsDisplay: YES];
     }
 }
+
 #endif
 
 #if TARGET_OS_IPHONE
 - (void)drawRect:(CGRect)dirtyRect{
     CGContextRef context = UIGraphicsGetCurrentContext();
 #else
-- (void)drawRect:(NSRect)dirtyRect{
+
+- (void) drawRect: (NSRect) dirtyRect {
     CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
 #endif
     // if we don't have an alternate color draw solid
-    if(self.alternateBackgroundColor == nil){
-        [super drawRect:dirtyRect];
+    if (self.alternateBackgroundColor == nil) {
+        [super drawRect: dirtyRect];
         return;
     }
-    
+
     CGRect bounds = self.bounds;
-    CGContextSaveGState(context);    
+    CGContextSaveGState(context);
     CGColorSpaceRef baseSpace = CGColorSpaceCreateDeviceRGB();
-    CGFloat *components = gradientComponentsForColors(self.alternateBackgroundColor, self.backgroundColor);    
+    CGFloat *components = gradientComponentsForColors(self.alternateBackgroundColor, self.backgroundColor);
     CGGradientRef gradient = CGGradientCreateWithColorComponents(baseSpace, components, NULL, 2);
     CGColorSpaceRelease(baseSpace), baseSpace = NULL;
     CGPoint startPoint;
@@ -293,30 +307,30 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
     switch (self.gradientDirection) {
         case KGLinearGradientDirection0Degrees:
             startPoint = CGPointMake(CGRectGetMinX(bounds), CGRectGetMidY(bounds));
-            endPoint = CGPointMake(CGRectGetMaxX(bounds), CGRectGetMidY(bounds));
+            endPoint   = CGPointMake(CGRectGetMaxX(bounds), CGRectGetMidY(bounds));
             break;
         case KGLinearGradientDirection90Degrees:
             startPoint = CGPointMake(CGRectGetMidX(bounds), CGRectGetMaxY(bounds));
-            endPoint = CGPointMake(CGRectGetMidX(bounds), CGRectGetMinY(bounds));
+            endPoint   = CGPointMake(CGRectGetMidX(bounds), CGRectGetMinY(bounds));
             break;
         case KGLinearGradientDirection180Degrees:
             startPoint = CGPointMake(CGRectGetMaxX(bounds), CGRectGetMidY(bounds));
-            endPoint = CGPointMake(CGRectGetMinX(bounds), CGRectGetMidY(bounds));
+            endPoint   = CGPointMake(CGRectGetMinX(bounds), CGRectGetMidY(bounds));
             break;
         case KGLinearGradientDirection270Degrees:
         default:
             startPoint = CGPointMake(CGRectGetMidX(bounds), CGRectGetMinY(bounds));
-            endPoint = CGPointMake(CGRectGetMidX(bounds), CGRectGetMaxY(bounds));
+            endPoint   = CGPointMake(CGRectGetMidX(bounds), CGRectGetMaxY(bounds));
             break;
     }
     CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0);
     CGGradientRelease(gradient), gradient = NULL;
     CGContextRestoreGState(context);
     free(components);
-    
-    [KGNoise drawNoiseWithOpacity:self.noiseOpacity andBlendMode:self.noiseBlendMode];
+
+    [KGNoise drawNoiseWithOpacity: self.noiseOpacity andBlendMode: self.noiseBlendMode];
 }
-    
+
 @end
 
 #pragma mark - KGNoiseRadialGradientView
@@ -331,42 +345,45 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
     }
 }
 #else
-- (void)setAlternateBackgroundColor:(NSColor *)alternateBackgroundColor{
-    if(_alternateBackgroundColor != alternateBackgroundColor){
+
+- (void) setAlternateBackgroundColor: (NSColor *) alternateBackgroundColor {
+    if (_alternateBackgroundColor != alternateBackgroundColor) {
         _alternateBackgroundColor = alternateBackgroundColor;
-        [self setNeedsDisplay:YES];
+        [self setNeedsDisplay: YES];
     }
 }
+
 #endif
 
 #if TARGET_OS_IPHONE
 - (void)drawRect:(CGRect)dirtyRect{
     CGContextRef context = UIGraphicsGetCurrentContext();
 #else
-- (void)drawRect:(NSRect)dirtyRect{
+
+- (void) drawRect: (NSRect) dirtyRect {
     CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
 #endif
     // if we don't have an alternate color draw solid
-    if(self.alternateBackgroundColor == nil){
-        [super drawRect:dirtyRect];
+    if (self.alternateBackgroundColor == nil) {
+        [super drawRect: dirtyRect];
         return;
     }
-    
+
     CGRect bounds = self.bounds;
     CGContextSaveGState(context);
-    size_t gradLocationsNum = 2;
-    CGFloat gradLocations[2] = {0.0f, 1.0f};
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    size_t          gradLocationsNum = 2;
+    CGFloat         gradLocations[2] = {0.0f, 1.0f};
+    CGColorSpaceRef colorSpace       = CGColorSpaceCreateDeviceRGB();
     CGFloat *components = gradientComponentsForColors(self.alternateBackgroundColor, self.backgroundColor);
     CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, components, gradLocations, gradLocationsNum);
     CGColorSpaceRelease(colorSpace), colorSpace = NULL;
-    CGPoint gradCenter= CGPointMake(round(CGRectGetMidX(bounds)), round(CGRectGetMidY(bounds)));
-    CGFloat gradRadius = sqrt(pow((CGRectGetHeight(bounds)/2), 2) + pow((CGRectGetWidth(bounds)/2), 2));
+    CGPoint gradCenter = CGPointMake(round(CGRectGetMidX(bounds)), round(CGRectGetMidY(bounds)));
+    CGFloat gradRadius = sqrt(pow((CGRectGetHeight(bounds) / 2), 2) + pow((CGRectGetWidth(bounds) / 2), 2));
     CGContextDrawRadialGradient(context, gradient, gradCenter, 0, gradCenter, gradRadius, kCGGradientDrawsAfterEndLocation);
     CGGradientRelease(gradient), gradient = NULL;
     CGContextRestoreGState(context);
     free(components);
-    
-    [KGNoise drawNoiseWithOpacity:self.noiseOpacity andBlendMode:self.noiseBlendMode];
+
+    [KGNoise drawNoiseWithOpacity: self.noiseOpacity andBlendMode: self.noiseBlendMode];
 }
 @end

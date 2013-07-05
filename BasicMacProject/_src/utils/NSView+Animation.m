@@ -14,12 +14,12 @@
 
 - (void) animateView: (NSView *) view inWindow: (NSWindow *) window duration: (CGFloat) duration {
 
-    NSRect toRect = view.frame;
+    NSRect toRect   = view.frame;
     view.top -= 10;
     view.alphaValue = 0;
 
     [NSAnimationContext runAnimationGroup: ^(NSAnimationContext *context) {
-        context.duration = duration;
+        context.duration       = duration;
         context.timingFunction = [CAMediaTimingFunction functionWithName: kCAMediaTimingFunctionEaseInEaseOut];
         [view.animator setFrame: toRect];
         [view.animator setAlphaValue: 1];
@@ -32,7 +32,7 @@
 }
 
 - (void) animateInDirection: (NSViewAnimationDirection) direction amount: (CGFloat) amount duration: (CGFloat) duration completionHandler: (void (^)()) completionHandler {
-    NSRect toRect = self.frame;
+    NSRect toRect   = self.frame;
     NSRect fromRect = self.frame;
 
     switch (direction) {
@@ -71,7 +71,7 @@
     self.frame = fromRect;
 
     [NSAnimationContext runAnimationGroup: ^(NSAnimationContext *context) {
-        context.duration = duration;
+        context.duration       = duration;
         context.timingFunction = [CAMediaTimingFunction functionWithName: kCAMediaTimingFunctionEaseInEaseOut];
         [self.animator setFrame: toRect];
     }                   completionHandler: completionHandler];
@@ -80,11 +80,10 @@
 - (void) animateInDirection: (NSViewAnimationDirection) direction amount: (CGFloat) amount duration: (CGFloat) duration alpha: (CGFloat) toAlpha {
     [self animateInDirection: direction amount: amount duration: duration alpha: toAlpha completionHandler: nil];
 
-
 }
 
 - (void) animateInDirection: (NSViewAnimationDirection) direction amount: (CGFloat) amount duration: (CGFloat) duration alpha: (CGFloat) toAlpha completionHandler: (void (^)()) completionHandler {
-    NSRect toRect = self.frame;
+    NSRect toRect   = self.frame;
     NSRect fromRect = self.frame;
 
 
@@ -127,7 +126,7 @@
 
 
     [NSAnimationContext runAnimationGroup: ^(NSAnimationContext *context) {
-        context.duration = duration;
+        context.duration       = duration;
         context.timingFunction = [CAMediaTimingFunction functionWithName: kCAMediaTimingFunctionEaseInEaseOut];
         [self.animator setFrame: toRect];
         [self.animator setAlphaValue: toAlpha];

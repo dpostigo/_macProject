@@ -6,6 +6,7 @@
 
 
 #import "NSBezierPath+DPUtils.h"
+#import "PathOptions.h"
 
 
 @implementation NSBezierPath (DPUtils)
@@ -17,12 +18,12 @@
     NSPoint endPoint;
     NSPoint thruPoint;
 
-    rect = NSInsetRect(rect, 0.5, 0.5);
+    if (options) rect = NSInsetRect(rect, 0.5, 0.5);
 
     [path moveToPoint: NSMakePoint(radius, 0)];
     [path lineToPoint: NSMakePoint(rect.size.width - radius, 0)];
 
-    endPoint = NSMakePoint(rect.size.width, radius);
+    endPoint  = NSMakePoint(rect.size.width, radius);
     thruPoint = NSMakePoint(rect.size.width, 0);
     if (options & NSBezierPathLowerRight) {
         [path appendBezierPathWithArcFromPoint: thruPoint toPoint: endPoint radius: radius];
@@ -32,7 +33,7 @@
     }
 
 
-    endPoint = NSMakePoint(rect.size.width - radius, rect.size.height);
+    endPoint  = NSMakePoint(rect.size.width - radius, rect.size.height);
     thruPoint = NSMakePoint(rect.size.width, rect.size.height);
     if (options & NSBezierPathUpperRight) {
         [path appendBezierPathWithArcFromPoint: thruPoint toPoint: endPoint radius: radius];
@@ -42,7 +43,7 @@
     }
 
 
-    endPoint = NSMakePoint(0, rect.size.height - radius);
+    endPoint  = NSMakePoint(0, rect.size.height - radius);
     thruPoint = NSMakePoint(0, rect.size.height);
     if (options & NSBezierPathUpperLeft) {
         [path appendBezierPathWithArcFromPoint: thruPoint toPoint: endPoint radius: radius];
@@ -52,7 +53,7 @@
     }
 
 
-    endPoint = NSMakePoint(radius, 0);
+    endPoint  = NSMakePoint(radius, 0);
     thruPoint = NSMakePoint(0, 0);
     if (options & NSBezierPathLowerLeft) {
         [path appendBezierPathWithArcFromPoint: thruPoint toPoint: endPoint radius: radius];
@@ -62,95 +63,24 @@
 
     }
 
-
-    //    [path moveToPoint: NSMakePoint(radius, 0)];
-    //    currentPoint = NSMakePoint(rect.size.width - radius, 0);
-    //    [path lineToPoint: currentPoint];
-    //
-    //
-    //    endPoint = NSMakePoint(rect.size.width, radius);
-    //    thruPoint = NSMakePoint(rect.size.width, 0);
-    //    if (options & NSBezierPathUpperRight) {
-    //        [path appendBezierPathWithArcFromPoint: currentPoint toPoint: endPoint radius: radius];
-    //    } else {
-    //        [path lineToPoint: thruPoint];
-    //        [path lineToPoint: endPoint];
-    //    }
-    //
-    //    currentPoint = endPoint;
-    //    endPoint = NSMakePoint(rect.size.width - radius, rect.size.height);
-    //    thruPoint = NSMakePoint(rect.size.width, rect.size.height);
-    //    if (options & NSBezierPathLowerRight) {
-    //        [path appendBezierPathWithArcFromPoint: currentPoint toPoint: endPoint radius: radius];
-    //    } else {
-    //        [path lineToPoint: thruPoint];
-    //        [path lineToPoint: endPoint];
-    //    }
-    //
-    //    currentPoint = endPoint;
-    //    endPoint = NSMakePoint(0, rect.size.height - radius);
-    //    thruPoint = NSMakePoint(0, rect.size.height);
-    //    if (options & NSBezierPathLowerLeft) {
-    //        [path appendBezierPathWithArcFromPoint: currentPoint toPoint: endPoint radius: radius];
-    //    } else {
-    //        [path lineToPoint: thruPoint];
-    //        [path lineToPoint: endPoint];
-    //    }
-    //
-    //    currentPoint = endPoint;
-    //    endPoint = NSMakePoint(radius, 0);
-    //    thruPoint = NSMakePoint(0, 0);
-    //    if (options & NSBezierPathUpperLeft) {
-    //        [path appendBezierPathWithArcFromPoint: currentPoint toPoint: endPoint radius: radius];
-    //    } else {
-    //        [path lineToPoint: thruPoint];
-    //        [path lineToPoint: endPoint];
-    //    }
-    //
-    //    //
-    //    //    endPoint = NSMakePoint(rect.size.width, radius);
-    //    //    thruPoint = NSMakePoint(rect.size.width, 0);
-    //    //    if (options & NSBezierPathUpperRight) {
-    //    //        [path curveToPoint: endPoint controlPoint1: endPoint controlPoint2: thruPoint];
-    //    //    } else {
-    //    //        [path lineToPoint: thruPoint];
-    //    //        [path lineToPoint: endPoint];
-    //    //    }
-    //    //
-    //    //
-    //    //    endPoint = NSMakePoint(rect.size.width - radius, rect.size.height);
-    //    //    thruPoint = NSMakePoint(rect.size.width, rect.size.height);
-    //    //    if (options & NSBezierPathLowerRight) {
-    //    //        [path curveToPoint: endPoint controlPoint1: endPoint controlPoint2: thruPoint];
-    //    //    } else {
-    //    //        [path lineToPoint: thruPoint];
-    //    //        [path lineToPoint: endPoint];
-    //    //    }
-    //    //
-    //    //    endPoint = NSMakePoint(0, rect.size.height - radius);
-    //    //    thruPoint = NSMakePoint(0, rect.size.height);
-    //    //    if (options & NSBezierPathLowerLeft) {
-    //    //        [path curveToPoint: endPoint controlPoint1: endPoint controlPoint2: thruPoint];
-    //    //    } else {
-    //    //        [path lineToPoint: thruPoint];
-    //    //        [path lineToPoint: endPoint];
-    //    //    }
-    //    //
-    //    //    endPoint = NSMakePoint(radius, 0);
-    //    //    thruPoint = NSMakePoint(0, 0);
-    //    //    if (options & NSBezierPathUpperLeft) {
-    //    //        [path curveToPoint: endPoint controlPoint1: endPoint controlPoint2: thruPoint];
-    //    //    } else {
-    //    //        [path lineToPoint: thruPoint];
-    //    //        [path lineToPoint: endPoint];
-    //    //    }
-
     [path closePath];
     return path;
 }
 
+#pragma mark Path Options
+
+- (void) drawWithPathOptions: (PathOptions *) pathOptions {
+    if (pathOptions.gradient != nil) [pathOptions.gradient drawInBezierPath: self angle: 90];
+    else [self drawWithFill: pathOptions.backgroundColor];
+    if (pathOptions.horizontalGradient != nil) [pathOptions.horizontalGradient drawInBezierPath: self angle: 0];
+    if (pathOptions.innerShadow != nil) [self drawShadow: pathOptions.innerShadow];
+    [self drawStroke: pathOptions.borderColor width: pathOptions.borderWidth];
+}
+
 
 #pragma mark Gradient
+
+
 
 
 - (void) drawWithFill: (NSColor *) aColor {
@@ -198,8 +128,17 @@
 #pragma mark Shadow
 
 - (void) drawShadow: (NSShadow *) shadow {
-    [self drawShadow: shadow shadowOpacity: 0.5];
+    //    [self drawShadow: shadow shadowOpacity: 0.5];
+
+    [shadow.shadowColor set];
+    [shadow.shadowColor setStroke];
+    [NSGraphicsContext saveGraphicsState];
+    [self setClip];
+    [shadow set];
+    [self stroke];
+    [NSGraphicsContext restoreGraphicsState];
 }
+
 
 - (void) drawShadow: (NSShadow *) shadow shadowOpacity: (CGFloat) sOpacity {
     NSColor *alphaShadowColor = [shadow.shadowColor colorWithAlphaComponent: sOpacity];
@@ -214,15 +153,14 @@
 
 - (void) drawShadowColor: (NSColor *) sColor shadowRadius: (CGFloat) sRadius shadowOffset: (NSSize) sOffset shadowOpacity: (CGFloat) sOpacity {
     NSShadow *theShadow = [[NSShadow alloc] init];
-    theShadow.shadowColor = sColor;
+    theShadow.shadowColor      = sColor;
     theShadow.shadowBlurRadius = sRadius;
-    theShadow.shadowOffset = sOffset;
-    [self drawShadow: theShadow shadowOpacity: 0.5];
+    theShadow.shadowOffset     = sOffset;
+    [self drawShadow: theShadow shadowOpacity: sOpacity];
 }
 
 
 - (void) drawImage: (NSImage *) image {
-
     [NSGraphicsContext saveGraphicsState];
     [self addClip];
     [image drawInRect: self.bounds fromRect: NSZeroRect operation: NSCompositeSourceOver fraction: 1.0];

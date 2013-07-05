@@ -14,6 +14,6 @@
 
 @interface JSFiltersViewController : JSSectionViewController <JSSyntaxHighlighterDelegate>
 
-- (id)initWithFilters:(JSFilters *)filters;
+- (id) initWithFilters: (JSFilters *) filters;
 
 @end

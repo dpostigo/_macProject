@@ -164,11 +164,11 @@
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
-					<string key="className">BasicBackgroundView</string>
+					<string key="className">BasicBackgroundViewOld</string>
 					<string key="superclassName">NSView</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/BasicBackgroundView.h</string>
+						<string key="minorKey">./Classes/BasicBackgroundViewOld.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -230,7 +230,7 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">BasicWhiteView</string>
-					<string key="superclassName">BasicBackgroundView</string>
+					<string key="superclassName">BasicBackgroundViewOld</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/BasicWhiteView.h</string>
@@ -311,7 +311,7 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="backgroundView">BasicBackgroundView</string>
+						<string key="backgroundView">BasicBackgroundViewOld</string>
 						<string key="modalWindow">BasicCustomWindow</string>
 						<string key="navigationBar">NavigationBar</string>
 						<string key="submitButton">NSButton</string>
@@ -319,7 +319,7 @@
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="backgroundView">
 							<string key="name">backgroundView</string>
-							<string key="candidateClassName">BasicBackgroundView</string>
+							<string key="candidateClassName">BasicBackgroundViewOld</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="modalWindow">
 							<string key="name">modalWindow</string>

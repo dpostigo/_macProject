@@ -28,14 +28,14 @@
  * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
- */ 
+ */
 
 #ifndef __YAJL_COMMON_H__
 #define __YAJL_COMMON_H__
 
 #ifdef __cplusplus
 extern "C" {
-#endif    
+#endif
 
 #define YAJL_MAX_DEPTH 128
 
@@ -50,36 +50,35 @@ extern "C" {
 #  endif
 #else
 #  define YAJL_API
-#endif 
+#endif
 
 /** pointer to a malloc function, supporting client overriding memory
  *  allocation routines */
-typedef void * (*yajl_malloc_func)(void *ctx, unsigned int sz);
+typedef void *(*yajl_malloc_func)(void *ctx, unsigned int sz);
 
 /** pointer to a free function, supporting client overriding memory
  *  allocation routines */
-typedef void (*yajl_free_func)(void *ctx, void * ptr);
+typedef void (*yajl_free_func)(void *ctx, void *ptr);
 
 /** pointer to a realloc function which can resize an allocation. */
-typedef void * (*yajl_realloc_func)(void *ctx, void * ptr, unsigned int sz);
+typedef void *(*yajl_realloc_func)(void *ctx, void *ptr, unsigned int sz);
 
 /** A structure which can be passed to yajl_*_alloc routines to allow the
  *  client to specify memory allocation functions to be used. */
-typedef struct
-{
+typedef struct {
     /** pointer to a function that can allocate uninitialized memory */
-    yajl_malloc_func malloc;
+    yajl_malloc_func  malloc;
     /** pointer to a function that can resize memory allocations */
     yajl_realloc_func realloc;
     /** pointer to a function that can free memory allocated using
      *  reallocFunction or mallocFunction */
-    yajl_free_func free;
+    yajl_free_func    free;
     /** a context pointer that will be passed to above allocation routines */
-    void * ctx;
+    void *ctx;
 } yajl_alloc_funcs;
 
 #ifdef __cplusplus
 }
-#endif    
+#endif
 
 #endif

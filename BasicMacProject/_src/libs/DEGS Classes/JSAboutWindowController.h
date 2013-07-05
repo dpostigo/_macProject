@@ -10,8 +10,8 @@
 
 @interface JSAboutWindowController : NSWindowController
 
-@property (weak) IBOutlet NSTextField *applicationNameLabel;
-@property (weak) IBOutlet NSTextField *applicationVersionLabel;
-@property (weak) IBOutlet NSTextField *applicationCopyrightLabel;
+@property(weak) IBOutlet NSTextField *applicationNameLabel;
+@property(weak) IBOutlet NSTextField *applicationVersionLabel;
+@property(weak) IBOutlet NSTextField *applicationCopyrightLabel;
 
 @end

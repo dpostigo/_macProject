@@ -33,16 +33,16 @@
 @optional
 
 // inform the delegate that the state of the cell has changed so that it can recompute our preferred height
-- (void)tableCellDidChangeUIState:(id)sender;
+- (void) tableCellDidChangeUIState: (id) sender;
 
 @end
 
 @interface JSTableCellView : NSView
 
 // width constraint to force the width of the cell and of its subview to a value. The subviews of the cell will then know their width and they can compute their preferred height
-@property (nonatomic, strong) NSLayoutConstraint *widthConstraint;
+@property(nonatomic, strong) NSLayoutConstraint *widthConstraint;
 
 // this property provides an address suffix that is used to show the help page for a prticular cell
-@property (readonly) NSString *cellHelpIdentifier;
+@property(readonly) NSString *cellHelpIdentifier;
 
 @end

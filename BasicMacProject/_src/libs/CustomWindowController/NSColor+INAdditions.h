@@ -9,5 +9,6 @@
 #import <Cocoa/Cocoa.h>
 
 @interface NSColor (INAdditions)
-- (CGColorRef)IN_CGColorCreate CF_RETURNS_RETAINED;
+
+- (CGColorRef) IN_CGColorCreate CF_RETURNS_RETAINED;
 @end

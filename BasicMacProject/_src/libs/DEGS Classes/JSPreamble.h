@@ -13,8 +13,8 @@
 
 @interface JSPreamble : JSNode
 
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *author;
-@property (nonatomic, strong) NSString *scriptDescription;
+@property(nonatomic, strong) NSString *name;
+@property(nonatomic, strong) NSString *author;
+@property(nonatomic, strong) NSString *scriptDescription;
 
 @end

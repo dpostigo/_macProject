@@ -19,18 +19,18 @@
 
 - (void) setup {
     [super setup];
-    textColor = [NSColor whiteColor];
+    textColor         = [NSColor whiteColor];
     disabledTextColor = [NSColor colorWithDeviceWhite: 0.3 alpha: 1.0];
 
     textShadow = [[NSShadow alloc] init];
-    textShadow.shadowColor = [NSColor clearColor];
+    textShadow.shadowColor      = [NSColor clearColor];
     textShadow.shadowBlurRadius = 1.0;
-    textShadow.shadowOffset = NSMakeSize(0, -1);
+    textShadow.shadowOffset     = NSMakeSize(0, -1);
 
     disabledTextShadow = [[NSShadow alloc] init];
-    disabledTextShadow.shadowColor = [NSColor clearColor];
+    disabledTextShadow.shadowColor      = [NSColor clearColor];
     disabledTextShadow.shadowBlurRadius = 1.0;
-    disabledTextShadow.shadowOffset = NSMakeSize(0, -1);
+    disabledTextShadow.shadowOffset     = NSMakeSize(0, -1);
 
     //    [self updateTextColor];
 
@@ -44,9 +44,9 @@
     if ([self showsFirstResponder]) {
     }
 
-    NSColor *color = self.isEnabled ? textColor: disabledTextColor;
-    NSShadow *selectedShadow = self.isEnabled ? textShadow: disabledTextShadow;
-    NSMutableAttributedString *colorTitle = [[NSMutableAttributedString alloc] initWithAttributedString: self.attributedTitle];
+    NSColor                   *color          = self.isEnabled ? textColor : disabledTextColor;
+    NSShadow                  *selectedShadow = self.isEnabled ? textShadow : disabledTextShadow;
+    NSMutableAttributedString *colorTitle     = [[NSMutableAttributedString alloc] initWithAttributedString: self.attributedTitle];
 
     NSRange titleRange = NSMakeRange(0, colorTitle.length);
     [colorTitle addAttribute: NSForegroundColorAttributeName value: color range: titleRange];
@@ -56,8 +56,6 @@
     [NSGraphicsContext restoreGraphicsState];
     return r;
 }
-
-
 
 
 @end

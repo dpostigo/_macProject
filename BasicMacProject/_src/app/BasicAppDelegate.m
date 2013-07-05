@@ -21,7 +21,7 @@
 }
 
 - (void) embedViewController: (NSViewController *) viewController inView: (NSView *) aSuperview {
-    viewController.view.frame = aSuperview.bounds;
+    viewController.view.frame            = aSuperview.bounds;
     viewController.view.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     [aSuperview addSubview: viewController.view];
 }

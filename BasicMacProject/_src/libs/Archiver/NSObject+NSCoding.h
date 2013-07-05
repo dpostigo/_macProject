@@ -11,8 +11,8 @@
 
 @interface NSObject (NSCoding)
 
-- (void)autoEncodeWithCoder: (NSCoder *)coder;
-- (void)autoDecode:(NSCoder *)coder;
-- (NSDictionary *)properties;
+- (void) autoEncodeWithCoder: (NSCoder *) coder;
+- (void) autoDecode: (NSCoder *) coder;
+- (NSDictionary *) properties;
 
 @end

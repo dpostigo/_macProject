@@ -13,9 +13,9 @@
 
 
 - (void) setupDefaults {
-    self.borderColor = [NSColor lightGrayColor];
+    self.borderColor     = [NSColor lightGrayColor];
     self.backgroundColor = [NSColor clearColor];
-    self.shadowColor = [NSColor clearColor];
+    self.shadowColor     = [NSColor clearColor];
 }
 
 - (void) setBorderColor: (NSColor *) aBorderColor {

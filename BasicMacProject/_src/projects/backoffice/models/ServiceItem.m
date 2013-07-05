@@ -17,8 +17,8 @@
     self = [super init];
     if (self) {
 
-        self.id = [NSString stringWithFormat: @"%@", [dictionary objectForKey: @"id"]];
-        self.title = [NSString stringWithFormat: @"%@", [dictionary objectForKey: @"name"]];
+        self.id         = [NSString stringWithFormat: @"%@", [dictionary objectForKey: @"id"]];
+        self.title      = [NSString stringWithFormat: @"%@", [dictionary objectForKey: @"name"]];
         self.hourlyRate = [[dictionary objectForKey: @"base_hourly_rate"] floatValue];
     }
 

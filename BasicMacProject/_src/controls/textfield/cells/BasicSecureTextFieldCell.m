@@ -25,7 +25,7 @@
 
 
 - (void) setup {
-    borderColor = [NSColor lightGrayColor];
+    borderColor     = [NSColor lightGrayColor];
     backgroundColor = [NSColor whiteColor];
 }
 
@@ -58,11 +58,11 @@
 
 
 - (void) setCellPadding: (CGFloat) cellPadding1 {
-    cellPadding = cellPadding1;
-    paddingTop = cellPadding;
-    paddingLeft = cellPadding;
+    cellPadding   = cellPadding1;
+    paddingTop    = cellPadding;
+    paddingLeft   = cellPadding;
     paddingBottom = cellPadding * 2;
-    paddingRight = cellPadding * 2;
+    paddingRight  = cellPadding * 2;
 
 }
 

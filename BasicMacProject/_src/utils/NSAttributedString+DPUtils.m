@@ -45,8 +45,8 @@
 + (NSAttributedString *) attributedStringWithString: (NSString *) string font: (NSFont *) font textColor: (NSColor *) aColor shadowColor: (NSColor *) shadowColor {
     NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowBlurRadius = 1.0;
-    shadow.shadowOffset = NSMakeSize(0, -1);
-    shadow.shadowColor = shadowColor;
+    shadow.shadowOffset     = NSMakeSize(0, -1);
+    shadow.shadowColor      = shadowColor;
     return [NSAttributedString attributedStringWithString: string font: font textColor: aColor shadow: shadow];
 }
 
@@ -69,8 +69,8 @@
 
 + (NSAttributedString *) stringByJoiningStrings: (NSArray *) array {
     NSMutableAttributedString *string = [[NSMutableAttributedString alloc] init];
-    int length = [array count];
-    for (int j = 0; j < length; j++) {
+    int      length = [array count];
+    for (int j      = 0; j < length; j++) {
         NSAttributedString *attributedString = [array objectAtIndex: j];
         [string appendAttributedString: attributedString];
     }

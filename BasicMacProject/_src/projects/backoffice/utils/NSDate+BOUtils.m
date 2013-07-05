@@ -23,9 +23,9 @@
 - (NSString *) detailString {
     if (self == nil) return @" ";
 
-    NSString *ret = @"";
+    NSString                 *ret       = @"";
     TTTTimeIntervalFormatter *formatter = [[TTTTimeIntervalFormatter alloc] init];
-    NSDate *today = [NSDate date];
+    NSDate                   *today     = [NSDate date];
 
     NSInteger daysBeforeToday = [self daysBeforeDate: today];
 

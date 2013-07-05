@@ -22,7 +22,7 @@
 - (id) initWithTitle: (NSString *) aTitle {
     self = [super init];
     if (self) {
-        title = aTitle;
+        title     = aTitle;
         dateAdded = [NSDate date];
 
         self.timeEntries = [[NSMutableArray alloc] init];
@@ -37,22 +37,21 @@
     [aCoder encodeObject: self.dateAdded forKey: @"dateAdded"];
 
 
-
     for (TimeEntry *timeEntry in self.timeEntries) {
         timeEntry.projectId = self.projectId;
     }
 
 
-    [aCoder encodeObject: self.timeEntries forKey:@"timeEntries"];
-    [aCoder encodeObject: self.projectId forKey:@"projectId"];
+    [aCoder encodeObject: self.timeEntries forKey: @"timeEntries"];
+    [aCoder encodeObject: self.projectId forKey: @"projectId"];
 }
 
 
 - (id) initWithCoder: (NSCoder *) aDecoder {
     self = [super init];
     if (self) {
-        self.title = [aDecoder decodeObjectForKey: @"title"];
-        self.dateAdded = [aDecoder decodeObjectForKey: @"dateAdded"];
+        self.title       = [aDecoder decodeObjectForKey: @"title"];
+        self.dateAdded   = [aDecoder decodeObjectForKey: @"dateAdded"];
         self.timeEntries = [[NSMutableArray alloc] init];
         [self.timeEntries addObjectsFromArray: [aDecoder decodeObjectForKey: @"timeEntries"]];
         self.projectId = [aDecoder decodeObjectForKey: @"projectId"];

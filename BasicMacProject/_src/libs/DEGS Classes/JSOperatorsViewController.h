@@ -14,6 +14,6 @@
 
 @interface JSOperatorsViewController : JSSectionViewController <JSSyntaxHighlighterDelegate>
 
-- (id)initWithOperators:(JSOperatorsStack *)operators;
+- (id) initWithOperators: (JSOperatorsStack *) operators;
 
 @end

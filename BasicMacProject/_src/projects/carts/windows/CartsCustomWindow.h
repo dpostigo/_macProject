@@ -12,6 +12,5 @@
 
 @interface CartsCustomWindow : NewCustomWindow {
 
-
 }
 @end

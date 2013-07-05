@@ -21,11 +21,11 @@
 
 
 /** YES if subview can be collapsed */
-@property(assign) BOOL canCollapse;
+@property(assign) BOOL              canCollapse;
 /** minimum allowed size of the subview */
-@property(assign) CGFloat minSize;
+@property(assign) CGFloat           minSize;
 /** maximum allowed size of the subview */
-@property(assign) CGFloat maxSize;
+@property(assign) CGFloat           maxSize;
 /** YES if at least one dimension constraint has been set */
 @property(nonatomic, readonly) BOOL hasSizeContraints;
 
@@ -40,8 +40,8 @@
 - (id) init {
     self = [super init];
     if (self) {
-        self.minSize = 0;
-        self.maxSize = 0;
+        self.minSize     = 0;
+        self.maxSize     = 0;
         self.canCollapse = NO;
     }
     return self;
@@ -57,17 +57,17 @@
 
 @interface DMSplitView () {
     NSMutableDictionary *priorityIndexes;
-    NSMutableArray *subviewContraints;
+    NSMutableArray      *subviewContraints;
     NSMutableDictionary *viewsToCollapseByDivider;
-    CGFloat *lastValuesBeforeCollapse;
-    CGFloat *subviewsStates;
+    CGFloat             *lastValuesBeforeCollapse;
+    CGFloat             *subviewsStates;
 
     // override divider thickneess
     CGFloat oDividerThickness;
-    BOOL dividerThicknessOverriden;
+    BOOL    dividerThicknessOverriden;
 
     CGFloat collapsedSubviewDimension;
-    BOOL isAnimating; // an animation is in progress
+    BOOL    isAnimating; // an animation is in progress
 }
 @end
 
@@ -101,17 +101,17 @@
 }
 
 - (void) initializeSplitView {
-    self.delegate = self;
+    self.delegate           = self;
     self.subviewsResizeMode = DMSplitViewResizeModeProportional;
 
     dividerThicknessOverriden = NO;
-    oDividerThickness = 0.0f;
+    oDividerThickness         = 0.0f;
 
-    priorityIndexes = [[NSMutableDictionary alloc] init];
+    priorityIndexes          = [[NSMutableDictionary alloc] init];
     viewsToCollapseByDivider = [[NSMutableDictionary alloc] init];
-    subviewContraints = [[NSMutableArray alloc] init];
+    subviewContraints        = [[NSMutableArray alloc] init];
     lastValuesBeforeCollapse = calloc(sizeof(CGFloat) * self.subviews.count, 1);
-    subviewsStates = calloc(sizeof(CGFloat) * self.subviews.count, 1);
+    subviewsStates           = calloc(sizeof(CGFloat) * self.subviews.count, 1);
 
     for (NSUInteger k = 0; k < self.subviews.count; k++)
         [subviewContraints addObject: [[DMSubviewConstraint alloc] init]];
@@ -146,7 +146,7 @@
 }
 
 - (void) setDividerThickness: (CGFloat) newDividerThickness {
-    oDividerThickness = newDividerThickness;
+    oDividerThickness         = newDividerThickness;
     dividerThicknessOverriden = YES;
     [self setNeedsDisplay: YES];
 }
@@ -196,7 +196,7 @@
                     break;
                 case NSMaxXEdge:
                     aRect.origin.x += aRect.size.width - 1.0;
-                    aRect.size.width = 1.0;
+                    aRect.size.width  = 1.0;
                     break;
                 case NSMinXEdge:
                     aRect.size.width = 1.0;
@@ -258,7 +258,7 @@
         return proposedMin;
 
     NSView *targetSubview = ((NSView *) splitView.subviews[viewIndex]);
-    CGFloat subviewOrigin = (splitView.isVertical ? targetSubview.frame.origin.x: targetSubview.frame.origin.y);
+    CGFloat subviewOrigin   = (splitView.isVertical ? targetSubview.frame.origin.x : targetSubview.frame.origin.y);
     CGFloat finalCoordinate = subviewOrigin + subviewConstraint.minSize;
     return finalCoordinate;
 }
@@ -266,18 +266,18 @@
 - (CGFloat) splitView: (NSSplitView *) splitView constrainMaxCoordinate: (CGFloat) proposedMax ofSubviewAt: (NSInteger) offset {
     DMSubviewConstraint *constraintShrinkingSubview = ((DMSubviewConstraint *) subviewContraints[offset + 1]);
 
-    NSView *growingSubview = self.subviews[offset];
+    NSView *growingSubview   = self.subviews[offset];
     NSView *shrinkingSubview = self.subviews[offset + 1];
-    NSRect growingSubviewFrame = growingSubview.frame;
-    NSRect shrinkingSubviewFrame = shrinkingSubview.frame;
+    NSRect  growingSubviewFrame   = growingSubview.frame;
+    NSRect  shrinkingSubviewFrame = shrinkingSubview.frame;
     CGFloat shrinkingSize;
     CGFloat currentCoordinate;
     if (self.isVertical) {
         currentCoordinate = growingSubviewFrame.origin.x + growingSubviewFrame.size.width;
-        shrinkingSize = shrinkingSubviewFrame.size.width;
+        shrinkingSize     = shrinkingSubviewFrame.size.width;
     } else {
         currentCoordinate = growingSubviewFrame.origin.y + growingSubviewFrame.size.height;
-        shrinkingSize = shrinkingSubviewFrame.size.height;
+        shrinkingSize     = shrinkingSubviewFrame.size.height;
     }
 
     CGFloat minimumSize = constraintShrinkingSubview.minSize;
@@ -311,7 +311,7 @@
 
 - (BOOL) splitView: (NSSplitView *) splitView shouldCollapseSubview: (NSView *) subview forDoubleClickOnDividerAtIndex: (NSInteger) dividerIndex {
     NSUInteger indexOfSubviewToCollapse = [self subviewIndexToCollapseForDoubleClickOnDividerAtIndex: dividerIndex];
-    NSUInteger indexOfSubview = [self.subviews indexOfObject: subview];
+    NSUInteger indexOfSubview           = [self.subviews indexOfObject: subview];
 
     return ((indexOfSubviewToCollapse == NSNotFound) || (indexOfSubview == indexOfSubviewToCollapse));
 }
@@ -327,8 +327,8 @@
 #pragma mark - Resizes Operations
 
 - (void) applyUniformResizeFromOldSize: (CGSize) splitViewOldSize {
-    NSSize splitViewNewSize = self.bounds.size;
-    __block CGFloat deltaValue = (self.isVertical ? (splitViewNewSize.width - splitViewOldSize.width): (splitViewNewSize.height - splitViewOldSize.height));
+    NSSize          splitViewNewSize = self.bounds.size;
+    __block CGFloat deltaValue       = (self.isVertical ? (splitViewNewSize.width - splitViewOldSize.width) : (splitViewNewSize.height - splitViewOldSize.height));
 
     __block NSUInteger numberOfResizableSubviews = 0;
     BOOL *resizableSubviews = calloc(sizeof(BOOL) * self.subviews.count, 1);
@@ -389,11 +389,11 @@
 }
 
 - (void) applyProportionalResizeFromOldSize: (CGSize) splitViewOldSize {
-    NSSize splitViewNewSize = self.bounds.size;
-    __block CGFloat deltaValue = (self.isVertical ? (splitViewNewSize.width - splitViewOldSize.width): (splitViewNewSize.height - splitViewOldSize.height));
+    NSSize          splitViewNewSize = self.bounds.size;
+    __block CGFloat deltaValue       = (self.isVertical ? (splitViewNewSize.width - splitViewOldSize.width) : (splitViewNewSize.height - splitViewOldSize.height));
 
     __block NSUInteger numberOfResizableSubviews = 0;
-    CGFloat oldResizableSubviewsWidth = 0;
+    CGFloat            oldResizableSubviewsWidth = 0;
 
     BOOL *resizableSubviews = calloc(sizeof(BOOL) * self.subviews.count, 1);
     [self calculateResizableSubviews: resizableSubviews
@@ -410,7 +410,7 @@
         BOOL isResizable = resizableSubviews[subviewIndex];
         if (isResizable) {
             NSView *subview = self.subviews[subviewIndex];
-            CGFloat targetSize = (self.isVertical ? NSWidth(subview.frame): NSHeight(subview.frame));
+            CGFloat targetSize = (self.isVertical ? NSWidth(subview.frame) : NSHeight(subview.frame));
             subviewsProportions[subviewIndex] = (targetSize / oldResizableSubviewsWidth);
         }
     }];
@@ -449,7 +449,7 @@
 }
 
 - (void) applyPriorityResizeFromOldSize: (CGSize) splitViewOldSize {
-    __block CGFloat deltaValue = (self.isVertical ? (self.bounds.size.width - splitViewOldSize.width):
+    __block CGFloat deltaValue = (self.isVertical ? (self.bounds.size.width - splitViewOldSize.width) :
             (self.bounds.size.height - splitViewOldSize.height));
 
     for (NSNumber *priorityIndex in [[priorityIndexes allKeys] sortedArrayUsingSelector: @selector(compare:)]) {
@@ -489,16 +489,16 @@
 }
 
 - (void) layoutSubviews {
-    CGFloat offset = 0;
-    NSUInteger k = 0;
+    CGFloat    offset = 0;
+    NSUInteger k      = 0;
     for (NSView *subview in self.subviews) {
-        NSRect viewFrame = subview.frame;
+        NSRect  viewFrame  = subview.frame;
         NSPoint viewOrigin = viewFrame.origin;
 
         if (self.isVertical) viewOrigin.x = offset;
         else viewOrigin.y = offset;
         [subview setFrameOrigin: viewOrigin];
-        offset += (self.isVertical ? viewFrame.size.width: viewFrame.size.height) + self.dividerThickness;
+        offset += (self.isVertical ? viewFrame.size.width : viewFrame.size.height) + self.dividerThickness;
         k++;
 
         // When a subview is collapsed NSSplitView set it's hidden property as YES
@@ -525,19 +525,19 @@
 
 - (void) calculateSubviewsSizesArrayInto: (CGFloat *) subviewsSizesArray {
     [self.subviews enumerateObjectsUsingBlock: ^(NSView *subview, NSUInteger viewIndex, BOOL *stop) {
-        CGFloat size = (self.isVertical ? NSWidth(subview.frame): NSHeight(subview.frame));
+        CGFloat size = (self.isVertical ? NSWidth(subview.frame) : NSHeight(subview.frame));
         subviewsSizesArray[viewIndex] = size;
     }];
 }
 
 - (void) calculateResizableSubviews: (BOOL *) subviewCanBeResized
-        totalNumber: (NSUInteger *) numberOfResizableSubviews
-        totalWidth: (CGFloat *) resizableArea
-        withDelta: (CGFloat) deltaValue {
+                        totalNumber: (NSUInteger *) numberOfResizableSubviews
+                         totalWidth: (CGFloat *) resizableArea
+                          withDelta: (CGFloat) deltaValue {
     [subviewContraints enumerateObjectsUsingBlock: ^(DMSubviewConstraint *constraint, NSUInteger viewIndex, BOOL *stop) {
         NSView *subview = self.subviews[viewIndex];
-        CGFloat size = (self.isVertical ? subview.frame.size.width: subview.frame.size.height);
-        BOOL canBeResized = YES;
+        CGFloat size         = (self.isVertical ? subview.frame.size.width : subview.frame.size.height);
+        BOOL    canBeResized = YES;
 
         if (deltaValue < 0.0f) {
             if (constraint.minSize > 0.0f)
@@ -567,17 +567,17 @@
         return 0.0f;
 
     NSRect priorViewFrame = [[[self subviews] objectAtIndex: dividerIndex] frame];
-    return [self isVertical] ? NSMaxX(priorViewFrame): NSMaxY(priorViewFrame);
+    return [self isVertical] ? NSMaxX(priorViewFrame) : NSMaxY(priorViewFrame);
 }
 
 - (void) getNewSubviewsRects: (NSRect *) newRect withIndexes: (NSArray *) indexes andPositions: (NSArray *) newPositions {
-    CGFloat dividerTkn = self.dividerThickness;
-    for (NSUInteger i = 0; i < self.subviews.count; i++)
+    CGFloat         dividerTkn = self.dividerThickness;
+    for (NSUInteger i          = 0; i < self.subviews.count; i++)
         newRect[i] = [[self.subviews objectAtIndex: i] frame];
 
     for (NSNumber *indexObject in indexes) {
-        NSInteger index = [indexObject integerValue];
-        CGFloat newPosition = [[newPositions objectAtIndex: [indexes indexOfObject: indexObject]] doubleValue];
+        NSInteger index       = [indexObject integerValue];
+        CGFloat   newPosition = [[newPositions objectAtIndex: [indexes indexOfObject: indexObject]] doubleValue];
 
         // save divider state where necessary
         [self saveCurrentDivididerState];
@@ -585,14 +585,14 @@
         if (self.isVertical) {
             CGFloat oldMaxXOfRightHandView = NSMaxX(newRect[index + 1]);
             newRect[index].size.width = newPosition - NSMinX(newRect[index]);
-            CGFloat dividerAdjustment = (newPosition < NSWidth(self.bounds)) ? dividerTkn: 0.0;
-            newRect[index + 1].origin.x = newPosition + dividerAdjustment;
+            CGFloat dividerAdjustment = (newPosition < NSWidth(self.bounds)) ? dividerTkn : 0.0;
+            newRect[index + 1].origin.x   = newPosition + dividerAdjustment;
             newRect[index + 1].size.width = oldMaxXOfRightHandView - newPosition - dividerAdjustment;
         } else {
             CGFloat oldMaxYOfBottomView = NSMaxY(newRect[index + 1]);
             newRect[index].size.height = newPosition - NSMinY(newRect[index]);
-            CGFloat dividerAdjustment = (newPosition < NSHeight(self.bounds)) ? dividerTkn: 0.0;
-            newRect[index + 1].origin.y = newPosition + dividerAdjustment;
+            CGFloat dividerAdjustment = (newPosition < NSHeight(self.bounds)) ? dividerTkn : 0.0;
+            newRect[index + 1].origin.y    = newPosition + dividerAdjustment;
             newRect[index + 1].size.height = oldMaxYOfBottomView - newPosition - dividerAdjustment;
         }
     }
@@ -620,7 +620,7 @@
                 // unhide collapsed subview (collapsed subview are set to hidden state).
                 // we need to hide it while animating for expand, otherwise we will not see the collapsed subview expanding
                 // but only the divider and a blank placeholder
-                if (subview.isHidden && ((self.isVertical ? newRect[i].size.width > 0: newRect[i].size.height > 0)))
+                if (subview.isHidden && ((self.isVertical ? newRect[i].size.width > 0 : newRect[i].size.height > 0)))
                     [subview setHidden: NO];
                 [[subview animator] setFrame: newRect[i]];
             }
@@ -659,8 +659,8 @@
     BOOL isCollapsed = [self isSubviewCollapsed: self.subviews[subviewIndex]];
 
     NSView *subview = self.subviews[subviewIndex];
-    NSInteger dividerIndex = (subviewIndex == 0 ? subviewIndex: subviewIndex - 1);
-    CGFloat newValue;
+    NSInteger dividerIndex = (subviewIndex == 0 ? subviewIndex : subviewIndex - 1);
+    CGFloat   newValue;
     if (isCollapsed) {
         newValue = lastValuesBeforeCollapse[dividerIndex];
     } else {
@@ -668,7 +668,7 @@
             newValue = 0.0f;
         else {
             newValue = [self positionOfDividerAtIndex: dividerIndex];
-            newValue += (self.isVertical ? NSWidth(subview.frame): NSHeight(subview.frame));
+            newValue += (self.isVertical ? NSWidth(subview.frame) : NSHeight(subview.frame));
         }
     }
     [self setPosition: newValue
@@ -686,9 +686,9 @@
 
 - (void) saveCurrentDivididerState {
     for (NSUInteger k = 0; k < self.subviews.count - 1; k++) {
-        CGFloat position = [self positionOfDividerAtIndex: k];
-        BOOL isCollapsedLeft = (position == 0);
-        BOOL isCollapsedRight = (position == (self.isVertical ? NSWidth(self.frame): NSHeight(self.frame)) - self.dividerThickness);
+        CGFloat position         = [self positionOfDividerAtIndex: k];
+        BOOL    isCollapsedLeft  = (position == 0);
+        BOOL    isCollapsedRight = (position == (self.isVertical ? NSWidth(self.frame) : NSHeight(self.frame)) - self.dividerThickness);
         if (!isCollapsedLeft && !isCollapsedRight)
             lastValuesBeforeCollapse[k] = position;
     }
@@ -696,7 +696,7 @@
 
 - (void) splitViewDidResizeSubviews: (NSNotification *) notification {
     NSUInteger dividerIndex = ((NSString *) notification.userInfo[@"NSSplitViewDividerIndex"]).integerValue;
-    CGFloat newPosition = [self positionOfDividerAtIndex: dividerIndex];
+    CGFloat    newPosition  = [self positionOfDividerAtIndex: dividerIndex];
 
     // used to restore from collapse state; we want to save it before animating, not while animating and finally we won't save collapsed state
     if (!isAnimating) [self saveCurrentDivididerState];
@@ -708,7 +708,7 @@
                                    movedAt: newPosition];
 
         BOOL isCollapsing = (subviewsStates[dividerIndex] > 0) && (newPosition == 0);
-        BOOL isExpanding = (subviewsStates[dividerIndex] == 0) && (newPosition > 0);
+        BOOL isExpanding  = (subviewsStates[dividerIndex] == 0) && (newPosition > 0);
 
         if ([self.eventsDelegate respondsToSelector: @selector(splitView:subview:stateChanged:)]) {
             if (isCollapsing)
@@ -727,7 +727,7 @@
 
 - (void) updateSubviewsState {
     [self.subviews enumerateObjectsUsingBlock: ^(NSView *subview, NSUInteger subviewIndex, BOOL *stop) {
-        CGFloat size = ([self isSubviewCollapsed: subview] ? 0.0: (self.isVertical ? NSWidth(subview.frame): NSHeight(subview.frame)));
+        CGFloat size = ([self isSubviewCollapsed: subview] ? 0.0 : (self.isVertical ? NSWidth(subview.frame) : NSHeight(subview.frame)));
         subviewsStates[subviewIndex] = size;
     }];
 }
@@ -738,8 +738,8 @@
         animated: (BOOL) animated completition: (void (^)(BOOL isEnded)) completition {
 
     NSView *subview = self.subviews[subviewIndex];
-    CGFloat frameOldSize = (self.isVertical ? NSWidth(subview.frame): NSHeight(subview.frame));
-    CGFloat deltaValue = (size - frameOldSize); // if delta > 0 subview will grow, otherwise if delta < 0 subview will shrink
+    CGFloat frameOldSize = (self.isVertical ? NSWidth(subview.frame) : NSHeight(subview.frame));
+    CGFloat deltaValue   = (size - frameOldSize); // if delta > 0 subview will grow, otherwise if delta < 0 subview will shrink
 
     if (deltaValue == 0)
         return NO; // no changes required
@@ -749,25 +749,25 @@
     if (subviewIndex > 0 && subviewIndex < (self.subviews.count - 1) && self.subviews.count > 2) {
         // We have more than 2 subviews and our target subview index has two dividers, one at left and another at right.
         // We want to apply the same delta value at both edges (proportional)
-        NSUInteger leftDividerIndex = (subviewIndex - 1);
-        NSUInteger rightDividerIndex = subviewIndex;
-        CGFloat leftDividerPosition = [self positionOfDividerAtIndex: leftDividerIndex];
-        CGFloat rightDividerPosition = [self positionOfDividerAtIndex: rightDividerIndex];
-        CGFloat deltaPerDivider = (deltaValue / 2.0f);
+        NSUInteger leftDividerIndex     = (subviewIndex - 1);
+        NSUInteger rightDividerIndex    = subviewIndex;
+        CGFloat    leftDividerPosition  = [self positionOfDividerAtIndex: leftDividerIndex];
+        CGFloat    rightDividerPosition = [self positionOfDividerAtIndex: rightDividerIndex];
+        CGFloat    deltaPerDivider      = (deltaValue / 2.0f);
 
         leftDividerPosition -= deltaPerDivider;
         rightDividerPosition += deltaPerDivider;
 
-        involvedDividers = @[@(leftDividerIndex), @(rightDividerIndex)];
+        involvedDividers  = @[@(leftDividerIndex), @(rightDividerIndex)];
         dividersPositions = @[@(leftDividerPosition), @(rightDividerPosition)];
     } else {
         // We can shrink or grow only at one side because our index is the top left or the top right
-        NSInteger dividerIndex = (subviewIndex > 0 ? subviewIndex - 1: subviewIndex);
+        NSInteger dividerIndex    = (subviewIndex > 0 ? subviewIndex - 1 : subviewIndex);
         NSInteger dividerPosition = [self positionOfDividerAtIndex: dividerIndex];
         if (subviewIndex == 0) dividerPosition += deltaValue;
         else dividerPosition -= deltaValue;
-        involvedDividers = @[@(dividerIndex)];
-        dividersPositions = @[@(dividerPosition)];
+        involvedDividers          = @[@(dividerIndex)];
+        dividersPositions         = @[@(dividerPosition)];
     }
 
     [self setPositions: dividersPositions ofDividersAtIndexes: involvedDividers animated: animated

@@ -13,9 +13,9 @@
 @interface JSFlexibleButton : NSButton
 
 // should we track mouse over events?
-@property (nonatomic) BOOL trackMouseInside;
+@property(nonatomic) BOOL trackMouseInside;
 
 // button look
-@property (nonatomic, strong) JSButtonStyle *style;
+@property(nonatomic, strong) JSButtonStyle *style;
 
 @end

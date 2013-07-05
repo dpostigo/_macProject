@@ -9,14 +9,14 @@
 
 
 typedef enum {
-    NSViewAnimationDirectionToTop = 0,
-    NSViewAnimationDirectionToBottom = 2,
-    NSViewAnimationDirectionToLeft = 3,
-    NSViewAnimationDirectionToRight = 4,
-    NSViewAnimationDirectionFromTop = 5,
+    NSViewAnimationDirectionToTop      = 0,
+    NSViewAnimationDirectionToBottom   = 2,
+    NSViewAnimationDirectionToLeft     = 3,
+    NSViewAnimationDirectionToRight    = 4,
+    NSViewAnimationDirectionFromTop    = 5,
     NSViewAnimationDirectionFromBottom = 6,
-    NSViewAnimationDirectionFromLeft = 7,
-    NSViewAnimationDirectionFromRight = 8
+    NSViewAnimationDirectionFromLeft   = 7,
+    NSViewAnimationDirectionFromRight  = 8
 } NSViewAnimationDirection;
 
 

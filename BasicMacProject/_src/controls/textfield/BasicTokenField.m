@@ -15,5 +15,4 @@
 @synthesize rowObject;
 
 
-
 @end

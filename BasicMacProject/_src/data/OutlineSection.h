@@ -10,7 +10,7 @@
 
 
 @interface OutlineSection : TableSection {
-     BOOL isExpandable;
+    BOOL isExpandable;
 }
 
 @property(nonatomic) BOOL isExpandable;

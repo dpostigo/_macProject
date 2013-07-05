@@ -23,13 +23,13 @@
 @interface JSSectionViewController : NSViewController
 
 // Designated initialiser
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
+- (id) initWithNibName: (NSString *) nibNameOrNil bundle: (NSBundle *) nibBundleOrNil;
 
 // Table view present in any of the section view controller
-@property (strong) IBOutlet NSTableView *mainTableView;
+@property(strong) IBOutlet NSTableView *mainTableView;
 
 // reference to the tree controller so that we can talk to it and manage the states of the bottom bar and various other things
-@property (nonatomic, strong) JSTreeController *treeController;
+@property(nonatomic, strong) JSTreeController *treeController;
 
 // some sections need to display some fixed cells
 // biasCells is the number of these fixed cells
@@ -37,21 +37,21 @@
 
 // the sectionSuffix is the suffix of the address for the help page of the section.
 // This is called by JSDocument to respond to clicks of the help button. It retrieves the "suffix"-address of the current section and pass it to the app delegate that shows the appropriate help page.
-@property (readonly) NSString *sectionSuffix;
+@property(readonly) NSString *sectionSuffix;
 
 // Convenience method that select a row owning a specific control
-- (void)updateSelectedRowToOwnerOf:(NSControl *)sender;
+- (void) updateSelectedRowToOwnerOf: (NSControl *) sender;
 
 // placeholder methods overriden by subclasses to implement the addition and deletion of elements
 // their implementation in JSSectionViewController do nothing
--(void)addElement:(id)sender;
--(void)deleteElement:(id)sender;
+- (void) addElement: (id) sender;
+- (void) deleteElement: (id) sender;
 
 // insert a new row in the main table view, start editing it and scroll to it
-- (void)insertNewRowInMainTable;
+- (void) insertNewRowInMainTable;
 
 // notify the view controller that its view was put on screen so that it can personalise
 // the defualt implementation in JSSectionViewController does nothing
-- (void)viewDidAppear;
+- (void) viewDidAppear;
 
 @end

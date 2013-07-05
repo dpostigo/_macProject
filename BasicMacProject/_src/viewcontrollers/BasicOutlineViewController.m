@@ -16,8 +16,8 @@
 
 - (void) loadView {
     [super loadView];
-    outline.delegate = self;
-    outline.dataSource = self;
+    outline.delegate        = self;
+    outline.dataSource      = self;
     outline.floatsGroupRows = NO;
 
     [outline reloadData];
@@ -56,13 +56,13 @@
 - (NSView *) outlineView: (NSOutlineView *) outlineView viewForTableColumn: (NSTableColumn *) tableColumn item: (id) item {
 
     if ([item isKindOfClass: [OutlineSection class]]) {
-        OutlineSection *outlineSection = item;
-        BasicTableCellView *result = [self headerCellForOutlineSection: outlineSection];
+        OutlineSection     *outlineSection = item;
+        BasicTableCellView *result         = [self headerCellForOutlineSection: outlineSection];
         result.textField.stringValue = [outlineSection.title uppercaseString];
         return result;
     } else {
 
-        TableRowObject *rowObject = item;
+        TableRowObject *rowObject      = item;
         OutlineSection *outlineSection = [outline parentForItem: item];
 
         BasicTableCellView *cell = [self cellForRowObject: rowObject outlineSection: outlineSection];
@@ -77,7 +77,7 @@
         OutlineSection *outlineSection = item;
         rowView = [self rowViewForOutlineSection: outlineSection];
     } else {
-        TableRowObject *rowObject = item;
+        TableRowObject *rowObject      = item;
         OutlineSection *outlineSection = [outline parentForItem: item];
         rowView = [self rowViewForRowObject: rowObject outlineSection: outlineSection];
     }
@@ -133,7 +133,7 @@
         OutlineSection *outlineSection = item;
         return [self heightForHeaderSection: outlineSection];
     } else {
-        TableRowObject *rowObject = item;
+        TableRowObject *rowObject      = item;
         OutlineSection *outlineSection = [outline parentForItem: item];
         return [self heightForRowObject: rowObject outlineSection: outlineSection];
     }
@@ -141,8 +141,6 @@
 
 
 - (void) outlineView: (NSOutlineView *) outlineView willDisplayCell: (id) cell forTableColumn: (NSTableColumn *) tableColumn item: (id) item {
-
-
 
 }
 
@@ -193,7 +191,6 @@
 - (CGFloat) heightForRowObject: (TableRowObject *) rowObject outlineSection: (OutlineSection *) outlineSection {
     return outline.rowHeight;
 }
-
 
 
 - (void) configureCell: (BasicTableCellView *) tableCell forRowObject: (TableRowObject *) rowObject outlineSection: (OutlineSection *) outlineSection {

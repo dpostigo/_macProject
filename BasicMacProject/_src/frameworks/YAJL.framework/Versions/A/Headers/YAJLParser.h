@@ -35,31 +35,31 @@ extern NSString *const YAJLErrorDomain; //! Error domain for YAJL
 extern NSString *const YAJLParserException; //! Generic parse exception
 extern NSString *const YAJLParsingUnsupportedException; //! Parsing unsupported exception
 
-extern NSString *const YAJLParserValueKey; //! Key in NSError userInfo for value we errored on
+extern NSString    *const YAJLParserValueKey; //! Key in NSError userInfo for value we errored on
 
 //! Parser error codes
 enum YAJLParserErrorCode {
-  YAJLParserErrorCodeAllocError = -1000, //!< Alloc error
-  YAJLParserErrorCodeDoubleOverflow = -1001, //!< Double overflow
-  YAJLParserErrorCodeIntegerOverflow = -1002 //!< Integer overflow
+    YAJLParserErrorCodeAllocError      = -1000, //!< Alloc error
+    YAJLParserErrorCodeDoubleOverflow  = -1001, //!< Double overflow
+    YAJLParserErrorCodeIntegerOverflow = -1002 //!< Integer overflow
 };
-typedef NSInteger YAJLParserErrorCode; //! Parser error codes
+typedef NSInteger  YAJLParserErrorCode; //! Parser error codes
 
 //! Parser options
 enum YAJLParserOptions {
-  YAJLParserOptionsNone = 0, //!< No options
-  YAJLParserOptionsAllowComments = 1 << 0, //!< Javascript style comments will be allowed in the input (both /&asterisk; &asterisk;/ and //)
-  YAJLParserOptionsCheckUTF8 = 1 << 1, //!< Invalid UTF8 strings will cause a parse error
-  YAJLParserOptionsStrictPrecision = 1 << 2, //!< If YES will force strict precision and return integer overflow error
+    YAJLParserOptionsNone            = 0, //!< No options
+    YAJLParserOptionsAllowComments   = 1 << 0, //!< Javascript style comments will be allowed in the input (both /&asterisk; &asterisk;/ and //)
+    YAJLParserOptionsCheckUTF8       = 1 << 1, //!< Invalid UTF8 strings will cause a parse error
+    YAJLParserOptionsStrictPrecision = 1 << 2, //!< If YES will force strict precision and return integer overflow error
 };
 typedef NSUInteger YAJLParserOptions; //! Parser options
 
 //! Parser status
 enum {
-  YAJLParserStatusNone = 0,  //!< No status
-  YAJLParserStatusOK = 1, //!< Parsed OK 
-  YAJLParserStatusInsufficientData = 2, //!< There was insufficient data
-  YAJLParserStatusError = 3 //!< Parser errored
+    YAJLParserStatusNone             = 0,  //!< No status
+    YAJLParserStatusOK               = 1, //!< Parsed OK
+    YAJLParserStatusInsufficientData = 2, //!< There was insufficient data
+    YAJLParserStatusError            = 3 //!< Parser errored
 };
 typedef NSUInteger YAJLParserStatus; //!< Status of the last parse event
 
@@ -75,39 +75,39 @@ typedef NSUInteger YAJLParserStatus; //!< Status of the last parse event
  Parser did start dictionary.
  @param parser Sender
  */
-- (void)parserDidStartDictionary:(YAJLParser *)parser;
+- (void) parserDidStartDictionary: (YAJLParser *) parser;
 
 /*!
  Parser did end dictionary.
  @param parser Sender
  */
-- (void)parserDidEndDictionary:(YAJLParser *)parser;
+- (void) parserDidEndDictionary: (YAJLParser *) parser;
 
 /*!
  Parser did start array.
  @param parser Sender
  */
-- (void)parserDidStartArray:(YAJLParser *)parser;
+- (void) parserDidStartArray: (YAJLParser *) parser;
 
 /*!
  Parser did end array.
  @param parser Sender
  */
-- (void)parserDidEndArray:(YAJLParser *)parser;
+- (void) parserDidEndArray: (YAJLParser *) parser;
 
 /*!
  Parser did map key.
  @param parser Sender
  @param key Key that was mapped
  */
-- (void)parser:(YAJLParser *)parser didMapKey:(NSString *)key;
+- (void) parser: (YAJLParser *) parser didMapKey: (NSString *) key;
 
 /*!
  Did add value.
  @param parser Sender
  @param value Value of type NSNull, NSString or NSNumber
  */
-- (void)parser:(YAJLParser *)parser didAdd:(id)value;
+- (void) parser: (YAJLParser *) parser didAdd: (id) value;
 
 @end
 
@@ -139,19 +139,19 @@ typedef NSUInteger YAJLParserStatus; //!< Status of the last parse event
   @endcode
  */
 @interface YAJLParser : NSObject {
-  
-  yajl_handle handle_;
-  
-  __weak id <YAJLParserDelegate> delegate_; // weak
-    
-  YAJLParserOptions parserOptions_;
 
-  NSError *parserError_;
+    yajl_handle handle_;
+
+    __weak id <YAJLParserDelegate> delegate_; // weak
+
+    YAJLParserOptions parserOptions_;
+
+    NSError *parserError_;
 }
 
-@property (assign) __unsafe_unretained id<YAJLParserDelegate> delegate;   
-@property (readonly, retain, nonatomic) NSError *parserError;
-@property (readonly, nonatomic) YAJLParserOptions parserOptions;
+@property(assign) __unsafe_unretained id <YAJLParserDelegate> delegate;
+@property(readonly, retain, nonatomic) NSError *parserError;
+@property(readonly, nonatomic) YAJLParserOptions parserOptions;
 
 /*!
  Create parser with data and options.
@@ -161,7 +161,7 @@ typedef NSUInteger YAJLParserStatus; //!< Status of the last parse event
   - YAJLParserOptionsCheckUTF8: Invalid UTF8 strings will cause a parse error
   - YAJLParserOptionsStrictPrecision: If YES will force strict precision and return integer overflow error
  */
-- (id)initWithParserOptions:(YAJLParserOptions)parserOptions;
+- (id) initWithParserOptions: (YAJLParserOptions) parserOptions;
 
 /*!
  Parse data.
@@ -176,6 +176,6 @@ typedef NSUInteger YAJLParserStatus; //!< Status of the last parse event
   - YAJLParserStatusInsufficientData: There was insufficient data
   - YAJLParserStatusError: Parser errored
  */
-- (YAJLParserStatus)parse:(NSData *)data;
+- (YAJLParserStatus) parse: (NSData *) data;
 
 @end

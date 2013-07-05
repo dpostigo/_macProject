@@ -9,20 +9,19 @@
 #import <Foundation/Foundation.h>
 #import "SDWebImageCompat.h"
 
-enum SDImageCacheType
-{
+enum SDImageCacheType {
     /**
      * The image wasn't available the SDWebImage caches, but was downloaded from the web.
      */
-    SDImageCacheTypeNone = 0,
+            SDImageCacheTypeNone = 0,
     /**
      * The image was obtained from the disk cache.
      */
-    SDImageCacheTypeDisk,
+            SDImageCacheTypeDisk,
     /**
      * The image was obtained from the disk cache.
      */
-    SDImageCacheTypeMemory
+            SDImageCacheTypeMemory
 };
 typedef enum SDImageCacheType SDImageCacheType;
 
@@ -35,21 +34,21 @@ typedef enum SDImageCacheType SDImageCacheType;
 /**
  * The maximum length of time to keep an image in the cache, in seconds
  */
-@property (assign, nonatomic) NSInteger maxCacheAge;
+@property(assign, nonatomic) NSInteger maxCacheAge;
 
 /**
  * Returns global shared cache instance
  *
  * @return SDImageCache global instance
  */
-+ (SDImageCache *)sharedImageCache;
++ (SDImageCache *) sharedImageCache;
 
 /**
  * Init a new cache store with a specific namespace
  *
  * @param ns The namespace to use for this cache store
  */
-- (id)initWithNamespace:(NSString *)ns;
+- (id) initWithNamespace: (NSString *) ns;
 
 /**
  * Store an image into memory and disk cache at the given key.
@@ -57,7 +56,7 @@ typedef enum SDImageCacheType SDImageCacheType;
  * @param image The image to store
  * @param key The unique image cache key, usually it's image absolute URL
  */
-- (void)storeImage:(UIImage *)image forKey:(NSString *)key;
+- (void) storeImage: (UIImage *) image forKey: (NSString *) key;
 
 /**
  * Store an image into memory and optionally disk cache at the given key.
@@ -66,7 +65,7 @@ typedef enum SDImageCacheType SDImageCacheType;
  * @param key The unique image cache key, usually it's image absolute URL
  * @param toDisk Store the image to disk cache if YES
  */
-- (void)storeImage:(UIImage *)image forKey:(NSString *)key toDisk:(BOOL)toDisk;
+- (void) storeImage: (UIImage *) image forKey: (NSString *) key toDisk: (BOOL) toDisk;
 
 /**
  * Store an image into memory and optionally disk cache at the given key.
@@ -78,35 +77,35 @@ typedef enum SDImageCacheType SDImageCacheType;
  * @param key The unique image cache key, usually it's image absolute URL
  * @param toDisk Store the image to disk cache if YES
  */
-- (void)storeImage:(UIImage *)image imageData:(NSData *)data forKey:(NSString *)key toDisk:(BOOL)toDisk;
+- (void) storeImage: (UIImage *) image imageData: (NSData *) data forKey: (NSString *) key toDisk: (BOOL) toDisk;
 
 /**
  * Query the disk cache asynchronousely.
  *
  * @param key The unique key used to store the wanted image
  */
-- (void)queryDiskCacheForKey:(NSString *)key done:(void (^)(UIImage *image, SDImageCacheType cacheType))doneBlock;
+- (void) queryDiskCacheForKey: (NSString *) key done: (void (^)(UIImage *image, SDImageCacheType cacheType)) doneBlock;
 
 /**
  * Query the memory cache.
  *
  * @param key The unique key used to store the wanted image
  */
-- (UIImage *)imageFromMemoryCacheForKey:(NSString *)key;
+- (UIImage *) imageFromMemoryCacheForKey: (NSString *) key;
 
 /**
  * Query the disk cache synchronousely.
  *
  * @param key The unique key used to store the wanted image
  */
-- (UIImage *)imageFromDiskCacheForKey:(NSString *)key;
+- (UIImage *) imageFromDiskCacheForKey: (NSString *) key;
 
 /**
  * Remove the image from memory and disk cache synchronousely
  *
  * @param key The unique image cache key
  */
-- (void)removeImageForKey:(NSString *)key;
+- (void) removeImageForKey: (NSString *) key;
 
 /**
  * Remove the image from memory and optionaly disk cache synchronousely
@@ -114,31 +113,31 @@ typedef enum SDImageCacheType SDImageCacheType;
  * @param key The unique image cache key
  * @param fromDisk Also remove cache entry from disk if YES
  */
-- (void)removeImageForKey:(NSString *)key fromDisk:(BOOL)fromDisk;
+- (void) removeImageForKey: (NSString *) key fromDisk: (BOOL) fromDisk;
 
 /**
  * Clear all memory cached images
  */
-- (void)clearMemory;
+- (void) clearMemory;
 
 /**
  * Clear all disk cached images
  */
-- (void)clearDisk;
+- (void) clearDisk;
 
 /**
  * Remove all expired cached image from disk
  */
-- (void)cleanDisk;
+- (void) cleanDisk;
 
 /**
  * Get the size used by the disk cache
  */
-- (int)getSize;
+- (int) getSize;
 
 /**
  * Get the number of images in the disk cache
  */
-- (int)getDiskCount;
+- (int) getDiskCount;
 
 @end

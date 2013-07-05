@@ -15,7 +15,8 @@
     self = [super initWithContentRect: contentRect styleMask: aStyle backing: bufferingType defer: flag];
     if (self) {
 
-        self.buttonHeight = 30.0;
+        self.buttonHeight  = 30.0;
+        self.buttonSpacing = 8.0;
 
     }
 

@@ -34,15 +34,21 @@
 
 - (void) loadView {
     [super loadView];
-    splitView.dividerStyle = NSSplitViewDividerStyleThin;
-    self.dividerEnabled = YES;
 
-    if (sidebar == nil) sidebar = [splitView.subviews objectAtIndex: 0];
+
+    if (splitView == nil) {
+        splitView = [[DPSplitView alloc] initWithFrame: self.view.bounds];
+
+    }
+    splitView.dividerStyle = NSSplitViewDividerStyleThin;
+    self.dividerEnabled    = YES;
+
+    if (sidebar == nil) sidebar         = [splitView.subviews objectAtIndex: 0];
     if (contentView == nil) contentView = [splitView.subviews objectAtIndex: 1];
 
-    sidebar.width = defaultSidebarWidth;
+    sidebar.width        = defaultSidebarWidth;
     sidebar.minimumWidth = defaultSidebarWidth;
-    sidebar.isLocked = YES;
+    sidebar.isLocked     = YES;
 
     splitView.delegate = self;
 }
@@ -178,7 +184,7 @@
     if (splitContainer.minimumHeight == 0 || splitContainer.maximumHeight == 0) {
         SplitViewContainer *otherContainer = [dpSplit otherSplitContainer: splitContainer];
         if (otherContainer.minimumHeight > 0 || otherContainer.maximumHeight > 0) {
-            CGFloat totalHeight = dpSplit.height;
+            CGFloat totalHeight      = dpSplit.height;
             CGFloat newMinimumHeight = totalHeight - otherContainer.maximumHeight;
             CGFloat newMaximumHeight = totalHeight - otherContainer.minimumHeight;
             splitContainer.minimumHeight = newMinimumHeight;

@@ -38,7 +38,7 @@
 - (id) initWithCoder: (NSCoder *) coder {
     self = [super initWithCoder: coder];
     if (self) {
-        self.backgroundView = [[BasicBackgroundView alloc] initWithFrame: self.bounds];
+        self.backgroundView             = [[BasicBackgroundViewOld alloc] initWithFrame: self.bounds];
         backgroundView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
         [self addSubview: backgroundView];
         [self addSubview: textLabel];
@@ -60,7 +60,7 @@
 //}
 
 //
-//- (void) setBackgroundView: (BasicBackgroundView *) backgroundView1 {
+//- (void) setBackgroundView: (BasicBackgroundViewOld *) backgroundView1 {
 //    if (backgroundView != nil) [backgroundView removeFromSuperview];
 //
 //    backgroundView = backgroundView1;

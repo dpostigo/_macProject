@@ -36,14 +36,14 @@
  id JSONValue = [[NSBundle mainBundle] yajl_JSONFromResource:@"kegs.json"];
  @endcode
  */
-@interface NSBundle(YAJL)
+@interface NSBundle (YAJL)
 
 /*!
  Load JSON from bundle.  
  @param resource Resource name with extension, for example, file.json
  @throws YAJLParserException On parse error
  */
-- (id)yajl_JSONFromResource:(NSString *)resource;
+- (id) yajl_JSONFromResource: (NSString *) resource;
 
 /*!
  Load JSON from bundle.
@@ -57,6 +57,6 @@
  @param error Out error
  @result JSON value (NSArray, NSDictionary) or nil if errored
  */
-- (id)yajl_JSONFromResource:(NSString *)resource options:(YAJLParserOptions)options error:(NSError **)error;
+- (id) yajl_JSONFromResource: (NSString *) resource options: (YAJLParserOptions) options error: (NSError **) error;
 
 @end

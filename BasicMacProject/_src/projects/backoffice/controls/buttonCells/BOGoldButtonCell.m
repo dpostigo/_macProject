@@ -22,11 +22,11 @@
             [NSColor colorWithString: @"efb564"], 1.0,
             nil];
 
-    strokeColor = [NSColor blackColor];
+    strokeColor      = [NSColor blackColor];
     innerStrokeColor = [NSColor colorWithString: @"fece80"];
 
     cornerRadius = 10.0;
-    imageColor = [NSColor redColor];
+    imageColor   = [NSColor redColor];
 
     [self setButtonType: NSMomentaryPushButton];
     self.bezelStyle = NSSmallSquareBezelStyle;
@@ -34,9 +34,9 @@
     textShadow.shadowColor = [NSColor colorWithString: @"7b5e36"];
 
     disabledTextColor = [NSColor colorWithString: @"595959"];
-    disabledTextShadow.shadowColor = [NSColor colorWithDeviceWhite: 1.0 alpha: 0.5];
+    disabledTextShadow.shadowColor      = [NSColor colorWithDeviceWhite: 1.0 alpha: 0.5];
     disabledTextShadow.shadowBlurRadius = 1.0;
-    disabledTextShadow.shadowOffset = NSMakeSize(0, -1.0);
+    disabledTextShadow.shadowOffset     = NSMakeSize(0, -1.0);
 }
 
 @end

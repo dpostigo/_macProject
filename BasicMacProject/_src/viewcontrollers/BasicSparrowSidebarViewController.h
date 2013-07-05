@@ -10,7 +10,7 @@
 #import "BasicOutlineViewController.h"
 
 
-@interface BasicSparrowSidebarViewController : BasicOutlineViewController  {
+@interface BasicSparrowSidebarViewController : BasicOutlineViewController {
 
 }
 @end

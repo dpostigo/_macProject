@@ -17,18 +17,18 @@
 /**
  * Maximum number of URLs to prefetch at the same time. Defaults to 3.
  */
-@property (nonatomic, assign) NSUInteger maxConcurrentDownloads;
+@property(nonatomic, assign) NSUInteger maxConcurrentDownloads;
 
 /**
  * SDWebImageOptions for prefetcher. Defaults to SDWebImageLowPriority.
  */
-@property (nonatomic, assign) SDWebImageOptions options;
+@property(nonatomic, assign) SDWebImageOptions options;
 
 
 /**
  * Return the global image prefetcher instance.
  */
-+ (SDWebImagePrefetcher *)sharedImagePrefetcher;
++ (SDWebImagePrefetcher *) sharedImagePrefetcher;
 
 /**
  * Assign list of URLs to let SDWebImagePrefetcher to queue the prefetching,
@@ -37,7 +37,7 @@
  *
  * @param urls list of URLs to prefetch
  */
-- (void)prefetchURLs:(NSArray *)urls;
+- (void) prefetchURLs: (NSArray *) urls;
 
 /**
  * Assign list of URLs to let SDWebImagePrefetcher to queue the prefetching,
@@ -47,12 +47,12 @@
  * @param urls list of URLs to prefetch
  * @param completionBlock block to be called when prefetching is completed
  */
-- (void)prefetchURLs:(NSArray *)urls completed:(void (^)(NSUInteger finishedCount, NSUInteger skippedCount))completionBlock;
+- (void) prefetchURLs: (NSArray *) urls completed: (void (^)(NSUInteger finishedCount, NSUInteger skippedCount)) completionBlock;
 
 /**
  * Remove and cancel queued list
  */
-- (void)cancelPrefetching;
+- (void) cancelPrefetching;
 
 
 @end

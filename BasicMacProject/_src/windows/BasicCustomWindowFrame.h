@@ -11,32 +11,44 @@
 #import "PathOptions.h"
 
 
+typedef enum {
+    WindowFrameResizeTypeNone        = 0,
+    WindowFrameResizeTypeLeft        = 1,
+    WindowFrameResizeTypeRight       = 2,
+    WindowFrameResizeTypeTop         = 3,
+    WindowFrameResizeTypeBottom      = 4,
+    WindowFrameResizeTypeTopLeft     = 5,
+    WindowFrameResizeTypeTopRight    = 6,
+    WindowFrameResizeTypeBottomLeft  = 7,
+    WindowFrameResizeTypeBottomRight = 8
+} WindowFrameResizeType;
+
 @interface BasicCustomWindowFrame : NSView {
 
     PathOptions *pathOptions;
     PathOptions *innerPathOptions;
 
 
-    NSColor *innerBorderColor;
-
-
-    NSRect bottomRightRect;
-    NSSize resizeRectSize;
+    NSRect  rightResizeRect;
+    NSSize  resizeRectSize;
     CGFloat windowFramePadding;
+
+    NSArray *cursors;
 
 }
 
 @property(nonatomic) CGFloat windowFramePadding;
-@property(nonatomic) NSRect bottomRightRect;
-@property(nonatomic) NSSize resizeRectSize;
+@property(nonatomic) NSSize  resizeRectSize;
 
 
-@property(nonatomic) NSBezierPathCornerOptions cornerOptions;
 @property(nonatomic) CGFloat cornerRadius;
 @property(nonatomic) CGFloat borderWidth;
 @property(nonatomic, strong) NSGradient *gradient;
-@property(nonatomic, strong) NSColor *borderColor;
-@property(nonatomic, strong) NSColor *innerBorderColor;
+@property(nonatomic, strong) NSColor    *borderColor;
+@property(nonatomic, strong) NSColor    *innerBorderColor;
+@property(nonatomic) NSBezierPathCornerOptions cornerOptions;
 @property(nonatomic, strong) PathOptions *pathOptions;
 @property(nonatomic, strong) PathOptions *innerPathOptions;
+@property(nonatomic) NSRect rightResizeRect;
+@property(nonatomic, strong) NSArray *cursors;
 @end

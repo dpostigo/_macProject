@@ -14,6 +14,6 @@
 
 @interface JSOutputViewController : JSSectionViewController <JSSyntaxHighlighterDelegate, NSPopoverDelegate>
 
-- (id)initWithOutput:(JSOutput *)output;
+- (id) initWithOutput: (JSOutput *) output;
 
 @end

@@ -16,16 +16,16 @@
 @synthesize unhighlightedShadowColor;
 
 - (void) setShadowColor: (NSColor *) shadowColor {
-//    [super setShadowColor: shadowColor];
+    //    [super setShadowColor: shadowColor];
 }
 
 - (void) setHighlighted: (BOOL) highlighted {
-//    [super setHighlighted: highlighted];
+    //    [super setHighlighted: highlighted];
     if (!unhighlightedShadowColor && !highlighted) {
-//        self.unhighlightedShadowColor = self.shadowColor;
+        //        self.unhighlightedShadowColor = self.shadowColor;
     }
 
-    self.shadowColor = highlighted ? self.highlightedShadowColor: self.unhighlightedShadowColor;
+    self.shadowColor = highlighted ? self.highlightedShadowColor : self.unhighlightedShadowColor;
 }
 
 @end

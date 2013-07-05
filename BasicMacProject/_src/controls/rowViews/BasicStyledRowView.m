@@ -20,8 +20,8 @@
     if (self) {
         self.borderColor = [NSColor colorWithString: @"E8E8E8"];
         self.borderColor = [NSColor lightGrayColor];
-        self.gradient = [[NSGradient alloc] initWithStartingColor: [NSColor colorWithString: @"F2F2F2"]
-                                                      endingColor: [NSColor colorWithString: @"F2F2F2"]];
+        self.gradient    = [[NSGradient alloc] initWithStartingColor: [NSColor colorWithString: @"F2F2F2"]
+                                                         endingColor: [NSColor colorWithString: @"F2F2F2"]];
 
     }
 
@@ -37,9 +37,9 @@
 
     else {
 
-        NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect: dirtyRect corners: cornerOptions radius: cornerRadius];
-        [path drawGradient: gradient angle: -90];
-        [path drawStroke: borderColor width: borderWidth];
+        NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect: dirtyRect corners: self.cornerOptions radius: self.cornerRadius];
+        [path drawGradient: self.gradient angle: -90];
+        [path drawStroke: self.borderColor width: self.borderWidth];
 
         NSBezierPath *topPath = [NSBezierPath bezierPathWithRect: NSMakeRect(0, 0, dirtyRect.size.width, 1)];
         [topPath drawWithFill: [NSColor whiteColor]];

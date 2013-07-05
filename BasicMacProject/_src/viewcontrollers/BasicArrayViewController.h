@@ -16,7 +16,7 @@
 }
 
 
-@property(nonatomic, strong) NSMutableArray *arraySource;
+@property(nonatomic, strong) NSMutableArray    *arraySource;
 @property(nonatomic, strong) NSArrayController *arrayController;
 - (void) prepareDataSource;
 @end

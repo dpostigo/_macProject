@@ -6,7 +6,7 @@
 
 
 #import <Foundation/Foundation.h>
-#import "BasicBackgroundView.h"
+#import "BasicBackgroundViewOld.h"
 #import "BasicTextField.h"
 
 
@@ -17,15 +17,15 @@
     IBOutlet NSButton *secondButton;
     IBOutlet NSButton *accessoryButton;
     IBOutlet BasicTextField *captionLabel;
-    IBOutlet BasicBackgroundView *backgroundView;
+    IBOutlet BasicBackgroundViewOld *backgroundView;
 }
 
 
-@property(nonatomic, strong) BasicTextField *detailTextLabel;
-@property(nonatomic, strong) NSButton *button;
-@property(nonatomic, strong) BasicTextField *captionLabel;
-@property(nonatomic, strong) BasicBackgroundView *backgroundView;
-@property(nonatomic, strong) BasicTextField *textLabel;
-@property(nonatomic, strong) NSButton *secondButton;
-@property(nonatomic, strong) NSButton *accessoryButton;
+@property(nonatomic, strong) BasicTextField         *detailTextLabel;
+@property(nonatomic, strong) NSButton               *button;
+@property(nonatomic, strong) BasicTextField         *captionLabel;
+@property(nonatomic, strong) BasicBackgroundViewOld *backgroundView;
+@property(nonatomic, strong) BasicTextField         *textLabel;
+@property(nonatomic, strong) NSButton               *secondButton;
+@property(nonatomic, strong) NSButton               *accessoryButton;
 @end

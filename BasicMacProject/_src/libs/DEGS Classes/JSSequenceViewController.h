@@ -14,6 +14,6 @@
 
 @interface JSSequenceViewController : JSSectionViewController <JSSyntaxHighlighterDelegate>
 
-- (id)initWithSequence:(JSSequence *)sequence;
+- (id) initWithSequence: (JSSequence *) sequence;
 
 @end

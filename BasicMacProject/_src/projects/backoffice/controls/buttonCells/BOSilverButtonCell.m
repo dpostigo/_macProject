@@ -20,9 +20,9 @@
             [NSColor colorWithString: @"fefefe"], 1.0,
             nil];
 
-    strokeColor = [NSColor blackColor];
+    strokeColor      = [NSColor blackColor];
     innerStrokeColor = [NSColor colorWithString: @"e5e5e5"];
-    cornerRadius = 10.0;
+    cornerRadius     = 10.0;
     imageShadowColor = [NSColor blackColor];
 
     textColor = [NSColor colorWithDeviceWhite: 0.1 alpha: 1.0];

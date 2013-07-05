@@ -12,34 +12,43 @@
 #import "NSParagraphStyle+DPUtils.h"
 
 
-@implementation BasicCustomWindowFrame
+@implementation BasicCustomWindowFrame {
+    int numCursors;
+    NSMutableDictionary *cursorDict;
+}
 
 @synthesize windowFramePadding;
-@synthesize bottomRightRect;
 @synthesize resizeRectSize;
 
 
 @synthesize pathOptions;
 @synthesize innerPathOptions;
+@synthesize rightResizeRect;
+
+@synthesize cursors;
 
 - (id) initWithFrame: (NSRect) frameRect {
     self = [super initWithFrame: frameRect];
     if (self) {
         resizeRectSize = NSMakeSize(16, 16);
 
+
         innerPathOptions = [[PathOptions alloc] init];
         innerPathOptions.borderColor = [NSColor colorWithDeviceWhite: 1.0 alpha: 0.5];
 
         pathOptions = [[PathOptions alloc] init];
-        pathOptions.cornerRadius = 5.0;
-        pathOptions.borderWidth = 0.5;
-        pathOptions.borderColor = [NSColor blackColor];
+        pathOptions.cornerRadius  = 5.0;
+        pathOptions.borderWidth   = 0.5;
+        pathOptions.borderColor   = [NSColor blackColor];
         pathOptions.cornerOptions = NSBezierPathLowerLeft | NSBezierPathLowerRight | NSBezierPathUpperRight | NSBezierPathUpperLeft;
-        pathOptions.gradient = [[NSGradient alloc] initWithColorsAndLocations: [NSColor colorWithWhite: 0.3], 0.0,
-                                                                               [NSColor colorWithWhite: 0.2], 0.1,
-                                                                               [NSColor colorWithWhite: 0.2], 0.9,
-                                                                               [NSColor colorWithWhite: 0.3], 1.0,
-                                                                               nil];
+        pathOptions.gradient      = [[NSGradient alloc] initWithColorsAndLocations: [NSColor colorWithWhite: 0.3], 0.0,
+                                                                                    [NSColor colorWithWhite: 0.2], 0.1,
+                                                                                    [NSColor colorWithWhite: 0.2], 0.9,
+                                                                                    [NSColor colorWithWhite: 0.3], 1.0,
+                                                                                    nil];
+
+
+        numCursors = 8;
 
     }
 
@@ -47,23 +56,101 @@
 }
 
 
-- (NSRect) resizeRect {
+- (NSDictionary *) cursorDict {
+    if (cursorDict == nil) {
+        cursorDict = [[NSMutableDictionary alloc] init];
+        [cursorDict setObject: [[NSCursor alloc] initWithImage: [NSImage imageNamed: @"eastWestResizeCursor.png"] hotSpot: NSZeroPoint] forKey: [NSString stringWithFormat: @"%lu", (NSUInteger) WindowFrameResizeTypeRight]];
+        [cursorDict setObject: [[NSCursor alloc] initWithImage: [NSImage imageNamed: @"northSouthResizeCursor.png"] hotSpot: NSZeroPoint] forKey: [NSString stringWithFormat: @"%lu", (NSUInteger) WindowFrameResizeTypeBottom]];
+        [cursorDict setObject: [[NSCursor alloc] initWithImage: [NSImage imageNamed: @"northWestSouthEastResizeCursor.png"] hotSpot: NSZeroPoint] forKey: [NSString stringWithFormat: @"%lu", (NSUInteger) WindowFrameResizeTypeBottomRight]];
+    }
+    return cursorDict;
+
+}
+
+- (NSCursor *) cursorForType: (WindowFrameResizeType) type {
+    return [self.cursorDict objectForKey: [NSString stringWithFormat: @"%lu", (NSUInteger) type]];
+}
+
+
+- (void) resetCursorRects {
+    [super resetCursorRects];
+    NSArray       *keys = [self.cursorDict allKeys];
+    for (NSString *key in keys) {
+        WindowFrameResizeType type = (WindowFrameResizeType) [key integerValue];
+        NSCursor *cursor = [self cursorForType: type];
+        [self addCursorRect: [self resizeRectForType: type] cursor: cursor];
+
+    }
+}
+
+
+- (NSRect) resizeRectForType: (WindowFrameResizeType) type {
+    NSRect rect = NSZeroRect;
+    switch (type) {
+        case WindowFrameResizeTypeRight :
+            rect = self.rightResizeRect;
+            break;
+        case WindowFrameResizeTypeBottom :
+            rect = self.bottomResizeRect;
+            break;
+
+        case WindowFrameResizeTypeBottomRight :
+            rect = self.bottomRightResizeRect;
+            break;
+        default :
+            break;
+    }
+    return rect;
+
+}
+
+
+- (NSRect) bottomRightResizeRect {
     NSRect bounds = self.bounds;
-    NSRect rect = NSMakeRect(bounds.size.width - resizeRectSize.width, bounds.origin.y, resizeRectSize.width, resizeRectSize.height);
+    NSRect rect   = NSMakeRect(bounds.size.width - resizeRectSize.width, bounds.origin.y, resizeRectSize.width, resizeRectSize.height);
     return rect;
 }
+
+
+- (NSRect) rightResizeRect {
+    NSRect rect = self.bounds;
+    rect.size.width = 10;
+    rect.origin.x   = self.bounds.size.width - rect.size.width;
+    rect.size.height -= (resizeRectSize.height * 2);
+    rect.origin.y += resizeRectSize.height;
+    return rect;
+}
+
+- (NSRect) bottomResizeRect {
+    NSRect rect = self.bounds;
+    rect = NSMakeRect(rect.origin.x + resizeRectSize.width, 0, rect.size.width - (resizeRectSize.width * 2), resizeRectSize.height);
+    return rect;
+}
+
 
 - (void) mouseDown: (NSEvent *) event {
     NSPoint pointInView = [self convertPoint: [event locationInWindow] fromView: nil];
 
-    BOOL resize = NO;
-    if (NSPointInRect(pointInView, self.resizeRect)) {
-        resize = YES;
+    BOOL                  resize     = NO;
+    WindowFrameResizeType resizeType = WindowFrameResizeTypeNone;
+    if (NSPointInRect(pointInView, self.bottomRightResizeRect)) {
+        resize     = YES;
+        resizeType = WindowFrameResizeTypeBottom | WindowFrameResizeTypeRight;
     }
+    else if (NSPointInRect(pointInView, self.rightResizeRect)) {
+        resize     = YES;
+        resizeType = WindowFrameResizeTypeRight;
+    }
+
+    else if (NSPointInRect(pointInView, self.bottomResizeRect)) {
+        resize     = YES;
+        resizeType = WindowFrameResizeTypeBottom;
+    }
+
 
     NSWindow *window = self.window;
     NSPoint originalMouseLocation = [window convertBaseToScreen: [event locationInWindow]];
-    NSRect originalFrame = [window frame];
+    NSRect  originalFrame         = [window frame];
 
     while (YES) {
         //
@@ -78,31 +165,34 @@
         // Work out how much the mouse has moved
         //
         NSPoint newMouseLocation = [window convertBaseToScreen: [newEvent locationInWindow]];
-        NSPoint delta = NSMakePoint(newMouseLocation.x - originalMouseLocation.x, newMouseLocation.y - originalMouseLocation.y);
+        NSPoint delta            = NSMakePoint(newMouseLocation.x - originalMouseLocation.x, newMouseLocation.y - originalMouseLocation.y);
 
         NSRect newFrame = originalFrame;
 
         if (!resize) {
-            //
-            // Alter the frame for a drag
-            //
             newFrame.origin.x += delta.x;
             newFrame.origin.y += delta.y;
+
+            //            if (resizeType & WindowFrameResizeTypeRight) newFrame.origin.x += delta.x;
+            //            if (resizeType & WindowFrameResizeTypeBottom) newFrame.origin.y += delta.y;
+
         }
         else {
             //
             // Alter the frame for a resize
             //
-            newFrame.size.width += delta.x;
-            newFrame.size.height -= delta.y;
-            newFrame.origin.y += delta.y;
+            if (resizeType & WindowFrameResizeTypeRight) newFrame.size.width += delta.x;
+            if (resizeType & WindowFrameResizeTypeBottom) {
+                newFrame.size.height -= delta.y;
+                newFrame.origin.y += delta.y;
+            }
 
             //
             // Constrain to the window's min and max size
             //
             NSRect newContentRect = [window contentRectForFrameRect: newFrame];
-            NSSize maxSize = [window maxSize];
-            NSSize minSize = [window minSize];
+            NSSize maxSize        = [window maxSize];
+            NSSize minSize        = [window minSize];
             if (newContentRect.size.width > maxSize.width) {
                 newFrame.size.width -= newContentRect.size.width - maxSize.width;
             }
@@ -129,7 +219,7 @@
     NSRectFill(rect);
 
 
-    NSBezierPath *path = [NSBezierPath bezierPathWithRect: self.bounds cornerRadius: self.cornerRadius options: self.cornerOptions];
+    NSBezierPath *path            = [NSBezierPath bezierPathWithRect: self.bounds cornerRadius: self.cornerRadius options: self.cornerOptions];
     NSBezierPath *innerBorderPath = [NSBezierPath bezierPathWithRect: NSInsetRect(self.bounds, self.borderWidth, self.borderWidth) cornerRadius: self.cornerRadius options: self.cornerOptions];
 
 
@@ -137,12 +227,10 @@
     [path drawStroke: self.borderColor width: self.borderWidth];
     [innerBorderPath drawStroke: self.innerBorderColor width: self.borderWidth];
 
-    NSRect resizeRect = self.resizeRect;
-    NSBezierPath *resizePath = [NSBezierPath bezierPathWithRect: resizeRect];
-
-
-    [resizePath drawWithFill: [NSColor lightGrayColor]];
-    [resizePath drawStroke: [NSColor darkGrayColor]];
+    //
+    //    NSRect aRect = self.bottomResizeRect;
+    //    NSBezierPath *rightResizePath = [NSBezierPath bezierPathWithRect: aRect];
+    //    [rightResizePath drawWithFill: [NSColor blueColor]];
 
 }
 
@@ -150,10 +238,10 @@
     [[NSColor blackColor] set];
     NSString *windowTitle = self.window.title;
     NSRect titleRect = self.bounds;
-    titleRect.origin.y = titleRect.size.height - (windowFramePadding - 7);
+    titleRect.origin.y    = titleRect.size.height - (windowFramePadding - 7);
     titleRect.size.height = (windowFramePadding - 7);
 
-    NSParagraphStyle *paragraphStyle = [NSParagraphStyle paragraphWithAlignment: NSCenterTextAlignment];
+    NSParagraphStyle   *paragraphStyle   = [NSParagraphStyle paragraphWithAlignment: NSCenterTextAlignment];
     NSAttributedString *attributedString = [NSAttributedString attributedStringWithString: windowTitle font: [NSFont systemFontOfSize: 14] paragraphStyle: paragraphStyle];
     [attributedString drawWithRect: titleRect options: 0];
 

@@ -57,23 +57,23 @@
 
 
 - (void) setup {
-    _position = 0;
-    _numFins = 12;
+    _position  = 0;
+    _numFins   = 12;
     _finColors = [[NSMutableArray alloc] init];
 
     _isAnimating = NO;
     _isFadingOut = NO;
 
-    _foreColor = [[NSColor blackColor] retain];
-    _backColor = [[NSColor clearColor] retain];
+    _foreColor       = [[NSColor blackColor] retain];
+    _backColor       = [[NSColor clearColor] retain];
     _drawsBackground = NO;
 
-    _displayedWhenStopped = YES;
+    _displayedWhenStopped  = YES;
     _usesThreadedAnimation = YES;
 
     _isIndeterminate = YES;
-    _currentValue = 0.0;
-    _maxValue = 100.0;
+    _currentValue    = 0.0;
+    _maxValue        = 100.0;
 
 }
 
@@ -105,7 +105,7 @@
 
 - (void) drawRect: (NSRect) rect {
     // Determine size based on current bounds
-    NSSize size = [self bounds].size;
+    NSSize  size = [self bounds].size;
     CGFloat theMaxSize;
     if (size.width >= size.height)
         theMaxSize = size.height;
@@ -128,7 +128,7 @@
         NSBezierPath *path = [[NSBezierPath alloc] init];
         CGFloat lineWidth = 0.0859375 * theMaxSize; // should be 2.75 for 32x32
         CGFloat lineStart = 0.234375 * theMaxSize; // should be 7.5 for 32x32
-        CGFloat lineEnd = 0.421875 * theMaxSize;  // should be 13.5 for 32x32
+        CGFloat lineEnd   = 0.421875 * theMaxSize;  // should be 13.5 for 32x32
         [path setLineWidth: lineWidth];
         [path setLineCapStyle: NSRoundLineCapStyle];
         [path moveToPoint: NSMakePoint(0, lineStart)];
@@ -151,7 +151,7 @@
         [path release];
     }
     else {
-        CGFloat lineWidth = 1 + (0.01 * theMaxSize);
+        CGFloat lineWidth    = 1 + (0.01 * theMaxSize);
         CGFloat circleRadius = (theMaxSize - lineWidth) / 2.1;
         NSPoint circleCenter = NSMakePoint(0, 0);
         [_foreColor set];
@@ -296,8 +296,8 @@
     }
 
     // update the colors
-    CGFloat minAlpha = _displayedWhenStopped ? kAlphaWhenStopped : 0.01;
-    for (int i = 0; i < _numFins; i++) {
+    CGFloat  minAlpha = _displayedWhenStopped ? kAlphaWhenStopped : 0.01;
+    for (int i        = 0; i < _numFins; i++) {
         // want each fin to fade exponentially over _numFins frames of animation
         CGFloat newAlpha = [_finColors[i] alphaComponent] * kFadeMultiplier;
         if (newAlpha < minAlpha)
@@ -309,8 +309,8 @@
 
     if (_isFadingOut) {
         // check if the fadeout is done
-        BOOL done = YES;
-        for (int i = 0; i < _numFins; i++) {
+        BOOL     done = YES;
+        for (int i    = 0; i < _numFins; i++) {
             if (fabs([_finColors[i] alphaComponent] - minAlpha) > 0.01) {
                 done = NO;
                 break;
@@ -411,8 +411,8 @@
     // int animationDelay = 38000 + (2000 * ([self bounds].size.height / 32));
 
     // Set the rev per minute here
-    int omega = 100; // RPM
-    int animationDelay = 60 * 1000000 / omega / _numFins;
+    int omega            = 100; // RPM
+    int animationDelay   = 60 * 1000000 / omega / _numFins;
     int poolFlushCounter = 0;
 
     do {
@@ -421,7 +421,7 @@
         poolFlushCounter++;
         if (poolFlushCounter > 256) {
             [animationPool drain];
-            animationPool = [[NSAutoreleasePool alloc] init];
+            animationPool    = [[NSAutoreleasePool alloc] init];
             poolFlushCounter = 0;
         }
     } while (![[NSThread currentThread] isCancelled]);

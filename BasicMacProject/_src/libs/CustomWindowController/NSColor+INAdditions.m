@@ -10,15 +10,15 @@
 
 
 @implementation NSColor (INAdditions)
-- (CGColorRef)IN_CGColorCreate
-{
-    NSColor *rgbColor = [self colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
+
+- (CGColorRef) IN_CGColorCreate {
+    NSColor *rgbColor = [self colorUsingColorSpaceName: NSCalibratedRGBColorSpace];
     CGFloat components[4];
-    [rgbColor getComponents:components];
-    
+    [rgbColor getComponents: components];
+
     CGColorSpaceRef theColorSpace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
-    CGColorRef theColor = CGColorCreate(theColorSpace, components);
+    CGColorRef      theColor      = CGColorCreate(theColorSpace, components);
     CGColorSpaceRelease(theColorSpace);
-	return theColor;
+    return theColor;
 }
 @end

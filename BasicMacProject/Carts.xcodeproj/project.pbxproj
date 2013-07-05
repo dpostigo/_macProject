@@ -32,7 +32,7 @@
 		03D8CB371768AA17000CF88A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 03D8CB351768AA17000CF88A /* Credits.rtf */; };
 		03D8CDD01768ACA6000CF88A /* BasicAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CB481768ACA6000CF88A /* BasicAppDelegate.m */; };
 		03D8CE121768ACA6000CF88A /* BONavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CBDE1768ACA6000CF88A /* BONavigationBar.m */; };
-		03D8CE131768ACA6000CF88A /* BasicBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CBE11768ACA6000CF88A /* BasicBackgroundView.m */; };
+		03D8CE131768ACA6000CF88A /* BasicBackgroundViewOld.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CBE11768ACA6000CF88A /* BasicBackgroundViewOld.m */; };
 		03D8CE141768ACA6000CF88A /* BasicButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CBE31768ACA6000CF88A /* BasicButton.m */; };
 		03D8CE151768ACA6000CF88A /* BasicButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CBE51768ACA6000CF88A /* BasicButtonCell.m */; };
 		03D8CE161768ACA6000CF88A /* EtchedButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CBE81768ACA6000CF88A /* EtchedButtonCell.m */; };
@@ -228,6 +228,8 @@
 		7CA444C22E9A3AA772055517 /* CartsSidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44378F0B370C945527E28 /* CartsSidebarViewController.m */; };
 		7CA4486A4D9B349FC3806E81 /* PathOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4447771137936908C27BA /* PathOptions.m */; };
 		7CA448F0E86B3C3BC896DCE7 /* BasicCustomWindowFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44018205CD3A1DFFBE403 /* BasicCustomWindowFrame.m */; };
+		7CA449A5F6290CBD3E53B8D1 /* BasicBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA441CF0C84D430FA781F5D /* BasicBackgroundView.m */; };
+		7CA449BB951E8538DED706A5 /* NSGradient+DPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4489C182E170CD84ABB6B /* NSGradient+DPUtils.m */; };
 		7CA44BC46A6C10A462A03CF3 /* NewCustomWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA442406BF21E5A3706D3A6 /* NewCustomWindow.m */; };
 		7CA44C4034FEA3704A23783C /* CartsMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44DDE315CA9096FF0908A /* CartsMainViewController.m */; };
 		7CA44D1D78275A20592F18DA /* CartsCustomWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44D5EA0DDF5B457BD3CF7 /* CartsCustomWindow.m */; };
@@ -273,8 +275,8 @@
 		03D8CB481768ACA6000CF88A /* BasicAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicAppDelegate.m; sourceTree = "<group>"; };
 		03D8CBDD1768ACA6000CF88A /* BONavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BONavigationBar.h; sourceTree = "<group>"; };
 		03D8CBDE1768ACA6000CF88A /* BONavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BONavigationBar.m; sourceTree = "<group>"; };
-		03D8CBE01768ACA6000CF88A /* BasicBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicBackgroundView.h; sourceTree = "<group>"; };
-		03D8CBE11768ACA6000CF88A /* BasicBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicBackgroundView.m; sourceTree = "<group>"; };
+		03D8CBE01768ACA6000CF88A /* BasicBackgroundViewOld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicBackgroundViewOld.h; sourceTree = "<group>"; };
+		03D8CBE11768ACA6000CF88A /* BasicBackgroundViewOld.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicBackgroundViewOld.m; sourceTree = "<group>"; };
 		03D8CBE21768ACA6000CF88A /* BasicButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicButton.h; sourceTree = "<group>"; };
 		03D8CBE31768ACA6000CF88A /* BasicButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicButton.m; sourceTree = "<group>"; };
 		03D8CBE41768ACA6000CF88A /* BasicButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicButtonCell.h; sourceTree = "<group>"; };
@@ -639,6 +641,7 @@
 		03DD35E81769FA5D000DB1B7 /* AppWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppWindow.m; sourceTree = "<group>"; };
 		7CA44018205CD3A1DFFBE403 /* BasicCustomWindowFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicCustomWindowFrame.m; sourceTree = "<group>"; };
 		7CA440AF824DF0BD2503A333 /* BasicStyledRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicStyledRowView.h; path = rowViews/BasicStyledRowView.h; sourceTree = "<group>"; };
+		7CA441CF0C84D430FA781F5D /* BasicBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicBackgroundView.m; sourceTree = "<group>"; };
 		7CA442406BF21E5A3706D3A6 /* NewCustomWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewCustomWindow.m; sourceTree = "<group>"; };
 		7CA44300434D7ED70419714A /* BasicSparrowSidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicSparrowSidebarViewController.h; sourceTree = "<group>"; };
 		7CA4433D2C0441339FC3F72C /* NSParagraphStyle+DPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSParagraphStyle+DPUtils.m"; sourceTree = "<group>"; };
@@ -651,8 +654,11 @@
 		7CA4462A90987C8CFC51E621 /* BasicStyledOutlineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicStyledOutlineViewController.h; path = outlineViewController/BasicStyledOutlineViewController.h; sourceTree = "<group>"; };
 		7CA446BC17E0953198D2127C /* BasicStyledOutlineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BasicStyledOutlineViewController.m; path = outlineViewController/BasicStyledOutlineViewController.m; sourceTree = "<group>"; };
 		7CA44766DEF42C3DE47CC19E /* CartsCustomWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsCustomWindow.h; sourceTree = "<group>"; };
+		7CA4489C182E170CD84ABB6B /* NSGradient+DPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSGradient+DPUtils.m"; sourceTree = "<group>"; };
 		7CA448B3E0F13FD047AFE8DB /* BasicCustomWindowFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicCustomWindowFrame.h; sourceTree = "<group>"; };
+		7CA449F22DF1FF28E68232A3 /* BasicBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicBackgroundView.h; sourceTree = "<group>"; };
 		7CA44B64C3F039B8AFF3FA61 /* PathOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathOptions.h; sourceTree = "<group>"; };
+		7CA44B701D6BCE536D10F2E8 /* NSGradient+DPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSGradient+DPUtils.h"; sourceTree = "<group>"; };
 		7CA44C26383C81237932D7B3 /* NewCustomWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCustomWindow.h; sourceTree = "<group>"; };
 		7CA44C3050AB8A8FA2599B25 /* NSParagraphStyle+DPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSParagraphStyle+DPUtils.h"; sourceTree = "<group>"; };
 		7CA44D5EA0DDF5B457BD3CF7 /* CartsCustomWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsCustomWindow.m; sourceTree = "<group>"; };
@@ -906,8 +912,8 @@
 		03D8CBDF1768ACA6000CF88A /* buttons */ = {
 			isa = PBXGroup;
 			children = (
-				03D8CBE01768ACA6000CF88A /* BasicBackgroundView.h */,
-				03D8CBE11768ACA6000CF88A /* BasicBackgroundView.m */,
+				03D8CBE01768ACA6000CF88A /* BasicBackgroundViewOld.h */,
+				03D8CBE11768ACA6000CF88A /* BasicBackgroundViewOld.m */,
 				03D8CBE21768ACA6000CF88A /* BasicButton.h */,
 				03D8CBE31768ACA6000CF88A /* BasicButton.m */,
 				03D8CBE41768ACA6000CF88A /* BasicButtonCell.h */,
@@ -1303,6 +1309,8 @@
 				7CA44C3050AB8A8FA2599B25 /* NSParagraphStyle+DPUtils.h */,
 				7CA4447771137936908C27BA /* PathOptions.m */,
 				7CA44B64C3F039B8AFF3FA61 /* PathOptions.h */,
+				7CA4489C182E170CD84ABB6B /* NSGradient+DPUtils.m */,
+				7CA44B701D6BCE536D10F2E8 /* NSGradient+DPUtils.h */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1374,6 +1382,8 @@
 				03D8CDB31768ACA6000CF88A /* DPSplitView.m */,
 				03D8CDB41768ACA6000CF88A /* RoundedView.h */,
 				03D8CDB51768ACA6000CF88A /* RoundedView.m */,
+				7CA441CF0C84D430FA781F5D /* BasicBackgroundView.m */,
+				7CA449F22DF1FF28E68232A3 /* BasicBackgroundView.h */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1685,6 +1695,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03D8CB401768AA17000CF88A /* Build configuration list for PBXNativeTarget "Carts" */;
 			buildPhases = (
+				030E84201785DE5A001D8CC8 /* ShellScript */,
 				03D8CB1F1768AA17000CF88A /* Sources */,
 				03D8CB201768AA17000CF88A /* Frameworks */,
 				03D8CB211768AA17000CF88A /* Resources */,
@@ -1767,6 +1778,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		030E84201785DE5A001D8CC8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/bin/sh \"${SRCROOT}/_scripts/import_script.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		03D8CB1F1768AA17000CF88A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1775,7 +1802,7 @@
 				03D8CB331768AA17000CF88A /* main.m in Sources */,
 				03D8CDD01768ACA6000CF88A /* BasicAppDelegate.m in Sources */,
 				03D8CE121768ACA6000CF88A /* BONavigationBar.m in Sources */,
-				03D8CE131768ACA6000CF88A /* BasicBackgroundView.m in Sources */,
+				03D8CE131768ACA6000CF88A /* BasicBackgroundViewOld.m in Sources */,
 				03D8CE141768ACA6000CF88A /* BasicButton.m in Sources */,
 				03D8CE151768ACA6000CF88A /* BasicButtonCell.m in Sources */,
 				03D8CE161768ACA6000CF88A /* EtchedButtonCell.m in Sources */,
@@ -1952,6 +1979,8 @@
 				7CA44E94CACA21EC4C74102E /* NSParagraphStyle+DPUtils.m in Sources */,
 				7CA44D1D78275A20592F18DA /* CartsCustomWindow.m in Sources */,
 				7CA4486A4D9B349FC3806E81 /* PathOptions.m in Sources */,
+				7CA449A5F6290CBD3E53B8D1 /* BasicBackgroundView.m in Sources */,
+				7CA449BB951E8538DED706A5 /* NSGradient+DPUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

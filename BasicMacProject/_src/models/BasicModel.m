@@ -13,7 +13,7 @@
 
 
 - (NSString *) pathForSearchPath: (NSSearchPathDirectory) searchPath {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(searchPath, NSUserDomainMask, YES);
+    NSArray  *paths         = NSSearchPathForDirectoriesInDomains(searchPath, NSUserDomainMask, YES);
     NSString *directoryPath = [paths objectAtIndex: 0];
     return directoryPath;
 }

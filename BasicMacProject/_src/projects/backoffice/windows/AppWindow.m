@@ -20,10 +20,10 @@
 
 
 @implementation AppWindow {
-    BOOL sidebarIsOpen;
+    BOOL    sidebarIsOpen;
     CGFloat originalWidth;
     BOSidebarViewController *sidebarViewController;
-    BOOL isToggling;
+    BOOL    isToggling;
     CGFloat currentSidebarWidth;
     CGFloat lastSidebarWidth;
 }
@@ -41,8 +41,8 @@
     [super awakeFromNib];
 
     mainSplitView.dividerThickness = 1;
-    mainSplitView.dividerColor = [NSColor blackColor];
-    bottomSplitView.dividerColor = [NSColor blackColor];
+    mainSplitView.dividerColor     = [NSColor blackColor];
+    bottomSplitView.dividerColor   = [NSColor blackColor];
 
     sidebarIsOpen = YES;
     originalWidth = self.frame.size.width;
@@ -52,13 +52,12 @@
     navigationController.navigationBar = [[BONavigationBar alloc] initWithFrame: NSZeroRect];
 
 
-
     [self addController: sidebarViewController toView: sidebarView];
     [self addController: [[BottomViewController alloc] initWithDefaultNib] toView: bottomView];
     [self addController: navigationController toView: mainView];
 
-//    [bottomSplitView setCanCollapse: YES subviewAtIndex: 1];
-//    [mainSplitView setCanCollapse: YES subviewAtIndex: 0];
+    //    [bottomSplitView setCanCollapse: YES subviewAtIndex: 1];
+    //    [mainSplitView setCanCollapse: YES subviewAtIndex: 0];
 }
 
 - (void) openSidebar: (id) sender {

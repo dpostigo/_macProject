@@ -16,18 +16,16 @@
 
 @implementation JSButtonCell
 
-- (void)drawWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
-{
-    [super drawWithFrame:cellFrame inView:controlView];
+- (void) drawWithFrame: (NSRect) cellFrame inView: (NSView *) controlView {
+    [super drawWithFrame: cellFrame inView: controlView];
 }
 
-- (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
-{
+- (void) drawInteriorWithFrame: (NSRect) cellFrame inView: (NSView *) controlView {
     NSRect insetRect = NSInsetRect(cellFrame, BUTTON_INSET_X, BUTTON_INSET_Y);
-    NSBezierPath *buttonPath = [NSBezierPath bezierPathWithRoundedRect:insetRect xRadius:BUTTON_RADIUS yRadius:BUTTON_RADIUS];
-    NSGradient *backgroundGradient = [[NSGradient alloc] initWithStartingColor:BUTTON_TOP_COLOR endingColor:BUTTON_BOTTOM_COLOR];
-    [backgroundGradient drawInBezierPath:buttonPath angle:90.0f];
-    [super drawInteriorWithFrame:cellFrame inView:controlView];
+    NSBezierPath *buttonPath         = [NSBezierPath bezierPathWithRoundedRect: insetRect xRadius: BUTTON_RADIUS yRadius: BUTTON_RADIUS];
+    NSGradient   *backgroundGradient = [[NSGradient alloc] initWithStartingColor: BUTTON_TOP_COLOR endingColor: BUTTON_BOTTOM_COLOR];
+    [backgroundGradient drawInBezierPath: buttonPath angle: 90.0f];
+    [super drawInteriorWithFrame: cellFrame inView: controlView];
 }
 
 

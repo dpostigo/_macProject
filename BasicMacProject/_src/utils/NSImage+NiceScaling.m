@@ -47,7 +47,7 @@
     NSSize size = [self scaledSizeToFitSize: fitIn];
     NSImage *img = [[NSImage alloc] initWithSize: fitIn];
     NSRect srcBox = {{0, 0}, {0, 0}},
-            dstBox = {{0, 0}, {0, 0}};
+           dstBox = {{0, 0}, {0, 0}};
 
     dstBox.size = size;
     srcBox.size = [self size];
@@ -93,12 +93,12 @@
                               andBox: (BOOL) doBox align: (NSImageAlignment) align {
     NSSize size = [self scaledSizeToCoverSize: fitIn];
     NSImage *img = [[NSImage alloc] initWithSize: fitIn];
-    NSRect srcBox = {{0, 0}, {0, 0}},
-            dstBox = {{0, 0}, {0, 0}},
-            clipBox = {{0, 0}, {0, 0}};
+    NSRect srcBox  = {{0, 0}, {0, 0}},
+           dstBox  = {{0, 0}, {0, 0}},
+           clipBox = {{0, 0}, {0, 0}};
 
-    dstBox.size = size;
-    srcBox.size = [self size];
+    dstBox.size  = size;
+    srcBox.size  = [self size];
     clipBox.size = fitIn;
 
     // Center it:
@@ -173,15 +173,15 @@
 + (NSSize) scaledSize: (NSSize) imgSize toFitSize: (NSSize) size {
     NSSize finalSize;
 
-    float widthRatio = size.width / imgSize.width;
+    float widthRatio  = size.width / imgSize.width;
     float heightRatio = size.height / imgSize.height;
 
     if (widthRatio < heightRatio) {
-        finalSize.width = size.width;
+        finalSize.width  = size.width;
         finalSize.height = imgSize.height * widthRatio;
     }
     else {
-        finalSize.width = imgSize.width * heightRatio;
+        finalSize.width  = imgSize.width * heightRatio;
         finalSize.height = size.height;
     }
 
@@ -196,19 +196,19 @@
 
 + (NSSize) scaledSize: (NSSize) imgSize toCoverSize: (NSSize) size {
     NSSize finalSize = imgSize;
-    float ratio = imgSize.height / imgSize.width;
+    float  ratio     = imgSize.height / imgSize.width;
 
     /*if( imgSize.width == size.width
         && imgSize.height == size.height )
         return imgSize;*/
 
-    finalSize.width = size.width;
+    finalSize.width  = size.width;
     finalSize.height = finalSize.width * ratio;
 
     if (finalSize.height < size.height) {
         ratio = imgSize.width / imgSize.height;
         finalSize.height = size.height;
-        finalSize.width = finalSize.height * ratio;
+        finalSize.width  = finalSize.height * ratio;
     }
 
     return (finalSize);

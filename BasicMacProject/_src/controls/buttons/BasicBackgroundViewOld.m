@@ -1,17 +1,17 @@
 //
-//  BasicBackgroundView.m
+//  BasicBackgroundViewOld.m
 //  Button
 //
 //  Created by ampatspell on 5/4/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "BasicBackgroundView.h"
+#import "BasicBackgroundViewOld.h"
 #import "NSBezierPath+DPUtils.h"
 #import "NSGraphicsContext+DPUtils.h"
 
 
-@implementation BasicBackgroundView
+@implementation BasicBackgroundViewOld
 
 
 @synthesize borderColor;
@@ -25,22 +25,6 @@
 
 @synthesize gradientRotation;
 
-- (void) setup {
-    self.cornerRadius = 0.0;
-    self.borderWidth = 0.0;
-    self.borderColor = [NSColor clearColor];
-    self.backgroundColor = [NSColor clearColor];
-
-
-    shadow = [[NSShadow alloc] init];
-    shadow.shadowColor = [NSColor clearColor];
-    shadow.shadowBlurRadius = 2.0;
-    shadow.shadowOffset = NSMakeSize(0, -1);
-    shadowOpacity = 0.5;
-
-    gradientRotation = 90.0;
-
-}
 
 - (id) initWithFrame: (NSRect) frame {
     self = [super initWithFrame: frame];
@@ -58,6 +42,24 @@
     return self;
 }
 
+
+- (void) setup {
+    cornerRadius = 0.0;
+    borderWidth  = 0.0;
+    self.borderColor     = [NSColor clearColor];
+    self.backgroundColor = [NSColor clearColor];
+
+
+    shadow = [[NSShadow alloc] init];
+    shadow.shadowColor      = [NSColor clearColor];
+    shadow.shadowBlurRadius = 2.0;
+    shadow.shadowOffset     = NSMakeSize(0, -1);
+    shadowOpacity = 0.5;
+
+    gradientRotation = 90.0;
+
+}
+
 - (void) setBackgroundColor: (NSColor *) backgroundColor1 {
     backgroundColor = backgroundColor1;
     self.gradient = [[NSGradient alloc] initWithStartingColor: backgroundColor endingColor: backgroundColor];
@@ -68,8 +70,8 @@
 
     if (shadow.shadowColor != [NSColor clearColor]) {
 
-        CGFloat amount = 3;
-        NSRect newRect = self.bounds;
+        CGFloat amount  = 3;
+        NSRect  newRect = self.bounds;
         if (self.isFlipped) {
             newRect.size.height -= amount;
 
@@ -89,32 +91,12 @@
 
         NSRect bounds = self.bounds;
         NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect: self.bounds xRadius: cornerRadius yRadius: cornerRadius];
-
         [path drawGradient: gradient angle: gradientRotation];
         [path drawStroke: borderColor];
 
     }
 }
 
-
-//
-//- (void) drawShadowForPath: (NSBezierPath *) path {
-//    [NSGraphicsContext saveGraphicsState];
-//
-//    // Create the shadow below and to the right of the shape.
-//    NSShadow *theShadow = [[NSShadow alloc] init];
-//    theShadow.shadowColor = self.shadowColor;
-//    theShadow.shadowBlurRadius = self.shadowRadius;
-//    theShadow.shadowOffset = self.shadowOffset;
-//
-//    [theShadow set];
-//
-//    NSColor *fadedColor = [self.shadowColor colorWithAlphaComponent: shadowOpacity];
-//    [fadedColor setFill];
-//    [path fill];
-//
-//    [NSGraphicsContext restoreGraphicsState];
-//}
 
 - (BOOL) isOpaque {
     return NO;

@@ -11,11 +11,7 @@
 
 @interface ColoredWindowController : NSWindowController {
 
-
-
-    
 }
-
 
 
 @end

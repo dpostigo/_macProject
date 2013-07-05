@@ -30,14 +30,14 @@
 
 - (void) setup {
 
-    self.imageColor = [NSColor colorWithDeviceWhite: 0.9 alpha: 1.0];
+    self.imageColor       = [NSColor colorWithDeviceWhite: 0.9 alpha: 1.0];
     self.imageShadowColor = [NSColor clearColor];
 
-    self.strokeColor = [NSColor colorWithDeviceWhite: 0.12f alpha: 1.0f];
+    self.strokeColor      = [NSColor colorWithDeviceWhite: 0.12f alpha: 1.0f];
     self.innerStrokeColor = [NSColor colorWithDeviceWhite: 1.0f alpha: 0.05f];
     self.highlightedColor = [NSColor colorWithCalibratedWhite: 0.0f alpha: 0.35];
 
-    self.cornerRadius = 3.0;
+    self.cornerRadius            = 3.0;
     self.autoAdjustsCornerRadius = NO;
 
     gradientColor = [[NSGradient alloc] initWithColorsAndLocations:
@@ -50,7 +50,7 @@
             [NSColor darkGrayColor], 1.0,
             nil];
 
-    disabledStrokeColor = [NSColor darkGrayColor];
+    disabledStrokeColor      = [NSColor darkGrayColor];
     disabledInnerStrokeColor = [NSColor lightGrayColor];
 }
 
@@ -120,9 +120,9 @@
 
     NSGraphicsContext *context = [NSGraphicsContext currentContext];
 
-    BOOL outer = NO;
-    BOOL stroke = YES;
-    BOOL background = YES;
+    BOOL outer       = NO;
+    BOOL stroke      = YES;
+    BOOL background  = YES;
     BOOL innerStroke = YES;
     if (outer) [self drawOuter: context frame: frame];
     if (background) [self drawBackgroundFill: context frame: frame];
@@ -170,7 +170,7 @@
 }
 
 - (void) drawBackgroundFill: (NSGraphicsContext *) context frame: (NSRect) frame {
-    NSGradient *theGradient = self.isEnabled ? gradientColor : disabledGradientColor;
+    NSGradient   *theGradient    = self.isEnabled ? gradientColor : disabledGradientColor;
     NSBezierPath *backgroundPath = [NSBezierPath bezierPathWithRoundedRect: NSInsetRect(frame, 2.0f, 2.0f) xRadius: cornerRadius yRadius: cornerRadius];
     [context drawBackgroundGradient: theGradient inPath: backgroundPath angle: 270.0f];
 }

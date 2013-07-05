@@ -17,6 +17,6 @@
 
 // designated initialiser
 // Preamble must be specified at initialisation
-- (id)initWithPreamble:(JSPreamble *)preamble;
+- (id) initWithPreamble: (JSPreamble *) preamble;
 
 @end
