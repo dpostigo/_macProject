@@ -7,14 +7,15 @@
 
 #import <Cocoa/Cocoa.h>
 #import <Foundation/Foundation.h>
+#import "BorderOption.h"
 
 @class PathOptions;
 
 typedef enum {
     NSBezierPathUpperRight = 1 << 0,
     NSBezierPathLowerRight = 1 << 1,
-    NSBezierPathLowerLeft  = 1 << 2,
-    NSBezierPathUpperLeft  = 1 << 3,
+    NSBezierPathLowerLeft = 1 << 2,
+    NSBezierPathUpperLeft = 1 << 3,
 } NSBezierPathCornerOptions;
 
 
@@ -22,6 +23,10 @@ typedef enum {
 
 
 + (NSBezierPath *) bezierPathWithRect: (NSRect) rect cornerRadius: (CGFloat) radius options: (NSBezierPathCornerOptions) options;
++ (void) drawBezierPathWithRect: (NSRect) rect options: (PathOptions *) pathOptions;
++ (NSBezierPath *) bezierPathWithRect: (NSRect) rect options: (PathOptions *) pathOptions;
++ (NSBezierPath *) bezierPathWithRect: (NSRect) rect borderType: (BorderType) borderType;
+- (void) drawWithBorderOption: (BorderOption *) borderOption;
 - (void) drawWithPathOptions: (PathOptions *) pathOptions;
 - (void) drawWithFill: (NSColor *) aColor;
 - (void) drawGradient: (NSGradient *) gradient;

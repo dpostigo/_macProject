@@ -19,7 +19,6 @@
     self = [super initWithCoder: aDecoder];
     if (self) {
         self.showsDisclosureTriangles = NO;
-
     }
 
     return self;
@@ -52,6 +51,20 @@
 //    }
 //    return superFrame;
 //}
+
+- (NSRect) frameOfOutlineCellAtRow: (NSInteger) row {
+    NSRect rect = [super frameOfOutlineCellAtRow: row];
+    //    rect.size.height = self.rowHeight;
+    NSLog(@"NSStringFromRect(frameOfOutlineCellAtRow) = %@", NSStringFromRect(rect));
+    return rect;
+}
+
+
+- (NSRect) frameOfCellAtColumn: (NSInteger) column row: (NSInteger) row {
+    NSRect rect = [super frameOfCellAtColumn: column row: row];
+    NSLog(@"NSStringFromRect(frameOfCellAtColumn) = %@", NSStringFromRect(rect));
+    return rect;
+}
 
 
 @end

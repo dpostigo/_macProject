@@ -18,12 +18,22 @@
 - (void) loadView {
     [super loadView];
 
-    outline.backgroundColor     = [NSColor colorWithString: @"F2F2F2"];
-    outline.top -= 10;
+
+        outline.backgroundColor = [NSColor colorWithString: @"F2F2F2"];
+    //    outline.top -= 10;
+
+    NSScrollView *scrollView = outline.enclosingScrollView;
+    NSClipView *clipView = scrollView.contentView;
+//    scrollView.top += 3;
+    scrollView.height += 3;
+
+
     outline.indentationPerLevel = 0.5;
-    self.allowsSelection        = YES;
+    self.allowsSelection = YES;
+
     [self expand];
 }
+
 
 
 
@@ -40,7 +50,8 @@
 
 - (BasicTableRowView *) rowViewForOutlineSection: (OutlineSection *) outlineSection {
     BasicCustomRowView *rowView = [[BasicCustomRowView alloc] init];
-    rowView.borderColor = [NSColor redColor];
+    rowView.borderColor = [NSColor darkGrayColor];
+    rowView.borderType = BorderTypeTop | BorderTypeBottom;
     return rowView;
 }
 

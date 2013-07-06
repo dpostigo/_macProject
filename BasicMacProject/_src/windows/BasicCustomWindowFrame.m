@@ -37,15 +37,15 @@
         innerPathOptions.borderColor = [NSColor colorWithDeviceWhite: 1.0 alpha: 0.5];
 
         pathOptions = [[PathOptions alloc] init];
-        pathOptions.cornerRadius  = 5.0;
-        pathOptions.borderWidth   = 0.5;
-        pathOptions.borderColor   = [NSColor blackColor];
+        pathOptions.cornerRadius = 5.0;
+        pathOptions.borderWidth = 0.5;
+        pathOptions.borderColor = [NSColor blackColor];
         pathOptions.cornerOptions = NSBezierPathLowerLeft | NSBezierPathLowerRight | NSBezierPathUpperRight | NSBezierPathUpperLeft;
-        pathOptions.gradient      = [[NSGradient alloc] initWithColorsAndLocations: [NSColor colorWithWhite: 0.3], 0.0,
-                                                                                    [NSColor colorWithWhite: 0.2], 0.1,
-                                                                                    [NSColor colorWithWhite: 0.2], 0.9,
-                                                                                    [NSColor colorWithWhite: 0.3], 1.0,
-                                                                                    nil];
+        pathOptions.gradient = [[NSGradient alloc] initWithColorsAndLocations: [NSColor colorWithWhite: 0.3], 0.0,
+                                                                               [NSColor colorWithWhite: 0.2], 0.1,
+                                                                               [NSColor colorWithWhite: 0.2], 0.9,
+                                                                               [NSColor colorWithWhite: 0.3], 1.0,
+                                                                               nil];
 
 
         numCursors = 8;
@@ -74,7 +74,7 @@
 
 - (void) resetCursorRects {
     [super resetCursorRects];
-    NSArray       *keys = [self.cursorDict allKeys];
+    NSArray *keys = [self.cursorDict allKeys];
     for (NSString *key in keys) {
         WindowFrameResizeType type = (WindowFrameResizeType) [key integerValue];
         NSCursor *cursor = [self cursorForType: type];
@@ -107,7 +107,7 @@
 
 - (NSRect) bottomRightResizeRect {
     NSRect bounds = self.bounds;
-    NSRect rect   = NSMakeRect(bounds.size.width - resizeRectSize.width, bounds.origin.y, resizeRectSize.width, resizeRectSize.height);
+    NSRect rect = NSMakeRect(bounds.size.width - resizeRectSize.width, bounds.origin.y, resizeRectSize.width, resizeRectSize.height);
     return rect;
 }
 
@@ -115,7 +115,7 @@
 - (NSRect) rightResizeRect {
     NSRect rect = self.bounds;
     rect.size.width = 10;
-    rect.origin.x   = self.bounds.size.width - rect.size.width;
+    rect.origin.x = self.bounds.size.width - rect.size.width;
     rect.size.height -= (resizeRectSize.height * 2);
     rect.origin.y += resizeRectSize.height;
     return rect;
@@ -131,32 +131,28 @@
 - (void) mouseDown: (NSEvent *) event {
     NSPoint pointInView = [self convertPoint: [event locationInWindow] fromView: nil];
 
-    BOOL                  resize     = NO;
+    BOOL resize = NO;
     WindowFrameResizeType resizeType = WindowFrameResizeTypeNone;
     if (NSPointInRect(pointInView, self.bottomRightResizeRect)) {
-        resize     = YES;
+        resize = YES;
         resizeType = WindowFrameResizeTypeBottom | WindowFrameResizeTypeRight;
     }
     else if (NSPointInRect(pointInView, self.rightResizeRect)) {
-        resize     = YES;
+        resize = YES;
         resizeType = WindowFrameResizeTypeRight;
     }
 
     else if (NSPointInRect(pointInView, self.bottomResizeRect)) {
-        resize     = YES;
+        resize = YES;
         resizeType = WindowFrameResizeTypeBottom;
     }
 
 
     NSWindow *window = self.window;
     NSPoint originalMouseLocation = [window convertBaseToScreen: [event locationInWindow]];
-    NSRect  originalFrame         = [window frame];
+    NSRect originalFrame = window.frame;
 
     while (YES) {
-        //
-        // Lock focus and take all the dragged and mouse up events until we
-        // receive a mouse up.
-        //
         NSEvent *newEvent = [window nextEventMatchingMask: (NSLeftMouseDraggedMask | NSLeftMouseUpMask)];
 
         if (newEvent.type == NSLeftMouseUp) break;
@@ -165,7 +161,7 @@
         // Work out how much the mouse has moved
         //
         NSPoint newMouseLocation = [window convertBaseToScreen: [newEvent locationInWindow]];
-        NSPoint delta            = NSMakePoint(newMouseLocation.x - originalMouseLocation.x, newMouseLocation.y - originalMouseLocation.y);
+        NSPoint delta = NSMakePoint(newMouseLocation.x - originalMouseLocation.x, newMouseLocation.y - originalMouseLocation.y);
 
         NSRect newFrame = originalFrame;
 
@@ -191,8 +187,8 @@
             // Constrain to the window's min and max size
             //
             NSRect newContentRect = [window contentRectForFrameRect: newFrame];
-            NSSize maxSize        = [window maxSize];
-            NSSize minSize        = [window minSize];
+            NSSize maxSize = [window maxSize];
+            NSSize minSize = [window minSize];
             if (newContentRect.size.width > maxSize.width) {
                 newFrame.size.width -= newContentRect.size.width - maxSize.width;
             }
@@ -207,6 +203,7 @@
                 newFrame.size.height += minSize.height - newContentRect.size.height;
                 newFrame.origin.y -= minSize.height - newContentRect.size.height;
             }
+
         }
 
         [window setFrame: newFrame display: YES animate: NO];
@@ -219,7 +216,7 @@
     NSRectFill(rect);
 
 
-    NSBezierPath *path            = [NSBezierPath bezierPathWithRect: self.bounds cornerRadius: self.cornerRadius options: self.cornerOptions];
+    NSBezierPath *path = [NSBezierPath bezierPathWithRect: self.bounds options: pathOptions];
     NSBezierPath *innerBorderPath = [NSBezierPath bezierPathWithRect: NSInsetRect(self.bounds, self.borderWidth, self.borderWidth) cornerRadius: self.cornerRadius options: self.cornerOptions];
 
 
@@ -238,10 +235,10 @@
     [[NSColor blackColor] set];
     NSString *windowTitle = self.window.title;
     NSRect titleRect = self.bounds;
-    titleRect.origin.y    = titleRect.size.height - (windowFramePadding - 7);
+    titleRect.origin.y = titleRect.size.height - (windowFramePadding - 7);
     titleRect.size.height = (windowFramePadding - 7);
 
-    NSParagraphStyle   *paragraphStyle   = [NSParagraphStyle paragraphWithAlignment: NSCenterTextAlignment];
+    NSParagraphStyle *paragraphStyle = [NSParagraphStyle paragraphWithAlignment: NSCenterTextAlignment];
     NSAttributedString *attributedString = [NSAttributedString attributedStringWithString: windowTitle font: [NSFont systemFontOfSize: 14] paragraphStyle: paragraphStyle];
     [attributedString drawWithRect: titleRect options: 0];
 

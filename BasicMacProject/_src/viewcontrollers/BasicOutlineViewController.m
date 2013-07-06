@@ -16,11 +16,10 @@
 
 - (void) loadView {
     [super loadView];
-    outline.delegate        = self;
-    outline.dataSource      = self;
+    outline.delegate = self;
+    outline.dataSource = self;
     outline.floatsGroupRows = NO;
-
-    [outline reloadData];
+    //    [outline reloadData];
 }
 
 - (void) expand {
@@ -56,13 +55,13 @@
 - (NSView *) outlineView: (NSOutlineView *) outlineView viewForTableColumn: (NSTableColumn *) tableColumn item: (id) item {
 
     if ([item isKindOfClass: [OutlineSection class]]) {
-        OutlineSection     *outlineSection = item;
-        BasicTableCellView *result         = [self headerCellForOutlineSection: outlineSection];
+        OutlineSection *outlineSection = item;
+        BasicTableCellView *result = [self headerCellForOutlineSection: outlineSection];
         result.textField.stringValue = [outlineSection.title uppercaseString];
         return result;
     } else {
 
-        TableRowObject *rowObject      = item;
+        TableRowObject *rowObject = item;
         OutlineSection *outlineSection = [outline parentForItem: item];
 
         BasicTableCellView *cell = [self cellForRowObject: rowObject outlineSection: outlineSection];
@@ -77,7 +76,7 @@
         OutlineSection *outlineSection = item;
         rowView = [self rowViewForOutlineSection: outlineSection];
     } else {
-        TableRowObject *rowObject      = item;
+        TableRowObject *rowObject = item;
         OutlineSection *outlineSection = [outline parentForItem: item];
         rowView = [self rowViewForRowObject: rowObject outlineSection: outlineSection];
     }
@@ -96,7 +95,7 @@
 }
 
 - (NSInteger) outlineView: (NSOutlineView *) outlineView numberOfChildrenOfItem: (id) item {
-    NSInteger ret;
+    NSInteger ret = -1;
     if (item == nil) {
         ret = [dataSource count];
     } else {
@@ -107,6 +106,7 @@
 }
 
 - (BOOL) outlineView: (NSOutlineView *) outlineView shouldShowOutlineCellForItem: (id) item {
+    BOOL isOutlineSection = [item isKindOfClass: [OutlineSection class]];
 
     if ([item isKindOfClass: [OutlineSection class]]) {
         OutlineSection *outlineSection = item;
@@ -128,15 +128,28 @@
     return NO;
 }
 
+
+#pragma mark Rects
+
 - (CGFloat) outlineView: (NSOutlineView *) outlineView heightOfRowByItem: (id) item {
     if ([item isKindOfClass: [OutlineSection class]]) {
         OutlineSection *outlineSection = item;
         return [self heightForHeaderSection: outlineSection];
     } else {
-        TableRowObject *rowObject      = item;
+        TableRowObject *rowObject = item;
         OutlineSection *outlineSection = [outline parentForItem: item];
         return [self heightForRowObject: rowObject outlineSection: outlineSection];
     }
+}
+
+
+- (CGFloat) heightForHeaderSection: (OutlineSection *) outlineSection {
+    NSLog(@"outline.rowHeight = %f", outline.rowHeight);
+    return outline.rowHeight;
+}
+
+- (CGFloat) heightForRowObject: (TableRowObject *) rowObject outlineSection: (OutlineSection *) outlineSection {
+    return outline.rowHeight;
 }
 
 
@@ -182,14 +195,6 @@
 
 - (BasicTableRowView *) rowViewForOutlineSection: (OutlineSection *) outlineSection {
     return nil;
-}
-
-- (CGFloat) heightForHeaderSection: (OutlineSection *) outlineSection {
-    return outline.rowHeight;
-}
-
-- (CGFloat) heightForRowObject: (TableRowObject *) rowObject outlineSection: (OutlineSection *) outlineSection {
-    return outline.rowHeight;
 }
 
 

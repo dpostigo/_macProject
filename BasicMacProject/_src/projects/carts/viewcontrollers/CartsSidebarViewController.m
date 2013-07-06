@@ -20,7 +20,6 @@
 
 - (void) prepareDataSource {
     [super prepareDataSource];
-
     OutlineSection *section = [[OutlineSection alloc] initWithTitle: @"Carts By Store" isExpandable: YES];
     [section.rows addObject: [[OutlineRowObject alloc] initWithTextLabel: @"ASOS"]];
     [section.rows addObject: [[OutlineRowObject alloc] initWithTextLabel: @"Forever21"]];

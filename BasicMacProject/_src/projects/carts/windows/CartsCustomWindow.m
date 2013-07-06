@@ -11,12 +11,15 @@
 
 @implementation CartsCustomWindow
 
+
+
+
 - (id) initWithContentRect: (NSRect) contentRect styleMask: (NSUInteger) aStyle backing: (NSBackingStoreType) bufferingType defer: (BOOL) flag {
     self = [super initWithContentRect: contentRect styleMask: aStyle backing: bufferingType defer: flag];
     if (self) {
-
-        self.buttonHeight  = 30.0;
+        self.buttonHeight = 30.0;
         self.buttonSpacing = 8.0;
+//        self.windowFramePadding = 1.0;
 
     }
 

@@ -230,6 +230,7 @@
 		7CA448F0E86B3C3BC896DCE7 /* BasicCustomWindowFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44018205CD3A1DFFBE403 /* BasicCustomWindowFrame.m */; };
 		7CA449A5F6290CBD3E53B8D1 /* BasicBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA441CF0C84D430FA781F5D /* BasicBackgroundView.m */; };
 		7CA449BB951E8538DED706A5 /* NSGradient+DPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4489C182E170CD84ABB6B /* NSGradient+DPUtils.m */; };
+		7CA44B202AA750CC78E7A259 /* BorderOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44000ABF8BEAC657C55F1 /* BorderOption.m */; };
 		7CA44BC46A6C10A462A03CF3 /* NewCustomWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA442406BF21E5A3706D3A6 /* NewCustomWindow.m */; };
 		7CA44C4034FEA3704A23783C /* CartsMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44DDE315CA9096FF0908A /* CartsMainViewController.m */; };
 		7CA44D1D78275A20592F18DA /* CartsCustomWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44D5EA0DDF5B457BD3CF7 /* CartsCustomWindow.m */; };
@@ -639,6 +640,7 @@
 		03DD35E41769FA5D000DB1B7 /* TokenTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenTestViewController.m; sourceTree = "<group>"; };
 		03DD35E71769FA5D000DB1B7 /* AppWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppWindow.h; sourceTree = "<group>"; };
 		03DD35E81769FA5D000DB1B7 /* AppWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppWindow.m; sourceTree = "<group>"; };
+		7CA44000ABF8BEAC657C55F1 /* BorderOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorderOption.m; sourceTree = "<group>"; };
 		7CA44018205CD3A1DFFBE403 /* BasicCustomWindowFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicCustomWindowFrame.m; sourceTree = "<group>"; };
 		7CA440AF824DF0BD2503A333 /* BasicStyledRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicStyledRowView.h; path = rowViews/BasicStyledRowView.h; sourceTree = "<group>"; };
 		7CA441CF0C84D430FA781F5D /* BasicBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicBackgroundView.m; sourceTree = "<group>"; };
@@ -662,6 +664,7 @@
 		7CA44C26383C81237932D7B3 /* NewCustomWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCustomWindow.h; sourceTree = "<group>"; };
 		7CA44C3050AB8A8FA2599B25 /* NSParagraphStyle+DPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSParagraphStyle+DPUtils.h"; sourceTree = "<group>"; };
 		7CA44D5EA0DDF5B457BD3CF7 /* CartsCustomWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsCustomWindow.m; sourceTree = "<group>"; };
+		7CA44DAB26A54622D3E459EA /* BorderOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorderOption.h; sourceTree = "<group>"; };
 		7CA44DDE315CA9096FF0908A /* CartsMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsMainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1311,6 +1314,8 @@
 				7CA44B64C3F039B8AFF3FA61 /* PathOptions.h */,
 				7CA4489C182E170CD84ABB6B /* NSGradient+DPUtils.m */,
 				7CA44B701D6BCE536D10F2E8 /* NSGradient+DPUtils.h */,
+				7CA44000ABF8BEAC657C55F1 /* BorderOption.m */,
+				7CA44DAB26A54622D3E459EA /* BorderOption.h */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1695,10 +1700,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03D8CB401768AA17000CF88A /* Build configuration list for PBXNativeTarget "Carts" */;
 			buildPhases = (
-				030E84201785DE5A001D8CC8 /* ShellScript */,
 				03D8CB1F1768AA17000CF88A /* Sources */,
 				03D8CB201768AA17000CF88A /* Frameworks */,
 				03D8CB211768AA17000CF88A /* Resources */,
+				030E84201785DE5A001D8CC8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1981,6 +1986,7 @@
 				7CA4486A4D9B349FC3806E81 /* PathOptions.m in Sources */,
 				7CA449A5F6290CBD3E53B8D1 /* BasicBackgroundView.m in Sources */,
 				7CA449BB951E8538DED706A5 /* NSGradient+DPUtils.m in Sources */,
+				7CA44B202AA750CC78E7A259 /* BorderOption.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

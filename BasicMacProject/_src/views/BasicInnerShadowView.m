@@ -12,54 +12,22 @@
 }
 
 
-@synthesize cornerRadius;
-@synthesize fillColor;
-@synthesize borderColor;
-@synthesize shadowColor;
-@synthesize shadowRadius;
+- (void) setup {
+    [super setup];
+    pathOptions.cornerRadius = 0.0;
+    pathOptions.borderWidth = 0.5;
+    pathOptions.borderColor = [NSColor clearColor];
+    pathOptions.cornerOptions = NSBezierPathLowerLeft | NSBezierPathLowerRight | NSBezierPathUpperRight | NSBezierPathUpperLeft;
+    pathOptions.backgroundColor = [NSColor colorWithDeviceWhite: 0.9 alpha: 1.0];
 
-
-- (id) initWithFrame: (NSRect) frameRect {
-    self = [super initWithFrame: frameRect];
-    if (self) {
-
-        self.cornerRadius = 3.0;
-        self.shadowRadius = 5.0;
-        self.fillColor    = [NSColor colorWithDeviceWhite: 0.8 alpha: 0.05];
-        self.borderColor  = [NSColor whiteColor];
-        self.shadowColor  = [NSColor grayColor];
-    }
-
-    return self;
+    pathOptions.innerShadow = [[NSShadow alloc] init];
+    pathOptions.innerShadow.shadowColor = [NSColor clearColor];
+    pathOptions.innerShadow.shadowBlurRadius = 3;
 }
-
 
 - (BOOL) isOpaque {
     return NO;
 }
 
-
-- (void) drawRect: (NSRect) dirtyRect {
-    NSGraphicsContext *context = [NSGraphicsContext currentContext];
-    [context saveGraphicsState];
-
-    [context setCompositingOperation: NSCompositeSourceOver];
-
-    NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect: dirtyRect xRadius: cornerRadius yRadius: cornerRadius];
-
-    [fillColor setFill];
-    [borderColor setStroke];
-
-    NSShadow *shadow = [[NSShadow alloc] init];
-    shadow.shadowColor      = self.shadowColor;
-    shadow.shadowBlurRadius = self.shadowRadius;
-
-    [shadow set];
-    [path setLineWidth: 2.0];
-    [path fill];
-    [path stroke];
-
-    [context restoreGraphicsState];
-}
 
 @end

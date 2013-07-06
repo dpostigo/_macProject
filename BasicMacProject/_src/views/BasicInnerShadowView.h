@@ -6,22 +6,9 @@
 
 
 #import <Foundation/Foundation.h>
+#import "BasicBackgroundView.h"
 
 
-@interface BasicInnerShadowView : NSView {
-
-    CGFloat cornerRadius;
-    CGFloat shadowRadius;
-    NSColor *fillColor;
-    NSColor *borderColor;
-    NSColor *shadowColor;
-}
-
-
-@property(nonatomic) CGFloat cornerRadius;
-@property(nonatomic, strong) NSColor *fillColor;
-@property(nonatomic, strong) NSColor *borderColor;
-@property(nonatomic, strong) NSColor *shadowColor;
-@property(nonatomic) CGFloat shadowRadius;
+@interface BasicInnerShadowView : BasicBackgroundView
 
 @end

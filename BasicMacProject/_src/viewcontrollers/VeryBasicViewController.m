@@ -80,14 +80,14 @@
 
 
 - (void) embedView: (NSView *) view inView: (NSView *) aSuperview {
-    view.frame            = aSuperview.bounds;
+    view.frame = aSuperview.bounds;
     view.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     [aSuperview addSubview: view];
 }
 
 
 - (void) replaceView: (NSView *) newView asView: (NSView *) oldView; {
-    newView.frame            = oldView.frame;
+    newView.frame = oldView.frame;
     newView.autoresizingMask = oldView.autoresizingMask;
     if ([oldView superview]) {
         NSView *superView = [oldView superview];

@@ -33,6 +33,7 @@
 @property(nonatomic, strong) NSShadow    *innerShadow;
 @property(nonatomic, strong) NSShadow    *outerShadow;
 @property(nonatomic) NSBezierPathCornerOptions cornerOptions;
+@property(nonatomic) BorderType borderType;
 
 
 @property(nonatomic, strong) NSGradient *selectedGradient;
@@ -42,4 +43,5 @@
 @property(nonatomic, strong) PathOptions *selectedPathOptions;
 - (NSRect) modifiedRect: (NSRect) rect;
 - (void) drawBackgroundInRect: (NSRect) dirtyRect selected: (BOOL) selected;
+- (BorderType) borderType;
 @end

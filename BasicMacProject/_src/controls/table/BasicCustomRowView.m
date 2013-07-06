@@ -41,25 +41,26 @@
         insetRect = NSZeroRect;
 
         pathOptions = [[PathOptions alloc] init];
-        pathOptions.cornerRadius  = 2.0;
+        pathOptions.cornerRadius = 0.0;
         pathOptions.cornerOptions = NSBezierPathUpperLeft | NSBezierPathUpperRight | NSBezierPathLowerLeft | NSBezierPathLowerRight;
-        pathOptions.borderColor   = [NSColor whiteColor];
-        pathOptions.borderWidth   = 1.0;
-        pathOptions.gradient      = [[NSGradient alloc] initWithColorsAndLocations:
-                [NSColor colorWithDeviceWhite: 0.85f alpha: 1.0f], 0.0f,
-                [NSColor colorWithDeviceWhite: 0.90f alpha: 1.0f], 0.2f,
-                [NSColor colorWithDeviceWhite: 0.93f alpha: 1.0f], 0.5f,
-                [NSColor colorWithDeviceWhite: 0.94f alpha: 1.0f], 0.7f,
-                [NSColor colorWithDeviceWhite: 0.95f alpha: 1.0f], 1.0f,
+        pathOptions.borderColor = [NSColor whiteColor];
+        pathOptions.borderWidth = 1.0;
+        pathOptions.gradient = [[NSGradient alloc] initWithColorsAndLocations:
+                [NSColor colorWithWhite: 0.95], 0.0,
+                [NSColor colorWithWhite: 0.94], 0.3,
+                [NSColor colorWithWhite: 0.93], 0.5,
+                [NSColor colorWithWhite: 0.90], 0.8,
+                [NSColor colorWithWhite: 0.85], 1.0,
                 nil];
 
-        pathOptions.outerShadow                  = [[NSShadow alloc] init];
-        pathOptions.outerShadow.shadowColor      = [NSColor blackColor];
+
+        pathOptions.outerShadow = [[NSShadow alloc] init];
+        pathOptions.outerShadow.shadowColor = [NSColor blackColor];
         pathOptions.outerShadow.shadowBlurRadius = 2.0;
-        pathOptions.outerShadow.shadowOffset     = NSMakeSize(0, -1);
+        pathOptions.outerShadow.shadowOffset = NSMakeSize(0, -1);
 
-
-        selectedGradient = [[NSGradient alloc] initWithColorsAndLocations:
+        selectedPathOptions = [pathOptions copy];
+        selectedPathOptions.gradient = [[NSGradient alloc] initWithColorsAndLocations:
                 [NSColor colorWithDeviceWhite: 0.2 alpha: 1.0f], 0.0,
                 [NSColor colorWithDeviceWhite: 0.3 alpha: 1.0f], 0.2,
                 [NSColor colorWithDeviceWhite: 0.2 alpha: 1.0f], 1.0,
@@ -85,22 +86,24 @@
 }
 
 - (void) drawBackgroundInRect: (NSRect) dirtyRect {
-    BOOL   selected = self.isSelected;
-    NSRect rect     = [self modifiedRect: self.bounds];
+    BOOL selected = self.isSelected;
+    NSRect rect = [self modifiedRect: self.bounds];
     [self drawBackgroundInRect: rect selected: selected];
 }
 
 
 - (void) drawBackgroundInRect: (NSRect) dirtyRect selected: (BOOL) selected {
+    //    NSBezierPath *roundedPath = [NSBezierPath bezierPathWithRoundedRect: dirtyRect corners: self.cornerOptions radius: self.cornerRadius];
+    //    [roundedPath drawShadow: self.shadow shadowOpacity: shadowOpacity];
 
-    NSBezierPath *roundedPath = [NSBezierPath bezierPathWithRoundedRect: dirtyRect corners: self.cornerOptions radius: self.cornerRadius];
-    [roundedPath drawShadow: self.shadow shadowOpacity: shadowOpacity];
 
+//    NSBezierPath *path = [NSBezierPath bezierPathWithRect: dirtyRect options: pathOptions];
+//    [path drawWithPathOptions: self.selected ? selectedPathOptions : pathOptions];
+//
+//    NSBezierPath *borderPath = [NSBezierPath bezierPathWithRect: dirtyRect borderType: pathOptions.borderOption.borderType];
+//    [borderPath drawWithBorderOption: pathOptions.borderOption];
 
-    NSBezierPath *path = [NSBezierPath bezierPathWithRect: dirtyRect cornerRadius: self.cornerRadius options: NSBezierPathLowerLeft | NSBezierPathLowerRight | NSBezierPathUpperRight | NSBezierPathUpperLeft];
-
-    [path drawGradient: self.selected ? selectedGradient : self.gradient angle: -90];
-    [path drawStroke: self.borderColor width: self.borderWidth];
+    [NSBezierPath drawBezierPathWithRect: dirtyRect options: pathOptions];
 }
 
 
@@ -142,6 +145,14 @@
 
 - (void) setBorderWidth: (CGFloat) borderWidth1 {
     pathOptions.borderWidth = borderWidth1;
+}
+
+- (BorderType) borderType {
+    return pathOptions.borderOption.borderType;
+}
+
+- (void) setBorderType: (BorderType) borderType {
+    pathOptions.borderOption.borderType = borderType;
 }
 
 - (NSGradient *) gradient {

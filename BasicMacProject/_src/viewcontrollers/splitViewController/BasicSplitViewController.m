@@ -41,16 +41,20 @@
 
     }
     splitView.dividerStyle = NSSplitViewDividerStyleThin;
-    self.dividerEnabled    = YES;
 
-    if (sidebar == nil) sidebar         = [splitView.subviews objectAtIndex: 0];
-    if (contentView == nil) contentView = [splitView.subviews objectAtIndex: 1];
+    if (sidebar == nil) sidebar = [splitView.subviews objectAtIndex: 0];
+    if (contentView == nil) {
 
-    sidebar.width        = defaultSidebarWidth;
+        NSView *subview = [splitView.subviews objectAtIndex: 1];
+        contentView = [[SplitViewContainer alloc] initWithFrame: subview.bounds];
+        [self embedView: contentView inView: subview];
+    }
+
+    sidebar.width = defaultSidebarWidth;
     sidebar.minimumWidth = defaultSidebarWidth;
-    sidebar.isLocked     = YES;
-
+    sidebar.isLocked = YES;
     splitView.delegate = self;
+    self.dividerEnabled = YES;
 }
 
 
@@ -108,33 +112,6 @@
 }
 
 
-//
-//
-//#pragma mark NSSplitViewDelegate
-//
-//
-
-//- (CGFloat) splitView: (NSSplitView *) splitView1 constrainMinCoordinate: (CGFloat) proposedMinimumPosition ofSubviewAt: (NSInteger) dividerIndex {
-//    SplitViewContainer *splitContainer = [self splitViewContainerAtIndex: dividerIndex];
-//    if (splitContainer) {
-//        return splitContainer.minimumHeight;
-//    }
-//    return 0;
-//}
-//
-//- (CGFloat) splitView: (NSSplitView *) splitView1 constrainMaxCoordinate: (CGFloat) proposedMaximumPosition ofSubviewAt: (NSInteger) dividerIndex {
-//    SplitViewContainer *splitContainer = [self splitViewContainerAtIndex: dividerIndex];
-//    if (splitContainer) {
-//        return splitContainer.maximumHeight;
-//    }
-//    return 0;
-//}
-//
-//
-//
-//
-
-
 #pragma mark DPSplitView
 
 - (CGFloat) dpSplitView: (DPSplitView *) dpSplit limitedCoordinateForValue: (CGFloat) proposedValue atDividerIndex: (NSInteger) dividerIndex {
@@ -164,12 +141,17 @@
 
 - (CGFloat) verticalSplitView: (DPSplitView *) dpSplit limitCoordinate: (SplitViewContainer *) splitContainer forProposedValue: (CGFloat) proposedValue {
     CGFloat ret = proposedValue;
-    if (splitContainer.minimumWidth > 0 && proposedValue < splitContainer.minimumWidth) {
-        ret = splitContainer.minimumWidth;
+
+    CGFloat min = splitContainer.minimumWidth;
+    CGFloat max = splitContainer.maximumWidth;
+
+
+    if (min > 0 && proposedValue < min) {
+        ret = min;
     }
 
-    if (splitContainer.maximumWidth > 0 && proposedValue > splitContainer.maximumWidth) {
-        ret = splitContainer.maximumWidth;
+    if (max > 0 && proposedValue > max) {
+        ret = max;
     }
     return ret;
 }
@@ -184,7 +166,7 @@
     if (splitContainer.minimumHeight == 0 || splitContainer.maximumHeight == 0) {
         SplitViewContainer *otherContainer = [dpSplit otherSplitContainer: splitContainer];
         if (otherContainer.minimumHeight > 0 || otherContainer.maximumHeight > 0) {
-            CGFloat totalHeight      = dpSplit.height;
+            CGFloat totalHeight = dpSplit.height;
             CGFloat newMinimumHeight = totalHeight - otherContainer.maximumHeight;
             CGFloat newMaximumHeight = totalHeight - otherContainer.minimumHeight;
             splitContainer.minimumHeight = newMinimumHeight;
