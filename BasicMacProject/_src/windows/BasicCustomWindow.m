@@ -1,222 +1,201 @@
 //
-// Created by Daniela Postigo on 5/4/13.
+//  BasicCustomWindow.m
+//  Carts
 //
-// To change the template use AppCode | Preferences | File Templates.
+//  Created by Daniela Postigo on 6/24/13.
+//  Copyright (c) 2013 Elastic Creative. All rights reserved.
 //
 
-
-#import <QuartzCore/QuartzCore.h>
 #import "BasicCustomWindow.h"
-#import "VeryBasicViewController.h"
-#import "NSView+Animation.h"
-#import "NSWindow+Animation.h"
-#import "ModalWindow.h"
+#import "BasicCustomWindowFrame.h"
 
 
 @implementation BasicCustomWindow {
-    BasicBackgroundViewOld *modalBackground;
+
 }
 
+@synthesize windowFrame;
+@synthesize childContentView;
 
-@synthesize modalWindow;
 
-- (void) presentModalView: (VeryBasicViewController *) controller withSize: (NSSize) size {
-    [self presentModalView: controller withSize: size animated: NO];
-}
+@synthesize windowButtonsLeft;
+@synthesize showsCloseButton;
+@synthesize showsMinimizeButton;
+@synthesize showsMaximizeButton;
 
-- (void) presentModalView: (VeryBasicViewController *) controller withSize: (NSSize) size animated: (BOOL) animated {
+@synthesize buttonSpacing;
+@synthesize buttonHeight;
+@synthesize windowFramePadding;
 
-    NSRect modalRect = [self modalRectForSize: size];
-    CGRect rect      = [self windowRectForModal];
+@synthesize frameClassString;
 
-    ModalWindow *window = [[ModalWindow alloc] initWithContentRect: rect styleMask: NSBorderlessWindowMask backing: NSBackingStoreBuffered defer: NO];
-    window.backgroundColor = [NSColor colorWithDeviceWhite: 0.0 alpha: 0.5];
-    [window setReleasedWhenClosed: NO];
-    window.alphaValue = 0;
-    self.modalWindow  = window;
+@synthesize windowButtonsRight;
 
-    controller.modalWindow = self;
-    controller.view.frame  = modalRect;
-
-    [self addChildWindow: modalWindow ordered: NSWindowAbove];
-
-    if (animated) {
-        [controller.view animateInDirection: NSViewAnimationDirectionFromBottom amount: 10 duration: 0.4 alpha: 1 completionHandler: nil];
-        [modalWindow animateToAlpha: 1 fromAlpha: 0 duration: 0.4 completionHandler: ^{
-            [modalWindow makeKeyWindow];
-        }];
-    }
-    [modalWindow.contentView addSubview: controller.view];
-}
-
-- (NSRect) modalRectForSize: (NSSize) size {
-    NSRect modalRect = NSMakeRect(0, 0, size.width, size.height);
-    modalRect.origin.x = (self.frame.size.width - modalRect.size.width) / 2;
-    modalRect.origin.y = (self.frame.size.height - modalRect.size.height) * 0.66;
-    return modalRect;
-}
-
-- (NSRect) windowRectForModal {
-    CGRect wRect = self.frame;
-    NSView *contentView = self.contentView;
-    CGRect cRect = contentView.frame;
-    CGRect rect  = CGRectMake(wRect.origin.x, wRect.origin.y, cRect.size.width, cRect.size.height);
-    return rect;
-}
-
-- (void) dismissModalViewController {
-    if (modalWindow != nil) {
-        [self removeChildWindow: modalWindow];
-        [modalWindow close];
-    }
-}
-
-- (void) dismissController: (NSViewController *) controller animated: (BOOL) animated {
-
-    if (modalWindow == nil) return;
-
-    if (animated) {
-        [controller.view animateInDirection: NSViewAnimationDirectionToBottom amount: 10 duration: 0.4 alpha: 0 completionHandler: ^{
-            [self removeChildWindow: modalWindow];
-            [modalWindow close];
-        }];
-
-        [modalWindow animateToAlpha: 0 fromAlpha: 1 duration: 0.4];
-    } else {
-        [self removeChildWindow: modalWindow];
-        [modalWindow close];
-    }
-}
+@synthesize titleBarView;
 
 - (id) initWithContentRect: (NSRect) contentRect styleMask: (NSUInteger) aStyle backing: (NSBackingStoreType) bufferingType defer: (BOOL) flag {
-    self = [super initWithContentRect: contentRect styleMask: aStyle backing: bufferingType defer: flag];
+    self = [super initWithContentRect: contentRect styleMask: NSBorderlessWindowMask backing: bufferingType defer: flag];
     if (self) {
-        [self configureWindow];
-        [self configureToolbar];
+        [self setOpaque: NO];
+        self.backgroundColor = [NSColor clearColor];
+        self.frameClass = [BasicCustomWindowFrame class];
+        self.windowButtonsLeft = [[NSMutableArray alloc] init];
+        self.windowButtonsRight = [[NSMutableArray alloc] init];
+        self.showsCloseButton = YES;
+        self.showsMaximizeButton = YES;
+        self.showsMinimizeButton = YES;
+
+
+        windowFramePadding = [[self class] windowFramePadding];
+        buttonSpacing = 5;
+        buttonHeight = 25;
+
+        [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(mainWindowChanged:) name: NSWindowDidBecomeMainNotification object: self];
+        [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(mainWindowChanged:) name: NSWindowDidResignMainNotification object: self];
     }
     return self;
 }
 
-- (void) awakeFromNib {
-    [super awakeFromNib];
+
+
+#pragma mark Getters / Setters
+
+- (void) setFrameClass: (Class) frameClass1 {
+    self.frameClassString = NSStringFromClass(frameClass1);
 }
 
-- (void) addController: (NSViewController *) viewController toView: (NSView *) aView {
-    viewController.view.width            = aView.frame.size.width;
-    viewController.view.height           = aView.frame.size.height;
-    viewController.view.autoresizingMask = NSViewHeightSizable | NSViewWidthSizable;
-    [aView addSubview: viewController.view];
+- (Class) frameClass {
+    return NSClassFromString(frameClassString);
 }
 
-- (void) configureToolbar {
-    NSLog(@"self.toolbar = %@", self.toolbar);
-
-    self.showsToolbarButton = YES;
-    [self toggleToolbarShown: self];
-}
-
-- (void) setupCloseButton {
-    INWindowButton *button = [INWindowButton windowButtonWithSize: NSMakeSize(14, 16) groupIdentifier: nil];
-    button.activeImage             = [NSImage imageNamed: @"close-active-color.tiff"];
-    button.activeNotKeyWindowImage = [NSImage imageNamed: @"close-activenokey-color.tiff"];
-    button.inactiveImage           = [NSImage imageNamed: @"close-inactive-disabled-color.tiff"];
-    button.pressedImage            = [NSImage imageNamed: @"close-pd-color.tiff"];
-    button.rolloverImage           = [NSImage imageNamed: @"close-rollover-color.tiff"];
-    self.closeButton               = button;
-}
-
-- (void) setupMinimizeButton {
-    INWindowButton *button = [INWindowButton windowButtonWithSize: NSMakeSize(14, 16) groupIdentifier: nil];
-    button.activeImage             = [NSImage imageNamed: @"minimize-active-color.tiff"];
-    button.activeNotKeyWindowImage = [NSImage imageNamed: @"minimize-activenokey-color.tiff"];
-    button.inactiveImage           = [NSImage imageNamed: @"minimize-inactive-disabled-color.tiff"];
-    button.pressedImage            = [NSImage imageNamed: @"minimize-pd-color.tiff"];
-    button.rolloverImage           = [NSImage imageNamed: @"minimize-rollover-color.tiff"];
-    self.minimizeButton            = button;
-}
-
-- (void) setupZoomButton {
-    INWindowButton *button = [INWindowButton windowButtonWithSize: NSMakeSize(14, 16) groupIdentifier: nil];
-    button.activeImage             = [NSImage imageNamed: @"zoom-active-color.tiff"];
-    button.activeNotKeyWindowImage = [NSImage imageNamed: @"zoom-activenokey-color.tiff"];
-    button.inactiveImage           = [NSImage imageNamed: @"zoom-inactive-disabled-color.tiff"];
-    button.pressedImage            = [NSImage imageNamed: @"zoom-pd-color.tiff"];
-    button.rolloverImage           = [NSImage imageNamed: @"zoom-rollover-color.tiff"];
-    self.zoomButton                = button;
-}
-
-- (void) configureWindow {
-    self.fullScreenButtonRightMargin   = 7.0;
-    self.fullScreenButtonRightMargin   = 7.0;
-    self.centerFullScreenButton        = YES;
-    self.titleBarHeight                = 40.0;
-    self.trafficLightButtonsLeftMargin = 13.0;
+- (BasicCustomWindowFrame *) windowFrame {
+    if (windowFrame == nil) {
+        NSRect bounds = self.bounds;
+        windowFrame = [[self.frameClass alloc] initWithFrame: bounds];
+        windowFrame.windowFramePadding = windowFramePadding;
 
 
-    self.titleBarDrawingBlock = ^(BOOL drawsAsMainWindow, CGRect drawingRect, CGPathRef clippingPath) {
-        CGContextRef ctx = [[NSGraphicsContext currentContext] graphicsPort];
-        CGContextAddPath(ctx, clippingPath);
-        CGContextClip(ctx);
-        NSColor *chromeEndingColor   = [NSColor colorWithCalibratedRed: 52 / 255.0 green: 160 / 255.0 blue: 194 / 255.0 alpha: 1];
-        NSColor *chromeStartingColor = [NSColor colorWithCalibratedRed: 115 / 255.0 green: 184 / 255.0 blue: 194 / 255.0 alpha: 1];
-        chromeStartingColor = [NSColor colorWithCalibratedRed: 38 / 255.0 green: (43 / 255.0) blue: (46 / 255.0) alpha: 1.0];
-        chromeEndingColor   = [NSColor colorWithCalibratedRed: (52 / 255.0) green: (58 / 255.0) blue: (61 / 255.0) alpha: 1.0];
-        NSGradient *gradient = nil;
-        if (drawsAsMainWindow) {
-            gradient = [[NSGradient alloc] initWithStartingColor: chromeStartingColor endingColor: chromeEndingColor];
-            [[NSColor darkGrayColor] setFill];
-        } else {
-            // set the default non-main window gradientFill colors
-            gradient = [[NSGradient alloc] initWithStartingColor: [NSColor colorWithCalibratedWhite: 0.851f alpha: 1] endingColor: [NSColor colorWithCalibratedWhite: 0.929f alpha: 1]];
-            [[NSColor colorWithCalibratedWhite: 0.6f alpha: 1] setFill];
+        NSArray *buttons = self.windowButtonsLeft;
+
+        CGFloat prevX = windowFramePadding + buttonSpacing;
+        for (NSButton *button in buttons) {
+            NSRect buttonRect = button.frame;
+            buttonRect.origin.x = prevX;
+            buttonRect.origin.y = bounds.size.height - buttonRect.size.height - ((buttonHeight - button.size.height) / 2);
+            button.frame = buttonRect;
+            button.autoresizingMask = NSViewMinYMargin;
+            prevX += button.width + buttonSpacing;
+            [windowFrame addSubview: button];
         }
-        [gradient drawInRect: drawingRect angle: 90];
-        NSRectFill(NSMakeRect(NSMinX(drawingRect), NSMinY(drawingRect), NSWidth(drawingRect), 1));
-    };
-    [self addControls];
-}
 
-- (void) addControls {
-    NSSize segmentSize  = NSMakeSize(104, 25);
-    NSRect segmentFrame = NSMakeRect(NSMidX(self.titleBarView.bounds) - (segmentSize.width), NSMidY(self.titleBarView.bounds) - (segmentSize.height / 2.f), segmentSize.width, segmentSize.height);
+        NSRect titleBarRect = NSMakeRect(prevX, bounds.size.height - buttonHeight, bounds.size.width - prevX, buttonHeight);
+        titleBarView = [[NSView alloc] initWithFrame: titleBarRect];
+        titleBarView.autoresizingMask = NSViewWidthSizable | NSViewMaxYMargin | NSViewMinYMargin;
+        [windowFrame addSubview: titleBarView];
 
-    NSSegmentedControl *segment = [[NSSegmentedControl alloc] initWithFrame: segmentFrame];
-    segment.segmentCount    = 3;
-    segment.selectedSegment = 0;
-    //    segment.segmentStyle = NSSegmentStyleTexturedRounded;
-    segment.segmentStyle    = NSSegmentStyleCapsule;
-    segment.segmentStyle    = NSSegmentStyleSmallSquare;
-    //    segment.segmentStyle = NSSegmentStyleRoundRect;
-
-    [segment setImage: [NSImage imageNamed: NSImageNameIconViewTemplate] forSegment: 0];
-    [segment setImage: [NSImage imageNamed: NSImageNameListViewTemplate] forSegment: 1];
-    [segment setImage: [NSImage imageNamed: NSImageNameFlowViewTemplate] forSegment: 2];
-    [segment setAction: @selector(handleSegmentClicked:)];
-    //    [self.titleBarView addSubview: segment];
-    segment.right            = self.titleBarView.width;
-    segment.autoresizingMask = NSViewMinXMargin;
-}
-
-- (IBAction) handleSegmentClicked: (id) sender {
-    NSSegmentedControl *control = sender;
-    if (control.selectedSegment == 0) {
-        [self iconSegmentClicked: sender];
     }
-    else if (control.selectedSegment == 1) {
-        [self listSegmentClicked: sender];
+    return windowFrame;
+}
+
+- (NSMutableArray *) windowButtonsLeft {
+    for (NSButton *button in windowButtonsLeft) [button removeFromSuperview];
+    [windowButtonsLeft removeAllObjects];
+    if (showsCloseButton) [windowButtonsLeft addObject: [NSWindow standardWindowButton: NSWindowCloseButton forStyleMask: NSTitledWindowMask]];
+    if (showsMinimizeButton) [windowButtonsLeft addObject: [NSWindow standardWindowButton: NSWindowMiniaturizeButton forStyleMask: NSTitledWindowMask]];
+    if (showsMaximizeButton) [windowButtonsLeft addObject: [NSWindow standardWindowButton: NSWindowZoomButton forStyleMask: NSTitledWindowMask]];
+    return windowButtonsLeft;
+}
+
+
+- (NSRect) bounds {
+    return NSMakeRect(0, 0, self.frame.size.width, self.frame.size.height);
+}
+
+
+#pragma mark Overrides
+
+
+
+- (NSView *) contentView {
+    return childContentView;
+}
+
+- (BOOL) canBecomeKeyWindow {
+    return YES;
+}
+
+- (BOOL) canBecomeMainWindow {
+    return YES;
+}
+
+- (void) setContentSize: (NSSize) newSize {
+    NSSize sizeDelta = newSize;
+
+    NSSize childBoundsSize = childContentView.bounds.size;
+    sizeDelta.width -= childBoundsSize.width;
+    sizeDelta.height -= childBoundsSize.height;
+
+    BasicCustomWindowFrame *frameView = [super contentView];
+    NSSize newFrameSize = frameView.bounds.size;
+    newFrameSize.width += sizeDelta.width;
+    newFrameSize.height += sizeDelta.height;
+
+    [super setContentSize: newFrameSize];
+}
+
+
+- (NSRect) contentRectForFrameRect: (NSRect) windowFrameRect {
+    windowFrameRect.origin = NSZeroPoint;
+    if (windowFramePadding) windowFrameRect = NSInsetRect(windowFrameRect, windowFramePadding, windowFramePadding);
+    windowFrameRect.size.height -= buttonHeight;
+    return windowFrameRect;
+}
+
+- (void) setContentView: (NSView *) aView {
+    if ([childContentView isEqualTo: aView]) return;
+
+
+    NSRect bounds = self.frame;
+    bounds.origin = NSZeroPoint;
+
+    BasicCustomWindowFrame *frameView = [super contentView];
+    if (!frameView) {
+        frameView = self.windowFrame;
+        super.contentView = frameView;
+
     }
-    else if (control.selectedSegment == 2) {
-        [self flowIconClicked: sender];
-    }
+
+
+    if (childContentView) [childContentView removeFromSuperview];
+    childContentView = aView;
+
+
+    NSRect childContentViewRect = [self contentRectForFrameRect: bounds];
+    childContentViewRect.size.width += windowFrame.cornerRadiusInset;
+    childContentViewRect.origin.x -= windowFrame.cornerRadiusInset;
+
+
+    childContentView.frame = [self contentRectForFrameRect: bounds];
+    childContentView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    [frameView addSubview: childContentView];
 }
 
-- (IBAction) iconSegmentClicked: (id) sender {
+
+#pragma mark Event handlers
+
+- (void) mainWindowChanged: (NSNotification *) aNotification {
+    for (NSButton *button in windowButtonsLeft) [button setNeedsDisplay];
 }
 
-- (IBAction) listSegmentClicked: (id) sender {
+#pragma mark Class
+
++ (CGFloat) windowFramePadding {
+    return 0.0;
 }
 
-- (IBAction) flowIconClicked: (id) sender {
++ (NSRect) frameRectForContentRect: (NSRect) windowContentRect styleMask: (NSUInteger) windowStyle {
+    return NSInsetRect(windowContentRect, [[self class] windowFramePadding], [[self class] windowFramePadding]);
 }
+
 
 @end

@@ -116,7 +116,7 @@
 
     if ([rowObject.cellIdentifier isEqualToString: @"DataCell"]) {
         DiscussionItem *item = rowObject.content;
-        cell.textLabel.stringValue = item.text;
+        cell.textFieldCustom.stringValue = item.text;
 
 
         if (item.contact != nil) {

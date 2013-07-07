@@ -3181,13 +3181,13 @@
 					<string key="superclassName">BasicAppDelegate</string>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">window</string>
-						<string key="NS.object.0">NewCustomWindow</string>
+						<string key="NS.object.0">BasicCustomWindow</string>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<string key="NS.key.0">window</string>
 						<object class="IBToOneOutletInfo" key="NS.object.0">
 							<string key="name">window</string>
-							<string key="candidateClassName">NewCustomWindow</string>
+							<string key="candidateClassName">BasicCustomWindow</string>
 						</object>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -3197,18 +3197,18 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">CartsCustomWindow</string>
-					<string key="superclassName">NewCustomWindow</string>
+					<string key="superclassName">BasicCustomWindow</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/CartsCustomWindow.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">NewCustomWindow</string>
+					<string key="className">BasicCustomWindow</string>
 					<string key="superclassName">NSWindow</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/NewCustomWindow.h</string>
+						<string key="minorKey">./Classes/BasicCustomWindow.h</string>
 					</object>
 				</object>
 			</array>

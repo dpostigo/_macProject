@@ -6,9 +6,9 @@
 
 
 #import <Foundation/Foundation.h>
-#import "BasicButtonCell.h"
+#import "BasicButtonCellOld.h"
 
 
-@interface BOIconButtonCell : BasicButtonCell
+@interface BOIconButtonCell : BasicButtonCellOld
 
 @end

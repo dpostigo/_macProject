@@ -42,7 +42,7 @@
 
         pathOptions = [[PathOptions alloc] init];
         pathOptions.cornerRadius = 0.0;
-        pathOptions.cornerOptions = NSBezierPathUpperLeft | NSBezierPathUpperRight | NSBezierPathLowerLeft | NSBezierPathLowerRight;
+        pathOptions.cornerOptions = CornerUpperLeft | CornerUpperRight | CornerLowerLeft | CornerLowerRight;
         pathOptions.borderColor = [NSColor whiteColor];
         pathOptions.borderWidth = 1.0;
         pathOptions.gradient = [[NSGradient alloc] initWithColorsAndLocations:

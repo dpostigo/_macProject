@@ -16,4 +16,5 @@
 @property(nonatomic, strong) Model *model;
 - (void) applicationDelegateDidFinishLaunching: (NSNotification *) notification;
 - (void) embedViewController: (NSViewController *) viewController inView: (NSView *) aSuperview;
+- (void) embedView: (NSView *) view inView: (NSView *) aSuperview;
 @end

@@ -19,12 +19,12 @@
     [super loadView];
 
 
-        outline.backgroundColor = [NSColor colorWithString: @"F2F2F2"];
+    outline.backgroundColor = [NSColor colorWithString: @"F2F2F2"];
     //    outline.top -= 10;
 
     NSScrollView *scrollView = outline.enclosingScrollView;
     NSClipView *clipView = scrollView.contentView;
-//    scrollView.top += 3;
+    //    scrollView.top += 3;
     scrollView.height += 3;
 
 
@@ -58,8 +58,21 @@
 
 - (BasicTableCellView *) headerCellForOutlineSection: (OutlineSection *) outlineSection {
     BasicTableCellView *cell = [super headerCellForOutlineSection: outlineSection];
-    cell.textLabel.text = [outlineSection.title uppercaseString];
+//    cell.textFieldCustom.text = [outlineSection.title uppercaseString];
     return cell;
+}
+
+
+- (void) configureCell: (BasicTableCellView *) tableCell forRowObject: (TableRowObject *) rowObject outlineSection: (OutlineSection *) outlineSection {
+    [super configureCell: tableCell forRowObject: rowObject outlineSection: outlineSection];
+
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [NSColor whiteColor];
+    shadow.shadowBlurRadius = 0;
+    shadow.shadowOffset = NSMakeSize(0, -1);
+
+//    tableCell.textFieldCustom.attributedStringValue = [NSAttributedString attributedStringWithString: rowObject.textLabel font: [NSFont fontWithName: tableCell.textFieldCustom.font.fontName size: 10.0] textColor: tableCell.textFieldCustom.textColor shadow: shadow];
+//    [tableCell.textField setHidden: YES];
 }
 
 

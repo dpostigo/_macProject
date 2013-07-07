@@ -98,7 +98,7 @@
 - (BasicTableCellView *) headerCellForOutlineSection: (OutlineSection *) outlineSection {
 
     BasicTableCellView *headerCell = [outline makeViewWithIdentifier: @"HeaderCell" owner: self];
-    headerCell.textLabel.stringValue = [outlineSection.title uppercaseString];
+    headerCell.textFieldCustom.stringValue = [outlineSection.title uppercaseString];
     //    headerCell.textLabel.shadowColor = [NSColor colorWithWhite: 0.0 alpha: 0.5];
     //    headerCell.textLabel.shadowOffset = CGSizeMake(0, 2);
     //    headerCell.backgroundView = [[BasicWhiteView alloc] init];
@@ -118,9 +118,9 @@
     //        cell.imageView.highlightedImage = rowObject.selectedImage;
 
 
-    cell.textLabel.stringValue  = rowObject.textLabel;
-    cell.textLabel.shadowColor  = [NSColor blackColor];
-    cell.textLabel.shadowOffset = CGSizeMake(0, 1);
+    cell.textFieldCustom.stringValue  = rowObject.textLabel;
+    cell.textFieldCustom.shadowColor  = [NSColor blackColor];
+    cell.textFieldCustom.shadowOffset = CGSizeMake(0, 1);
     //    cell.textLabel.highlightedTextColor = [UIColor blackColor];
 
     //        cell.selectedBackgroundView = [[BasicWhiteView alloc] init];

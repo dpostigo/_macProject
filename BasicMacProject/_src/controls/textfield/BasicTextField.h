@@ -22,17 +22,17 @@
 
 @interface BasicTextField : NSTextField {
     __unsafe_unretained TableRowObject *rowObject;
-    __unsafe_unretained TableSection   *tableSection;
-    NSShadow                           *shadow;
-    NSString                           *text;
+    __unsafe_unretained TableSection *tableSection;
+    NSShadow *shadow;
+    NSString *text;
 
     __unsafe_unretained id <BasicTextFieldDelegate> delegate;
 }
 
 
 @property(nonatomic, assign) TableRowObject *rowObject;
-@property(nonatomic, assign) TableSection   *tableSection;
-@property(nonatomic, strong) NSShadow       *shadow;
+@property(nonatomic, assign) TableSection *tableSection;
+@property(nonatomic, strong) NSShadow *shadow;
 @property(nonatomic, assign) id <BasicTextFieldDelegate> delegate;
 - (NSColor *) shadowColor;
 - (NSSize) shadowOffset;

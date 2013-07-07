@@ -6,54 +6,38 @@
 
 
 #import "BasicView.h"
+#import "BasicCustomWindow.h"
 
 
 @implementation BasicView {
 }
 
 
-@synthesize backgroundColor;
+@synthesize customWindow;
 
 
-- (id) initWithFrame: (NSRect) frameRect {
-    self = [super initWithFrame: frameRect];
-    if (self) {
-        self.backgroundColor = [NSColor clearColor];
-    }
-
-    return self;
+- (void) viewWillDraw {
+    [super viewWillDraw];
 }
 
+- (void) viewWillStartLiveResize {
+    [super viewWillStartLiveResize];
+}
+
+
+- (void) viewWillMoveToWindow: (NSWindow *) newWindow {
+    [super viewWillMoveToWindow: newWindow];
+
+}
+
+- (void) viewDidMoveToWindow {
+    [super viewDidMoveToWindow];
+    if ([self.window isKindOfClass: [BasicCustomWindow class]]) self.customWindow = (BasicCustomWindow *) self.window;
+}
 
 - (BOOL) isOpaque {
     return NO;
 }
 
-
-- (BOOL) isFlipped {
-    return YES;
-}
-
-
-- (void) setBackgroundColor: (NSColor *) backgroundColor1 {
-    if (backgroundColor != backgroundColor1) {
-        backgroundColor = backgroundColor1;
-    }
-    [self setNeedsDisplay: YES];
-}
-
-
-- (void) drawRect: (NSRect) dirtyRect {
-    [super drawRect: dirtyRect];
-
-    [backgroundColor setFill];
-    NSRectFillUsingOperation(dirtyRect, NSCompositeSourceOver);
-
-    //
-    //    CGContextRef context = (CGContextRef) [[NSGraphicsContext currentContext] graphicsPort];
-    //    CGContextSetFillColorWithColor(context, backgroundColor.CGColor);
-    //    CGContextFillRect(context, NSRectToCGRect(dirtyRect));
-
-}
 
 @end

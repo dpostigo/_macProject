@@ -15,11 +15,9 @@
 
 + (NSBezierPath *) bezierPathWithRect: (NSRect) rect cornerRadius: (CGFloat) radius options: (NSBezierPathCornerOptions) options {
 
-    rect = NSInsetRect(rect, 0.5, 0.5);
+    if (radius == 0.0 || (options & CornerNone)) return [NSBezierPath bezierPathWithRect: rect];
 
-    if (radius == 0.0) return [NSBezierPath bezierPathWithRect: rect];
     NSBezierPath *path = [NSBezierPath bezierPath];
-
     NSPoint endPoint;
     NSPoint thruPoint;
 
@@ -29,7 +27,8 @@
 
     endPoint = NSMakePoint(rect.size.width, radius);
     thruPoint = NSMakePoint(rect.size.width, 0);
-    if (options & NSBezierPathLowerRight) {
+
+    if (options & CornerLowerRight) {
         [path appendBezierPathWithArcFromPoint: thruPoint toPoint: endPoint radius: radius];
     } else {
         [path lineToPoint: thruPoint];
@@ -39,7 +38,7 @@
 
     endPoint = NSMakePoint(rect.size.width - radius, rect.size.height);
     thruPoint = NSMakePoint(rect.size.width, rect.size.height);
-    if (options & NSBezierPathUpperRight) {
+    if (options & CornerUpperRight) {
         [path appendBezierPathWithArcFromPoint: thruPoint toPoint: endPoint radius: radius];
     } else {
         [path lineToPoint: thruPoint];
@@ -49,7 +48,7 @@
 
     endPoint = NSMakePoint(0, rect.size.height - radius);
     thruPoint = NSMakePoint(0, rect.size.height);
-    if (options & NSBezierPathUpperLeft) {
+    if (options & CornerUpperLeft) {
         [path appendBezierPathWithArcFromPoint: thruPoint toPoint: endPoint radius: radius];
     } else {
         [path lineToPoint: thruPoint];
@@ -59,7 +58,7 @@
 
     endPoint = NSMakePoint(radius, 0);
     thruPoint = NSMakePoint(0, 0);
-    if (options & NSBezierPathLowerLeft) {
+    if (options & CornerLowerLeft) {
         [path appendBezierPathWithArcFromPoint: thruPoint toPoint: endPoint radius: radius];
     } else {
         [path lineToPoint: thruPoint];
@@ -98,12 +97,12 @@
     NSBezierPath *path = [NSBezierPath bezierPath];
 
     if (borderType & BorderTypeTop) {
-        [path moveToPoint: NSMakePoint(0, 0)];
-        [path lineToPoint: NSMakePoint(rect.size.width, 0)];
-    }
-    if (borderType & BorderTypeBottom) {
         [path moveToPoint: NSMakePoint(0, rect.size.height)];
         [path lineToPoint: NSMakePoint(rect.size.width, rect.size.height)];
+    }
+    if (borderType & BorderTypeBottom) {
+        [path moveToPoint: NSMakePoint(0, 0)];
+        [path lineToPoint: NSMakePoint(rect.size.width, 0)];
     }
     if (borderType & BorderTypeLeft) {
         [path moveToPoint: NSMakePoint(0, 0)];
@@ -166,6 +165,7 @@
 }
 
 - (void) drawStroke: (NSColor *) strokeColor width: (CGFloat) borderWidth {
+    if (borderWidth == 0.0) return;
     [NSGraphicsContext saveGraphicsState];
     [strokeColor setStroke];
     [self setLineWidth: borderWidth];

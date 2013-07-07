@@ -11,5 +11,9 @@
 @interface NSButton (DPUtils)
 
 
++ (NSButton *) buttonWithType: (NSButtonType) type;
++ (NSButton *) buttonWithImage: (NSImage *) image;
++ (NSButton *) buttonWithImage: (NSImage *) image padding: (CGFloat) padding;
++ (NSButton *) buttonWithImageType: (NSString *) imageString;
 - (void) addTarget: (id) target action: (SEL) selector;
 @end

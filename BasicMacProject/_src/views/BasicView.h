@@ -6,13 +6,14 @@
 
 
 #import <Foundation/Foundation.h>
+#import "BasicCustomWindow.h"
 
 
 @interface BasicView : NSView {
-    NSColor *backgroundColor;
+
+    BasicCustomWindow *customWindow;
 }
 
 
-@property(nonatomic, retain) NSColor *backgroundColor;
-
+@property(nonatomic, strong) BasicCustomWindow *customWindow;
 @end

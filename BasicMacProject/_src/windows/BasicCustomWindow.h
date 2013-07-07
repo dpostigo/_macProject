@@ -1,30 +1,53 @@
 //
-// Created by Daniela Postigo on 5/4/13.
+//  BasicCustomWindow.h
+//  Carts
 //
-// To change the template use AppCode | Preferences | File Templates.
+//  Created by Daniela Postigo on 6/24/13.
+//  Copyright (c) 2013 Elastic Creative. All rights reserved.
 //
-
 
 #import <Foundation/Foundation.h>
-#import "INAppStoreWindow.h"
-#import "VeryBasicViewController.h"
+#import "BasicCustomWindowFrame.h"
 
 
-@interface BasicCustomWindow : INAppStoreWindow {
+@interface BasicCustomWindow : NSWindow {
+    NSView *titleBarView;
 
-    NSWindow *modalWindow;
+    NSMutableArray *windowButtonsLeft;
+    NSMutableArray *windowButtonsRight;
+
+    BOOL showsCloseButton;
+    BOOL showsMinimizeButton;
+    BOOL showsMaximizeButton;
+
+    Class frameClass;
+    NSString *frameClassString;
+    NSView *childContentView;
+
+
+    CGFloat buttonHeight;
+    CGFloat buttonSpacing;
+    CGFloat windowFramePadding;
+
+    BasicCustomWindowFrame *windowFrame;
+
 }
 
+@property(nonatomic) BOOL showsCloseButton;
+@property(nonatomic) BOOL showsMinimizeButton;
+@property(nonatomic) BOOL showsMaximizeButton;
 
-@property(nonatomic, strong) NSWindow *modalWindow;
+@property(nonatomic, strong) Class frameClass;
+@property(nonatomic, strong) NSView *childContentView;
+@property(nonatomic, retain) NSString *frameClassString;
+@property(nonatomic) NSMutableArray *windowButtonsLeft;
+@property(nonatomic) CGFloat buttonSpacing;
+@property(nonatomic) CGFloat buttonHeight;
+@property(nonatomic) CGFloat windowFramePadding;
 
-- (void) presentModalView: (VeryBasicViewController *) controller withSize: (NSSize) size1;
-- (void) presentModalView: (VeryBasicViewController *) controller withSize: (NSSize) size1 animated: (BOOL) animated;
-- (void) animateView: (NSView *) view inWindow: (NSWindow *) window;
-- (void) dismissModalViewController;
-- (void) dismissController: (NSViewController *) controller animated: (BOOL) animated;
-- (void) addController: (NSViewController *) viewController toView: (NSView *) aView;
-- (IBAction) iconSegmentClicked: (id) sender;
-- (IBAction) listSegmentClicked: (id) sender;
-- (IBAction) flowIconClicked: (id) sender;
+
+@property(nonatomic, strong) BasicCustomWindowFrame *windowFrame;
+@property(nonatomic, strong) NSMutableArray *windowButtonsRight;
+@property(nonatomic, strong) NSView *titleBarView;
+- (NSRect) bounds;
 @end

@@ -76,7 +76,7 @@
     [self.view addSubview: splitView];
 
 
-    splitView.dividerColor = [NSColor clearColor];
+//    splitView.dividerColor = [NSColor clearColor];
     //
     //    NSRect infoRect = NSMakeRect(0, TASK_INFO_HEIGHT, 599, TASK_INFO_HEIGHT);
     //    NSRect shadowRect = [self getShadowRect: infoRect];

@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "BasicAppDelegate.h"
 #import "AppWindow.h"
-#import "BasicCustomWindow.h"
+#import "BasicCustomWindowOld.h"
 #import "DPCustomWindow.h"
 
 
@@ -19,7 +19,7 @@
 
     IBOutlet NSWindow *loginWindow;
     IBOutlet NSPanel *loginPanel;
-    IBOutlet BasicCustomWindow *contentWindow;
+    IBOutlet BasicCustomWindowOld *contentWindow;
     IBOutlet DPCustomWindow *newTaskWindow;
 }
 @end

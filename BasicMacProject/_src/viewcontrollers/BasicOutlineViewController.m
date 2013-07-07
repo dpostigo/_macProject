@@ -144,7 +144,6 @@
 
 
 - (CGFloat) heightForHeaderSection: (OutlineSection *) outlineSection {
-    NSLog(@"outline.rowHeight = %f", outline.rowHeight);
     return outline.rowHeight;
 }
 

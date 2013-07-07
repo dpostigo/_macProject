@@ -6,9 +6,8 @@
 
 
 #import "VeryBasicViewController.h"
-#import "BasicTextField.h"
 #import "BasicSecureTextField.h"
-#import "BasicCustomWindow.h"
+#import "BasicCustomWindowOld.h"
 
 
 @implementation VeryBasicViewController {
@@ -41,21 +40,55 @@
 #pragma mark Initing
 
 
+
 - (id) initWithDefaultNib {
-    NSString *path = [[NSBundle mainBundle] pathForResource: NSStringFromClass([self class]) ofType: @"nib"];
-    if (path != nil) {
-        return [self initWithNibName: NSStringFromClass([self class]) bundle: nil];
-    } else {
-        NSLog(@"Did not find nib for %@", NSStringFromClass([self class]));
-        return [self initWithNibName: NSStringFromClass([self superclass]) bundle: nil];
-    }
+    return [self initWithNibName: self.nib bundle: nil];
 }
 
+
 - (id) initWithNibName: (NSString *) nibNameOrNil bundle: (NSBundle *) nibBundleOrNil {
+    if (nibNameOrNil == nil) nibNameOrNil = self.nib;
     self = [super initWithNibName: nibNameOrNil bundle: nibBundleOrNil];
     if (self) {
+        if (self.nibName == nil) {
+            [self setView: [[NSView alloc] initWithFrame: NSMakeRect(0, 0, 320, 480)]];
+            [self loadView];
+        }
     }
     return self;
+}
+
+
+- (void) loadView {
+    if (self.nibName != nil) [super loadView];
+
+    if (_queue == nil) _queue = [NSOperationQueue new];
+    _model = [Model sharedModel];
+    [_model subscribeDelegate: self];
+    self.controlsArray = [[NSMutableArray alloc] init];
+}
+
+
+#pragma mark Nibs
+
+- (NSString *) nib {
+    NSString *nib = [self nibForString: NSStringFromClass([self class])];
+
+    if (nib == nil) {
+        Class aClass = [self class];
+        while (nib == nil && aClass != [VeryBasicViewController class]) {
+            aClass = [aClass superclass];
+            nib = [self nibForString: NSStringFromClass([self class])];
+        }
+    }
+    return nib;
+}
+
+- (NSString *) nibForString: (NSString *) string {
+    NSString *path = [[NSBundle mainBundle] pathForResource: string ofType: @"nib"];
+    NSString *nib = nil;
+    if (path != nil) nib = [NSString stringWithFormat: @"%@", string];
+    return nib;
 }
 
 
@@ -66,13 +99,6 @@
     showsNavigationBar = showsNavigationBar1;
 }
 
-- (void) loadView {
-    [super loadView];
-    if (_queue == nil) _queue = [NSOperationQueue new];
-    _model = [Model sharedModel];
-    [_model subscribeDelegate: self];
-    self.controlsArray = [[NSMutableArray alloc] init];
-}
 
 - (void) embedViewController: (NSViewController *) viewController inView: (NSView *) aSuperview {
     [self embedView: viewController.view inView: aSuperview];
@@ -190,6 +216,32 @@
 
 - (void) viewDidAppear {
 
+}
+
+
+#pragma mark NSView handling
+
+
+- (void) setView: (NSView *) newView {
+
+    if ([newView isKindOfClass: [BasicView class]]) {
+        newView.frame = self.view.frame;
+        newView.autoresizingMask = self.view.autoresizingMask;
+        NSArray *subviews = self.view.subviews;
+        [super setView: newView];
+        for (NSView *subview in subviews) {
+            [self.view addSubview: subview];
+        }
+
+    } else {
+        [super setView: newView];
+    }
+
+}
+
+- (BasicView *) basicView {
+    if ([self.view isKindOfClass: [BasicView class]]) return (BasicView *) self.view;
+    return nil;
 }
 
 @end

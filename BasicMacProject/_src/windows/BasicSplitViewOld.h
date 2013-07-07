@@ -9,7 +9,7 @@
 #import "DMSplitView.h"
 
 
-@interface BasicSplitView : DMSplitView
+@interface BasicSplitViewOld : DMSplitView
 
 
 - (void) setSize: (CGFloat) size1 ofSubview: (NSView *) subview animated: (BOOL) animated;

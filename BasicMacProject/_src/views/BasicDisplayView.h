@@ -1,5 +1,5 @@
 //
-//  BasicBackgroundView.h
+//  BasicDisplayView.h
 //  Carts
 //
 //  Created by Daniela Postigo on 7/4/13.
@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BasicView.h"
 #import "PathOptions.h"
 
 
-@interface BasicBackgroundView : NSView {
+@interface BasicDisplayView : BasicView {
     PathOptions *pathOptions;
 }
 

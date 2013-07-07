@@ -115,12 +115,12 @@
 
     if ([rowObject.cellIdentifier isEqualToString: @"EmptyCell"]) {
         BasicTableCellView *cell = (BasicTableCellView *) tableCell;
-        cell.textLabel.text = rowObject.textLabel;
+        cell.textFieldCustom.text = rowObject.textLabel;
         return;
     }
 
     BasicTableCellView *cell = (BasicTableCellView *) tableCell;
-    cell.textLabel.stringValue = rowObject.textLabel;
+    cell.textFieldCustom.stringValue = rowObject.textLabel;
     Task *task = rowObject.content;
 
     NSString *detailString = task.dueDate.detailString;
@@ -157,10 +157,10 @@
 
     cell.captionLabel.stringValue = task.assignee.displayName;
 
-    [cell.textLabel sizeToFit];
-    cell.textLabel.height += 2;
-    cell.textLabel.top            = ((cell.height - cell.textLabel.height) / 2) + 2;
-    cell.captionLabel.left        = cell.textLabel.right + 5;
+    [cell.textFieldCustom sizeToFit];
+    cell.textFieldCustom.height += 2;
+    cell.textFieldCustom.top            = ((cell.height - cell.textFieldCustom.height) / 2) + 2;
+    cell.captionLabel.left        = cell.textFieldCustom.right + 5;
 
     //    cell.textLabel.shadowColor = cell.detailTextLabel.shadowColor;
     //    cell.textLabel.shadowOffset = cell.detailTextLabel.shadowOffset;
@@ -192,7 +192,7 @@
 
 - (BasicTableCellView *) headerCellForOutlineSection: (OutlineSection *) outlineSection {
     BasicTableCellView *headerCell = [outline makeViewWithIdentifier: @"HeaderCell" owner: self];
-    headerCell.textLabel.stringValue = outlineSection.title;
+    headerCell.textFieldCustom.stringValue = outlineSection.title;
     //    headerCell.backgroundView = [[OldWhiteView alloc] init];
     //    headerCell.backgroundView.alpha = 0.9;
     return headerCell;

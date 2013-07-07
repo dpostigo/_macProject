@@ -27,8 +27,8 @@
 @synthesize selectedBackgroundColor;
 
 - (void) setup {
-    borderColor             = [NSColor lightGrayColor];
-    backgroundColor         = [NSColor whiteColor];
+    borderColor = [NSColor lightGrayColor];
+    backgroundColor = [NSColor whiteColor];
     selectedBackgroundColor = [backgroundColor colorWithAlphaComponent: 0.5];
 }
 
@@ -60,11 +60,11 @@
 
 
 - (void) setCellPadding: (CGFloat) cellPadding1 {
-    cellPadding   = cellPadding1;
-    paddingTop    = cellPadding;
-    paddingLeft   = cellPadding;
+    cellPadding = cellPadding1;
+    paddingTop = cellPadding;
+    paddingLeft = cellPadding;
     paddingBottom = cellPadding * 2;
-    paddingRight  = cellPadding * 2;
+    paddingRight = cellPadding * 2;
 
 }
 
@@ -73,7 +73,6 @@
 
     NSBezierPath *path = [NSBezierPath bezierPathWithRect: cellFrame];
     [path drawStroke: borderColor width: 1.0];
-
 
     cellFrame.origin.x += paddingLeft;
     cellFrame.origin.y += paddingTop;

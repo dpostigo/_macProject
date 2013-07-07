@@ -8,8 +8,9 @@
 
 #import "CartsMainViewController.h"
 #import "CartsSidebarViewController.h"
-#import "BasicBackgroundView.h"
+#import "BasicDisplayView.h"
 #import "BasicInnerShadowView.h"
+#import "BasicView.h"
 
 
 @implementation CartsMainViewController {
@@ -17,34 +18,40 @@
 }
 
 
+- (id) initWithCoder: (NSCoder *) coder {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    self = [super initWithCoder: coder];
+    if (self) {
+
+    }
+
+    return self;
+}
+
+
 - (void) loadView {
     [super loadView];
 
+    //    self.view = [[BasicView alloc] init];
 
-    splitView.dividerColor = [NSColor redColor];
-    //
-    //
-    //
     contentBackgroundView = [[BasicInnerShadowView alloc] initWithFrame: self.view.bounds];
-    contentBackgroundView.borderColor = [NSColor clearColor];
-//    contentBackgroundView.borderOptions = [NSArray arrayWithObject: [[BorderOption alloc] initWithBorderColor: [NSColor darkGrayColor] borderWidth: 1.0 type: BorderTypeLeft]];
+
+    //    contentBackgroundView.borderOptions = [NSArray arrayWithObjects:
+    //            [[BorderOption alloc] initWithBorderColor: [NSColor darkGrayColor] borderWidth: 0.5 type: BorderTypeTop],
+    //            [[BorderOption alloc] initWithBorderColor: [NSColor darkGrayColor] borderWidth: 0.5 type: BorderTypeLeft],
+    //            [[BorderOption alloc] initWithBorderColor: [NSColor darkGrayColor] borderWidth: 0.5 type: BorderTypeRight],
+    //            nil];
     [self embedView: contentBackgroundView inView: contentView];
-    //
-    //
-    //    sidebarHighlightView = [[BasicBackgroundViewOld alloc] initWithFrame: self.view.bounds];
-    //    sidebarHighlightView.gradient = [[NSGradient alloc] initWithStartingColor: [NSColor clearColor] endingColor: [NSColor whiteColor]];
-    //    sidebarHighlightView.gradientRotation = 0;
-    //    sidebarHighlightView.width = 2;
-    //    sidebarHighlightView.left = sidebar.width - sidebarHighlightView.width;
-    //    sidebarHighlightView.autoresizingMask = NSViewHeightSizable | NSViewMaxXMargin | NSViewMinXMargin;
-    //    //    [sidebar addSubview: sidebarHighlightView];
-    //
+
     [self embedViewController: [[CartsSidebarViewController alloc] initWithDefaultNib] inView: sidebar];
-    //
     //    BasicInnerShadowView *sidebarInnerShadow = [[BasicInnerShadowView alloc] initWithFrame: self.view.bounds];
     //    //    [self embedView: sidebarInnerShadow inView: sidebar];
 
+
+
 }
+
+
 
 
 //}

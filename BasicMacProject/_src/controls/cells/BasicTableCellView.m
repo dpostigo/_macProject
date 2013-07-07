@@ -25,7 +25,7 @@
 
 
 
-@synthesize textLabel;
+@synthesize textFieldCustom;
 @synthesize detailTextLabel;
 @synthesize button;
 @synthesize captionLabel;
@@ -38,10 +38,10 @@
 - (id) initWithCoder: (NSCoder *) coder {
     self = [super initWithCoder: coder];
     if (self) {
-        self.backgroundView             = [[BasicBackgroundViewOld alloc] initWithFrame: self.bounds];
+        self.backgroundView = [[BasicBackgroundViewOld alloc] initWithFrame: self.bounds];
         backgroundView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
         [self addSubview: backgroundView];
-        [self addSubview: textLabel];
+        [self addSubview: textFieldCustom];
         [self addSubview: detailTextLabel];
         [self addSubview: button];
         [self addSubview: captionLabel];

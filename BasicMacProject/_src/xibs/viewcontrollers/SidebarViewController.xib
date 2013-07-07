@@ -241,7 +241,7 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">textLabel</string>
+						<string key="label">textFieldCustom</string>
 						<object class="NSTableCellView" key="source" id="275607115">
 							<nil key="NSNextResponder"/>
 							<int key="NSvFlags">274</int>
@@ -376,7 +376,7 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">textLabel</string>
+						<string key="label">textFieldCustom</string>
 						<reference key="source" ref="260523567"/>
 						<reference key="destination" ref="1032860705"/>
 					</object>
@@ -574,7 +574,7 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">BasicCustomWindow</string>
+					<string key="className">BasicCustomWindowOld</string>
 					<string key="superclassName">INAppStoreWindow</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="flowIconClicked:">id</string>
@@ -597,7 +597,7 @@
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/BasicCustomWindow.h</string>
+						<string key="minorKey">./Classes/BasicCustomWindowOld.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -769,7 +769,7 @@
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="backgroundView">BasicBackgroundViewOld</string>
-						<string key="modalWindow">BasicCustomWindow</string>
+						<string key="modalWindow">BasicCustomWindowOld</string>
 						<string key="navigationBar">NavigationBar</string>
 						<string key="submitButton">NSButton</string>
 					</dictionary>
@@ -780,7 +780,7 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="modalWindow">
 							<string key="name">modalWindow</string>
-							<string key="candidateClassName">BasicCustomWindow</string>
+							<string key="candidateClassName">BasicCustomWindowOld</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="navigationBar">
 							<string key="name">navigationBar</string>

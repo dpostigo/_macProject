@@ -22,11 +22,12 @@
 #define WHITE_STRING @"f4f4f4"
 #define RED_COLOR @"f27561"
 #define RED_FADED @"f2c2c2"
-#define YELLOW_COLOR @"e5bf00"
+#define YEL1LOW_COLOR @"e5bf00"
 #define COOL_GREY @"46484c"
 #define PALE_YELLOW @"fff2b2"
 
 #define GOLD_COLOR @"efb564"
+
 
 
 // Numbers

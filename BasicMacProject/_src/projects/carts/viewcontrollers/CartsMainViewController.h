@@ -8,12 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "BasicSplitViewController.h"
-#import "BasicBackgroundView.h"
+#import "BasicDisplayView.h"
 
 
 @interface CartsMainViewController : BasicSplitViewController {
-
-    BasicBackgroundView    *contentBackgroundView;
+    BasicDisplayView *contentBackgroundView;
     BasicBackgroundViewOld *sidebarHighlightView;
 }
 @end

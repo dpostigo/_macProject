@@ -8,6 +8,8 @@
 #import "CartsAppDelegate.h"
 #import "TitleBarViewController.h"
 #import "CartsMainViewController.h"
+#import "BasicInnerShadowView.h"
+#import "CartsTitleBarViewController.h"
 
 
 @implementation CartsAppDelegate
@@ -16,9 +18,15 @@
 - (void) applicationDelegateDidFinishLaunching: (NSNotification *) notification {
     [super applicationDelegateDidFinishLaunching: notification];
 
-    NSLog(@"%s", __PRETTY_FUNCTION__);
 
-    [self embedViewController: [[CartsMainViewController alloc] initWithDefaultNib] inView: window.contentView];
+
+    //    [self embedViewController: [[CartsMainViewController alloc] initWithDefaultNib] inView: window.contentView];
+
+    CartsTitleBarViewController *titleController = [[CartsTitleBarViewController alloc] init];
+    [self embedViewController: titleController inView: window.titleBarView];
+    NSLog(@"window.titleBarView.frame = %@", NSStringFromRect(window.titleBarView.frame));
+    NSLog(@"titleController.view.frame = %@", NSStringFromRect(titleController.view.frame));
+    NSLog(@"titleController.rightButtons.frame = %@", NSStringFromRect(titleController.rightButtons.frame));
 
 }
 

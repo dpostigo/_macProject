@@ -14,16 +14,25 @@
 
 - (void) setup {
     [super setup];
+
     pathOptions.cornerRadius = 0.0;
-    pathOptions.borderWidth = 0.5;
+    pathOptions.borderWidth = 0;
     pathOptions.borderColor = [NSColor clearColor];
-    pathOptions.cornerOptions = NSBezierPathLowerLeft | NSBezierPathLowerRight | NSBezierPathUpperRight | NSBezierPathUpperLeft;
-    pathOptions.backgroundColor = [NSColor colorWithDeviceWhite: 0.9 alpha: 1.0];
+    pathOptions.cornerOptions = CornerNone;
+    pathOptions.backgroundColor = [NSColor colorWithDeviceWhite: 0.95 alpha: 1.0];
 
     pathOptions.innerShadow = [[NSShadow alloc] init];
-    pathOptions.innerShadow.shadowColor = [NSColor clearColor];
+    pathOptions.innerShadow.shadowColor = [NSColor colorWithWhite: 0.8];
     pathOptions.innerShadow.shadowBlurRadius = 3;
+//    pathOptions.innerShadow.shadowOffset = NSMakeSize(10, 0);
+
 }
+
+
+- (BOOL) wantsDefaultClipping {
+    return NO;
+}
+
 
 - (BOOL) isOpaque {
     return NO;

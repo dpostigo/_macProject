@@ -137,10 +137,10 @@
 
     else if ([rowObject.cellIdentifier isEqualToString: @"TaskCell"]) {
         BasicTableCellView *taskCell = (BasicTableCellView *) tableCell;
-        if (rowObject.detailTextLabel != nil) taskCell.textLabel.stringValue = rowObject.detailTextLabel;
-        [taskCell.textLabel sizeToFit];
+        if (rowObject.detailTextLabel != nil) taskCell.textFieldCustom.stringValue = rowObject.detailTextLabel;
+        [taskCell.textFieldCustom sizeToFit];
 
-        taskCell.secondButton.left = taskCell.textLabel.right;
+        taskCell.secondButton.left = taskCell.textFieldCustom.right;
         [taskCell.secondButton addTarget: self action: @selector(handleEditButton:)];
         [taskCell.accessoryButton addTarget: self action: @selector(handleToggle:)];
     }
@@ -150,7 +150,7 @@
         [cell.textField.cell setPlaceholderString: rowObject.textLabel];
 
 
-        if (rowObject.detailTextLabel != nil) cell.textLabel.stringValue = rowObject.detailTextLabel;
+        if (rowObject.detailTextLabel != nil) cell.textFieldCustom.stringValue = rowObject.detailTextLabel;
 
 
         cell.imageView.image   = image;

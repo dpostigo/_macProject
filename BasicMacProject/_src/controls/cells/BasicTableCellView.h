@@ -11,7 +11,7 @@
 
 
 @interface BasicTableCellView : NSTableCellView {
-    IBOutlet BasicTextField *textLabel;
+    IBOutlet BasicTextField *textFieldCustom;
     IBOutlet BasicTextField *detailTextLabel;
     IBOutlet NSButton *button;
     IBOutlet NSButton *secondButton;
@@ -25,7 +25,7 @@
 @property(nonatomic, strong) NSButton               *button;
 @property(nonatomic, strong) BasicTextField         *captionLabel;
 @property(nonatomic, strong) BasicBackgroundViewOld *backgroundView;
-@property(nonatomic, strong) BasicTextField         *textLabel;
+@property(nonatomic, strong) BasicTextField         *textFieldCustom;
 @property(nonatomic, strong) NSButton               *secondButton;
 @property(nonatomic, strong) NSButton               *accessoryButton;
 @end

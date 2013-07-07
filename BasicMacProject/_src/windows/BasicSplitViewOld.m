@@ -5,10 +5,10 @@
 //
 
 
-#import "BasicSplitView.h"
+#import "BasicSplitViewOld.h"
 
 
-@implementation BasicSplitView {
+@implementation BasicSplitViewOld {
     NSMutableArray *unconstrainedSizes;
 }
 

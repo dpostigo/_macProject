@@ -33,7 +33,11 @@
 }
 
 
+
+
 + (NSAttributedString *) attributedStringWithString: (NSString *) string font: (NSFont *) font textColor: (NSColor *) aColor shadow: (NSShadow *) shadow {
+    if (font == nil) font = [NSFont systemFontOfSize: [NSFont systemFontSize]];
+    if (aColor == nil) aColor = [NSColor blackColor];
     NSMutableDictionary *attributes = [[NSMutableDictionary alloc] init];
     [attributes setObject: font forKey: NSFontAttributeName];
     [attributes setObject: aColor forKey: NSForegroundColorAttributeName];
@@ -45,9 +49,19 @@
 + (NSAttributedString *) attributedStringWithString: (NSString *) string font: (NSFont *) font textColor: (NSColor *) aColor shadowColor: (NSColor *) shadowColor {
     NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowBlurRadius = 1.0;
-    shadow.shadowOffset     = NSMakeSize(0, -1);
-    shadow.shadowColor      = shadowColor;
+    shadow.shadowOffset = NSMakeSize(0, -1);
+    shadow.shadowColor = shadowColor;
+
     return [NSAttributedString attributedStringWithString: string font: font textColor: aColor shadow: shadow];
+}
+
+
++ (NSAttributedString *) attributedStringWithString: (NSString *) string shadowColor: (NSColor *) shadowColor {
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowBlurRadius = 1.0;
+    shadow.shadowOffset = NSMakeSize(0, 0);
+    shadow.shadowColor = shadowColor;
+    return [NSAttributedString attributedStringWithString: string font: nil textColor: nil shadow: shadow];
 }
 
 + (NSAttributedString *) attributedStringWithString: (NSString *) string textColor: (NSColor *) color {
@@ -69,8 +83,8 @@
 
 + (NSAttributedString *) stringByJoiningStrings: (NSArray *) array {
     NSMutableAttributedString *string = [[NSMutableAttributedString alloc] init];
-    int      length = [array count];
-    for (int j      = 0; j < length; j++) {
+    int length = [array count];
+    for (int j = 0; j < length; j++) {
         NSAttributedString *attributedString = [array objectAtIndex: j];
         [string appendAttributedString: attributedString];
     }

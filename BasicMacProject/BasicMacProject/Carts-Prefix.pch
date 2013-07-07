@@ -5,8 +5,10 @@
 #ifdef __OBJC__
 
 #import <Cocoa/Cocoa.h>
+#import BasicAppConstants.h"
 #import "BOAppConstants.h"
 #import "NSView+Utils.h"
 #import "NSColor+Utils.h"
+#import "NSAttributedString+DPUtils.h"
 
 #endif

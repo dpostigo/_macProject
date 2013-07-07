@@ -13,12 +13,15 @@
 
 @interface DPSplitView : NSSplitView {
     NSMutableArray *splitContainers;
-    NSColor        *dividerColor;
+    NSColor *dividerColor;
 
 }
 
+@property(nonatomic, strong) NSColor *dividerColor;
 @property(nonatomic, strong) NSMutableArray *splitContainers;
-@property(nonatomic, strong) NSColor        *dividerColor;
+
+
+- (void) setup;
 - (void) splitContainerUpdatedMaxHeight: (SplitViewContainer *) container;
 - (void) splitContainerUpdatedMaxWidth: (SplitViewContainer *) container;
 - (void) splitContainerUpdatedMinHeight: (SplitViewContainer *) container;

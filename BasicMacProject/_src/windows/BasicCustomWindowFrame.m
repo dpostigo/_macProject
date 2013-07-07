@@ -27,10 +27,16 @@
 
 @synthesize cursors;
 
+@synthesize cornerRadiusInset;
+
 - (id) initWithFrame: (NSRect) frameRect {
     self = [super initWithFrame: frameRect];
     if (self) {
+
+
         resizeRectSize = NSMakeSize(16, 16);
+
+        cornerRadiusInset = 0.5;
 
 
         innerPathOptions = [[PathOptions alloc] init];
@@ -40,7 +46,7 @@
         pathOptions.cornerRadius = 5.0;
         pathOptions.borderWidth = 0.5;
         pathOptions.borderColor = [NSColor blackColor];
-        pathOptions.cornerOptions = NSBezierPathLowerLeft | NSBezierPathLowerRight | NSBezierPathUpperRight | NSBezierPathUpperLeft;
+        pathOptions.cornerOptions = CornerLowerLeft | CornerLowerRight | CornerUpperRight | CornerUpperLeft;
         pathOptions.gradient = [[NSGradient alloc] initWithColorsAndLocations: [NSColor colorWithWhite: 0.3], 0.0,
                                                                                [NSColor colorWithWhite: 0.2], 0.1,
                                                                                [NSColor colorWithWhite: 0.2], 0.9,
@@ -128,8 +134,37 @@
 }
 
 
+- (void) drawRect: (NSRect) rect {
+
+    rect = self.bounds;
+    rect = NSInsetRect(rect, cornerRadiusInset, cornerRadiusInset);
+    //    rect.size.width += cornerRadiusInset;
+    //    rect.origin.x -= cornerRadiusInset;
+
+
+    [[NSColor clearColor] set];
+    NSRectFill(rect);
+
+    [NSBezierPath drawBezierPathWithRect: rect options: pathOptions];
+
+
+    NSBezierPath *innerBorderPath = [NSBezierPath bezierPathWithRect: NSInsetRect(rect, self.borderWidth, self.borderWidth) cornerRadius: self.cornerRadius options: self.cornerOptions];
+
+
+    //    [self.gradient drawInBezierPath: path angle: 90];
+    //    [path drawStroke: self.borderColor width: self.borderWidth];
+    //    [innerBorderPath drawStroke: self.innerBorderColor width: self.borderWidth];
+
+    //
+    //    NSRect aRect = self.bottomResizeRect;
+    //    NSBezierPath *rightResizePath = [NSBezierPath bezierPathWithRect: aRect];
+    //    [rightResizePath drawWithFill: [NSColor blueColor]];
+
+}
+
+
 - (void) mouseDown: (NSEvent *) event {
-    NSPoint pointInView = [self convertPoint: [event locationInWindow] fromView: nil];
+    NSPoint pointInView = [self convertPoint: event.locationInWindow fromView: nil];
 
     BOOL resize = NO;
     WindowFrameResizeType resizeType = WindowFrameResizeTypeNone;
@@ -152,6 +187,7 @@
     NSPoint originalMouseLocation = [window convertBaseToScreen: [event locationInWindow]];
     NSRect originalFrame = window.frame;
 
+
     while (YES) {
         NSEvent *newEvent = [window nextEventMatchingMask: (NSLeftMouseDraggedMask | NSLeftMouseUpMask)];
 
@@ -160,7 +196,7 @@
         //
         // Work out how much the mouse has moved
         //
-        NSPoint newMouseLocation = [window convertBaseToScreen: [newEvent locationInWindow]];
+        NSPoint newMouseLocation = [window convertBaseToScreen: newEvent.locationInWindow];
         NSPoint delta = NSMakePoint(newMouseLocation.x - originalMouseLocation.x, newMouseLocation.y - originalMouseLocation.y);
 
         NSRect newFrame = originalFrame;
@@ -168,10 +204,6 @@
         if (!resize) {
             newFrame.origin.x += delta.x;
             newFrame.origin.y += delta.y;
-
-            //            if (resizeType & WindowFrameResizeTypeRight) newFrame.origin.x += delta.x;
-            //            if (resizeType & WindowFrameResizeTypeBottom) newFrame.origin.y += delta.y;
-
         }
         else {
             //
@@ -187,8 +219,8 @@
             // Constrain to the window's min and max size
             //
             NSRect newContentRect = [window contentRectForFrameRect: newFrame];
-            NSSize maxSize = [window maxSize];
-            NSSize minSize = [window minSize];
+            NSSize maxSize = window.maxSize;
+            NSSize minSize = window.minSize;
             if (newContentRect.size.width > maxSize.width) {
                 newFrame.size.width -= newContentRect.size.width - maxSize.width;
             }
@@ -206,30 +238,14 @@
 
         }
 
+        newFrame = NSInsetRect(newFrame, cornerRadiusInset, cornerRadiusInset);
+        //        NSLog(@"NSStringFromRect(originalFrame) = %@", NSStringFromRect(originalFrame));
+        //        NSLog(@"NSStringFromRect(self.window.frame) = %@", NSStringFromRect(self.window.frame));
+        //        NSLog(@"NSStringFromRect(newFrame) = %@", NSStringFromRect(newFrame));
         [window setFrame: newFrame display: YES animate: NO];
     }
 }
 
-
-- (void) drawRect: (NSRect) rect {
-    [[NSColor clearColor] set];
-    NSRectFill(rect);
-
-
-    NSBezierPath *path = [NSBezierPath bezierPathWithRect: self.bounds options: pathOptions];
-    NSBezierPath *innerBorderPath = [NSBezierPath bezierPathWithRect: NSInsetRect(self.bounds, self.borderWidth, self.borderWidth) cornerRadius: self.cornerRadius options: self.cornerOptions];
-
-
-    [self.gradient drawInBezierPath: path angle: 90];
-    [path drawStroke: self.borderColor width: self.borderWidth];
-    [innerBorderPath drawStroke: self.innerBorderColor width: self.borderWidth];
-
-    //
-    //    NSRect aRect = self.bottomResizeRect;
-    //    NSBezierPath *rightResizePath = [NSBezierPath bezierPathWithRect: aRect];
-    //    [rightResizePath drawWithFill: [NSColor blueColor]];
-
-}
 
 - (void) drawTitle {
     [[NSColor blackColor] set];

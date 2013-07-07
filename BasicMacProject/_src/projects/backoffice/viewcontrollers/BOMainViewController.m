@@ -44,18 +44,18 @@
 
     sidebar.minimumWidth = 150.0;
     sidebar.maximumWidth = 250.0;
-    sidebar.isLocked     = YES;
+    sidebar.isLocked = YES;
 
     bottomView.minimumHeight = 40.0f;
     bottomView.maximumHeight = 60.0f;
-    bottomView.height        = 40.0f;
-    bottomView.isLocked      = YES;
+    bottomView.height = 40.0f;
+    bottomView.isLocked = YES;
 
 
-    splitView.delegate        = self;
-    splitView.dividerColor    = [NSColor blackColor];
+    splitView.delegate = self;
+    //    splitView.dividerColor    = [NSColor blackColor];
     contentSplitView.delegate = self;
-    self.dividerEnabled       = YES;
+    self.dividerEnabled = YES;
 
     [contentSplitView setHoldingPriority: 2 forSubviewAtIndex: 0];
     [contentSplitView setHoldingPriority: 1 forSubviewAtIndex: 1];
@@ -69,20 +69,20 @@
 - (CGFloat) splitView: (NSSplitView *) splitView1 constrainMinCoordinate: (CGFloat) proposedMinimumPosition ofSubviewAt: (NSInteger) dividerIndex {
     CGFloat ret = proposedMinimumPosition;
     DPSplitView *dpSplit = (DPSplitView *) splitView1;
-    return [self dpSplitView: dpSplit limitedCoordinateForValue: proposedMinimumPosition atDividerIndex: dividerIndex];
+    return [delegate dpSplitView: dpSplit limitedCoordinateForValue: proposedMinimumPosition atDividerIndex: dividerIndex];
 }
 
 
 - (CGFloat) splitView: (NSSplitView *) splitView1 constrainMaxCoordinate: (CGFloat) proposedMaximumPosition ofSubviewAt: (NSInteger) dividerIndex {
     CGFloat ret = proposedMaximumPosition;
     DPSplitView *dpSplit = (DPSplitView *) splitView1;
-    return [self dpSplitView: dpSplit limitedCoordinateForValue: proposedMaximumPosition atDividerIndex: dividerIndex];
+    return [delegate dpSplitView: dpSplit limitedCoordinateForValue: proposedMaximumPosition atDividerIndex: dividerIndex];
 }
 
 
 - (CGFloat) splitView: (NSSplitView *) splitView1 constrainSplitPosition: (CGFloat) proposedPosition ofSubviewAt: (NSInteger) dividerIndex {
     DPSplitView *dpSplit = (DPSplitView *) splitView1;
-    return [self dpSplitView: dpSplit limitedCoordinateForValue: proposedPosition atDividerIndex: dividerIndex];
+    return [delegate dpSplitView: dpSplit limitedCoordinateForValue: proposedPosition atDividerIndex: dividerIndex];
 }
 
 - (BOOL) splitView: (NSSplitView *) splitView1 shouldAdjustSizeOfSubview: (NSView *) view1 {

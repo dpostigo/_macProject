@@ -11,6 +11,21 @@
 @implementation NSView (Utils)
 
 
+- (void) embedView: (NSView *) aSubview {
+    [aSubview embedInView: self];
+}
+
+- (void) embedInView: (NSView *) aSuperview {
+    [self embedInView: aSuperview autoResizingMask: NSViewWidthSizable | NSViewHeightSizable];
+}
+
+- (void) embedInView: (NSView *) aSuperview autoResizingMask: (NSUInteger) autoMask {
+    self.frame = aSuperview.bounds;
+    self.autoresizingMask = autoMask;
+    [aSuperview addSubview: self];
+}
+
+
 - (void) rasterize {
     //    self.layer.rasterizationScale = [[NSScreen mainScreen] scale];
     self.layer.shouldRasterize = YES;
@@ -20,28 +35,24 @@
     self.layer.shouldRasterize = NO;
 }
 
-
 - (CGFloat) left {
     return self.frame.origin.x;
 }
 
-
 - (void) setLeft: (CGFloat) x {
     CGRect frame = self.frame;
     frame.origin.x = x;
-    self.frame     = frame;
+    self.frame = frame;
 }
-
 
 - (CGFloat) top {
     return self.frame.origin.y;
 }
 
-
 - (void) setTop: (CGFloat) y {
     CGRect frame = self.frame;
     frame.origin.y = y;
-    self.frame     = frame;
+    self.frame = frame;
 }
 
 
@@ -53,7 +64,7 @@
 - (void) setRight: (CGFloat) right {
     CGRect frame = self.frame;
     frame.origin.x = right - frame.size.width;
-    self.frame     = frame;
+    self.frame = frame;
 }
 
 
@@ -65,7 +76,7 @@
 - (void) setBottom: (CGFloat) bottom {
     CGRect frame = self.frame;
     frame.origin.y = bottom - frame.size.height;
-    self.frame     = frame;
+    self.frame = frame;
 }
 
 
@@ -77,7 +88,7 @@
 - (void) setWidth: (CGFloat) width {
     CGRect frame = self.frame;
     frame.size.width = width;
-    self.frame       = frame;
+    self.frame = frame;
 }
 
 
@@ -89,7 +100,7 @@
 - (void) setHeight: (CGFloat) height {
     CGRect frame = self.frame;
     frame.size.height = height;
-    self.frame        = frame;
+    self.frame = frame;
 }
 
 
@@ -101,7 +112,7 @@
 - (void) setOrigin: (CGPoint) origin {
     CGRect frame = self.frame;
     frame.origin = origin;
-    self.frame   = frame;
+    self.frame = frame;
 }
 
 

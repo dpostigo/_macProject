@@ -6,10 +6,10 @@
 
 
 #import <Foundation/Foundation.h>
-#import "BasicButtonCell.h"
+#import "BasicButtonCellOld.h"
 
 
-@interface BOSilverButtonCell : BasicButtonCell
+@interface BOSilverButtonCell : BasicButtonCellOld
 
 
 - (void) setup;

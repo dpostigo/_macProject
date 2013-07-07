@@ -12,10 +12,11 @@
 @class PathOptions;
 
 typedef enum {
-    NSBezierPathUpperRight = 1 << 0,
-    NSBezierPathLowerRight = 1 << 1,
-    NSBezierPathLowerLeft = 1 << 2,
-    NSBezierPathUpperLeft = 1 << 3,
+    CornerNone = 1 << 0,
+    CornerUpperRight = 1 << 1,
+    CornerLowerRight = 1 << 2,
+    CornerLowerLeft = 1 << 3,
+    CornerUpperLeft = 1 << 4,
 } NSBezierPathCornerOptions;
 
 

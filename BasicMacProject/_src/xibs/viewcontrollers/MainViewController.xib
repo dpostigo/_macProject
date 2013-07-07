@@ -282,7 +282,7 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">BasicCustomWindow</string>
+					<string key="className">BasicCustomWindowOld</string>
 					<string key="superclassName">INAppStoreWindow</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="flowIconClicked:">id</string>
@@ -305,7 +305,7 @@
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/BasicCustomWindow.h</string>
+						<string key="minorKey">./Classes/BasicCustomWindowOld.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -407,7 +407,7 @@
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="backgroundView">BasicBackgroundViewOld</string>
-						<string key="modalWindow">BasicCustomWindow</string>
+						<string key="modalWindow">BasicCustomWindowOld</string>
 						<string key="submitButton">NSButton</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -417,7 +417,7 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="modalWindow">
 							<string key="name">modalWindow</string>
-							<string key="candidateClassName">BasicCustomWindow</string>
+							<string key="candidateClassName">BasicCustomWindowOld</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="submitButton">
 							<string key="name">submitButton</string>

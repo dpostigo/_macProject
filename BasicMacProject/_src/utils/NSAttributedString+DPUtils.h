@@ -12,6 +12,7 @@
 
 + (NSAttributedString *) attributedStringWithString: (NSString *) string font: (NSFont *) font;
 + (NSAttributedString *) attributedStringWithString: (NSString *) string font: (NSFont *) font textColor: (NSColor *) color;
++ (NSAttributedString *) attributedStringWithString: (NSString *) string shadowColor: (NSColor *) shadowColor;
 + (NSAttributedString *) attributedStringWithString: (NSString *) string textColor: (NSColor *) color;
 + (NSAttributedString *) attributedStringWithString: (NSString *) string font: (NSFont *) font paragraphStyle: (NSParagraphStyle *) paragraphStyle;
 + (NSAttributedString *) attributedStringWithString: (NSString *) string font: (NSFont *) font textColor: (NSColor *) color paragraphStyle: (NSParagraphStyle *) paragraphStyle;

@@ -1,28 +1,13 @@
 //
-//  AMDarkButton.h
-//  Button
+//  BasicButtonCell.h
+//  Carts
 //
-//  Created by ampatspell on 5/4/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Created by Daniela Postigo on 7/7/13.
+//  Copyright (c) 2013 Elastic Creative. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
-#import "VeryBasicButtonCell.h"
+#import <Foundation/Foundation.h>
 
 
-@interface BasicButtonCell : VeryBasicButtonCell {
-
-    NSColor *textColor;
-
-    NSShadow *textShadow;
-    NSShadow *disabledTextShadow;
-
-    NSColor *disabledTextColor;
-}
-
-
-@property(nonatomic, strong) NSColor  *textColor;
-@property(nonatomic, strong) NSColor  *disabledTextColor;
-@property(nonatomic, strong) NSShadow *textShadow;
-@property(nonatomic, strong) NSShadow *disabledTextShadow;
+@interface BasicButtonCell : NSObject
 @end

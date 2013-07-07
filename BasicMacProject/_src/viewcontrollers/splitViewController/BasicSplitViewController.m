@@ -6,7 +6,6 @@
 
 
 #import "BasicSplitViewController.h"
-#import "SplitViewContainer.h"
 
 
 @implementation BasicSplitViewController {
@@ -21,11 +20,13 @@
 
 @synthesize defaultSidebarWidth;
 
+@synthesize delegate;
+
 - (id) initWithDefaultNib {
     self = [super initWithDefaultNib];
     if (self) {
+        delegate = [[DPSplitViewDelegate alloc] init];
         defaultSidebarWidth = 200.0;
-
     }
 
     return self;
@@ -78,20 +79,20 @@
 - (CGFloat) splitView: (NSSplitView *) splitView1 constrainMinCoordinate: (CGFloat) proposedMinimumPosition ofSubviewAt: (NSInteger) dividerIndex {
     CGFloat ret = proposedMinimumPosition;
     DPSplitView *dpSplit = (DPSplitView *) splitView1;
-    return [self dpSplitView: dpSplit limitedCoordinateForValue: proposedMinimumPosition atDividerIndex: dividerIndex];
+    return [delegate dpSplitView: dpSplit limitedCoordinateForValue: proposedMinimumPosition atDividerIndex: dividerIndex];
 }
 
 
 - (CGFloat) splitView: (NSSplitView *) splitView1 constrainMaxCoordinate: (CGFloat) proposedMaximumPosition ofSubviewAt: (NSInteger) dividerIndex {
     CGFloat ret = proposedMaximumPosition;
     DPSplitView *dpSplit = (DPSplitView *) splitView1;
-    return [self dpSplitView: dpSplit limitedCoordinateForValue: proposedMaximumPosition atDividerIndex: dividerIndex];
+    return [delegate dpSplitView: dpSplit limitedCoordinateForValue: proposedMaximumPosition atDividerIndex: dividerIndex];
 }
 
 
 - (CGFloat) splitView: (NSSplitView *) splitView1 constrainSplitPosition: (CGFloat) proposedPosition ofSubviewAt: (NSInteger) dividerIndex {
     DPSplitView *dpSplit = (DPSplitView *) splitView1;
-    return [self dpSplitView: dpSplit limitedCoordinateForValue: proposedPosition atDividerIndex: dividerIndex];
+    return [delegate dpSplitView: dpSplit limitedCoordinateForValue: proposedPosition atDividerIndex: dividerIndex];
 }
 
 - (BOOL) splitView: (NSSplitView *) splitView1 shouldAdjustSizeOfSubview: (NSView *) view1 {
@@ -101,6 +102,9 @@
     }
     return YES;
 }
+
+
+
 #pragma mark NSSplitViewDelegate Divider
 
 - (NSRect) splitView: (NSSplitView *) splitView1 effectiveRect: (NSRect) proposedEffectiveRect forDrawnRect: (NSRect) drawnRect ofDividerAtIndex: (NSInteger) dividerIndex {
@@ -112,77 +116,16 @@
 }
 
 
-#pragma mark DPSplitView
+#pragma mark Resize
 
-- (CGFloat) dpSplitView: (DPSplitView *) dpSplit limitedCoordinateForValue: (CGFloat) proposedValue atDividerIndex: (NSInteger) dividerIndex {
-    CGFloat ret = proposedValue;
-    SplitViewContainer *splitContainer = [dpSplit splitViewContainerAtIndex: dividerIndex];
-    if (splitContainer) {
-        ret = [self limitedCoordinateForSplitContainer: splitContainer forProposedValue: proposedValue splitView: dpSplit];
-    }
-    return ret;
+- (void) splitViewWillResizeSubviews: (NSNotification *) notification {
+    //    NSLog(@"%s", __PRETTY_FUNCTION__);
+
 }
 
-- (CGFloat) limitedCoordinateForSplitContainer: (SplitViewContainer *) splitContainer forProposedValue: (CGFloat) proposedValue splitView: (DPSplitView *) dpSplit {
-    CGFloat ret = proposedValue;
-    if (dpSplit.isVertical) {
-        ret = [self verticalSplitView: dpSplit limitCoordinate: splitContainer forProposedValue: proposedValue];
-    } else {
-        ret = [self horizontalSplitView: dpSplit limitCoordinate: splitContainer forProposedValue: proposedValue];
-    }
-    return ret;
-}
+- (void) splitViewDidResizeSubviews: (NSNotification *) notification {
+    //    NSLog(@"%s", __PRETTY_FUNCTION__);
 
-
-
-
-#pragma mark DPSplitView Vertical
-
-
-- (CGFloat) verticalSplitView: (DPSplitView *) dpSplit limitCoordinate: (SplitViewContainer *) splitContainer forProposedValue: (CGFloat) proposedValue {
-    CGFloat ret = proposedValue;
-
-    CGFloat min = splitContainer.minimumWidth;
-    CGFloat max = splitContainer.maximumWidth;
-
-
-    if (min > 0 && proposedValue < min) {
-        ret = min;
-    }
-
-    if (max > 0 && proposedValue > max) {
-        ret = max;
-    }
-    return ret;
-}
-
-
-
-#pragma mark DPSplitView Horizontal
-
-- (CGFloat) horizontalSplitView: (DPSplitView *) dpSplit limitCoordinate: (SplitViewContainer *) splitContainer forProposedValue: (CGFloat) proposedValue {
-    CGFloat ret = proposedValue;
-
-    if (splitContainer.minimumHeight == 0 || splitContainer.maximumHeight == 0) {
-        SplitViewContainer *otherContainer = [dpSplit otherSplitContainer: splitContainer];
-        if (otherContainer.minimumHeight > 0 || otherContainer.maximumHeight > 0) {
-            CGFloat totalHeight = dpSplit.height;
-            CGFloat newMinimumHeight = totalHeight - otherContainer.maximumHeight;
-            CGFloat newMaximumHeight = totalHeight - otherContainer.minimumHeight;
-            splitContainer.minimumHeight = newMinimumHeight;
-            splitContainer.maximumHeight = newMaximumHeight;
-        }
-    }
-
-    if (splitContainer.minimumHeight > 0 && proposedValue < splitContainer.minimumHeight) {
-        ret = splitContainer.minimumHeight;
-    }
-
-    if (splitContainer.maximumHeight > 0 && proposedValue > splitContainer.maximumHeight) {
-        ret = splitContainer.maximumHeight;
-    }
-
-    return ret;
 }
 
 

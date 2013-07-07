@@ -20,6 +20,9 @@
 @property(nonatomic) CGPoint origin;
 @property(nonatomic) CGSize  size;
 
+- (void) embedView: (NSView *) aSubview;
+- (void) embedInView: (NSView *) aSuperview;
+- (void) embedInView: (NSView *) aSuperview autoResizingMask: (NSUInteger) autoMask;
 - (void) removeAllSubviews;
 
 @end

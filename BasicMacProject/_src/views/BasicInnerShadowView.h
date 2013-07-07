@@ -6,9 +6,9 @@
 
 
 #import <Foundation/Foundation.h>
-#import "BasicBackgroundView.h"
+#import "BasicDisplayView.h"
 
 
-@interface BasicInnerShadowView : BasicBackgroundView
+@interface BasicInnerShadowView : BasicDisplayView
 
 @end

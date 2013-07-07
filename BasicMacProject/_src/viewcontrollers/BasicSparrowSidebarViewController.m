@@ -35,8 +35,8 @@
 
 - (BasicTableCellView *) headerCellForOutlineSection: (OutlineSection *) outlineSection {
     BasicTableCellView *cell = [super headerCellForOutlineSection: outlineSection];
-    cell.textLabel.textColor = [NSColor whiteColor];
-    cell.textLabel.text      = outlineSection.title;
+    cell.textFieldCustom.textColor = [NSColor whiteColor];
+    cell.textFieldCustom.text      = outlineSection.title;
 
     return cell;
 }

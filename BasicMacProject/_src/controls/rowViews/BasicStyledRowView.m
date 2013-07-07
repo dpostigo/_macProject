@@ -20,11 +20,11 @@
     if (self) {
         //        self.borderColor = [NSColor colorWithString: @"E8E8E8"];
         self.borderColor = [NSColor lightGrayColor];
-        self.borderType = BorderTypeBottom;
+        self.borderType = BorderTypeTop;
         self.gradient = [[NSGradient alloc] initWithStartingColor: [NSColor colorWithString: @"F2F2F2"]
                                                       endingColor: [NSColor colorWithString: @"F2F2F2"]];
 
-        pathOptions.borderOptions = [NSArray arrayWithObject: [[BorderOption alloc] initWithBorderColor: [NSColor whiteColor] borderWidth: 2.0 type: BorderTypeTop]];
+        pathOptions.borderOptions = [NSArray arrayWithObject: [[BorderOption alloc] initWithBorderColor: [NSColor whiteColor] borderWidth: 2.0 type: BorderTypeBottom]];
     }
 
     return self;

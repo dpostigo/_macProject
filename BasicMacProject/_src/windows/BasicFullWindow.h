@@ -6,14 +6,14 @@
 
 
 #import <Foundation/Foundation.h>
-#import "BasicCustomWindow.h"
+#import "BasicCustomWindowOld.h"
 #import "DMSplitView.h"
-#import "BasicSplitView.h"
+#import "BasicSplitViewOld.h"
 
 
-@interface BasicFullWindow : BasicCustomWindow {
-    IBOutlet BasicSplitView *mainSplitView;
-    IBOutlet BasicSplitView *bottomSplitView;
+@interface BasicFullWindow : BasicCustomWindowOld {
+    IBOutlet BasicSplitViewOld *mainSplitView;
+    IBOutlet BasicSplitViewOld *bottomSplitView;
 
     IBOutlet NSView *mainView;
     IBOutlet NSView *sidebarView;
@@ -23,6 +23,6 @@
 
 
 @property(nonatomic, strong) NSView         *mainView;
-@property(nonatomic, strong) BasicSplitView *mainSplitView;
-@property(nonatomic, strong) BasicSplitView *bottomSplitView;
+@property(nonatomic, strong) BasicSplitViewOld *mainSplitView;
+@property(nonatomic, strong) BasicSplitViewOld *bottomSplitView;
 @end

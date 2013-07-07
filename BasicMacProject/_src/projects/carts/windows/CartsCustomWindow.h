@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NewCustomWindow.h"
+#import "BasicCustomWindow.h"
 
 
-@interface CartsCustomWindow : NewCustomWindow {
+@interface CartsCustomWindow : BasicCustomWindow {
 
 }
 

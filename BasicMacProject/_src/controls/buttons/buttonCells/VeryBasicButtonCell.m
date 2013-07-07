@@ -1,57 +1,75 @@
 //
-// Created by Daniela Postigo on 5/22/13.
+//  VeryBasicButtonCell.m
+//  Carts
 //
-// To change the template use AppCode | Preferences | File Templates.
+//  Created by Daniela Postigo on 7/7/13.
+//  Copyright (c) 2013 Elastic Creative. All rights reserved.
 //
-
 
 #import "VeryBasicButtonCell.h"
-#import "NSGraphicsContext+DPUtils.h"
+#import "NSImage+EtchedImageDrawing.h"
+//#import "NSImage+JSAdditions.h"
 
 
 @implementation VeryBasicButtonCell {
+
 }
 
 
-@synthesize gradientColor;
-@synthesize disabledGradientColor;
+@synthesize pathOptions;
 
-@synthesize strokeColor;
-@synthesize disabledStrokeColor;
+@synthesize disabledPathOptions;
 
-@synthesize innerStrokeColor;
-@synthesize disabledInnerStrokeColor;
+@synthesize imageOptions;
 
-@synthesize cornerRadius;
-@synthesize imageColor;
-@synthesize imageShadowColor;
-
-@synthesize autoAdjustsCornerRadius;
+@synthesize innerBorder;
 
 - (void) setup {
 
-    self.imageColor       = [NSColor colorWithDeviceWhite: 0.9 alpha: 1.0];
-    self.imageShadowColor = [NSColor clearColor];
+    self.imageScaling = NSImageScaleProportionallyDown;
+    self.alignment = NSCenterTextAlignment;
+    //    self.backgroundColor = [NSColor clearColor];
 
-    self.strokeColor      = [NSColor colorWithDeviceWhite: 0.12f alpha: 1.0f];
-    self.innerStrokeColor = [NSColor colorWithDeviceWhite: 1.0f alpha: 0.05f];
-    self.highlightedColor = [NSColor colorWithCalibratedWhite: 0.0f alpha: 0.35];
+    pathOptions = [[PathOptions alloc] init];
+    disabledPathOptions = [[PathOptions alloc] init];
+    imageOptions = [[ImageOptions alloc] init];
+    innerBorder = [[BorderOption alloc] init];
 
-    self.cornerRadius            = 3.0;
-    self.autoAdjustsCornerRadius = NO;
+    //    self.imageColor = [NSColor colorWithDeviceWhite: 0.9 alpha: 1.0];
+    //    self.imageShadowColor = [NSColor clearColor];
 
-    gradientColor = [[NSGradient alloc] initWithColorsAndLocations:
-            [NSColor colorWithDeviceWhite: 0.1f alpha: 1.0f], 0.0,
-            [NSColor colorWithDeviceWhite: 0.35 alpha: 1.0f], 1.0,
+
+    pathOptions.gradient = [[NSGradient alloc] initWithColorsAndLocations:
+            [NSColor colorWithWhite: 0.1], 0.0,
+            [NSColor colorWithWhite: 0.35], 1.0,
             nil];
+    pathOptions.borderColor = [NSColor colorWithWhite: 0.12];
+    pathOptions.borderWidth = 1.0;
+    pathOptions.cornerRadius = 3.0;
 
-    disabledGradientColor = [[NSGradient alloc] initWithColorsAndLocations:
+    innerBorder.borderColor = [NSColor colorWithDeviceWhite: 1.0f alpha: 0.05f];
+    //    self.highlightedColor = [NSColor colorWithCalibratedWhite: 0.0f alpha: 0.35];
+
+
+
+
+    disabledPathOptions.gradient = [[NSGradient alloc] initWithColorsAndLocations:
             [NSColor lightGrayColor], 0.0,
             [NSColor darkGrayColor], 1.0,
             nil];
 
-    disabledStrokeColor      = [NSColor darkGrayColor];
-    disabledInnerStrokeColor = [NSColor lightGrayColor];
+    disabledPathOptions.borderColor = [NSColor darkGrayColor];
+
+
+    pathOptions.gradient = BLACK_GRADIENT;
+
+//    self.highlightedColor = [NSColor colorWithString: GOLD_COLOR];
+//    self.innerStrokeColor = [NSColor whiteColor];
+//    self.imageColor       = [NSColor darkGrayColor];
+//    self.imageShadowColor = [NSColor whiteColor];
+
+    [self setButtonType: NSMomentaryPushButton];
+    self.bezelStyle = NSSmallSquareBezelStyle;
 }
 
 - (id) initWithCoder: (NSCoder *) coder {
@@ -78,109 +96,50 @@
     return self;
 }
 
-- (void) drawImage: (NSImage *) image withFrame: (NSRect) frame inView: (NSView *) controlView {
-    NSGraphicsContext *ctx = [NSGraphicsContext currentContext];
-    CGContextRef contextRef = [ctx graphicsPort];
-    CGContextTranslateCTM(contextRef, 0, controlView.frame.size.height);
-    CGContextScaleCTM(contextRef, 1.0, -1.0);
-
-    NSData *data = [image TIFFRepresentation];
-    CGImageSourceRef source = CGImageSourceCreateWithData((__bridge CFDataRef) data, NULL);
-    if (source) {
-        CGImageRef imageRef = CGImageSourceCreateImageAtIndex(source, 0, NULL);
-        CFRelease(source);
-
-        CGContextSaveGState(contextRef);
-        {
-            NSRect rect = NSOffsetRect(frame, 0.0f, 1.0f);
-            CGContextClipToMask(contextRef, rect, imageRef);
-            [self.imageShadowColor setFill];
-            NSRectFill(rect);
-        }
-        CGContextRestoreGState(contextRef);
-
-        CGContextSaveGState(contextRef);
-        {
-            NSRect rect = frame;
-            //            CGContextTranslateCTM(contextRef, 0, rect.size.height);
-            //            CGContextScaleCTM(contextRef, 1.0, -1.0);
-            CGContextClipToMask(contextRef, rect, imageRef);
-            [self.imageColor setFill];
-            NSRectFill(rect);
-        }
-        CGContextRestoreGState(contextRef);
-        CFRelease(imageRef);
-    }
-}
-
 - (void) drawBezelWithFrame: (NSRect) frame inView: (NSView *) controlView {
-    if (autoAdjustsCornerRadius && cornerRadius > 0) {
-        self.cornerRadius = frame.size.height * 0.4;
-    }
-
-    NSGraphicsContext *context = [NSGraphicsContext currentContext];
-
-    BOOL outer       = NO;
-    BOOL stroke      = YES;
-    BOOL background  = YES;
-    BOOL innerStroke = YES;
-    if (outer) [self drawOuter: context frame: frame];
-    if (background) [self drawBackgroundFill: context frame: frame];
-    if (stroke) [self drawStroke: context frame: frame];
-    if (innerStroke) [self drawInnerStroke: context frame: frame];
-    if (self.isHighlighted) [self drawHighlight: context frame: frame];
-}
-
-- (BOOL) isOpaque {
-    return NO;
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    //    [super drawBezelWithFrame: frame inView: controlView];
+    //    [[NSColor clearColor] set];
+    //    NSRectFill(frame);
+    [NSBezierPath drawBezierPathWithRect: frame options: pathOptions];
 }
 
 
-#pragma mark Drawing
+- (void) drawImage: (NSImage *) image withFrame: (NSRect) frame inView: (NSView *) controlView {
+
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    //    [super drawImage: image withFrame: frame inView: controlView];
 
 
-- (void) drawOuter: (NSGraphicsContext *) context frame: (NSRect) frame {
-    [context saveGraphicsState];
-    NSBezierPath *outerClip = [NSBezierPath bezierPathWithRoundedRect: frame xRadius: cornerRadius yRadius: cornerRadius];
-    [outerClip setClip];
 
-    NSGradient *outerGradient = [[NSGradient alloc] initWithColorsAndLocations:
-            [NSColor colorWithDeviceWhite: 0.20f alpha: 1.0f], 0.0f,
-            [NSColor colorWithDeviceWhite: 0.21f alpha: 1.0f], 1.0f,
-            nil];
+    //    [image drawInRect: frame fromRect: NSZeroRect operation: NSCompositePlusDarker fraction: imageOptions.alpha];
+    //    [image drawInRect: frame withColor: [NSColor whiteColor] innerShadow: nil   dropShadow: nil fraction: 1.0];
 
-    [outerGradient drawInRect: [outerClip bounds] angle: 90.0f];
-    [context restoreGraphicsState];
 }
 
-- (void) drawStroke: (NSGraphicsContext *) context frame: (NSRect) frame {
-    [context saveGraphicsState];
-    NSColor *color = self.isEnabled ? strokeColor : disabledStrokeColor;
-    [color setStroke];
-    [[NSBezierPath bezierPathWithRoundedRect: NSInsetRect(frame, 1.5f, 1.5f) xRadius: cornerRadius - 1 yRadius: cornerRadius - 1] stroke];
-    [context restoreGraphicsState];
+
+- (NSRect) drawTitle: (NSAttributedString *) title withFrame: (NSRect) frame inView: (NSView *) controlView {
+    //    return [super drawTitle: title withFrame: frame inView: controlView];
+    return NSZeroRect;
 }
 
-- (void) drawInnerStroke: (NSGraphicsContext *) context frame: (NSRect) frame {
-    [context saveGraphicsState];
-    NSColor *color = self.isEnabled ? innerStrokeColor : disabledInnerStrokeColor;
-    [color setStroke];
-    [[NSBezierPath bezierPathWithRoundedRect: NSInsetRect(frame, 2.5f, 2.5f) xRadius: cornerRadius yRadius: cornerRadius] stroke];
-    [context restoreGraphicsState];
+//
+//- (BOOL) isOpaque {
+//    return NO;
+//}
+
+
+- (NSRect) titleRectForBounds: (NSRect) theRect {
+    return NSZeroRect;
 }
 
-- (void) drawBackgroundFill: (NSGraphicsContext *) context frame: (NSRect) frame {
-    NSGradient   *theGradient    = self.isEnabled ? gradientColor : disabledGradientColor;
-    NSBezierPath *backgroundPath = [NSBezierPath bezierPathWithRoundedRect: NSInsetRect(frame, 2.0f, 2.0f) xRadius: cornerRadius yRadius: cornerRadius];
-    [context drawBackgroundGradient: theGradient inPath: backgroundPath angle: 270.0f];
+- (NSRect) imageRectForBounds: (NSRect) theRect {
+    return NSZeroRect;
 }
 
-- (void) drawHighlight: (NSGraphicsContext *) context frame: (NSRect) frame {
-    [context saveGraphicsState];
-    [[NSBezierPath bezierPathWithRoundedRect: NSInsetRect(frame, 2.0f, 2.0f) xRadius: cornerRadius yRadius: cornerRadius] setClip];
-    [self.highlightedColor setFill];
-    NSRectFillUsingOperation(frame, NSCompositeSourceOver);
-    [context restoreGraphicsState];
+- (NSRect) drawingRectForBounds: (NSRect) theRect {
+    return NSZeroRect;
 }
+
 
 @end

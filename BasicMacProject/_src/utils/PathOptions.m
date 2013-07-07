@@ -107,6 +107,12 @@
 }
 
 
+- (void) setCornerRadius: (CGFloat) cornerRadius1 {
+    cornerRadius = cornerRadius1;
+    if (cornerRadius > 0) cornerOptions = CornerUpperLeft | CornerUpperRight | CornerLowerLeft | CornerLowerRight;
+}
+
+
 
 #pragma mark Copy
 - (id) copy {
