@@ -6,7 +6,7 @@
 
 
 #import "BasicButton.h"
-#import "BasicButtonCellOld.h"
+#import "BasicButtonCell.h"
 
 
 @implementation BasicButton {
@@ -33,9 +33,11 @@
     self = [super initWithFrame: frameRect];
     if (self) {
         [self setup];
+        NSLog(@"%s", __PRETTY_FUNCTION__);
     }
 
     return self;
 }
+
 
 @end

@@ -22,9 +22,15 @@
 }
 
 + (NSButton *) buttonWithImage: (NSImage *) image padding: (CGFloat) padding {
-    NSButton *button = [[[self class] alloc] init];
+    NSButton *button = [[[self class] alloc] initWithFrame: NSMakeRect(0, 0, image.size.width + padding, image.size.height + padding)];
     button.width = image.size.width + padding;
     button.height = image.size.height + padding;
+    button.width = MAX(button.width, button.height);
+    button.height = MAX(button.width, button.height);
+
+    NSLog(@"button.width = %f", button.width);
+    NSLog(@"button.height = %f", button.height);
+
     button.image = image;
     button.title = @"";
     return button;

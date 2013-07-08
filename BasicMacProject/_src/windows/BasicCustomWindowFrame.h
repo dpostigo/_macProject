@@ -26,7 +26,6 @@ typedef enum {
 @interface BasicCustomWindowFrame : NSView {
 
     PathOptions *pathOptions;
-    PathOptions *innerPathOptions;
 
     CGFloat cornerRadiusInset;
 

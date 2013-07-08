@@ -14,14 +14,16 @@
 }
 
 
-@synthesize alpha;
+@synthesize imageAlpha;
 @synthesize imageColor;
+
+@synthesize imageShadowColor;
 
 - (id) init {
     self = [super init];
     if (self) {
-        self.alpha = 1;
-//        self.imageColor = [NSColor clearColor];
+        self.imageAlpha = 1;
+        //        self.imageColor = [NSColor clearColor];
 
     }
 

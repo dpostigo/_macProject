@@ -33,6 +33,10 @@
     return [self initWithBorderColor: aColor borderWidth: aWidth type: (BorderType) 0];
 }
 
+- (id) initWithBorderWidth: (CGFloat) aWidth {
+    return [self initWithBorderColor: [NSColor clearColor] borderWidth: aWidth type: BorderTypeAll];
+}
+
 - (id) init {
     self = [super init];
     if (self) {
@@ -40,6 +44,15 @@
     }
 
     return self;
+}
+
+
+- (id) copy {
+    BorderOption *borderOption = [[BorderOption alloc] init];
+    borderOption.borderColor = [self.borderColor copy];
+    borderOption.borderWidth = self.borderWidth;
+    borderOption.borderType = self.borderType;
+    return borderOption;
 }
 
 

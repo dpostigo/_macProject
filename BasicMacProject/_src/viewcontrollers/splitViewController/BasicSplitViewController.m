@@ -17,9 +17,7 @@
 @synthesize sidebar;
 @synthesize contentView;
 @synthesize footer;
-
 @synthesize defaultSidebarWidth;
-
 @synthesize delegate;
 
 - (id) initWithDefaultNib {

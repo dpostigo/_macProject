@@ -10,10 +10,12 @@
 
 
 @interface ImageOptions : NSObject {
-    CGFloat alpha;
+    CGFloat imageAlpha;
     NSColor *imageColor;
+    NSColor *imageShadowColor;
 }
 
-@property(nonatomic) CGFloat alpha;
+@property(nonatomic) CGFloat imageAlpha;
 @property(nonatomic, strong) NSColor *imageColor;
+@property(nonatomic, strong) NSColor *imageShadowColor;
 @end

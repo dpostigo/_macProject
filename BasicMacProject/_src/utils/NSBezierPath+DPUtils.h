@@ -25,6 +25,7 @@ typedef enum {
 
 + (NSBezierPath *) bezierPathWithRect: (NSRect) rect cornerRadius: (CGFloat) radius options: (NSBezierPathCornerOptions) options;
 + (void) drawBezierPathWithRect: (NSRect) rect options: (PathOptions *) pathOptions;
++ (void) drawBezierPathWithRect: (NSRect) rect borderOptions: (BorderOption *) borderOption;
 + (NSBezierPath *) bezierPathWithRect: (NSRect) rect options: (PathOptions *) pathOptions;
 + (NSBezierPath *) bezierPathWithRect: (NSRect) rect borderType: (BorderType) borderType;
 - (void) drawWithBorderOption: (BorderOption *) borderOption;

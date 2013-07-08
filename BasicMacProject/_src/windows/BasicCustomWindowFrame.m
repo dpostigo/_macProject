@@ -22,7 +22,6 @@
 
 
 @synthesize pathOptions;
-@synthesize innerPathOptions;
 @synthesize rightResizeRect;
 
 @synthesize cursors;
@@ -39,8 +38,8 @@
         cornerRadiusInset = 0.5;
 
 
-        innerPathOptions = [[PathOptions alloc] init];
-        innerPathOptions.borderColor = [NSColor colorWithDeviceWhite: 1.0 alpha: 0.5];
+//        innerPathOptions = [[PathOptions alloc] init];
+//        innerPathOptions.borderColor = [NSColor colorWithDeviceWhite: 1.0 alpha: 0.5];
 
         pathOptions = [[PathOptions alloc] init];
         pathOptions.cornerRadius = 5.0;
@@ -52,6 +51,13 @@
                                                                                [NSColor colorWithWhite: 0.2], 0.9,
                                                                                [NSColor colorWithWhite: 0.3], 1.0,
                                                                                nil];
+
+
+        PathOptions *innerPathOptions = [pathOptions copy];
+        innerPathOptions.borderColor = [NSColor colorWithDeviceWhite: 1.0 alpha: 0.3];
+        innerPathOptions.borderType = BorderTypeTop;
+        innerPathOptions.borderWidth = 1.0;
+        pathOptions.innerPathOptions = innerPathOptions;
 
 
         numCursors = 8;
@@ -148,7 +154,7 @@
     [NSBezierPath drawBezierPathWithRect: rect options: pathOptions];
 
 
-    NSBezierPath *innerBorderPath = [NSBezierPath bezierPathWithRect: NSInsetRect(rect, self.borderWidth, self.borderWidth) cornerRadius: self.cornerRadius options: self.cornerOptions];
+//    NSBezierPath *innerBorderPath = [NSBezierPath bezierPathWithRect: NSInsetRect(rect, self.borderWidth, self.borderWidth) cornerRadius: self.cornerRadius options: self.cornerOptions];
 
 
     //    [self.gradient drawInBezierPath: path angle: 90];
@@ -305,11 +311,19 @@
 }
 
 - (NSColor *) innerBorderColor {
-    return innerPathOptions.borderColor;
+    return pathOptions.innerPathOptions.borderColor;
 }
 
 - (void) setInnerBorderColor: (NSColor *) innerBorderColor1 {
-    innerPathOptions.borderColor = innerBorderColor1;
+    pathOptions.innerPathOptions.borderColor = innerBorderColor1;
+}
+
+- (PathOptions *) innerPathOptions {
+    return pathOptions.innerPathOptions;
+}
+
+- (void) setInnerPathOptions: (PathOptions *) innerPathOptions {
+    pathOptions.innerPathOptions = innerPathOptions;
 }
 
 

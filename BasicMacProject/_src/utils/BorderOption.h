@@ -28,4 +28,5 @@ typedef enum {
 - (id) initWithBorderColor: (NSColor *) aColor borderWidth: (CGFloat) aWidth type: (BorderType) aType;
 - (id) initWithBorderColor: (NSColor *) aColor borderWidth: (CGFloat) aWidth;
 
+- (id) initWithBorderWidth: (CGFloat) aWidth;
 @end

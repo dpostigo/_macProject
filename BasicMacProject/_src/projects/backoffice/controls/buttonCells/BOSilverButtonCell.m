@@ -15,15 +15,15 @@
 
 - (void) setup {
     [super setup];
-    gradientColor = [[NSGradient alloc] initWithColorsAndLocations:
+    self.gradient = [[NSGradient alloc] initWithColorsAndLocations:
             [NSColor colorWithString: @"b7b7b7"], 0.0,
             [NSColor colorWithString: @"fefefe"], 1.0,
             nil];
 
-    strokeColor      = [NSColor blackColor];
-    innerStrokeColor = [NSColor colorWithString: @"e5e5e5"];
-    cornerRadius     = 10.0;
-    imageShadowColor = [NSColor blackColor];
+    self.borderColor = [NSColor blackColor];
+    self.innerStrokeColor = [NSColor colorWithString: @"e5e5e5"];
+    self.cornerRadius = 10.0;
+    imageOptions.imageShadowColor = [NSColor blackColor];
 
     textColor = [NSColor colorWithDeviceWhite: 0.1 alpha: 1.0];
 

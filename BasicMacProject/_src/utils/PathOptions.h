@@ -17,11 +17,13 @@
     NSArray *borderOptions;
 
     CGFloat cornerRadius;
-    NSBezierPathCornerOptions cornerOptions;
     NSGradient *gradient;
     NSGradient *horizontalGradient;
     NSShadow *innerShadow;
     NSShadow *outerShadow;
+    NSBezierPathCornerOptions cornerOptions;
+
+    PathOptions *innerPathOptions;
 }
 
 @property(nonatomic, strong) NSColor *backgroundColor;
@@ -39,6 +41,7 @@
 
 
 @property(nonatomic, strong) NSArray *borderOptions;
+@property(nonatomic, strong) PathOptions *innerPathOptions;
 - (id) initWithGradient: (NSGradient *) gradient;
 - (id) initWithGradient: (NSGradient *) aGradient borderColor: (NSColor *) aBorderColor;
 - (id) initWithGradient: (NSGradient *) aGradient borderColor: (NSColor *) aBorderColor borderWidth: (CGFloat) aBorderWidth;

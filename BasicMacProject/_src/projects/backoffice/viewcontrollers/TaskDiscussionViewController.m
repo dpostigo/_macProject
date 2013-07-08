@@ -146,7 +146,7 @@
     } else if ([rowObject.cellIdentifier isEqualToString: @"ButtonCell"]) {
 
         BOGoldButtonCell *buttonCell = cell.button.cell;
-        buttonCell.strokeColor = [NSColor colorWithDeviceWhite: 0.0 alpha: 0.5];
+        buttonCell.borderColor = [NSColor colorWithDeviceWhite: 0.0 alpha: 0.5];
         postButton = cell.button;
         [cell.button addTarget: self action: @selector(handlePostButton:)];
     }

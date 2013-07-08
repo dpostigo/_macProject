@@ -24,8 +24,9 @@
 
 
 @synthesize borderOption;
-
 @synthesize borderOptions;
+
+@synthesize innerPathOptions;
 
 - (id) initWithGradient: (NSGradient *) aGradient {
     return [self initWithGradient: aGradient borderColor: nil borderWidth: 0 cornerRadius: 0 cornerOptions: 0];
@@ -64,6 +65,8 @@
     self = [super init];
     if (self) {
         self.borderOption = [[BorderOption alloc] init];
+        self.backgroundColor = [NSColor clearColor];
+        self.cornerOptions = CornerNone;
     }
 
     return self;
@@ -117,14 +120,14 @@
 #pragma mark Copy
 - (id) copy {
     PathOptions *copy = [[PathOptions alloc] init];
-    copy.backgroundColor = self.backgroundColor;
-    copy.borderOption = self.borderOption;
+    copy.backgroundColor = [self.backgroundColor copy];
+    copy.borderOption = [self.borderOption copy];
     copy.cornerRadius = self.cornerRadius;
     copy.cornerOptions = self.cornerOptions;
     copy.gradient = self.gradient;
     copy.horizontalGradient = self.horizontalGradient;
-    copy.innerShadow = self.innerShadow;
-    copy.outerShadow = self.outerShadow;
+    copy.innerShadow = [self.innerShadow copy];
+    copy.outerShadow = [self.outerShadow copy];
     return copy;
 }
 

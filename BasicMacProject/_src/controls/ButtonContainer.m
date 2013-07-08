@@ -18,11 +18,14 @@
 
 @synthesize itemSpacing;
 
+@synthesize rightMargin;
+
 - (id) init {
     self = [super init];
     if (self) {
         self.buttons = [[NSMutableArray alloc] init];
-        itemSpacing = 0;
+        itemSpacing = 5;
+        rightMargin = 10;
 
     }
 
@@ -51,21 +54,40 @@
     for (NSButton *button in buttons) {
         NSRect buttonRect = button.frame;
         buttonRect.origin.x = prevX;
-        buttonRect.origin.y = (self.height - (self.height - button.height)) / 2;
+
+        CGFloat diff = self.height - button.height;
+        NSLog(@"diff = %f", diff);
+        diff = diff / 2;
+        //        diff += (button.height / 2);
+
+
+        //        buttonRect.origin.y = (self.height - diff);
+        //        buttonRect.origin.y = (self.height * 0.75) - button.height;
+        buttonRect.origin.y = diff;
+        //        buttonRect.origin.y = button.height * 0.66;
+
+        //        buttonRect.origin.y = self.height/2;
+        //        buttonRect.origin.y = button.height - 2;
         button.frame = buttonRect;
         prevX += button.width + itemSpacing;
-        //                button.autoresizingMask = NSViewMinYMargin;
+        button.autoresizingMask = NSViewMinYMargin | NSViewMaxYMargin;
+
+        NSLog(@"button.autoresizingMask = %lu", button.autoresizingMask);
     }
     prevX -= itemSpacing;
+    prevX += rightMargin;
 
 
     NSRect newRect = self.frame;
     newRect.size.width = prevX;
     newRect.origin.x = newRect.origin.x == 0 ? 0 : self.superview.width - newRect.size.width;
+
+    NSLog(@"newRect.size.height = %f", newRect.size.height);
     self.frame = newRect;
 
 
     //    self.width = prevX;
 }
+
 
 @end

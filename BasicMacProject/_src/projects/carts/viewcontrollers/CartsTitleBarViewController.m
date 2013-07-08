@@ -10,6 +10,7 @@
 #import "BasicInnerShadowView.h"
 #import "NSButton+DPUtils.h"
 #import "VeryBasicButton.h"
+#import "BasicButton.h"
 
 
 @implementation CartsTitleBarViewController {
@@ -21,15 +22,13 @@
     [super loadView];
     NSLog(@"%s", __PRETTY_FUNCTION__);
 
-    //    BasicInnerShadowView *tempView = [[BasicInnerShadowView alloc] init];
-    //    [self.view embedView: tempView];
 
-
-    NSLog(@"rightButtons = %@", rightButtons);
-    //    rightButtons.height = self.view.height;
-
-    [rightButtons addObject: [VeryBasicButton buttonWithImage: [NSImage imageNamed: NSImageNameAddTemplate] padding: 5.0]];
-    [rightButtons addObject: [NSWindow standardWindowButton: NSWindowCloseButton forStyleMask: NSTitledWindowMask]];
+    NSButton *button = [BasicButton buttonWithImage: [NSImage imageNamed: NSImageNameAddTemplate] padding: 10.0];
+    [button setEnabled: YES];
+    button.width = button.height = 30;
+    [rightButtons addObject: button];
+//    [rightButtons addObject: [VeryBasicButton buttonWithImage: [NSImage imageNamed: NSImageNameAddTemplate] padding: 10.0]];
+//    [rightButtons addObject: [NSWindow standardWindowButton: NSWindowCloseButton forStyleMask: NSTitledWindowMask]];
 
 }
 

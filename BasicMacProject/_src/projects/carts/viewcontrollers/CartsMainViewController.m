@@ -32,23 +32,22 @@
 - (void) loadView {
     [super loadView];
 
-    //    self.view = [[BasicView alloc] init];
 
+    sidebar.minimumWidth = 150;
     contentBackgroundView = [[BasicInnerShadowView alloc] initWithFrame: self.view.bounds];
 
-    //    contentBackgroundView.borderOptions = [NSArray arrayWithObjects:
-    //            [[BorderOption alloc] initWithBorderColor: [NSColor darkGrayColor] borderWidth: 0.5 type: BorderTypeTop],
-    //            [[BorderOption alloc] initWithBorderColor: [NSColor darkGrayColor] borderWidth: 0.5 type: BorderTypeLeft],
-    //            [[BorderOption alloc] initWithBorderColor: [NSColor darkGrayColor] borderWidth: 0.5 type: BorderTypeRight],
-    //            nil];
+    contentBackgroundView.borderOptions = [NSArray arrayWithObjects:
+            [[BorderOption alloc] initWithBorderColor: [NSColor darkGrayColor] borderWidth: 0.5 type: BorderTypeTop],
+            [[BorderOption alloc] initWithBorderColor: [NSColor darkGrayColor] borderWidth: 0.5 type: BorderTypeLeft],
+            [[BorderOption alloc] initWithBorderColor: [NSColor darkGrayColor] borderWidth: 0.5 type: BorderTypeRight],
+            nil];
     [self embedView: contentBackgroundView inView: contentView];
 
+
     [self embedViewController: [[CartsSidebarViewController alloc] initWithDefaultNib] inView: sidebar];
-    //    BasicInnerShadowView *sidebarInnerShadow = [[BasicInnerShadowView alloc] initWithFrame: self.view.bounds];
-    //    //    [self embedView: sidebarInnerShadow inView: sidebar];
 
 
-
+    [splitView setVertical: NO];
 }
 
 

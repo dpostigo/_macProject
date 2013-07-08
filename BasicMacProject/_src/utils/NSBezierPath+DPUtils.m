@@ -15,19 +15,28 @@
 
 + (NSBezierPath *) bezierPathWithRect: (NSRect) rect cornerRadius: (CGFloat) radius options: (NSBezierPathCornerOptions) options {
 
-    if (radius == 0.0 || (options & CornerNone)) return [NSBezierPath bezierPathWithRect: rect];
+    if (radius == 0.0 || (options & CornerNone)) {
+        return [NSBezierPath bezierPathWithRect: rect];
+    }
+
+
+    if (options & (CornerUpperLeft | CornerUpperRight | CornerLowerLeft | CornerLowerRight)) {
+        return [NSBezierPath bezierPathWithRoundedRect: rect xRadius: radius yRadius: radius];
+    }
 
     NSBezierPath *path = [NSBezierPath bezierPath];
     NSPoint endPoint;
     NSPoint thruPoint;
 
+    CGFloat xOffset = rect.origin.x;
+    CGFloat yOffset = rect.origin.y;
 
-    [path moveToPoint: NSMakePoint(radius, 0)];
-    [path lineToPoint: NSMakePoint(rect.size.width - radius, 0)];
 
-    endPoint = NSMakePoint(rect.size.width, radius);
-    thruPoint = NSMakePoint(rect.size.width, 0);
+    [path moveToPoint: NSMakePoint(radius + xOffset, 0)];
+    [path lineToPoint: NSMakePoint(rect.size.width - radius + xOffset, 0)];
 
+    endPoint = NSMakePoint(rect.size.width + xOffset, radius);
+    thruPoint = NSMakePoint(rect.size.width + xOffset, 0);
     if (options & CornerLowerRight) {
         [path appendBezierPathWithArcFromPoint: thruPoint toPoint: endPoint radius: radius];
     } else {
@@ -35,9 +44,8 @@
         [path lineToPoint: endPoint];
     }
 
-
-    endPoint = NSMakePoint(rect.size.width - radius, rect.size.height);
-    thruPoint = NSMakePoint(rect.size.width, rect.size.height);
+    endPoint = NSMakePoint(rect.size.width - radius + xOffset, rect.size.height);
+    thruPoint = NSMakePoint(rect.size.width + xOffset, rect.size.height);
     if (options & CornerUpperRight) {
         [path appendBezierPathWithArcFromPoint: thruPoint toPoint: endPoint radius: radius];
     } else {
@@ -46,8 +54,8 @@
     }
 
 
-    endPoint = NSMakePoint(0, rect.size.height - radius);
-    thruPoint = NSMakePoint(0, rect.size.height);
+    endPoint = NSMakePoint(0 + xOffset, rect.size.height - radius);
+    thruPoint = NSMakePoint(0 + xOffset, rect.size.height);
     if (options & CornerUpperLeft) {
         [path appendBezierPathWithArcFromPoint: thruPoint toPoint: endPoint radius: radius];
     } else {
@@ -56,8 +64,8 @@
     }
 
 
-    endPoint = NSMakePoint(radius, 0);
-    thruPoint = NSMakePoint(0, 0);
+    endPoint = NSMakePoint(radius + xOffset, 0);
+    thruPoint = NSMakePoint(0 + xOffset, 0);
     if (options & CornerLowerLeft) {
         [path appendBezierPathWithArcFromPoint: thruPoint toPoint: endPoint radius: radius];
     } else {
@@ -80,37 +88,49 @@
     for (BorderOption *borderOption in pathOptions.borderOptions) {
         if (borderOption.borderType & BorderTypeAll) [path drawWithBorderOption: borderOption];
         else {
-            NSBezierPath *borderPath = [NSBezierPath bezierPathWithRect: rect borderType: borderOption.borderType];
-            [borderPath drawWithBorderOption: borderOption];
+            [NSBezierPath drawBezierPathWithRect: rect borderOptions: borderOption];
         }
+    }
+
+    if (pathOptions.innerPathOptions != nil) {
+        rect = NSInsetRect(rect, pathOptions.borderWidth, pathOptions.borderWidth);
+        [NSBezierPath drawBezierPathWithRect: rect options: pathOptions.innerPathOptions];
     }
 }
 
+
++ (void) drawBezierPathWithRect: (NSRect) rect borderOptions: (BorderOption *) borderOption {
+    NSBezierPath *borderPath = [NSBezierPath bezierPathWithRect: rect borderType: borderOption.borderType];
+    [borderPath drawWithBorderOption: borderOption];
+}
 
 + (NSBezierPath *) bezierPathWithRect: (NSRect) rect options: (PathOptions *) pathOptions {
     NSBezierPath *path = [NSBezierPath bezierPathWithRect: rect cornerRadius: pathOptions.cornerRadius options: pathOptions.cornerOptions];
     return path;
 }
 
-
 + (NSBezierPath *) bezierPathWithRect: (NSRect) rect borderType: (BorderType) borderType {
+
     NSBezierPath *path = [NSBezierPath bezierPath];
 
+    CGFloat xOffset = rect.origin.x;
+    CGFloat yOffset = rect.origin.y;
+
     if (borderType & BorderTypeTop) {
-        [path moveToPoint: NSMakePoint(0, rect.size.height)];
-        [path lineToPoint: NSMakePoint(rect.size.width, rect.size.height)];
+        [path moveToPoint: NSMakePoint(rect.origin.x, rect.size.height + yOffset)];
+        [path lineToPoint: NSMakePoint(rect.size.width + xOffset, rect.size.height + yOffset)];
     }
     if (borderType & BorderTypeBottom) {
-        [path moveToPoint: NSMakePoint(0, 0)];
-        [path lineToPoint: NSMakePoint(rect.size.width, 0)];
+        [path moveToPoint: NSMakePoint(0 + xOffset, 0 + yOffset)];
+        [path lineToPoint: NSMakePoint(rect.size.width + xOffset, 0 + yOffset)];
     }
     if (borderType & BorderTypeLeft) {
-        [path moveToPoint: NSMakePoint(0, 0)];
-        [path lineToPoint: NSMakePoint(0, rect.size.height)];
+        [path moveToPoint: NSMakePoint(0 + xOffset, 0 + yOffset)];
+        [path lineToPoint: NSMakePoint(0 + xOffset, rect.size.height + yOffset)];
     }
     if (borderType & BorderTypeRight) {
-        [path moveToPoint: NSMakePoint(rect.size.width, 0)];
-        [path lineToPoint: NSMakePoint(rect.size.width, rect.size.height)];
+        [path moveToPoint: NSMakePoint(rect.size.width + xOffset, 0 + yOffset)];
+        [path lineToPoint: NSMakePoint(rect.size.width + xOffset, rect.size.height + yOffset)];
     }
     return path;
 }

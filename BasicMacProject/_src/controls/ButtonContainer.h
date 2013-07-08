@@ -14,10 +14,12 @@
 
     NSMutableArray *buttons;
     CGFloat itemSpacing;
+    CGFloat rightMargin;
 }
 
 @property(nonatomic, strong) NSMutableArray *buttons;
 @property(nonatomic) CGFloat itemSpacing;
+@property(nonatomic) CGFloat rightMargin;
 - (void) addObject: (NSButton *) button;
 - (void) removeObject: (NSButton *) button;
 @end
