@@ -15,7 +15,7 @@
 @synthesize dividerEnabled;
 @synthesize splitView;
 @synthesize sidebar;
-@synthesize contentView;
+//@synthesize contentView;
 @synthesize footer;
 @synthesize defaultSidebarWidth;
 @synthesize delegate;
@@ -35,13 +35,14 @@
     [super loadView];
 
 
-    if (splitView == nil) {
-        splitView = [[DPSplitView alloc] initWithFrame: self.view.bounds];
+    if (splitView == nil) splitView = [[DPSplitView alloc] initWithFrame: self.view.bounds];
 
-    }
-    splitView.dividerStyle = NSSplitViewDividerStyleThin;
 
-    if (sidebar == nil) sidebar = [splitView.subviews objectAtIndex: 0];
+    splitView.
+            dividerStyle = NSSplitViewDividerStyleThin;
+
+    if (sidebar == nil)
+        sidebar = [splitView.subviews objectAtIndex: 0];
     if (contentView == nil) {
 
         NSView *subview = [splitView.subviews objectAtIndex: 1];

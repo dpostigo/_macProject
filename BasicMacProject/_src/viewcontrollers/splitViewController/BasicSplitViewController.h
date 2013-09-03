@@ -16,7 +16,7 @@
     BOOL dividerEnabled;
     IBOutlet DPSplitView *splitView;
     IBOutlet SplitViewContainer *sidebar;
-    IBOutlet SplitViewContainer *contentView;
+//    IBOutlet SplitViewContainer *contentView;
     IBOutlet SplitViewContainer *footer;
 
 
@@ -29,7 +29,7 @@
 @property(nonatomic) BOOL dividerEnabled;
 @property(nonatomic, strong) DPSplitView *splitView;
 @property(nonatomic, strong) SplitViewContainer *sidebar;
-@property(nonatomic, strong) SplitViewContainer *contentView;
+//@property(nonatomic, strong) SplitViewContainer *contentView;
 @property(nonatomic, strong) SplitViewContainer *footer;
 @property(nonatomic) CGFloat defaultSidebarWidth;
 @property(nonatomic, strong) DPSplitViewDelegate *delegate;

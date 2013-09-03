@@ -11,6 +11,7 @@
 #import "BasicDisplayView.h"
 #import "BasicInnerShadowView.h"
 #import "BasicView.h"
+#import "BasicVerticalSplitViewController.h"
 
 
 @implementation CartsMainViewController {
@@ -18,19 +19,13 @@
 }
 
 
-- (id) initWithCoder: (NSCoder *) coder {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    self = [super initWithCoder: coder];
-    if (self) {
-
-    }
-
-    return self;
-}
-
-
 - (void) loadView {
     [super loadView];
+
+
+
+
+    [self embedViewController: [[BasicVerticalSplitViewController alloc] init] inView: self.view];
 
 
     sidebar.minimumWidth = 150;
@@ -47,7 +42,7 @@
     [self embedViewController: [[CartsSidebarViewController alloc] initWithDefaultNib] inView: sidebar];
 
 
-    [splitView setVertical: NO];
+//    [splitView setVertical: NO];
 }
 
 
