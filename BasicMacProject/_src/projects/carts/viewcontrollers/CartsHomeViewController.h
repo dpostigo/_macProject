@@ -1,5 +1,5 @@
 //
-//  CartsMainViewController.h
+//  CartsHomeViewController.h
 //  Carts
 //
 //  Created by Daniela Postigo on 9/3/13.
@@ -7,10 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BasicSidebarSplitViewController.h"
+#import "BasicViewController.h"
 
 
-@interface CartsMainViewController : BasicSidebarSplitViewController {
-
+@interface CartsHomeViewController : BasicViewController {
 }
 @end

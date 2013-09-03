@@ -14,13 +14,16 @@
 
     NSMutableArray *containers;
     SplitViewContainer *contentContainer;
+    NSView *mainView;
 
 }
 
 @property(nonatomic, strong) SplitViewContainer *contentContainer;
-@property(nonatomic, strong) NSView *contentView;
+@property(nonatomic, strong) NSView *mainView;
+@property(nonatomic, strong) NSMutableArray *containers;
 - (void) updateViews;
 - (void) collectViews;
 - (void) addViews;
 - (void) clearViews;
+- (void) setMainViewController: (NSViewController *) controller;
 @end

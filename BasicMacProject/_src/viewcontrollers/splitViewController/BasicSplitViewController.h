@@ -15,9 +15,6 @@
 @interface BasicSplitViewController : BasicViewController <NSSplitViewDelegate> {
     BOOL dividerEnabled;
     IBOutlet DPSplitView *splitView;
-    IBOutlet SplitViewContainer *sidebar;
-//    IBOutlet SplitViewContainer *contentView;
-    IBOutlet SplitViewContainer *footer;
 
 
     CGFloat defaultSidebarWidth;

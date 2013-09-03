@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		030A3E9C1778A603008BD708 /* RoundWindowFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 030A3E9A1778A603008BD708 /* RoundWindowFrameView.m */; };
 		033217CB176F709B004F1CA5 /* CartsSidebarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033217CA176F709B004F1CA5 /* CartsSidebarViewController.xib */; };
-		033217CD176F72D5004F1CA5 /* CartsMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033217CC176F72D5004F1CA5 /* CartsMainViewController.xib */; };
+		033217CD176F72D5004F1CA5 /* CartsMainViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033217CC176F72D5004F1CA5 /* CartsMainViewController2.xib */; };
 		03386ED0176CB9FE00E1F37A /* _assets in Resources */ = {isa = PBXBuildFile; fileRef = 03386ECD176CB9FE00E1F37A /* _assets */; };
 		03386ED1176CB9FE00E1F37A /* _scripts in Resources */ = {isa = PBXBuildFile; fileRef = 03386ECE176CB9FE00E1F37A /* _scripts */; };
 		03386ED2176CB9FE00E1F37A /* _src in Resources */ = {isa = PBXBuildFile; fileRef = 03386ECF176CB9FE00E1F37A /* _src */; };
@@ -25,6 +25,7 @@
 		03386EF9176D0A3500E1F37A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 03386EEF176D0A3500E1F37A /* .gitignore */; };
 		03386EFB176D2A6200E1F37A /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03386EFA176D2A6200E1F37A /* MainViewController.xib */; };
 		03386EFE176D2AF700E1F37A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03386EFC176D2AF700E1F37A /* MainMenu.xib */; };
+		0367CF8D17D628ED00357D31 /* CartsHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0367CF8C17D628ED00357D31 /* CartsHomeViewController.xib */; };
 		03D8CB271768AA17000CF88A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D8CB261768AA17000CF88A /* Cocoa.framework */; };
 		03D8CB311768AA17000CF88A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03D8CB2F1768AA17000CF88A /* InfoPlist.strings */; };
 		03D8CB331768AA17000CF88A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CB321768AA17000CF88A /* main.m */; };
@@ -230,6 +231,8 @@
 		7CA445C760F570E0A32BDE92 /* CartsTitleBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44B9A83EC4D420E5B3CED /* CartsTitleBarViewController.m */; };
 		7CA44732B26C803C10501A9A /* BasicWindowTitleBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44DE8E772C6A7359755AA /* BasicWindowTitleBarViewController.m */; };
 		7CA44744641251E8AF3107FA /* ColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44B05EFBD286B14358E87 /* ColorManager.m */; };
+		7CA4481C618A7B309B257986 /* CartsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4462355F52DBAF22B8503 /* CartsHomeViewController.m */; };
+		7CA44825CCE87FF4A69F29CD /* CartsMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA442975AFDE9C2C92F5CCE /* CartsMainViewController.m */; };
 		7CA44863E68E0E1F9641F3ED /* BasicButton2Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA441433C9C640F1BD8B76C /* BasicButton2Cell.m */; };
 		7CA4486A4D9B349FC3806E81 /* PathOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4447771137936908C27BA /* PathOptions.m */; };
 		7CA448F0E86B3C3BC896DCE7 /* BasicCustomWindowFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44018205CD3A1DFFBE403 /* BasicCustomWindowFrame.m */; };
@@ -241,7 +244,7 @@
 		7CA44AFB9DD35FBE92BD15F5 /* BasicFullLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44963A53BDE5309442ED7 /* BasicFullLayoutViewController.m */; };
 		7CA44B202AA750CC78E7A259 /* BorderOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44000ABF8BEAC657C55F1 /* BorderOption.m */; };
 		7CA44BC46A6C10A462A03CF3 /* BasicCustomWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA442406BF21E5A3706D3A6 /* BasicCustomWindow.m */; };
-		7CA44C4034FEA3704A23783C /* CartsMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44DDE315CA9096FF0908A /* CartsMainViewController.m */; };
+		7CA44C4034FEA3704A23783C /* CartsMainViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44DDE315CA9096FF0908A /* CartsMainViewController2.m */; };
 		7CA44C67315FAEACFB6FBFB6 /* BasicSplitLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44B1C549074B06348A03A /* BasicSplitLayoutViewController.m */; };
 		7CA44D1D78275A20592F18DA /* CartsCustomWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44D5EA0DDF5B457BD3CF7 /* CartsCustomWindow.m */; };
 		7CA44D68ABD21F127A4F07D1 /* DPSplitViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44D3EB5BE61889110E3F9 /* DPSplitViewDelegate.m */; };
@@ -255,7 +258,7 @@
 		030A3E991778A603008BD708 /* RoundWindowFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundWindowFrameView.h; sourceTree = "<group>"; };
 		030A3E9A1778A603008BD708 /* RoundWindowFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundWindowFrameView.m; sourceTree = "<group>"; };
 		033217CA176F709B004F1CA5 /* CartsSidebarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CartsSidebarViewController.xib; path = _src/xibs/viewcontrollers/CartsSidebarViewController.xib; sourceTree = "<group>"; };
-		033217CC176F72D5004F1CA5 /* CartsMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CartsMainViewController.xib; path = _src/xibs/viewcontrollers/CartsMainViewController.xib; sourceTree = "<group>"; };
+		033217CC176F72D5004F1CA5 /* CartsMainViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CartsMainViewController2.xib; path = _src/xibs/viewcontrollers/CartsMainViewController2.xib; sourceTree = "<group>"; };
 		03386ECD176CB9FE00E1F37A /* _assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _assets; sourceTree = "<group>"; };
 		03386ECE176CB9FE00E1F37A /* _scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _scripts; sourceTree = "<group>"; };
 		03386ECF176CB9FE00E1F37A /* _src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _src; sourceTree = "<group>"; };
@@ -273,6 +276,7 @@
 		03386EEF176D0A3500E1F37A /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		03386EFA176D2A6200E1F37A /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController.xib; path = _src/xibs/viewcontrollers/MainViewController.xib; sourceTree = "<group>"; };
 		03386EFD176D2AF700E1F37A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		0367CF8C17D628ED00357D31 /* CartsHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CartsHomeViewController.xib; path = _src/xibs/viewcontrollers/CartsHomeViewController.xib; sourceTree = "<group>"; };
 		03D8CB231768AA17000CF88A /* Carts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03D8CB261768AA17000CF88A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		03D8CB291768AA17000CF88A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -658,12 +662,13 @@
 		7CA4414D798D16A0A9D2771F /* CartsTitleBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsTitleBarViewController.h; sourceTree = "<group>"; };
 		7CA441CF0C84D430FA781F5D /* BasicDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicDisplayView.m; sourceTree = "<group>"; };
 		7CA442406BF21E5A3706D3A6 /* BasicCustomWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicCustomWindow.m; sourceTree = "<group>"; };
+		7CA442975AFDE9C2C92F5CCE /* CartsMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsMainViewController.m; sourceTree = "<group>"; };
 		7CA442B4E5424F9973719FAA /* BasicFullLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicFullLayoutViewController.h; sourceTree = "<group>"; };
 		7CA44300434D7ED70419714A /* BasicSparrowSidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicSparrowSidebarViewController.h; sourceTree = "<group>"; };
 		7CA4433D2C0441339FC3F72C /* NSParagraphStyle+DPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSParagraphStyle+DPUtils.m"; sourceTree = "<group>"; };
 		7CA44378F0B370C945527E28 /* CartsSidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsSidebarViewController.m; sourceTree = "<group>"; };
 		7CA4439451CA8B2B2677897F /* BasicButton2Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicButton2Cell.h; sourceTree = "<group>"; };
-		7CA443FF93BB533EC2075D46 /* CartsMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsMainViewController.h; sourceTree = "<group>"; };
+		7CA443FF93BB533EC2075D46 /* CartsMainViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsMainViewController2.h; sourceTree = "<group>"; };
 		7CA4446F3AFD3671AB072463 /* CartsFooterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsFooterViewController.m; sourceTree = "<group>"; };
 		7CA4447771137936908C27BA /* PathOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathOptions.m; sourceTree = "<group>"; };
 		7CA444B24F2CA5EB98A0C9F6 /* BasicSplitLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicSplitLayoutViewController.h; sourceTree = "<group>"; };
@@ -672,6 +677,7 @@
 		7CA44571BEB8A642162C1D1F /* CartsSidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsSidebarViewController.h; sourceTree = "<group>"; };
 		7CA445943F36F39ECC47C780 /* VeryBasicButton2Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VeryBasicButton2Cell.m; sourceTree = "<group>"; };
 		7CA446107353C65ED3D61061 /* ImageOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageOptions.h; sourceTree = "<group>"; };
+		7CA4462355F52DBAF22B8503 /* CartsHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsHomeViewController.m; sourceTree = "<group>"; };
 		7CA4462A90987C8CFC51E621 /* BasicStyledOutlineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicStyledOutlineViewController.h; path = outlineViewController/BasicStyledOutlineViewController.h; sourceTree = "<group>"; };
 		7CA446BC17E0953198D2127C /* BasicStyledOutlineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BasicStyledOutlineViewController.m; path = outlineViewController/BasicStyledOutlineViewController.m; sourceTree = "<group>"; };
 		7CA4475654A4B281C86F0324 /* ButtonContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonContainer.m; sourceTree = "<group>"; };
@@ -689,6 +695,7 @@
 		7CA44B98A9224966DD011878 /* BasicSidebarSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicSidebarSplitViewController.m; sourceTree = "<group>"; };
 		7CA44B9A83EC4D420E5B3CED /* CartsTitleBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsTitleBarViewController.m; sourceTree = "<group>"; };
 		7CA44BCF4B4E4368436A273A /* VeryBasicButton2Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VeryBasicButton2Cell.h; sourceTree = "<group>"; };
+		7CA44C24D91BDEADCB950150 /* CartsHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsHomeViewController.h; sourceTree = "<group>"; };
 		7CA44C26383C81237932D7B3 /* BasicCustomWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicCustomWindow.h; sourceTree = "<group>"; };
 		7CA44C3050AB8A8FA2599B25 /* NSParagraphStyle+DPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSParagraphStyle+DPUtils.h"; sourceTree = "<group>"; };
 		7CA44C964BDB88169B76803D /* ColorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorManager.h; sourceTree = "<group>"; };
@@ -697,8 +704,9 @@
 		7CA44D5EA0DDF5B457BD3CF7 /* CartsCustomWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsCustomWindow.m; sourceTree = "<group>"; };
 		7CA44D83720723B7CBF2DAE6 /* DPSplitViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPSplitViewDelegate.h; sourceTree = "<group>"; };
 		7CA44DAB26A54622D3E459EA /* BorderOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorderOption.h; sourceTree = "<group>"; };
-		7CA44DDE315CA9096FF0908A /* CartsMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsMainViewController.m; sourceTree = "<group>"; };
+		7CA44DDE315CA9096FF0908A /* CartsMainViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsMainViewController2.m; sourceTree = "<group>"; };
 		7CA44DE8E772C6A7359755AA /* BasicWindowTitleBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicWindowTitleBarViewController.m; sourceTree = "<group>"; };
+		7CA44F4576AA41095186726E /* CartsMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsMainViewController.h; sourceTree = "<group>"; };
 		7CA44F63EECAB9A591D30A5B /* BasicWindowTitleBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicWindowTitleBarViewController.h; sourceTree = "<group>"; };
 		7CA44F93031E7F698600097E /* BasicVerticalSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicVerticalSplitViewController.h; sourceTree = "<group>"; };
 		7CA44F9F78B76E820C7FC8EE /* BasicVerticalSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicVerticalSplitViewController.m; sourceTree = "<group>"; };
@@ -811,14 +819,18 @@
 			isa = PBXGroup;
 			children = (
 				03386EED176D0A3500E1F37A /* .gitignore */,
-				7CA44DDE315CA9096FF0908A /* CartsMainViewController.m */,
-				7CA443FF93BB533EC2075D46 /* CartsMainViewController.h */,
+				7CA44DDE315CA9096FF0908A /* CartsMainViewController2.m */,
+				7CA443FF93BB533EC2075D46 /* CartsMainViewController2.h */,
 				7CA44378F0B370C945527E28 /* CartsSidebarViewController.m */,
 				7CA44571BEB8A642162C1D1F /* CartsSidebarViewController.h */,
 				7CA44B9A83EC4D420E5B3CED /* CartsTitleBarViewController.m */,
 				7CA4414D798D16A0A9D2771F /* CartsTitleBarViewController.h */,
 				7CA4446F3AFD3671AB072463 /* CartsFooterViewController.m */,
 				7CA44FBF3979731A3646BAD5 /* CartsFooterViewController.h */,
+				7CA442975AFDE9C2C92F5CCE /* CartsMainViewController.m */,
+				7CA44F4576AA41095186726E /* CartsMainViewController.h */,
+				7CA4462355F52DBAF22B8503 /* CartsHomeViewController.m */,
+				7CA44C24D91BDEADCB950150 /* CartsHomeViewController.h */,
 			);
 			path = viewcontrollers;
 			sourceTree = "<group>";
@@ -836,7 +848,8 @@
 		03D8CB1A1768AA17000CF88A = {
 			isa = PBXGroup;
 			children = (
-				033217CC176F72D5004F1CA5 /* CartsMainViewController.xib */,
+				0367CF8C17D628ED00357D31 /* CartsHomeViewController.xib */,
+				033217CC176F72D5004F1CA5 /* CartsMainViewController2.xib */,
 				033217CA176F709B004F1CA5 /* CartsSidebarViewController.xib */,
 				03386EFA176D2A6200E1F37A /* MainViewController.xib */,
 				03386ECD176CB9FE00E1F37A /* _assets */,
@@ -1842,7 +1855,8 @@
 				03386EFB176D2A6200E1F37A /* MainViewController.xib in Resources */,
 				03386EFE176D2AF700E1F37A /* MainMenu.xib in Resources */,
 				033217CB176F709B004F1CA5 /* CartsSidebarViewController.xib in Resources */,
-				033217CD176F72D5004F1CA5 /* CartsMainViewController.xib in Resources */,
+				033217CD176F72D5004F1CA5 /* CartsMainViewController2.xib in Resources */,
+				0367CF8D17D628ED00357D31 /* CartsHomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2037,7 +2051,7 @@
 				03DD36241769FA5D000DB1B7 /* TokenTestViewController.m in Sources */,
 				03DD36251769FA5D000DB1B7 /* AppWindow.m in Sources */,
 				03386EF2176D0A3500E1F37A /* CartsAppDelegate.m in Sources */,
-				7CA44C4034FEA3704A23783C /* CartsMainViewController.m in Sources */,
+				7CA44C4034FEA3704A23783C /* CartsMainViewController2.m in Sources */,
 				7CA444C22E9A3AA772055517 /* CartsSidebarViewController.m in Sources */,
 				7CA44494D2D3D2703545CDD7 /* BasicSparrowSidebarViewController.m in Sources */,
 				7CA44ECA6E3F372EBF7B645F /* BasicStyledOutlineViewController.m in Sources */,
@@ -2065,6 +2079,8 @@
 				7CA44F0E2F18CB7011662F40 /* BasicVerticalSplitViewController.m in Sources */,
 				7CA44C67315FAEACFB6FBFB6 /* BasicSplitLayoutViewController.m in Sources */,
 				7CA44AFB9DD35FBE92BD15F5 /* BasicFullLayoutViewController.m in Sources */,
+				7CA44825CCE87FF4A69F29CD /* CartsMainViewController.m in Sources */,
+				7CA4481C618A7B309B257986 /* CartsHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

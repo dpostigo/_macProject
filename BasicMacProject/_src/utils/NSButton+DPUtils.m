@@ -28,8 +28,8 @@
     button.width = MAX(button.width, button.height);
     button.height = MAX(button.width, button.height);
 
-    NSLog(@"button.width = %f", button.width);
-    NSLog(@"button.height = %f", button.height);
+    //NSLog(@"button.width = %f", button.width);
+    //NSLog(@"button.height = %f", button.height);
 
     button.image = image;
     button.title = @"";

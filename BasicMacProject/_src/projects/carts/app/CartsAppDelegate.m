@@ -7,9 +7,10 @@
 
 #import "CartsAppDelegate.h"
 #import "TitleBarViewController.h"
-#import "CartsMainViewController.h"
+#import "CartsMainViewController2.h"
 #import "BasicInnerShadowView.h"
 #import "CartsTitleBarViewController.h"
+#import "CartsMainViewController.h"
 
 
 @implementation CartsAppDelegate
@@ -19,10 +20,10 @@
     [super applicationDelegateDidFinishLaunching: notification];
 
 
-    [self embedViewController: [[CartsMainViewController alloc] initWithDefaultNib] inView: window.contentView];
 
     CartsTitleBarViewController *titleController = [[CartsTitleBarViewController alloc] init];
     [self embedViewController: [[CartsTitleBarViewController alloc] init] inView: window.titleBarView];
+    [self embedViewController: [[CartsMainViewController alloc] initWithDefaultNib] inView: window.contentView];
 
 }
 

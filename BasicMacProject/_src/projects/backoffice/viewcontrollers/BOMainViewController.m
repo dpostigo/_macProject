@@ -34,7 +34,7 @@
     navController.navigationBar = [[BONavigationBar alloc] initWithFrame: NSZeroRect];
 
 
-    [self embedViewController: [[BOSidebarViewController alloc] initWithDefaultNib] inView: sidebar];
+    [self embedViewController: [[BOSidebarViewController alloc] initWithDefaultNib] inView: sidebarContainer];
     [self embedViewController: [[BottomViewController alloc] initWithDefaultNib] inView: bottomView];
     [self embedViewController: navController inView: mainView];
 
@@ -42,9 +42,9 @@
     navController.view.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
 
 
-    sidebar.minimumWidth = 150.0;
-    sidebar.maximumWidth = 250.0;
-    sidebar.isLocked = YES;
+    sidebarContainer.minimumWidth = 150.0;
+    sidebarContainer.maximumWidth = 250.0;
+    sidebarContainer.isLocked = YES;
 
     bottomView.minimumHeight = 40.0f;
     bottomView.maximumHeight = 60.0f;

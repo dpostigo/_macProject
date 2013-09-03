@@ -15,7 +15,6 @@
 @synthesize dividerEnabled;
 @synthesize splitView;
 @synthesize sidebar;
-//@synthesize contentView;
 @synthesize footer;
 @synthesize defaultSidebarWidth;
 @synthesize delegate;
@@ -34,21 +33,22 @@
 - (void) loadView {
     [super loadView];
 
-
-    if (splitView == nil) splitView = [[DPSplitView alloc] initWithFrame: self.view.bounds];
-
-
-    splitView.
-            dividerStyle = NSSplitViewDividerStyleThin;
-
-    if (sidebar == nil)
-        sidebar = [splitView.subviews objectAtIndex: 0];
-    if (contentView == nil) {
-
-        NSView *subview = [splitView.subviews objectAtIndex: 1];
-        contentView = [[SplitViewContainer alloc] initWithFrame: subview.bounds];
-        [self embedView: contentView inView: subview];
+    if (splitView == nil) {
+        splitView = [[DPSplitView alloc] initWithFrame: self.view.bounds];
+        [self embedView: splitView inView: self.view];
     }
+
+
+    splitView.dividerStyle = NSSplitViewDividerStyleThin;
+
+//    if (sidebar == nil)
+//        sidebar = [splitView.subviews objectAtIndex: 0];
+//    if (contentView == nil) {
+//
+//        NSView *subview = [splitView.subviews objectAtIndex: 1];
+//        contentView = [[SplitViewContainer alloc] initWithFrame: subview.bounds];
+//        [self embedView: contentView inView: subview];
+//    }
 
     sidebar.width = defaultSidebarWidth;
     sidebar.minimumWidth = defaultSidebarWidth;
@@ -76,6 +76,7 @@
 
 
 - (CGFloat) splitView: (NSSplitView *) splitView1 constrainMinCoordinate: (CGFloat) proposedMinimumPosition ofSubviewAt: (NSInteger) dividerIndex {
+
     CGFloat ret = proposedMinimumPosition;
     DPSplitView *dpSplit = (DPSplitView *) splitView1;
     return [delegate dpSplitView: dpSplit limitedCoordinateForValue: proposedMinimumPosition atDividerIndex: dividerIndex];

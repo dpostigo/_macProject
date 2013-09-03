@@ -22,6 +22,7 @@
 
 @synthesize splitView;
 
+
 //
 //- (void) setMinimumHeight: (CGFloat) minimumHeight1 {
 //    [self setMinimumHeight: minimumHeight1 shouldUpdate: YES];
@@ -74,4 +75,20 @@
 
 
 @synthesize isLocked;
+@synthesize delegate;
+
+
+- (void) notifyDelegate: (SEL) selector {
+    if (delegate && [delegate respondsToSelector: selector]) {
+        [delegate performSelector: selector withObject: self];
+
+    }
+}
+
+- (void) setMinimumWidth: (CGFloat) minimumWidth1 {
+    minimumWidth = minimumWidth1;
+    [self notifyDelegate: @selector(splitContainerChangedMinimumWidth:)];
+}
+
+
 @end

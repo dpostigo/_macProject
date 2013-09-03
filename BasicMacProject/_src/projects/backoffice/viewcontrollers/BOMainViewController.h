@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "BasicSplitViewController.h"
 #import "SplitViewContainer.h"
+#import "BasicSidebarSplitViewController.h"
 
 
-@interface BOMainViewController : BasicSplitViewController {
+@interface BOMainViewController : BasicSidebarSplitViewController {
 
     IBOutlet DPSplitView *contentSplitView;
-    IBOutlet SplitViewContainer *mainView;
+//    IBOutlet SplitViewContainer *mainView;
     IBOutlet SplitViewContainer *topView;
     IBOutlet SplitViewContainer *bottomView;
 

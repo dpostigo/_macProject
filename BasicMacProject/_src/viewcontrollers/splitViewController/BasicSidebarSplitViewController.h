@@ -11,11 +11,13 @@
 #import "BasicSplitLayoutViewController.h"
 
 
-@interface BasicSidebarSplitViewController : BasicSplitLayoutViewController {
+@interface BasicSidebarSplitViewController : BasicSplitLayoutViewController <SplitViewContainerDelegate> {
     SplitViewContainer *sidebarContainer;
+    NSView *sidebarView;
 
 }
 
 @property(nonatomic, strong) SplitViewContainer *sidebarContainer;
-- (void) setSidebarView: (NSView *) subview;
+@property(nonatomic, strong) NSView *sidebarView;
+- (void) setSidebarViewController: (NSViewController *) controller;
 @end

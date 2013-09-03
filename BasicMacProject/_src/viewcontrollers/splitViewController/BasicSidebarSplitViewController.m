@@ -15,12 +15,23 @@
 
 
 @synthesize sidebarContainer;
-
+@synthesize sidebarView;
 
 - (void) loadView {
     [super loadView];
-
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    NSLog(@"splitView = %@", splitView);
     [splitView setVertical: YES];
+}
+
+#pragma mark Getters
+
+- (SplitViewContainer *) sidebarContainer {
+    if (sidebarContainer == nil) {
+        sidebarContainer = [[SplitViewContainer alloc] init];
+        sidebarContainer.delegate = self;
+    }
+    return sidebarContainer;
 }
 
 
@@ -28,8 +39,9 @@
 
 - (void) collectViews {
     [super collectViews];
-    if (sidebarContainer) [containers addObject: sidebarContainer];
-    if (contentContainer) [containers addObject: contentContainer];
+    if (sidebarContainer) [self.containers addObject: sidebarContainer];
+    if (contentContainer) [self.containers addObject: contentContainer];
+
 }
 
 - (void) addViews {
@@ -40,12 +52,27 @@
 }
 
 
+- (void) setSidebarViewController: (NSViewController *) controller {
+    [self setSidebarView: controller.view];
+}
+
+
 - (void) setSidebarView: (NSView *) subview {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     if (subview == nil) sidebarContainer = nil;
     else {
-        sidebarContainer = [[SplitViewContainer alloc] init];
-        [sidebarContainer embedView: subview];
+        sidebarView = subview;
+        [self.sidebarContainer embedView: sidebarView];
         [self updateViews];
+    }
+}
+
+
+#pragma mark SplitViewContainerDelegate
+
+- (void) splitContainerChangedMinimumWidth: (SplitViewContainer *) splitContainer {
+    if (splitContainer.width < splitContainer.minimumWidth) {
+        splitContainer.width = splitContainer.minimumWidth;
     }
 }
 

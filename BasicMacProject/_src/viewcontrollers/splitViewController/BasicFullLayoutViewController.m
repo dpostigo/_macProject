@@ -26,7 +26,7 @@
 
     [self embedViewController: verticalViewController inView: self.view];
 
-    verticalViewController
+//    verticalViewController
 }
 
 @end
