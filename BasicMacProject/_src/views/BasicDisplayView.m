@@ -7,12 +7,12 @@
 //
 
 #import "BasicDisplayView.h"
-
+#import "NSBezierPath+Additions.h"
 
 @implementation BasicDisplayView {
 
+    NSBezierPath *undrawablePath;
 }
-
 
 @synthesize pathOptions;
 
@@ -28,24 +28,6 @@
     return self;
 }
 
-
-- (void) setup {
-    pathOptions = [[PathOptions alloc] init];
-    pathOptions.cornerRadius = 0.0;
-    pathOptions.borderWidth = 0.0;
-    pathOptions.borderColor = [NSColor lightGrayColor];
-    pathOptions.cornerOptions = CornerNone;
-    pathOptions.backgroundColor = [NSColor colorWithDeviceWhite: 0.9 alpha: 1.0];
-
-}
-
-
-- (void) drawRect: (NSRect) rect {
-    [[NSColor clearColor] set];
-    NSRectFill(rect);
-    rect = self.bounds;
-    [NSBezierPath drawBezierPathWithRect: rect options: pathOptions];
-}
 
 
 #pragma mark Getters / Setters
@@ -126,19 +108,42 @@
 //}
 
 
+
+#pragma mark BasicDisplayView
+
+- (void) setup {
+    pathOptions = [[PathOptions alloc] init];
+    pathOptions.cornerRadius = 0.0;
+    pathOptions.borderWidth = 0.0;
+    pathOptions.borderColor = [NSColor lightGrayColor];
+    pathOptions.cornerOptions = CornerNone;
+    pathOptions.backgroundColor = [NSColor colorWithDeviceWhite: 0.9 alpha: 1.0];
+
+}
+
+
+- (BOOL) preservesContentDuringLiveResize {
+    return YES;
+}
+
+
+- (void) drawRect: (NSRect) dirtyRect {
+    [[NSColor clearColor] set];
+    NSRectFill(dirtyRect);
+    dirtyRect = self.bounds;
+    [NSBezierPath drawBezierPathWithRect: dirtyRect options: pathOptions];
+}
+
+
+
 #pragma mark View overrides
 
 - (void) viewDidMoveToWindow {
     [super viewDidMoveToWindow];
 
     if (customWindow) {
-        NSLog(@"Has custom window");
-        NSLog(@"customWindow.windowFrame = %@", customWindow.windowFrame);
-        NSLog(@"customWindow.windowFrame.cornerRadius = %f", customWindow.windowFrame.cornerRadius);
         self.cornerRadius = customWindow.windowFrame.cornerRadius - 1;
-
     }
-
 }
 
 @end

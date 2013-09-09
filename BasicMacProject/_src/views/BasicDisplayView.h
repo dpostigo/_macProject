@@ -13,6 +13,7 @@
 
 @interface BasicDisplayView : BasicView {
     PathOptions *pathOptions;
+    NSImage *cacheImage;
 }
 
 @property(nonatomic) CGFloat cornerRadius;

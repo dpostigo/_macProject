@@ -27,7 +27,6 @@
 
 - (void) viewWillMoveToWindow: (NSWindow *) newWindow {
     [super viewWillMoveToWindow: newWindow];
-
 }
 
 - (void) viewDidMoveToWindow {

@@ -7,10 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BasicSidebarSplitViewController.h"
+#import "BasicViewController.h"
 
-
-@interface CartsMainViewController : BasicSidebarSplitViewController {
+@interface CartsMainViewController : BasicViewController {
 
 }
 @end

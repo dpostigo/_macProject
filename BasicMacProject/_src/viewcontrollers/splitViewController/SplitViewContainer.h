@@ -6,41 +6,36 @@
 
 
 #import <Foundation/Foundation.h>
-#import "DPSplitView.h"
 
 @class SplitViewContainer;
 
 @protocol SplitViewContainerDelegate <NSObject>
 
+@optional
 - (void) splitContainerChangedMinimumWidth: (SplitViewContainer *) splitContainer;
+- (void) splitContainerChangedMaximumWidth: (SplitViewContainer *) splitContainer;
+- (void) splitContainerChangedMinimumHeight: (SplitViewContainer *) splitContainer;
+- (void) splitContainerChangedMaximumHeight: (SplitViewContainer *) splitContainer;
+- (void) splitContainerChangedMaximumValue: (SplitViewContainer *) splitContainer;
+- (void) splitContainerChangedMinimumValue: (SplitViewContainer *) splitContainer;
 
 
 @end
 
 @interface SplitViewContainer : NSView {
 
-    id <SplitViewContainerDelegate> delegate;
-    __unsafe_unretained DPSplitView *splitView;
+    __unsafe_unretained id <SplitViewContainerDelegate> delegate;
 
-    CGFloat maximumHeight;
-    CGFloat minimumHeight;
+    CGFloat minimumValue;
+    CGFloat maximumValue;
 
-    CGFloat maximumWidth;
-    CGFloat minimumWidth;
-
+    CGFloat dividerThickness;
     BOOL isLocked;
 }
 
-
-@property(nonatomic) CGFloat maximumHeight;
-@property(nonatomic) CGFloat minimumHeight;
-@property(nonatomic) CGFloat maximumWidth;
-@property(nonatomic) CGFloat minimumWidth;
-@property(nonatomic, assign) DPSplitView *splitView;
 @property(nonatomic) BOOL isLocked;
-@property(nonatomic, strong) id <SplitViewContainerDelegate> delegate;
-- (void) setMinimumHeight: (CGFloat) minimumHeight1 shouldUpdate: (BOOL) shouldUpdate;
-- (void) setMinimumWidth: (CGFloat) minimumWidth1 shouldUpdate: (BOOL) shouldUpdate;
-- (void) setMaximumWidth: (CGFloat) maximumWidth1 shouldUpdate: (BOOL) shouldUpdate;
-- (void) setMaximumHeight: (CGFloat) maximumHeight1 shouldUpdate: (BOOL) shouldUpdate;
+@property(nonatomic, assign) id <SplitViewContainerDelegate> delegate;
+@property(nonatomic) CGFloat dividerThickness;
+@property(nonatomic) CGFloat minimumValue;
+@property(nonatomic) CGFloat maximumValue;
 @end

@@ -15,5 +15,6 @@
 @interface CartsAppDelegate : BasicAppDelegate <NSApplicationDelegate, NSMenuDelegate> {
 
     IBOutlet CartsCustomWindow *window;
+    IBOutlet NSWindow *basicWindow;
 }
 @end

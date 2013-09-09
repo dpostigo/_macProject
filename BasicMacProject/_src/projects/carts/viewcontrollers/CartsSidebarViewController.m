@@ -9,7 +9,6 @@
 #import "CartsSidebarViewController.h"
 #import "OutlineRowObject.h"
 
-
 @implementation CartsSidebarViewController {
 
 }

@@ -56,7 +56,6 @@
         buttonRect.origin.x = prevX;
 
         CGFloat diff = self.height - button.height;
-        NSLog(@"diff = %f", diff);
         diff = diff / 2;
         //        diff += (button.height / 2);
 
@@ -72,7 +71,6 @@
         prevX += button.width + itemSpacing;
         button.autoresizingMask = NSViewMinYMargin | NSViewMaxYMargin;
 
-        NSLog(@"button.autoresizingMask = %lu", button.autoresizingMask);
     }
     prevX -= itemSpacing;
     prevX += rightMargin;
@@ -82,7 +80,6 @@
     newRect.size.width = prevX;
     newRect.origin.x = newRect.origin.x == 0 ? 0 : self.superview.width - newRect.size.width;
 
-    NSLog(@"newRect.size.height = %f", newRect.size.height);
     self.frame = newRect;
 
 

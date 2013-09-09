@@ -19,7 +19,6 @@
 
 - (void) setup {
     [super setup];
-    NSLog(@"%s", __PRETTY_FUNCTION__);
     textColor = [NSColor whiteColor];
     disabledTextColor = [NSColor colorWithDeviceWhite: 0.3 alpha: 1.0];
 

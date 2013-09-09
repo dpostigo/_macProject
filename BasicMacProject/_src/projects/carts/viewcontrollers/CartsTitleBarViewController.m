@@ -20,8 +20,6 @@
 
 - (void) loadView {
     [super loadView];
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-
 
     NSButton *button = [BasicButton buttonWithImage: [NSImage imageNamed: NSImageNameAddTemplate] padding: 10.0];
     [button setEnabled: YES];

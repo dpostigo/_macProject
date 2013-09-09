@@ -48,8 +48,8 @@
     self.navigationBar.backButtonItem.target = self;
     self.navigationBar.backButtonItem.action = @selector(handleBackButton:);
 
-    infoContainer.maximumHeight = TASK_INFO_HEIGHT;
-    infoContainer.minimumHeight = TASK_INFO_HEIGHT;
+    infoContainer.maximumValue = TASK_INFO_HEIGHT;
+    infoContainer.minimumValue = TASK_INFO_HEIGHT;
     infoContainer.height        = TASK_INFO_HEIGHT;
     infoContainer.isLocked      = YES;
 

@@ -8,12 +8,11 @@
 
 #import "CartsHomeViewController.h"
 #import "BasicInnerShadowView.h"
-
+#import "NSColor+DPColors.h"
 
 @implementation CartsHomeViewController {
 
 }
-
 
 - (void) loadView {
     [super loadView];
@@ -25,7 +24,7 @@
     //            [[BorderOption alloc] initWithBorderColor: [NSColor darkGrayColor] borderWidth: 0.5 type: BorderTypeLeft],
     //            [[BorderOption alloc] initWithBorderColor: [NSColor darkGrayColor] borderWidth: 0.5 type: BorderTypeRight],
     //            nil];
-    backgroundView.gradient = [[NSGradient alloc] initWithColors: [NSArray arrayWithObjects: [NSColor blueColor], [NSColor whiteColor], nil]];
+    backgroundView.gradient = [[NSGradient alloc] initWithColors: [NSArray arrayWithObjects: [NSColor offwhiteColor], [NSColor whiteColor], nil]];
     [self embedView: backgroundView inView: self.view];
 
 }

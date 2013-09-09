@@ -8,31 +8,29 @@
 #import <Foundation/Foundation.h>
 #import "BasicViewController.h"
 #import "SplitViewContainer.h"
-#import "DPSplitView.h";
-#import "DPSplitViewDelegate.h"
+#import "BasicSplitView.h"
 
+@class SplitViewContainer;
 
-@interface BasicSplitViewController : BasicViewController <NSSplitViewDelegate> {
+@protocol BasicSplitViewControllerDelegate <NSObject>
+
+@optional
+
+@end
+
+@interface BasicSplitViewController : BasicViewController <NSSplitViewDelegate, BasicSplitViewDelegate> {
     BOOL dividerEnabled;
-    IBOutlet DPSplitView *splitView;
-
-
-    CGFloat defaultSidebarWidth;
-    DPSplitViewDelegate *delegate;
+    IBOutlet BasicSplitView *splitView;
 
 }
 
-
 @property(nonatomic) BOOL dividerEnabled;
-@property(nonatomic, strong) DPSplitView *splitView;
-@property(nonatomic, strong) SplitViewContainer *sidebar;
-//@property(nonatomic, strong) SplitViewContainer *contentView;
-@property(nonatomic, strong) SplitViewContainer *footer;
-@property(nonatomic) CGFloat defaultSidebarWidth;
-@property(nonatomic, strong) DPSplitViewDelegate *delegate;
+@property(nonatomic, strong) BasicSplitView *splitView;
 - (SplitViewContainer *) splitViewContainerAtIndex: (NSInteger) index1;
-//- (CGFloat) dpSplitView: (DPSplitView *) dpSplit limitedCoordinateForValue: (CGFloat) proposedValue atDividerIndex: (NSInteger) dividerIndex;
-//- (CGFloat) limitedCoordinateForSplitContainer: (SplitViewContainer *) splitContainer forProposedValue: (CGFloat) proposedValue splitView: (DPSplitView *) dpSplit;
-//- (CGFloat) verticalSplitView: (DPSplitView *) dpSplit limitCoordinate: (SplitViewContainer *) splitContainer forProposedValue: (CGFloat) proposedValue;
-//- (CGFloat) horizontalSplitView: (DPSplitView *) dpSplit limitCoordinate: (SplitViewContainer *) splitContainer forProposedValue: (CGFloat) proposedValue;
+- (SplitViewContainer *) splitContainerAtIndex: (NSInteger) index1;
+- (void) addViewController: (NSViewController *) controller;
+- (CGFloat) basicSplitView: (BasicSplitView *) splitview constrainSplitPosition: (CGFloat) proposedPosition atIndex: (NSInteger) index;
+- (CGFloat) basicSplitView: (BasicSplitView *) splitview constrainMinCoordinate: (CGFloat) proposedMinimumPosition atIndex: (NSInteger) dividerIndex;
+- (CGFloat) basicSplitView: (BasicSplitView *) splitview constrainMaxCoordinate: (CGFloat) proposedMaximumPosition atIndex: (NSInteger) dividerIndex;
+- (BOOL) basicSplitView: (BasicSplitView *) splitview shouldAdjustSizeOfSplitContainer: (SplitViewContainer *) splitContainer;
 @end

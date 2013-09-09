@@ -33,7 +33,6 @@
     self = [super initWithFrame: frameRect];
     if (self) {
         [self setup];
-        NSLog(@"%s", __PRETTY_FUNCTION__);
     }
 
     return self;

@@ -8,12 +8,10 @@
 #import <Foundation/Foundation.h>
 #import "BasicCustomWindow.h"
 
-
 @interface BasicView : NSView {
 
-    BasicCustomWindow *customWindow;
+    __unsafe_unretained BasicCustomWindow *customWindow;
 }
 
-
-@property(nonatomic, strong) BasicCustomWindow *customWindow;
+@property(nonatomic, assign) BasicCustomWindow *customWindow;
 @end

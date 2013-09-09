@@ -9,16 +9,13 @@
 #import "PathOptions.h"
 #import "NSBezierPath+Additions.h"
 
-
 @implementation NSBezierPath (DPUtils)
-
 
 + (NSBezierPath *) bezierPathWithRect: (NSRect) rect cornerRadius: (CGFloat) radius options: (NSBezierPathCornerOptions) options {
 
     if (radius == 0.0 || (options & CornerNone)) {
         return [NSBezierPath bezierPathWithRect: rect];
     }
-
 
     if (options & (CornerUpperLeft | CornerUpperRight | CornerLowerLeft | CornerLowerRight)) {
         return [NSBezierPath bezierPathWithRoundedRect: rect xRadius: radius yRadius: radius];
@@ -30,7 +27,6 @@
 
     CGFloat xOffset = rect.origin.x;
     CGFloat yOffset = rect.origin.y;
-
 
     [path moveToPoint: NSMakePoint(radius + xOffset, 0)];
     [path lineToPoint: NSMakePoint(rect.size.width - radius + xOffset, 0)];
@@ -53,7 +49,6 @@
         [path lineToPoint: endPoint];
     }
 
-
     endPoint = NSMakePoint(0 + xOffset, rect.size.height - radius);
     thruPoint = NSMakePoint(0 + xOffset, rect.size.height);
     if (options & CornerUpperLeft) {
@@ -62,7 +57,6 @@
         [path lineToPoint: thruPoint];
         [path lineToPoint: endPoint];
     }
-
 
     endPoint = NSMakePoint(radius + xOffset, 0);
     thruPoint = NSMakePoint(0 + xOffset, 0);
@@ -83,7 +77,6 @@
 + (void) drawBezierPathWithRect: (NSRect) rect options: (PathOptions *) pathOptions {
     NSBezierPath *path = [NSBezierPath bezierPathWithRect: rect options: pathOptions];
     [path drawWithPathOptions: pathOptions];
-
 
     for (BorderOption *borderOption in pathOptions.borderOptions) {
         if (borderOption.borderType & BorderTypeAll) [path drawWithBorderOption: borderOption];
@@ -142,11 +135,39 @@
 }
 
 - (void) drawWithPathOptions: (PathOptions *) pathOptions {
-    if (pathOptions.gradient != nil) [pathOptions.gradient drawInBezierPath: self angle: 90];
+    if (pathOptions.gradient != nil) {
+        [pathOptions.gradient drawInBezierPath: self angle: 90];
+    }
     else [self drawWithFill: pathOptions.backgroundColor];
-    if (pathOptions.horizontalGradient != nil) [pathOptions.horizontalGradient drawInBezierPath: self angle: 0];
-    if (pathOptions.innerShadow != nil) [self drawShadow: pathOptions.innerShadow];
-    if (pathOptions.borderType == BorderTypeAll) [self drawStroke: pathOptions.borderColor width: pathOptions.borderWidth];
+    if (pathOptions.horizontalGradient != nil) {
+        [pathOptions.horizontalGradient drawInBezierPath: self angle: 0];
+    }
+    if (pathOptions.innerShadow != nil) {
+        [self drawShadow: pathOptions.innerShadow];
+    }
+    if (pathOptions.borderType == BorderTypeAll) {
+        [self drawStroke: pathOptions.borderColor width: pathOptions.borderWidth];
+    }
+
+    [pathOptions.gradient drawInBezierPath: self angle: 90];
+    //    if (pathOptions.gradient != nil) {
+    //        [pathOptions.gradient drawInBezierPath: self angle: 90];
+    //    }
+    //    else {
+    //
+    ////        [self drawWithFill: pathOptions.backgroundColor];
+    //    }
+
+    //
+    //    if (pathOptions.horizontalGradient != nil) {
+    //        [pathOptions.horizontalGradient drawInBezierPath: self angle: 0];
+    //    }
+    //    if (pathOptions.innerShadow != nil) {
+    //        [self drawShadow: pathOptions.innerShadow];
+    //    }
+    //    if (pathOptions.borderType == BorderTypeAll) {
+    //        [self drawStroke: pathOptions.borderColor width: pathOptions.borderWidth];
+    //    }
 }
 
 

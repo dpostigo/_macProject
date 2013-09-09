@@ -9,7 +9,6 @@
 #import "NSBezierPath+Additions.h"
 #import "NSBezierPath+DPUtils.h"
 
-
 #define INSETX 16.0f
 #define INSETY 7.0f
 #define RADIUS 3.0f
@@ -23,9 +22,7 @@
 #define RIGHT_SIDE_CELL_COLOR [NSColor colorWithCalibratedWhite:0.8 alpha:1.0]
 #define CELL_BORDER_COLOR [NSColor whiteColor]
 
-
 @implementation BasicCustomRowView
-
 
 @synthesize selectedGradient;
 
@@ -52,7 +49,6 @@
                 [NSColor colorWithWhite: 0.90], 0.8,
                 [NSColor colorWithWhite: 0.85], 1.0,
                 nil];
-
 
         pathOptions.outerShadow = [[NSShadow alloc] init];
         pathOptions.outerShadow.shadowColor = [NSColor blackColor];
@@ -97,11 +93,11 @@
     //    [roundedPath drawShadow: self.shadow shadowOpacity: shadowOpacity];
 
 
-//    NSBezierPath *path = [NSBezierPath bezierPathWithRect: dirtyRect options: pathOptions];
-//    [path drawWithPathOptions: self.selected ? selectedPathOptions : pathOptions];
-//
-//    NSBezierPath *borderPath = [NSBezierPath bezierPathWithRect: dirtyRect borderType: pathOptions.borderOption.borderType];
-//    [borderPath drawWithBorderOption: pathOptions.borderOption];
+    //    NSBezierPath *path = [NSBezierPath bezierPathWithRect: dirtyRect options: pathOptions];
+    //    [path drawWithPathOptions: self.selected ? selectedPathOptions : pathOptions];
+    //
+    //    NSBezierPath *borderPath = [NSBezierPath bezierPathWithRect: dirtyRect borderType: pathOptions.borderOption.borderType];
+    //    [borderPath drawWithBorderOption: pathOptions.borderOption];
 
     [NSBezierPath drawBezierPathWithRect: dirtyRect options: pathOptions];
 }
