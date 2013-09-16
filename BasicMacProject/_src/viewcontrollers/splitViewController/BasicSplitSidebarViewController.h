@@ -10,7 +10,7 @@
 #import "BasicSplitHorizontalViewController.h"
 
 @interface BasicSplitSidebarViewController : BasicSplitHorizontalViewController {
-NSUInteger sidebarIndex;
+    NSUInteger sidebarIndex;
 
 }
 

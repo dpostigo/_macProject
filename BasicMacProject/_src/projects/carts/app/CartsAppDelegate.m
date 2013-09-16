@@ -16,14 +16,13 @@
 - (void) applicationDelegateDidFinishLaunching: (NSNotification *) notification {
     [super applicationDelegateDidFinishLaunching: notification];
 
-    CartsTitleBarViewController *titleController = [[CartsTitleBarViewController alloc] init];
-    [self embedViewController: [[CartsTitleBarViewController alloc] init] inView: window.titleBarView];
-    [self embedViewController: [[CartsMainViewController alloc] initWithDefaultNib] inView: window.contentView];
+    //    CartsTitleBarViewController *titleController = [[CartsTitleBarViewController alloc] init];
+    //    [self embedViewController: [[CartsTitleBarViewController alloc] init] inView: window.titleBarView];
+    //    [self embedViewController: [[CartsMainViewController alloc] initWithDefaultNib] inView: window.contentView];
 
-    NSLog(@"basicWindow.contentView = %@", basicWindow.contentView);
     CartsMainViewController *mainController = [[CartsMainViewController alloc] init];
     basicWindow.contentView = mainController.view;
-//    [self embedView: mainController.view inView: basicWindow.contentView];
+    //    [self embedView: mainController.view inView: basicWindow.contentView];
 
 }
 

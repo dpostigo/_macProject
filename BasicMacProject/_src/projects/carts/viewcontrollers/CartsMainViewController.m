@@ -21,25 +21,35 @@
 - (void) loadView {
     [super loadView];
 
+    CartsSidebarViewController *sidebarController = [[CartsSidebarViewController alloc] init];
+    CartsHomeViewController *homeController = [[CartsHomeViewController alloc] init];
+
     BasicSplitSidebarViewController *splitViewController = [[BasicSplitSidebarViewController alloc] init];
-    [splitViewController addViewController: [[CartsSidebarViewController alloc] init]];
-    [splitViewController addViewController: [[CartsHomeViewController alloc] init]];
+    [splitViewController addViewController: sidebarController];
+    [splitViewController addViewController: homeController];
     splitViewController.sidebarContainer.minimumValue = 100;
-//    splitViewController.splitView.dividerThickness = 0.5;
+    //    splitViewController.splitView.dividerThickness = 0.5;
+
 
     BasicLayoutViewController *verticalController = [[BasicLayoutViewController alloc] init];
     [verticalController addViewController: splitViewController];
     [verticalController addViewController: [[CartsHomeViewController alloc] init]];
     verticalController.footerContainer.minimumValue = 40;
     verticalController.footerContainer.maximumValue = 40;
-//    verticalController.splitView.dividerThickness = 0.5;
+    //        verticalController.splitView.dividerThickness = 0.5;
 
     NSLog(@"Will embed.");
     [self embedViewController: verticalController inView: self.view];
+    //    [self embedViewController: splitViewController inView: self.view];
     NSLog(@"Did embed.");
 
 
 
+    //
+    //    NSSplitView *splitView = [[NSSplitView alloc] init];
+    //    [splitView addSubview: [[NSView alloc] init]];
+    //    [splitView addSubview: [[NSView alloc] init]];
+    //    [self embedView: splitView inView: self.view];
 
     //    BasicSidebarSplitViewControllerOld *sidebarSplitViewController = [[BasicSidebarSplitViewControllerOld alloc] init];
     //    [sidebarSplitViewController setSidebarViewController: [[CartsSidebarViewController alloc] init]];

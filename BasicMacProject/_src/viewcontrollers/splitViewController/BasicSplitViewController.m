@@ -38,23 +38,10 @@
 
 
 
-#pragma mark Helpers
-
-- (SplitViewContainer *) splitViewContainerAtIndex: (NSInteger) index {
-    NSView *subview = [splitView.subviews objectAtIndex: index];
-    if (subview && [subview isKindOfClass: [SplitViewContainer class]]) {
-        SplitViewContainer *container = (SplitViewContainer *) subview;
-        return container;
-    }
-    return nil;
-}
-
-
 #pragma mark NSSplitViewDelegate
 
 
 - (CGFloat) splitView: (NSSplitView *) splitView1 constrainMinCoordinate: (CGFloat) proposedMinimumPosition ofSubviewAt: (NSInteger) dividerIndex {
-    //    NSLog(@"%s", __PRETTY_FUNCTION__);
     CGFloat ret = proposedMinimumPosition;
 
     if ([splitView1 isKindOfClass: [BasicSplitView class]]) {
@@ -64,26 +51,17 @@
         }
     }
 
-    //    BasicSplitView *dpSplit = (BasicSplitView *) splitView1;
-    //    ret = [delegate dpSplitView: dpSplit limitedCoordinateForValue: proposedMinimumPosition atDividerIndex: dividerIndex];
-
     return ret;
 }
 
 - (CGFloat) splitView: (NSSplitView *) splitView1 constrainMaxCoordinate: (CGFloat) proposedMaximumPosition ofSubviewAt: (NSInteger) dividerIndex {
-
     CGFloat ret = proposedMaximumPosition;
-
     if ([splitView1 isKindOfClass: [BasicSplitView class]]) {
         BasicSplitView *basicSplitView = (BasicSplitView *) splitView1;
         if ([basicSplitView.splitContainers count] > 0) {
             ret = [self basicSplitView: basicSplitView constrainMaxCoordinate: proposedMaximumPosition atIndex: dividerIndex];
         }
     }
-
-    //    BasicSplitView *dpSplit = (BasicSplitView *) splitView1;
-    //    return [delegate dpSplitView: dpSplit limitedCoordinateForValue: proposedMaximumPosition atDividerIndex: dividerIndex];
-
     return ret;
 }
 
@@ -96,9 +74,6 @@
             ret = [self basicSplitView: basicSplitView constrainSplitPosition: proposedPosition atIndex: dividerIndex];
         }
     }
-
-    //    BasicSplitView *dpSplit = (BasicSplitView *) splitView1;
-    //    ret = [delegate dpSplitView: dpSplit limitedCoordinateForValue: proposedPosition atDividerIndex: dividerIndex];
     return ret;
 }
 
@@ -114,21 +89,18 @@
 }
 
 
-
-#pragma mark NSSplitViewDelegate Divider
-
 - (NSRect) splitView: (NSSplitView *) splitView1 effectiveRect: (NSRect) proposedEffectiveRect forDrawnRect: (NSRect) drawnRect ofDividerAtIndex: (NSInteger) dividerIndex {
 
     NSRect ret = NSZeroRect;
     if (dividerEnabled) {
         ret = proposedEffectiveRect;
     }
-
+//    NSLog(@"ret = %@", NSStringFromRect(ret));
     return ret;
 }
 
 - (BOOL) splitView: (NSSplitView *) splitView1 shouldHideDividerAtIndex: (NSInteger) dividerIndex {
-    NSLog(@"dividerIndex = %li", dividerIndex);
+    //NSLog(@"dividerIndex = %li", dividerIndex);
     return NO;
 }
 
@@ -195,17 +167,13 @@
 }
 
 - (void) basicSplitView: (BasicSplitView *) basicSplitView didResizeSplitContainerAtIndex: (NSUInteger) index {
-    NSLog(@"%s %lu", __PRETTY_FUNCTION__, index);
+//    NSLog(@"%s %lu", __PRETTY_FUNCTION__, index);
 }
 
 
 
 
 #pragma mark Init
-
-- (SplitViewContainer *) splitContainerAtIndex: (NSInteger) index {
-    return [splitView.splitContainers objectAtIndex: index];
-}
 
 
 - (void) addViewController: (NSViewController *) controller {

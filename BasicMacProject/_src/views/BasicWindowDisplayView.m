@@ -13,8 +13,48 @@
 
     NSBezierPath *undrawablePath;
 }
+////
+//- (BOOL) acceptsFirstResponder {
+//    return YES;
+//}
+//
+//- (BOOL) canBecomeKeyView {
+//    return YES;
+//}
 
 
+- (void) viewDidMoveToWindow {
+    [super viewDidMoveToWindow];
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+
+    //    [self.window setAcceptsMouseMovedEvents: YES];
+//    [self.window setInitialFirstResponder: self];
+//    [self setNextResponder: self.window];
+//    [self.window setNextResponder: self];
+
+    NSLog(@"self.nextResponder = %@", self.nextResponder);
+    NSLog(@"self.nextKeyView = %@", self.nextKeyView);
+    NSLog(@"self.superview = %@", self.superview);
+//    [self.window setInitialFirstResponder: self];
+
+    //    self.superview.responder
+//    [self becomeFirstResponder];
+
+
+}
+
+- (void) mouseMoved: (NSEvent *) theEvent {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+- (void) mouseDown: (NSEvent *) theEvent {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+- (void) setNextResponder: (NSResponder *) aResponder {
+    NSLog(@"%s, %@", __PRETTY_FUNCTION__, aResponder);
+    [super setNextResponder: aResponder];
+}
 
 
 

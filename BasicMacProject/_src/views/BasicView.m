@@ -8,13 +8,11 @@
 #import "BasicView.h"
 #import "BasicCustomWindow.h"
 
-
 @implementation BasicView {
+    NSTrackingRectTag trackingRect;
 }
 
-
 @synthesize customWindow;
-
 
 - (void) viewWillDraw {
     [super viewWillDraw];
@@ -31,12 +29,19 @@
 
 - (void) viewDidMoveToWindow {
     [super viewDidMoveToWindow];
+
     if ([self.window isKindOfClass: [BasicCustomWindow class]]) self.customWindow = (BasicCustomWindow *) self.window;
 }
 
 - (BOOL) isOpaque {
     return NO;
 }
+
+
+//
+//- (BOOL) canBecomeKeyView {
+//    return NO;
+//}
 
 
 @end

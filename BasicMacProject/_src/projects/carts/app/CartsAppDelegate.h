@@ -11,10 +11,10 @@
 #import "BasicCustomWindow.h"
 #import "CartsCustomWindow.h"
 
-
 @interface CartsAppDelegate : BasicAppDelegate <NSApplicationDelegate, NSMenuDelegate> {
 
     IBOutlet CartsCustomWindow *window;
+    IBOutlet NSWindow *macWindow;
     IBOutlet NSWindow *basicWindow;
 }
 @end

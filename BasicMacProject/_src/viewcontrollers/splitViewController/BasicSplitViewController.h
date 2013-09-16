@@ -26,8 +26,6 @@
 
 @property(nonatomic) BOOL dividerEnabled;
 @property(nonatomic, strong) BasicSplitView *splitView;
-- (SplitViewContainer *) splitViewContainerAtIndex: (NSInteger) index1;
-- (SplitViewContainer *) splitContainerAtIndex: (NSInteger) index1;
 - (void) addViewController: (NSViewController *) controller;
 - (CGFloat) basicSplitView: (BasicSplitView *) splitview constrainSplitPosition: (CGFloat) proposedPosition atIndex: (NSInteger) index;
 - (CGFloat) basicSplitView: (BasicSplitView *) splitview constrainMinCoordinate: (CGFloat) proposedMinimumPosition atIndex: (NSInteger) dividerIndex;

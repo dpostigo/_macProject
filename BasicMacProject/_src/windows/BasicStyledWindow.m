@@ -16,20 +16,21 @@
 }
 
 - (void) setup {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     [super setup];
 
     self.topMargin = 30;
-    self.backgroundColor = [NSColor clearColor];
+    //    self.backgroundColor = [NSColor clearColor];
 
     BasicWindowDisplayView *barView = [[BasicWindowDisplayView alloc] init];
     barView.identifier = @"WindowBackground";
     barView.gradient = [[NSGradient alloc] initWithColors: [NSArray arrayWithObjects: [NSColor colorWithDeviceWhite: 0.2 alpha: 1.0], [NSColor blackColor], nil]];
-    [self setWindowBackgroundView: barView];
 
     barView.cornerRadius = 5;
     barView.borderWidth = 0;
-//    barView.pathOptions.backgroundColor = [NSColor colorWithDeviceWhite: 0.1 alpha: 1.0];
+    //    barView.pathOptions.backgroundColor = [NSColor colorWithDeviceWhite: 0.1 alpha: 1.0];
 
+    [self setWindowBackgroundView: barView];
     [self setPreservesContentDuringLiveResize: YES];
 }
 

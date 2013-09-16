@@ -40,9 +40,10 @@
 
 - (void) setup {
     [self setOpaque: NO];
-    self.backgroundColor = [NSColor clearColor];
+    self.backgroundColor = [NSColor blackColor];
     [self setMovable: YES];
     [self setMovableByWindowBackground: YES];
+    [self setAcceptsMouseMovedEvents: YES];
 
     self.topMargin = 10;
     self.bottomMargin = 10;
@@ -55,10 +56,29 @@
     return [super contentView];
 }
 
-- (void) setWindowBackgroundView: (NSView *) aView {
+
+
+- (void) setWindowBackgroundView: (BasicWindowDisplayView *) aView {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     aView.bounds = self.bounds;
-    [super setContentView: aView];
+
+    //    NSLog(@"BEFORE super.contentView = %@", super.contentView);
+    //    [super setContentView: aView];
+    //    NSLog(@"AFTER super.contentView = %@", super.contentView);
+
+    //    NSLog(@"Adding internalContentView again.");
+
+    [internalContentView removeFromSuperview];
+    internalContentView = aView;
+    internalContentView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    //        [internalContentView resignFirstResponder];
+    //        [internalContentView setHidden: YES];
+    //        [internalContentView becomeFirstResponder];
     [super.contentView addSubview: internalContentView];
+
+
+
+    //    [super.contentView addSubview: internalContentView];
 }
 
 - (void) setContentRect: (NSRect) contentRect1 {
@@ -75,11 +95,14 @@
 }
 
 - (void) setContentView: (NSView *) aView {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     if (internalContentView == nil) {
         [super setContentView: aView];
-        internalContentView = [[BasicView alloc] initWithFrame: self.contentRect];
+        internalContentView = [[BasicWindowDisplayView alloc] initWithFrame: self.contentRect];
         internalContentView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+        NSLog(@"Adding internalContentView.");
         [super.contentView addSubview: internalContentView];
+
     } else {
         [internalContentView removeAllSubviews];
         [internalContentView embedView: aView];
@@ -120,6 +143,18 @@
 
     NSRect ret = NSMakeRect(leftMargin, bottomMargin, self.bounds.size.width - leftMargin - rightMargin, self.bounds.size.height - topMargin - bottomMargin);
     [self setContentRect: ret];
+}
+
+
+#pragma mark Mouse
+
+- (void) mouseEntered: (NSEvent *) theEvent {
+    //    [super mouseEntered: theEvent];
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+- (void) mouseMoved: (NSEvent *) theEvent {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 

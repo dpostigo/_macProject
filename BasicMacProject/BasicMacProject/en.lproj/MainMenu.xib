@@ -1307,7 +1307,6 @@
 					<string key="NSFrameSize">{600, 400}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
-					<reference key="NSNextKeyView"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMinSize">{600, 400}</string>
@@ -1337,7 +1336,6 @@
 					<string key="NSFrameSize">{600, 400}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
-					<reference key="NSNextKeyView"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMinSize">{600, 422}</string>
@@ -3214,7 +3212,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">546</int>
+			<int key="maxID">548</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3255,11 +3253,16 @@
 					<string key="superclassName">BasicAppDelegate</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="basicWindow">NSWindow</string>
+						<string key="macWindow">NSWindow</string>
 						<string key="window">CartsCustomWindow</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="basicWindow">
 							<string key="name">basicWindow</string>
+							<string key="candidateClassName">NSWindow</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="macWindow">
+							<string key="name">macWindow</string>
 							<string key="candidateClassName">NSWindow</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="window">

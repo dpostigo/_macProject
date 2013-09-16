@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "BasicView.h"
+#import "BasicWindowDisplayView.h"
 
 @interface BasicNewCustomWindow : NSWindow {
-    BasicView *internalContentView;
+    BasicWindowDisplayView *internalContentView;
 
     CGFloat topMargin;
     CGFloat bottomMargin;
@@ -21,7 +22,7 @@
 
 }
 
-@property(nonatomic, strong) BasicView *internalContentView;
+@property(nonatomic, strong) BasicWindowDisplayView *internalContentView;
 @property(nonatomic, strong) id windowBackgroundView;
 @property(nonatomic) NSRect contentRect;
 @property(nonatomic) CGFloat topMargin;
