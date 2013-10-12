@@ -8,16 +8,14 @@
 
 #import "BasicSparrowSidebarViewController.h"
 
-
 @implementation BasicSparrowSidebarViewController {
 
 }
 
-
 - (void) loadView {
     [super loadView];
 
-    self.allowsSelection    = YES;
+    self.allowsSelection = YES;
     outline.backgroundColor = [NSColor colorWithString: @"292D35"];
     [self expand];
 }
@@ -36,7 +34,7 @@
 - (BasicTableCellView *) headerCellForOutlineSection: (OutlineSection *) outlineSection {
     BasicTableCellView *cell = [super headerCellForOutlineSection: outlineSection];
     cell.textFieldCustom.textColor = [NSColor whiteColor];
-    cell.textFieldCustom.text      = outlineSection.title;
+    cell.textFieldCustom.text = outlineSection.title;
 
     return cell;
 }

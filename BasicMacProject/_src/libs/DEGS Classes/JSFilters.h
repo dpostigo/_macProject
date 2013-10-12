@@ -15,7 +15,7 @@
 
 @property(nonatomic) NSUInteger where;
 @property(readonly, nonatomic, strong) NSArray *whereOptions;
-@property(readonly) NSArray                    *filters;
+@property(readonly) NSArray *filters;
 
 - (NSXMLElement *) exportAsXML;
 - (id) initFromXML: (NSXMLElement *) anElement;

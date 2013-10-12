@@ -11,14 +11,12 @@
 #import "Task.h"
 #import "BasicOutlineViewController.h"
 
-
 @interface TasksViewController : BasicOutlineViewController {
-    Task     *createdTask;
+    Task *createdTask;
     NSString *taskMode;
 }
 
-
-@property(nonatomic, strong) Task     *createdTask;
+@property(nonatomic, strong) Task *createdTask;
 @property(nonatomic, retain) NSString *taskMode;
 - (IBAction) handleAddTask: (id) sender;
 - (IBAction) handleSettingsButton: (id) sender;

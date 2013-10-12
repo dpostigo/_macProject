@@ -8,19 +8,17 @@
 #import <Foundation/Foundation.h>
 #import "RowObject.h"
 
-
 @interface TableRowObject : RowObject {
     NSString *textLabel;
     NSString *detailTextLabel;
-    NSImage  *image;
-    NSImage  *selectedImage;
+    NSImage *image;
+    NSImage *selectedImage;
 }
-
 
 @property(nonatomic, retain) NSString *textLabel;
 @property(nonatomic, retain) NSString *detailTextLabel;
-@property(nonatomic, strong) NSImage  *image;
-@property(nonatomic, strong) NSImage  *selectedImage;
+@property(nonatomic, strong) NSImage *image;
+@property(nonatomic, strong) NSImage *selectedImage;
 - (id) initWithTextLabel: (NSString *) aTextLabel;
 - (id) initWithTextLabel: (NSString *) aTextLabel detailTextLabel: (NSString *) aDetailTextLabel cellIdentifier: (NSString *) aCellIdentifier;
 - (id) initWithTextLabel: (NSString *) aTextLabel detailTextLabel: (NSString *) aDetailTextLabel image: (NSImage *) anImage;

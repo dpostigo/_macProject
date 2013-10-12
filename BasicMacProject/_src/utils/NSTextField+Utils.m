@@ -7,7 +7,6 @@
 
 #import "NSTextField+Utils.h"
 
-
 @implementation NSTextField (Utils)
 
 //

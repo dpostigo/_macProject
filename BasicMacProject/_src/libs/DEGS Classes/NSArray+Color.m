@@ -31,7 +31,6 @@
 
 #import "NSArray+Color.h"
 
-
 @implementation NSArray (UKColor)
 
 // -----------------------------------------------------------------------------
@@ -67,9 +66,9 @@
     float fRed = 0, fGreen = 0, fBlue = 0, fAlpha = 1.0;
 
     if ([self count] >= 3) {
-        fRed   = [self[0] floatValue];
+        fRed = [self[0] floatValue];
         fGreen = [self[1] floatValue];
-        fBlue  = [self[2] floatValue];
+        fBlue = [self[2] floatValue];
     }
     if ([self count] > 3)    // Have alpha info?
         fAlpha = [self[3] floatValue];

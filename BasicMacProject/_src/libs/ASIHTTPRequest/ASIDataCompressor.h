@@ -14,7 +14,7 @@
 #import <zlib.h>
 
 @interface ASIDataCompressor : NSObject {
-    BOOL     streamReady;
+    BOOL streamReady;
     z_stream zStream;
 }
 

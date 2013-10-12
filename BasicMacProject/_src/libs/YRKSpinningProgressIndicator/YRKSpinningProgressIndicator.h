@@ -12,7 +12,7 @@
 
     BOOL _isAnimating;
     BOOL _isFadingOut;
-    NSTimer  *_animationTimer;
+    NSTimer *_animationTimer;
     NSThread *_animationThread;
 
     NSColor *_foreColor;
@@ -23,7 +23,7 @@
     BOOL _usesThreadedAnimation;
 
     // For determinate mode
-    BOOL   _isIndeterminate;
+    BOOL _isIndeterminate;
     double _currentValue;
     double _maxValue;
 }
@@ -33,11 +33,11 @@
 @property(nonatomic, assign) BOOL drawsBackground;
 
 @property(nonatomic, assign, getter=isDisplayedWhenStopped) BOOL displayedWhenStopped;
-@property(nonatomic, assign) BOOL                                usesThreadedAnimation;
+@property(nonatomic, assign) BOOL usesThreadedAnimation;
 
 @property(nonatomic, assign, getter=isIndeterminate) BOOL indeterminate;
-@property(nonatomic, assign) double                       doubleValue;
-@property(nonatomic, assign) double                       maxValue;
+@property(nonatomic, assign) double doubleValue;
+@property(nonatomic, assign) double maxValue;
 
 - (void) stopAnimation: (id) sender;
 - (void) startAnimation: (id) sender;

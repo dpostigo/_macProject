@@ -7,10 +7,8 @@
 
 #import "BasicFullWindow.h"
 
-
 @implementation BasicFullWindow {
 }
-
 
 @synthesize mainView;
 

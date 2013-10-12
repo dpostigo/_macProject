@@ -7,7 +7,6 @@
 
 #import "BasicTableCellView.h"
 
-
 @implementation BasicTableCellView {
 }
 

@@ -8,14 +8,11 @@
 #import "BasicSecureTextField.h"
 #import "BasicSecureTextFieldCell.h"
 
-
 @implementation BasicSecureTextField {
 }
 
-
 @synthesize tableSection;
 @synthesize rowObject;
-
 
 + (Class) cellClass {
     return [BasicSecureTextFieldCell class];

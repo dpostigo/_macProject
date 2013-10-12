@@ -26,25 +26,22 @@
 
 #define KEYBOARD_HEIGHT 0
 
-
 @implementation TaskDiscussionViewController {
     TTTTimeIntervalFormatter *formatter;
-    BasicTextFieldCellView   *footerCell;
-    NSString                 *selectedCommentText;
-    BasicTextField           *commentTextField;
-    NSButton                 *postButton;
+    BasicTextFieldCellView *footerCell;
+    NSString *selectedCommentText;
+    BasicTextField *commentTextField;
+    NSButton *postButton;
     CGFloat keyboardHeight;
     DiscussionItem *tempItem;
 }
-
 
 @synthesize detailController;
 
 - (void) loadView {
     [super loadView];
 
-
-    formatter      = [[TTTTimeIntervalFormatter alloc] init];
+    formatter = [[TTTTimeIntervalFormatter alloc] init];
     keyboardHeight = 300;
     self.allowsSelection = NO;
     [_queue addOperation: [[GetDiscussionProcess alloc] initWithTask: _model.selectedTask]];
@@ -82,10 +79,10 @@
     }
 
     DiscussionItem *item = rowObject.content;
-    NSString       *text = item.text;
+    NSString *text = item.text;
     CGSize constraint = CGSizeMake(table.width - (10 * 2), 20000.0f);
 
-    NSSize  size   = [text sizeWithWidth: constraint.width andFont: [NSFont systemFontOfSize: 12.0]];
+    NSSize size = [text sizeWithWidth: constraint.width andFont: [NSFont systemFontOfSize: 12.0]];
     CGFloat height = MAX(size.height, 68.0f);
     return height + (5 * 2);
 }
@@ -118,18 +115,16 @@
         DiscussionItem *item = rowObject.content;
         cell.textFieldCustom.stringValue = item.text;
 
-
         if (item.contact != nil) {
             [cell.imageView setImageWithURL: [item.contact.thumbnailURL URL]];
 
             //            [cell.imageView prettifyWithBackgroundColor: [UIColor clearColor]];
         }
-        cell.captionLabel.text    = [formatter stringForTimeIntervalFromDate: item.createdDate toDate: [NSDate date]];
+        cell.captionLabel.text = [formatter stringForTimeIntervalFromDate: item.createdDate toDate: [NSDate date]];
         cell.detailTextLabel.text = [NSString stringWithFormat: @"%@ said: ", item.contact.displayName];
 
         //        [cell.imageView rasterize];
     } else if ([rowObject.cellIdentifier isEqualToString: @"FooterCell"]) {
-
 
         [cell.imageView setImageWithURL: [_model.currentUser.thumbnailURL URL]];
 
@@ -192,7 +187,7 @@
 
     DiscussionItem *item = [[DiscussionItem alloc] init];
     item.contact = _model.currentUser;
-    item.text    = selectedCommentText == nil ? @"" : selectedCommentText;
+    item.text = selectedCommentText == nil ? @"" : selectedCommentText;
     [self addDiscussionItem: item];
 
     //    [_queue addOperation: [[PostCommentOperation alloc] initWithTask: _model.selectedTask discussionItem: item]];
@@ -245,12 +240,11 @@
 - (void) addDiscussionItem: (DiscussionItem *) item {
     NSLog(@"%s", __PRETTY_FUNCTION__);
 
-
     [commentTextField setEditable: YES];
 
     tempItem = item;
-    TableSection   *tableSection = [dataSource objectAtIndex: 0];
-    TableRowObject *rowObject    = [[TableRowObject alloc] initWithContent: item cellIdentifier: @"DataCell"];
+    TableSection *tableSection = [dataSource objectAtIndex: 0];
+    TableRowObject *rowObject = [[TableRowObject alloc] initWithContent: item cellIdentifier: @"DataCell"];
     [_model.selectedTask.discussion addObject: item];
 
     //    [self prepareDataSource];

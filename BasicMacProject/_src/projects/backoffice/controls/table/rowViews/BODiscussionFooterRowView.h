@@ -8,6 +8,5 @@
 #import <Foundation/Foundation.h>
 #import "BODiscussionRowView.h"
 
-
 @interface BODiscussionFooterRowView : BODiscussionRowView
 @end

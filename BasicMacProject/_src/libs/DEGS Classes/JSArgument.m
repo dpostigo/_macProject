@@ -51,7 +51,7 @@
 
 - (NSString *) description {
     NSString *title = @"Argument";
-    if (_name) title                                        = [title stringByAppendingFormat: @" - %@", self.name];
+    if (_name) title = [title stringByAppendingFormat: @" - %@", self.name];
     if (![self.parent isKindOfClass: [JSXMDS class]]) title = [NSString stringWithFormat: @"%@/%@", [self.parent description], title];
     return title;
 }

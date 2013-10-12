@@ -7,10 +7,8 @@
 
 #import "BasicTableView.h"
 
-
 @implementation BasicTableView {
 }
-
 
 - (void) awakeFromNib {
     [super awakeFromNib];
@@ -29,10 +27,10 @@
 
     NSRange aVisibleRowIndexes = [self rowsInRect: clipRect];
     NSIndexSet *aSelectedRowIndexes = [self selectedRowIndexes];
-    int aRow     = aVisibleRowIndexes.location;
+    int aRow = aVisibleRowIndexes.location;
     int anEndRow = aRow + aVisibleRowIndexes.length;
     NSGradient *gradient;
-    NSColor    *pathColor;
+    NSColor *pathColor;
 
     // if the view is focused, use highlight color, otherwise use the out-of-focus highlight color
     if (self == [[self window] firstResponder] && [[self window] isMainWindow] && [[self window] isKeyWindow]) {

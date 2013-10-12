@@ -9,6 +9,5 @@
 #import <Foundation/Foundation.h>
 #import "BasicOutlineViewController.h"
 
-
 @interface BasicStyledOutlineViewController : BasicOutlineViewController
 @end

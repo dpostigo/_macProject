@@ -11,23 +11,20 @@
 #import "TasksViewController.h"
 #import "BONavigationBar.h"
 
-
 #define MIN_SIDEBAR_WIDTH 150.0f
 #define MAX_SIDEBAR_WIDTH 250.0f
 #define MIN_MAIN_WIDTH 600.0f
 #define MAX_BOTTOM_HEIGHT 130.0f
 #define MIN_BOTTOM_VIEW_HEIGHT 40.0f
 
-
 @implementation AppWindow {
-    BOOL    sidebarIsOpen;
+    BOOL sidebarIsOpen;
     CGFloat originalWidth;
     BOSidebarViewController *sidebarViewController;
-    BOOL    isToggling;
+    BOOL isToggling;
     CGFloat currentSidebarWidth;
     CGFloat lastSidebarWidth;
 }
-
 
 - (id) initWithContentRect: (NSRect) contentRect styleMask: (NSUInteger) aStyle backing: (NSBackingStoreType) bufferingType defer: (BOOL) flag {
     self = [super initWithContentRect: contentRect styleMask: aStyle backing: bufferingType defer: flag];
@@ -41,8 +38,8 @@
     [super awakeFromNib];
 
     mainSplitView.dividerThickness = 1;
-    mainSplitView.dividerColor     = [NSColor blackColor];
-    bottomSplitView.dividerColor   = [NSColor blackColor];
+    mainSplitView.dividerColor = [NSColor blackColor];
+    bottomSplitView.dividerColor = [NSColor blackColor];
 
     sidebarIsOpen = YES;
     originalWidth = self.frame.size.width;
@@ -50,7 +47,6 @@
     sidebarViewController = [[BOSidebarViewController alloc] initWithDefaultNib];
     NavigationController *navigationController = [[NavigationController alloc] initWithRootViewController: [[TasksViewController alloc] initWithDefaultNib]];
     navigationController.navigationBar = [[BONavigationBar alloc] initWithFrame: NSZeroRect];
-
 
     [self addController: sidebarViewController toView: sidebarView];
     [self addController: [[BottomViewController alloc] initWithDefaultNib] toView: bottomView];

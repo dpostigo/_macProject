@@ -152,8 +152,8 @@ NSString *JSTableViewDidResizeNotification = @"JSTableViewDidResizeNotification"
 
 - (void) doubleAction: (id) sender {
     // we grab the modifier to the event to check that the user double clicked the cell while holding the command key
-    BOOL      commandKeyDown = (([[NSApp currentEvent] modifierFlags] & NSCommandKeyMask) == NSCommandKeyMask);
-    NSInteger clickedRow     = self.mainTableView.clickedRow;
+    BOOL commandKeyDown = (([[NSApp currentEvent] modifierFlags] & NSCommandKeyMask) == NSCommandKeyMask);
+    NSInteger clickedRow = self.mainTableView.clickedRow;
     if (commandKeyDown) {
         JSTableCellView *cellView = (JSTableCellView *) [self.mainTableView viewAtColumn: 0 row: clickedRow makeIfNecessary: NO];
 

@@ -114,7 +114,7 @@
 
 - (NSString *) description {
     NSString *title = @"Operators";
-    if (_name) title                                                 = [title stringByAppendingFormat: @" - %@", self.name];
+    if (_name) title = [title stringByAppendingFormat: @" - %@", self.name];
     // we want to skip the operators stack in the name pile as it is not a xmds element but merely our internal construction hence we don't want it to be part of the tree description
     if (![[self.parent parent] isKindOfClass: [JSXMDS class]]) title = [NSString stringWithFormat: @"%@/%@", [[self.parent parent] description], title];
     return title;

@@ -9,9 +9,9 @@
 #import <Cocoa/Cocoa.h>
 
 enum {
-    JSLowerLeftCorner  = 1 << 0,
+    JSLowerLeftCorner = 1 << 0,
     JSLowerRightCorner = 1 << 1,
-    JSUpperLeftCorner  = 1 << 2,
+    JSUpperLeftCorner = 1 << 2,
     JSUpperRightCorner = 1 << 3,
 };
 typedef NSUInteger JSRoundedCornerOptions;

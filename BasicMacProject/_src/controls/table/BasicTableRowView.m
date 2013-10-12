@@ -7,10 +7,8 @@
 
 #import "BasicTableRowView.h"
 
-
 @implementation BasicTableRowView {
 }
-
 
 @synthesize selectedBackgroundColor;
 

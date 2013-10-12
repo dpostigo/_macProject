@@ -51,11 +51,11 @@
 // main sections of an xmds script
 @property(nonatomic, strong) JSPreamble *preamble;
 @property(nonatomic, strong) JSFeatures *features;
-@property(nonatomic, strong) JSDriver   *driver;
+@property(nonatomic, strong) JSDriver *driver;
 @property(nonatomic, strong) JSGeometry *geometry;
-@property(nonatomic, strong) JSVectors  *vectors;
+@property(nonatomic, strong) JSVectors *vectors;
 @property(nonatomic, strong) JSSequence *sequence;
-@property(nonatomic, strong) JSOutput   *output;
+@property(nonatomic, strong) JSOutput *output;
 
 // the dictionary holds a global list of nodes in the tree that can be accessed through their identifiers. It is useful to directly access some nodes without having to walk the entire tree.
 @property(nonatomic, readonly) NSDictionary *globalIdentifiers;

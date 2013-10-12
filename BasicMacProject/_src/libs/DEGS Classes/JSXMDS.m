@@ -181,8 +181,8 @@
         NSXMLElement *rootElement = [aDocument rootElement];
 
         // the preamble section is the only one without its own initialiser so we have to do it ourselves here
-        if ([[rootElement elementsForName: @"name"] count]) self.preamble.name                     = [[[rootElement elementsForName: @"name"][0] stringValue] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        if ([[rootElement elementsForName: @"author"] count]) self.preamble.author                 = [[[rootElement elementsForName: @"author"][0] stringValue] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if ([[rootElement elementsForName: @"name"] count]) self.preamble.name = [[[rootElement elementsForName: @"name"][0] stringValue] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if ([[rootElement elementsForName: @"author"] count]) self.preamble.author = [[[rootElement elementsForName: @"author"][0] stringValue] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
         if ([[rootElement elementsForName: @"description"] count]) self.preamble.scriptDescription = [[[rootElement elementsForName: @"description"][0] stringValue] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
 
         // the elementsForName: method of NSXMLElement returns an empty array in the case it hasn't found any element with that name hence checking for the return to be not nil is not sufficient to guarantee the presence of the element
@@ -203,7 +203,7 @@
 
         // again: there is no wrapper element for the vectors in the xmds specification
         // we grab all the vectors elements from the script, put them in an array and pass it to the JSVectors class that will initialise a vector from each NSXMLElement in such array
-        NSMutableArray    *vectorsElements = [NSMutableArray array];
+        NSMutableArray *vectorsElements = [NSMutableArray array];
         for (NSXMLElement *noiseVector in [rootElement elementsForName: @"noise_vector"]) [vectorsElements addObject: noiseVector];
         for (NSXMLElement *vector in [rootElement elementsForName: @"vector"]) [vectorsElements addObject: vector];
         for (NSXMLElement *computedVector in [rootElement elementsForName: @"computed_vector"]) [vectorsElements addObject: computedVector];
@@ -262,7 +262,7 @@
     NSArray *dimensionIdentifiers = [self listOfDimensionsIdentifiersForDimensions];
     if ([substring length] == 0) return dimensionIdentifiers;
     NSMutableArray *matchingIdentifiers = [NSMutableArray array];
-    for (NSString  *dimensionIdentifier in dimensionIdentifiers) {
+    for (NSString *dimensionIdentifier in dimensionIdentifiers) {
         if ([dimensionIdentifier hasPrefix: substring]) [matchingIdentifiers addObject: dimensionIdentifier];
     }
     return [matchingIdentifiers copy];
@@ -273,7 +273,7 @@
     NSArray *dimensionIdentifiers = [self listOfDimensionsIdentifiersForBasis];
     if ([substring length] == 0) return dimensionIdentifiers;
     NSMutableArray *matchingIdentifiers = [NSMutableArray array];
-    for (NSString  *dimensionIdentifier in dimensionIdentifiers) {
+    for (NSString *dimensionIdentifier in dimensionIdentifiers) {
         if ([dimensionIdentifier hasPrefix: substring]) [matchingIdentifiers addObject: dimensionIdentifier];
     }
     return [matchingIdentifiers copy];
@@ -284,7 +284,7 @@
     NSArray *vectorIdentifiers = [self listOfVectorsIdentifiers];
     if ([substring length] == 0) return [NSArray array];
     NSMutableArray *matchingIdentifiers = [NSMutableArray array];
-    for (NSString  *vectorIdentifier in vectorIdentifiers) {
+    for (NSString *vectorIdentifier in vectorIdentifiers) {
         if ([vectorIdentifier hasPrefix: substring]) [matchingIdentifiers addObject: vectorIdentifier];
     }
     return [matchingIdentifiers copy];
@@ -295,7 +295,7 @@
     NSArray *vectorComponentsIdentifiers = [self listOfVectorComponentsIdentifiers];
     if ([substring length] == 0) return vectorComponentsIdentifiers;
     NSMutableArray *matchingIdentifiers = [NSMutableArray array];
-    for (NSString  *componentIdentifier in vectorComponentsIdentifiers) {
+    for (NSString *componentIdentifier in vectorComponentsIdentifiers) {
         if ([componentIdentifier hasPrefix: substring]) [matchingIdentifiers addObject: componentIdentifier];
     }
     return [matchingIdentifiers copy];
@@ -306,7 +306,7 @@
     NSArray *argumentsIdentifiers = [self listOfArgumentsIdentifiers];
     if ([substring length] == 0) return argumentsIdentifiers;
     NSMutableArray *matchingIdentifiers = [NSMutableArray array];
-    for (NSString  *argumentIdentifier in argumentsIdentifiers) {
+    for (NSString *argumentIdentifier in argumentsIdentifiers) {
         if ([argumentIdentifier hasPrefix: substring]) [matchingIdentifiers addObject: argumentIdentifier];
     }
     return [matchingIdentifiers copy];
@@ -317,7 +317,7 @@
     NSArray *momentsIdentifiers = [self listOfMomentsIdentifiers];
     if ([substring length] == 0) return momentsIdentifiers;
     NSMutableArray *matchingIdentifiers = [NSMutableArray array];
-    for (NSString  *momentsIdentifier in momentsIdentifiers) {
+    for (NSString *momentsIdentifier in momentsIdentifiers) {
         if ([momentsIdentifier hasPrefix: substring]) [matchingIdentifiers addObject: momentsIdentifier];
     }
     return [matchingIdentifiers copy];
@@ -331,7 +331,7 @@
 
 - (NSArray *) objectPathForString: (NSString *) XPath error: (NSError **) error {
     NSMutableArray *pathObjects = [NSMutableArray arrayWithObject: self];
-    NSMutableArray *components  = [[XPath pathComponents] mutableCopy];
+    NSMutableArray *components = [[XPath pathComponents] mutableCopy];
     while (components.count) {
         BOOL success = [[pathObjects lastObject] addObjectsFromPathComponents: components toPathObjects: pathObjects];
         if (!success) {

@@ -9,7 +9,6 @@
     <file path="$PROJECT_DIR$/_src/frameworks/YAJL.framework/Headers/yajl_common.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1371328933401" ignored="false" />
     <file path="$PROJECT_DIR$/_src/frameworks/YAJL.framework/Headers/yajl_parse.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1371328933401" ignored="false" />
     <file path="$PROJECT_DIR$/_src/frameworks/YAJL.framework/Headers/YAJLParser.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1371328933401" ignored="false" />
-    <file path="$PROJECT_DIR$/_src/frameworks/YAJL.framework/Headers/YAJLDocument.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1371328933401" ignored="false" />
     <file path="$PROJECT_DIR$/_src/frameworks/YAJL.framework/Headers/yajl_gen.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1371328933401" ignored="false" />
     <file path="$PROJECT_DIR$/_src/frameworks/YAJL.framework/Headers/YAJLGen.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1371328933401" ignored="false" />
     <file path="$PROJECT_DIR$/_src/frameworks/YAJL.framework/Headers/NSObject+YAJL.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1371328933401" ignored="false" />
@@ -21,12 +20,12 @@
     <file path="/BOAppDelegate.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1371338006775" ignored="false" />
     <file path="/CartsSidebarViewController.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372025240123" ignored="false" />
     <file path="/a.js" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1371486072662" ignored="false" />
-    <file path="/a.mm" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378566748367" ignored="false" />
+    <file path="/a.mm" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380287735133" ignored="false" />
     <file path="/AddTaskViewController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1371487179139" ignored="false" />
     <file path="/TaskEditViewController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1371487196519" ignored="false" />
     <file path="/BasicSplitViewController.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378575224022" ignored="false" />
     <file path="/BasicSplitViewController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1379162804990" ignored="false" />
-    <file path="/CartsSidebarViewController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1379194930266" ignored="false" />
+    <file path="/CartsSidebarViewController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1379949747634" ignored="false" />
     <file path="/BasicOutlineViewController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373045859248" ignored="false" />
     <file path="/BasicSparrowSidebarViewController.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372025151087" ignored="false" />
     <file path="/BasicSparrowSidebarViewController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372025672838" ignored="false" />
@@ -38,7 +37,7 @@
     <file path="/BasicOutlineViewController.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372034209535" ignored="false" />
     <file path="/BasicOutlineView.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372032928185" ignored="false" />
     <file path="/BasicOutlineView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373046473201" ignored="false" />
-    <file path="/NSBezierPath+DPUtils.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378640397409" ignored="false" />
+    <file path="/NSBezierPath+DPUtils.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380721697617" ignored="false" />
     <file path="/BasicBackgroundView.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373128461451" ignored="false" />
     <file path="/BasicBackgroundView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373128416400" ignored="false" />
     <file path="/BasicCustomRowView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373060764580" ignored="false" />
@@ -49,11 +48,11 @@
     <file path="/TaskDiscussionViewController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373245313618" ignored="false" />
     <file path="/BasicCustomWindowFrame.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373131577424" ignored="false" />
     <file path="/BasicCustomWindowFrame.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373294007036" ignored="false" />
-    <file path="/Dummy.txt" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378591569176" ignored="false" />
+    <file path="/Dummy.txt" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380894260735" ignored="false" />
     <file path="/NSParagraphStyle+DPUtils.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372092187561" ignored="false" />
     <file path="/CartsCustomWindow.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372529505292" ignored="false" />
     <file path="/CartsCustomWindow.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373074847603" ignored="false" />
-    <file path="/NSBezierPath+DPUtils.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373128523193" ignored="false" />
+    <file path="/NSBezierPath+DPUtils.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380718840893" ignored="false" />
     <file path="$PROJECT_DIR$/../../Back Office/_cocoa/PDFUtility/PDFUtility/src/app/models/Estimate.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372702216647" ignored="false" />
     <file path="$PROJECT_DIR$/../../Back Office/_cocoa/PDFUtility/PDFUtility/src/pdf/tables/PDFTable.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372702216647" ignored="false" />
     <file path="$PROJECT_DIR$/../../Back Office/_cocoa/PDFUtility/PDFUtility/src/pdf/tables/PDFColumnedTableRow.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372702216647" ignored="false" />
@@ -68,26 +67,24 @@
     <file path="$PROJECT_DIR$/../../Back Office/_cocoa/PDFUtility/PDFUtility/src/pdf/tables/TableRow.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372702216647" ignored="false" />
     <file path="$PROJECT_DIR$/../../Back Office/_cocoa/PDFUtility/PDFUtility/src/app/models/Estimate.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372702216647" ignored="false" />
     <file path="$PROJECT_DIR$/../../Back Office/_cocoa/PDFUtility/PDFUtility/src/pdf/tables/PDFTable.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372702216648" ignored="false" />
-    <file path="/NSColor+Utils.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372862126763" ignored="false" />
+    <file path="/NSColor+Utils.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381597793114" ignored="false" />
     <file path="/DPBezierPath.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372863055007" ignored="false" />
     <file path="/DPBezierPath.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372863547156" ignored="false" />
-    <file path="/PathOptions.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373289777874" ignored="false" />
+    <file path="/PathOptions.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380807110158" ignored="false" />
     <file path="/VeryBasicViewController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373217479214" ignored="false" />
     <file path="$PROJECT_DIR$/_src/projects/backoffice/controls/views/BOSidebarBackgroundView.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372973674483" ignored="false" />
     <file path="$PROJECT_DIR$/_src/xibs/viewcontrollers/BottomViewController.xib" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373291016764" ignored="false" />
     <file path="$PROJECT_DIR$/_src/xibs/viewcontrollers/TaskDetailViewController.xib" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378566006777" ignored="false" />
     <file path="$PROJECT_DIR$/_src/xibs/viewcontrollers/TitleBarViewController.xib" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373293824678" ignored="false" />
     <file path="$PROJECT_DIR$/_src/libs/DEGS Classes/JSButtonDecoration.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372973996139" ignored="false" />
-    <file path="$PROJECT_DIR$/_src/libs/DEGS Classes/JSPreambleViewController.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372973996140" ignored="false" />
-    <file path="$PROJECT_DIR$/_src/libs/CustomWindowController/ColoredWindowController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372973996140" ignored="false" />
-    <file path="/PathOptions.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373289008113" ignored="false" />
+    <file path="/PathOptions.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380551088681" ignored="false" />
     <file path="/NSGradient+DPUtils.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372974816451" ignored="false" />
     <file path="$PROJECT_DIR$/_src/libs/DEGS Classes/JSBinaryTableRowView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372983284891" ignored="false" />
     <file path="$PROJECT_DIR$/_src/libs/DEGS Classes/JSFlexibleButtonCell.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372983284891" ignored="false" />
     <file path="/BOModalTableRowView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372984297661" ignored="false" />
     <file path="/BorderOptions.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373059044718" ignored="false" />
-    <file path="/BorderOption.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373132799186" ignored="false" />
-    <file path="/BorderOption.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373288626892" ignored="false" />
+    <file path="/BorderOption.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380809992302" ignored="false" />
+    <file path="/BorderOption.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381596608587" ignored="false" />
     <file path="/BasicInnerShadowView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373132655827" ignored="false" />
     <file path="/DPSplitView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378301141213" ignored="false" />
     <file path="/BasicSplitView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1379163165090" ignored="false" />
@@ -97,7 +94,7 @@
     <file path="/BasicView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1379195426645" ignored="false" />
     <file path="/BasicView.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378640112791" ignored="false" />
     <file path="/DPSplitViewDelegate.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378301261172" ignored="false" />
-    <file path="/BasicDisplayView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378739137859" ignored="false" />
+    <file path="/BasicDisplayView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381322865901" ignored="false" />
     <file path="/BasicCustomWindow.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373208243652" ignored="false" />
     <file path="/BasicCustomWindow.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373208232959" ignored="false" />
     <file path="/CartsTitleBarViewController.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373209251252" ignored="false" />
@@ -160,7 +157,7 @@
     <file path="/NSColor+DPColors.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378298049793" ignored="false" />
     <file path="/BasicSplitViewControllerDelegateOld.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378574588771" ignored="false" />
     <file path="/BasicSplitView.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378739574406" ignored="false" />
-    <file path="/fragment.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378591572855" ignored="false" />
+    <file path="/fragment.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380288034650" ignored="false" />
     <file path="/BasicHorizontalSidebarViewController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378594182788" ignored="false" />
     <file path="/BasicHorizontalSplitViewController.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378594109247" ignored="false" />
     <file path="/BasicHorizontalSplitViewController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378594168471" ignored="false" />
@@ -173,14 +170,27 @@
     <file path="/BasicNewCustomWindow.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1379198017130" ignored="false" />
     <file path="/BasicSplitVerticalViewController.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378609236481" ignored="false" />
     <file path="/BasicLayoutViewController.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378609273324" ignored="false" />
-    <file path="/BasicStyledWindow.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378610167967" ignored="false" />
-    <file path="/BasicStyledWindow.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1379198523767" ignored="false" />
-    <file path="/BasicDisplayView.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378680477406" ignored="false" />
+    <file path="/BasicStyledWindow.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1379951805351" ignored="false" />
+    <file path="/BasicStyledWindow.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381598111723" ignored="false" />
+    <file path="/BasicDisplayView.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380288283707" ignored="false" />
     <file path="$USER_HOME$/Downloads/Chrome/Archived/Bricksmith-master-1/Bricksmith/Bricksmith.xcodeproj/xcuserdata/dpostigo.xcuserdatad/xcschemes/Bricksmith.xcscheme" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378728731149" ignored="false" />
-    <file path="/BasicWindowDisplayView.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378738747055" ignored="false" />
+    <file path="/BasicWindowDisplayView.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380290732159" ignored="false" />
     <file path="/BasicSplitSidebarViewController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1379162721722" ignored="false" />
     <file path="/BasicSplitHorizontalViewController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1379163096115" ignored="false" />
-    <file path="/BasicWindowDisplayView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1379198241395" ignored="false" />
+    <file path="/BasicWindowDisplayView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381598146955" ignored="false" />
+    <file path="/CustomWindow.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380289469917" ignored="false" />
+    <file path="/CustomWindow.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380290010167" ignored="false" />
+    <file path="/BasicGradient.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380551225023" ignored="false" />
+    <file path="/BasicGradient.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381597859733" ignored="false" />
+    <file path="/BasicWindowTitleView.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380379544640" ignored="false" />
+    <file path="/BasicWindowTitleView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380379561901" ignored="false" />
+    <file path="/CornerOption.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380550742086" ignored="false" />
+    <file path="/CornerProperties.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380719122960" ignored="false" />
+    <file path="/CornerProperties.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380719204482" ignored="false" />
+    <file path="$PROJECT_DIR$/_src/controls/table/BasicCustomRowView.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380719206990" ignored="false" />
+    <file path="$PROJECT_DIR$/_src/controls/buttons/buttonCells/VeryBasicButtonCell.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380719206990" ignored="false" />
+    <file path="/BasicFill.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380809912147" ignored="false" />
+    <file path="/BasicFill.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381596660249" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,116 +210,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CartsSidebarViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsSidebarViewController.m">
+      <file leaf-file-name="CustomWindow.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/windows/CustomWindow.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="27" selection-start="323" selection-end="736" vertical-scroll-proportion="0.0">
+            <state line="13" column="12" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CartsSidebarViewController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsSidebarViewController.h">
+      <file leaf-file-name="BasicStyledWindow.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/windows/BasicStyledWindow.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="11" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0">
+            <state line="12" column="36" selection-start="281" selection-end="281" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CartsMainViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsMainViewController.m">
+      <file leaf-file-name="BasicStyledWindow.m" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_src/windows/BasicStyledWindow.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="39" selection-start="1468" selection-end="1468" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicOutlineViewController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/viewcontrollers/BasicOutlineViewController.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="11" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicStyledOutlineViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/viewcontrollers/outlineViewController/BasicStyledOutlineViewController.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="16" selection-start="257" selection-end="257" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CartsMainViewController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsMainViewController.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="4" selection-start="287" selection-end="287" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicNewCustomWindow.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/windows/BasicNewCustomWindow.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="32" selection-start="571" selection-end="571" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicNewCustomWindow.m" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_src/windows/BasicNewCustomWindow.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="0" selection-start="1107" selection-end="1107" vertical-scroll-proportion="0.5">
+            <state line="31" column="47" selection-start="888" selection-end="888" vertical-scroll-proportion="-0.23287672">
               <folding>
-                <element signature="n#awakeFromNib#0;n#BasicNewCustomWindow#0" expanded="true" />
-                <element signature="n#initWithContentRect:styleMask:backing:defer:#0;n#BasicNewCustomWindow#0" expanded="true" />
-                <element signature="n#setup#0;n#BasicNewCustomWindow#0" expanded="true" />
-                <element signature="n#windowBackgroundView#0;n#BasicNewCustomWindow#0" expanded="true" />
-                <element signature="n#setWindowBackgroundView:#0;n#BasicNewCustomWindow#0" expanded="true" />
-                <element signature="n#setContentRect:#0;n#BasicNewCustomWindow#0" expanded="true" />
-                <element signature="n#contentView#0;n#BasicNewCustomWindow#0" expanded="true" />
-                <element signature="n#setContentView:#0;n#BasicNewCustomWindow#0" expanded="true" />
-                <element signature="n#bounds#0;n#BasicNewCustomWindow#0" expanded="true" />
-                <element signature="n#setTopMargin:#0;n#BasicNewCustomWindow#0" expanded="true" />
-                <element signature="n#setBottomMargin:#0;n#BasicNewCustomWindow#0" expanded="true" />
-                <element signature="n#setLeftMargin:#0;n#BasicNewCustomWindow#0" expanded="true" />
-                <element signature="n#setRightMargin:#0;n#BasicNewCustomWindow#0" expanded="true" />
-                <element signature="n#mouseEntered:#0;n#BasicNewCustomWindow#0" expanded="true" />
-                <element signature="n#mouseMoved:#0;n#BasicNewCustomWindow#0" expanded="true" />
+                <element signature="n#setup#0;n#BasicStyledWindow#0" expanded="true" />
+                <element signature="n#windowHeaderView#0;n#BasicStyledWindow#0" expanded="true" />
+                <element signature="n#windowFooterView#0;n#BasicStyledWindow#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasicDisplayView.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/views/BasicDisplayView.h">
+      <file leaf-file-name="CartsAppDelegate.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/projects/carts/app/CartsAppDelegate.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="15" selection-start="922" selection-end="922" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="24" column="44" selection-start="993" selection-end="993" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#setupTitleBar#0;n#CartsAppDelegate#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasicDisplayView.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/views/BasicDisplayView.m">
+      <file leaf-file-name="BasicGradient.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/drawing/BasicGradient.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="0" selection-start="2550" selection-end="2550" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicStyledWindow.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/windows/BasicStyledWindow.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="38" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
+            <state line="30" column="0" selection-start="788" selection-end="788" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -318,17 +264,55 @@
       <file leaf-file-name="BasicWindowDisplayView.h" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_src/views/BasicWindowDisplayView.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="33" selection-start="228" selection-end="250" vertical-scroll-proportion="0.0">
+            <state line="11" column="43" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasicView.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/views/BasicView.h">
+      <file leaf-file-name="BasicDisplayView.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/views/BasicDisplayView.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="11" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0">
+            <state line="20" column="51" selection-start="528" selection-end="528" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasicDisplayView.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/views/BasicDisplayView.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="31" selection-start="1045" selection-end="1045" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#initWithFrame:#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#initWithCoder:#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#addBorder:#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#setBorderWidth:borderColor:#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#preservesContentDuringLiveResize#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#isOpaque#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#borderColor#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#borderType#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#borderWidth#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#borderOptions#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#cornerOptions#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#cornerRadius#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#gradient#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#innerShadow#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#outerShadow#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#setCornerOptions:#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#setCornerRadius:#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#setBorderColor:#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#setBorderWidth:#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#setBorderType:#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#setBorderOptions:#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#setGradient:#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#setBackgroundColor:#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#setInnerShadow:#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#setOuterShadow:#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#setup#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#drawRect:#0;n#BasicDisplayView#0" expanded="true" />
+                <element signature="n#viewDidMoveToWindow#0;n#BasicDisplayView#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -336,12 +320,171 @@
       <file leaf-file-name="BasicWindowDisplayView.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_src/views/BasicWindowDisplayView.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="298" selection-end="357" vertical-scroll-proportion="0.0">
+            <state line="107" column="0" selection-start="2387" selection-end="2387" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="n#viewDidMoveToWindow#0;n#BasicWindowDisplayView#0" expanded="true" />
-                <element signature="n#mouseMoved:#0;n#BasicWindowDisplayView#0" expanded="true" />
-                <element signature="n#mouseDown:#0;n#BasicWindowDisplayView#0" expanded="true" />
-                <element signature="n#setNextResponder:#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#setup#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#updateLayout#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#setBorderWidth:#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#setTopMargin:#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#setWindowHeaderView:#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#setWindowFooterView:#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#embedView:#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#addSubview:#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#isOpaque#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#mouseDownCanMoveWindow#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#preservesContentDuringLiveResize#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#viewDidEndLiveResize#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#drawImage#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#subviewHeight#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#subviewFrame#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#singleSubview#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#southMiddleForSize:#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#westMiddleForSize:#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#eastMiddleForSize:#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#cornerRectForTopCornerRect:#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#cornerRectForBottomCornerRect:#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#northRectFull#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#southRectFull#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#northRectForSize:#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#northMiddleRect#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#northWestRect#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#northWestRectForSize:#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#northEastCornerRect#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#northEastRectForSize:#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#southWestRect#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#southWestRectForSize:#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#southEastCornerRect#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#southEastRectForSize:#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#southMiddleRect#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#westMiddleRect#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#eastMiddleRect#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#cacheImageTopRight#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#cacheImageTopLeft#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#northMiddleRectForCachedImage#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#cacheImageBottomMiddle#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#cacheImageLeftMiddle#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#cacheImageRightMiddle#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#cacheImageBottomRight#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#bottomRect#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#middleRect#0;n#BasicWindowDisplayView#0" expanded="true" />
+                <element signature="n#resizingRect#0;n#BasicWindowDisplayView#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasicGradient.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/drawing/BasicGradient.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="59" column="34" selection-start="2038" selection-end="2038" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#whiteShineGradient#0;n#BasicGradient#0" expanded="true" />
+                <element signature="n#whiteShineGradientWithBaseColor:#0;n#BasicGradient#0" expanded="true" />
+                <element signature="n#initWithBaseColor:centerColor:#0;n#BasicGradient#0" expanded="true" />
+                <element signature="n#initWithBaseColors:centerColor:#0;n#BasicGradient#0" expanded="true" />
+                <element signature="n#initWithTopColor:bottomColor:#0;n#BasicGradient#0" expanded="true" />
+                <element signature="n#initWithColors:#0;n#BasicGradient#0" expanded="true" />
+                <element signature="n#setIsVertical:#0;n#BasicGradient#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NSColor+Utils.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/utils/NSColor+Utils.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="22" selection-start="198" selection-end="198" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#alphaWhite:#0;n#NSColor#0" expanded="true" />
+                <element signature="n#colorWithWhite:#0;n#NSColor#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasicFill.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/utils/BasicFill.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="0" selection-start="855" selection-end="855" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#fillWithColor:#0;n#BasicFill#0" expanded="true" />
+                <element signature="n#fillWithGradient:#0;n#BasicFill#0" expanded="true" />
+                <element signature="n#initWithColor:#0;n#BasicFill#0" expanded="true" />
+                <element signature="n#initWithGradient:#0;n#BasicFill#0" expanded="true" />
+                <element signature="n#isGradient#0;n#BasicFill#0" expanded="true" />
+                <element signature="n#isColor#0;n#BasicFill#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BorderOption.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/utils/BorderOption.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="117" column="0" selection-start="2851" selection-end="2851" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#topBorderWithGradient:borderWidth:#0;n#BorderOption#0" expanded="true" />
+                <element signature="n#initWithGradient:borderWidth:type:#0;n#BorderOption#0" expanded="true" />
+                <element signature="n#initWithBorderWidth:#0;n#BorderOption#0" expanded="true" />
+                <element signature="n#initWithBorderColor:borderWidth:#0;n#BorderOption#0" expanded="true" />
+                <element signature="n#initWithBorderColor:borderWidth:type:#0;n#BorderOption#0" expanded="true" />
+                <element signature="n#initWithGradient:borderColor:borderWidth:type:#0;n#BorderOption#0" expanded="true" />
+                <element signature="n#init#0;n#BorderOption#0" expanded="true" />
+                <element signature="n#copy#0;n#BorderOption#0" expanded="true" />
+                <element signature="n#isVertical#0;n#BorderOption#0" expanded="true" />
+                <element signature="n#cornerRadius#0;n#BorderOption#0" expanded="true" />
+                <element signature="n#cornerType#0;n#BorderOption#0" expanded="true" />
+                <element signature="n#borderColor#0;n#BorderOption#0" expanded="true" />
+                <element signature="n#fill#0;n#BorderOption#0" expanded="true" />
+                <element signature="n#setBorderColor:#0;n#BorderOption#0" expanded="true" />
+                <element signature="n#setCornerRadius:#0;n#BorderOption#0" expanded="true" />
+                <element signature="n#setCornerType:#0;n#BorderOption#0" expanded="true" />
+                <element signature="n#drawGradientWithRect:#0;n#BorderOption#0" expanded="true" />
+                <element signature="n#drawColorWithRect:#0;n#BorderOption#0" expanded="true" />
+                <element signature="n#drawWithPath:#0;n#BorderOption#0" expanded="true" />
+                <element signature="n#lineBezierPathWithRect:#0;n#BorderOption#0" expanded="true" />
+                <element signature="n#borderTypeString#0;n#BorderOption#0" expanded="true" />
+                <element signature="n#stringFromBorderType:#0;n#BorderOption#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PathOptions.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/utils/PathOptions.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="38" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PathOptions.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/utils/PathOptions.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="16" selection-start="242" selection-end="242" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#initWithGradient:#0;n#PathOptions#0" expanded="true" />
+                <element signature="n#initWithGradient:borderColor:#0;n#PathOptions#0" expanded="true" />
+                <element signature="n#initWithGradient:borderColor:borderWidth:#0;n#PathOptions#0" expanded="true" />
+                <element signature="n#initWithGradient:borderColor:borderWidth:cornerRadius:#0;n#PathOptions#0" expanded="true" />
+                <element signature="n#initWithGradient:borderColor:borderWidth:cornerRadius:cornerOptions:#0;n#PathOptions#0" expanded="true" />
+                <element signature="n#init#0;n#PathOptions#0" expanded="true" />
+                <element signature="n#setGradient:#0;n#PathOptions#0" expanded="true" />
+                <element signature="n#setBorderOption:#0;n#PathOptions#0" expanded="true" />
+                <element signature="n#setBorderColor:#0;n#PathOptions#0" expanded="true" />
+                <element signature="n#setBorderWidth:#0;n#PathOptions#0" expanded="true" />
+                <element signature="n#setBorderType:#0;n#PathOptions#0" expanded="true" />
+                <element signature="n#setCornerRadius:#0;n#PathOptions#0" expanded="true" />
+                <element signature="n#setCornerType:#0;n#PathOptions#0" expanded="true" />
+                <element signature="n#borderOption#0;n#PathOptions#0" expanded="true" />
+                <element signature="n#borderColor#0;n#PathOptions#0" expanded="true" />
+                <element signature="n#borderWidth#0;n#PathOptions#0" expanded="true" />
+                <element signature="n#borderType#0;n#PathOptions#0" expanded="true" />
+                <element signature="n#cornerRadius#0;n#PathOptions#0" expanded="true" />
+                <element signature="n#cornerType#0;n#PathOptions#0" expanded="true" />
+                <element signature="n#copy#0;n#PathOptions#0" expanded="true" />
+                <element signature="n#drawWithRect:#0;n#PathOptions#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -357,30 +500,29 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/_src/views/BasicSplitView.h" />
-        <option value="$PROJECT_DIR$/_src/viewcontrollers/splitViewController/BasicSplitSidebarViewController.h" />
-        <option value="$PROJECT_DIR$/_src/viewcontrollers/splitViewController/BasicSplitHorizontalViewController.m" />
-        <option value="$PROJECT_DIR$/_src/viewcontrollers/splitViewController/BasicSplitViewController.m" />
-        <option value="$PROJECT_DIR$/_src/views/BasicSplitView.m" />
-        <option value="$PROJECT_DIR$/_src/projects/carts/app/CartsAppDelegate.h" />
-        <option value="$PROJECT_DIR$/_src/viewcontrollers/splitViewController/BasicSplitSidebarViewController.m" />
-        <option value="$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsSidebarViewController.m" />
-        <option value="$PROJECT_DIR$/_src/windows/BasicNewCustomWindow.h" />
-        <option value="$PROJECT_DIR$/_src/views/BasicView.m" />
-        <option value="$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsMainViewController.m" />
-        <option value="$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsHomeViewController.m" />
-        <option value="$PROJECT_DIR$/_src/views/BasicWindowDisplayView.m" />
+        <option value="$PROJECT_DIR$/_src/utils/CornerProperties.h" />
+        <option value="$PROJECT_DIR$/_src/utils/PathOptions.h" />
+        <option value="$PROJECT_DIR$/_src/utils/PathOptions.m" />
+        <option value="$PROJECT_DIR$/_src/utils/BasicFill.h" />
+        <option value="$PROJECT_DIR$/_src/utils/BorderOption.h" />
+        <option value="$PROJECT_DIR$/_src/drawing/BasicGradient.h" />
         <option value="$PROJECT_DIR$/_src/projects/carts/app/CartsAppDelegate.m" />
+        <option value="$PROJECT_DIR$/_src/utils/BasicFill.m" />
+        <option value="$PROJECT_DIR$/_src/utils/BorderOption.m" />
+        <option value="$PROJECT_DIR$/_src/utils/NSColor+Utils.m" />
+        <option value="$PROJECT_DIR$/_src/drawing/BasicGradient.m" />
+        <option value="$PROJECT_DIR$/_src/views/BasicWindowDisplayView.m" />
+        <option value="$PROJECT_DIR$/_src/views/BasicDisplayView.h" />
+        <option value="$PROJECT_DIR$/_src/utils/NSBezierPath+DPUtils.m" />
+        <option value="$PROJECT_DIR$/_src/views/BasicDisplayView.m" />
         <option value="$PROJECT_DIR$/_src/windows/BasicStyledWindow.m" />
-        <option value="$PROJECT_DIR$/_src/windows/BasicNewCustomWindow.m" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="7" />
     <option name="y" value="22" />
     <option name="width" value="1440" />
-    <option name="height" value="800" />
+    <option name="height" value="803" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -549,6 +691,24 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Carts" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_src" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="projects" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -669,72 +829,6 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="windows" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Carts" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BasicMacProject" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_src" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Carts" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BasicMacProject" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_src" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="viewcontrollers" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Carts" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BasicMacProject" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_src" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="utils" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
@@ -747,7 +841,7 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="editing.templates" />
+    <property name="options.lastSelected" value="editor.preferences.tabs" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="FullScreen" value="false" />
     <property name="OBJC.PRESERVED_TARGET_SELECTION" value="Carts" />
@@ -789,23 +883,43 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="7" y="22" width="1440" height="800" extended-state="0" />
+    <frame x="0" y="22" width="1440" height="803" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3186969" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4513399" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23959827" sideWeight="0.5240793" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12697273" sideWeight="0.5240793" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47592068" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32863188" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32722145" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26398852" sideWeight="0.7404795" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.07604017" sideWeight="0.7404795" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25952044" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13761468" sideWeight="0.50070524" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3281471" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -871,145 +985,274 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsSidebarViewController.h">
+    <entry file="file://$PROJECT_DIR$/_src/windows/BasicStyledWindow.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="11" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0">
+        <state line="12" column="36" selection-start="281" selection-end="281" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsSidebarViewController.m">
+    <entry file="file://$PROJECT_DIR$/_src/windows/CustomWindow.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="27" selection-start="323" selection-end="736" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_src/viewcontrollers/BasicOutlineViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="11" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_src/views/BasicView.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="54" selection-start="446" selection-end="446" vertical-scroll-proportion="0.08988764">
+        <state line="16" column="15" selection-start="471" selection-end="471" vertical-scroll-proportion="0.3726708">
           <folding>
-            <element signature="n#viewWillMoveToWindow:#0;n#BasicView#0" expanded="true" />
-            <element signature="n#viewDidMoveToWindow#0;n#BasicView#0" expanded="true" />
-            <element signature="n#isOpaque#0;n#BasicView#0" expanded="true" />
+            <element signature="n#setup#0;n#CustomWindow#0" expanded="true" />
+            <element signature="n#topMargin#0;n#CustomWindow#0" expanded="true" />
+            <element signature="n#setTopMargin:#0;n#CustomWindow#0" expanded="true" />
+            <element signature="n#bottomMargin#0;n#CustomWindow#0" expanded="true" />
+            <element signature="n#setBottomMargin:#0;n#CustomWindow#0" expanded="true" />
+            <element signature="n#windowBackground#0;n#CustomWindow#0" expanded="true" />
+            <element signature="n#setWindowBackground:#0;n#CustomWindow#0" expanded="true" />
+            <element signature="n#contentView#0;n#CustomWindow#0" expanded="true" />
+            <element signature="n#setContentView:#0;n#CustomWindow#0" expanded="true" />
+            <element signature="n#bounds#0;n#CustomWindow#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsMainViewController.h">
+    <entry file="file://$PROJECT_DIR$/_src/windows/CustomWindow.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="4" selection-start="287" selection-end="287" vertical-scroll-proportion="0.0">
+        <state line="13" column="12" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsMainViewController.m">
+    <entry file="file://$PROJECT_DIR$/_src/drawing/BasicGradient.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="39" selection-start="1468" selection-end="1468" vertical-scroll-proportion="0.0">
+        <state line="30" column="0" selection-start="788" selection-end="788" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/views/BasicView.h">
+    <entry file="file://$PROJECT_DIR$/_src/utils/BasicFill.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="11" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_src/projects/carts/app/CartsAppDelegate.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="35" selection-start="931" selection-end="931" vertical-scroll-proportion="0.46910113">
+        <state line="53" column="0" selection-start="855" selection-end="855" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="n#setupTitleBar#0;n#CartsAppDelegate#0" expanded="true" />
+            <element signature="n#fillWithColor:#0;n#BasicFill#0" expanded="true" />
+            <element signature="n#fillWithGradient:#0;n#BasicFill#0" expanded="true" />
+            <element signature="n#initWithColor:#0;n#BasicFill#0" expanded="true" />
+            <element signature="n#initWithGradient:#0;n#BasicFill#0" expanded="true" />
+            <element signature="n#isGradient#0;n#BasicFill#0" expanded="true" />
+            <element signature="n#isColor#0;n#BasicFill#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/windows/BasicNewCustomWindow.h">
+    <entry file="file://$PROJECT_DIR$/_src/utils/BorderOption.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="32" selection-start="571" selection-end="571" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="117" column="0" selection-start="2851" selection-end="2851" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#topBorderWithGradient:borderWidth:#0;n#BorderOption#0" expanded="true" />
+            <element signature="n#initWithGradient:borderWidth:type:#0;n#BorderOption#0" expanded="true" />
+            <element signature="n#initWithBorderWidth:#0;n#BorderOption#0" expanded="true" />
+            <element signature="n#initWithBorderColor:borderWidth:#0;n#BorderOption#0" expanded="true" />
+            <element signature="n#initWithBorderColor:borderWidth:type:#0;n#BorderOption#0" expanded="true" />
+            <element signature="n#initWithGradient:borderColor:borderWidth:type:#0;n#BorderOption#0" expanded="true" />
+            <element signature="n#init#0;n#BorderOption#0" expanded="true" />
+            <element signature="n#copy#0;n#BorderOption#0" expanded="true" />
+            <element signature="n#isVertical#0;n#BorderOption#0" expanded="true" />
+            <element signature="n#cornerRadius#0;n#BorderOption#0" expanded="true" />
+            <element signature="n#cornerType#0;n#BorderOption#0" expanded="true" />
+            <element signature="n#borderColor#0;n#BorderOption#0" expanded="true" />
+            <element signature="n#fill#0;n#BorderOption#0" expanded="true" />
+            <element signature="n#setBorderColor:#0;n#BorderOption#0" expanded="true" />
+            <element signature="n#setCornerRadius:#0;n#BorderOption#0" expanded="true" />
+            <element signature="n#setCornerType:#0;n#BorderOption#0" expanded="true" />
+            <element signature="n#drawGradientWithRect:#0;n#BorderOption#0" expanded="true" />
+            <element signature="n#drawColorWithRect:#0;n#BorderOption#0" expanded="true" />
+            <element signature="n#drawWithPath:#0;n#BorderOption#0" expanded="true" />
+            <element signature="n#lineBezierPathWithRect:#0;n#BorderOption#0" expanded="true" />
+            <element signature="n#borderTypeString#0;n#BorderOption#0" expanded="true" />
+            <element signature="n#stringFromBorderType:#0;n#BorderOption#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsHomeViewController.m">
+    <entry file="file://$PROJECT_DIR$/_src/utils/NSColor+Utils.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="24" selection-start="346" selection-end="366" vertical-scroll-proportion="0.4016854">
-          <folding />
+        <state line="11" column="22" selection-start="198" selection-end="198" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#alphaWhite:#0;n#NSColor#0" expanded="true" />
+            <element signature="n#colorWithWhite:#0;n#NSColor#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/viewcontrollers/outlineViewController/BasicStyledOutlineViewController.m">
+    <entry file="file://$PROJECT_DIR$/_src/drawing/BasicGradient.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="16" selection-start="257" selection-end="257" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_src/windows/BasicStyledWindow.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="38" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="59" column="34" selection-start="2038" selection-end="2038" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#whiteShineGradient#0;n#BasicGradient#0" expanded="true" />
+            <element signature="n#whiteShineGradientWithBaseColor:#0;n#BasicGradient#0" expanded="true" />
+            <element signature="n#initWithBaseColor:centerColor:#0;n#BasicGradient#0" expanded="true" />
+            <element signature="n#initWithBaseColors:centerColor:#0;n#BasicGradient#0" expanded="true" />
+            <element signature="n#initWithTopColor:bottomColor:#0;n#BasicGradient#0" expanded="true" />
+            <element signature="n#initWithColors:#0;n#BasicGradient#0" expanded="true" />
+            <element signature="n#setIsVertical:#0;n#BasicGradient#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_src/views/BasicWindowDisplayView.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="33" selection-start="228" selection-end="250" vertical-scroll-proportion="0.0">
+        <state line="11" column="43" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/views/BasicWindowDisplayView.m">
+    <entry file="file://$PROJECT_DIR$/_src/utils/NSBezierPath+DPUtils.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="298" selection-end="357" vertical-scroll-proportion="0.0">
+        <state line="232" column="19" selection-start="7561" selection-end="7561" vertical-scroll-proportion="0.59179264">
           <folding>
-            <element signature="n#viewDidMoveToWindow#0;n#BasicWindowDisplayView#0" expanded="true" />
-            <element signature="n#mouseMoved:#0;n#BasicWindowDisplayView#0" expanded="true" />
-            <element signature="n#mouseDown:#0;n#BasicWindowDisplayView#0" expanded="true" />
-            <element signature="n#setNextResponder:#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#drawWithPathOptions:#0;n#NSBezierPath#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_src/views/BasicDisplayView.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="51" selection-start="528" selection-end="528" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_src/views/BasicDisplayView.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="0" selection-start="2550" selection-end="2550" vertical-scroll-proportion="0.0">
+        <state line="53" column="31" selection-start="1045" selection-end="1045" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#initWithFrame:#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#initWithCoder:#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#addBorder:#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#setBorderWidth:borderColor:#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#preservesContentDuringLiveResize#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#isOpaque#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#borderColor#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#borderType#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#borderWidth#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#borderOptions#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#cornerOptions#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#cornerRadius#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#gradient#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#innerShadow#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#outerShadow#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#setCornerOptions:#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#setCornerRadius:#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#setBorderColor:#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#setBorderWidth:#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#setBorderType:#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#setBorderOptions:#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#setGradient:#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#setBackgroundColor:#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#setInnerShadow:#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#setOuterShadow:#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#setup#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#drawRect:#0;n#BasicDisplayView#0" expanded="true" />
+            <element signature="n#viewDidMoveToWindow#0;n#BasicDisplayView#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_src/utils/PathOptions.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="38" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/windows/BasicNewCustomWindow.m">
+    <entry file="file://$PROJECT_DIR$/_src/utils/PathOptions.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="0" selection-start="1107" selection-end="1107" vertical-scroll-proportion="0.5">
+        <state line="12" column="16" selection-start="242" selection-end="242" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="n#awakeFromNib#0;n#BasicNewCustomWindow#0" expanded="true" />
-            <element signature="n#initWithContentRect:styleMask:backing:defer:#0;n#BasicNewCustomWindow#0" expanded="true" />
-            <element signature="n#setup#0;n#BasicNewCustomWindow#0" expanded="true" />
-            <element signature="n#windowBackgroundView#0;n#BasicNewCustomWindow#0" expanded="true" />
-            <element signature="n#setWindowBackgroundView:#0;n#BasicNewCustomWindow#0" expanded="true" />
-            <element signature="n#setContentRect:#0;n#BasicNewCustomWindow#0" expanded="true" />
-            <element signature="n#contentView#0;n#BasicNewCustomWindow#0" expanded="true" />
-            <element signature="n#setContentView:#0;n#BasicNewCustomWindow#0" expanded="true" />
-            <element signature="n#bounds#0;n#BasicNewCustomWindow#0" expanded="true" />
-            <element signature="n#setTopMargin:#0;n#BasicNewCustomWindow#0" expanded="true" />
-            <element signature="n#setBottomMargin:#0;n#BasicNewCustomWindow#0" expanded="true" />
-            <element signature="n#setLeftMargin:#0;n#BasicNewCustomWindow#0" expanded="true" />
-            <element signature="n#setRightMargin:#0;n#BasicNewCustomWindow#0" expanded="true" />
-            <element signature="n#mouseEntered:#0;n#BasicNewCustomWindow#0" expanded="true" />
-            <element signature="n#mouseMoved:#0;n#BasicNewCustomWindow#0" expanded="true" />
+            <element signature="n#initWithGradient:#0;n#PathOptions#0" expanded="true" />
+            <element signature="n#initWithGradient:borderColor:#0;n#PathOptions#0" expanded="true" />
+            <element signature="n#initWithGradient:borderColor:borderWidth:#0;n#PathOptions#0" expanded="true" />
+            <element signature="n#initWithGradient:borderColor:borderWidth:cornerRadius:#0;n#PathOptions#0" expanded="true" />
+            <element signature="n#initWithGradient:borderColor:borderWidth:cornerRadius:cornerOptions:#0;n#PathOptions#0" expanded="true" />
+            <element signature="n#init#0;n#PathOptions#0" expanded="true" />
+            <element signature="n#setGradient:#0;n#PathOptions#0" expanded="true" />
+            <element signature="n#setBorderOption:#0;n#PathOptions#0" expanded="true" />
+            <element signature="n#setBorderColor:#0;n#PathOptions#0" expanded="true" />
+            <element signature="n#setBorderWidth:#0;n#PathOptions#0" expanded="true" />
+            <element signature="n#setBorderType:#0;n#PathOptions#0" expanded="true" />
+            <element signature="n#setCornerRadius:#0;n#PathOptions#0" expanded="true" />
+            <element signature="n#setCornerType:#0;n#PathOptions#0" expanded="true" />
+            <element signature="n#borderOption#0;n#PathOptions#0" expanded="true" />
+            <element signature="n#borderColor#0;n#PathOptions#0" expanded="true" />
+            <element signature="n#borderWidth#0;n#PathOptions#0" expanded="true" />
+            <element signature="n#borderType#0;n#PathOptions#0" expanded="true" />
+            <element signature="n#cornerRadius#0;n#PathOptions#0" expanded="true" />
+            <element signature="n#cornerType#0;n#PathOptions#0" expanded="true" />
+            <element signature="n#copy#0;n#PathOptions#0" expanded="true" />
+            <element signature="n#drawWithRect:#0;n#PathOptions#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_src/views/BasicWindowDisplayView.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="107" column="0" selection-start="2387" selection-end="2387" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#setup#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#updateLayout#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#setBorderWidth:#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#setTopMargin:#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#setWindowHeaderView:#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#setWindowFooterView:#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#embedView:#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#addSubview:#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#isOpaque#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#mouseDownCanMoveWindow#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#preservesContentDuringLiveResize#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#viewDidEndLiveResize#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#drawImage#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#subviewHeight#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#subviewFrame#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#singleSubview#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#southMiddleForSize:#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#westMiddleForSize:#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#eastMiddleForSize:#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#cornerRectForTopCornerRect:#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#cornerRectForBottomCornerRect:#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#northRectFull#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#southRectFull#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#northRectForSize:#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#northMiddleRect#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#northWestRect#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#northWestRectForSize:#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#northEastCornerRect#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#northEastRectForSize:#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#southWestRect#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#southWestRectForSize:#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#southEastCornerRect#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#southEastRectForSize:#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#southMiddleRect#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#westMiddleRect#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#eastMiddleRect#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#cacheImageTopRight#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#cacheImageTopLeft#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#northMiddleRectForCachedImage#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#cacheImageBottomMiddle#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#cacheImageLeftMiddle#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#cacheImageRightMiddle#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#cacheImageBottomRight#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#bottomRect#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#middleRect#0;n#BasicWindowDisplayView#0" expanded="true" />
+            <element signature="n#resizingRect#0;n#BasicWindowDisplayView#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_src/windows/BasicStyledWindow.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="47" selection-start="888" selection-end="888" vertical-scroll-proportion="-0.23287672">
+          <folding>
+            <element signature="n#setup#0;n#BasicStyledWindow#0" expanded="true" />
+            <element signature="n#windowHeaderView#0;n#BasicStyledWindow#0" expanded="true" />
+            <element signature="n#windowFooterView#0;n#BasicStyledWindow#0" expanded="true" />
           </folding>
         </state>
       </provider>

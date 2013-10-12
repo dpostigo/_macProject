@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "BasicObject.h"
 
-
 @interface BasicUserObject : BasicObject {
     NSString *firstName;
     NSString *lastName;
@@ -17,7 +16,6 @@
     NSString *displayName;
     NSString *thumbnailURL;
 }
-
 
 @property(nonatomic, retain) NSString *firstName;
 @property(nonatomic, retain) NSString *lastName;

@@ -10,10 +10,8 @@
 #import "NSButton+TextColor.h"
 #import "BOSilverButton.h"
 
-
 @implementation BONavigationBar {
 }
-
 
 - (void) setup {
     [super setup];

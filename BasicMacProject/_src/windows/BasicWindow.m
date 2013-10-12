@@ -7,7 +7,6 @@
 
 #import "BasicWindow.h"
 
-
 @implementation BasicWindow {
 }
 

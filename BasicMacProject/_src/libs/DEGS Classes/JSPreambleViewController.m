@@ -66,7 +66,7 @@
 - (id) initWithPreamble: (JSPreamble *) preamble {
     self = [super initWithNibName: @"JSPreambleViewController" bundle: nil];
     if (self) {
-        self.preamble  = preamble;
+        self.preamble = preamble;
         self.biasCells = 1;
     }
     return self;
@@ -88,8 +88,8 @@
 }
 
 - (void) fillCell: (JSPreambleTableCellView *) cell {
-    if (self.preamble.name) cell.nameTextField.stringValue                     = self.preamble.name;
-    if (self.preamble.author) cell.authorTextField.stringValue                 = self.preamble.author;
+    if (self.preamble.name) cell.nameTextField.stringValue = self.preamble.name;
+    if (self.preamble.author) cell.authorTextField.stringValue = self.preamble.author;
     if (self.preamble.scriptDescription) cell.descriptionTextField.stringValue = self.preamble.scriptDescription;
 }
 
@@ -119,9 +119,9 @@
 // we use the key-value pattern to set the properties of the model
 // the identifiers of the textFields correspond to the key of the model that they set
 - (void) controlTextDidChange: (NSNotification *) obj {
-    NSTextField *sender           = [obj object];
-    NSString    *enteredString    = [sender.stringValue stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
-    NSString    *senderIdentifier = [sender identifier];
+    NSTextField *sender = [obj object];
+    NSString *enteredString = [sender.stringValue stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+    NSString *senderIdentifier = [sender identifier];
 
     // we assign a meaning to value only if the user entered a string
     // in this way if the user delete the string in the textField we actually set the property of the model to nil

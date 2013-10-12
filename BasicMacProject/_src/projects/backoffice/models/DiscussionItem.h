@@ -10,22 +10,20 @@
 #import "BasicObject.h"
 #import "User.h"
 
-
 @interface DiscussionItem : BasicObject {
 
-    NSDate         *createdDate;
-    NSString       *text;
+    NSDate *createdDate;
+    NSString *text;
     NSMutableArray *attachments;
-    User           *contact;
-    NSString       *contactId;
+    User *contact;
+    NSString *contactId;
 
 }
 
-
-@property(nonatomic, strong) NSDate         *createdDate;
-@property(nonatomic, retain) NSString       *text;
+@property(nonatomic, strong) NSDate *createdDate;
+@property(nonatomic, retain) NSString *text;
 @property(nonatomic, strong) NSMutableArray *attachments;
-@property(nonatomic, strong) User           *contact;
-@property(nonatomic, retain) NSString       *contactId;
+@property(nonatomic, strong) User *contact;
+@property(nonatomic, retain) NSString *contactId;
 - (id) initWithDictionary: (NSDictionary *) dictionary;
 @end

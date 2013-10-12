@@ -11,15 +11,12 @@
 #import "ASIDataDecompressor.h"
 #import <YAJL/YAJL.h>
 
-
 @implementation LoginOperation {
 }
-
 
 @synthesize username;
 
 @synthesize password;
-
 
 // Encode a string to embed in an URL.
 NSString *encodeToPercentEscapeString(NSString *string) {
@@ -62,7 +59,7 @@ NSString *decodeFromPercentEscapeString(NSString *string) {
 
     username = encodeToPercentEscapeString(username);
     self.urlString = [NSString stringWithFormat: @"%@/access/attempt_login.json?primary_email=%@&hashed_password=%@", STAGING_URL, username, [self sha1: password]];
-    self.url       = [NSURL URLWithString: urlString];
+    self.url = [NSURL URLWithString: urlString];
 
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL: url];
     request.requestMethod = @"GET";
@@ -71,18 +68,18 @@ NSString *decodeFromPercentEscapeString(NSString *string) {
 
     if (!request.error) {
 
-        NSError      *error;
+        NSError *error;
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData: request.responseData options: kNilOptions error: &error];
 
         if (dictionary == nil) {
             NSLog(@"%@ failed.", NSStringFromClass([self class]));
             _model.currentUser = nil;
-            _model.loggedIn    = NO;
+            _model.loggedIn = NO;
             [_model notifyDelegates: @selector(loginFailedWithMessage:) object: @"Login failed."];
         } else {
             NSLog(@"%@ succeeded.", NSStringFromClass([self class]));
             _model.currentUser = [[User alloc] initWithDictionary: dictionary];
-            _model.loggedIn    = YES;
+            _model.loggedIn = YES;
             [_model notifyDelegates: @selector(loginSucceeded:) object: nil];
         }
     }

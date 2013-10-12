@@ -8,22 +8,20 @@
 #import "BOModalTableRowView.h"
 #import "NSBezierPath+DPUtils.h"
 
-
 @implementation BOModalTableRowView {
 }
-
 
 - (id) initWithFrame: (NSRect) frameRect {
     self = [super initWithFrame: frameRect];
     if (self) {
 
         self.shadow.shadowBlurRadius = 2.0;
-        self.shadow.shadowOffset     = NSMakeSize(0, -1);
-        self.shadow.shadowColor      = [NSColor lightGrayColor];
+        self.shadow.shadowOffset = NSMakeSize(0, -1);
+        self.shadow.shadowColor = [NSColor lightGrayColor];
 
-        self.cornerRadius    = 0.0;
+        self.cornerRadius = 0.0;
         self.backgroundColor = [NSColor colorWithCalibratedWhite: 0.95 alpha: 1.0];
-        self.borderColor     = [NSColor clearColor];
+        self.borderColor = [NSColor clearColor];
 
         self.gradient = [[NSGradient alloc] initWithColorsAndLocations:
                 [NSColor colorWithDeviceWhite: 0.85 alpha: 1.0f], 0.0,

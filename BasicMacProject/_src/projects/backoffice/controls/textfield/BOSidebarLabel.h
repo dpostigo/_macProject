@@ -8,12 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface BOSidebarLabel : NSTextField {
     NSColor *highlightedShadowColor;
     NSColor *unhighlightedShadowColor;
 }
-
 
 @property(nonatomic, strong) NSColor *highlightedShadowColor;
 @property(nonatomic, strong) NSColor *unhighlightedShadowColor;

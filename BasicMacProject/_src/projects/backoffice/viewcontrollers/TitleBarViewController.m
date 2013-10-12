@@ -7,10 +7,8 @@
 
 #import "TitleBarViewController.h"
 
-
 @implementation TitleBarViewController {
 }
-
 
 - (IBAction) handleAddButton: (id) sender {
     [_model notifyDelegates: @selector(shouldAddTask) object: nil];

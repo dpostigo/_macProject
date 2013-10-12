@@ -8,11 +8,9 @@
 #import <Foundation/Foundation.h>
 #import "TableRowObject.h"
 
-
 @interface OutlineRowObject : TableRowObject {
     BOOL isExpandable;
 }
-
 
 @property(nonatomic) BOOL isExpandable;
 - (id) initWithTextLabel: (NSString *) aTextLabel isExpandable: (BOOL) aIsExpandable;

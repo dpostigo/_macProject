@@ -11,10 +11,10 @@
 @interface JSButtonDecoration : NSObject
 
 // properties applied to the image of a JSFlexibleButtonCell
-@property(nonatomic, strong) NSColor    *color;
+@property(nonatomic, strong) NSColor *color;
 @property(nonatomic, strong) NSGradient *gradient;
-@property(nonatomic, strong) NSShadow   *innerShadow;
-@property(nonatomic, strong) NSShadow   *dropShadow;
+@property(nonatomic, strong) NSShadow *innerShadow;
+@property(nonatomic, strong) NSShadow *dropShadow;
 
 // convenience property that returns YES if self.gradient is not nil
 @property(readonly) BOOL isGradient;

@@ -24,16 +24,16 @@
     NSGradient *gradient = gradientWithTargetColor([NSColor colorWithSRGBRed: .60 green: .60 blue: .60 alpha: 1]);
     NSRect verticalRect = NSMakeRect(0.0, LINE_START_POINT, 1, imageSize.height - 2 * LINE_START_POINT);
     [gradient drawInRect: verticalRect angle: 90];
-    gradient     = gradientWithTargetColor([NSColor colorWithSRGBRed: 1.0 green: 1.0 blue: 1.0 alpha: 1]);
+    gradient = gradientWithTargetColor([NSColor colorWithSRGBRed: 1.0 green: 1.0 blue: 1.0 alpha: 1]);
     verticalRect = NSMakeRect(1.0, LINE_START_POINT, 1, imageSize.height - 2 * LINE_START_POINT);
     [gradient drawInRect: verticalRect angle: 90];
 
     // white
-    NSColor            *textColor      = [NSColor blackColor];
-    NSFont             *sysUIFont      = [NSFont fontWithName: @"Lucida Grande Bold" size: 13];
-    NSDictionary       *attributesDict = @{NSFontAttributeName : sysUIFont, NSForegroundColorAttributeName : textColor};
-    NSAttributedString *stringToDraw   = [[NSAttributedString alloc] initWithString: string attributes: attributesDict];
-    NSSize  stringSize   = [stringToDraw size];
+    NSColor *textColor = [NSColor blackColor];
+    NSFont *sysUIFont = [NSFont fontWithName: @"Lucida Grande Bold" size: 13];
+    NSDictionary *attributesDict = @{NSFontAttributeName : sysUIFont, NSForegroundColorAttributeName : textColor};
+    NSAttributedString *stringToDraw = [[NSAttributedString alloc] initWithString: string attributes: attributesDict];
+    NSSize stringSize = [stringToDraw size];
     NSPoint stringOrigin = NSMakePoint(0.5 * (imageSize.width - stringSize.width), 0.5 * (imageSize.height - stringSize.height));
     [stringToDraw drawAtPoint: stringOrigin];
 
@@ -58,7 +58,7 @@ static NSGradient *gradientWithTargetColor(NSColor *targetColor) {
     CGContextSetAlpha(c, fraction);
 
     //Create mask image:
-    NSRect     maskRect  = rect;
+    NSRect maskRect = rect;
     CGImageRef maskImage = [self CGImageForProposedRect: &maskRect context: [NSGraphicsContext currentContext] hints: nil];
 
     //Draw image and white drop shadow:
@@ -80,9 +80,9 @@ static NSGradient *gradientWithTargetColor(NSColor *targetColor) {
         //Draw inner shadow with inverted mask:
         NSRect rectForLocalContext = maskRect;
         rectForLocalContext.origin.x = 0.0;
-        CGColorSpaceRef colorSpace  = CGColorSpaceCreateDeviceRGB();
-        CGContextRef    maskContext = CGBitmapContextCreate(NULL, CGImageGetWidth(maskImage), CGImageGetHeight(maskImage), 8, CGImageGetWidth(maskImage) * 4, colorSpace, kCGImageAlphaPremultipliedLast);
-        CGFloat         scale       = [[NSScreen mainScreen] backingScaleFactor];
+        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+        CGContextRef maskContext = CGBitmapContextCreate(NULL, CGImageGetWidth(maskImage), CGImageGetHeight(maskImage), 8, CGImageGetWidth(maskImage) * 4, colorSpace, kCGImageAlphaPremultipliedLast);
+        CGFloat scale = [[NSScreen mainScreen] backingScaleFactor];
         CGContextScaleCTM(maskContext, scale, scale);
         CGColorSpaceRelease(colorSpace);
         CGContextSetBlendMode(maskContext, kCGBlendModeXOR);
@@ -105,7 +105,7 @@ static NSGradient *gradientWithTargetColor(NSColor *targetColor) {
     CGContextSetAlpha(c, fraction);
 
     //Create mask image:
-    NSRect     maskRect  = rect;
+    NSRect maskRect = rect;
     CGImageRef maskImage = [self CGImageForProposedRect: &maskRect context: [NSGraphicsContext currentContext] hints: nil];
 
     //Draw image and white drop shadow:
@@ -126,9 +126,9 @@ static NSGradient *gradientWithTargetColor(NSColor *targetColor) {
         [innerShadow setInCGContext: c];
 
         //Draw inner shadow with inverted mask:
-        CGColorSpaceRef colorSpace  = CGColorSpaceCreateDeviceRGB();
-        CGContextRef    maskContext = CGBitmapContextCreate(NULL, CGImageGetWidth(maskImage), CGImageGetHeight(maskImage), 8, CGImageGetWidth(maskImage) * 4, colorSpace, kCGImageAlphaPremultipliedLast);
-        CGFloat         scale       = [[NSScreen mainScreen] backingScaleFactor];
+        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+        CGContextRef maskContext = CGBitmapContextCreate(NULL, CGImageGetWidth(maskImage), CGImageGetHeight(maskImage), 8, CGImageGetWidth(maskImage) * 4, colorSpace, kCGImageAlphaPremultipliedLast);
+        CGFloat scale = [[NSScreen mainScreen] backingScaleFactor];
         CGContextScaleCTM(maskContext, scale, scale);
         CGColorSpaceRelease(colorSpace);
         CGContextSetBlendMode(maskContext, kCGBlendModeXOR);

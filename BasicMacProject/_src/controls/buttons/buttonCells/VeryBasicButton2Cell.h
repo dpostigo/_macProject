@@ -10,9 +10,7 @@
 #import "PathOptions.h"
 #import "ImageOptions.h"
 
-
 @interface VeryBasicButton2Cell : NSButtonCell {
-
 
     BorderOption *innerBorder;
     PathOptions *pathOptions;

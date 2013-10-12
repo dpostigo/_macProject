@@ -7,10 +7,8 @@
 
 #import "NavigationBar.h"
 
-
 @implementation NavigationBar {
 }
-
 
 @synthesize backButtonItem;
 @synthesize barButtonHeight;
@@ -19,9 +17,9 @@
 
 - (void) setup {
     [super setup];
-    self.barButtonHeight    = 25;
-    shadow.shadowColor      = [NSColor blackColor];
-    shadow.shadowOffset     = NSMakeSize(0, -1);
+    self.barButtonHeight = 25;
+    shadow.shadowColor = [NSColor blackColor];
+    shadow.shadowOffset = NSMakeSize(0, -1);
     shadow.shadowBlurRadius = 2.0;
 }
 

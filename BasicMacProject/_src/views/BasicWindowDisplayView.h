@@ -10,17 +10,28 @@
 #import "BasicDisplayView.h"
 
 @interface BasicWindowDisplayView : BasicDisplayView {
+    CGFloat topMargin;
+    CGFloat bottomMargin;
+
+    BOOL cacheAsBitmap;
+
+    NSView *windowHeaderView;
+    NSView *windowFooterView;
 
 }
 
-
+@property(nonatomic) CGFloat topMargin;
+@property(nonatomic) CGFloat bottomMargin;
+@property(nonatomic) BOOL cacheAsBitmap;
+@property(nonatomic, strong) NSView *windowHeaderView;
+@property(nonatomic, strong) NSView *windowFooterView;
 - (NSView *) singleSubview;
-- (NSRect) topLeft;
-- (NSRect) topRightCornerRect;
-- (NSRect) bottomLeft;
-- (NSRect) bottomRight;
+- (NSRect) northWestRect;
+- (NSRect) northEastCornerRect;
+- (NSRect) southWestRect;
+- (NSRect) southEastCornerRect;
 - (NSRect) cacheImageTopRight;
 - (NSRect) cacheImageTopLeft;
-- (NSRect) cacheImageTopMiddle;
+- (NSRect) northMiddleRectForCachedImage;
 - (NSRect) cacheImageBottomRight;
 @end

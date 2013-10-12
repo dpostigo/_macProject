@@ -13,7 +13,6 @@
 #import "JSXMDS.h"
 #import "NSString+JSAdditions.h"
 
-
 @implementation JSIntegrate
 
 //@synthesize algorithm = _algorithm;
@@ -68,14 +67,14 @@
     if (!_computedVectors) {
         _computedVectors = [[JSVectors alloc] init];
         _computedVectors.allowsComputedVectorsOnly = YES;
-        _computedVectors.parent                    = self;
+        _computedVectors.parent = self;
     }
     return _computedVectors;
 }
 
 - (void) setComputedVectors: (JSVectors *) computedVectors {
     _computedVectors = computedVectors;
-    _computedVectors.parent                    = self;
+    _computedVectors.parent = self;
     _computedVectors.allowsComputedVectorsOnly = YES;
 }
 # pragma mark - Initialiser and exporter
@@ -151,7 +150,7 @@
 
 - (NSString *) description {
     NSString *title = @"Integrate";
-    if (_name) title                                        = [title stringByAppendingFormat: @" - %@", self.name];
+    if (_name) title = [title stringByAppendingFormat: @" - %@", self.name];
     if (![self.parent isKindOfClass: [JSXMDS class]]) title = [NSString stringWithFormat: @"%@/%@", [self.parent description], title];
     return title;
 }

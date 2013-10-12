@@ -9,7 +9,6 @@
 #import "VeryBasicViewController.h"
 #import "BasicArrayViewController.h"
 
-
 @interface BasicTableArrayController : BasicArrayViewController <NSTableViewDataSource, NSTableViewDelegate> {
 
     IBOutlet NSTableView *table;

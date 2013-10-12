@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #import "BasicBackgroundViewOld.h"
 
-
 @interface BOSidebarBackgroundView : BasicBackgroundViewOld {
 
 }

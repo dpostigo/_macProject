@@ -9,6 +9,5 @@
 #import <Foundation/Foundation.h>
 #import "BasicTableCellView.h"
 
-
 @interface BasicButtonCellView : BasicTableCellView
 @end

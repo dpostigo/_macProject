@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "BasicInnerShadowView.h"
 
-
 @interface ButtonContainer : NSView {
 
     NSMutableArray *buttons;

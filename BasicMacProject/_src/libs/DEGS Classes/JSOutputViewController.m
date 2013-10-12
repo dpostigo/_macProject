@@ -17,9 +17,9 @@
 @property(nonatomic, strong) JSOutput *output;
 
 @property(nonatomic, strong) JSSyntaxHighlighter *syntaxHighlighter;
-@property(readonly, strong) NSArray              *subSampling;
+@property(readonly, strong) NSArray *subSampling;
 
-@property(nonatomic, strong) JSGroupTableCellView        *groupDummyCell;
+@property(nonatomic, strong) JSGroupTableCellView *groupDummyCell;
 @property(nonatomic, strong) JSIntroductionTableCellView *introductionDummyCell;
 
 @end
@@ -84,7 +84,7 @@
 - (id) initWithOutput: (JSOutput *) output {
     self = [super initWithNibName: @"JSOutputViewController" bundle: nil];
     if (self) {
-        self.output            = output;
+        self.output = output;
         self.syntaxHighlighter = [[JSSyntaxHighlighter alloc] init];
         [self.syntaxHighlighter setDelegate: self];
         self.biasCells = 1;
@@ -191,8 +191,8 @@
     NSInteger row = [self.mainTableView rowForView: sender];
     if (row != -1) {
         NSString *senderIdentifier = [sender identifier];
-        JSGroup  *group            = (self.output.groups)[row - self.biasCells];
-        JSNode   *newObject        = [group valueForKey: senderIdentifier];
+        JSGroup *group = (self.output.groups)[row - self.biasCells];
+        JSNode *newObject = [group valueForKey: senderIdentifier];
         [self.treeController showSubsectionForObject: newObject];
     }
 }
@@ -202,8 +202,8 @@
 // We use key value coding to assign changes in the various controls to the model
 // The identifier of the controls are equal to the keyPath of the properties we want to set
 - (void) controlTextDidChange: (NSNotification *) obj {
-    NSTextField *sender           = [obj object];
-    NSString    *senderIdentifier = [sender identifier];
+    NSTextField *sender = [obj object];
+    NSString *senderIdentifier = [sender identifier];
 
     // the entries in the token field gets handled in another method so we have to make sure we are only setting the properties we want here
     if ([senderIdentifier isEqualToString: @"name"] || [senderIdentifier isEqualToString: @"definition"] || [senderIdentifier isEqualToString: @"filename"]) {
@@ -233,8 +233,8 @@
 
 - (IBAction) initialSampleCheckedBoxPressed: (id) sender {
     NSNumber *buttonState = @( [sender state] );
-    NSInteger row     = [self.mainTableView rowForView: sender];
-    id        element = (self.output.groups)[row - self.biasCells];
+    NSInteger row = [self.mainTableView rowForView: sender];
+    id element = (self.output.groups)[row - self.biasCells];
     [element setValue: buttonState forKey: [sender identifier]];
     if (row != [self.mainTableView selectedRow]) [self.mainTableView selectRowIndexes: [NSIndexSet indexSetWithIndex: row] byExtendingSelection: NO];
 }
@@ -243,10 +243,10 @@
 
 - (NSArray *) tokenField: (NSTokenField *) tokenField shouldAddTokens: (NSArray *) tokens {
     NSMutableArray *tokensToBeAdded = [NSMutableArray array];
-    NSArray        *currentTokens   = [tokenField objectValue];
+    NSArray *currentTokens = [tokenField objectValue];
     // For some stupid reason when cocoa calls this method it has already added the candidate tokens to the toeknfield tokens list
     // For every token in the candidate list we count how many times it appears in the tokenfield tokens list and if it appears twice than it's a duplicate and we reject it
-    for (NSString  *candidateToken in tokens) {
+    for (NSString *candidateToken in tokens) {
         int appearance = 0;
         for (NSString *token in currentTokens) {
             if ([candidateToken isEqualToString: token]) appearance++;
@@ -261,7 +261,7 @@
         NSString *tokenFieldIdentifier = [tokenField identifier];
 
         id element = (self.output.groups)[row - self.biasCells];
-        id value   = [element valueForKeyPath: tokenFieldIdentifier];
+        id value = [element valueForKeyPath: tokenFieldIdentifier];
         if (value) value = [(NSArray *) value arrayByAddingObjectsFromArray: tokensToBeAdded];
         else value = [tokensToBeAdded copy];
         [element setValue: value forKeyPath: tokenFieldIdentifier];
@@ -286,7 +286,7 @@
         // These characters are associated to the unsigned short 65532 which is out of bounds of the UTF range NSCharacterSet handles
         // These characters are called "Object Replacement Character"
         NSCharacterSet *characterset = [NSCharacterSet characterSetWithCharactersInString: @"\uFFFC"];
-        NSString       *tokenString  = [(NSMutableString *) object stringByTrimmingCharactersInSet: characterset];
+        NSString *tokenString = [(NSMutableString *) object stringByTrimmingCharactersInSet: characterset];
         if ([tokenString length]) {
 
             // object is passed as a mutable string so before handling it to our internal validation method we want to package it in an array
@@ -327,7 +327,7 @@
     NSNumber *gridPoints = [self.output.root gridPointsForDimension: [self extractDimensionName: representedObject]];
     if (gridPoints) {
         NSMutableArray *subSampledGrid = [NSMutableArray arrayWithCapacity: 0];
-        for (NSNumber  *number in self.subSampling) {
+        for (NSNumber *number in self.subSampling) {
             if ([gridPoints intValue] % [number intValue] == 0) {
                 [subSampledGrid addObject: @([gridPoints intValue] / [number intValue])];
             }
@@ -337,8 +337,8 @@
         // we package the information in a dictionary to attach to the representedObject property of the menuitem
         NSDictionary *info = [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects: representedObject, tokenField, nil] forKeys: [NSArray arrayWithObjects: @"token", @"tokenField", nil]];
 
-        NSMenu     *tokenMenu = [[NSMenu alloc] init];
-        NSMenuItem *zeroItem  = [[NSMenuItem alloc] initWithTitle: @"0" action: @selector(changeSampling:) keyEquivalent: @""];
+        NSMenu *tokenMenu = [[NSMenu alloc] init];
+        NSMenuItem *zeroItem = [[NSMenuItem alloc] initWithTitle: @"0" action: @selector(changeSampling:) keyEquivalent: @""];
         [zeroItem setTarget: self];
         [zeroItem setRepresentedObject: info];
         [tokenMenu addItem: zeroItem];
@@ -373,11 +373,11 @@
 }
 
 - (void) changeSampling: (id) sender {
-    NSString       *menuString            = ((NSMenuItem *) sender).title;
-    NSDictionary   *info                  = ((NSMenuItem *) sender).representedObject;
-    NSString       *clickedToken          = [info valueForKey: @"token"];
-    JSTokenField   *originatingTokenField = [info valueForKey: @"tokenField"];
-    NSMutableArray *tokens                = [originatingTokenField.objectValue mutableCopy];
+    NSString *menuString = ((NSMenuItem *) sender).title;
+    NSDictionary *info = ((NSMenuItem *) sender).representedObject;
+    NSString *clickedToken = [info valueForKey: @"token"];
+    JSTokenField *originatingTokenField = [info valueForKey: @"tokenField"];
+    NSMutableArray *tokens = [originatingTokenField.objectValue mutableCopy];
     NSUInteger tokenIndex = [tokens indexOfObject: clickedToken];
 
     NSInteger row = [self.mainTableView rowForView: originatingTokenField];
@@ -414,8 +414,8 @@
 
 - (BOOL) tableView: (NSTableView *) tableView acceptDrop: (id) info row: (NSInteger) row dropOperation: (NSTableViewDropOperation) operation {
     NSPasteboard *pasteboard = [info draggingPasteboard];
-    NSData       *rowData    = [pasteboard dataForType: SectionTableViewDataType];
-    NSIndexSet   *rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData: rowData];
+    NSData *rowData = [pasteboard dataForType: SectionTableViewDataType];
+    NSIndexSet *rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData: rowData];
     NSUInteger dropIndex = row - self.biasCells;
 
     // insertIndex is the index where we are going to insert back the data in the model array

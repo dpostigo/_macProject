@@ -8,7 +8,6 @@
 
 #import "BasicButton2Cell.h"
 
-
 @implementation BasicButton2Cell {
 
 }

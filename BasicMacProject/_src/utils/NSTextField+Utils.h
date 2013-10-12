@@ -7,7 +7,6 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface NSTextField (Utils)
 //
 //- (void) setShadowColor: (NSColor *) color;

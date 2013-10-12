@@ -105,8 +105,8 @@
     // if the index of the asked vector is greater than the number of vectors we return right away and save the search
     if (index > self.numberOfElements) return NSNotFound;
 
-    NSInteger       _index = -1;
-    for (NSUInteger i      = 0; i < [_operations count]; i++) {
+    NSInteger _index = -1;
+    for (NSUInteger i = 0; i < [_operations count]; i++) {
         if ([[_operations objectAtIndex: i] isKindOfClass: elementClass]) _index++;
         if (_index == index) return i;
     }

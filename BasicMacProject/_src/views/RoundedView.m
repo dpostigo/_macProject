@@ -9,10 +9,8 @@
 #import "NSBezierPath+Additions.h"
 #import "NSBezierPath+DPUtils.h"
 
-
 @implementation RoundedView {
 }
-
 
 @synthesize cornerOptions;
 
@@ -23,8 +21,8 @@
 
 - (void) drawRect: (NSRect) rect {
 
-    NSGraphicsContext *ctx  = [NSGraphicsContext currentContext];
-    NSBezierPath      *path = [NSBezierPath bezierPathWithRoundedRect: rect corners: cornerOptions radius: cornerRadius];
+    NSGraphicsContext *ctx = [NSGraphicsContext currentContext];
+    NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect: rect corners: cornerOptions radius: cornerRadius];
 
     if (shadow.shadowColor != [NSColor clearColor]) {
         NSRect newRect = self.bounds;
@@ -67,7 +65,7 @@
 }
 
 //- (void) secondDraw: (NSRect) rect {
-//    NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect: rect corners: cornerOptions radius: cornerRadius];
+//    NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect: rect cornerProperties: cornerType radius: cornerRadius];
 //    NSRect newRect = self.bounds;
 //
 //    if (shadow.shadowColor != [NSColor clearColor]) {

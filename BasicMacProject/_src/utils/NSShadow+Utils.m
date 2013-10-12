@@ -7,9 +7,7 @@
 
 #import "NSShadow+Utils.h"
 
-
 @implementation NSShadow (Utils)
-
 
 + (void) setShadowWithOffset: (NSSize) offset blurRadius: (CGFloat) radius color: (NSColor *) shadowColor {
     NSShadow *aShadow = [[self alloc] init];

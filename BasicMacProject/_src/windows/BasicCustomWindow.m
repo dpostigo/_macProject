@@ -9,14 +9,12 @@
 #import "BasicCustomWindow.h"
 #import "BasicCustomWindowFrame.h"
 
-
 @implementation BasicCustomWindow {
 
 }
 
 @synthesize windowFrame;
 @synthesize childContentView;
-
 
 @synthesize windowButtonsLeft;
 @synthesize showsCloseButton;
@@ -45,7 +43,6 @@
         self.showsMaximizeButton = YES;
         self.showsMinimizeButton = YES;
 
-
         windowFramePadding = [[self class] windowFramePadding];
         buttonSpacing = 5;
         buttonHeight = 25;
@@ -73,7 +70,6 @@
         NSRect bounds = self.bounds;
         windowFrame = [[self.frameClass alloc] initWithFrame: bounds];
         windowFrame.windowFramePadding = windowFramePadding;
-
 
         NSArray *buttons = self.windowButtonsLeft;
 
@@ -154,7 +150,6 @@
 - (void) setContentView: (NSView *) aView {
     if ([childContentView isEqualTo: aView]) return;
 
-
     NSRect bounds = self.frame;
     bounds.origin = NSZeroPoint;
 
@@ -165,15 +160,12 @@
 
     }
 
-
     if (childContentView) [childContentView removeFromSuperview];
     childContentView = aView;
-
 
     NSRect childContentViewRect = [self contentRectForFrameRect: bounds];
     childContentViewRect.size.width += windowFrame.cornerRadiusInset;
     childContentViewRect.origin.x -= windowFrame.cornerRadiusInset;
-
 
     childContentView.frame = [self contentRectForFrameRect: bounds];
     childContentView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;

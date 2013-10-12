@@ -1,14 +1,14 @@
 //
-//  BasicNewCustomWindow.m
+//  BasicNewCustomWindow0923.m
 //  Carts
 //
 //  Created by Daniela Postigo on 9/7/13.
 //  Copyright (c) 2013 Elastic Creative. All rights reserved.
 //
 
-#import "BasicNewCustomWindow.h"
+#import "BasicNewCustomWindow0923.h"
 
-@implementation BasicNewCustomWindow {
+@implementation BasicNewCustomWindow0923 {
 
 }
 
@@ -55,7 +55,6 @@
 - (id) windowBackgroundView {
     return [super contentView];
 }
-
 
 
 - (void) setWindowBackgroundView: (BasicWindowDisplayView *) aView {

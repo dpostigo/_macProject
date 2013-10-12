@@ -9,10 +9,8 @@
 #import "BOSilverButton.h"
 #import "BOSilverButtonCell.h"
 
-
 @implementation BOSilverButton {
 }
-
 
 - (void) setup {
     [super setup];

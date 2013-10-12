@@ -13,12 +13,10 @@
 #import "BasicSecureTextFieldCell.h"
 #import "NSCell+PaddingUtils.h"
 
-
 @implementation LoginTableViewController {
     NSString *selectedUsername;
     NSString *selectedPassword;
 }
-
 
 @synthesize window;
 @synthesize usernameField;
@@ -57,10 +55,9 @@
 
     if ([cell.textField isKindOfClass: [BasicTextField class]]) {
         BasicTextField *basicTextField = (BasicTextField *) cell.textField;
-        basicTextField.rowObject    = rowObject;
+        basicTextField.rowObject = rowObject;
         basicTextField.tableSection = tableSection;
-        cell.imageView.image        = [NSImage imageNamed: @"assignee-icon"];
-
+        cell.imageView.image = [NSImage imageNamed: @"assignee-icon"];
 
         BasicTextFieldCell *textFieldCell = cell.textField.cell;
         textFieldCell.cellPadding = (40 - cell.textField.font.pointSize) / 4;
@@ -69,10 +66,9 @@
 
     } else if ([cell.textField isKindOfClass: [BasicSecureTextField class]]) {
         BasicSecureTextField *secureTextField = (BasicSecureTextField *) cell.textField;
-        secureTextField.rowObject    = rowObject;
+        secureTextField.rowObject = rowObject;
         secureTextField.tableSection = tableSection;
-        cell.imageView.image         = [NSImage imageNamed: @"key-icon-alpha"];
-
+        cell.imageView.image = [NSImage imageNamed: @"key-icon-alpha"];
 
         BasicSecureTextFieldCell *textFieldCell = (BasicSecureTextFieldCell *) cell.textField.cell;
         NSLog(@"textFieldCell = %@", textFieldCell);
@@ -103,7 +99,6 @@
 
 - (IBAction) handleSubmitButton: (id) sender {
     [super handleSubmitButton: sender];
-
 
     [self resignAllTextFields];
 

@@ -10,10 +10,8 @@
 #import "AddTaskViewController.h"
 #import "TaskInfoViewController.h"
 
-
 @interface TaskEditViewController : AddTaskViewController {
 }
-
 
 - (IBAction) handleUpdateButton: (id) sender;
 @end

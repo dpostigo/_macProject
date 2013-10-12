@@ -8,10 +8,8 @@
 
 #import "BOSidebarLabel.h"
 
-
 @implementation BOSidebarLabel {
 }
-
 
 @synthesize unhighlightedShadowColor;
 

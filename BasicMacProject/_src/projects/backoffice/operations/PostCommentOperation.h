@@ -10,14 +10,12 @@
 #import "BasicBackOfficeOperation.h"
 #import "DiscussionItem.h"
 
-
 @interface PostCommentOperation : BasicBackOfficeOperation {
-    Task           *task;
+    Task *task;
     DiscussionItem *discussionItem;
 }
 
-
-@property(nonatomic, strong) Task           *task;
+@property(nonatomic, strong) Task *task;
 @property(nonatomic, strong) DiscussionItem *discussionItem;
 - (id) initWithTask: (Task *) aTask discussionItem: (DiscussionItem *) anItem;
 @end

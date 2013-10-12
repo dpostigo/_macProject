@@ -8,7 +8,6 @@
 #import "BasicOperation.h"
 #import "Model.h"
 
-
 @implementation BasicOperation {
 }
 

@@ -8,15 +8,13 @@
 #import <Foundation/Foundation.h>
 #import "BasicTableViewController.h"
 
-
 @interface BasicTableViewDelegate : NSObject <NSTableViewDataSource, NSTableViewDataSource, NSTableViewDelegate> {
     BasicTableViewController *viewController;
-    NSMutableArray           *dataSource;
+    NSMutableArray *dataSource;
 
 }
 
-
-@property(nonatomic, strong) NSMutableArray           *dataSource;
+@property(nonatomic, strong) NSMutableArray *dataSource;
 @property(nonatomic, strong) BasicTableViewController *viewController;
 - (id) initWithViewController: (BasicTableViewController *) aViewController;
 

@@ -7,10 +7,8 @@
 
 #import "ActivityView.h"
 
-
 @implementation ActivityView {
 }
-
 
 - (void) stopAnimating {
 

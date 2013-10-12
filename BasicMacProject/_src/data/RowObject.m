@@ -7,10 +7,8 @@
 
 #import "RowObject.h"
 
-
 @implementation RowObject {
 }
-
 
 @synthesize cellIdentifier;
 @synthesize content;

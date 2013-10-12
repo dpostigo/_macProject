@@ -7,10 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface DPCustomWindowDelegateProxy : NSProxy <NSWindowDelegate> {
 }
-
 
 @property(nonatomic, assign) id <NSWindowDelegate> secondaryDelegate;
 @end

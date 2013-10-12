@@ -7,10 +7,8 @@
 
 #import "DPCustomTitleBarContainer.h"
 
-
 @implementation DPCustomTitleBarContainer {
 }
-
 
 - (void) mouseDragged: (NSEvent *) theEvent {
     NSWindow *window = [self window];

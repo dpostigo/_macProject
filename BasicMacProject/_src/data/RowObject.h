@@ -7,12 +7,10 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface RowObject : NSObject {
     NSString *cellIdentifier;
     id content;
 }
-
 
 @property(nonatomic, retain) NSString *cellIdentifier;
 @property(nonatomic, strong) id content;

@@ -11,16 +11,14 @@
 #import "YRKSpinningProgressIndicator.h"
 #import "NSView+Animation.h"
 
-
 @implementation BottomViewController {
 }
-
 
 - (void) loadView {
     [super loadView];
 
     indicatorColor = [NSColor whiteColor];
-    indicator.color       = indicatorColor;
+    indicator.color = indicatorColor;
     statusLabel.textColor = [NSColor whiteColor];
     [self progressStatusEnded: NO];
 
@@ -32,7 +30,6 @@
     [indicator startAnimation: self];
 
     [statusIndicatorContainer setHidden: NO];
-
 
     [statusIndicatorContainer animateInDirection: NSViewAnimationDirectionToTop amount: statusIndicatorContainer.height duration: 0.3 completionHandler: ^{
     }];
@@ -66,8 +63,8 @@
 }
 
 - (IBAction) handleSettingsButton: (id) sender {
-    _model.tasks    = nil;
-    _model.jobs     = nil;
+    _model.tasks = nil;
+    _model.jobs = nil;
     _model.loggedIn = NO;
     [_queue addOperation: [[SaveDataOperation alloc] init]];
     [_model notifyDelegates: @selector(shouldSignOut) object: nil];

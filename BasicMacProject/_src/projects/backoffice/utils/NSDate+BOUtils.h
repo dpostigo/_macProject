@@ -8,16 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-
 typedef enum {
-    TaskDateTypeNone    = 0,
+    TaskDateTypeNone = 0,
     TaskDateTypeOverdue = 1,
-    TaskDateTypeToday   = 2
+    TaskDateTypeToday = 2
 } TaskDateType;
 
 
 @interface NSDate (BOUtils)
-
 
 - (NSString *) detailString;
 - (BOOL) isOverdue;

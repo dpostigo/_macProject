@@ -8,9 +8,7 @@
 
 #import "NSParagraphStyle+DPUtils.h"
 
-
 @implementation NSParagraphStyle (DPUtils)
-
 
 + (NSParagraphStyle *) paragraphWithAlignment: (NSTextAlignment) alignment {
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];

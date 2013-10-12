@@ -13,11 +13,11 @@
 
 @interface JSOperatorsCell : JSTableCellView
 
-@property(strong) IBOutlet JSTextField         *nameTextField;
-@property(strong) IBOutlet JSTokenField        *dimensionsTokenField;
-@property(strong) IBOutlet NSButton            *operatorButton;
-@property(strong) IBOutlet JSTokenField        *integrationVectorTokenField;
-@property(strong) IBOutlet JSTokenField        *dependenciesTokenField;
+@property(strong) IBOutlet JSTextField *nameTextField;
+@property(strong) IBOutlet JSTokenField *dimensionsTokenField;
+@property(strong) IBOutlet NSButton *operatorButton;
+@property(strong) IBOutlet JSTokenField *integrationVectorTokenField;
+@property(strong) IBOutlet JSTokenField *dependenciesTokenField;
 @property(strong) IBOutlet JSColorfulTextField *equationTextField;
 
 @end

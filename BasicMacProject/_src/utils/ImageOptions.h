@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface ImageOptions : NSObject {
     CGFloat imageAlpha;
     NSColor *imageColor;

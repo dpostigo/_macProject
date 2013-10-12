@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #import "TableSection.h"
 
-
 @interface OutlineSection : TableSection {
     BOOL isExpandable;
 }

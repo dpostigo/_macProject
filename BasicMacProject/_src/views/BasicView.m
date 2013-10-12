@@ -38,10 +38,4 @@
 }
 
 
-//
-//- (BOOL) canBecomeKeyView {
-//    return NO;
-//}
-
-
 @end

@@ -7,10 +7,8 @@
 
 #import "BasicTokenField.h"
 
-
 @implementation BasicTokenField {
 }
-
 
 @synthesize rowObject;
 

@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface BasicSecureTextFieldCell : NSSecureTextFieldCell {
     CGFloat paddingTop;
     CGFloat paddingBottom;
@@ -21,7 +20,6 @@
 
     CGFloat borderWidth;
 }
-
 
 @property(nonatomic) CGFloat paddingTop;
 @property(nonatomic) CGFloat paddingBottom;

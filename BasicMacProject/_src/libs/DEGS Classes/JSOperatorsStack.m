@@ -32,7 +32,7 @@
 # pragma mark - Initialiser and exporter
 
 - (NSArray *) exportAsXMLElements {
-    NSMutableArray   *elementsArray = [NSMutableArray array];
+    NSMutableArray *elementsArray = [NSMutableArray array];
     for (JSOperators *operators in _operators) {
         NSXMLElement *newOperatorsNode = [operators exportAsXML];
         [elementsArray addObject: newOperatorsNode];

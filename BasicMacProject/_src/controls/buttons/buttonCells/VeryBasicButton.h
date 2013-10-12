@@ -8,6 +8,5 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface VeryBasicButton : NSButton
 @end

@@ -12,7 +12,6 @@
     NSMutableArray *delegates;
 }
 
-
 @property(nonatomic, retain) NSMutableArray *delegates;
 
 

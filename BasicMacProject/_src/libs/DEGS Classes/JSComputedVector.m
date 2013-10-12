@@ -52,7 +52,7 @@
 
     if (_definition) {
         NSXMLElement *evaluationElement = [NSXMLElement elementWithName: @"evaluation"];
-        NSXMLNode    *evaluationText    = [[NSXMLNode alloc] initWithKind: NSXMLTextKind options: NSXMLNodeIsCDATA];
+        NSXMLNode *evaluationText = [[NSXMLNode alloc] initWithKind: NSXMLTextKind options: NSXMLNodeIsCDATA];
         [evaluationText setStringValue: self.definition];
         if (_dependencies) {
             NSXMLElement *dependeciesElement = [self.dependencies exportAsXML];
@@ -84,7 +84,7 @@
         }
 
         if ([[anElement elementsForName: @"evaluation"] count]) {
-            NSXMLElement   *evaluationElement = [anElement elementsForName: @"evaluation"][0];
+            NSXMLElement *evaluationElement = [anElement elementsForName: @"evaluation"][0];
             if ([[evaluationElement elementsForName: @"dependencies"] count]) {
                 NSXMLElement *dependeciesElement = [evaluationElement elementsForName: @"dependencies"][0];
                 self.dependencies = [[JSDependencies alloc] initFromXML: dependeciesElement];
@@ -103,7 +103,7 @@
 
 - (NSString *) description {
     NSString *title = @"Computed Vector";
-    if (_name) title                                        = [title stringByAppendingFormat: @" - %@", self.name];
+    if (_name) title = [title stringByAppendingFormat: @" - %@", self.name];
     if (![self.parent isKindOfClass: [JSXMDS class]]) title = [NSString stringWithFormat: @"%@/%@", [self.parent description], title];
     return title;
 }

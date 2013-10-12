@@ -11,19 +11,17 @@
 #import "TaskDetailViewController.h"
 #import "TaskDiscussionViewController.h"
 
-
 #define TASK_INFO_HEIGHT 240
 
 @implementation TaskDetailViewController {
 
     TaskDiscussionViewController *discussionController;
-    TaskInfoViewController       *infoController;
+    TaskInfoViewController *infoController;
     BOOL isAnimating;
     BasicWhiteView *bgShadow;
-    BOOL    hasToggled;
+    BOOL hasToggled;
     CGFloat animationDuration;
 }
-
 
 @synthesize isOpen;
 
@@ -43,16 +41,15 @@
     isOpen = YES;
 
     self.navigationBar.titleLabel.stringValue = _model.currentTaskMode;
-    self.backgroundView.backgroundColor       = [NSColor lightGrayColor];
+    self.backgroundView.backgroundColor = [NSColor lightGrayColor];
 
     self.navigationBar.backButtonItem.target = self;
     self.navigationBar.backButtonItem.action = @selector(handleBackButton:);
 
     infoContainer.maximumValue = TASK_INFO_HEIGHT;
     infoContainer.minimumValue = TASK_INFO_HEIGHT;
-    infoContainer.height        = TASK_INFO_HEIGHT;
-    infoContainer.isLocked      = YES;
-
+    infoContainer.height = TASK_INFO_HEIGHT;
+    infoContainer.isLocked = YES;
 
     infoController = [[TaskInfoViewController alloc] initWithDefaultNib];
     infoController.detailController = self;
@@ -63,20 +60,18 @@
     [self embedViewController: infoController inView: infoContainer];
     [self embedViewController: discussionController inView: discussionContainer];
 
-
     infoContainer.height = TASK_INFO_HEIGHT;
 
-
     bgShadow = [[BasicWhiteView alloc] initWithFrame: NSMakeRect(0, 0, infoController.table.enclosingScrollView.width + 1, infoController.table.enclosingScrollView.height)];
-    bgShadow.cornerRadius       = 5.0;
+    bgShadow.cornerRadius = 5.0;
     bgShadow.shadow.shadowColor = [NSColor colorWithDeviceWhite: 0.0 alpha: 0.9];
-    bgShadow.left               = (self.view.width - bgShadow.width) / 2;
-    bgShadow.autoresizingMask   = NSViewWidthSizable | NSViewMinYMargin;
+    bgShadow.left = (self.view.width - bgShadow.width) / 2;
+    bgShadow.autoresizingMask = NSViewWidthSizable | NSViewMinYMargin;
     [self.view addSubview: bgShadow];
     [self.view addSubview: splitView];
 
 
-//    splitView.dividerColor = [NSColor clearColor];
+    //    splitView.dividerColor = [NSColor clearColor];
     //
     //    NSRect infoRect = NSMakeRect(0, TASK_INFO_HEIGHT, 599, TASK_INFO_HEIGHT);
     //    NSRect shadowRect = [self getShadowRect: infoRect];
@@ -107,16 +102,14 @@
     if (isOpen) return;
     isAnimating = YES;
 
-
     NSRect infoRect = infoContainer.frame;
     infoRect.size.height = TASK_INFO_HEIGHT;
-    infoRect.origin.y    = infoRect.size.height;
+    infoRect.origin.y = infoRect.size.height;
     //    infoRect.origin.y -= 5;
     NSRect shadowRect = [self getShadowRect: infoRect];
 
-
     [NSAnimationContext runAnimationGroup: ^(NSAnimationContext *context) {
-        context.duration       = animationDuration;
+        context.duration = animationDuration;
         //        context.timingFunction = [CAMediaTimingFunction functionWithName: kCAMediaTimingFunctionEaseInEaseOut];
         context.timingFunction = [CAMediaTimingFunction functionWithName: kCAMediaTimingFunctionEaseOut];
         [infoContainer.animator setFrame: infoRect];
@@ -138,14 +131,12 @@
     if (!isOpen) return;
     isAnimating = YES;
 
-
-    NSRect infoRect   = NSMakeRect(infoContainer.frame.origin.x, infoController.table.rowHeight, infoContainer.frame.size.width, infoController.table.rowHeight);
+    NSRect infoRect = NSMakeRect(infoContainer.frame.origin.x, infoController.table.rowHeight, infoContainer.frame.size.width, infoController.table.rowHeight);
     NSRect shadowRect = [self getShadowRect: infoRect];
-
 
     if (isAnimated) {
         [NSAnimationContext runAnimationGroup: ^(NSAnimationContext *context) {
-            context.duration       = animationDuration;
+            context.duration = animationDuration;
             context.timingFunction = [CAMediaTimingFunction functionWithName: kCAMediaTimingFunctionEaseInEaseOut];
             [infoContainer.animator setFrame: infoRect];
             [bgShadow.animator setFrame: shadowRect];
@@ -155,7 +146,7 @@
     }
     else {
         infoContainer.frame = infoRect;
-        bgShadow.frame      = shadowRect;
+        bgShadow.frame = shadowRect;
         [self taskDetailsDidClose];
     }
 
@@ -164,10 +155,10 @@
 - (NSRect) getShadowRect: (NSRect) infoRect {
     CGFloat offsetY = 4;
 
-    NSPoint point      = [infoContainer.superview convertPoint: infoRect.origin toView: self.view];
-    NSRect  shadowRect = bgShadow.frame;
+    NSPoint point = [infoContainer.superview convertPoint: infoRect.origin toView: self.view];
+    NSRect shadowRect = bgShadow.frame;
     shadowRect.size.height = infoRect.size.height + offsetY;
-    shadowRect.origin.y    = point.y - offsetY;
+    shadowRect.origin.y = point.y - offsetY;
 
     NSLog(@"shadowRect = %@", NSStringFromRect(shadowRect));
     return shadowRect;
@@ -178,14 +169,14 @@
 #pragma mark Task Details AnimationCallbacks
 
 - (void) taskDetailsDidClose {
-    isOpen      = NO;
+    isOpen = NO;
     isAnimating = NO;
     [_model notifyDelegates: @selector(taskInfoControllerDidClose:) object: nil];
 }
 
 
 - (void) taskDetailsDidOpen {
-    isOpen      = YES;
+    isOpen = YES;
     isAnimating = NO;
     [_model notifyDelegates: @selector(taskInfoControllerDidOpen:) object: nil];
 }
@@ -304,11 +295,11 @@
 - (void) fixBgShadow {
     if (!hasToggled) {
         //NSLog(@"Setting.");
-        NSRect rect       = [self.view convertRect: infoContainer.frame fromView: splitView];
+        NSRect rect = [self.view convertRect: infoContainer.frame fromView: splitView];
         NSRect shadowRect = bgShadow.frame;
         shadowRect.size.height = rect.size.height;
-        shadowRect.origin.y    = rect.origin.y + 4;
-        bgShadow.frame         = shadowRect;
+        shadowRect.origin.y = rect.origin.y + 4;
+        bgShadow.frame = shadowRect;
     }
 
 }

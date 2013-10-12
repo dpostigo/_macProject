@@ -10,7 +10,6 @@
 #import "NSBezierPath+Additions.h"
 #import "KGNoise.h"
 
-
 #define INSETX 16.0f
 #define INSETY 7.0f
 #define RADIUS 6.0f
@@ -26,9 +25,7 @@
 #define CELL_NOISE_OPACITY_SELECTED 0.1
 #define CELL_BORDER_COLOR [NSColor colorWithCalibratedRed:0.6 green:0.6 blue:0.6 alpha:1.0]
 
-
 @implementation JSBinaryTableRowView
-
 
 - (void) drawBackgroundInRect: (NSRect) dirtyRect {
     BOOL selected = self.selected;

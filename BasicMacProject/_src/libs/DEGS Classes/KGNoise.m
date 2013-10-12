@@ -18,7 +18,7 @@ static inline CGFloat *gradientComponentsForColors(UIColor *color1, UIColor *col
 
 static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *color2) {
 #endif
-    CGFloat       *components                    = malloc(8 * sizeof(CGFloat));
+    CGFloat *components = malloc(8 * sizeof(CGFloat));
     const CGFloat *alternateBackgroundComponents = CGColorGetComponents([color1 CGColorCreate]);
     if (CGColorGetNumberOfComponents([color1 CGColorCreate]) == 2) {
         components[0] = alternateBackgroundComponents[0];
@@ -56,17 +56,17 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
 }
 
 + (void) drawNoiseWithOpacity: (CGFloat) opacity andBlendMode: (CGBlendMode) blendMode {
-    static CGImageRef      noiseImageRef = nil;
+    static CGImageRef noiseImageRef = nil;
     static dispatch_once_t oncePredicate;
     dispatch_once(&oncePredicate, ^{
         NSUInteger width = kKGNoiseImageSize, height = width;
-        NSUInteger size  = width * height;
+        NSUInteger size = width * height;
         char *rgba = (char *) malloc(size);
         srand(115);
-        for (NSUInteger i             = 0; i < size; ++i) {rgba[i] = rand() % 256;}
-        CGColorSpaceRef colorSpace    = CGColorSpaceCreateDeviceGray();
-        CGContextRef    bitmapContext =
-                                CGBitmapContextCreate(rgba, width, height, 8, width, colorSpace, kCGImageAlphaNone);
+        for (NSUInteger i = 0; i < size; ++i) {rgba[i] = rand() % 256;}
+        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceGray();
+        CGContextRef bitmapContext =
+                CGBitmapContextCreate(rgba, width, height, 8, width, colorSpace, kCGImageAlphaNone);
         CFRelease(colorSpace);
         noiseImageRef = CGBitmapContextCreateImage(bitmapContext);
         CFRelease(bitmapContext);
@@ -172,7 +172,7 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
 #else
     self.backgroundColor = [NSColor grayColor];
 #endif
-    self.noiseOpacity   = 0.1;
+    self.noiseOpacity = 0.1;
     self.noiseBlendMode = kCGBlendModeScreen;
 }
 
@@ -307,20 +307,20 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
     switch (self.gradientDirection) {
         case KGLinearGradientDirection0Degrees:
             startPoint = CGPointMake(CGRectGetMinX(bounds), CGRectGetMidY(bounds));
-            endPoint   = CGPointMake(CGRectGetMaxX(bounds), CGRectGetMidY(bounds));
+            endPoint = CGPointMake(CGRectGetMaxX(bounds), CGRectGetMidY(bounds));
             break;
         case KGLinearGradientDirection90Degrees:
             startPoint = CGPointMake(CGRectGetMidX(bounds), CGRectGetMaxY(bounds));
-            endPoint   = CGPointMake(CGRectGetMidX(bounds), CGRectGetMinY(bounds));
+            endPoint = CGPointMake(CGRectGetMidX(bounds), CGRectGetMinY(bounds));
             break;
         case KGLinearGradientDirection180Degrees:
             startPoint = CGPointMake(CGRectGetMaxX(bounds), CGRectGetMidY(bounds));
-            endPoint   = CGPointMake(CGRectGetMinX(bounds), CGRectGetMidY(bounds));
+            endPoint = CGPointMake(CGRectGetMinX(bounds), CGRectGetMidY(bounds));
             break;
         case KGLinearGradientDirection270Degrees:
         default:
             startPoint = CGPointMake(CGRectGetMidX(bounds), CGRectGetMinY(bounds));
-            endPoint   = CGPointMake(CGRectGetMidX(bounds), CGRectGetMaxY(bounds));
+            endPoint = CGPointMake(CGRectGetMidX(bounds), CGRectGetMaxY(bounds));
             break;
     }
     CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0);
@@ -371,9 +371,9 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
 
     CGRect bounds = self.bounds;
     CGContextSaveGState(context);
-    size_t          gradLocationsNum = 2;
-    CGFloat         gradLocations[2] = {0.0f, 1.0f};
-    CGColorSpaceRef colorSpace       = CGColorSpaceCreateDeviceRGB();
+    size_t gradLocationsNum = 2;
+    CGFloat gradLocations[2] = {0.0f, 1.0f};
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGFloat *components = gradientComponentsForColors(self.alternateBackgroundColor, self.backgroundColor);
     CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, components, gradLocations, gradLocationsNum);
     CGColorSpaceRelease(colorSpace), colorSpace = NULL;

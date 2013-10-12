@@ -7,10 +7,8 @@
 
 #import "CustomTextField.h"
 
-
 @implementation CustomTextField {
 }
-
 
 - (void) mouseEntered: (NSEvent *) theEvent {
     [super mouseEntered: theEvent];

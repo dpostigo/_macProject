@@ -8,13 +8,13 @@
 
 #import "VeryBasicButton2Cell.h"
 #import "ColorManager.h"
+#import "NSBezierPath+DPUtils.h"
 //#import "NSImage+JSAdditions.h"
 
 
 @implementation VeryBasicButton2Cell {
 
 }
-
 
 @synthesize pathOptions;
 
@@ -38,7 +38,6 @@
     pathOptions = [[PathOptions alloc] init];
     disabledPathOptions = [[PathOptions alloc] init];
     imageOptions = [[ImageOptions alloc] init];
-
 
     innerBorder = [[BorderOption alloc] initWithBorderWidth: 1.0];
     innerBorder.borderColor = [NSColor redColor];
@@ -66,7 +65,6 @@
             nil];
 
     disabledPathOptions.borderColor = [NSColor darkGrayColor];
-
 
     pathOptions.gradient = [ColorManager blackGradient];
 
@@ -147,12 +145,12 @@
 
 #pragma mark Getters / Setters
 
-- (void) setCornerOptions: (NSBezierPathCornerOptions) cornerOptions1 {
-    pathOptions.cornerOptions = cornerOptions1;
+- (void) setCornerOptions: (CornerType) cornerOptions1 {
+    pathOptions.cornerType = cornerOptions1;
 }
 
-- (NSBezierPathCornerOptions) cornerOptions {
-    return pathOptions.cornerOptions;
+- (CornerType) cornerOptions {
+    return pathOptions.cornerType;
 }
 
 

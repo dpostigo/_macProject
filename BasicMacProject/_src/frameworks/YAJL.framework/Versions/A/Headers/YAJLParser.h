@@ -30,36 +30,35 @@
 
 #include "yajl_parse.h"
 
-
 extern NSString *const YAJLErrorDomain; //! Error domain for YAJL
 extern NSString *const YAJLParserException; //! Generic parse exception
 extern NSString *const YAJLParsingUnsupportedException; //! Parsing unsupported exception
 
-extern NSString    *const YAJLParserValueKey; //! Key in NSError userInfo for value we errored on
+extern NSString *const YAJLParserValueKey; //! Key in NSError userInfo for value we errored on
 
 //! Parser error codes
 enum YAJLParserErrorCode {
-    YAJLParserErrorCodeAllocError      = -1000, //!< Alloc error
-    YAJLParserErrorCodeDoubleOverflow  = -1001, //!< Double overflow
+    YAJLParserErrorCodeAllocError = -1000, //!< Alloc error
+    YAJLParserErrorCodeDoubleOverflow = -1001, //!< Double overflow
     YAJLParserErrorCodeIntegerOverflow = -1002 //!< Integer overflow
 };
-typedef NSInteger  YAJLParserErrorCode; //! Parser error codes
+typedef NSInteger YAJLParserErrorCode; //! Parser error codes
 
 //! Parser options
 enum YAJLParserOptions {
-    YAJLParserOptionsNone            = 0, //!< No options
-    YAJLParserOptionsAllowComments   = 1 << 0, //!< Javascript style comments will be allowed in the input (both /&asterisk; &asterisk;/ and //)
-    YAJLParserOptionsCheckUTF8       = 1 << 1, //!< Invalid UTF8 strings will cause a parse error
+    YAJLParserOptionsNone = 0, //!< No options
+    YAJLParserOptionsAllowComments = 1 << 0, //!< Javascript style comments will be allowed in the input (both /&asterisk; &asterisk;/ and //)
+    YAJLParserOptionsCheckUTF8 = 1 << 1, //!< Invalid UTF8 strings will cause a parse error
     YAJLParserOptionsStrictPrecision = 1 << 2, //!< If YES will force strict precision and return integer overflow error
 };
 typedef NSUInteger YAJLParserOptions; //! Parser options
 
 //! Parser status
 enum {
-    YAJLParserStatusNone             = 0,  //!< No status
-    YAJLParserStatusOK               = 1, //!< Parsed OK
+    YAJLParserStatusNone = 0,  //!< No status
+    YAJLParserStatusOK = 1, //!< Parsed OK
     YAJLParserStatusInsufficientData = 2, //!< There was insufficient data
-    YAJLParserStatusError            = 3 //!< Parser errored
+    YAJLParserStatusError = 3 //!< Parser errored
 };
 typedef NSUInteger YAJLParserStatus; //!< Status of the last parse event
 

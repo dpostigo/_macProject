@@ -26,7 +26,7 @@
 @property(nonatomic, strong) JSFlexibleButton *nextButton;
 
 // convenience property to hold onto the constraints for the layout of the view
-@property(nonatomic, strong) NSArray            *previousAndNextButtonsConstraints;
+@property(nonatomic, strong) NSArray *previousAndNextButtonsConstraints;
 @property(nonatomic, strong) NSLayoutConstraint *matrixHeightConstraint;
 
 @end
@@ -39,12 +39,12 @@
 
 // Convenience method to create the default style for the button in the case one wasn't provided
 - (JSButtonStyle *) defaultStyle {
-    JSButtonDecoration *normalDecoration    = [[JSButtonDecoration alloc] initWithColor: [NSColor colorWithCalibratedWhite: 0.85 alpha: 1.0]];
+    JSButtonDecoration *normalDecoration = [[JSButtonDecoration alloc] initWithColor: [NSColor colorWithCalibratedWhite: 0.85 alpha: 1.0]];
     JSButtonDecoration *highlightDecoration = [[JSButtonDecoration alloc] initWithColor: [NSColor colorWithCalibratedWhite: 0.5 alpha: 1.0]];
     JSButtonDecoration *mouseOverDecoration = [[JSButtonDecoration alloc] initWithColor: [NSColor whiteColor]];
     JSButtonDecoration *selectionDecoration = [[JSButtonDecoration alloc] initWithColor: [NSColor colorWithCalibratedRed: 0.608 green: 0.784 blue: 0.910 alpha: 1.0]];
-    NSDictionary       *decorations         = [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects: normalDecoration, highlightDecoration, mouseOverDecoration, selectionDecoration, nil] forKeys: [NSArray arrayWithObjects: @"normal", @"highlight", @"mouseOver", @"selection", nil]];
-    JSButtonStyle      *style               = [[JSButtonStyle alloc] initWithDecorations: decorations];
+    NSDictionary *decorations = [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects: normalDecoration, highlightDecoration, mouseOverDecoration, selectionDecoration, nil] forKeys: [NSArray arrayWithObjects: @"normal", @"highlight", @"mouseOver", @"selection", nil]];
+    JSButtonStyle *style = [[JSButtonStyle alloc] initWithDecorations: decorations];
     style.textColor = [NSColor whiteColor];
     return style;
 }
@@ -63,8 +63,8 @@
             [self removeConstraints: self.previousAndNextButtonsConstraints];
             [self.previousButton removeFromSuperview];
             [self.nextButton removeFromSuperview];
-            _previousButton                    = nil;
-            _nextButton                        = nil;
+            _previousButton = nil;
+            _nextButton = nil;
             _previousAndNextButtonsConstraints = nil;
         }
     }
@@ -73,7 +73,7 @@
 // convenience method to set the look and behviour of the next and previous buttons
 - (void) initializeButton: (JSFlexibleButton *) button {
     if (_buttonsStyle) button.style = self.buttonsStyle;
-    else button.style                = [self defaultStyle];
+    else button.style = [self defaultStyle];
     button.style.selectionDecoration = button.style.normalDecoration;
     [button setBordered: NO];
     [button setTarget: self];
@@ -260,8 +260,8 @@
     // loop through the cells of the matrix, extract their image and title, add it to the returning array
     NSMutableArray *buttons = [NSMutableArray array];
     for (NSInteger i = 0; i < [_matrix numberOfRows]; i++) {
-        JSFlexibleButtonCell *cell     = [_matrix cellAtRow: i column: 0];
-        NSDictionary         *buttonID = [NSDictionary dictionaryWithObjects: @[cell.image, cell.title] forKeys: @[@"image", @"title"]];
+        JSFlexibleButtonCell *cell = [_matrix cellAtRow: i column: 0];
+        NSDictionary *buttonID = [NSDictionary dictionaryWithObjects: @[cell.image, cell.title] forKeys: @[@"image", @"title"]];
         [buttons addObject: buttonID];
     }
     return [buttons copy];
@@ -331,11 +331,11 @@
         [self removeTrackingArea: trackingArea];
     }
 
-    int            opts = (NSTrackingMouseEnteredAndExited | NSTrackingActiveInActiveApp);
-    for (NSInteger i    = 0; i < [_matrix numberOfRows]; i++) {
+    int opts = (NSTrackingMouseEnteredAndExited | NSTrackingActiveInActiveApp);
+    for (NSInteger i = 0; i < [_matrix numberOfRows]; i++) {
         NSDictionary *cellIndex = @{@"index" : [NSNumber numberWithInteger: i]};
-        CGFloat cellY    = _matrix.frame.origin.y + (BUTTON_HEIGHT + BUTTON_SPACING) * ([_matrix numberOfRows] - i - 1);
-        NSRect  cellRect = NSMakeRect(0.0, cellY, [self frame].size.width, BUTTON_HEIGHT);
+        CGFloat cellY = _matrix.frame.origin.y + (BUTTON_HEIGHT + BUTTON_SPACING) * ([_matrix numberOfRows] - i - 1);
+        NSRect cellRect = NSMakeRect(0.0, cellY, [self frame].size.width, BUTTON_HEIGHT);
 
         // we add the cellIndex to the userInfo of the tracking area in other to be able to track where the mouse enetered and exited events originated from
         NSTrackingArea *trackingArea = [[NSTrackingArea alloc] initWithRect: cellRect options: opts owner: self userInfo: cellIndex];
@@ -410,8 +410,8 @@
 - (void) sendSelectedRowToDelegate {
     if (self.delegate && [self.delegate respondsToSelector: @selector(sidebar:didChangeSelectionTo:)]) {
         NSInteger row = [_matrix selectedRow];
-        JSFlexibleButtonCell *cell     = [_matrix cellAtRow: row column: 0];
-        NSDictionary         *buttonID = [NSDictionary dictionaryWithObjects: @[@(row), cell.title] forKeys: @[@"index", @"title"]];
+        JSFlexibleButtonCell *cell = [_matrix cellAtRow: row column: 0];
+        NSDictionary *buttonID = [NSDictionary dictionaryWithObjects: @[@(row), cell.title] forKeys: @[@"index", @"title"]];
         [self.delegate sidebar: self didChangeSelectionTo: buttonID];
     }
 }
@@ -423,7 +423,7 @@
     _buttonsStyle = buttonsStyle;
     if (self.hasStepButtons) {
         self.previousButton.style = buttonsStyle;
-        self.nextButton.style     = buttonsStyle;
+        self.nextButton.style = buttonsStyle;
     }
     for (JSFlexibleButtonCell *cell in [_matrix cells]) {
         cell.style = buttonsStyle;

@@ -12,11 +12,9 @@
 #import "TitleBarViewController.h"
 #import "AddTaskViewController.h"
 
-
 @implementation BOAppDelegate {
     AddTaskViewController *addTaskController;
 }
-
 
 - (void) applicationDelegateDidFinishLaunching: (NSNotification *) notification {
     [super applicationDelegateDidFinishLaunching: notification];
@@ -24,7 +22,7 @@
     NSLog(@"%s", __PRETTY_FUNCTION__);
 
     newTaskWindow.titleBarHeight = 0;
-    newTaskWindow.cornerRadius   = 30;
+    newTaskWindow.cornerRadius = 30;
 
     [_model subscribeDelegate: self];
     //    [contentWindow resetBottomView: self];

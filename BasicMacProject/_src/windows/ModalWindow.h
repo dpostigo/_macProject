@@ -7,9 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface ModalWindow : NSWindow
-
 
 - (void) setup;
 @end

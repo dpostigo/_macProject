@@ -8,11 +8,9 @@
 
 #import "ImageOptions.h"
 
-
 @implementation ImageOptions {
 
 }
-
 
 @synthesize imageAlpha;
 @synthesize imageColor;

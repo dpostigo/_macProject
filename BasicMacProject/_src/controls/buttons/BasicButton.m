@@ -8,10 +8,8 @@
 #import "BasicButton.h"
 #import "BasicButtonCell.h"
 
-
 @implementation BasicButton {
 }
-
 
 + (Class) cellClass {
     return NSClassFromString([NSString stringWithFormat: @"%@%@", NSStringFromClass([self class]), @"Cell"]);

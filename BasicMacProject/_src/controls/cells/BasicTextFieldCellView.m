@@ -7,10 +7,8 @@
 
 #import "BasicTextFieldCellView.h"
 
-
 @implementation BasicTextFieldCellView {
 }
-
 
 - (id) initWithCoder: (NSCoder *) coder {
     self = [super initWithCoder: coder];

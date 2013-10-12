@@ -7,8 +7,12 @@
 
 #import "NSColor+Utils.h"
 
-
 @implementation NSColor (Utils)
+
++ (NSColor *) alphaWhite: (CGFloat) alphaValue {
+    return [NSColor colorWithDeviceWhite: 1.0 alpha: alphaValue];
+}
+
 
 + (NSColor *) colorWithWhite: (CGFloat) white {
     return [NSColor colorWithDeviceWhite: white alpha: 1.0];

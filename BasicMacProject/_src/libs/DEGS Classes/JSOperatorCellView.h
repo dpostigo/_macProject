@@ -12,17 +12,17 @@
 #import "JSTextField.h"
 
 typedef enum _JSOperatorCellState {
-    JSOperatorCellFunctionState     = 0,
+    JSOperatorCellFunctionState = 0,
     JSOperatorCellDifferentialState = 1
 } JSOperatorCellState;
 
 @interface JSOperatorCellView : JSTableCellView
 
-@property(strong) IBOutlet JSTextField         *nameTextField;
-@property(strong) IBOutlet NSPopUpButton       *kindButton;
-@property(strong) IBOutlet NSPopUpButton       *typeButton;
-@property(strong) IBOutlet NSButton            *constantCheckBox;
-@property(strong) IBOutlet JSTokenField        *namesTokenField;
+@property(strong) IBOutlet JSTextField *nameTextField;
+@property(strong) IBOutlet NSPopUpButton *kindButton;
+@property(strong) IBOutlet NSPopUpButton *typeButton;
+@property(strong) IBOutlet NSButton *constantCheckBox;
+@property(strong) IBOutlet JSTokenField *namesTokenField;
 @property(strong) IBOutlet JSColorfulTextField *definitionTextField;
 
 @property(nonatomic, unsafe_unretained) id <JSTableCellViewDelegate> delegate;

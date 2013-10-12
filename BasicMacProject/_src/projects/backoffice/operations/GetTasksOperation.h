@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "BasicBackOfficeOperation.h"
 
-
 @interface GetTasksOperation : BasicBackOfficeOperation {
 
 }

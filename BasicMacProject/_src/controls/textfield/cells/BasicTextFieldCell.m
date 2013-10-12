@@ -9,11 +9,9 @@
 #import "BasicTextFieldCell.h"
 #import "NSBezierPath+DPUtils.h"
 
-
 @implementation BasicTextFieldCell {
 
 }
-
 
 @synthesize paddingTop;
 @synthesize paddingBottom;

@@ -7,7 +7,6 @@
 
 #import "EtchedButton.h"
 
-
 @implementation EtchedButton {
 }
 

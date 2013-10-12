@@ -57,7 +57,7 @@
     if (!_contentView) {
         _contentView = [[JSViewWithSlidingViews alloc] init];
         _contentView.backgroundColor = CONTENTVIEW_COLOR;
-        _contentView.noiseOpacity    = CONTENTVIEW_NOISE_ALPHA;
+        _contentView.noiseOpacity = CONTENTVIEW_NOISE_ALPHA;
         [_contentView setTranslatesAutoresizingMaskIntoConstraints: NO];
 
         // we want to be notified when the contentView slide in a new view so that we can update the pathBar on top and other things we may want to do in the future
@@ -71,9 +71,9 @@
 - (JSBottomBarView *) bottomBar {
     if (!_bottomBar) {
         _bottomBar = [[JSBottomBarView alloc] init];
-        _bottomBar.backgroundColor          = BOTTOM_BAR_FIRST_COLOR;
+        _bottomBar.backgroundColor = BOTTOM_BAR_FIRST_COLOR;
         _bottomBar.alternateBackgroundColor = BOTTOM_BAR_SECOND_COLOR;
-        _bottomBar.delegate                 = self;
+        _bottomBar.delegate = self;
         [_bottomBar setTranslatesAutoresizingMaskIntoConstraints: NO];
     }
     return _bottomBar;
@@ -220,8 +220,8 @@
 }
 
 - (NSUInteger) cellIndexForObject: (JSNode *) object {
-    NSUInteger cellIndex    = NSNotFound;
-    id         parentObject = [object parent];
+    NSUInteger cellIndex = NSNotFound;
+    id parentObject = [object parent];
     if ([parentObject isKindOfClass: [JSFeatures class]]) {
         cellIndex = [[parentObject arguments] indexOfObject: object];
         if (cellIndex == NSNotFound) cellIndex = 1;
@@ -279,7 +279,7 @@
 }
 
 - (void) backButtonPressed: (id) sender {
-    JSNode                  *parentObject       = [(JSNode *) self.currentViewController.representedObject parent];
+    JSNode *parentObject = [(JSNode *) self.currentViewController.representedObject parent];
     JSSectionViewController *backViewController = [self viewControllerForPathObjects: [parentObject pathObjects]];
     [self slideNewViewController: backViewController fromDirection: JSSlidingFromLeft];
     NSUInteger cellIndex = [self cellIndexForObject: parentObject];

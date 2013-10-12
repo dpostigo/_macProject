@@ -113,12 +113,12 @@
             if ([initialisationElement attributeForName: @"kind"]) {
                 NSString *kindString = [[initialisationElement attributeForName: @"kind"] stringValue];
                 self.initialisation = [self.initialisationOptions indexOfObject: kindString];
-                self.filename       = [[initialisationElement elementsForName: @"filename"][0] stringValue];
+                self.filename = [[initialisationElement elementsForName: @"filename"][0] stringValue];
             } else {
                 self.initialisation = [self.initialisationOptions indexOfObject: @"cdata"];
                 if ([[initialisationElement elementsForName: @"dependencies"] count]) {
                     NSXMLElement *dependeciesElement = [initialisationElement elementsForName: @"dependencies"][0];
-                    self.dependencies                = [[JSDependencies alloc] initFromXML: dependeciesElement];
+                    self.dependencies = [[JSDependencies alloc] initFromXML: dependeciesElement];
                 }
                 for (NSXMLNode *child in [initialisationElement children]) {
                     if ([child kind] == NSXMLTextKind) {
@@ -137,7 +137,7 @@
 
 - (NSString *) description {
     NSString *title = @"Vector";
-    if (_name) title                                        = [title stringByAppendingFormat: @" - %@", self.name];
+    if (_name) title = [title stringByAppendingFormat: @" - %@", self.name];
     if (![self.parent isKindOfClass: [JSXMDS class]]) title = [NSString stringWithFormat: @"%@/%@", [self.parent description], title];
     return title;
 }

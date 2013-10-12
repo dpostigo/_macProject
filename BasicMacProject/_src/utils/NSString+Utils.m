@@ -7,9 +7,7 @@
 
 #import "NSString+Utils.h"
 
-
 @implementation NSString (Utils)
-
 
 - (NSURL *) URL {
     return [NSURL URLWithString: self];
@@ -22,7 +20,7 @@
 
 - (BOOL) containsString: (NSString *) substring {
     NSRange range = [self rangeOfString : substring];
-    BOOL    found = (range.location != NSNotFound);
+    BOOL found = (range.location != NSNotFound);
     return found;
 }
 

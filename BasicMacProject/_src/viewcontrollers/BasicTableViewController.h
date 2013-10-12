@@ -12,19 +12,17 @@
 #import "TableSection.h"
 #import "BasicTableCellView.h"
 
-
 @class BasicTableViewDelegate;
 
 
 @interface BasicTableViewController : BasicListViewController {
 
     BOOL allowsSelection;
-    IBOutlet NSTableView   *table;
+    IBOutlet NSTableView *table;
     BasicTableViewDelegate *tableDelegate;
 }
 
-
-@property(nonatomic, strong) NSTableView            *table;
+@property(nonatomic, strong) NSTableView *table;
 @property(nonatomic, strong) BasicTableViewDelegate *tableDelegate;
 @property(nonatomic) BOOL allowsSelection;
 - (NSInteger) numberOfRowsInTableView: (NSTableView *) tableView;

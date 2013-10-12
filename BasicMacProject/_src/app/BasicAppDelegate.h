@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #import "Model.h"
 
-
 @interface BasicAppDelegate : NSObject <NSApplicationDelegate> {
     Model *_model;
 }

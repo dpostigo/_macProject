@@ -26,7 +26,6 @@
 #define INAppStoreWindowRetain nonatomic, retain
 #endif
 
-
 /** @class INTitlebarView
  Draws a default style Mac OS X title bar.
  */
@@ -114,16 +113,16 @@
 /** 
  The colors of the title bar background gradient and baseline separator, in main and non-main variants.
  */
-@property(INAppStoreWindowRetain) NSColor  *titleBarStartColor;
-@property(INAppStoreWindowRetain) NSColor  *titleBarEndColor;
-@property(INAppStoreWindowRetain) NSColor  *baselineSeparatorColor;
-@property(INAppStoreWindowRetain) NSColor  *titleTextColor;
+@property(INAppStoreWindowRetain) NSColor *titleBarStartColor;
+@property(INAppStoreWindowRetain) NSColor *titleBarEndColor;
+@property(INAppStoreWindowRetain) NSColor *baselineSeparatorColor;
+@property(INAppStoreWindowRetain) NSColor *titleTextColor;
 @property(INAppStoreWindowRetain) NSShadow *titleTextShadow;
 
-@property(INAppStoreWindowRetain) NSColor  *inactiveTitleBarStartColor;
-@property(INAppStoreWindowRetain) NSColor  *inactiveTitleBarEndColor;
-@property(INAppStoreWindowRetain) NSColor  *inactiveBaselineSeparatorColor;
-@property(INAppStoreWindowRetain) NSColor  *inactiveTitleTextColor;
+@property(INAppStoreWindowRetain) NSColor *inactiveTitleBarStartColor;
+@property(INAppStoreWindowRetain) NSColor *inactiveTitleBarEndColor;
+@property(INAppStoreWindowRetain) NSColor *inactiveBaselineSeparatorColor;
+@property(INAppStoreWindowRetain) NSColor *inactiveTitleTextColor;
 @property(INAppStoreWindowRetain) NSShadow *inactiveTitleTextShadow;
 
 /**

@@ -7,6 +7,5 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface BasicTableView : NSTableView
 @end

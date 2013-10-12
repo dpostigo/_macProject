@@ -7,9 +7,7 @@
 
 #import "NSBezierPath+Utils.h"
 
-
 @implementation NSBezierPath (Utils)
-
 
 - (CGPathRef) quartzPath {
     int i, numElements;
@@ -20,9 +18,9 @@
     // Then draw the path elements.
     numElements = [self elementCount];
     if (numElements > 0) {
-        CGMutablePathRef path         = CGPathCreateMutable();
-        NSPoint          points[3];
-        BOOL             didClosePath = YES;
+        CGMutablePathRef path = CGPathCreateMutable();
+        NSPoint points[3];
+        BOOL didClosePath = YES;
 
         for (i = 0; i < numElements; i++) {
             switch ([self elementAtIndex: i associatedPoints: points]) {

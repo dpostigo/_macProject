@@ -10,10 +10,8 @@
 #import "ASIFormDataRequest.h"
 #import "DiscussionItem.h"
 
-
 @implementation PostCommentOperation {
 }
-
 
 @synthesize task;
 @synthesize discussionItem;
@@ -21,7 +19,7 @@
 - (id) initWithTask: (Task *) aTask discussionItem: (DiscussionItem *) anItem {
     self = [super init];
     if (self) {
-        self.task           = aTask;
+        self.task = aTask;
         self.discussionItem = anItem;
     }
 
@@ -34,7 +32,7 @@
     [self operationBeganWithString: @"Posting comment..."];
 
     self.urlString = [NSString stringWithFormat: @"%@/task_comments.json", STAGING_URL];
-    self.url       = [NSURL URLWithString: urlString];
+    self.url = [NSURL URLWithString: urlString];
 
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL: url];
     request.requestMethod = @"POST";
@@ -54,9 +52,8 @@
     NSMutableDictionary *jsonDict = [[NSMutableDictionary alloc] init];
     [jsonDict setObject: commentDict forKey: @"task_comment"];
 
-    NSData   *jsonData   = [NSJSONSerialization dataWithJSONObject: jsonDict options: kNilOptions error: nil];
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject: jsonDict options: kNilOptions error: nil];
     NSString *jsonString = [[NSString alloc] initWithData: jsonData encoding: NSUTF8StringEncoding];
-
 
     NSLog(@"%s", __PRETTY_FUNCTION__);
     NSString *postStr = [NSString stringWithFormat: @"%@", jsonString];
@@ -64,7 +61,7 @@
     [request startSynchronous];
 
     if (!request.error) {
-        NSError      *error;
+        NSError *error;
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData: request.responseData options: kNilOptions error: &error];
         if (dictionary == nil) {
             NSLog(@"%@ failed.", NSStringFromClass([self class]));
@@ -72,7 +69,6 @@
         } else {
             NSLog(@"%@ succeeded.", NSStringFromClass([self class]));
             [self operationSucceededWithString: @"Post comment succeeded."];
-
 
             DiscussionItem *item = [[DiscussionItem alloc] initWithDictionary: dictionary];
             [_model notifyDelegates: @selector(taskUpdated:discussionItem:) object: task andObject: item];

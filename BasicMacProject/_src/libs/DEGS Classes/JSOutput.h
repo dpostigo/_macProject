@@ -15,8 +15,8 @@
 
 @property(nonatomic) NSUInteger format;
 @property(readonly, nonatomic, strong) NSArray *formatOptions;
-@property(nonatomic, strong) NSString          *filename;
-@property(readonly) NSArray                    *groups;
+@property(nonatomic, strong) NSString *filename;
+@property(readonly) NSArray *groups;
 
 - (NSXMLElement *) exportAsXML;
 - (id) initFromXML: (NSXMLElement *) anElement;

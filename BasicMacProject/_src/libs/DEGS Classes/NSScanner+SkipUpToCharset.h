@@ -27,7 +27,6 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface NSScanner (UKSkipUpToCharset)
 
 - (BOOL) skipUpToCharactersFromSet: (NSCharacterSet *) set;

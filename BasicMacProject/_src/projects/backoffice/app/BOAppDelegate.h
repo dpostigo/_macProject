@@ -11,7 +11,6 @@
 #import "BasicCustomWindowOld.h"
 #import "DPCustomWindow.h"
 
-
 @interface BOAppDelegate : BasicAppDelegate <NSApplicationDelegate, NSMenuDelegate> {
 
     IBOutlet NSView *rightView;

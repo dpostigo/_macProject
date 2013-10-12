@@ -48,7 +48,7 @@ NSString *const JSTokenFieldDidBecomeFirstResponderNotification = @"JSTokenField
     CGFloat maxRowHeight = [@"testString" boundingRectWithSize: NSMakeSize(1000.0, 1000.0) options: 0 attributes: nil].size.height;
 
     //Loop through tokens and increment the line count every time we break the boundaries
-    int rows  = 1;
+    int rows = 1;
     int index = 0;
     while (index < [tokens count]) {
         float x = TOKENS_SPACING;
@@ -77,7 +77,7 @@ NSString *const JSTokenFieldDidBecomeFirstResponderNotification = @"JSTokenField
 }
 
 - (NSSize) sizeToFitContent {
-    float width  = [self frame].size.width;
+    float width = [self frame].size.width;
     float height = 0.0;
 
     height = [self preferredHeightForWidth: width];
@@ -120,9 +120,9 @@ NSString *const JSTokenFieldDidBecomeFirstResponderNotification = @"JSTokenField
     if ([event type] == NSKeyDown && [event keyCode] == 49 && ([event modifierFlags] & NSControlKeyMask) && _allowsEmptyTokens) {
 
         // we compute the insertion point by looping through the characters of the string from the begging to the current selection location and count the number of tokens represented in cocoa by the special character with code 65532
-        NSUInteger index          = 0;
+        NSUInteger index = 0;
         NSUInteger insertionPoint = [aTextView selectedRange].location;
-        for (int   i              = 0; i < insertionPoint; i++) {
+        for (int i = 0; i < insertionPoint; i++) {
             if ([aTextView.string characterAtIndex: i] == 65532) index++;
         }
 

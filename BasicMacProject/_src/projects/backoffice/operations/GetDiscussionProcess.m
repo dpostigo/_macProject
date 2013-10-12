@@ -10,10 +10,8 @@
 #import "ASIFormDataRequest.h"
 #import "DiscussionItem.h"
 
-
 @implementation GetDiscussionProcess {
 }
-
 
 @synthesize task;
 
@@ -30,7 +28,7 @@
     [super main];
 
     self.urlString = [NSString stringWithFormat: @"%@/tasks/%@/comments.json", STAGING_URL, task.id];
-    self.url       = [NSURL URLWithString: urlString];
+    self.url = [NSURL URLWithString: urlString];
 
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL: url];
     request.requestMethod = @"GET";
@@ -39,7 +37,7 @@
 
     if (!request.error) {
 
-        NSError      *error;
+        NSError *error;
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData: request.responseData options: kNilOptions error: &error];
 
         if (dictionary == nil) {
@@ -47,8 +45,7 @@
         } else {
             NSLog(@"%@ succeeded.", NSStringFromClass([self class]));
 
-
-            NSMutableArray    *discussion = [[NSMutableArray alloc] init];
+            NSMutableArray *discussion = [[NSMutableArray alloc] init];
             for (NSDictionary *dict in dictionary) {
                 DiscussionItem *item = [[DiscussionItem alloc] initWithDictionary: dict];
                 [discussion addObject: item];

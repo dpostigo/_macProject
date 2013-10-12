@@ -7,9 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface BasicButton : NSButton
-
 
 - (void) setup;
 @end

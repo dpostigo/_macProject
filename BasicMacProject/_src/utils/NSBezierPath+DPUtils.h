@@ -8,25 +8,18 @@
 #import <Cocoa/Cocoa.h>
 #import <Foundation/Foundation.h>
 #import "BorderOption.h"
+#import "CornerProperties.h"
+#import "PathOptions.h"
 
-@class PathOptions;
-
-typedef enum {
-    CornerNone = 1 << 0,
-    CornerUpperRight = 1 << 1,
-    CornerLowerRight = 1 << 2,
-    CornerLowerLeft = 1 << 3,
-    CornerUpperLeft = 1 << 4,
-} NSBezierPathCornerOptions;
+//@class PathOptions;
 
 
 @interface NSBezierPath (DPUtils)
 
-
-+ (NSBezierPath *) bezierPathWithRect: (NSRect) rect cornerRadius: (CGFloat) radius options: (NSBezierPathCornerOptions) options;
++ (NSBezierPath *) bezierPathWithRect: (NSRect) rect cornerRadius: (CGFloat) radius cornerType: (CornerType) options;
 + (void) drawBezierPathWithRect: (NSRect) rect options: (PathOptions *) pathOptions;
 + (void) drawBezierPathWithRect: (NSRect) rect borderOptions: (BorderOption *) borderOption;
-+ (NSBezierPath *) bezierPathWithRect: (NSRect) rect options: (PathOptions *) pathOptions;
++ (NSBezierPath *) bezierPathWithRect: (NSRect) rect pathOptions: (PathOptions *) pathOptions;
 + (NSBezierPath *) bezierPathWithRect: (NSRect) rect borderType: (BorderType) borderType;
 - (void) drawWithBorderOption: (BorderOption *) borderOption;
 - (void) drawWithPathOptions: (PathOptions *) pathOptions;

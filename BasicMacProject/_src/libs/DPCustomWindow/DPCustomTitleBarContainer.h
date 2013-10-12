@@ -7,6 +7,5 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface DPCustomTitleBarContainer : NSView
 @end

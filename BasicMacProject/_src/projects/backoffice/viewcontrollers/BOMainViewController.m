@@ -12,11 +12,9 @@
 #import "BottomViewController.h"
 #import "BONavigationBar.h"
 
-
 @implementation BOMainViewController {
 
 }
-
 
 - (void) loadView {
     [super loadView];
@@ -29,18 +27,16 @@
     [super awakeFromNib];
     NSLog(@"%s", __PRETTY_FUNCTION__);
 
-
     NavigationController *navController = [[NavigationController alloc] initWithRootViewController: [[TasksViewController alloc] initWithDefaultNib]];
     navController.navigationBar = [[BONavigationBar alloc] initWithFrame: NSZeroRect];
 
-//
-//    [self embedViewController: [[BOSidebarViewController alloc] initWithDefaultNib] inView: sidebarContainer];
-//    [self embedViewController: [[BottomViewController alloc] initWithDefaultNib] inView: bottomView];
-//    [self embedViewController: navController inView: mainView];
+    //
+    //    [self embedViewController: [[BOSidebarViewController alloc] initWithDefaultNib] inView: sidebarContainer];
+    //    [self embedViewController: [[BottomViewController alloc] initWithDefaultNib] inView: bottomView];
+    //    [self embedViewController: navController inView: mainView];
 
 
     navController.view.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
-
 
     self.sidebarContainer.minimumValue = 150.0;
     self.sidebarContainer.maximumValue = 250.0;
@@ -50,7 +46,6 @@
     bottomView.maximumValue = 60.0f;
     bottomView.height = 40.0f;
     bottomView.isLocked = YES;
-
 
     splitView.delegate = self;
     //    splitView.dividerColor    = [NSColor blackColor];

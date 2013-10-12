@@ -17,7 +17,7 @@
 @property(nonatomic, strong) JSGeometry *geometry;
 
 @property(nonatomic, strong) JSPropagationDimensionTableCellView *propagationDimensionDummyCell;
-@property(nonatomic, strong) JSTransverseDimensionCellView       *transverseDimensionDummyCell;
+@property(nonatomic, strong) JSTransverseDimensionCellView *transverseDimensionDummyCell;
 
 @end
 
@@ -92,7 +92,7 @@
 - (id) initWithGeometry: (JSGeometry *) geometry {
     self = [super initWithNibName: @"JSGeometryViewController" bundle: nil];
     if (self) {
-        self.geometry  = geometry;
+        self.geometry = geometry;
         self.biasCells = 1;
     }
     return self;
@@ -202,9 +202,9 @@
 #pragma mark - Cell editing methods
 
 - (void) controlTextDidChange: (NSNotification *) obj {
-    NSTextField *sender           = [obj object];
-    NSString    *enteredString    = [sender.stringValue stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
-    NSString    *senderIdentifier = [sender identifier];
+    NSTextField *sender = [obj object];
+    NSString *enteredString = [sender.stringValue stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+    NSString *senderIdentifier = [sender identifier];
 
     id value = nil;
     if ([enteredString length]) value = enteredString;
@@ -226,10 +226,10 @@
     NSInteger row = [self.mainTableView rowForView: sender];
     if (row > self.biasCells - 1) {
         NSInteger selection = [sender indexOfSelectedItem];
-        NSString    *senderIdentifier  = [sender identifier];
+        NSString *senderIdentifier = [sender identifier];
         JSDimension *modifiedDimension = (self.geometry.transverseDimension)[row - self.biasCells];
         if ([senderIdentifier isEqualToString: @"transformButton"]) {
-            modifiedDimension.transform             = selection;
+            modifiedDimension.transform = selection;
             JSTransverseDimensionCellView *cellView = (JSTransverseDimensionCellView *) [self.mainTableView viewAtColumn: 0 row: row makeIfNecessary: NO];
             [self changeCell: cellView stateWithDimension: modifiedDimension];
         } else if ([senderIdentifier isEqualToString: @"typeButton"]) {
@@ -243,10 +243,10 @@
 
 - (NSArray *) tokenField: (NSTokenField *) tokenField shouldAddTokens: (NSArray *) tokens {
     NSMutableArray *tokensToBeAdded = [NSMutableArray array];
-    NSArray        *currentTokens   = [tokenField objectValue];
+    NSArray *currentTokens = [tokenField objectValue];
     // For some stupid reason when cocoa calls this method it has already added the candidate tokens to the toeknfield tokens list
     // For every token in the candidate list we count how many times it appears in the tokenfield tokens list and if it appears twice than it's a duplicate and we reject it
-    for (NSString  *candidateToken in tokens) {
+    for (NSString *candidateToken in tokens) {
         int appearance = 0;
         for (NSString *token in currentTokens) {
             if ([candidateToken isEqualToString: token]) appearance++;
@@ -280,7 +280,7 @@
         // These characters are associated to the unsigned short 65532 which is out of bounds of the UTF range NSCharacterSet handles
         // These characters are called "Object Replacement Character"
         NSCharacterSet *characterset = [NSCharacterSet characterSetWithCharactersInString: @"\uFFFC"];
-        NSString       *tokenString  = [(NSMutableString *) object stringByTrimmingCharactersInSet: characterset];
+        NSString *tokenString = [(NSMutableString *) object stringByTrimmingCharactersInSet: characterset];
         if ([tokenString length]) {
 
             // object is passed as a mutable string so before handling it to our internal validation method we want to package it in an array
@@ -313,8 +313,8 @@
 
 - (BOOL) tableView: (NSTableView *) tableView acceptDrop: (id) info row: (NSInteger) row dropOperation: (NSTableViewDropOperation) operation {
     NSPasteboard *pasteboard = [info draggingPasteboard];
-    NSData       *rowData    = [pasteboard dataForType: SectionTableViewDataType];
-    NSIndexSet   *rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData: rowData];
+    NSData *rowData = [pasteboard dataForType: SectionTableViewDataType];
+    NSIndexSet *rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData: rowData];
     NSUInteger dropIndex = row - self.biasCells;
 
     // insertIndex is the index where we are going to insert back the data in the model array

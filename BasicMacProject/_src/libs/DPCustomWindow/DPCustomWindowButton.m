@@ -7,7 +7,6 @@
 
 #import "DPCustomWindowButton.h"
 
-
 @implementation DPCustomWindowButton {
 }
 

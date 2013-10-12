@@ -7,10 +7,8 @@
 
 #import "BasicDatePickerCell.h"
 
-
 @implementation BasicDatePickerCell {
 }
-
 
 - (id) initWithCoder: (NSCoder *) coder {
     self = [super initWithCoder: coder];

@@ -11,10 +11,8 @@
 #import "Task.h"
 #import "NSDate+JMSimpleDate.h"
 
-
 @implementation Model {
 }
-
 
 @synthesize loggedIn;
 @synthesize currentUser;
@@ -47,20 +45,20 @@
 - (id) init {
     self = [super init];
     if (self) {
-        self.loggedIn        = [[NSUserDefaults standardUserDefaults] boolForKey: @"loggedIn"];
+        self.loggedIn = [[NSUserDefaults standardUserDefaults] boolForKey: @"loggedIn"];
         //        self.loggedIn = NO;
-        self.currentUser     = [Archiver retrieve: @"currentUser"];
-        self.tasks           = [Archiver retrieve: @"tasks"];
-        self.jobs            = [Archiver retrieve: @"jobs"];
-        self.contacts        = [Archiver retrieve: @"contacts"];
-        self.serviceItems    = [Archiver retrieve: @"serviceItems"];
+        self.currentUser = [Archiver retrieve: @"currentUser"];
+        self.tasks = [Archiver retrieve: @"tasks"];
+        self.jobs = [Archiver retrieve: @"jobs"];
+        self.contacts = [Archiver retrieve: @"contacts"];
+        self.serviceItems = [Archiver retrieve: @"serviceItems"];
         self.currentTaskMode = TASKLISTMODE_MYTASKS;
         if (self.currentUser == nil) self.loggedIn = NO;
 
-        self.defaultFormatter       = [[NSDateFormatter alloc] init];
+        self.defaultFormatter = [[NSDateFormatter alloc] init];
         defaultFormatter.dateFormat = @"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'";
-        self.slugFormatter          = [[NSDateFormatter alloc] init];
-        slugFormatter.dateFormat    = @"MM/dd/yyyy";
+        self.slugFormatter = [[NSDateFormatter alloc] init];
+        slugFormatter.dateFormat = @"MM/dd/yyyy";
     }
 
     return self;
@@ -106,7 +104,7 @@
 
 - (NSArray *) jobsWithStatus: (NSString *) status {
     NSPredicate *predicate = [NSPredicate predicateWithFormat: @"status MATCHES %@", status];
-    NSArray     *array     = [jobs filteredArrayUsingPredicate: predicate];
+    NSArray *array = [jobs filteredArrayUsingPredicate: predicate];
     return array;
 }
 
@@ -124,8 +122,8 @@
 
 - (NSArray *) jobsForTaskArray: (NSArray *) taskArray {
     NSMutableArray *jobIds = [[NSMutableArray alloc] init];
-    NSMutableArray *ret    = [[NSMutableArray alloc] init];
-    for (Task      *task in taskArray) {
+    NSMutableArray *ret = [[NSMutableArray alloc] init];
+    for (Task *task in taskArray) {
 
         if (![jobIds containsObject: task.job.id]) {
             [jobIds addObject: task.job.id];
@@ -144,7 +142,7 @@
 
 - (NSArray *) tasksForJobId: (NSString *) jobId fromArray: (NSArray *) taskArray {
     NSMutableArray *array = [[NSMutableArray alloc] init];
-    for (Task      *task in taskArray) {
+    for (Task *task in taskArray) {
         if ([task.job.id isEqualToString: jobId]) {
             [array addObject: task];
         }
@@ -162,7 +160,7 @@
 }
 
 - (NSArray *) tasksForMode: (NSString *) mode {
-    NSArray     *array;
+    NSArray *array;
     NSPredicate *predicate;
 
     if ([mode isEqualToString: TASKLISTMODE_DUE]) {
@@ -208,8 +206,8 @@
 
 - (NSArray *) artists {
     NSMutableArray *userIds = [[NSMutableArray alloc] init];
-    NSMutableArray *ret     = [[NSMutableArray alloc] init];
-    for (Task      *task in tasks) {
+    NSMutableArray *ret = [[NSMutableArray alloc] init];
+    for (Task *task in tasks) {
         if (![userIds containsObject: task.assignee.id]) {
             [userIds addObject: task.assignee.id];
             [ret addObject: task.assignee];
@@ -236,7 +234,7 @@
 
 - (NSArray *) contactTitlesForContacts: (NSArray *) array {
     NSMutableArray *ids = [[NSMutableArray alloc] init];
-    for (User      *user in array) {
+    for (User *user in array) {
         [ids addObject: user.id];
     }
     return [self contactTitlesForIds: ids];
@@ -244,7 +242,7 @@
 
 - (NSArray *) contactTitlesForIds: (NSArray *) ids {
     NSMutableArray *strings = [[NSMutableArray alloc] init];
-    for (NSString  *userId in ids) {
+    for (NSString *userId in ids) {
         User *user = [self contactForId: userId];
         [strings addObject: user.title];
     }
@@ -262,7 +260,7 @@
 
 - (NSArray *) contactIdsForTitles: (NSArray *) strings {
     NSMutableArray *ret = [[NSMutableArray alloc] init];
-    for (NSString  *aTitle in strings) {
+    for (NSString *aTitle in strings) {
         [ret addObject: [self contactIdForTitle: aTitle]];
     }
     return ret;
@@ -290,7 +288,7 @@
 }
 
 - (NSArray *) serviceItemNames {
-    NSMutableArray   *ret = [[NSMutableArray alloc] init];
+    NSMutableArray *ret = [[NSMutableArray alloc] init];
     for (ServiceItem *serviceItem in serviceItems) {
         [ret addObject: serviceItem.title];
     }
@@ -299,7 +297,7 @@
 
 - (NSArray *) jobNames {
     NSMutableArray *ret = [[NSMutableArray alloc] init];
-    for (Job       *job in self.jobs) {
+    for (Job *job in self.jobs) {
         [ret addObject: job.title];
     }
     return ret;

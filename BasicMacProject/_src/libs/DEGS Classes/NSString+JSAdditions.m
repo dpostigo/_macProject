@@ -9,7 +9,7 @@
 
     NSSize size = NSMakeSize(width, FLT_MAX);
 
-    NSTextStorage   *textStorage   = [[NSTextStorage alloc] initWithString: self];
+    NSTextStorage *textStorage = [[NSTextStorage alloc] initWithString: self];
     NSTextContainer *textContainer = [[NSTextContainer alloc] initWithContainerSize: size];
     NSLayoutManager *layoutManager = [[NSLayoutManager alloc] init];
     [layoutManager addTextContainer: textContainer];
@@ -26,8 +26,8 @@
 }
 
 - (NSUInteger) indexInString: (NSString **) newString {
-    NSRange    indexRange = [self rangeOfString: @"["];
-    NSUInteger index      = NSNotFound;
+    NSRange indexRange = [self rangeOfString: @"["];
+    NSUInteger index = NSNotFound;
     *newString = self;
     if (indexRange.location != NSNotFound) {
         index = [[[self substringFromIndex: indexRange.location] stringByTrimmingCharactersInSet: [NSCharacterSet characterSetWithCharactersInString: @"[]"]] integerValue];

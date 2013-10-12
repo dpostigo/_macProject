@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #import "Model.h"
 
-
 @interface BasicOperation : NSOperation {
     Model *_model;
     __unsafe_unretained id delegate;

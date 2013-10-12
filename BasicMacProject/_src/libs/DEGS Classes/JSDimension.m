@@ -124,7 +124,7 @@
     domainString = [domainString stringByTrimmingCharactersInSet: [NSCharacterSet characterSetWithCharactersInString: @"()"]];
     NSArray *domainLimits = [domainString componentsSeparatedByString: @","];
     self.domainStart = [domainLimits[0] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
-    self.domainEnd   = [domainLimits[1] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+    self.domainEnd = [domainLimits[1] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
 }
 
 - (NSArray *) dimensionIdentifiersForBasis {
@@ -147,7 +147,7 @@
 
 - (NSString *) description {
     NSString *title = @"Dimension";
-    if (_name) title                                        = [title stringByAppendingFormat: @" - %@", self.name];
+    if (_name) title = [title stringByAppendingFormat: @" - %@", self.name];
     if (![self.parent isKindOfClass: [JSXMDS class]]) title = [NSString stringWithFormat: @"%@/%@", [self.parent description], title];
     return title;
 }

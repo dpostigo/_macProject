@@ -19,11 +19,11 @@
 
 @property(nonatomic, strong) JSSequence *sequence;
 
-@property(strong) IBOutlet NSMenu                *addElementMenu;
+@property(strong) IBOutlet NSMenu *addElementMenu;
 @property(nonatomic, strong) JSSyntaxHighlighter *syntaxHighlighter;
 
-@property(nonatomic, strong) JSIntegrateTableCellView  *integrateDummyCell;
-@property(nonatomic, strong) JSFilterTableCellView     *filterDummyCell;
+@property(nonatomic, strong) JSIntegrateTableCellView *integrateDummyCell;
+@property(nonatomic, strong) JSFilterTableCellView *filterDummyCell;
 @property(nonatomic, strong) JSBreakpointTableCellView *breakpointDummyCell;
 
 @end
@@ -101,7 +101,7 @@
 - (id) initWithSequence: (JSSequence *) sequence {
     self = [super initWithNibName: @"JSSequenceViewController" bundle: nil];
     if (self) {
-        self.sequence          = sequence;
+        self.sequence = sequence;
         self.syntaxHighlighter = [[JSSyntaxHighlighter alloc] init];
         [self.syntaxHighlighter setDelegate: self];
         self.biasCells = 0;
@@ -241,7 +241,7 @@
 - (void) addElement: (id) sender {
     NSRect frame = [(NSButton *) sender frame];
 
-    NSSize  menuSize   = [self.addElementMenu size];
+    NSSize menuSize = [self.addElementMenu size];
     NSPoint menuOrigin = [[(NSButton *) sender superview] convertPoint: NSMakePoint(frame.origin.x, frame.origin.y + frame.size.height + menuSize.height) toView: nil];
 
     NSEvent *event = [NSEvent mouseEventWithType: NSLeftMouseDown
@@ -292,8 +292,8 @@
 // We use key value coding to assign changes in the various controls to the model
 // The identifier of the controls are equal to the keyPath of the properties we want to set
 - (void) controlTextDidChange: (NSNotification *) obj {
-    NSTextField *sender           = [obj object];
-    NSString    *senderIdentifier = [sender identifier];
+    NSTextField *sender = [obj object];
+    NSString *senderIdentifier = [sender identifier];
 
     // the entries in the token field gets handled in another method so we have to make sure we are only setting the properties we want here
     if ([senderIdentifier isEqualToString: @"name"] || [senderIdentifier isEqualToString: @"evaluation"] || [senderIdentifier isEqualToString: @"filename"] || [senderIdentifier isEqualToString: @"interval"] || [senderIdentifier isEqualToString: @"samples"]) {
@@ -337,8 +337,8 @@
         id element = (self.sequence.operations)[row];
         [element setValue: [NSNumber numberWithInteger: selection] forKeyPath: senderIdentifier];
         if ([senderIdentifier isEqualToString: @"algorithm"]) {
-            NSString                 *algorithmString = [(JSIntegrate *) element algorithmOptions][selection];
-            JSIntegrateTableCellView *changedCell     = [self.mainTableView viewAtColumn: 0 row: row makeIfNecessary: NO];
+            NSString *algorithmString = [(JSIntegrate *) element algorithmOptions][selection];
+            JSIntegrateTableCellView *changedCell = [self.mainTableView viewAtColumn: 0 row: row makeIfNecessary: NO];
             if ([algorithmString isEqualToString: @"ARK45"] || [algorithmString isEqualToString: @"ARK89"]) [changedCell setIntegrateCellState: JSIntegrateCellWithTolerance];
             else [changedCell setIntegrateCellState: JSIntegrateCellWithoutTolerance];
         }
@@ -351,9 +351,9 @@
 - (IBAction) subsectionButtonPressed: (id) sender {
     NSInteger row = [self.mainTableView rowForView: sender];
     if (row != -1) {
-        NSString    *senderIdentifier = [sender identifier];
-        JSIntegrate *integrate        = (self.sequence.operations)[row];
-        JSNode      *newObject        = [integrate valueForKey: senderIdentifier];
+        NSString *senderIdentifier = [sender identifier];
+        JSIntegrate *integrate = (self.sequence.operations)[row];
+        JSNode *newObject = [integrate valueForKey: senderIdentifier];
         [self.treeController showSubsectionForObject: newObject];
     }
 }
@@ -372,10 +372,10 @@
 
 - (NSArray *) tokenField: (NSTokenField *) tokenField shouldAddTokens: (NSArray *) tokens {
     NSMutableArray *tokensToBeAdded = [NSMutableArray array];
-    NSArray        *currentTokens   = [tokenField objectValue];
+    NSArray *currentTokens = [tokenField objectValue];
     // For some stupid reason when cocoa calls this method it has already added the candidate tokens to the toeknfield tokens list
     // For every token in the candidate list we count how many times it appears in the tokenfield tokens list and if it appears twice than it's a duplicate and we reject it
-    for (NSString  *candidateToken in tokens) {
+    for (NSString *candidateToken in tokens) {
         int appearance = 0;
         for (NSString *token in currentTokens) {
             if ([candidateToken isEqualToString: token]) appearance++;
@@ -390,7 +390,7 @@
         NSString *tokenFieldIdentifier = [tokenField identifier];
 
         id element = (self.sequence.operations)[row];
-        id value   = [element valueForKeyPath: tokenFieldIdentifier];
+        id value = [element valueForKeyPath: tokenFieldIdentifier];
         if (value) value = [(NSArray *) value arrayByAddingObjectsFromArray: tokensToBeAdded];
         else value = [tokensToBeAdded copy];
         [element setValue: value forKeyPath: tokenFieldIdentifier];
@@ -415,7 +415,7 @@
         // These characters are associated to the unsigned short 65532 which is out of bounds of the UTF range NSCharacterSet handles
         // These characters are called "Object Replacement Character"
         NSCharacterSet *characterset = [NSCharacterSet characterSetWithCharactersInString: @"\uFFFC"];
-        NSString       *tokenString  = [(NSMutableString *) object stringByTrimmingCharactersInSet: characterset];
+        NSString *tokenString = [(NSMutableString *) object stringByTrimmingCharactersInSet: characterset];
         if ([tokenString length]) {
 
             // object is passed as a mutable string so before handling it to our internal validation method we want to package it in an array
@@ -459,8 +459,8 @@
 
 - (BOOL) tableView: (NSTableView *) tableView acceptDrop: (id) info row: (NSInteger) row dropOperation: (NSTableViewDropOperation) operation {
     NSPasteboard *pasteboard = [info draggingPasteboard];
-    NSData       *rowData    = [pasteboard dataForType: SectionTableViewDataType];
-    NSIndexSet   *rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData: rowData];
+    NSData *rowData = [pasteboard dataForType: SectionTableViewDataType];
+    NSIndexSet *rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData: rowData];
     NSUInteger dropIndex = row - self.biasCells;
 
     // insertIndex is the index where we are going to insert back the data in the model array

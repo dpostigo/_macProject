@@ -7,21 +7,19 @@
 
 #import <Foundation/Foundation.h>
 
-
 typedef enum {
-    NSViewAnimationDirectionToTop      = 0,
-    NSViewAnimationDirectionToBottom   = 2,
-    NSViewAnimationDirectionToLeft     = 3,
-    NSViewAnimationDirectionToRight    = 4,
-    NSViewAnimationDirectionFromTop    = 5,
+    NSViewAnimationDirectionToTop = 0,
+    NSViewAnimationDirectionToBottom = 2,
+    NSViewAnimationDirectionToLeft = 3,
+    NSViewAnimationDirectionToRight = 4,
+    NSViewAnimationDirectionFromTop = 5,
     NSViewAnimationDirectionFromBottom = 6,
-    NSViewAnimationDirectionFromLeft   = 7,
-    NSViewAnimationDirectionFromRight  = 8
+    NSViewAnimationDirectionFromLeft = 7,
+    NSViewAnimationDirectionFromRight = 8
 } NSViewAnimationDirection;
 
 
 @interface NSView (Animation)
-
 
 - (void) animateInDirection: (NSViewAnimationDirection) direction amount: (CGFloat) amount duration: (CGFloat) duration;
 - (void) animateInDirection: (NSViewAnimationDirection) direction amount: (CGFloat) amount duration: (CGFloat) duration completionHandler: (void (^)()) completionHandler;

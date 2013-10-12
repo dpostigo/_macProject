@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #import "BasicTableCellView.h"
 
-
 @interface BasicTextFieldCellView : BasicTableCellView <NSTextFieldDelegate> {
 
 }

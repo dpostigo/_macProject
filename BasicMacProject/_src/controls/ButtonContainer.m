@@ -8,11 +8,9 @@
 
 #import "ButtonContainer.h"
 
-
 @implementation ButtonContainer {
 
 }
-
 
 @synthesize buttons;
 
@@ -74,7 +72,6 @@
     }
     prevX -= itemSpacing;
     prevX += rightMargin;
-
 
     NSRect newRect = self.frame;
     newRect.size.width = prevX;

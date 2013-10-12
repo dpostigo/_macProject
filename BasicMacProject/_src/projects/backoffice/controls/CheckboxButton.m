@@ -8,7 +8,6 @@
 
 #import "CheckboxButton.h"
 
-
 @implementation CheckboxButton {
 }
 

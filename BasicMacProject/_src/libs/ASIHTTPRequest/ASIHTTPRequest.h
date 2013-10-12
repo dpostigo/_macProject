@@ -46,22 +46,22 @@ extern NSString *ASIHTTPRequestVersion;
 
 typedef enum _ASIAuthenticationState {
     ASINoAuthenticationNeededYet = 0,
-    ASIHTTPAuthenticationNeeded  = 1,
+    ASIHTTPAuthenticationNeeded = 1,
     ASIProxyAuthenticationNeeded = 2
-}               ASIAuthenticationState;
+} ASIAuthenticationState;
 
 typedef enum _ASINetworkErrorType {
-    ASIConnectionFailureErrorType                = 1,
-    ASIRequestTimedOutErrorType                  = 2,
-    ASIAuthenticationErrorType                   = 3,
-    ASIRequestCancelledErrorType                 = 4,
-    ASIUnableToCreateRequestErrorType            = 5,
-    ASIInternalErrorWhileBuildingRequestType     = 6,
+    ASIConnectionFailureErrorType = 1,
+    ASIRequestTimedOutErrorType = 2,
+    ASIAuthenticationErrorType = 3,
+    ASIRequestCancelledErrorType = 4,
+    ASIUnableToCreateRequestErrorType = 5,
+    ASIInternalErrorWhileBuildingRequestType = 6,
     ASIInternalErrorWhileApplyingCredentialsType = 7,
-    ASIFileManagementError                       = 8,
-    ASITooMuchRedirectionErrorType               = 9,
-    ASIUnhandledExceptionError                   = 10,
-    ASICompressionError                          = 11
+    ASIFileManagementError = 8,
+    ASITooMuchRedirectionErrorType = 9,
+    ASIUnhandledExceptionError = 10,
+    ASICompressionError = 11
 
 } ASINetworkErrorType;
 
@@ -916,13 +916,13 @@ typedef void (^ASIDataBlock)(NSData *data);
 @property(retain) NSString *proxyType;
 
 @property(retain, setter=setURL:, nonatomic) NSURL *url;
-@property(retain) NSURL                            *originalURL;
+@property(retain) NSURL *originalURL;
 @property(assign, nonatomic) id delegate;
 @property(retain, nonatomic) id queue;
 @property(assign, nonatomic) id uploadProgressDelegate;
 @property(assign, nonatomic) id downloadProgressDelegate;
-@property(assign) BOOL          useKeychainPersistence;
-@property(assign) BOOL          useSessionPersistence;
+@property(assign) BOOL useKeychainPersistence;
+@property(assign) BOOL useSessionPersistence;
 @property(retain) NSString *downloadDestinationPath;
 @property(retain) NSString *temporaryFileDownloadPath;
 @property(retain) NSString *temporaryUncompressedDataDownloadPath;
@@ -934,67 +934,67 @@ typedef void (^ASIDataBlock)(NSData *data);
 @property(assign) SEL didReceiveDataSelector;
 @property(retain, readonly) NSString *authenticationRealm;
 @property(retain, readonly) NSString *proxyAuthenticationRealm;
-@property(retain) NSError            *error;
+@property(retain) NSError *error;
 @property(assign, readonly) BOOL complete;
-@property(retain) NSDictionary        *responseHeaders;
+@property(retain) NSDictionary *responseHeaders;
 @property(retain) NSMutableDictionary *requestHeaders;
-@property(retain) NSMutableArray      *requestCookies;
-@property(retain, readonly) NSArray   *responseCookies;
+@property(retain) NSMutableArray *requestCookies;
+@property(retain, readonly) NSArray *responseCookies;
 @property(assign) BOOL useCookiePersistence;
 @property(retain) NSDictionary *requestCredentials;
 @property(retain) NSDictionary *proxyCredentials;
 @property(assign, readonly) int responseStatusCode;
 @property(retain, readonly) NSString *responseStatusMessage;
-@property(retain) NSMutableData      *rawResponseData;
+@property(retain) NSMutableData *rawResponseData;
 @property(assign) NSTimeInterval timeOutSeconds;
 @property(retain, nonatomic) NSString *requestMethod;
-@property(retain) NSMutableData       *postBody;
+@property(retain) NSMutableData *postBody;
 @property(assign) unsigned long long contentLength;
 @property(assign) unsigned long long postLength;
-@property(assign) BOOL               shouldResetDownloadProgress;
-@property(assign) BOOL               shouldResetUploadProgress;
+@property(assign) BOOL shouldResetDownloadProgress;
+@property(assign) BOOL shouldResetUploadProgress;
 @property(assign) ASIHTTPRequest *mainRequest;
-@property(assign) BOOL               showAccurateProgress;
+@property(assign) BOOL showAccurateProgress;
 @property(assign) unsigned long long totalBytesRead;
 @property(assign) unsigned long long totalBytesSent;
-@property(assign) NSStringEncoding   defaultResponseEncoding;
-@property(assign) NSStringEncoding   responseEncoding;
-@property(assign) BOOL               allowCompressedResponse;
-@property(assign) BOOL               allowResumeForFileDownloads;
+@property(assign) NSStringEncoding defaultResponseEncoding;
+@property(assign) NSStringEncoding responseEncoding;
+@property(assign) BOOL allowCompressedResponse;
+@property(assign) BOOL allowResumeForFileDownloads;
 @property(retain) NSDictionary *userInfo;
 @property(assign) NSInteger tag;
 @property(retain) NSString *postBodyFilePath;
-@property(assign) BOOL                         shouldStreamPostDataFromDisk;
-@property(assign) BOOL                         didCreateTemporaryPostDataFile;
-@property(assign) BOOL                         useHTTPVersionOne;
+@property(assign) BOOL shouldStreamPostDataFromDisk;
+@property(assign) BOOL didCreateTemporaryPostDataFile;
+@property(assign) BOOL useHTTPVersionOne;
 @property(assign, readonly) unsigned long long partialDownloadSize;
-@property(assign) BOOL                         shouldRedirect;
-@property(assign) BOOL                         validatesSecureCertificate;
-@property(assign) BOOL                         shouldCompressRequestBody;
-@property(retain) NSURL    *PACurl;
+@property(assign) BOOL shouldRedirect;
+@property(assign) BOOL validatesSecureCertificate;
+@property(assign) BOOL shouldCompressRequestBody;
+@property(retain) NSURL *PACurl;
 @property(retain) NSString *authenticationScheme;
 @property(retain) NSString *proxyAuthenticationScheme;
-@property(assign) BOOL                             shouldPresentAuthenticationDialog;
-@property(assign) BOOL                             shouldPresentProxyAuthenticationDialog;
+@property(assign) BOOL shouldPresentAuthenticationDialog;
+@property(assign) BOOL shouldPresentProxyAuthenticationDialog;
 @property(assign, readonly) ASIAuthenticationState authenticationNeeded;
-@property(assign) BOOL                             shouldPresentCredentialsBeforeChallenge;
-@property(assign, readonly) int                    authenticationRetryCount;
-@property(assign, readonly) int                    proxyAuthenticationRetryCount;
-@property(assign) BOOL                             haveBuiltRequestHeaders;
-@property(assign, nonatomic) BOOL                  haveBuiltPostBody;
-@property(assign, readonly) BOOL                   inProgress;
-@property(assign) int                              numberOfTimesToRetryOnTimeout;
-@property(assign, readonly) int                    retryCount;
-@property(assign) BOOL                             shouldAttemptPersistentConnection;
-@property(assign) NSTimeInterval                   persistentConnectionTimeoutSeconds;
-@property(assign) BOOL                             shouldUseRFC2616RedirectBehaviour;
-@property(assign, readonly) BOOL                   connectionCanBeReused;
+@property(assign) BOOL shouldPresentCredentialsBeforeChallenge;
+@property(assign, readonly) int authenticationRetryCount;
+@property(assign, readonly) int proxyAuthenticationRetryCount;
+@property(assign) BOOL haveBuiltRequestHeaders;
+@property(assign, nonatomic) BOOL haveBuiltPostBody;
+@property(assign, readonly) BOOL inProgress;
+@property(assign) int numberOfTimesToRetryOnTimeout;
+@property(assign, readonly) int retryCount;
+@property(assign) BOOL shouldAttemptPersistentConnection;
+@property(assign) NSTimeInterval persistentConnectionTimeoutSeconds;
+@property(assign) BOOL shouldUseRFC2616RedirectBehaviour;
+@property(assign, readonly) BOOL connectionCanBeReused;
 @property(retain, readonly) NSNumber *requestID;
 @property(assign) id <ASICacheDelegate> downloadCache;
-@property(assign) ASICachePolicy        cachePolicy;
+@property(assign) ASICachePolicy cachePolicy;
 @property(assign) ASICacheStoragePolicy cacheStoragePolicy;
-@property(assign, readonly) BOOL        didUseCachedResponse;
-@property(assign) NSTimeInterval        secondsToCache;
+@property(assign, readonly) BOOL didUseCachedResponse;
+@property(assign) NSTimeInterval secondsToCache;
 @property(retain) NSArray *clientCertificates;
 #if TARGET_OS_IPHONE && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_4_0
 @property (assign) BOOL shouldContinueWhenAppEntersBackground;

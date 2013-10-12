@@ -8,14 +8,12 @@
 #import "NSImageView+DPImageManager.h"
 #import "DPImageManager.h"
 
-
 @implementation NSImageView (DPImageManager)
 
-
 - (void) setImageWithURL: (NSURL *) url; {
-    NSError        *error   = nil;
-    NSData         *data    = nil;
-    NSString       *key     = [url absoluteString];
+    NSError *error = nil;
+    NSData *data = nil;
+    NSString *key = [url absoluteString];
     DPImageManager *manager = [DPImageManager sharedManager];
 
     NSImage *image = [manager.imageDictionary objectForKey: key];

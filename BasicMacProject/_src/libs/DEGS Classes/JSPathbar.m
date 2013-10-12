@@ -43,8 +43,8 @@
 }
 
 - (void) insertItemWithTitle: (NSString *) title atIndex: (NSUInteger) index {
-    NSMutableArray         *cells = [self mutablePathComponentCells];
-    JSPathbarComponentCell *cell  = [[JSPathbarComponentCell alloc] initTextCell: title];
+    NSMutableArray *cells = [self mutablePathComponentCells];
+    JSPathbarComponentCell *cell = [[JSPathbarComponentCell alloc] initTextCell: title];
     [cell setBackgroundStyle: NSBackgroundStyleDark];
     [cells insertObject: cell atIndex: index];
 

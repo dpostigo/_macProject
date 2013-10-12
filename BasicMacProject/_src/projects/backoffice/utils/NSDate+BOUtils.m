@@ -11,21 +11,18 @@
 #import "TTTTimeIntervalFormatter.h"
 #import "NSString+Utils.h"
 
-
 #define DATESLUG_TODAY @"Today"
 #define DATESLUG_TOMORROW @"Tomorrow"
 #define DATESLUG_YESTERDAY @"Yesterday"
 
-
 @implementation NSDate (BOUtils)
-
 
 - (NSString *) detailString {
     if (self == nil) return @" ";
 
-    NSString                 *ret       = @"";
+    NSString *ret = @"";
     TTTTimeIntervalFormatter *formatter = [[TTTTimeIntervalFormatter alloc] init];
-    NSDate                   *today     = [NSDate date];
+    NSDate *today = [NSDate date];
 
     NSInteger daysBeforeToday = [self daysBeforeDate: today];
 

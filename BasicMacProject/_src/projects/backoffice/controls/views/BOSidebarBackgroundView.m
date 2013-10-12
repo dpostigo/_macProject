@@ -7,7 +7,6 @@
 
 #import "BOSidebarBackgroundView.h"
 
-
 @implementation BOSidebarBackgroundView {
 }
 

@@ -12,7 +12,6 @@
 #import "NavigationController.h"
 #import "BasicView.h"
 
-
 @class BasicCustomWindowOld;
 
 
@@ -32,7 +31,6 @@
     IBOutlet BasicBackgroundViewOld *backgroundView;
     IBOutlet NSButton *submitButton;
 }
-
 
 @property(nonatomic) BOOL autoTabbing;
 @property(nonatomic) BOOL showsNavigationBar;

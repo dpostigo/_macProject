@@ -7,9 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface NSWindow (Animation)
-
 
 - (void) animateToAlpha: (CGFloat) toAlpha fromAlpha: (CGFloat) fromAlpha duration: (CGFloat) duration;
 - (void) animateToAlpha: (CGFloat) toAlpha fromAlpha: (CGFloat) fromAlpha duration: (CGFloat) duration completionHandler: (void (^)()) completionHandler;

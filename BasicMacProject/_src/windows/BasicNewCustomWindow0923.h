@@ -1,5 +1,5 @@
 //
-//  BasicNewCustomWindow.h
+//  BasicNewCustomWindow0923.h
 //  Carts
 //
 //  Created by Daniela Postigo on 9/7/13.
@@ -10,7 +10,7 @@
 #import "BasicView.h"
 #import "BasicWindowDisplayView.h"
 
-@interface BasicNewCustomWindow : NSWindow {
+@interface BasicNewCustomWindow0923 : NSWindow {
     BasicWindowDisplayView *internalContentView;
 
     CGFloat topMargin;

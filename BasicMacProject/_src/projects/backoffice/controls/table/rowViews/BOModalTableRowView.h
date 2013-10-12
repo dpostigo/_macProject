@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #import "BasicCustomRowView.h"
 
-
 @interface BOModalTableRowView : BasicCustomRowView {
 
 }

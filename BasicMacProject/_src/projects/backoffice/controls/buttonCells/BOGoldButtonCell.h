@@ -9,6 +9,5 @@
 #import <Foundation/Foundation.h>
 #import "BasicButtonCell.h"
 
-
 @interface BOGoldButtonCell : BasicButtonCell
 @end

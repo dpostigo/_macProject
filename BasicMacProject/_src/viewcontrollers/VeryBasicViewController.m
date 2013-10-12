@@ -9,10 +9,8 @@
 #import "BasicSecureTextField.h"
 #import "BasicCustomWindowOld.h"
 
-
 @implementation VeryBasicViewController {
 }
-
 
 @synthesize backgroundView;
 @synthesize controlsArray;

@@ -9,9 +9,7 @@
 #import "ColoredWindowController.h"
 #import "INAppStoreWindow.h"
 
-
 @implementation ColoredWindowController
-
 
 - (id) initWithCoder: (NSCoder *) aDecoder {
     self = [super initWithCoder: aDecoder];
@@ -27,16 +25,15 @@
     [super windowDidLoad];
     // The class of the window has been set in INAppStoreWindow in Interface Builder
     INAppStoreWindow *aWindow = (INAppStoreWindow *) [self window];
-    aWindow.titleBarHeight                = 40.0;
+    aWindow.titleBarHeight = 40.0;
     aWindow.trafficLightButtonsLeftMargin = 13.0;
-    aWindow.titleBarDrawingBlock          = ^(BOOL drawsAsMainWindow, CGRect drawingRect, CGPathRef clippingPath) {
+    aWindow.titleBarDrawingBlock = ^(BOOL drawsAsMainWindow, CGRect drawingRect, CGPathRef clippingPath) {
         CGContextRef ctx = [[NSGraphicsContext currentContext] graphicsPort];
         CGContextAddPath(ctx, clippingPath);
         CGContextClip(ctx);
 
-
         NSColor *chromeStartingColor = [NSColor colorWithCalibratedRed: 0 green: 0.319 blue: 1 alpha: 1];
-        NSColor *chromeEndingColor   = [NSColor colorWithCalibratedRed: 0 green: 0.627 blue: 1 alpha: 1];
+        NSColor *chromeEndingColor = [NSColor colorWithCalibratedRed: 0 green: 0.627 blue: 1 alpha: 1];
 
 
         NSGradient *gradient = nil;
@@ -55,7 +52,7 @@
     };
 
     NSView *titleBarView = aWindow.titleBarView;
-    NSSize segmentSize  = NSMakeSize(104, 25);
+    NSSize segmentSize = NSMakeSize(104, 25);
     NSRect segmentFrame = NSMakeRect(NSMidX(titleBarView.bounds) - (segmentSize.width / 2.f),
             NSMidY(titleBarView.bounds) - (segmentSize.height / 2.f),
             segmentSize.width, segmentSize.height);

@@ -37,11 +37,11 @@
         return nil;
     }
     // Setup the inflate stream
-    zStream.zalloc   = Z_NULL;
-    zStream.zfree    = Z_NULL;
-    zStream.opaque   = Z_NULL;
+    zStream.zalloc = Z_NULL;
+    zStream.zfree = Z_NULL;
+    zStream.opaque = Z_NULL;
     zStream.avail_in = 0;
-    zStream.next_in  = 0;
+    zStream.next_in = 0;
     int status = deflateInit2(&zStream, COMPRESSION_AMOUNT, Z_DEFLATED, (15 + 16), 8, Z_DEFAULT_STRATEGY);
     if (status != Z_OK) {
         return [[self class] deflateErrorWithCode: status];
@@ -73,8 +73,8 @@
 
     int status;
 
-    zStream.next_in   = bytes;
-    zStream.avail_in  = (unsigned int) length;
+    zStream.next_in = bytes;
+    zStream.avail_in = (unsigned int) length;
     zStream.avail_out = 0;
 
     NSInteger bytesProcessedAlready = zStream.total_out;
@@ -84,7 +84,7 @@
             [outputData increaseLengthBy: halfLength];
         }
 
-        zStream.next_out  = (Bytef *) [outputData mutableBytes] + zStream.total_out - bytesProcessedAlready;
+        zStream.next_out = (Bytef *) [outputData mutableBytes] + zStream.total_out - bytesProcessedAlready;
         zStream.avail_out = (unsigned int) ([outputData length] - (zStream.total_out - bytesProcessedAlready));
         status = deflate(&zStream, shouldFinish ? Z_FINISH : Z_NO_FLUSH);
 
@@ -105,8 +105,8 @@
 
 
 + (NSData *) compressData: (NSData *) uncompressedData error: (NSError **) err {
-    NSError *theError   = nil;
-    NSData  *outputData = [[ASIDataCompressor compressor] compressBytes: (Bytef *) [uncompressedData bytes] length: [uncompressedData length] error: &theError shouldFinish: YES];
+    NSError *theError = nil;
+    NSData *outputData = [[ASIDataCompressor compressor] compressBytes: (Bytef *) [uncompressedData bytes] length: [uncompressedData length] error: &theError shouldFinish: YES];
     if (theError) {
         if (err) {
             *err = theError;

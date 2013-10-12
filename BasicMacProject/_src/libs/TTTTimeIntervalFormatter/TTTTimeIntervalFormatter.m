@@ -23,7 +23,6 @@
 #import "TTTTimeIntervalFormatter.h"
 #import "NSDate+JMSimpleDate.h"
 
-
 static inline NSCalendarUnit NSCalendarUnitFromString(NSString *string) {
     if ([string isEqualToString: @"year"]) {
         return NSYearCalendarUnit;
@@ -48,7 +47,6 @@ static inline NSCalendarUnit NSCalendarUnitFromString(NSString *string) {
 
 @interface TTTTimeIntervalFormatter ()
 
-
 - (NSString *) localizedStringForNumber: (NSUInteger) number ofCalendarUnit: (NSCalendarUnit) unit;
 - (NSString *) localizedIdiomaticDeicticExpressionForComponents: (NSDateComponents *) componenets;
 - (NSString *) enRelativeDateStringForComponents: (NSDateComponents *) components;
@@ -56,7 +54,6 @@ static inline NSCalendarUnit NSCalendarUnitFromString(NSString *string) {
 
 
 @implementation TTTTimeIntervalFormatter
-
 
 @synthesize locale = _locale;
 @synthesize pastDeicticExpression = _pastDeicticExpression;
@@ -69,18 +66,17 @@ static inline NSCalendarUnit NSCalendarUnitFromString(NSString *string) {
 @synthesize usesApproximateQualifier = _usesApproximateQualifier;
 @synthesize usesIdiomaticDeicticExpressions = _usesIdiomaticDeicticExpressions;
 
-
 - (id) init {
     self = [super init];
     if (!self) {
         return nil;
     }
 
-    self.pastDeicticExpression    = NSLocalizedString(@"ago", @"Past Deictic Expression");
+    self.pastDeicticExpression = NSLocalizedString(@"ago", @"Past Deictic Expression");
     self.presentDeicticExpression = NSLocalizedString(@"just now", @"Present Deictic Expression");
-    self.futureDeicticExpression  = NSLocalizedString(@"ago", @"Future Deictic Expression");
+    self.futureDeicticExpression = NSLocalizedString(@"ago", @"Future Deictic Expression");
 
-    self.deicticExpressionFormat    = NSLocalizedString(@"%@ %@", @"Deictic Expression Format (#{Time} #{Ago/From Now}");
+    self.deicticExpressionFormat = NSLocalizedString(@"%@ %@", @"Deictic Expression Format (#{Time} #{Ago/From Now}");
     self.approximateQualifierFormat = NSLocalizedString(@"about %@", @"Approximate Qualifier Format");
 
     self.presentTimeIntervalMargin = 1;
@@ -188,7 +184,6 @@ static inline NSCalendarUnit NSCalendarUnitFromString(NSString *string) {
 
 - (NSString *) simpleDayString: (NSDate *) date {
 
-
     NSTimeInterval interval = [date timeIntervalSinceDate: [NSDate date]];
 
     if (date.isToday) {
@@ -239,15 +234,15 @@ static inline NSCalendarUnit NSCalendarUnitFromString(NSString *string) {
 - (id) initWithCoder: (NSCoder *) aDecoder {
     self = [super initWithCoder: aDecoder];
 
-    self.locale                          = [aDecoder decodeObjectForKey: @"locale"];
-    self.pastDeicticExpression           = [aDecoder decodeObjectForKey: @"pastDeicticExpression"];
-    self.presentDeicticExpression        = [aDecoder decodeObjectForKey: @"presentDeicticExpression"];
-    self.futureDeicticExpression         = [aDecoder decodeObjectForKey: @"futureDeicticExpression"];
-    self.deicticExpressionFormat         = [aDecoder decodeObjectForKey: @"deicticExpressionFormat"];
-    self.approximateQualifierFormat      = [aDecoder decodeObjectForKey: @"approximateQualifierFormat"];
-    self.presentTimeIntervalMargin       = [aDecoder decodeDoubleForKey: @"presentTimeIntervalMargin"];
-    self.usesAbbreviatedCalendarUnits    = [aDecoder decodeBoolForKey: @"usesAbbreviatedCalendarUnits"];
-    self.usesApproximateQualifier        = [aDecoder decodeBoolForKey: @"usesApproximateQualifier"];
+    self.locale = [aDecoder decodeObjectForKey: @"locale"];
+    self.pastDeicticExpression = [aDecoder decodeObjectForKey: @"pastDeicticExpression"];
+    self.presentDeicticExpression = [aDecoder decodeObjectForKey: @"presentDeicticExpression"];
+    self.futureDeicticExpression = [aDecoder decodeObjectForKey: @"futureDeicticExpression"];
+    self.deicticExpressionFormat = [aDecoder decodeObjectForKey: @"deicticExpressionFormat"];
+    self.approximateQualifierFormat = [aDecoder decodeObjectForKey: @"approximateQualifierFormat"];
+    self.presentTimeIntervalMargin = [aDecoder decodeDoubleForKey: @"presentTimeIntervalMargin"];
+    self.usesAbbreviatedCalendarUnits = [aDecoder decodeBoolForKey: @"usesAbbreviatedCalendarUnits"];
+    self.usesApproximateQualifier = [aDecoder decodeBoolForKey: @"usesApproximateQualifier"];
     self.usesIdiomaticDeicticExpressions = [aDecoder decodeBoolForKey: @"usesIdiomaticDeicticExpressions"];
 
     return self;

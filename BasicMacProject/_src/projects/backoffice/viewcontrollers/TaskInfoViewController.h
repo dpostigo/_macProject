@@ -13,14 +13,12 @@
 #import "TaskDetailViewController.h"
 #import "BasicTableViewController.h"
 
-
 @interface TaskInfoViewController : BasicTableViewController
 //        <TokenTextFieldDelegate>
 {
     __unsafe_unretained TaskDetailViewController *detailController;
     CGFloat firstHeight;
 }
-
 
 @property(nonatomic) CGFloat firstHeight;
 @property(nonatomic, assign) TaskDetailViewController *detailController;

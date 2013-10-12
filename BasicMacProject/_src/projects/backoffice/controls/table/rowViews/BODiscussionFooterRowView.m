@@ -7,16 +7,13 @@
 
 #import "BODiscussionFooterRowView.h"
 
-
 @implementation BODiscussionFooterRowView {
 
 }
 
-
 - (id) initWithFrame: (NSRect) frameRect {
     self = [super initWithFrame: frameRect];
     if (self) {
-
 
         self.gradient = [[NSGradient alloc] initWithColorsAndLocations:
                 [NSColor colorWithDeviceWhite: 0.55f alpha: 1.0f], 0.0f,
@@ -26,8 +23,8 @@
                 [NSColor colorWithDeviceWhite: 0.55f alpha: 1.0f], 1.0f,
                 nil];
 
-        self.borderColor        = [NSColor darkGrayColor];
-        self.cornerRadius       = 5.0;
+        self.borderColor = [NSColor darkGrayColor];
+        self.cornerRadius = 5.0;
         self.shadow.shadowColor = [NSColor whiteColor];
 
     }

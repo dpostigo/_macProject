@@ -78,12 +78,12 @@
 - (void) setupSideBar {
     // Set the background style of the sections view
     self.sideBar.backgroundColor = SIDEBAR_COLOR;
-    self.sideBar.noiseOpacity    = SIDEBAR_NOISE_ALPHA;
+    self.sideBar.noiseOpacity = SIDEBAR_NOISE_ALPHA;
     NSShadow *shadow = [[NSShadow alloc] init];
-    shadow.shadowOffset     = NSMakeSize(SIDEBAR_SHADOW_OFFSET_X, SIDEBAR_SHADOW_OFFSET_Y);
+    shadow.shadowOffset = NSMakeSize(SIDEBAR_SHADOW_OFFSET_X, SIDEBAR_SHADOW_OFFSET_Y);
     shadow.shadowBlurRadius = SIDEBAR_SHADOW_BLUR_RADIUS;
-    shadow.shadowColor      = [[NSColor blackColor] colorWithAlphaComponent: SIDEBAR_SHADOW_OPACITY];
-    self.sideBar.shadow     = shadow;
+    shadow.shadowColor = [[NSColor blackColor] colorWithAlphaComponent: SIDEBAR_SHADOW_OPACITY];
+    self.sideBar.shadow = shadow;
 
     // we want to be notified of changes in the current selection
     [self.sideBar setDelegate: self];
@@ -106,9 +106,9 @@
 - (void) setupWindow {
     // We use the INAppStoreWindow class to paint a bigger titleBar for the window and add to it our pathBar
     INAppStoreWindow *window = (INAppStoreWindow *) [[self windowControllers][0] window];
-    window.titleBarHeight            = TITLE_BAR_HEIGHT;
+    window.titleBarHeight = TITLE_BAR_HEIGHT;
     window.centerTrafficLightButtons = NO;
-    window.showsTitle                = YES;
+    window.showsTitle = YES;
     JSPathbar *pathBar = [[JSPathbar alloc] initWithFrame: NSMakeRect(0.0, 0.0, 200.0, 30.0)];
     [pathBar setTranslatesAutoresizingMaskIntoConstraints: NO];
     self.pathBar = pathBar;
@@ -144,8 +144,8 @@
 
 - (void) setupTreeController {
     self.treeController.mainSectionNames = [NSArray arrayWithObjects: @"Preamble", @"Features", @"Geometry", @"Vectors", @"Sequence", @"Output", nil];
-    self.treeController.xmds             = self.xmds;
-    self.treeController.delegate         = self;
+    self.treeController.xmds = self.xmds;
+    self.treeController.delegate = self;
 }
 
 # pragma mark - Document initialisation
@@ -171,8 +171,8 @@
                                                              multiplier: 1.0f
                                                                constant: SIDEBAR_WIDTH]];
 
-    NSView *windowView  = [[aController window] contentView];
-    NSView *bottomBar   = self.treeController.bottomBar;
+    NSView *windowView = [[aController window] contentView];
+    NSView *bottomBar = self.treeController.bottomBar;
     NSView *contentView = self.treeController.contentView;
     [windowView addSubview: bottomBar];
     [windowView addSubview: contentView];
@@ -302,7 +302,7 @@
 # pragma mark - compile and run methods
 
 - (IBAction) runScript: (id) sender {
-    NSURL         *execURL     = [NSURL URLWithString: [self execPath]];
+    NSURL *execURL = [NSURL URLWithString: [self execPath]];
     JSAppDelegate *appDelegate = (JSAppDelegate *) [[NSApplication sharedApplication] delegate];
     [appDelegate runScriptAtURL: execURL error: NULL];
 }
@@ -310,25 +310,25 @@
 - (IBAction) compileScript: (id) sender {
     [self saveDocument: nil];
     JSAppDelegate *appDelegate = (JSAppDelegate *) [[NSApplication sharedApplication] delegate];
-    NSError       *error       = nil;
+    NSError *error = nil;
     if (![appDelegate compileScriptAtURL: [self fileURL] execURL: [NSURL URLWithString: [self execPath]] error: &error]) {
         NSString *errorElementXPath = [[error userInfo] objectForKey: @"elementXPath"];
-        NSError  *xPathError        = nil;
-        NSArray  *pathObjects       = [self.xmds objectPathForString: errorElementXPath error: &xPathError];
+        NSError *xPathError = nil;
+        NSArray *pathObjects = [self.xmds objectPathForString: errorElementXPath error: &xPathError];
         if (xPathError) {
             NSLog(@"XPath error");
             // throw an exception
         } else {
             [self.treeController showCellForPathObjects: pathObjects];
-            NSAlert  *errorAlert = [NSAlert alertWithError: error];
-            NSWindow *window     = [[self windowControllers][0] window];
+            NSAlert *errorAlert = [NSAlert alertWithError: error];
+            NSWindow *window = [[self windowControllers][0] window];
             [errorAlert beginSheetModalForWindow: window modalDelegate: self didEndSelector: @selector(alertDidEnd:returnCode:contextInfo:) contextInfo: nil];
         }
     } else {
-        NSString *path        = [[NSBundle mainBundle] pathForImageResource: @"DEGS"];
-        NSData   *appLogoData = nil;
+        NSString *path = [[NSBundle mainBundle] pathForImageResource: @"DEGS"];
+        NSData *appLogoData = nil;
         if (path) appLogoData = [[NSData alloc] initWithContentsOfFile: path];
-        NSString *scriptName              = [[[self fileURL] path] lastPathComponent];
+        NSString *scriptName = [[[self fileURL] path] lastPathComponent];
         NSString *notificationDescription = [scriptName stringByAppendingString: @" compiled."];
         Class GAB = NSClassFromString(@"GrowlApplicationBridge");
         if ([GAB respondsToSelector: @selector(notifyWithTitle:description:notificationName:iconData:priority:isSticky:clickContext:identifier:)])
@@ -344,7 +344,7 @@
 }
 
 - (IBAction) processOutputOfScript: (id) sender {
-    NSURL         *xsilURL     = [NSURL URLWithString: [self xsilFilePath]];
+    NSURL *xsilURL = [NSURL URLWithString: [self xsilFilePath]];
     JSAppDelegate *appDelegate = (JSAppDelegate *) [[NSApplication sharedApplication] delegate];
     if ([(NSMenuItem *) sender tag] == 0) [appDelegate processOutputOfScriptAtURL: xsilURL forFormat: JSXSILOutputForMatlab];
     else [appDelegate processOutputOfScriptAtURL: xsilURL forFormat: JSXSILOutputForMathematica];
@@ -358,7 +358,7 @@
 
 - (void) treeController: (JSTreeController *) treeController didShowViewController: (NSViewController *) viewController {
     [self.pathBar removeAllItemsFromIndex: 1];
-    NSArray       *newItems = [viewController.title componentsSeparatedByString: @"/"];
+    NSArray *newItems = [viewController.title componentsSeparatedByString: @"/"];
     for (NSString *item in newItems) [self.pathBar addItemWithTitle: item];
 
     // update the sideBar selection

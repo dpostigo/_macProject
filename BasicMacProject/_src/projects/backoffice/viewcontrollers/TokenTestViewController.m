@@ -7,11 +7,9 @@
 
 #import "TokenTestViewController.h"
 
-
 @implementation TokenTestViewController {
     NSMenu *_tokenMenu;
 }
-
 
 @synthesize tokensField;
 

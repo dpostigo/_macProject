@@ -56,7 +56,6 @@
 
 @dynamic mouseInside;
 
-
 - (void) setMouseInside: (BOOL) value {
     if (mouseInside != value) {
         mouseInside = value;
@@ -111,7 +110,7 @@ static NSGradient *gradientWithTargetColor(NSColor *targetColor) {
 
 - (NSRect) separatorRect {
     NSRect separatorRect = self.bounds;
-    separatorRect.origin.y    = NSMaxY(separatorRect) - 1;
+    separatorRect.origin.y = NSMaxY(separatorRect) - 1;
     separatorRect.size.height = 1;
     return separatorRect;
 }

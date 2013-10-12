@@ -14,20 +14,19 @@
 #import "ActivityView.h"
 #import "BasicTokenField.h"
 
-
 @interface AddTaskViewController : BasicTableViewController <NSTokenFieldDelegate, NSDatePickerCellDelegate>
 //        <TokenTextFieldDelegate>
 {
 
     IBOutlet NSDatePicker *datePicker;
-    NSString              *selectedJobId;
-    NSString              *selectedTaskTitle;
-    NSString              *selectedNotes;
-    NSString              *selectedStartDate;
-    NSString              *selectedDueDate;
-    NSString              *selectedServiceItemId;
-    NSString              *selectedAssigneeId;
-    NSMutableArray        *selectedObserverIds;
+    NSString *selectedJobId;
+    NSString *selectedTaskTitle;
+    NSString *selectedNotes;
+    NSString *selectedStartDate;
+    NSString *selectedDueDate;
+    NSString *selectedServiceItemId;
+    NSString *selectedAssigneeId;
+    NSMutableArray *selectedObserverIds;
 
 
     BasicTokenField *assigneeTokenField;
@@ -38,14 +37,13 @@
 
     NSMutableDictionary *textFieldDict;
 
-    NSArray      *assigneesSource;
+    NSArray *assigneesSource;
     ActivityView *assigneeActivityView;
 
     CGSize modalSize;
 
     NSMutableDictionary *imageDictionary;
 }
-
 
 @property(nonatomic) CGSize modalSize;
 //@property(nonatomic, strong) DPTokenTextField *jobTokenField;

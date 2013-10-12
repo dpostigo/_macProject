@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #import "BasicDisplayView.h"
 
-
 @interface BasicInnerShadowView : BasicDisplayView
 
 @end

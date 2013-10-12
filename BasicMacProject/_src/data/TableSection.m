@@ -7,10 +7,8 @@
 
 #import "TableSection.h"
 
-
 @implementation TableSection {
 }
-
 
 @synthesize rows;
 @synthesize title;
@@ -19,7 +17,7 @@
     self = [super init];
     if (self) {
         self.title = aTitle;
-        self.rows  = [[NSMutableArray alloc] init];
+        self.rows = [[NSMutableArray alloc] init];
     }
 
     return self;
@@ -28,8 +26,8 @@
 - (id) initWithTitle: (NSString *) aTitle content: (id) aContent {
     self = [super init];
     if (self) {
-        self.title   = aTitle;
-        self.rows    = [[NSMutableArray alloc] init];
+        self.title = aTitle;
+        self.rows = [[NSMutableArray alloc] init];
         self.content = aContent;
     }
 

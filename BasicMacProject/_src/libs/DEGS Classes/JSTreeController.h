@@ -32,7 +32,7 @@
 
 // the views composing the tree controller
 @property(nonatomic, strong) JSViewWithSlidingViews *contentView;
-@property(nonatomic, strong) JSBottomBarView        *bottomBar;
+@property(nonatomic, strong) JSBottomBarView *bottomBar;
 
 // the model
 @property(nonatomic, strong) JSXMDS *xmds;

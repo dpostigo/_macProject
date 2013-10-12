@@ -7,10 +7,8 @@
 
 #import "BasicTokenCell.h"
 
-
 @implementation BasicTokenCell {
 }
-
 
 @synthesize tokenField;
 

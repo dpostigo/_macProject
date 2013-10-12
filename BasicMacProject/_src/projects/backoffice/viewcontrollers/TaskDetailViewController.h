@@ -11,13 +11,11 @@
 #import "BasicSplitViewController.h"
 #import "SplitViewContainer.h"
 
-
 @interface TaskDetailViewController : BasicSplitViewController <NSSplitViewDelegate> {
     IBOutlet SplitViewContainer *infoContainer;
     IBOutlet SplitViewContainer *discussionContainer;
     BOOL isOpen;
 }
-
 
 @property(nonatomic) BOOL isOpen;
 - (void) toggleTaskDetails: (id) sender;

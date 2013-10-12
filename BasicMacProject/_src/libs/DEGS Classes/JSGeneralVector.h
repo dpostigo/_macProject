@@ -14,14 +14,14 @@
 
 @interface JSGeneralVector : JSNode {
     NSString *_name;
-    NSArray  *_dimensions;
-    NSArray  *_components;
+    NSArray *_dimensions;
+    NSArray *_components;
 }
 
 @property(nonatomic, strong) NSString *name;
 @property(nonatomic) NSUInteger type;
 @property(nonatomic, strong, readonly) NSArray *typeOptions;
-@property(nonatomic, strong) NSArray           *dimensions;
-@property(nonatomic, strong) NSArray           *components;
+@property(nonatomic, strong) NSArray *dimensions;
+@property(nonatomic, strong) NSArray *components;
 
 @end

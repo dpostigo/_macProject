@@ -12,9 +12,9 @@
 
 static ASIDownloadCache *sharedCache = nil;
 
-static NSString *sessionCacheFolder           = @"SessionStore";
-static NSString *permanentCacheFolder         = @"PermanentStore";
-static NSArray  *fileExtensionsToHandleAsHTML = nil;
+static NSString *sessionCacheFolder = @"SessionStore";
+static NSString *permanentCacheFolder = @"PermanentStore";
+static NSArray *fileExtensionsToHandleAsHTML = nil;
 
 @interface ASIDownloadCache ()
 
@@ -75,7 +75,7 @@ static NSArray  *fileExtensionsToHandleAsHTML = nil;
     NSFileManager *fileManager = [[[NSFileManager alloc] init] autorelease];
 
     BOOL isDirectory = NO;
-    NSArray       *directories = [NSArray arrayWithObjects: path, [path stringByAppendingPathComponent: sessionCacheFolder], [path stringByAppendingPathComponent: permanentCacheFolder], nil];
+    NSArray *directories = [NSArray arrayWithObjects: path, [path stringByAppendingPathComponent: sessionCacheFolder], [path stringByAppendingPathComponent: permanentCacheFolder], nil];
     for (NSString *directory in directories) {
         BOOL exists = [fileManager fileExistsAtPath: directory isDirectory: &isDirectory];
         if (exists && !isDirectory) {
@@ -94,7 +94,7 @@ static NSArray  *fileExtensionsToHandleAsHTML = nil;
 }
 
 - (void) updateExpiryForRequest: (ASIHTTPRequest *) request maxAge: (NSTimeInterval) maxAge {
-    NSString            *headerPath    = [self pathToStoreCachedResponseHeadersForRequest: request];
+    NSString *headerPath = [self pathToStoreCachedResponseHeadersForRequest: request];
     NSMutableDictionary *cachedHeaders = [NSMutableDictionary dictionaryWithContentsOfFile: headerPath];
     if (!cachedHeaders) {
         return;
@@ -132,7 +132,7 @@ static NSArray  *fileExtensionsToHandleAsHTML = nil;
     }
 
     NSString *headerPath = [self pathToStoreCachedResponseHeadersForRequest: request];
-    NSString *dataPath   = [self pathToStoreCachedResponseDataForRequest: request];
+    NSString *dataPath = [self pathToStoreCachedResponseDataForRequest: request];
 
     NSMutableDictionary *responseHeaders = [NSMutableDictionary dictionaryWithDictionary: [request responseHeaders]];
     if ([request isResponseCompressed]) {
@@ -162,7 +162,7 @@ static NSArray  *fileExtensionsToHandleAsHTML = nil;
     if ([request responseData]) {
         [[request responseData] writeToFile: dataPath atomically: NO];
     } else if ([request downloadDestinationPath] && ![[request downloadDestinationPath] isEqualToString: dataPath]) {
-        NSError       *error   = nil;
+        NSError *error = nil;
         NSFileManager *manager = [[NSFileManager alloc] init];
         if ([manager fileExistsAtPath: dataPath]) {
             [manager removeItemAtPath: dataPath error: &error];
@@ -253,7 +253,7 @@ static NSArray  *fileExtensionsToHandleAsHTML = nil;
     if (![extension length] || [[[self class] fileExtensionsToHandleAsHTML] containsObject: [extension lowercaseString]]) {
         extension = @"html";
     }
-    path                = [path stringByAppendingPathComponent: [[[self class] keyForURL: [request url]] stringByAppendingPathExtension: extension]];
+    path = [path stringByAppendingPathComponent: [[[self class] keyForURL: [request url]] stringByAppendingPathExtension: extension]];
     [[self accessLock] unlock];
     return path;
 }
@@ -322,7 +322,7 @@ static NSArray  *fileExtensionsToHandleAsHTML = nil;
     if ([request responseHeaders] && [request complete]) {
 
         // If the Etag or Last-Modified date are different from the one we have, we'll have to fetch this resource again
-        NSArray       *headersToCompare = [NSArray arrayWithObjects: @"Etag", @"Last-Modified", nil];
+        NSArray *headersToCompare = [NSArray arrayWithObjects: @"Etag", @"Last-Modified", nil];
         for (NSString *header in headersToCompare) {
             if (![[[request responseHeaders] objectForKey: header] isEqualToString: [cachedHeaders objectForKey: header]]) {
                 [[self accessLock] unlock];
@@ -346,7 +346,6 @@ static NSArray  *fileExtensionsToHandleAsHTML = nil;
         [[self accessLock] unlock];
         return NO;
     }
-
 
     [[self accessLock] unlock];
     return YES;
@@ -381,12 +380,12 @@ static NSArray  *fileExtensionsToHandleAsHTML = nil;
     NSFileManager *fileManager = [[[NSFileManager alloc] init] autorelease];
 
     BOOL isDirectory = NO;
-    BOOL exists      = [fileManager fileExistsAtPath: path isDirectory: &isDirectory];
+    BOOL exists = [fileManager fileExistsAtPath: path isDirectory: &isDirectory];
     if (!exists || !isDirectory) {
         [[self accessLock] unlock];
         return;
     }
-    NSError *error      = nil;
+    NSError *error = nil;
     NSArray *cacheFiles = [fileManager contentsOfDirectoryAtPath: path error: &error];
     if (error) {
         [[self accessLock] unlock];

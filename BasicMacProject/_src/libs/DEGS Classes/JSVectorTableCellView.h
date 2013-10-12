@@ -12,22 +12,22 @@
 #import "JSTextField.h"
 
 typedef enum _JSVectorCellState {
-    JSVectorCellInZeroState     = 0,
+    JSVectorCellInZeroState = 0,
     JSVectorCellInFilenameState = 1,
-    JSVectorCellInCDATAState    = 2
+    JSVectorCellInCDATAState = 2
 } JSVectorCellState;
 
 @interface JSVectorTableCellView : JSTableCellView
 
-@property(strong) IBOutlet JSTextField         *nameTextField;
-@property(strong) IBOutlet NSPopUpButton       *typeButton;
-@property(strong) IBOutlet JSTokenField        *componentsTokenField;
-@property(strong) IBOutlet JSTokenField        *dimensionsTokenField;
-@property(strong) IBOutlet JSTokenField        *initialBasisTokenField;
-@property(strong) IBOutlet NSPopUpButton       *initialisationButton;
-@property(strong) IBOutlet JSTextField         *filenameTextField;
-@property(strong) IBOutlet JSTokenField        *dependenciesTokenField;
-@property(strong) IBOutlet JSTokenField        *dependenciesBasisTokenField;
+@property(strong) IBOutlet JSTextField *nameTextField;
+@property(strong) IBOutlet NSPopUpButton *typeButton;
+@property(strong) IBOutlet JSTokenField *componentsTokenField;
+@property(strong) IBOutlet JSTokenField *dimensionsTokenField;
+@property(strong) IBOutlet JSTokenField *initialBasisTokenField;
+@property(strong) IBOutlet NSPopUpButton *initialisationButton;
+@property(strong) IBOutlet JSTextField *filenameTextField;
+@property(strong) IBOutlet JSTokenField *dependenciesTokenField;
+@property(strong) IBOutlet JSTokenField *dependenciesBasisTokenField;
 @property(strong) IBOutlet JSColorfulTextField *initialisationTextField;
 
 @property(nonatomic, unsafe_unretained) id <JSTableCellViewDelegate> delegate;

@@ -8,6 +8,5 @@
 #import <Foundation/Foundation.h>
 #import "BasicButton.h"
 
-
 @interface EtchedButton : BasicButton
 @end

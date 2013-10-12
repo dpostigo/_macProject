@@ -17,12 +17,10 @@
 #import "GetAssigneeProcess.h"
 #import "BasicCustomWindowOld.h"
 
-
 @implementation AddTaskViewController {
-    NSMenu              *serviceItemMenu;
+    NSMenu *serviceItemMenu;
     BasicDatePickerCell *currentDateCell;
 }
-
 
 @synthesize modalSize;
 
@@ -39,12 +37,11 @@
     [super loadView];
 
     datePicker.dateValue = [NSDate date];
-    datePicker.delegate  = self;
+    datePicker.delegate = self;
 
     self.allowsSelection = NO;
 
-
-    textFieldDict   = [[NSMutableDictionary alloc] init];
+    textFieldDict = [[NSMutableDictionary alloc] init];
     imageDictionary = [[NSMutableDictionary alloc] init];
     [imageDictionary setObject: [NSImage imageNamed: @"service-item-icon"] forKey: @"Service Item"];
     [imageDictionary setObject: [NSImage imageNamed: @"job-icon-dark"] forKey: @"Job"];
@@ -90,7 +87,7 @@
     BOModalTableRowView *rowView = [[BOModalTableRowView alloc] init];
     if ([rowObject.textLabel isEqualToString: @"Task"]) {
         rowView.cornerOptions = JSUpperLeftCorner | JSUpperRightCorner;
-        rowView.cornerRadius  = MODAL_CORNER_RADIUS * 0.5;
+        rowView.cornerRadius = MODAL_CORNER_RADIUS * 0.5;
     }
     return rowView;
 }
@@ -111,7 +108,7 @@
     if ([rowObject.cellIdentifier isEqualToString: @"TokenCell"]) {
 
         BasicTokenCell *tokenCell = (BasicTokenCell *) tableCell;
-        tokenCell.tokenField.delegate  = self;
+        tokenCell.tokenField.delegate = self;
         tokenCell.tokenField.rowObject = rowObject;
         [tokenCell.tokenField.cell setPlaceholderString: rowObject.textLabel];
         [self subscribeControl: tokenCell.tokenField];
@@ -253,7 +250,7 @@
 
     datePicker.right = sender.left - 5;
     //    datePicker.top = point.y - sender.height + 5;
-    datePicker.top   = point.y - datePicker.height;
+    datePicker.top = point.y - datePicker.height;
 
     if (datePicker.superview) {
         [datePicker removeFromSuperview];
@@ -315,9 +312,9 @@
         selectedDueDate = textField.stringValue;
     }
 
-    if (selectedNotes == nil) selectedNotes         = @"";
+    if (selectedNotes == nil) selectedNotes = @"";
     if (selectedStartDate == nil) selectedStartDate = @"";
-    if (selectedDueDate == nil) selectedDueDate     = @"";
+    if (selectedDueDate == nil) selectedDueDate = @"";
     [self handleValidation: self];
 }
 
@@ -345,7 +342,7 @@
     [self handleTokenValidation: tokenField];
     [self handleValidation: self];
 
-    NSString        *lastToken       = [tokens lastObject];
+    NSString *lastToken = [tokens lastObject];
     BasicTokenField *basicTokenField = (BasicTokenField *) tokenField;
     if (basicTokenField.rowObject.content != nil) {
         NSArray *array = basicTokenField.rowObject.content;
@@ -353,7 +350,7 @@
         if (![array containsObject: lastToken]) {
             NSMutableArray *tokensEdited = [[NSMutableArray alloc] initWithArray: tokens];
             [tokensEdited removeObject: lastToken];
-            tokens                       = tokensEdited;
+            tokens = tokensEdited;
         }
     }
 
@@ -370,12 +367,12 @@
     NSArray *ret = [NSArray array];
     if ([tokenField isKindOfClass: [BasicTokenField class]]) {
         BasicTokenField *basicTokenField = (BasicTokenField *) tokenField;
-        TableRowObject  *rowObject       = basicTokenField.rowObject;
+        TableRowObject *rowObject = basicTokenField.rowObject;
 
         if (rowObject.content != nil) {
             NSArray *array = [NSArray arrayWithArray: rowObject.content];
             array = [self titlesForObjects: array];
-            ret   = [array filteredArrayUsingPredicate: [NSPredicate predicateWithFormat: @"SELF beginswith[cd] %@", substring]];
+            ret = [array filteredArrayUsingPredicate: [NSPredicate predicateWithFormat: @"SELF beginswith[cd] %@", substring]];
         }
     }
     return ret;
@@ -391,9 +388,9 @@
 
 - (void) handleTokenValidation: (NSTokenField *) tokenField {
     selectedServiceItemId = [_model serviceItemIdForTitle: [serviceItemTokenField.objectValue lastObject]];
-    selectedJobId         = [_model jobIdForTitle: [jobTokenField.objectValue lastObject]];
-    selectedAssigneeId    = [_model contactIdForTitle: [assigneeTokenField.objectValue lastObject]];
-    selectedObserverIds   = [NSMutableArray arrayWithArray: [_model contactIdsForTitles: observersTokenField.objectValue]];
+    selectedJobId = [_model jobIdForTitle: [jobTokenField.objectValue lastObject]];
+    selectedAssigneeId = [_model contactIdForTitle: [assigneeTokenField.objectValue lastObject]];
+    selectedObserverIds = [NSMutableArray arrayWithArray: [_model contactIdsForTitles: observersTokenField.objectValue]];
 
     if (tokenField == jobTokenField && selectedJobId != nil) {
         [_queue addOperation: [[GetAssigneeProcess alloc] initWithJobId: selectedJobId]];
@@ -475,7 +472,7 @@
 
 - (void) datePickerCell: (NSDatePickerCell *) aDatePickerCell validateProposedDateValue: (NSDate **) proposedDateValue timeInterval: (NSTimeInterval *) proposedTimeInterval {
 
-    NSDate   *date       = *proposedDateValue;
+    NSDate *date = *proposedDateValue;
     NSString *dateString = [_model.slugFormatter stringFromDate: date];
 
 

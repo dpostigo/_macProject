@@ -12,11 +12,9 @@
 #import "NSWindow+Animation.h"
 #import "ModalWindow.h"
 
-
 @implementation BasicCustomWindowOld {
     BasicBackgroundViewOld *modalBackground;
 }
-
 
 @synthesize modalWindow;
 
@@ -27,16 +25,16 @@
 - (void) presentModalView: (VeryBasicViewController *) controller withSize: (NSSize) size animated: (BOOL) animated {
 
     NSRect modalRect = [self modalRectForSize: size];
-    CGRect rect      = [self windowRectForModal];
+    CGRect rect = [self windowRectForModal];
 
     ModalWindow *window = [[ModalWindow alloc] initWithContentRect: rect styleMask: NSBorderlessWindowMask backing: NSBackingStoreBuffered defer: NO];
     window.backgroundColor = [NSColor colorWithDeviceWhite: 0.0 alpha: 0.5];
     [window setReleasedWhenClosed: NO];
     window.alphaValue = 0;
-    self.modalWindow  = window;
+    self.modalWindow = window;
 
     controller.modalWindow = self;
-    controller.view.frame  = modalRect;
+    controller.view.frame = modalRect;
 
     [self addChildWindow: modalWindow ordered: NSWindowAbove];
 
@@ -60,7 +58,7 @@
     CGRect wRect = self.frame;
     NSView *contentView = self.contentView;
     CGRect cRect = contentView.frame;
-    CGRect rect  = CGRectMake(wRect.origin.x, wRect.origin.y, cRect.size.width, cRect.size.height);
+    CGRect rect = CGRectMake(wRect.origin.x, wRect.origin.y, cRect.size.width, cRect.size.height);
     return rect;
 }
 
@@ -102,8 +100,8 @@
 }
 
 - (void) addController: (NSViewController *) viewController toView: (NSView *) aView {
-    viewController.view.width            = aView.frame.size.width;
-    viewController.view.height           = aView.frame.size.height;
+    viewController.view.width = aView.frame.size.width;
+    viewController.view.height = aView.frame.size.height;
     viewController.view.autoresizingMask = NSViewHeightSizable | NSViewWidthSizable;
     [aView addSubview: viewController.view];
 }
@@ -117,50 +115,49 @@
 
 - (void) setupCloseButton {
     INWindowButton *button = [INWindowButton windowButtonWithSize: NSMakeSize(14, 16) groupIdentifier: nil];
-    button.activeImage             = [NSImage imageNamed: @"close-active-color.tiff"];
+    button.activeImage = [NSImage imageNamed: @"close-active-color.tiff"];
     button.activeNotKeyWindowImage = [NSImage imageNamed: @"close-activenokey-color.tiff"];
-    button.inactiveImage           = [NSImage imageNamed: @"close-inactive-disabled-color.tiff"];
-    button.pressedImage            = [NSImage imageNamed: @"close-pd-color.tiff"];
-    button.rolloverImage           = [NSImage imageNamed: @"close-rollover-color.tiff"];
-    self.closeButton               = button;
+    button.inactiveImage = [NSImage imageNamed: @"close-inactive-disabled-color.tiff"];
+    button.pressedImage = [NSImage imageNamed: @"close-pd-color.tiff"];
+    button.rolloverImage = [NSImage imageNamed: @"close-rollover-color.tiff"];
+    self.closeButton = button;
 }
 
 - (void) setupMinimizeButton {
     INWindowButton *button = [INWindowButton windowButtonWithSize: NSMakeSize(14, 16) groupIdentifier: nil];
-    button.activeImage             = [NSImage imageNamed: @"minimize-active-color.tiff"];
+    button.activeImage = [NSImage imageNamed: @"minimize-active-color.tiff"];
     button.activeNotKeyWindowImage = [NSImage imageNamed: @"minimize-activenokey-color.tiff"];
-    button.inactiveImage           = [NSImage imageNamed: @"minimize-inactive-disabled-color.tiff"];
-    button.pressedImage            = [NSImage imageNamed: @"minimize-pd-color.tiff"];
-    button.rolloverImage           = [NSImage imageNamed: @"minimize-rollover-color.tiff"];
-    self.minimizeButton            = button;
+    button.inactiveImage = [NSImage imageNamed: @"minimize-inactive-disabled-color.tiff"];
+    button.pressedImage = [NSImage imageNamed: @"minimize-pd-color.tiff"];
+    button.rolloverImage = [NSImage imageNamed: @"minimize-rollover-color.tiff"];
+    self.minimizeButton = button;
 }
 
 - (void) setupZoomButton {
     INWindowButton *button = [INWindowButton windowButtonWithSize: NSMakeSize(14, 16) groupIdentifier: nil];
-    button.activeImage             = [NSImage imageNamed: @"zoom-active-color.tiff"];
+    button.activeImage = [NSImage imageNamed: @"zoom-active-color.tiff"];
     button.activeNotKeyWindowImage = [NSImage imageNamed: @"zoom-activenokey-color.tiff"];
-    button.inactiveImage           = [NSImage imageNamed: @"zoom-inactive-disabled-color.tiff"];
-    button.pressedImage            = [NSImage imageNamed: @"zoom-pd-color.tiff"];
-    button.rolloverImage           = [NSImage imageNamed: @"zoom-rollover-color.tiff"];
-    self.zoomButton                = button;
+    button.inactiveImage = [NSImage imageNamed: @"zoom-inactive-disabled-color.tiff"];
+    button.pressedImage = [NSImage imageNamed: @"zoom-pd-color.tiff"];
+    button.rolloverImage = [NSImage imageNamed: @"zoom-rollover-color.tiff"];
+    self.zoomButton = button;
 }
 
 - (void) configureWindow {
-    self.fullScreenButtonRightMargin   = 7.0;
-    self.fullScreenButtonRightMargin   = 7.0;
-    self.centerFullScreenButton        = YES;
-    self.titleBarHeight                = 40.0;
+    self.fullScreenButtonRightMargin = 7.0;
+    self.fullScreenButtonRightMargin = 7.0;
+    self.centerFullScreenButton = YES;
+    self.titleBarHeight = 40.0;
     self.trafficLightButtonsLeftMargin = 13.0;
-
 
     self.titleBarDrawingBlock = ^(BOOL drawsAsMainWindow, CGRect drawingRect, CGPathRef clippingPath) {
         CGContextRef ctx = [[NSGraphicsContext currentContext] graphicsPort];
         CGContextAddPath(ctx, clippingPath);
         CGContextClip(ctx);
-        NSColor *chromeEndingColor   = [NSColor colorWithCalibratedRed: 52 / 255.0 green: 160 / 255.0 blue: 194 / 255.0 alpha: 1];
+        NSColor *chromeEndingColor = [NSColor colorWithCalibratedRed: 52 / 255.0 green: 160 / 255.0 blue: 194 / 255.0 alpha: 1];
         NSColor *chromeStartingColor = [NSColor colorWithCalibratedRed: 115 / 255.0 green: 184 / 255.0 blue: 194 / 255.0 alpha: 1];
         chromeStartingColor = [NSColor colorWithCalibratedRed: 38 / 255.0 green: (43 / 255.0) blue: (46 / 255.0) alpha: 1.0];
-        chromeEndingColor   = [NSColor colorWithCalibratedRed: (52 / 255.0) green: (58 / 255.0) blue: (61 / 255.0) alpha: 1.0];
+        chromeEndingColor = [NSColor colorWithCalibratedRed: (52 / 255.0) green: (58 / 255.0) blue: (61 / 255.0) alpha: 1.0];
         NSGradient *gradient = nil;
         if (drawsAsMainWindow) {
             gradient = [[NSGradient alloc] initWithStartingColor: chromeStartingColor endingColor: chromeEndingColor];
@@ -177,15 +174,15 @@
 }
 
 - (void) addControls {
-    NSSize segmentSize  = NSMakeSize(104, 25);
+    NSSize segmentSize = NSMakeSize(104, 25);
     NSRect segmentFrame = NSMakeRect(NSMidX(self.titleBarView.bounds) - (segmentSize.width), NSMidY(self.titleBarView.bounds) - (segmentSize.height / 2.f), segmentSize.width, segmentSize.height);
 
     NSSegmentedControl *segment = [[NSSegmentedControl alloc] initWithFrame: segmentFrame];
-    segment.segmentCount    = 3;
+    segment.segmentCount = 3;
     segment.selectedSegment = 0;
     //    segment.segmentStyle = NSSegmentStyleTexturedRounded;
-    segment.segmentStyle    = NSSegmentStyleCapsule;
-    segment.segmentStyle    = NSSegmentStyleSmallSquare;
+    segment.segmentStyle = NSSegmentStyleCapsule;
+    segment.segmentStyle = NSSegmentStyleSmallSquare;
     //    segment.segmentStyle = NSSegmentStyleRoundRect;
 
     [segment setImage: [NSImage imageNamed: NSImageNameIconViewTemplate] forSegment: 0];
@@ -193,7 +190,7 @@
     [segment setImage: [NSImage imageNamed: NSImageNameFlowViewTemplate] forSegment: 2];
     [segment setAction: @selector(handleSegmentClicked:)];
     //    [self.titleBarView addSubview: segment];
-    segment.right            = self.titleBarView.width;
+    segment.right = self.titleBarView.width;
     segment.autoresizingMask = NSViewMinXMargin;
 }
 

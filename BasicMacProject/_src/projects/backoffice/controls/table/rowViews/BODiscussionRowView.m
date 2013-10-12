@@ -8,17 +8,15 @@
 #import "BODiscussionRowView.h"
 #import "NSColor+Utils.h"
 
-
 @implementation BODiscussionRowView {
 
 }
-
 
 - (id) initWithFrame: (NSRect) frameRect {
     self = [super initWithFrame: frameRect];
     if (self) {
 
-        NSColor *yellow    = [NSColor colorWithString: PALE_YELLOW];
+        NSColor *yellow = [NSColor colorWithString: PALE_YELLOW];
         NSColor *darkColor = [NSColor colorWithString: @"be955b"];
 
         self.gradient = [[NSGradient alloc] initWithColorsAndLocations:
@@ -31,7 +29,7 @@
 
 
         //        borderColor = [NSColor colorWithDeviceWhite: 1.0 alpha: 0.8];
-        self.borderColor  = [yellow colorWithAlphaComponent: 0.5];
+        self.borderColor = [yellow colorWithAlphaComponent: 0.5];
         self.cornerRadius = 5.0;
     }
 

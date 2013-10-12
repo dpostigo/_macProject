@@ -297,7 +297,6 @@
     return newQueue;
 }
 
-
 @synthesize requestsCount;
 @synthesize bytesUploadedSoFar;
 @synthesize totalBytesToUpload;

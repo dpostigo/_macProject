@@ -7,17 +7,15 @@
 
 #import "BOModalBackgroundView.h"
 
-
 @implementation BOModalBackgroundView {
 }
-
 
 - (void) setup {
     [super setup];
     self.cornerRadius = 10.0;
-    self.borderColor  = [NSColor whiteColor];
-    self.borderWidth  = 0.0;
-    self.gradient     = [[NSGradient alloc] initWithColorsAndLocations:
+    self.borderColor = [NSColor whiteColor];
+    self.borderWidth = 0.0;
+    self.gradient = [[NSGradient alloc] initWithColorsAndLocations:
             [NSColor colorWithDeviceWhite: 0.85f alpha: 1.0f], 0.0f,
             [NSColor colorWithDeviceWhite: 0.90f alpha: 1.0f], 0.2f,
             [NSColor colorWithDeviceWhite: 0.93f alpha: 1.0f], 0.5f,

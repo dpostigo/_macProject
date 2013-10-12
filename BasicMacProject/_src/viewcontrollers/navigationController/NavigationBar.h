@@ -8,13 +8,11 @@
 #import <Foundation/Foundation.h>
 #import "BasicWhiteView.h"
 
-
 @interface NavigationBar : BasicWhiteView {
     IBOutlet NSButton *backButtonItem;
     IBOutlet NSTextField *titleLabel;
     CGFloat barButtonHeight;
 }
-
 
 @property(nonatomic, strong) NSButton *backButtonItem;
 @property(nonatomic) CGFloat barButtonHeight;

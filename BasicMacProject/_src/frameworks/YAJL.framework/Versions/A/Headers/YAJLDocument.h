@@ -120,8 +120,8 @@ extern NSInteger YAJLDocumentStackCapacity;
     id <YAJLDocumentDelegate> delegate_;
 
     __weak NSMutableDictionary *dict_; // weak; if map in progress, points to the current map
-    __weak NSMutableArray      *array_; // weak; If array in progress, points the current array
-    __weak NSString            *key_; // weak; If map in progress, points to current key
+    __weak NSMutableArray *array_; // weak; If array in progress, points the current array
+    __weak NSString *key_; // weak; If map in progress, points to current key
 
     NSMutableArray *stack_;
     NSMutableArray *keyStack_;
@@ -132,8 +132,8 @@ extern NSInteger YAJLDocumentStackCapacity;
 
 }
 
-@property(readonly, nonatomic) id                      root; //! The root element of the document, either NSArray or NSDictionary
-@property(readonly, nonatomic) YAJLParserStatus        parserStatus; //! The current status of parsing
+@property(readonly, nonatomic) id root; //! The root element of the document, either NSArray or NSDictionary
+@property(readonly, nonatomic) YAJLParserStatus parserStatus; //! The current status of parsing
 @property(assign, nonatomic) id <YAJLDocumentDelegate> delegate; //! Delegate
 
 /*!

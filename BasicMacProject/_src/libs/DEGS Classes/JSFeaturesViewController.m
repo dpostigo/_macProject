@@ -21,14 +21,14 @@
 
 // model properties
 @property(nonatomic, strong) JSFeatures *features;
-@property(nonatomic, strong) JSDriver   *driver;
+@property(nonatomic, strong) JSDriver *driver;
 
 // syntax highlighter
 @property(nonatomic, strong) JSSyntaxHighlighter *syntaxHighlighter;
 
 // dummy cells
-@property(nonatomic, strong) JSOptionsTableCellView  *optionsDummyCell;
-@property(nonatomic, strong) JSDriverTableCellView   *driverDummyCell;
+@property(nonatomic, strong) JSOptionsTableCellView *optionsDummyCell;
+@property(nonatomic, strong) JSDriverTableCellView *driverDummyCell;
 @property(nonatomic, strong) JSArgumentTableCellView *argumentDummyCell;
 
 @end
@@ -99,7 +99,7 @@
 - (void) setRepresentedObject: (id) representedObject {
     if ([representedObject isKindOfClass: [NSDictionary class]]) {
         self.features = [representedObject objectForKey: @"features"];
-        self.driver   = [representedObject objectForKey: @"driver"];
+        self.driver = [representedObject objectForKey: @"driver"];
     }
 }
 
@@ -110,7 +110,7 @@
     if (self) {
         // set the model
         self.features = features;
-        self.driver   = driver;
+        self.driver = driver;
 
         // set the number of fixed cells (the driver cell and options cell)
         self.biasCells = 2;
@@ -162,11 +162,11 @@
 
     cellView.autoVectoriseButton.state = self.features.autoVectorise;
     cellView.haltNonFiniteButton.state = self.features.haltNonFinite;
-    cellView.openMPButton.state        = self.features.openMP;
-    cellView.bingButton.state          = self.features.bing;
-    cellView.benchmarkButton.state     = self.features.benchmark;
-    cellView.errorCheckButton.state    = self.features.errorCheck;
-    cellView.diagnosticsButton.state   = self.features.diagnostics;
+    cellView.openMPButton.state = self.features.openMP;
+    cellView.bingButton.state = self.features.bing;
+    cellView.benchmarkButton.state = self.features.benchmark;
+    cellView.errorCheckButton.state = self.features.errorCheck;
+    cellView.diagnosticsButton.state = self.features.diagnostics;
 
     if (self.features.globals) cellView.globalsTextField.stringValue = self.features.globals;
     else cellView.globalsTextField.stringValue = @"";
@@ -222,12 +222,12 @@
         JSOptionsTableCellView *cellView = (JSOptionsTableCellView *) [tableView makeViewWithIdentifier: @"optionsCell" owner: self];
 
         // we set the syntax highlighter before filling the cell so that when the setter of the stringValue of the textField field is called the string is automatically recolored
-        cellView.globalsTextField.syntaxHighlighter        = self.syntaxHighlighter;
+        cellView.globalsTextField.syntaxHighlighter = self.syntaxHighlighter;
         cellView.argumentsCDATATextField.syntaxHighlighter = self.syntaxHighlighter;
 
         [self fillOptionsCell: cellView];
 
-        cellView.globalsTextField.keepsEditingOnReturn        = YES;
+        cellView.globalsTextField.keepsEditingOnReturn = YES;
         cellView.argumentsCDATATextField.keepsEditingOnReturn = YES;
 
         return cellView;
@@ -285,7 +285,7 @@
 
 - (void) popUpButtonPressed: (id) sender {
     NSInteger selection = [sender indexOfSelectedItem];
-    NSInteger row       = [self.mainTableView rowForView: sender];
+    NSInteger row = [self.mainTableView rowForView: sender];
     // the rowForView: method of the tableView returns -1 if the view is not part of the tableView
     // we make sure that the call came from one of the view of the tableView
     // this is not strictly necessary as the tableView and its views are the onyl things in the view controller but better be safe
@@ -308,9 +308,9 @@
 #pragma mark - Textfields delegate methods
 
 - (void) controlTextDidChange: (NSNotification *) obj {
-    NSTextField *sender           = [obj object];
-    NSString    *enteredString    = [sender.stringValue stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
-    NSString    *senderIdentifier = [sender identifier];
+    NSTextField *sender = [obj object];
+    NSString *enteredString = [sender.stringValue stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+    NSString *senderIdentifier = [sender identifier];
 
     id value = nil;
     if ([enteredString length]) value = enteredString;
@@ -350,8 +350,8 @@
 
 - (BOOL) tableView: (NSTableView *) tableView acceptDrop: (id) info row: (NSInteger) row dropOperation: (NSTableViewDropOperation) operation {
     NSPasteboard *pasteboard = [info draggingPasteboard];
-    NSData       *rowData    = [pasteboard dataForType: SectionTableViewDataType];
-    NSIndexSet   *rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData: rowData];
+    NSData *rowData = [pasteboard dataForType: SectionTableViewDataType];
+    NSIndexSet *rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData: rowData];
     NSUInteger dropIndex = row - self.biasCells;
 
     // insertIndex is the index where we are going to insert back the data in the model array

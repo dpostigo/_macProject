@@ -22,14 +22,12 @@
 
 #import <Foundation/Foundation.h>
 
-
 /**
  Instances of `TTTTimeIntervalFormatter` create localized string representations of `NSTimeInterval` values.
 
  For example, a time interval of -75 would be formatted as @"1 minute ago" in English.
  */
 @interface TTTTimeIntervalFormatter : NSFormatter
-
 
 /**
  Specifies the locale used to format strings. Defaults to the current system locale.

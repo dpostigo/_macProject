@@ -8,7 +8,6 @@
 
 #import "NSCell+PaddingUtils.h"
 
-
 @implementation NSCell (PaddingUtils)
 
 //

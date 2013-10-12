@@ -8,12 +8,10 @@
 #import <Foundation/Foundation.h>
 #import "VeryBasicViewController.h"
 
-
 @interface BasicViewController : VeryBasicViewController {
 
     NSTextField *titleLabel;
 }
-
 
 @property(nonatomic, strong) NSTextField *titleLabel;
 

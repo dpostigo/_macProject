@@ -7,10 +7,8 @@
 
 #import "BasicCollectionViewController.h"
 
-
 @implementation BasicCollectionViewController {
 }
-
 
 @synthesize collection;
 

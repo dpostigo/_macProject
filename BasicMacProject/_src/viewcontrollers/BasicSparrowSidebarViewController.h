@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "BasicOutlineViewController.h"
 
-
 @interface BasicSparrowSidebarViewController : BasicOutlineViewController {
 
 }

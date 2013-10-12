@@ -9,7 +9,6 @@
 #import "TableRowObject.h"
 #import "TableSection.h"
 
-
 @class BasicTextField;
 
 @protocol BasicTextFieldDelegate <NSObject>
@@ -28,7 +27,6 @@
 
     __unsafe_unretained id <BasicTextFieldDelegate> delegate;
 }
-
 
 @property(nonatomic, assign) TableRowObject *rowObject;
 @property(nonatomic, assign) TableSection *tableSection;

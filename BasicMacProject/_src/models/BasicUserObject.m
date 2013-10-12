@@ -8,10 +8,8 @@
 
 #import "BasicUserObject.h"
 
-
 @implementation BasicUserObject {
 }
-
 
 @synthesize firstName;
 @synthesize lastName;

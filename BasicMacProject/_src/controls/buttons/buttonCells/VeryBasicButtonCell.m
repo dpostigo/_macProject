@@ -7,14 +7,12 @@
 
 #import "VeryBasicButtonCell.h"
 #import "NSGraphicsContext+DPUtils.h"
-
+#import "NSBezierPath+DPUtils.h"
 
 @implementation VeryBasicButtonCell {
 }
 
-
 @synthesize disabledInnerStrokeColor;
-
 
 @synthesize autoAdjustsCornerRadius;
 
@@ -22,7 +20,6 @@
 @synthesize disabledPathOptions;
 @synthesize highlightedPathOptions;
 @synthesize imageOptions;
-
 
 @synthesize innerStrokeOptions;
 
@@ -34,11 +31,10 @@
     pathOptions.cornerRadius = 3.0;
     pathOptions.borderColor = [NSColor colorWithWhite: 0.12];
     pathOptions.borderWidth = 1.0;
-    pathOptions.gradient = [[NSGradient alloc] initWithColorsAndLocations:
+    pathOptions.gradient = [[BasicGradient alloc] initWithColorsAndLocations:
             [NSColor colorWithWhite: 0.35], 0.0,
             [NSColor colorWithWhite: 0.1], 1.0,
             nil];
-
 
     PathOptions *innerPathOptions = [pathOptions copy];
     innerPathOptions.borderColor = [NSColor colorWithDeviceWhite: 1.0 alpha: 0.3];
@@ -46,10 +42,9 @@
     innerPathOptions.borderWidth = 1.0;
     pathOptions.innerPathOptions = innerPathOptions;
 
-
     disabledPathOptions = [pathOptions copy];
     disabledPathOptions.borderColor = [NSColor redColor];
-    disabledPathOptions.gradient = [[NSGradient alloc] initWithColorsAndLocations:
+    disabledPathOptions.gradient = [[BasicGradient alloc] initWithColorsAndLocations:
             [NSColor lightGrayColor], 0.0,
             [NSColor darkGrayColor], 1.0,
             nil];
@@ -60,20 +55,17 @@
     disabledInnerPathOptions.borderWidth = 1.0;
     disabledPathOptions.innerPathOptions = disabledInnerPathOptions;
 
-
     imageOptions = [[ImageOptions alloc] init];
     imageOptions.imageColor = [NSColor colorWithDeviceWhite: 0.9 alpha: 1.0];
     //    imageOptions.imageColor = [NSColor redColor];
     imageOptions.imageShadowColor = [NSColor clearColor];
     imageOptions.imageShadowColor = [NSColor blackColor];
 
-
     highlightedPathOptions = [pathOptions copy];
-    highlightedPathOptions.gradient = [[NSGradient alloc] initWithColorsAndLocations:
+    highlightedPathOptions.gradient = [[BasicGradient alloc] initWithColorsAndLocations:
             [NSColor colorWithDeviceWhite: 0.35 alpha: 1.0f], 0.0,
             [NSColor colorWithDeviceWhite: 0.1f alpha: 1.0f], 1.0,
             nil];
-
 
     self.autoAdjustsCornerRadius = NO;
 
@@ -104,7 +96,6 @@
 }
 
 - (void) drawImage: (NSImage *) image withFrame: (NSRect) frame inView: (NSView *) controlView {
-
 
     NSGraphicsContext *ctx = [NSGraphicsContext currentContext];
     CGContextRef contextRef = [ctx graphicsPort];
@@ -149,7 +140,7 @@
     NSGraphicsContext *context = [NSGraphicsContext currentContext];
 
 
-//    frame = NSInsetRect(frame, 0.5, 0.5);
+    //    frame = NSInsetRect(frame, 0.5, 0.5);
 
 
     if (!self.isEnabled) {
@@ -186,17 +177,16 @@
     //    [context saveGraphicsState];
     //    NSColor *color = self.isEnabled ? pathOptions.borderColor : disabledPathOptions.borderColor;
     //    [color setStroke];
-    //    [[NSBezierPath bezierPathWithRoundedRect: NSInsetRect(frame, 1.5f, 1.5f) xRadius: pathOptions.cornerOptions - 1 yRadius: pathOptions.cornerOptions - 1] stroke];
+    //    [[NSBezierPath bezierPathWithRoundedRect: NSInsetRect(frame, 1.5f, 1.5f) xRadius: pathOptions.cornerType - 1 yRadius: pathOptions.cornerType - 1] stroke];
     //    [context restoreGraphicsState];
 
 
-    NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect: NSInsetRect(frame, 1.5f, 1.5f) xRadius: pathOptions.cornerOptions - 1 yRadius: pathOptions.cornerOptions - 1];
+    NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect: NSInsetRect(frame, 1.5f, 1.5f) xRadius: pathOptions.cornerType - 1 yRadius: pathOptions.cornerType - 1];
     //    [path drawWithBorderOption: pathOptions.borderOption];
 
 }
 
 - (void) drawInnerStroke: (NSGraphicsContext *) context frame: (NSRect) frame {
-
 
     frame = NSInsetRect(frame, pathOptions.borderWidth, pathOptions.borderWidth);
     //    [NSBezierPath drawBezierPathWithRect: frame options: innerStrokeOptions];
@@ -212,7 +202,7 @@
 
 - (void) drawBackgroundFill: (NSGraphicsContext *) context frame: (NSRect) frame {
     //    NSGradient *theGradient = self.isEnabled ? pathOptions.gradient : disabledPathOptions.gradient;
-    //    NSBezierPath *backgroundPath = [NSBezierPath bezierPathWithRoundedRect: NSInsetRect(frame, 2.0f, 2.0f) xRadius: pathOptions.cornerOptions yRadius: pathOptions.cornerOptions];
+    //    NSBezierPath *backgroundPath = [NSBezierPath bezierPathWithRoundedRect: NSInsetRect(frame, 2.0f, 2.0f) xRadius: pathOptions.cornerType yRadius: pathOptions.cornerType];
     //    [context drawBackgroundGradient: theGradient inPath: backgroundPath angle: 270.0f];
     //
     frame = NSInsetRect(frame, 0.5, 0.5);
@@ -242,12 +232,12 @@
 
 #pragma mark Getters / Setters
 
-- (void) setCornerOptions: (NSBezierPathCornerOptions) cornerOptions1 {
-    pathOptions.cornerOptions = cornerOptions1;
+- (void) setCornerOptions: (CornerType) cornerOptions1 {
+    pathOptions.cornerType = cornerOptions1;
 }
 
-- (NSBezierPathCornerOptions) cornerOptions {
-    return pathOptions.cornerOptions;
+- (CornerType) cornerOptions {
+    return pathOptions.cornerType;
 }
 
 
@@ -288,7 +278,7 @@
     return pathOptions.gradient;
 }
 
-- (void) setGradient: (NSGradient *) gradient1 {
+- (void) setGradient: (BasicGradient *) gradient1 {
     pathOptions.gradient = gradient1;
 }
 

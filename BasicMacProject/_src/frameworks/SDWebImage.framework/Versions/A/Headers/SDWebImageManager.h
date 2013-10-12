@@ -16,16 +16,16 @@ typedef enum {
      * By default, when a URL fail to be downloaded, the URL is blacklisted so the library won't keep trying.
      * This flag disable this blacklisting.
      */
-            SDWebImageRetryFailed         = 1 << 0,
+            SDWebImageRetryFailed = 1 << 0,
     /**
      * By default, image downloads are started during UI interactions, this flags disable this feature,
      * leading to delayed download on UIScrollView deceleration for instance.
      */
-            SDWebImageLowPriority         = 1 << 1,
+            SDWebImageLowPriority = 1 << 1,
     /**
      * This flag disables on-disk caching
      */
-            SDWebImageCacheMemoryOnly     = 1 << 2,
+            SDWebImageCacheMemoryOnly = 1 << 2,
     /**
      * This flag enables progressive download, the image is displayed progressively during download as a browser would do.
      * By default, the image is only displayed once completely downloaded.
@@ -39,7 +39,7 @@ typedef enum {
      *
      * Use this flag only if you can't make your URLs static with embeded cache busting parameter.
      */
-            SDWebImageRefreshCached       = 1 << 4
+            SDWebImageRefreshCached = 1 << 4
 } SDWebImageOptions;
 
 typedef void(^SDWebImageCompletedBlock)(UIImage *image, NSError *error, SDImageCacheType cacheType);
@@ -101,7 +101,7 @@ typedef void(^SDWebImageCompletedWithFinishedBlock)(UIImage *image, NSError *err
 
 @property(weak, nonatomic) id <SDWebImageManagerDelegate> delegate;
 
-@property(strong, nonatomic, readonly) SDImageCache         *imageCache;
+@property(strong, nonatomic, readonly) SDImageCache *imageCache;
 @property(strong, nonatomic, readonly) SDWebImageDownloader *imageDownloader;
 
 /**

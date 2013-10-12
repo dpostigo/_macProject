@@ -202,12 +202,12 @@ static const CGFloat RHPreferencesWindowControllerResizeAnimationDurationPer100P
         //resize to Preferred window size for given view (duration is determined by difference between current and new sizes)
         float hDifference = fabs(new.view.bounds.size.height - old.view.bounds.size.height);
         float wDifference = fabs(new.view.bounds.size.width - old.view.bounds.size.width);
-        float difference  = MAX(hDifference, wDifference);
-        float duration    = MAX(RHPreferencesWindowControllerResizeAnimationDurationPer100Pixels * (difference / 100), 0.10); // we always want a slight animation
+        float difference = MAX(hDifference, wDifference);
+        float duration = MAX(RHPreferencesWindowControllerResizeAnimationDurationPer100Pixels * (difference / 100), 0.10); // we always want a slight animation
         [self resizeWindowForContentSize: new.view.bounds.size duration: duration];
 
-        double          delayInSeconds = duration + 0.02; // +.02 to give time for resize to finish before appearing
-        dispatch_time_t popTime        = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        double delayInSeconds = duration + 0.02; // +.02 to give time for resize to finish before appearing
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
 
             //make sure our "new" vc is still the selected vc before we add it as a subview, otherwise it's possible we could add more than one vc to the window. (the user has likely clicked to another tab during resizing.)
@@ -225,7 +225,6 @@ static const CGFloat RHPreferencesWindowControllerResizeAnimationDurationPer100P
             }
         });
 
-
         [new.view setFrameOrigin: NSMakePoint(0, 0)]; // force our view to a 0,0 origin, fixed in the lower right corner.
         [new.view setAutoresizingMask: NSViewMaxXMargin | NSViewMaxYMargin];
 
@@ -235,7 +234,7 @@ static const CGFloat RHPreferencesWindowControllerResizeAnimationDurationPer100P
         //if we should auto-update window title, do it now 
         if (_windowTitleShouldAutomaticlyUpdateToReflectSelectedViewController) {
             NSString *identifier = [self toolbarItemIdentifierForViewController: new];
-            NSString *title      = [[self toolbarItemWithItemIdentifier: identifier] label];
+            NSString *title = [[self toolbarItemWithItemIdentifier: identifier] label];
             if (title)[self setWindowTitle: title];
         }
     }
@@ -273,8 +272,8 @@ static const CGFloat RHPreferencesWindowControllerResizeAnimationDurationPer100P
 
     NSRect frame = [window contentRectForFrameRect: [window frame]];
 
-    CGFloat newX     = NSMinX(frame) + (0.5 * (NSWidth(frame) - size.width));
-    NSRect  newFrame = [window frameRectForContentRect: NSMakeRect(newX, NSMaxY(frame) - size.height, size.width, size.height)];
+    CGFloat newX = NSMinX(frame) + (0.5 * (NSWidth(frame) - size.width));
+    NSRect newFrame = [window frameRectForContentRect: NSMakeRect(newX, NSMaxY(frame) - size.height, size.width, size.height)];
 
     if (duration > 0.0f) {
         [NSAnimationContext beginGrouping];
@@ -330,8 +329,8 @@ static const CGFloat RHPreferencesWindowControllerResizeAnimationDurationPer100P
     //otherwise, default to creation of a new item.
 
     NSToolbarItem *new = [[NSToolbarItem alloc] initWithItemIdentifier: controller.identifier];
-    new.image  = controller.toolbarItemImage;
-    new.label  = controller.toolbarItemLabel;
+    new.image = controller.toolbarItemImage;
+    new.label = controller.toolbarItemLabel;
     new.target = self;
     new.action = @selector(selectToolbarItem:);
     return new;
@@ -452,7 +451,7 @@ static const CGFloat RHPreferencesWindowControllerResizeAnimationDurationPer100P
         //if we should auto-update window title, do it now 
         if (_windowTitleShouldAutomaticlyUpdateToReflectSelectedViewController) {
             NSString *identifier = [self toolbarItemIdentifierForViewController: _selectedViewController];
-            NSString *title      = [[self toolbarItemWithItemIdentifier: identifier] label];
+            NSString *title = [[self toolbarItemWithItemIdentifier: identifier] label];
             if (title)[self setWindowTitle: title];
         }
     }

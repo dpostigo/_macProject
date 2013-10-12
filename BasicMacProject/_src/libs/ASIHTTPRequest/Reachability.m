@@ -106,8 +106,8 @@
 
 #import "Reachability.h"
 
-NSString *const kInternetConnection              = @"InternetConnection";
-NSString *const kLocalWiFiConnection             = @"LocalWiFiConnection";
+NSString *const kInternetConnection = @"InternetConnection";
+NSString *const kLocalWiFiConnection = @"LocalWiFiConnection";
 NSString *const kReachabilityChangedNotification = @"NetworkReachabilityChangedNotification";
 
 #define CLASS_DEBUG 1 // Turn on logReachabilityFlags. Must also have a project wide defined DEBUG.
@@ -330,10 +330,10 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 + (NSString *) makeAddressKey: (in_addr_t) addr {
     // addr is assumed to be in network byte order.
 
-    static const int       highShift    = 24;
-    static const int       highMidShift = 16;
-    static const int       lowMidShift  = 8;
-    static const in_addr_t mask         = 0x000000ff;
+    static const int highShift = 24;
+    static const int highMidShift = 16;
+    static const int lowMidShift = 8;
+    static const in_addr_t mask = 0x000000ff;
 
     addr = ntohl(addr);
 
@@ -369,7 +369,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 
     struct sockaddr_in zeroAddress;
     bzero(&zeroAddress, sizeof(zeroAddress));
-    zeroAddress.sin_len    = sizeof(zeroAddress);
+    zeroAddress.sin_len = sizeof(zeroAddress);
     zeroAddress.sin_family = AF_INET;
 
     Reachability *r = [self reachabilityWithAddress: &zeroAddress];
@@ -385,8 +385,8 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 
     struct sockaddr_in localWifiAddress;
     bzero(&localWifiAddress, sizeof(localWifiAddress));
-    localWifiAddress.sin_len         = sizeof(localWifiAddress);
-    localWifiAddress.sin_family      = AF_INET;
+    localWifiAddress.sin_len = sizeof(localWifiAddress);
+    localWifiAddress.sin_family = AF_INET;
     // IN_LINKLOCALNETNUM is defined in <netinet/in.h> as 169.254.0.0
     localWifiAddress.sin_addr.s_addr = htonl(IN_LINKLOCALNETNUM);
 
@@ -484,8 +484,8 @@ const SCNetworkReachabilityFlags kConnectionDown = kSCNetworkReachabilityFlagsCo
 
     NSAssert(reachabilityRef, @"currentReachabilityStatus called with NULL reachabilityRef");
 
-    SCNetworkReachabilityFlags flags  = 0;
-    NetworkStatus              status = kNotReachable;
+    SCNetworkReachabilityFlags flags = 0;
+    NetworkStatus status = kNotReachable;
 
     if (SCNetworkReachabilityGetFlags(reachabilityRef, &flags)) {
 
@@ -506,8 +506,8 @@ const SCNetworkReachabilityFlags kConnectionDown = kSCNetworkReachabilityFlagsCo
 
     NSAssert(reachabilityRef, @"isReachable called with NULL reachabilityRef");
 
-    SCNetworkReachabilityFlags flags  = 0;
-    NetworkStatus              status = kNotReachable;
+    SCNetworkReachabilityFlags flags = 0;
+    NetworkStatus status = kNotReachable;
 
     if (SCNetworkReachabilityGetFlags(reachabilityRef, &flags)) {
 
@@ -551,7 +551,6 @@ const SCNetworkReachabilityFlags kConnectionDown = kSCNetworkReachabilityFlagsCo
 
 } // connectionRequired
 #endif
-
 
 #if (__IPHONE_OS_VERSION_MIN_REQUIRED >= 30000)
 static const SCNetworkReachabilityFlags kOnDemandConnection = kSCNetworkReachabilityFlagsConnectionOnTraffic | 
@@ -604,8 +603,8 @@ static const SCNetworkReachabilityFlags kOnDemandConnection = kSCNetworkReachabi
 
     NSAssert(reachabilityRef, @"isReachableViaWWAN called with NULL reachabilityRef");
 
-    SCNetworkReachabilityFlags flags  = 0;
-    NetworkStatus              status = kNotReachable;
+    SCNetworkReachabilityFlags flags = 0;
+    NetworkStatus status = kNotReachable;
 
     if (SCNetworkReachabilityGetFlags(reachabilityRef, &flags)) {
 
@@ -626,8 +625,8 @@ static const SCNetworkReachabilityFlags kOnDemandConnection = kSCNetworkReachabi
 
     NSAssert(reachabilityRef, @"isReachableViaWiFi called with NULL reachabilityRef");
 
-    SCNetworkReachabilityFlags flags  = 0;
-    NetworkStatus              status = kNotReachable;
+    SCNetworkReachabilityFlags flags = 0;
+    NetworkStatus status = kNotReachable;
 
     if (SCNetworkReachabilityGetFlags(reachabilityRef, &flags)) {
 

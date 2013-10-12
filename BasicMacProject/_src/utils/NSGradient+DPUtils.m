@@ -8,11 +8,9 @@
 
 #import "NSGradient+DPUtils.h"
 
-
 @implementation NSGradient (DPUtils)
 
 + (NSGradient *) scaledGradient: (NSGradient *) gradient toLength: (CGFloat) length {
-
 
     return nil;
 }

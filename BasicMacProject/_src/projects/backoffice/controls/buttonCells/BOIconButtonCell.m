@@ -8,10 +8,8 @@
 #import "BOIconButtonCell.h"
 #import "NSColor+Utils.h"
 
-
 @implementation BOIconButtonCell {
 }
-
 
 - (void) setup {
 
@@ -25,9 +23,9 @@
 
     self.cornerRadius = 2.0;
     self.highlightedColor = [NSColor colorWithString: GOLD_COLOR];
-    self.borderColor      = [NSColor lightGrayColor];
+    self.borderColor = [NSColor lightGrayColor];
     self.innerStrokeColor = [NSColor whiteColor];
-    imageOptions.imageColor       = [NSColor darkGrayColor];
+    imageOptions.imageColor = [NSColor darkGrayColor];
     imageOptions.imageShadowColor = [NSColor whiteColor];
 
     [self setButtonType: NSMomentaryPushButton];

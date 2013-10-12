@@ -7,10 +7,8 @@
 
 #import "ModalWindow.h"
 
-
 @implementation ModalWindow {
 }
-
 
 - (void) setup {
     [self setOpaque: NO];

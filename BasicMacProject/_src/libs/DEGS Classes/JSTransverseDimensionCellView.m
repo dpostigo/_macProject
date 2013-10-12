@@ -300,7 +300,6 @@
                                                                 multiplier: 1.0f
                                                                   constant: 100.0f]];
 
-
     self.currentState = JSTransverseDimensionCellNormalState;
 }
 

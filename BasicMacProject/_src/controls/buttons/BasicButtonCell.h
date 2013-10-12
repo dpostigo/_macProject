@@ -9,7 +9,6 @@
 #import <Cocoa/Cocoa.h>
 #import "VeryBasicButtonCell.h"
 
-
 @interface BasicButtonCell : VeryBasicButtonCell {
 
     NSColor *textColor;
@@ -19,7 +18,6 @@
 
     NSColor *disabledTextColor;
 }
-
 
 @property(nonatomic, strong) NSColor *textColor;
 @property(nonatomic, strong) NSColor *disabledTextColor;

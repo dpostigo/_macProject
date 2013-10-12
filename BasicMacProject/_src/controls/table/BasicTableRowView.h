@@ -7,11 +7,9 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface BasicTableRowView : NSTableRowView {
     NSColor *selectedBackgroundColor;
 }
-
 
 @property(nonatomic, strong) NSColor *selectedBackgroundColor;
 @end

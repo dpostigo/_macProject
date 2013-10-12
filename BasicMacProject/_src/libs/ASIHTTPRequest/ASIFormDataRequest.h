@@ -12,7 +12,7 @@
 
 typedef enum _ASIPostFormat {
     ASIMultipartFormDataPostFormat = 0,
-    ASIURLEncodedPostFormat        = 1
+    ASIURLEncodedPostFormat = 1
 
 } ASIPostFormat;
 
@@ -71,6 +71,6 @@ typedef enum _ASIPostFormat {
 - (void) setData: (id) data withFileName: (NSString *) fileName andContentType: (NSString *) contentType forKey: (NSString *) key;
 
 
-@property(assign) ASIPostFormat    postFormat;
+@property(assign) ASIPostFormat postFormat;
 @property(assign) NSStringEncoding stringEncoding;
 @end

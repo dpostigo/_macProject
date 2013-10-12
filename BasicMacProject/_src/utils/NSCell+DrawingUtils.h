@@ -10,7 +10,6 @@
 
 @interface NSCell (DrawingUtils)
 
-
 - (void) setupDefaults;
 - (void) setBorderColor: (NSColor *) aBorderColor;
 - (void) setBackgroundColor: (NSColor *) aBorderColor;

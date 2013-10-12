@@ -11,7 +11,7 @@
 
 @interface BasicLayoutViewController : BasicSplitVerticalViewController {
 
-NSUInteger footerIndex;
+    NSUInteger footerIndex;
 
 }
 

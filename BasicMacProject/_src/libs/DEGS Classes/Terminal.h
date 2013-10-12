@@ -5,15 +5,14 @@
 #import <AppKit/AppKit.h>
 #import <ScriptingBridge/ScriptingBridge.h>
 
-
 @class TerminalApplication, TerminalWindow, TerminalSettingsSet, TerminalTab;
 
 enum TerminalSaveOptions {
     TerminalSaveOptionsYes = 'yes ' /* Save the file. */,
-    TerminalSaveOptionsNo  = 'no  ' /* Do not save the file. */,
+    TerminalSaveOptionsNo = 'no  ' /* Do not save the file. */,
     TerminalSaveOptionsAsk = 'ask ' /* Ask the user whether or not to save the file. */
 };
-typedef enum TerminalSaveOptions           TerminalSaveOptions;
+typedef enum TerminalSaveOptions TerminalSaveOptions;
 
 enum TerminalPrintingErrorHandling {
     TerminalPrintingErrorHandlingStandard = 'lwst' /* Standard PostScript error handling */,
@@ -49,21 +48,21 @@ typedef enum TerminalPrintingErrorHandling TerminalPrintingErrorHandling;
 
 @property(copy, readonly) NSString *name;  // The full title of the window.
 - (NSInteger) id;  // The unique identifier of the window.
-@property NSInteger      index;  // The index of the window, ordered front to back.
-@property NSRect         bounds;  // The bounding rectangle of the window.
+@property NSInteger index;  // The index of the window, ordered front to back.
+@property NSRect bounds;  // The bounding rectangle of the window.
 @property(readonly) BOOL closeable;  // Whether the window has a close box.
 @property(readonly) BOOL miniaturizable;  // Whether the window can be minimized.
-@property BOOL           miniaturized;  // Whether the window is currently minimized.
+@property BOOL miniaturized;  // Whether the window is currently minimized.
 @property(readonly) BOOL resizable;  // Whether the window can be resized.
-@property BOOL           visible;  // Whether the window is currently visible.
+@property BOOL visible;  // Whether the window is currently visible.
 @property(readonly) BOOL zoomable;  // Whether the window can be zoomed.
-@property BOOL           zoomed;  // Whether the window is currently zoomed.
-@property BOOL           frontmost;  // Whether the window is currently the frontmost Terminal window.
+@property BOOL zoomed;  // Whether the window is currently zoomed.
+@property BOOL frontmost;  // Whether the window is currently the frontmost Terminal window.
 @property(copy) TerminalTab *selectedTab;
 @property NSPoint position;  // The position of the window, relative to the upper left corner of the screen.
 @property NSPoint origin;  // The position of the window, relative to the lower left corner of the screen.
 @property NSPoint size;  // The width and height of the window
-@property NSRect  frame;  // The bounding rectangle, relative to the lower left corner of the screen.
+@property NSRect frame;  // The bounding rectangle, relative to the lower left corner of the screen.
 
 - (void) closeSaving: (TerminalSaveOptions) saving savingIn: (NSURL *) savingIn;  // Close a document.
 - (void) saveIn: (NSURL *) in_;  // Save a document.
@@ -96,13 +95,13 @@ typedef enum TerminalPrintingErrorHandling TerminalPrintingErrorHandling;
 @property(copy) NSString *name;  // The name of the settings set.
 @property NSInteger numberOfRows;  // The number of rows displayed in the tab.
 @property NSInteger numberOfColumns;  // The number of columns displayed in the tab.
-@property(copy) NSColor  *cursorColor;  // The cursor color for the tab.
-@property(copy) NSColor  *backgroundColor;  // The background color for the tab.
-@property(copy) NSColor  *normalTextColor;  // The normal text color for the tab.
-@property(copy) NSColor  *boldTextColor;  // The bold text color for the tab.
+@property(copy) NSColor *cursorColor;  // The cursor color for the tab.
+@property(copy) NSColor *backgroundColor;  // The background color for the tab.
+@property(copy) NSColor *normalTextColor;  // The normal text color for the tab.
+@property(copy) NSColor *boldTextColor;  // The bold text color for the tab.
 @property(copy) NSString *fontName;  // The name of the font used to display the tab’s contents.
 @property NSInteger fontSize;  // The size of the font used to display the tab’s contents.
-@property BOOL      fontAntialiasing;  // Whether the font used to display the tab’s contents is antialiased.
+@property BOOL fontAntialiasing;  // Whether the font used to display the tab’s contents is antialiased.
 @property(copy) NSArray *cleanCommands;  // The processes which will be ignored when checking whether a tab can be closed without showing a prompt.
 @property BOOL titleDisplaysDeviceName;  // Whether the title contains the device name.
 @property BOOL titleDisplaysShellPath;  // Whether the title contains the shell path.
@@ -132,21 +131,21 @@ typedef enum TerminalPrintingErrorHandling TerminalPrintingErrorHandling;
 @property(copy, readonly) NSArray *processes;  // The processes currently running in the tab.
 @property BOOL selected;  // Whether the tab is selected.
 @property BOOL titleDisplaysCustomTitle;  // Whether the title contains a custom title.
-@property(copy) NSString            *customTitle;  // The tab’s custom title.
-@property(copy, readonly) NSString  *tty;  // The tab’s TTY device.
+@property(copy) NSString *customTitle;  // The tab’s custom title.
+@property(copy, readonly) NSString *tty;  // The tab’s TTY device.
 @property(copy) TerminalSettingsSet *currentSettings;  // The set of settings which control the tab’s behavior and appearance.
-@property(copy) NSColor             *cursorColor;  // The cursor color for the tab.
-@property(copy) NSColor             *backgroundColor;  // The background color for the tab.
-@property(copy) NSColor             *normalTextColor;  // The normal text color for the tab.
-@property(copy) NSColor             *boldTextColor;  // The bold text color for the tab.
-@property(copy) NSArray             *cleanCommands;  // The processes which will be ignored when checking whether a tab can be closed without showing a prompt.
+@property(copy) NSColor *cursorColor;  // The cursor color for the tab.
+@property(copy) NSColor *backgroundColor;  // The background color for the tab.
+@property(copy) NSColor *normalTextColor;  // The normal text color for the tab.
+@property(copy) NSColor *boldTextColor;  // The bold text color for the tab.
+@property(copy) NSArray *cleanCommands;  // The processes which will be ignored when checking whether a tab can be closed without showing a prompt.
 @property BOOL titleDisplaysDeviceName;  // Whether the title contains the device name.
 @property BOOL titleDisplaysShellPath;  // Whether the title contains the shell path.
 @property BOOL titleDisplaysWindowSize;  // Whether the title contains the tab’s size, in rows and columns.
 @property BOOL titleDisplaysFileName;  // Whether the title contains the file name.
 @property(copy) NSString *fontName;  // The name of the font used to display the tab’s contents.
 @property NSInteger fontSize;  // The size of the font used to display the tab’s contents.
-@property BOOL      fontAntialiasing;  // Whether the font used to display the tab’s contents is antialiased.
+@property BOOL fontAntialiasing;  // Whether the font used to display the tab’s contents is antialiased.
 
 - (void) closeSaving: (TerminalSaveOptions) saving savingIn: (NSURL *) savingIn;  // Close a document.
 - (void) saveIn: (NSURL *) in_;  // Save a document.

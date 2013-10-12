@@ -8,7 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-
 @interface Person : NSObject {
     NSString *firstName, *lastName;
 }

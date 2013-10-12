@@ -8,9 +8,7 @@
 
 #import "BasicButtonCell.h"
 
-
 @implementation BasicButtonCell
-
 
 @synthesize textColor;
 @synthesize disabledTextColor;

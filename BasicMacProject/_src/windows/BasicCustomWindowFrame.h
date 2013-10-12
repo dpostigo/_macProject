@@ -10,7 +10,6 @@
 #import "NSBezierPath+DPUtils.h"
 #import "PathOptions.h"
 
-
 typedef enum {
     WindowFrameResizeTypeNone = 0,
     WindowFrameResizeTypeLeft = 1,
@@ -44,10 +43,10 @@ typedef enum {
 
 @property(nonatomic) CGFloat cornerRadius;
 @property(nonatomic) CGFloat borderWidth;
-@property(nonatomic, strong) NSGradient *gradient;
+@property(nonatomic, strong) BasicGradient *gradient;
 @property(nonatomic, strong) NSColor *borderColor;
 @property(nonatomic, strong) NSColor *innerBorderColor;
-@property(nonatomic) NSBezierPathCornerOptions cornerOptions;
+@property(nonatomic) CornerType cornerOptions;
 @property(nonatomic, strong) PathOptions *pathOptions;
 @property(nonatomic, strong) PathOptions *innerPathOptions;
 @property(nonatomic) NSRect rightResizeRect;

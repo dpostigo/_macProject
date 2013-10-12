@@ -10,22 +10,26 @@
 #import "BasicView.h"
 #import "PathOptions.h"
 
-
 @interface BasicDisplayView : BasicView {
     PathOptions *pathOptions;
     NSImage *cacheImage;
 }
 
 @property(nonatomic) CGFloat cornerRadius;
-@property(nonatomic) CGFloat borderWidth;
 @property(nonatomic, strong) NSShadow *innerShadow;
-@property(nonatomic, strong) NSShadow *outerShadow;
-@property(nonatomic, strong) NSGradient *gradient;
-@property(nonatomic, strong) NSGradient *horizontalGradient;
+@property(nonatomic, strong) BasicGradient *gradient;
+@property(nonatomic, strong) BasicGradient *horizontalGradient;
+@property(nonatomic, strong) NSColor *backgroundColor;
+
+
+@property(nonatomic) BorderType borderType;
+@property(nonatomic) CGFloat borderWidth;
 @property(nonatomic, strong) NSColor *borderColor;
 @property(nonatomic, strong) NSColor *innerBorderColor;
-@property(nonatomic) NSBezierPathCornerOptions cornerOptions;
 @property(nonatomic, strong) PathOptions *pathOptions;
-@property(nonatomic, strong) NSArray *borderOptions;
+@property(nonatomic, strong) NSMutableArray *borderOptions;
+@property(nonatomic) CornerType cornerOptions;
+- (void) addBorder: (BorderOption *) aBorder;
+- (void) setBorderWidth: (CGFloat) aBorderWidth borderColor: (NSColor *) aBorderColor;
 - (void) setup;
 @end

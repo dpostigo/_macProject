@@ -9,17 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "BasicObject.h"
 
-
 #define JOBTYPE_POTENTIAL @"Potential"
 #define JOBTYPE_QUOTE @"Quote"
 #define JOBTYPE_ACTIVE @"Active"
-
 
 @interface Job : BasicObject {
     NSString *jobNumber;
     NSString *status;
 }
-
 
 @property(nonatomic, retain) NSString *status;
 @property(nonatomic, retain) NSString *jobNumber;

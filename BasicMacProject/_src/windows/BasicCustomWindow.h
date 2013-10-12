@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "BasicCustomWindowFrame.h"
 
-
 @interface BasicCustomWindow : NSWindow {
     NSView *titleBarView;
 

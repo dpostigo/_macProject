@@ -7,10 +7,8 @@
 
 #import "BasicOutlineView.h"
 
-
 @implementation BasicOutlineView {
 }
-
 
 @synthesize showsDisclosureTriangles;
 @synthesize disclosureRect;

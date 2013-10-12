@@ -11,8 +11,8 @@
 
 @interface JSArgumentTableCellView : JSTableCellView
 
-@property(strong) IBOutlet JSTextField   *nameTextField;
-@property(strong) IBOutlet JSTextField   *defaultValueTextField;
+@property(strong) IBOutlet JSTextField *nameTextField;
+@property(strong) IBOutlet JSTextField *defaultValueTextField;
 @property(strong) IBOutlet NSPopUpButton *typeButton;
 
 @end

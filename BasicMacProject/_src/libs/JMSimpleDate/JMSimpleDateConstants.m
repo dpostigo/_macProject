@@ -26,9 +26,9 @@
 
 const NSUInteger kSecond = 1;
 const NSUInteger kMinute = 60 * kSecond;
-const NSUInteger kHour   = 60 * kMinute;
-const NSUInteger kDay    = 24 * kHour;
-const NSUInteger kWeek   = 7 * kDay;
-const NSUInteger kMonth  = 30 * kDay;
+const NSUInteger kHour = 60 * kMinute;
+const NSUInteger kDay = 24 * kHour;
+const NSUInteger kWeek = 7 * kDay;
+const NSUInteger kMonth = 30 * kDay;
 
 @end

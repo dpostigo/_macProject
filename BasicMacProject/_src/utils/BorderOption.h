@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CornerProperties.h"
+#import "BasicFill.h"
 
 typedef enum {
     BorderTypeAll = 1 << 0,
@@ -16,17 +18,32 @@ typedef enum {
     BorderTypeRight = 1 << 4
 } BorderType;
 
+
 @interface BorderOption : NSObject {
-    NSColor *borderColor;
+    BasicFill *fill;
     CGFloat borderWidth;
     BorderType borderType;
+    __unsafe_unretained CornerProperties *corners;
 }
 
+@property(nonatomic, strong) BasicFill *fill;
 @property(nonatomic, strong) NSColor *borderColor;
 @property(nonatomic) CGFloat borderWidth;
 @property(nonatomic) BorderType borderType;
+@property(nonatomic) CGFloat cornerRadius;
+@property(nonatomic) CornerType cornerType;
+@property(nonatomic, assign) CornerProperties *corners;
+
+
++ (BorderOption *) topBorderWithGradient: (BasicGradient *) aGradient borderWidth: (CGFloat) aWidth;
+- (id) initWithGradient: (BasicGradient *) aGradient borderWidth: (CGFloat) aWidth type: (BorderType) aType;
+- (id) initWithBorderWidth: (CGFloat) aWidth;
 - (id) initWithBorderColor: (NSColor *) aColor borderWidth: (CGFloat) aWidth type: (BorderType) aType;
 - (id) initWithBorderColor: (NSColor *) aColor borderWidth: (CGFloat) aWidth;
+- (void) drawWithRect: (NSRect) rect;
+- (void) drawWithPath: (NSBezierPath *) path;
+//- (void) drawWithPathOptions: (PathOptions *) pathOptions;
 
-- (id) initWithBorderWidth: (CGFloat) aWidth;
+- (NSString *) borderTypeString;
+- (NSString *) stringFromBorderType: (BorderType) aType;
 @end

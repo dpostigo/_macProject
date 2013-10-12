@@ -36,9 +36,9 @@
 }
 
 - (NSRange) rangeToProcessChange: (NSTextStorage *) textStorage {
-    NSRange   range                    = [textStorage editedRange];
-    NSInteger changeInLen              = [textStorage changeInLength];
-    BOOL      textLengthMayHaveChanged = NO;
+    NSRange range = [textStorage editedRange];
+    NSInteger changeInLen = [textStorage changeInLength];
+    BOOL textLengthMayHaveChanged = NO;
 
     if (changeInLen <= 0)
         textLengthMayHaveChanged = YES;
@@ -103,7 +103,7 @@
 }
 
 - (NSAttributedString *) recolorString: (NSString *) string {
-    NSDictionary              *defaultStyles = [self defaultTextAttributes];
+    NSDictionary *defaultStyles = [self defaultTextAttributes];
     NSMutableAttributedString *stringToColor = [[NSMutableAttributedString alloc] initWithString: string attributes: defaultStyles];
     [self recolor: stringToColor];
     return [stringToColor copy];
@@ -139,7 +139,7 @@
     while ((currentComponent = [componentsEnumerator nextObject])) {
         NSString *componentType = currentComponent[@"Type"];
         NSString *componentName = currentComponent[@"Name"];
-        NSColor  *color         = [currentComponent[@"Color"] colorValue];
+        NSColor *color = [currentComponent[@"Color"] colorValue];
         if (!color) color = DEFAULT_HIGHLIGHT_COLOR;
 
         if ([componentType isEqualToString: @"BlockComment"]) {
@@ -177,8 +177,8 @@
                 identifiers = [_delegate userIdentifiersForKeywordComponentName: componentName];
             if (identifiers) {
                 NSCharacterSet *identifiersCharset = nil;
-                NSString       *currentIdentifier  = nil;
-                NSString       *charsetString      = currentComponent[@"Charset"];
+                NSString *currentIdentifier = nil;
+                NSString *charsetString = currentComponent[@"Charset"];
                 if (charsetString) identifiersCharset = [NSCharacterSet characterSetWithCharactersInString: charsetString];
 
                 NSEnumerator *iterator = [identifiers objectEnumerator];
@@ -195,8 +195,8 @@
 
 - (void) colorCommentsFrom: (NSString *) startCh to: (NSString *) endCh inString: (NSMutableAttributedString *) coloredString
                  withColor: (NSColor *) col andMode: (NSString *) attr {
-    NSScanner    *scanner = [NSScanner scannerWithString: [coloredString string]];
-    NSDictionary *styles  = [self textAttributesForComponentName: attr color: col];
+    NSScanner *scanner = [NSScanner scannerWithString: [coloredString string]];
+    NSDictionary *styles = [self textAttributesForComponentName: attr color: col];
 
     while (![scanner isAtEnd]) {
         NSUInteger startOffs, endOffs;
@@ -219,8 +219,8 @@
 
 - (void) colorOneLineComment: (NSString *) startCh inString: (NSMutableAttributedString *) coloredString
                    withColor: (NSColor *) col andMode: (NSString *) attr {
-    NSScanner    *scanner = [NSScanner scannerWithString: [coloredString string]];
-    NSDictionary *styles  = [self textAttributesForComponentName: attr color: col];
+    NSScanner *scanner = [NSScanner scannerWithString: [coloredString string]];
+    NSDictionary *styles = [self textAttributesForComponentName: attr color: col];
 
     while (![scanner isAtEnd]) {
         NSUInteger startOffs, endOffs;
@@ -244,10 +244,10 @@
 
 - (void) colorStringsFrom: (NSString *) startCh to: (NSString *) endCh inString: (NSMutableAttributedString *) coloredString
                 withColor: (NSColor *) col andMode: (NSString *) attr andEscapeChar: (NSString *) stringEscapeCharacter {
-    NSScanner    *scanner = [NSScanner scannerWithString: [coloredString string]];
-    NSDictionary *styles  = [self textAttributesForComponentName: attr color: col];
-    BOOL    isEndChar = NO;
-    unichar escChar   = '\\';
+    NSScanner *scanner = [NSScanner scannerWithString: [coloredString string]];
+    NSDictionary *styles = [self textAttributesForComponentName: attr color: col];
+    BOOL isEndChar = NO;
+    unichar escChar = '\\';
 
     if (stringEscapeCharacter) {
         if ([stringEscapeCharacter length] != 0)
@@ -282,8 +282,8 @@
 
 - (void) colorTagFrom: (NSString *) startCh to: (NSString *) endCh inString: (NSMutableAttributedString *) coloredString
             withColor: (NSColor *) col andMode: (NSString *) attr exceptIfMode: (NSString *) ignoreAttr {
-    NSScanner    *scanner = [NSScanner scannerWithString: [coloredString string]];
-    NSDictionary *styles  = [self textAttributesForComponentName: attr color: col];
+    NSScanner *scanner = [NSScanner scannerWithString: [coloredString string]];
+    NSDictionary *styles = [self textAttributesForComponentName: attr color: col];
 
     while (![scanner isAtEnd]) {
         NSUInteger startOffs, endOffs;
@@ -328,8 +328,8 @@
 
 - (void) colorIdentifier: (NSString *) ident inString: (NSMutableAttributedString *) coloredString
                withColor: (NSColor *) col andMode: (NSString *) attr charset: (NSCharacterSet *) cset {
-    NSScanner    *scanner = [NSScanner scannerWithString: [coloredString string]];
-    NSDictionary *styles  = [self textAttributesForComponentName: attr color: col];
+    NSScanner *scanner = [NSScanner scannerWithString: [coloredString string]];
+    NSDictionary *styles = [self textAttributesForComponentName: attr color: col];
     NSUInteger startOffs = 0;
 
     // Skip any leading whitespace chars, somehow NSScanner doesn't do that:
@@ -369,8 +369,8 @@
 }
 
 - (NSDictionary *) textAttributesForComponentName: (NSString *) attribute color: (NSColor *) color {
-    NSDictionary        *localStyles = [_delegate respondsToSelector: @selector(textAttributesForComponentName:color:)] ? [_delegate textAttributesForComponentName: attribute color: color] : nil;
-    NSMutableDictionary *styles      = [[self defaultTextAttributes] mutableCopy];
+    NSDictionary *localStyles = [_delegate respondsToSelector: @selector(textAttributesForComponentName:color:)] ? [_delegate textAttributesForComponentName: attribute color: color] : nil;
+    NSMutableDictionary *styles = [[self defaultTextAttributes] mutableCopy];
     if (localStyles) [styles addEntriesFromDictionary: localStyles];
     else styles[NSForegroundColorAttributeName] = color;
 

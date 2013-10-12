@@ -7,10 +7,8 @@
 
 #import "BasicTableViewDelegate.h"
 
-
 @implementation BasicTableViewDelegate {
 }
-
 
 @synthesize dataSource;
 @synthesize viewController;

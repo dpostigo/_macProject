@@ -8,11 +8,9 @@
 #import <Foundation/Foundation.h>
 #import "BasicViewController.h"
 
-
 @interface TitleBarViewController : BasicViewController {
 
 }
-
 
 - (IBAction) handleAddButton: (id) sender;
 @end

@@ -10,7 +10,6 @@
 #import "BasicViewController.h"
 #import "BasicWindowTitleBarViewController.h"
 
-
 @interface CartsTitleBarViewController : BasicWindowTitleBarViewController {
 
 }

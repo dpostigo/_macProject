@@ -7,9 +7,7 @@
 
 #import "NSButton+DPUtils.h"
 
-
 @implementation NSButton (DPUtils)
-
 
 + (NSButton *) buttonWithType: (NSButtonType) type {
     NSButton *button = [[NSButton alloc] init];

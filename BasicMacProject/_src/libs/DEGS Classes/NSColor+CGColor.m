@@ -8,9 +8,7 @@
 
 #import "NSColor+CGColor.h"
 
-
 @implementation NSColor (CGColor)
-
 
 - (CGColorRef) CGColorCreate {
     NSColor *rgbColor = [self colorUsingColorSpaceName: NSCalibratedRGBColorSpace];
@@ -18,7 +16,7 @@
     [rgbColor getComponents: components];
 
     CGColorSpaceRef theColorSpace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
-    CGColorRef      theColor      = CGColorCreate(theColorSpace, components);
+    CGColorRef theColor = CGColorCreate(theColorSpace, components);
     CGColorSpaceRelease(theColorSpace);
     return theColor;
 }

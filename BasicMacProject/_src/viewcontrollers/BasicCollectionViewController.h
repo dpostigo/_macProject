@@ -8,11 +8,9 @@
 #import <Foundation/Foundation.h>
 #import "BasicArrayViewController.h"
 
-
 @interface BasicCollectionViewController : BasicArrayViewController {
     IBOutlet NSCollectionView *collection;
 }
-
 
 @property(nonatomic, strong) NSCollectionView *collection;
 @end

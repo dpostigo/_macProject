@@ -7,9 +7,7 @@
 
 #import "NSView+Utils.h"
 
-
 @implementation NSView (Utils)
-
 
 - (void) embedView: (NSView *) aSubview {
     [aSubview embedInView: self];

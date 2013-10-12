@@ -8,9 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-
 @interface iTableColumnHeaderCell : NSTableHeaderCell {
-    NSImage             *metalBg;
+    NSImage *metalBg;
     NSMutableDictionary *attrs;
 }
 

@@ -7,10 +7,8 @@
 
 #import "BasicAppDelegate.h"
 
-
 @implementation BasicAppDelegate {
 }
-
 
 - (void) applicationDidFinishLaunching: (NSNotification *) notification {
     [self applicationDelegateDidFinishLaunching: notification];

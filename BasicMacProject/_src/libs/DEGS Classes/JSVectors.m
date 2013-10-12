@@ -90,7 +90,7 @@
 }
 
 - (NSDictionary *) dictionaryOfVectorIdentifiers {
-    NSMutableDictionary  *dict = [NSDictionary dictionary];
+    NSMutableDictionary *dict = [NSDictionary dictionary];
     for (JSGeneralVector *vector in self.vectors) {
         if (vector.name) [dict setObject: vector forKey: vector.name];
     }
@@ -98,7 +98,7 @@
 }
 
 - (NSArray *) listOfVectorsIdentifiers {
-    NSArray              *vectorsIdentifiers = [NSArray array];
+    NSArray *vectorsIdentifiers = [NSArray array];
     for (JSGeneralVector *vector in self.vectors) {
         if (vector.name) vectorsIdentifiers = [vectorsIdentifiers arrayByAddingObject: vector.name];
     }
@@ -106,7 +106,7 @@
 }
 
 - (NSArray *) listOfVectorComponentsIdentifiers {
-    NSArray              *vectorComponentsIdentifiers = [NSArray array];
+    NSArray *vectorComponentsIdentifiers = [NSArray array];
     for (JSGeneralVector *vector in self.vectors) {
         if (vector.components) {
             vectorComponentsIdentifiers = [vectorComponentsIdentifiers arrayByAddingObjectsFromArray: vector.components];
@@ -132,8 +132,8 @@
     // if the index of the asked vector is greater than the number of vectors we return right away and save the search
     if (index > self.numberOfVectors) return NSNotFound;
 
-    NSInteger       _index = -1;
-    for (NSUInteger i      = 0; i < [_vectors count]; i++) {
+    NSInteger _index = -1;
+    for (NSUInteger i = 0; i < [_vectors count]; i++) {
         if ([[_vectors objectAtIndex: i] isKindOfClass: vectorClass]) _index++;
         if (_index == index) return i;
     }

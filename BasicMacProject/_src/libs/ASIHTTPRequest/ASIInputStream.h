@@ -15,13 +15,13 @@
 // It is used by ASIHTTPRequest whenever we have a request body, and handles measuring and throttling the bandwidth used for uploading
 
 @interface ASIInputStream : NSObject {
-    NSInputStream  *stream;
+    NSInputStream *stream;
     ASIHTTPRequest *request;
 }
 
 + (id) inputStreamWithFileAtPath: (NSString *) path request: (ASIHTTPRequest *) request;
 + (id) inputStreamWithData: (NSData *) data request: (ASIHTTPRequest *) request;
 
-@property(retain, nonatomic) NSInputStream  *stream;
+@property(retain, nonatomic) NSInputStream *stream;
 @property(assign, nonatomic) ASIHTTPRequest *request;
 @end

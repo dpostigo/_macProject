@@ -85,18 +85,18 @@
 // This method will start the queue
 - (void) go;
 
-@property(assign, nonatomic, setter=setUploadProgressDelegate:) id   uploadProgressDelegate;
+@property(assign, nonatomic, setter=setUploadProgressDelegate:) id uploadProgressDelegate;
 @property(assign, nonatomic, setter=setDownloadProgressDelegate:) id downloadProgressDelegate;
 
-@property(assign) SEL           requestDidStartSelector;
-@property(assign) SEL           requestDidReceiveResponseHeadersSelector;
-@property(assign) SEL           requestWillRedirectSelector;
-@property(assign) SEL           requestDidFinishSelector;
-@property(assign) SEL           requestDidFailSelector;
-@property(assign) SEL           queueDidFinishSelector;
-@property(assign) BOOL          shouldCancelAllRequestsOnFailure;
-@property(assign) id            delegate;
-@property(assign) BOOL          showAccurateProgress;
+@property(assign) SEL requestDidStartSelector;
+@property(assign) SEL requestDidReceiveResponseHeadersSelector;
+@property(assign) SEL requestWillRedirectSelector;
+@property(assign) SEL requestDidFinishSelector;
+@property(assign) SEL requestDidFailSelector;
+@property(assign) SEL queueDidFinishSelector;
+@property(assign) BOOL shouldCancelAllRequestsOnFailure;
+@property(assign) id delegate;
+@property(assign) BOOL showAccurateProgress;
 @property(assign, readonly) int requestsCount;
 @property(retain) NSDictionary *userInfo;
 

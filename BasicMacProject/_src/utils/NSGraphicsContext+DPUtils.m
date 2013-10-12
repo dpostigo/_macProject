@@ -8,9 +8,7 @@
 
 #import "NSGraphicsContext+DPUtils.h"
 
-
 @implementation NSGraphicsContext (DPUtils)
-
 
 - (void) drawStrokeColor: (NSColor *) strokeColor withPath: (NSBezierPath *) path {
     [self drawStrokeColor: strokeColor width: 1.0 path: path];

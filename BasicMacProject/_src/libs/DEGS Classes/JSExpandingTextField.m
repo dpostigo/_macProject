@@ -47,7 +47,7 @@
 }
 
 - (NSSize) sizeToFitContent {
-    float width  = [self frame].size.width;
+    float width = [self frame].size.width;
     float height = 0.0;
 
     height = [self sizeFromLayoutManager].height;

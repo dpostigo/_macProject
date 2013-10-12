@@ -9,6 +9,5 @@
 #import <Foundation/Foundation.h>
 #import "BasicButton.h"
 
-
 @interface BOSilverButton : BasicButton
 @end

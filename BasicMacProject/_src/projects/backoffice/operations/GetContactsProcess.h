@@ -9,6 +9,5 @@
 #import <Foundation/Foundation.h>
 #import "BasicBackOfficeOperation.h"
 
-
 @interface GetContactsProcess : BasicBackOfficeOperation
 @end

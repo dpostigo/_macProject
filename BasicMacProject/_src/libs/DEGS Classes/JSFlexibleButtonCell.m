@@ -38,8 +38,8 @@
 - (void) colorTitle {
     NSMutableAttributedString *attrTitle = [[NSMutableAttributedString alloc]
             initWithAttributedString: [self attributedTitle]];
-    NSUInteger len   = [attrTitle length];
-    NSRange    range = NSMakeRange(0, len);
+    NSUInteger len = [attrTitle length];
+    NSRange range = NSMakeRange(0, len);
     [attrTitle addAttribute: NSForegroundColorAttributeName
                       value: self.style.textColor
                       range: range];

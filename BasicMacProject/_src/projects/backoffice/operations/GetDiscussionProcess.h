@@ -9,11 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "BasicBackOfficeOperation.h"
 
-
 @interface GetDiscussionProcess : BasicBackOfficeOperation {
     Task *task;
 }
-
 
 @property(nonatomic, strong) Task *task;
 - (id) initWithTask: (Task *) aTask;

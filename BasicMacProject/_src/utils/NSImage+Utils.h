@@ -10,7 +10,6 @@
 
 @interface NSImage (Utils)
 
-
 + (NSImage *) newImageFromResource: (NSString *) filename;
 + (NSImage *) newImageFromURL: (NSURL *) imageURL;
 + (NSImage *) newImageCopy: (NSImage *) image;

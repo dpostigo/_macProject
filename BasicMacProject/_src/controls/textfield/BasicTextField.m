@@ -7,10 +7,8 @@
 
 #import "BasicTextField.h"
 
-
 @implementation BasicTextField {
 }
-
 
 @synthesize rowObject;
 @synthesize tableSection;

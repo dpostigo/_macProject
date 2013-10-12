@@ -8,31 +8,29 @@
 #import <Foundation/Foundation.h>
 #import "NavigationBar.h"
 
-
 @class VeryBasicViewController;
 
 
 @interface NavigationController : NSViewController {
 
-    BOOL    isAnimating;
+    BOOL isAnimating;
     CGFloat defaultAnimationDuration;
 
 
-    NSMutableArray          *viewControllers;
+    NSMutableArray *viewControllers;
     VeryBasicViewController *rootViewController;
-    NavigationBar           *navigationBar;
+    NavigationBar *navigationBar;
     CGFloat navigationBarHeight;
-    BOOL    navigationBarHidden;
+    BOOL navigationBarHidden;
 
     NSView *contentView;
 
     NSView *barContainer;
 }
 
-
-@property(nonatomic, strong) NSMutableArray          *viewControllers;
+@property(nonatomic, strong) NSMutableArray *viewControllers;
 @property(nonatomic, strong) VeryBasicViewController *rootViewController;
-@property(nonatomic, strong) NavigationBar           *navigationBar;
+@property(nonatomic, strong) NavigationBar *navigationBar;
 @property(nonatomic) BOOL navigationBarHidden;
 @property(nonatomic, strong) NSView *contentView;
 @property(nonatomic) CGFloat navigationBarHeight;

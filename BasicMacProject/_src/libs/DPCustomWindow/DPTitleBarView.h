@@ -7,12 +7,10 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface DPTitleBarView : NSView {
 
     CGFloat cornerRadius;
 }
-
 
 @property(nonatomic) CGFloat cornerRadius;
 @end

@@ -19,7 +19,7 @@
 #define NotifierCompilationSuccessfulHumanReadableDescription    NSLocalizedString(@"Compilation Successful", "")
 
 typedef enum _JSXSILOutputFormat {
-    JSXSILOutputForMatlab      = 0,
+    JSXSILOutputForMatlab = 0,
     JSXSILOutputForMathematica = 1
 } JSXSILOutputFormat;
 

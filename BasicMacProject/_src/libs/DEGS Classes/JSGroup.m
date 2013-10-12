@@ -42,14 +42,14 @@
     if (!_computedVectors) {
         _computedVectors = [[JSVectors alloc] init];
         _computedVectors.allowsComputedVectorsOnly = YES;
-        _computedVectors.parent                    = self;
+        _computedVectors.parent = self;
     }
     return _computedVectors;
 }
 
 - (void) setComputedVectors: (JSVectors *) computedVectors {
     _computedVectors = computedVectors;
-    _computedVectors.parent                    = self;
+    _computedVectors.parent = self;
     _computedVectors.allowsComputedVectorsOnly = YES;
 }
 
@@ -114,7 +114,7 @@
 
         if ([anElement attributeForName: @"basis"]) self.samplingBasis = [[[anElement attributeForName: @"basis"] stringValue] componentsSeparatedByCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
 
-        self.initialSample                                                          = NO;
+        self.initialSample = NO;
         if ([anElement attributeForName: @"initial_sample"]) {
             if ([[[anElement attributeForName: @"initial_sample"] stringValue] isEqualToString: @"yes"]) {
                 self.initialSample = YES;
@@ -147,7 +147,7 @@
 
 - (NSString *) description {
     NSString *title = @"Group";
-    if (_name) title                                        = [title stringByAppendingFormat: @" - %@", self.name];
+    if (_name) title = [title stringByAppendingFormat: @" - %@", self.name];
     if (![self.parent isKindOfClass: [JSXMDS class]]) title = [NSString stringWithFormat: @"%@/%@", [self.parent description], title];
     return title;
 }

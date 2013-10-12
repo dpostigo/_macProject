@@ -9,7 +9,6 @@
 #import "PathOptions.h"
 #import "ImageOptions.h"
 
-
 @interface VeryBasicButtonCell : NSButtonCell {
 
     PathOptions *pathOptions;
@@ -25,7 +24,6 @@
     NSColor *disabledInnerStrokeColor;
 }
 
-
 @property(nonatomic) CGFloat cornerRadius;
 @property(nonatomic) CGFloat borderWidth;
 @property(nonatomic, strong) NSShadow *innerShadow;
@@ -34,7 +32,7 @@
 @property(nonatomic, strong) NSGradient *horizontalGradient;
 @property(nonatomic, strong) NSColor *borderColor;
 @property(nonatomic, strong) NSColor *innerBorderColor;
-@property(nonatomic) NSBezierPathCornerOptions cornerOptions;
+@property(nonatomic) CornerType cornerOptions;
 @property(nonatomic, strong) PathOptions *pathOptions;
 @property(nonatomic, strong) NSArray *borderOptions;
 

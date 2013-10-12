@@ -46,7 +46,7 @@ typedef enum _ASICachePolicy {
 // Calling [ASIHTTPRequest clearSession] will remove any data stored using ASICacheForSessionDurationCacheStoragePolicy
 typedef enum _ASICacheStoragePolicy {
     ASICacheForSessionDurationCacheStoragePolicy = 0,
-    ASICachePermanentlyCacheStoragePolicy        = 1
+    ASICachePermanentlyCacheStoragePolicy = 1
 } ASICacheStoragePolicy;
 
 

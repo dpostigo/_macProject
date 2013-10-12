@@ -36,7 +36,7 @@ typedef enum {
  * @param event The event that occured.
  * @param sender The object that sent the event.
 */
-- (void)subtleButtonEvent:(NSEvent *)event from:(id)sender;
+- (void) subtleButtonEvent: (NSEvent *) event from: (id) sender;
 
 @end
 
@@ -46,13 +46,13 @@ typedef enum {
 @interface MRSubtleButton : NSView
 
 /** The button's title. */
-@property (nonatomic, strong) NSString *title;
+@property(nonatomic, strong) NSString *title;
 
 /** The button's delegate object. The delegate must conform to the
  * MRSubtleButtonDelegate Protocol and will receive messages when the button
  * generates mouse-down and mouse-up events.
  */
-@property (weak) id<MRSubtleButtonDelegate> delegate;
+@property(weak) id <MRSubtleButtonDelegate> delegate;
 
 /** Sets the start and end colour of the button's gradient. The gradient is 
  * linear and starts at the bottom edge of the button.
@@ -60,7 +60,7 @@ typedef enum {
  * @param startColor The start colour of the button's gradient.
  * @param endColor The end colour of the button's gradient.
  */
-- (void)setGradientWithStartColor:(NSColor *)startColor endColor:(NSColor *)endColor;
+- (void) setGradientWithStartColor: (NSColor *) startColor endColor: (NSColor *) endColor;
 
 /** Sets the start and end colour of the button's highlight gradient. The
  * highlight gradient is shown when the button is clicked with the mouse. The
@@ -69,7 +69,7 @@ typedef enum {
  * @param startColor The start colour of the button's highlight gradient.
  * @param endColor The end colour of the button's highlight gradient.
  */
-- (void)setHighlightGradientWithStartColor:(NSColor *)startColor endColor:(NSColor *)endColor;
+- (void) setHighlightGradientWithStartColor: (NSColor *) startColor endColor: (NSColor *) endColor;
 
 /** Sets the font and colour of the receiver's title using `NSFont` and
  * `NSColor` objects.
@@ -77,15 +77,15 @@ typedef enum {
  * @param font The font applied to the button's title.
  * @param fontColor The colour applied to the button's title.
  */
-- (void)setFontAttributesWithFont:(NSFont *)font color:(NSColor *)fontColor;
+- (void) setFontAttributesWithFont: (NSFont *) font color: (NSColor *) fontColor;
 
 /** Sets the button's text alignment.
  *
  * @param alignment The text alignment of the button's title.
  */
-- (void)setTitleAlignment:(MRTitleAlignment)alignment;
+- (void) setTitleAlignment: (MRTitleAlignment) alignment;
 
 /** This method resets the button's gradient colours to their defaults. */
-- (void)resetGradient;
+- (void) resetGradient;
 
 @end

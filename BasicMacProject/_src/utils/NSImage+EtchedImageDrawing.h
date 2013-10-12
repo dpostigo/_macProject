@@ -7,9 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface NSImage (EtchedImageDrawing)
-
 
 - (void) drawEtchedInRect: (NSRect) rect;
 @end

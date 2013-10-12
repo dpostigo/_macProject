@@ -30,14 +30,14 @@
 @interface JSBottomBarView ()
 
 @property(strong) IBOutlet NSLayoutConstraint *addButtonPosition;
-@property(strong) IBOutlet NSButton           *addButton;
-@property(strong) IBOutlet NSButton           *deleteButton;
-@property(strong) IBOutlet NSButton           *backButton;
-@property(strong) IBOutlet NSButton           *helpButton;
-@property(strong) IBOutlet NSTextField        *addLabel;
-@property(strong) IBOutlet NSTextField        *deleteLabel;
-@property(strong) IBOutlet NSTextField        *backLabel;
-@property(strong) IBOutlet NSTextField        *helpLabel;
+@property(strong) IBOutlet NSButton *addButton;
+@property(strong) IBOutlet NSButton *deleteButton;
+@property(strong) IBOutlet NSButton *backButton;
+@property(strong) IBOutlet NSButton *helpButton;
+@property(strong) IBOutlet NSTextField *addLabel;
+@property(strong) IBOutlet NSTextField *deleteLabel;
+@property(strong) IBOutlet NSTextField *backLabel;
+@property(strong) IBOutlet NSTextField *helpLabel;
 
 @end
 
@@ -198,10 +198,10 @@
     [self.backButton setEnabled: NO];
     [self.backButton setAlphaValue: 0.0f];
     [self.backLabel setAlphaValue: 0.0f];
-    self.backLabel.textColor   = TOP_BOTTOM_BARS_TEXTCOLOR;
-    self.addLabel.textColor    = TOP_BOTTOM_BARS_TEXTCOLOR;
+    self.backLabel.textColor = TOP_BOTTOM_BARS_TEXTCOLOR;
+    self.addLabel.textColor = TOP_BOTTOM_BARS_TEXTCOLOR;
     self.deleteLabel.textColor = TOP_BOTTOM_BARS_TEXTCOLOR;
-    self.helpLabel.textColor   = TOP_BOTTOM_BARS_TEXTCOLOR;
+    self.helpLabel.textColor = TOP_BOTTOM_BARS_TEXTCOLOR;
 }
 
 - (void) awakeFromNib {
@@ -231,9 +231,9 @@
         [self.deleteButton setKeyEquivalent: @"d"];
         [self.deleteButton setKeyEquivalentModifierMask: NSCommandKeyMask];
 
-        self.backLabel   = [self createLabelWithTitle: @"Back"];
-        self.addLabel    = [self createLabelWithTitle: @"New"];
-        self.helpLabel   = [self createLabelWithTitle: @"Help"];
+        self.backLabel = [self createLabelWithTitle: @"Back"];
+        self.addLabel = [self createLabelWithTitle: @"New"];
+        self.helpLabel = [self createLabelWithTitle: @"Help"];
         self.deleteLabel = [self createLabelWithTitle: @"Delete"];
 
         // the size of the letter "e" is not integer in the system font. When the layout system computes the intrinsicContentSize of the delete label on non retina screens it rounds it to smaller integer which hides the last e in Delete. We have to force the width of the label to the next larger integer to show the missing letter

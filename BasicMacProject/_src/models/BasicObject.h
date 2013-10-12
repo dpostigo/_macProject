@@ -8,14 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface BasicObject : NSObject <NSCoding> {
-
 
     NSString *id;
     NSString *title;
 }
-
 
 @property(nonatomic, retain) NSString *id;
 @property(nonatomic, retain) NSString *title;

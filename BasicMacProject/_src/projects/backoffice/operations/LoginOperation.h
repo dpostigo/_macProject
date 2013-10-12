@@ -9,13 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "BasicBackOfficeOperation.h"
 
-
 @interface LoginOperation : BasicBackOfficeOperation {
 
     NSString *username;
     NSString *password;
 }
-
 
 @property(nonatomic, retain) NSString *username;
 @property(nonatomic, retain) NSString *password;

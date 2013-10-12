@@ -12,11 +12,9 @@
 #import "VeryBasicButton.h"
 #import "BasicButton.h"
 
-
 @implementation CartsTitleBarViewController {
 
 }
-
 
 - (void) loadView {
     [super loadView];
@@ -25,8 +23,8 @@
     [button setEnabled: YES];
     button.width = button.height = 30;
     [rightButtons addObject: button];
-//    [rightButtons addObject: [VeryBasicButton buttonWithImage: [NSImage imageNamed: NSImageNameAddTemplate] padding: 10.0]];
-//    [rightButtons addObject: [NSWindow standardWindowButton: NSWindowCloseButton forStyleMask: NSTitledWindowMask]];
+    //    [rightButtons addObject: [VeryBasicButton buttonWithImage: [NSImage imageNamed: NSImageNameAddTemplate] padding: 10.0]];
+    //    [rightButtons addObject: [NSWindow standardWindowButton: NSWindowCloseButton forStyleMask: NSTitledWindowMask]];
 
 }
 

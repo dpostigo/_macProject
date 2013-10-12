@@ -33,7 +33,7 @@
     if (_propagationDimension) [element addChild: [NSXMLElement elementWithName: @"propagation_dimension" stringValue: self.propagationDimension]];
 
     if ([_transverseDimension count]) {
-        NSXMLElement     *tranDimElement = [NSXMLElement elementWithName: @"transverse_dimensions"];
+        NSXMLElement *tranDimElement = [NSXMLElement elementWithName: @"transverse_dimensions"];
         for (JSDimension *dim in _transverseDimension) {
             [tranDimElement addChild: [dim exportAsXML]];
         }
@@ -95,14 +95,14 @@
 
 - (NSDictionary *) dictionaryOfDimensionIdentifiers {
     NSMutableDictionary *dict = [NSDictionary dictionary];
-    for (JSDimension    *dimension in self.transverseDimension) {
+    for (JSDimension *dimension in self.transverseDimension) {
         for (NSString *dimensionIdentifier in [dimension dimensionIdentifiersForBasis]) [dict setObject: dimension forKey: dimensionIdentifier];
     }
     return [dict copy];
 }
 
 - (NSArray *) listOfDimensionsIdentifiersForBasis {
-    NSArray          *dimensionsIdentifiers = [NSArray array];
+    NSArray *dimensionsIdentifiers = [NSArray array];
     for (JSDimension *dimension in self.transverseDimension) {
         dimensionsIdentifiers = [dimensionsIdentifiers arrayByAddingObjectsFromArray: [dimension dimensionIdentifiersForBasis]];
     }
@@ -110,7 +110,7 @@
 }
 
 - (NSArray *) listOfDimensionsIdentifiersForDimensions {
-    NSArray          *dimensionsIdentifiers = [NSArray array];
+    NSArray *dimensionsIdentifiers = [NSArray array];
     for (JSDimension *dimension in self.transverseDimension) {
         dimensionsIdentifiers = [dimensionsIdentifiers arrayByAddingObjectsFromArray: [dimension dimensionIdentifiersForDimension]];
     }
@@ -146,7 +146,7 @@
     NSUInteger index = [elementName indexInString: &elementName];
     NSDictionary *mapping = @{@"propagation_dimension" : @"propagationDimension",
             @"dimension" : @"transverseDimension"};
-    NSString     *newName = [mapping objectForKey: elementName];
+    NSString *newName = [mapping objectForKey: elementName];
     if (!newName) newName = elementName;
     newName = [newName stringByAppendingIndex: index];
     if ([newName isEqualToString: @"transverseDimension"]) newName = @"transverseDimension[0]";

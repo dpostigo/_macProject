@@ -9,12 +9,10 @@
 #import "INAppStoreWindow.h"
 #import "VeryBasicViewController.h"
 
-
 @interface BasicCustomWindowOld : INAppStoreWindow {
 
     NSWindow *modalWindow;
 }
-
 
 @property(nonatomic, strong) NSWindow *modalWindow;
 

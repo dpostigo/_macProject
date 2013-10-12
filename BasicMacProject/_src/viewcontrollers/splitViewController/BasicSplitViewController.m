@@ -95,7 +95,7 @@
     if (dividerEnabled) {
         ret = proposedEffectiveRect;
     }
-//    NSLog(@"ret = %@", NSStringFromRect(ret));
+    //    NSLog(@"ret = %@", NSStringFromRect(ret));
     return ret;
 }
 
@@ -167,7 +167,7 @@
 }
 
 - (void) basicSplitView: (BasicSplitView *) basicSplitView didResizeSplitContainerAtIndex: (NSUInteger) index {
-//    NSLog(@"%s %lu", __PRETTY_FUNCTION__, index);
+    //    NSLog(@"%s %lu", __PRETTY_FUNCTION__, index);
 }
 
 

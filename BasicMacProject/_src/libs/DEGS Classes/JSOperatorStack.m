@@ -32,7 +32,7 @@
 # pragma mark - Initialiser and exporter
 
 - (NSArray *) exportAsXMLElements {
-    NSMutableArray  *elementsArray = [NSMutableArray array];
+    NSMutableArray *elementsArray = [NSMutableArray array];
     for (JSOperator *Operator in _operators) {
         NSXMLElement *newOperatorNode = [Operator exportAsXML];
         [elementsArray addObject: newOperatorNode];
@@ -85,7 +85,7 @@
     NSString *elementName = components[0];
     NSUInteger index = [elementName indexInString: &elementName];
 
-    if ([elementName isEqualToString: @"operator"]) elementName                   = @"operators";
+    if ([elementName isEqualToString: @"operator"]) elementName = @"operators";
     if ([elementName isEqualToString: @"operators"] && index == NSNotFound) index = 0;
     [components replaceObjectAtIndex: 0 withObject: [elementName stringByAppendingIndex: index]];
     return [super addObjectsFromPathComponents: components toPathObjects: pathObjects];

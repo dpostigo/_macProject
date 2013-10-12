@@ -9,6 +9,5 @@
 #import "BasicOutlineViewController.h"
 #import "BasicTableViewController.h"
 
-
 @interface LoginOutlineViewController : BasicOutlineViewController
 @end

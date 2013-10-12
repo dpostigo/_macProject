@@ -9,11 +9,9 @@
 #import "BasicTableCellView.h"
 #import "BasicTokenField.h"
 
-
 @interface BasicTokenCell : BasicTableCellView {
     IBOutlet BasicTokenField *tokenField;
 }
-
 
 @property(nonatomic, strong) BasicTokenField *tokenField;
 @end

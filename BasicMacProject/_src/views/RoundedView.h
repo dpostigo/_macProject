@@ -9,11 +9,9 @@
 #import "BasicBackgroundViewOld.h"
 #import "NSBezierPath+Additions.h"
 
-
 @interface RoundedView : BasicBackgroundViewOld {
     JSRoundedCornerOptions cornerOptions;
 }
-
 
 @property(nonatomic) JSRoundedCornerOptions cornerOptions;
 @end

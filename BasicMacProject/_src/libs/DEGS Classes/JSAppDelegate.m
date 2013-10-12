@@ -15,7 +15,7 @@ static NSString *const XMDSHasLaunchedBeforeKey = @"DEGSHasLaunched";
 @interface JSAppDelegate ()
 
 // window controllers for the auxilliary windows
-@property(nonatomic, strong) JSAboutWindowController     *aboutWindowController;
+@property(nonatomic, strong) JSAboutWindowController *aboutWindowController;
 @property(nonatomic, strong) JSShortcutsWindowController *shortcutsWindowController;
 
 // parsing of the xmds error output
@@ -185,7 +185,7 @@ static NSString *const XMDSHasLaunchedBeforeKey = @"DEGSHasLaunched";
     NSTask *task = [[NSTask alloc] init];
     [task setLaunchPath: self.xsil2graphics2ExecPath];
 
-    NSString            *scriptDir   = [[scriptURL path] stringByDeletingLastPathComponent];
+    NSString *scriptDir = [[scriptURL path] stringByDeletingLastPathComponent];
     NSMutableDictionary *environment = self.environmentForXMDS;
     [environment setObject: scriptDir forKey: @"PWD"];
     [task setEnvironment: environment];
@@ -215,7 +215,7 @@ static NSString *const XMDSHasLaunchedBeforeKey = @"DEGSHasLaunched";
 
     [task launch];
 
-    NSData   *errorData   = [errorFile readDataToEndOfFile];
+    NSData *errorData = [errorFile readDataToEndOfFile];
     NSString *errorOutput = [[NSString alloc] initWithData: errorData encoding: NSUTF8StringEncoding];
 
     if (errorOutput.length) return NO;
@@ -226,7 +226,7 @@ static NSString *const XMDSHasLaunchedBeforeKey = @"DEGSHasLaunched";
     NSTask *task = [[NSTask alloc] init];
     [task setLaunchPath: self.xmdsExecPath];
 
-    NSString            *scriptDir   = [[scriptURL path] stringByDeletingLastPathComponent];
+    NSString *scriptDir = [[scriptURL path] stringByDeletingLastPathComponent];
     NSMutableDictionary *environment = self.environmentForXMDS;
     [environment setObject: scriptDir forKey: @"PWD"];
     [task setEnvironment: environment];
@@ -238,20 +238,20 @@ static NSString *const XMDSHasLaunchedBeforeKey = @"DEGSHasLaunched";
     [task setArguments: arguments];
 
     NSPipe *outputPipe = [NSPipe pipe];
-    NSPipe *errorPipe  = [NSPipe pipe];
+    NSPipe *errorPipe = [NSPipe pipe];
     [task setStandardOutput: outputPipe];
     [task setStandardError: errorPipe];
     [task setStandardInput: [NSPipe pipe]];
 
     NSFileHandle *outputFile = [outputPipe fileHandleForReading];
-    NSFileHandle *errorFile  = [errorPipe fileHandleForReading];
+    NSFileHandle *errorFile = [errorPipe fileHandleForReading];
 
     [task launch];
 
     NSData *outputData = [outputFile readDataToEndOfFile];
-    NSData *errorData  = [errorFile readDataToEndOfFile];
+    NSData *errorData = [errorFile readDataToEndOfFile];
 
-    NSString *output      = [[NSString alloc] initWithData: outputData encoding: NSUTF8StringEncoding];
+    NSString *output = [[NSString alloc] initWithData: outputData encoding: NSUTF8StringEncoding];
     NSString *errorOutput = [[NSString alloc] initWithData: errorData encoding: NSUTF8StringEncoding];
 
     *error = [self parseErrorOutput: errorOutput output: output];
@@ -274,9 +274,9 @@ static NSString *const XMDSHasLaunchedBeforeKey = @"DEGSHasLaunched";
     if ([output rangeOfString: @"Failed to compile"].location != NSNotFound) {
 
         // we first remove all the lines starting with the string @"waf" as they are python output we are not interested in
-        NSArray        *errorLines    = [errorOutput componentsSeparatedByCharactersInSet: [NSCharacterSet newlineCharacterSet]];
+        NSArray *errorLines = [errorOutput componentsSeparatedByCharactersInSet: [NSCharacterSet newlineCharacterSet]];
         NSMutableArray *newErrorLines = [NSMutableArray array];
-        for (NSString  *line in errorLines) {
+        for (NSString *line in errorLines) {
             if ([line rangeOfString: @"Waf"].location == NSNotFound) [newErrorLines addObject: line];
         }
 
@@ -284,7 +284,7 @@ static NSString *const XMDSHasLaunchedBeforeKey = @"DEGSHasLaunched";
         [newErrorLines insertObject: @"Failed to compile" atIndex: 0];
 
         NSDictionary *userInfo = @{NSLocalizedDescriptionKey : [newErrorLines componentsJoinedByString: @"\n"]};
-        NSError      *error    = [NSError errorWithDomain: @"com.DEGS.compile" code: 100 userInfo: userInfo];
+        NSError *error = [NSError errorWithDomain: @"com.DEGS.compile" code: 100 userInfo: userInfo];
         return error;
     }
 
@@ -297,18 +297,18 @@ static NSString *const XMDSHasLaunchedBeforeKey = @"DEGSHasLaunched";
 
     //    NSLog(@"%@",errorOutput);
 
-    NSArray       *pieces                    = [errorOutput componentsSeparatedByString: @"\n\n"];
-    NSString      *humanReadableErrorMessage = nil;
-    NSString      *errorKeyword              = @"ERROR: ";
-    NSString      *pathString                = nil;
-    NSString      *xpathKeyword              = @"In element: ";
+    NSArray *pieces = [errorOutput componentsSeparatedByString: @"\n\n"];
+    NSString *humanReadableErrorMessage = nil;
+    NSString *errorKeyword = @"ERROR: ";
+    NSString *pathString = nil;
+    NSString *xpathKeyword = @"In element: ";
     for (NSString *piece in pieces) {
         if ([piece rangeOfString: errorKeyword options: NSLiteralSearch].location != NSNotFound) {
             humanReadableErrorMessage = [piece substringFromIndex: errorKeyword.length];
             // the error message output of xmds is padded with white spaces of the same length of the errorKeyword
-            NSArray        *errorLines    = [humanReadableErrorMessage componentsSeparatedByCharactersInSet: [NSCharacterSet newlineCharacterSet]];
+            NSArray *errorLines = [humanReadableErrorMessage componentsSeparatedByCharactersInSet: [NSCharacterSet newlineCharacterSet]];
             NSMutableArray *newErrorLines = [NSMutableArray array];
-            for (NSString  *errorLine in errorLines) [newErrorLines addObject: [errorLine stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]]];
+            for (NSString *errorLine in errorLines) [newErrorLines addObject: [errorLine stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]]];
             if (newErrorLines.count) humanReadableErrorMessage = [newErrorLines componentsJoinedByString: @" "];
         }
         if ([piece rangeOfString: xpathKeyword options: NSLiteralSearch].location != NSNotFound) {
@@ -427,10 +427,10 @@ static NSString *const XMDSHasLaunchedBeforeKey = @"DEGSHasLaunched";
         return FALSE;
     }
 
-    NSString *terminalFilename    = [NSString stringWithFormat: @"XMDS%@.terminal", suffix];
+    NSString *terminalFilename = [NSString stringWithFormat: @"XMDS%@.terminal", suffix];
     NSString *bashProfileFilename = [NSString stringWithFormat: @"bash_profile%@", suffix];
 
-    NSString *terminalDestinationPath    = [self.xmdsLibraryPath stringByAppendingPathComponent: terminalFilename];
+    NSString *terminalDestinationPath = [self.xmdsLibraryPath stringByAppendingPathComponent: terminalFilename];
     NSString *bashProfileDestinationPath = [self.xmdsLibraryPath stringByAppendingPathComponent: bashProfileFilename];
 
     // For the moment we assume we can use the developer tools from the root directory hence @"${DEVELOPER_DIR}" is substituted by an empty string
@@ -445,8 +445,8 @@ static NSString *const XMDSHasLaunchedBeforeKey = @"DEGSHasLaunched";
     [allParameters addEntriesFromDictionary: parameters];
 
     for (NSString *key in allParameters) {
-        terminalContents    = [terminalContents stringByReplacingOccurrencesOfString: key
-                                                                          withString: [allParameters objectForKey: key]];
+        terminalContents = [terminalContents stringByReplacingOccurrencesOfString: key
+                                                                       withString: [allParameters objectForKey: key]];
         bashProfileContents = [bashProfileContents stringByReplacingOccurrencesOfString: key
                                                                              withString: [allParameters objectForKey: key]];
     }
@@ -478,7 +478,7 @@ static NSString *const XMDSHasLaunchedBeforeKey = @"DEGSHasLaunched";
 
 - (void) loadGrowl {
     NSBundle *mainBundle = [NSBundle mainBundle];
-    NSString *path       = [[mainBundle privateFrameworksPath] stringByAppendingPathComponent: @"Growl"];
+    NSString *path = [[mainBundle privateFrameworksPath] stringByAppendingPathComponent: @"Growl"];
     //    if(NSAppKitVersionNumber >= 1038)
     //        path = [path stringByAppendingPathComponent:@"1.3"];
     //    else

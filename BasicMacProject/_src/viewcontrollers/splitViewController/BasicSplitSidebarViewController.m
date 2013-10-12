@@ -42,7 +42,7 @@
 
 - (NSRect) splitView: (NSSplitView *) splitView1 effectiveRect: (NSRect) proposedEffectiveRect forDrawnRect: (NSRect) drawnRect ofDividerAtIndex: (NSInteger) dividerIndex {
     NSRect result = [super splitView: splitView1 effectiveRect: proposedEffectiveRect forDrawnRect: drawnRect ofDividerAtIndex: dividerIndex];
-//    NSLog(@"result = %@", NSStringFromRect(result));
+    //    NSLog(@"result = %@", NSStringFromRect(result));
     return result;
 }
 

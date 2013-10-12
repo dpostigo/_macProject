@@ -7,9 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface ActivityView : NSView
-
 
 - (void) stopAnimating;
 @end

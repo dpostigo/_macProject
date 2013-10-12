@@ -8,7 +8,6 @@
 
 #import "CartsFooterViewController.h"
 
-
 @implementation CartsFooterViewController {
 
 }

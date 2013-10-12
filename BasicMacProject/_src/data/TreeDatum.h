@@ -8,12 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-
 @interface TreeDatum : NSObject {
     NSString *name;
     NSString *value;
 }
-
 
 @property(nonatomic, retain) NSString *name;
 @property(nonatomic, retain) NSString *value;

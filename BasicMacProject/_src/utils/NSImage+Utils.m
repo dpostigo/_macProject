@@ -9,7 +9,6 @@
 #import "NSImage+Utils.h"
 #import <QuartzCore/QuartzCore.h>
 
-
 @implementation NSImage (Utils)
 
 //
@@ -38,7 +37,7 @@
 
 
 + (NSImage *) newImageFromURL: (NSURL *) imageURL {
-    NSData  *data  = [NSData dataWithContentsOfURL: imageURL];
+    NSData *data = [NSData dataWithContentsOfURL: imageURL];
     NSImage *image = [[NSImage alloc] initWithData: data];
     return image;
 }
@@ -46,7 +45,7 @@
 
 + (NSImage *) newImageFromResource: (NSString *) filename {
     NSString *imageFile = [[NSString alloc] initWithFormat: @"%@/%@", [[NSBundle mainBundle] resourcePath], filename];
-    NSImage  *image     = nil;
+    NSImage *image = nil;
     image = [[NSImage alloc] initWithContentsOfFile: imageFile];
     return image;
 }

@@ -9,10 +9,8 @@
 #import "BasicObject.h"
 #import "NSObject+NSCoding.h"
 
-
 @implementation BasicObject {
 }
-
 
 @synthesize id;
 @synthesize title;

@@ -8,10 +8,8 @@
 #import "SaveDataOperation.h"
 #import "Archiver.h"
 
-
 @implementation SaveDataOperation {
 }
-
 
 - (void) main {
     [super main];

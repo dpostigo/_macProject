@@ -39,10 +39,10 @@
 
         pathOptions = [[PathOptions alloc] init];
         pathOptions.cornerRadius = 0.0;
-        pathOptions.cornerOptions = CornerUpperLeft | CornerUpperRight | CornerLowerLeft | CornerLowerRight;
+        pathOptions.cornerType = CornerUpperLeft | CornerUpperRight | CornerLowerLeft | CornerLowerRight;
         pathOptions.borderColor = [NSColor whiteColor];
         pathOptions.borderWidth = 1.0;
-        pathOptions.gradient = [[NSGradient alloc] initWithColorsAndLocations:
+        pathOptions.gradient = [[BasicGradient alloc] initWithColorsAndLocations:
                 [NSColor colorWithWhite: 0.95], 0.0,
                 [NSColor colorWithWhite: 0.94], 0.3,
                 [NSColor colorWithWhite: 0.93], 0.5,
@@ -56,7 +56,7 @@
         pathOptions.outerShadow.shadowOffset = NSMakeSize(0, -1);
 
         selectedPathOptions = [pathOptions copy];
-        selectedPathOptions.gradient = [[NSGradient alloc] initWithColorsAndLocations:
+        selectedPathOptions.gradient = [[BasicGradient alloc] initWithColorsAndLocations:
                 [NSColor colorWithDeviceWhite: 0.2 alpha: 1.0f], 0.0,
                 [NSColor colorWithDeviceWhite: 0.3 alpha: 1.0f], 0.2,
                 [NSColor colorWithDeviceWhite: 0.2 alpha: 1.0f], 1.0,
@@ -89,14 +89,14 @@
 
 
 - (void) drawBackgroundInRect: (NSRect) dirtyRect selected: (BOOL) selected {
-    //    NSBezierPath *roundedPath = [NSBezierPath bezierPathWithRoundedRect: dirtyRect corners: self.cornerOptions radius: self.cornerRadius];
+    //    NSBezierPath *roundedPath = [NSBezierPath bezierPathWithRoundedRect: dirtyRect cornerProperties: self.cornerType radius: self.cornerRadius];
     //    [roundedPath drawShadow: self.shadow shadowOpacity: shadowOpacity];
 
 
-    //    NSBezierPath *path = [NSBezierPath bezierPathWithRect: dirtyRect options: pathOptions];
+    //    NSBezierPath *path = [NSBezierPath rectBezierPathWithRect: dirtyRect options: pathOptions];
     //    [path drawWithPathOptions: self.selected ? selectedPathOptions : pathOptions];
     //
-    //    NSBezierPath *borderPath = [NSBezierPath bezierPathWithRect: dirtyRect borderType: pathOptions.borderOption.borderType];
+    //    NSBezierPath *borderPath = [NSBezierPath rectBezierPathWithRect: dirtyRect borderType: pathOptions.borderOption.borderType];
     //    [borderPath drawWithBorderOption: pathOptions.borderOption];
 
     [NSBezierPath drawBezierPathWithRect: dirtyRect options: pathOptions];
@@ -110,12 +110,12 @@
 
 #pragma mark Getters / Setters
 
-- (void) setCornerOptions: (NSBezierPathCornerOptions) cornerOptions1 {
-    pathOptions.cornerOptions = cornerOptions1;
+- (void) setCornerOptions: (CornerType) cornerOptions1 {
+    pathOptions.cornerType = cornerOptions1;
 }
 
-- (NSBezierPathCornerOptions) cornerOptions {
-    return pathOptions.cornerOptions;
+- (CornerType) cornerOptions {
+    return pathOptions.cornerType;
 }
 
 

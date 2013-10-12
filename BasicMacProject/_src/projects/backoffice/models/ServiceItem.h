@@ -9,11 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "BasicObject.h"
 
-
 @interface ServiceItem : BasicObject {
     CGFloat hourlyRate;
 }
-
 
 @property(nonatomic) CGFloat hourlyRate;
 - (id) initWithDictionary: (NSDictionary *) dictionary;

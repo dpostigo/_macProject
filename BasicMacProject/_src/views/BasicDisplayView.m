@@ -9,10 +9,7 @@
 #import "BasicDisplayView.h"
 #import "NSBezierPath+Additions.h"
 
-@implementation BasicDisplayView {
-
-    NSBezierPath *undrawablePath;
-}
+@implementation BasicDisplayView
 
 @synthesize pathOptions;
 
@@ -29,70 +26,117 @@
 }
 
 
+#pragma mark Methods
 
-#pragma mark Getters / Setters
-
-- (void) setCornerOptions: (NSBezierPathCornerOptions) cornerOptions1 {
-    pathOptions.cornerOptions = cornerOptions1;
+- (void) addBorder: (BorderOption *) aBorder {
+    [self.borderOptions addObject: aBorder];
 }
 
-- (NSBezierPathCornerOptions) cornerOptions {
-    return pathOptions.cornerOptions;
+- (void) setBorderWidth: (CGFloat) aBorderWidth borderColor: (NSColor *) aBorderColor {
+    self.borderWidth = aBorderWidth;
+    self.borderColor = aBorderColor;
+}
+
+#pragma mark NSView overrides
+
+- (BOOL) preservesContentDuringLiveResize {
+    return YES;
+}
+
+- (BOOL) isOpaque {
+    return YES;
 }
 
 
-- (CGFloat) cornerRadius {
-    return pathOptions.cornerRadius;
-}
+#pragma mark Getters
 
-- (void) setCornerRadius: (CGFloat) cornerRadius1 {
-    pathOptions.cornerRadius = cornerRadius1;
+- (NSColor *) backgroundColor {
+    return pathOptions.backgroundColor;
 }
 
 - (NSColor *) borderColor {
     return pathOptions.borderColor;
 }
 
-- (void) setBorderColor: (NSColor *) borderColor1 {
-    pathOptions.borderColor = borderColor1;
+
+- (BorderType) borderType {
+    return pathOptions.borderType;
 }
+
 
 - (CGFloat) borderWidth {
     return pathOptions.borderWidth;
 }
 
-- (void) setBorderWidth: (CGFloat) borderWidth1 {
-    pathOptions.borderWidth = borderWidth1;
-}
-
-
-- (NSArray *) borderOptions {
+- (NSMutableArray *) borderOptions {
     return pathOptions.borderOptions;
 }
 
-- (void) setBorderOptions: (NSArray *) borderOptions {
-    pathOptions.borderOptions = borderOptions;
+- (CornerType) cornerOptions {
+    return pathOptions.cornerType;
 }
 
-- (NSGradient *) gradient {
+- (CGFloat) cornerRadius {
+    return pathOptions.cornerRadius;
+}
+
+- (BasicGradient *) gradient {
     return pathOptions.gradient;
-}
-
-- (void) setGradient: (NSGradient *) gradient1 {
-    pathOptions.gradient = gradient1;
 }
 
 - (NSShadow *) innerShadow {
     return pathOptions.innerShadow;
 }
 
+- (NSShadow *) outerShadow {
+    return pathOptions.outerShadow;
+}
+
+
+
+#pragma mark Getters / Setters
+
+- (void) setCornerOptions: (CornerType) cornerOptions1 {
+    pathOptions.cornerType = cornerOptions1;
+}
+
+
+- (void) setCornerRadius: (CGFloat) cornerRadius1 {
+    pathOptions.cornerRadius = cornerRadius1;
+}
+
+
+- (void) setBorderColor: (NSColor *) borderColor1 {
+    pathOptions.borderColor = borderColor1;
+}
+
+- (void) setBorderWidth: (CGFloat) borderWidth1 {
+    pathOptions.borderWidth = borderWidth1;
+}
+
+- (void) setBorderType: (BorderType) borderType {
+    pathOptions.borderType = borderType;
+
+}
+
+
+- (void) setBorderOptions: (NSMutableArray *) borderOptions {
+    pathOptions.borderOptions = borderOptions;
+}
+
+- (void) setGradient: (BasicGradient *) gradient1 {
+    pathOptions.gradient = gradient1;
+}
+
+- (void) setBackgroundColor: (NSColor *) backgroundColor {
+    pathOptions.backgroundColor = backgroundColor;
+}
+
+
 - (void) setInnerShadow: (NSShadow *) innerShadow {
     pathOptions.innerShadow = innerShadow;
 }
 
-- (NSShadow *) outerShadow {
-    return pathOptions.outerShadow;
-}
 
 - (void) setOuterShadow: (NSShadow *) outerShadow {
     pathOptions.outerShadow = outerShadow;
@@ -116,22 +160,18 @@
     pathOptions.cornerRadius = 0.0;
     pathOptions.borderWidth = 0.0;
     pathOptions.borderColor = [NSColor lightGrayColor];
-    pathOptions.cornerOptions = CornerNone;
+    pathOptions.cornerType = CornerNone;
     pathOptions.backgroundColor = [NSColor colorWithDeviceWhite: 0.9 alpha: 1.0];
 
 }
 
-
-- (BOOL) preservesContentDuringLiveResize {
-    return YES;
-}
-
-
 - (void) drawRect: (NSRect) dirtyRect {
     [[NSColor clearColor] set];
-    NSRectFill(dirtyRect);
-    dirtyRect = self.bounds;
-    [NSBezierPath drawBezierPathWithRect: dirtyRect options: pathOptions];
+    NSRectFill(self.bounds);
+    //    dirtyRect = self.bounds;
+
+    [pathOptions drawWithRect: self.bounds];
+    //    [NSBezierPath drawBezierPathWithRect: dirtyRect options: pathOptions];
 }
 
 

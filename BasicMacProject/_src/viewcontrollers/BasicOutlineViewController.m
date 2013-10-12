@@ -8,7 +8,6 @@
 #import "BasicOutlineViewController.h"
 #import "BasicTextFieldCellView.h"
 
-
 @implementation BasicOutlineViewController
 
 @synthesize outline;

@@ -7,10 +7,8 @@
 
 #import "BasicLibrary.h"
 
-
 @implementation BasicLibrary {
 }
-
 
 @synthesize delegates;
 

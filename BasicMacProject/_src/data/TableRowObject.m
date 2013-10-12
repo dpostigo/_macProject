@@ -7,10 +7,8 @@
 
 #import "TableRowObject.h"
 
-
 @implementation TableRowObject {
 }
-
 
 @synthesize textLabel;
 @synthesize detailTextLabel;
@@ -30,7 +28,7 @@
 - (id) initWithTextLabel: (NSString *) aTextLabel detailTextLabel: (NSString *) aDetailTextLabel {
     self = [super init];
     if (self) {
-        self.textLabel       = aTextLabel;
+        self.textLabel = aTextLabel;
         self.detailTextLabel = aDetailTextLabel;
     }
 
@@ -40,9 +38,9 @@
 - (id) initWithTextLabel: (NSString *) aTextLabel detailTextLabel: (NSString *) aDetailTextLabel cellIdentifier: (NSString *) aCellIdentifier {
     self = [super init];
     if (self) {
-        self.textLabel       = aTextLabel;
+        self.textLabel = aTextLabel;
         self.detailTextLabel = aDetailTextLabel;
-        self.cellIdentifier  = aCellIdentifier;
+        self.cellIdentifier = aCellIdentifier;
     }
 
     return self;
@@ -52,10 +50,10 @@
 - (id) initWithTextLabel: (NSString *) aTextLabel detailTextLabel: (NSString *) aDetailTextLabel cellIdentifier: (NSString *) aCellIdentifier image: (NSImage *) anImage {
     self = [super init];
     if (self) {
-        self.textLabel       = aTextLabel;
+        self.textLabel = aTextLabel;
         self.detailTextLabel = aDetailTextLabel;
-        self.cellIdentifier  = aCellIdentifier;
-        self.image           = anImage;
+        self.cellIdentifier = aCellIdentifier;
+        self.image = anImage;
     }
 
     return self;
@@ -65,11 +63,11 @@
 - (id) initWithTextLabel: (NSString *) aTextLabel detailTextLabel: (NSString *) aDetailTextLabel cellIdentifier: (NSString *) aCellIdentifier content: (id) aContent image: (NSImage *) anImage {
     self = [super init];
     if (self) {
-        self.textLabel       = aTextLabel;
+        self.textLabel = aTextLabel;
         self.detailTextLabel = aDetailTextLabel;
-        self.cellIdentifier  = aCellIdentifier;
-        self.content         = aContent;
-        self.image           = anImage;
+        self.cellIdentifier = aCellIdentifier;
+        self.content = aContent;
+        self.image = anImage;
     }
 
     return self;
@@ -78,9 +76,9 @@
 - (id) initWithTextLabel: (NSString *) aTextLabel detailTextLabel: (NSString *) aDetailTextLabel image: (NSImage *) anImage {
     self = [super init];
     if (self) {
-        self.textLabel       = aTextLabel;
+        self.textLabel = aTextLabel;
         self.detailTextLabel = aDetailTextLabel;
-        self.image           = anImage;
+        self.image = anImage;
     }
 
     return self;
@@ -90,7 +88,7 @@
 - (id) initWithTextLabel: (NSString *) aTextLabel cellIdentifier: (NSString *) aCellIdentifier {
     self = [super init];
     if (self) {
-        self.textLabel      = aTextLabel;
+        self.textLabel = aTextLabel;
         self.cellIdentifier = aCellIdentifier;
     }
 
@@ -100,9 +98,9 @@
 - (id) initWithTextLabel: (NSString *) aTextLabel cellIdentifier: (NSString *) aCellIdentifier content: (id) aContent {
     self = [super init];
     if (self) {
-        self.textLabel      = aTextLabel;
+        self.textLabel = aTextLabel;
         self.cellIdentifier = aCellIdentifier;
-        self.content        = aContent;
+        self.content = aContent;
     }
 
     return self;
@@ -111,10 +109,10 @@
 - (id) initWithTextLabel: (NSString *) aTextLabel cellIdentifier: (NSString *) aCellIdentifier content: (id) aContent image: (NSImage *) anImage {
     self = [super init];
     if (self) {
-        self.textLabel      = aTextLabel;
+        self.textLabel = aTextLabel;
         self.cellIdentifier = aCellIdentifier;
-        self.content        = aContent;
-        self.image          = anImage;
+        self.content = aContent;
+        self.image = anImage;
     }
 
     return self;
@@ -124,7 +122,7 @@
     self = [super init];
     if (self) {
         self.textLabel = aTextLabel;
-        self.content   = aContent;
+        self.content = aContent;
     }
 
     return self;
@@ -134,7 +132,7 @@
     self = [super init];
     if (self) {
         self.textLabel = aTextLabel;
-        self.image     = anImage;
+        self.image = anImage;
     }
 
     return self;
@@ -143,8 +141,8 @@
 - (id) initWithTextLabel: (NSString *) aTextLabel image: (NSImage *) anImage cellIdentifier: (NSString *) aCellIdentifier {
     self = [super init];
     if (self) {
-        self.textLabel      = aTextLabel;
-        self.image          = anImage;
+        self.textLabel = aTextLabel;
+        self.image = anImage;
         self.cellIdentifier = aCellIdentifier;
     }
 
@@ -154,8 +152,8 @@
 - (id) initWithTextLabel: (NSString *) aTextLabel image: (NSImage *) anImage selectedImage: (NSImage *) aSelectedImage {
     self = [super init];
     if (self) {
-        self.textLabel     = aTextLabel;
-        self.image         = anImage;
+        self.textLabel = aTextLabel;
+        self.image = anImage;
         self.selectedImage = aSelectedImage;
     }
 
@@ -166,8 +164,8 @@
     self = [super init];
     if (self) {
         self.textLabel = aTextLabel;
-        self.image     = anImage;
-        self.content   = aContent;
+        self.image = anImage;
+        self.content = aContent;
     }
 
     return self;
@@ -178,7 +176,7 @@
     self = [super init];
     if (self) {
         self.cellIdentifier = aCellIdentifier;
-        self.content        = aContent;
+        self.content = aContent;
     }
 
     return self;

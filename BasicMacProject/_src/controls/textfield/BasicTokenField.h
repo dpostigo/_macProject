@@ -8,11 +8,9 @@
 #import <Foundation/Foundation.h>
 #import "TableRowObject.h"
 
-
 @interface BasicTokenField : NSTokenField {
     __unsafe_unretained TableRowObject *rowObject;
 }
-
 
 @property(nonatomic, assign) TableRowObject *rowObject;
 @end

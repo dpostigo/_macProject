@@ -8,9 +8,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "NSWindow+Animation.h"
 
-
 @implementation NSWindow (Animation)
-
 
 - (void) animateToAlpha: (CGFloat) toAlpha fromAlpha: (CGFloat) fromAlpha duration: (CGFloat) duration {
     [self animateToAlpha: toAlpha fromAlpha: fromAlpha duration: duration completionHandler: nil];
@@ -20,7 +18,7 @@
     self.alphaValue = fromAlpha;
 
     [NSAnimationContext runAnimationGroup: ^(NSAnimationContext *context) {
-        context.duration       = duration;
+        context.duration = duration;
         context.timingFunction = [CAMediaTimingFunction functionWithName: kCAMediaTimingFunctionEaseInEaseOut];
         [self.animator setAlphaValue: toAlpha];
     }                   completionHandler: completionHandler];

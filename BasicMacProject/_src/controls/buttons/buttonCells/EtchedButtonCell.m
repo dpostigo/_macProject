@@ -8,10 +8,8 @@
 #import "EtchedButtonCell.h"
 #import "NSImage+EtchedImageDrawing.h"
 
-
 @implementation EtchedButtonCell {
 }
-
 
 - (void) drawImage: (NSImage *) image withFrame: (NSRect) frame inView: (NSView *) controlView {
     [super drawImage: image withFrame: frame inView: controlView];

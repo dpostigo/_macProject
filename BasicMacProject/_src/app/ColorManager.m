@@ -8,13 +8,9 @@
 
 #import "ColorManager.h"
 
-
 @implementation ColorManager {
 
 }
-
-
-
 
 + (NSGradient *) blackGradient {
     return [[NSGradient alloc] initWithColorsAndLocations: [NSColor colorWithWhite: 0.3], 0.0,

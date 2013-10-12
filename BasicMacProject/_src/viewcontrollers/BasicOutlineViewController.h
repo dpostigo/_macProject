@@ -14,13 +14,11 @@
 #import "BasicTableCellView.h"
 #import "BasicOutlineView.h"
 
-
 @interface BasicOutlineViewController : BasicListViewController <NSOutlineViewDelegate, NSOutlineViewDataSource> {
 
     IBOutlet NSOutlineView *outline;
     BOOL allowsSelection;
 }
-
 
 @property(nonatomic, strong) NSOutlineView *outline;
 @property(nonatomic) BOOL allowsSelection;

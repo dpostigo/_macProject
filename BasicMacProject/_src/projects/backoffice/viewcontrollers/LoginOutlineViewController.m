@@ -11,10 +11,8 @@
 #import "OutlineSection.h"
 #import "BasicTextFieldCellView.h"
 
-
 @implementation LoginOutlineViewController {
 }
-
 
 - (void) loadView {
     [super loadView];

@@ -7,54 +7,51 @@
 //
 
 #import "PathOptions.h"
-
+#import "BasicGradient.h"
+#import "NSBezierPath+DPUtils.h"
 
 @implementation PathOptions {
 
 }
 
-
 @synthesize backgroundColor;
-@synthesize cornerRadius;
-@synthesize cornerOptions;
 @synthesize gradient;
 @synthesize horizontalGradient;
 @synthesize innerShadow;
 @synthesize outerShadow;
 
-
-@synthesize borderOption;
 @synthesize borderOptions;
-
 @synthesize innerPathOptions;
 
-- (id) initWithGradient: (NSGradient *) aGradient {
+@synthesize cornerProperties;
+
+- (id) initWithGradient: (BasicGradient *) aGradient {
     return [self initWithGradient: aGradient borderColor: nil borderWidth: 0 cornerRadius: 0 cornerOptions: 0];
 }
 
-- (id) initWithGradient: (NSGradient *) aGradient borderColor: (NSColor *) aBorderColor {
+- (id) initWithGradient: (BasicGradient *) aGradient borderColor: (NSColor *) aBorderColor {
     return [self initWithGradient: aGradient borderColor: aBorderColor borderWidth: 0 cornerRadius: 0 cornerOptions: 0];
 }
 
-- (id) initWithGradient: (NSGradient *) aGradient borderColor: (NSColor *) aBorderColor borderWidth: (CGFloat) aBorderWidth {
+- (id) initWithGradient: (BasicGradient *) aGradient borderColor: (NSColor *) aBorderColor borderWidth: (CGFloat) aBorderWidth {
     return [self initWithGradient: aGradient borderColor: aBorderColor borderWidth: aBorderWidth cornerRadius: 0 cornerOptions: 0];
 }
 
-- (id) initWithGradient: (NSGradient *) aGradient borderColor: (NSColor *) aBorderColor borderWidth: (CGFloat) aBorderWidth cornerRadius: (CGFloat) aCornerRadius {
+- (id) initWithGradient: (BasicGradient *) aGradient borderColor: (NSColor *) aBorderColor borderWidth: (CGFloat) aBorderWidth cornerRadius: (CGFloat) aCornerRadius {
     return [self initWithGradient: aGradient borderColor: aBorderColor borderWidth: aBorderWidth cornerRadius: aCornerRadius cornerOptions: 0];
 }
 
-- (id) initWithGradient: (NSGradient *) aGradient borderColor: (NSColor *) aBorderColor borderWidth: (CGFloat) aBorderWidth cornerRadius: (CGFloat) aCornerRadius cornerOptions: (NSBezierPathCornerOptions) aCornerOptions {
+- (id) initWithGradient: (BasicGradient *) aGradient borderColor: (NSColor *) aBorderColor borderWidth: (CGFloat) aBorderWidth cornerRadius: (CGFloat) aCornerRadius cornerOptions: (CornerType) aCornerOptions {
     self = [super init];
     if (self) {
-        //        if (aGradient == nil) aGradient = [[NSGradient alloc] initWithColors: [NSArray arrayWithObject: [NSColor clearColor]]];
-        if (aBorderColor == nil) aBorderColor = [NSColor clearColor];
-        self.backgroundColor = [NSColor whiteColor];
-        self.borderOption = [[BorderOption alloc] initWithBorderColor: aBorderColor borderWidth: aBorderWidth];
 
+        self.cornerProperties = [[CornerProperties alloc] init];
+        //        if (aGradient == nil) aGradient = [[NSGradient alloc] initWithColors: [NSArray arrayWithObject: [NSColor clearColor]]];
+        self.borderOption = [[BorderOption alloc] initWithBorderColor: (aBorderColor == nil ? [NSColor clearColor] : aBorderColor) borderWidth: aBorderWidth];
+        self.borderOption.corners = self.cornerProperties;
         self.gradient = aGradient;
         self.cornerRadius = aCornerRadius;
-        self.cornerOptions = aCornerOptions;
+        self.cornerType = aCornerOptions;
     }
 
     return self;
@@ -64,56 +61,78 @@
 - (id) init {
     self = [super init];
     if (self) {
-        self.borderOption = [[BorderOption alloc] init];
+        self.cornerProperties = [[CornerProperties alloc] init];
+        self.borderOptions = [[NSMutableArray alloc] initWithObjects: [[BorderOption alloc] init], nil];
         self.backgroundColor = [NSColor clearColor];
-        self.cornerOptions = CornerNone;
+        self.cornerType = CornerNone;
     }
 
     return self;
 }
 
-- (void) draw {
+#pragma mark Setters
 
+
+
+- (void) setGradient: (BasicGradient *) gradient1 {
+    gradient = gradient1;
+    if (backgroundColor == nil) {
+        self.backgroundColor = gradient.bottomColor;
+    }
 }
 
-
-#pragma mark Getters / Setters
-
-- (NSColor *) borderColor {
-    return borderOption.borderColor;
+- (void) setBorderOption: (BorderOption *) borderOption1 {
+    [borderOptions replaceObjectAtIndex: 0 withObject: borderOption1];
 }
 
 - (void) setBorderColor: (NSColor *) borderColor1 {
-    borderOption.borderColor = borderColor1;
-}
-
-- (CGFloat) borderWidth {
-    return borderOption.borderWidth;
+    self.borderOption.borderColor = borderColor1;
 }
 
 - (void) setBorderWidth: (CGFloat) aBorderWidth {
-    borderOption.borderWidth = aBorderWidth;
-}
-
-- (BorderType) borderType {
-    return borderOption.borderType;
+    self.borderOption.borderWidth = aBorderWidth;
 }
 
 - (void) setBorderType: (BorderType) aType {
-    borderOption.borderType = aType;
+    self.borderOption.borderType = aType;
 }
-
-
-- (NSArray *) borderOptions {
-    if (borderOptions == nil) return [NSArray arrayWithObject: borderOption];
-    return [[NSArray arrayWithObject: borderOption] arrayByAddingObjectsFromArray: borderOptions];
-}
-
 
 - (void) setCornerRadius: (CGFloat) cornerRadius1 {
-    cornerRadius = cornerRadius1;
-    if (cornerRadius > 0) cornerOptions = CornerUpperLeft | CornerUpperRight | CornerLowerLeft | CornerLowerRight;
+    self.cornerProperties.cornerRadius = cornerRadius1;
 }
+
+- (void) setCornerType: (CornerType) cornerOptions1 {
+    self.cornerProperties.type = cornerOptions1;
+}
+
+
+#pragma mark Getters
+
+
+- (BorderOption *) borderOption {
+    return [borderOptions objectAtIndex: 0];
+}
+
+- (NSColor *) borderColor {
+    return self.borderOption.borderColor;
+}
+
+- (CGFloat) borderWidth {
+    return self.borderOption.borderWidth;
+}
+
+- (BorderType) borderType {
+    return self.borderOption.borderType;
+}
+
+- (CGFloat) cornerRadius {
+    return self.cornerProperties.cornerRadius;
+}
+
+- (CornerType) cornerType {
+    return self.cornerProperties.type;
+}
+
 
 
 
@@ -123,12 +142,47 @@
     copy.backgroundColor = [self.backgroundColor copy];
     copy.borderOption = [self.borderOption copy];
     copy.cornerRadius = self.cornerRadius;
-    copy.cornerOptions = self.cornerOptions;
+    copy.cornerType = self.cornerType;
     copy.gradient = self.gradient;
     copy.horizontalGradient = self.horizontalGradient;
     copy.innerShadow = [self.innerShadow copy];
     copy.outerShadow = [self.outerShadow copy];
     return copy;
 }
+//
+//- (id) copyWithZone: (NSZone *) zone {
+//    return nil;
+//}
+
+
+
+#pragma mark Drawing
+
+- (void) drawWithRect: (NSRect) rect {
+
+    NSBezierPath *path = [NSBezierPath bezierPathWithRect: rect pathOptions: self];
+
+    if (self.gradient == nil) [path drawWithFill: self.backgroundColor];
+    else [self.gradient drawInBezierPath: path angle: 90];
+
+    if (self.horizontalGradient != nil) [self.horizontalGradient drawInBezierPath: path angle: 0];
+    if (self.innerShadow != nil) [path drawShadow: self.innerShadow];
+
+    CGFloat borderInset = 0;
+    for (int j = 0; j < [borderOptions count]; j++) {
+        BorderOption *border = [borderOptions objectAtIndex: j];
+        border.corners = self.cornerProperties;
+
+        borderInset += (border.borderWidth);
+        NSRect borderRect = NSInsetRect(rect, borderInset, borderInset);
+        [border drawWithRect: borderRect];
+
+        rect = borderRect;
+    }
+}
+
+
+#pragma mark Helpers
+
 
 @end

@@ -14,7 +14,7 @@
 @interface JSGeometry : JSNode
 
 @property(nonatomic, strong) NSString *propagationDimension;
-@property(readonly) NSArray           *transverseDimension;
+@property(readonly) NSArray *transverseDimension;
 
 - (NSXMLElement *) exportAsXML;
 - (id) initFromXML: (NSXMLElement *) anElement;

@@ -60,7 +60,7 @@
 - (id) initWithOperators: (JSOperatorsStack *) operators {
     self = [super initWithNibName: @"JSOperatorsViewController" bundle: nil];
     if (self) {
-        self.operators         = operators;
+        self.operators = operators;
         self.syntaxHighlighter = [[JSSyntaxHighlighter alloc] init];
         [self.syntaxHighlighter setDelegate: self];
         self.biasCells = 0;
@@ -144,8 +144,8 @@
 // We use key value coding to assign changes in the various controls to the model
 // The identifier of the controls are equal to the keyPath of the properties we want to set
 - (void) controlTextDidChange: (NSNotification *) obj {
-    NSTextField *sender           = [obj object];
-    NSString    *senderIdentifier = [sender identifier];
+    NSTextField *sender = [obj object];
+    NSString *senderIdentifier = [sender identifier];
 
     // the entries in the token field gets handled in another method so we have to make sure we are only setting the properties we want here
     if ([senderIdentifier isEqualToString: @"name"] || [senderIdentifier isEqualToString: @"evaluation"]) {
@@ -185,10 +185,10 @@
 
 - (NSArray *) tokenField: (NSTokenField *) tokenField shouldAddTokens: (NSArray *) tokens {
     NSMutableArray *tokensToBeAdded = [NSMutableArray array];
-    NSArray        *currentTokens   = [tokenField objectValue];
+    NSArray *currentTokens = [tokenField objectValue];
     // For some stupid reason when cocoa calls this method it has already added the candidate tokens to the toeknfield tokens list
     // For every token in the candidate list we count how many times it appears in the tokenfield tokens list and if it appears twice than it's a duplicate and we reject it
-    for (NSString  *candidateToken in tokens) {
+    for (NSString *candidateToken in tokens) {
         int appearance = 0;
         for (NSString *token in currentTokens) {
             if ([candidateToken isEqualToString: token]) appearance++;
@@ -203,7 +203,7 @@
         NSString *tokenFieldIdentifier = [tokenField identifier];
 
         id element = (self.operators.operators)[row - self.biasCells];
-        id value   = [element valueForKeyPath: tokenFieldIdentifier];
+        id value = [element valueForKeyPath: tokenFieldIdentifier];
         if (value) value = [(NSArray *) value arrayByAddingObjectsFromArray: tokensToBeAdded];
         else value = [tokensToBeAdded copy];
         [element setValue: value forKeyPath: tokenFieldIdentifier];
@@ -228,7 +228,7 @@
         // These characters are associated to the unsigned short 65532 which is out of bounds of the UTF range NSCharacterSet handles
         // These characters are called "Object Replacement Character"
         NSCharacterSet *characterset = [NSCharacterSet characterSetWithCharactersInString: @"\uFFFC"];
-        NSString       *tokenString  = [(NSMutableString *) object stringByTrimmingCharactersInSet: characterset];
+        NSString *tokenString = [(NSMutableString *) object stringByTrimmingCharactersInSet: characterset];
         if ([tokenString length]) {
 
             // object is passed as a mutable string so before handling it to our internal validation method we want to package it in an array
@@ -272,8 +272,8 @@
 
 - (BOOL) tableView: (NSTableView *) tableView acceptDrop: (id) info row: (NSInteger) row dropOperation: (NSTableViewDropOperation) operation {
     NSPasteboard *pasteboard = [info draggingPasteboard];
-    NSData       *rowData    = [pasteboard dataForType: SectionTableViewDataType];
-    NSIndexSet   *rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData: rowData];
+    NSData *rowData = [pasteboard dataForType: SectionTableViewDataType];
+    NSIndexSet *rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData: rowData];
     NSUInteger dropIndex = row - self.biasCells;
 
     // insertIndex is the index where we are going to insert back the data in the model array

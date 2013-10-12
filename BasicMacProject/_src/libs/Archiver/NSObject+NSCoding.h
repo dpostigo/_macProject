@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface NSObject (NSCoding)
 
 - (void) autoEncodeWithCoder: (NSCoder *) coder;

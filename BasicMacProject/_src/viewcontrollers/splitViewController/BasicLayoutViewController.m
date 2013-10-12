@@ -14,9 +14,6 @@
 
 @synthesize footerIndex;
 
-
-
-
 - (SplitViewContainer *) footerContainer {
     SplitViewContainer *ret = nil;
     NSUInteger length = [self.splitView.subviews count];

@@ -14,7 +14,7 @@
 @interface BOMainViewController : BasicSplitSidebarViewController {
 
     IBOutlet BasicSplitView *contentSplitView;
-//    IBOutlet SplitViewContainer *mainView;
+    //    IBOutlet SplitViewContainer *mainView;
     IBOutlet SplitViewContainer *topView;
     IBOutlet SplitViewContainer *bottomView;
 

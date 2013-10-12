@@ -13,7 +13,7 @@ enum {
     /** state of subview is collapsed */
             DMSplitViewStateCollapsed = 0,
     /** state of subview is expanded */
-            DMSplitViewStateExpanded  = 1
+            DMSplitViewStateExpanded = 1
 };
 typedef NSUInteger DMSplitViewState;
 
@@ -47,11 +47,11 @@ typedef NSUInteger DMSplitViewState;
 /** DMSplitView behavior */
 enum {
     /** This is the default behavior of NSSplitView */
-            DMSplitViewResizeModeProportional  = 0,
+            DMSplitViewResizeModeProportional = 0,
     /** Resize each subview using a priority list */
             DMSplitViewResizeModePriorityBased = 1,
     /** Resize all subviews by distributing equal shares of space simultaeously */
-            DMSplitViewResizeModeUniform       = 2
+            DMSplitViewResizeModeUniform = 2
 };
 typedef NSUInteger DMSplitViewResizeMode;
 
@@ -94,13 +94,13 @@ typedef NSUInteger DMSplitViewResizeMode;
 /** set divider thickness value */
 @property(nonatomic, assign) CGFloat dividerThickness;
 /** should draw splitview divider. NO to use default NSSplitView behavior */
-@property(nonatomic, assign) BOOL    shouldDrawDivider;
+@property(nonatomic, assign) BOOL shouldDrawDivider;
 /** set divider's color */
 @property(nonatomic, retain) NSColor *dividerColor;
 /** set divider draw rect edge */
 @property(nonatomic, assign) NSRectEdge dividerRectEdge;
 /** should draw divider handle */
-@property(nonatomic, assign) BOOL       shouldDrawDividerHandle;
+@property(nonatomic, assign) BOOL shouldDrawDividerHandle;
 
 #pragma mark - Initialization
 

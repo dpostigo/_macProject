@@ -8,17 +8,14 @@
 
 #import "TreeDatum.h"
 
-
 @implementation TreeDatum
-
 
 @synthesize name;
 @synthesize value;
 
-
 + (TreeDatum *) treeDatumFromName: (NSString *) name value: (NSString *) value {
     TreeDatum *td = [[TreeDatum alloc] init];
-    td.name  = name;
+    td.name = name;
     td.value = value;
 
     return td;

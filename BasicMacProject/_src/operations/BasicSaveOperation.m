@@ -7,10 +7,8 @@
 
 #import "BasicSaveOperation.h"
 
-
 @implementation BasicSaveOperation {
 }
-
 
 - (id) init {
     self = [super init];
@@ -23,7 +21,7 @@
 
 - (void) main {
     [super main];
-    NSArray       *keys = [saveDictionary allKeys];
+    NSArray *keys = [saveDictionary allKeys];
     for (NSString *key in keys) {
         id object = [saveDictionary objectForKey: key];
         [[NSUserDefaults standardUserDefaults] setObject: [NSKeyedArchiver archivedDataWithRootObject: object] forKey: key];
@@ -34,7 +32,7 @@
 
 - (void) testDearchive {
     NSArray *array = nil;
-    NSData  *data  = [[NSUserDefaults standardUserDefaults] objectForKey: @"items"];
+    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey: @"items"];
     if (data != nil) {
         array = [NSKeyedUnarchiver unarchiveObjectWithData: data];
         NSLog(@"array.count = %lu", array.count);

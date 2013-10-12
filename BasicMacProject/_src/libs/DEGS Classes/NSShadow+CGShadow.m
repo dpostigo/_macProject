@@ -9,13 +9,10 @@
 #import "NSShadow+CGShadow.h"
 #import "NSColor+CGColor.h"
 
-
 #define IN_RUNNING_LION (floor(NSAppKitVersionNumber) > NSAppKitVersionNumber10_6)
 #define IN_COMPILING_LION __MAC_OS_X_VERSION_MAX_ALLOWED >= 1070
 
-
 @implementation NSShadow (CGShadow)
-
 
 - (void) setInCGContext: (CGContextRef) context {
     [NSShadow setShadow: self inCGContext: context];

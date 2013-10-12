@@ -51,9 +51,9 @@
 @interface KGNoiseView : NSView
 
 @property(strong, nonatomic) NSColor *backgroundColor;
-@property NSShadow                   *shadow;
+@property NSShadow *shadow;
 #endif
-@property(nonatomic) CGFloat     noiseOpacity;
+@property(nonatomic) CGFloat noiseOpacity;
 @property(nonatomic) CGBlendMode noiseBlendMode;
 @end
 

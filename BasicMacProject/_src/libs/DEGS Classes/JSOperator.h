@@ -17,7 +17,7 @@
 @property(nonatomic) NSUInteger type;
 @property(readonly, nonatomic, strong) NSArray *typeOptions;
 @property BOOL constant;
-@property(nonatomic, strong) NSArray  *names;
+@property(nonatomic, strong) NSArray *names;
 @property(nonatomic, strong) NSString *definition;
 
 - (NSXMLElement *) exportAsXML;

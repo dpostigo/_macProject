@@ -10,9 +10,7 @@
 #import "NSBezierPath+DPUtils.h"
 #import "NSGraphicsContext+DPUtils.h"
 
-
 @implementation BasicBackgroundViewOld
-
 
 @synthesize borderColor;
 @synthesize gradient;
@@ -24,7 +22,6 @@
 @synthesize shadow;
 
 @synthesize gradientRotation;
-
 
 - (id) initWithFrame: (NSRect) frame {
     self = [super initWithFrame: frame];
@@ -45,15 +42,14 @@
 
 - (void) setup {
     cornerRadius = 0.0;
-    borderWidth  = 0.0;
-    self.borderColor     = [NSColor clearColor];
+    borderWidth = 0.0;
+    self.borderColor = [NSColor clearColor];
     self.backgroundColor = [NSColor clearColor];
 
-
     shadow = [[NSShadow alloc] init];
-    shadow.shadowColor      = [NSColor clearColor];
+    shadow.shadowColor = [NSColor clearColor];
     shadow.shadowBlurRadius = 2.0;
-    shadow.shadowOffset     = NSMakeSize(0, -1);
+    shadow.shadowOffset = NSMakeSize(0, -1);
     shadowOpacity = 0.5;
 
     gradientRotation = 90.0;
@@ -67,11 +63,10 @@
 
 - (void) drawRect: (NSRect) rect {
 
-
     if (shadow.shadowColor != [NSColor clearColor]) {
 
-        CGFloat amount  = 3;
-        NSRect  newRect = self.bounds;
+        CGFloat amount = 3;
+        NSRect newRect = self.bounds;
         if (self.isFlipped) {
             newRect.size.height -= amount;
 
@@ -80,14 +75,12 @@
             newRect.origin.y += amount;
         }
 
-
         NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect: newRect xRadius: cornerRadius yRadius: cornerRadius];
         [path drawShadow: shadow shadowOpacity: shadowOpacity];
         [path drawGradient: gradient angle: gradientRotation];
         [path drawStroke: borderColor width: borderWidth];
 
     } else {
-
 
         NSRect bounds = self.bounds;
         NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect: self.bounds xRadius: cornerRadius yRadius: cornerRadius];

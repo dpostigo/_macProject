@@ -20,11 +20,11 @@
 
 @property(nonatomic, strong) JSVectors *vectors;
 
-@property(strong) IBOutlet NSMenu                *addElementMenu;
+@property(strong) IBOutlet NSMenu *addElementMenu;
 @property(nonatomic, strong) JSSyntaxHighlighter *syntaxHighlighter;
 
-@property(nonatomic, strong) JSVectorTableCellView         *vectorDummyCell;
-@property(nonatomic, strong) JSNoiseVectorTableCellView    *noiseVectorDummyCell;
+@property(nonatomic, strong) JSVectorTableCellView *vectorDummyCell;
+@property(nonatomic, strong) JSNoiseVectorTableCellView *noiseVectorDummyCell;
 @property(nonatomic, strong) JSComputedVectorTableCellView *computedVectorDummyCell;
 
 @end
@@ -102,7 +102,7 @@
 - (id) initWithVectors: (JSVectors *) vectors {
     self = [super initWithNibName: @"JSVectorViewController" bundle: nil];
     if (self) {
-        self.vectors           = vectors;
+        self.vectors = vectors;
         self.syntaxHighlighter = [[JSSyntaxHighlighter alloc] init];
         [self.syntaxHighlighter setDelegate: self];
         self.biasCells = 0;
@@ -257,14 +257,14 @@
         JSVectorTableCellView *cellView = (JSVectorTableCellView *) [tableView makeViewWithIdentifier: @"vectorCell" owner: self];
         cellView.initialisationTextField.syntaxHighlighter = self.syntaxHighlighter;
         [self fillVectorCell: cellView atRow: row];
-        cellView.delegate                                     = (id) self;
-        cellView.dimensionsTokenField.allowsEmptyTokens       = YES;
+        cellView.delegate = (id) self;
+        cellView.dimensionsTokenField.allowsEmptyTokens = YES;
         cellView.initialisationTextField.keepsEditingOnReturn = YES;
         return cellView;
     } else if ([(self.vectors.vectors)[row] isKindOfClass: [JSNoiseVector class]]) {
         JSNoiseVectorTableCellView *cellView = (JSNoiseVectorTableCellView *) [tableView makeViewWithIdentifier: @"noiseVectorCell" owner: self];
         [self fillNoiseVectorCell: cellView atRow: row];
-        cellView.delegate                               = (id) self;
+        cellView.delegate = (id) self;
         cellView.dimensionsTokenField.allowsEmptyTokens = YES;
         return cellView;
     } else {
@@ -272,7 +272,7 @@
         cellView.evaluationTextField.syntaxHighlighter = self.syntaxHighlighter;
         [self fillComputedVectorCell: cellView atRow: row];
         cellView.evaluationTextField.keepsEditingOnReturn = YES;
-        cellView.dimensionsTokenField.allowsEmptyTokens   = YES;
+        cellView.dimensionsTokenField.allowsEmptyTokens = YES;
         return cellView;
     }
 }
@@ -319,7 +319,7 @@
     } else {
         NSRect frame = [(NSButton *) sender frame];
 
-        NSSize  menuSize   = [self.addElementMenu size];
+        NSSize menuSize = [self.addElementMenu size];
         NSPoint menuOrigin = [[(NSButton *) sender superview] convertPoint: NSMakePoint(frame.origin.x, frame.origin.y + frame.size.height + menuSize.height) toView: nil];
 
         NSEvent *event = [NSEvent mouseEventWithType: NSLeftMouseDown
@@ -367,9 +367,9 @@
 #pragma mark - Cell editing methods
 
 - (void) controlTextDidChange: (NSNotification *) obj {
-    NSTextField *sender           = [obj object];
+    NSTextField *sender = [obj object];
     //    NSString *enteredString = [sender.stringValue stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    NSString    *senderIdentifier = [sender identifier];
+    NSString *senderIdentifier = [sender identifier];
     //    NSInteger row = [self.mainTableView rowForView:sender];
 
     if ([senderIdentifier isEqualToString: @"name"] || [senderIdentifier isEqualToString: @"cdataString"] || [senderIdentifier isEqualToString: @"filename"] || [senderIdentifier isEqualToString: @"seed"] || [senderIdentifier isEqualToString: @"definition"] || [senderIdentifier isEqualToString: @"mean"]) {
@@ -401,10 +401,10 @@
 
 - (NSArray *) tokenField: (NSTokenField *) tokenField shouldAddTokens: (NSArray *) tokens {
     NSMutableArray *tokensToBeAdded = [NSMutableArray array];
-    NSArray        *currentTokens   = [tokenField objectValue];
+    NSArray *currentTokens = [tokenField objectValue];
     // For some stupid reason when cocoa calls this method it has already added the candidate tokens to the toeknfield tokens list
     // For every token in the candidate list we count how many times it appears in the tokenfield tokens list and if it appears twice than it's a duplicate and we reject it
-    for (NSString  *candidateToken in tokens) {
+    for (NSString *candidateToken in tokens) {
         int appearance = 0;
         for (NSString *token in currentTokens) {
             if ([candidateToken isEqualToString: token]) appearance++;
@@ -419,7 +419,7 @@
         NSString *tokenFieldIdentifier = [tokenField identifier];
 
         id element = (self.vectors.vectors)[row];
-        id value   = [element valueForKeyPath: tokenFieldIdentifier];
+        id value = [element valueForKeyPath: tokenFieldIdentifier];
         if (value) value = [(NSArray *) value arrayByAddingObjectsFromArray: tokensToBeAdded];
         else value = [tokensToBeAdded copy];
         [element setValue: value forKeyPath: tokenFieldIdentifier];
@@ -444,7 +444,7 @@
         // These characters are associated to the unsigned short 65532 which is out of bounds of the UTF range NSCharacterSet handles
         // These characters are called "Object Replacement Character"
         NSCharacterSet *characterset = [NSCharacterSet characterSetWithCharactersInString: @"\uFFFC"];
-        NSString       *tokenString  = [(NSMutableString *) object stringByTrimmingCharactersInSet: characterset];
+        NSString *tokenString = [(NSMutableString *) object stringByTrimmingCharactersInSet: characterset];
         if ([tokenString length]) {
 
             // object is passed as a mutable string so before handling it to our internal validation method we want to package it in an array
@@ -468,8 +468,8 @@
 - (BOOL) tokenField: (JSTokenField *) tokenField shouldAddEmptyTokenAtIndex: (NSUInteger) index {
     if ([[tokenField identifier] isEqualToString: @"dimensions"]) {
         if ([[tokenField objectValue] count] == 0) {
-            NSInteger row     = [self.mainTableView rowForView: tokenField];
-            id        element = (self.vectors.vectors)[row];
+            NSInteger row = [self.mainTableView rowForView: tokenField];
+            id element = (self.vectors.vectors)[row];
             [element setValue: [NSArray arrayWithObject: @""] forKeyPath: @"dimensions"];
             return YES;
         }
@@ -489,7 +489,7 @@
         if ([(self.vectors.vectors)[row] isKindOfClass: [JSVector class]]) {
             JSVector *vector = (self.vectors.vectors)[row];
             if ([senderIdentifier isEqualToString: @"initialisationButton"]) {
-                vector.initialisation          = selection;
+                vector.initialisation = selection;
                 NSString *initialisationString = (vector.initialisationOptions)[selection];
 
                 JSVectorTableCellView *changedCell = [self.mainTableView viewAtColumn: 0 row: row makeIfNecessary: NO];
@@ -503,8 +503,8 @@
         } else if ([(self.vectors.vectors)[row] isKindOfClass: [JSNoiseVector class]]) {
             JSNoiseVector *vector = (self.vectors.vectors)[row];
             if ([senderIdentifier isEqualToString: @"kindButton"]) {
-                vector.kind                             = selection;
-                NSString                   *kindString  = (vector.kindOptions)[vector.kind];
+                vector.kind = selection;
+                NSString *kindString = (vector.kindOptions)[vector.kind];
                 JSNoiseVectorTableCellView *changedCell = [self.mainTableView viewAtColumn: 0 row: row makeIfNecessary: NO];
                 if ([kindString isEqualToString: @"jump"] || [kindString isEqualToString: @"poissonian"])
                     [changedCell setNoiseVectorCellState: JSNoiseVectorCellWithMeanState];
@@ -516,7 +516,7 @@
         }
         if ([senderIdentifier isEqualToString: @"typeButton"]) {
             JSGeneralVector *vector = (self.vectors.vectors)[row];
-            vector.type             = selection;
+            vector.type = selection;
         }
         if (row != [self.mainTableView selectedRow]) [self.mainTableView selectRowIndexes: [NSIndexSet indexSetWithIndex: row] byExtendingSelection: NO];
     }
@@ -545,8 +545,8 @@
 
 - (BOOL) tableView: (NSTableView *) tableView acceptDrop: (id) info row: (NSInteger) row dropOperation: (NSTableViewDropOperation) operation {
     NSPasteboard *pasteboard = [info draggingPasteboard];
-    NSData       *rowData    = [pasteboard dataForType: SectionTableViewDataType];
-    NSIndexSet   *rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData: rowData];
+    NSData *rowData = [pasteboard dataForType: SectionTableViewDataType];
+    NSIndexSet *rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData: rowData];
     NSUInteger dropIndex = row - self.biasCells;
 
     // insertIndex is the index where we are going to insert back the data in the model array

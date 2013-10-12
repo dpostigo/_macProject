@@ -16,12 +16,12 @@
 - (void) loadView {
     [super loadView];
 
-//    NSLog(@"self.outline.refusesFirstResponder = %d", self.outline.refusesFirstResponder);
-//    NSLog(@"self.outline.enclosingScrollView.nextKeyView = %@", self.outline.enclosingScrollView.nextKeyView);
-//
-//    NSClipView *clipView = self.outline.enclosingScrollView.nextKeyView;
-//    NSLog(@"clipView.nextKeyView = %@", clipView.nextKeyView);
-//    NSLog(@"clipView.nextResponder = %@", clipView.nextResponder);
+    //    NSLog(@"self.outline.refusesFirstResponder = %d", self.outline.refusesFirstResponder);
+    //    NSLog(@"self.outline.enclosingScrollView.nextKeyView = %@", self.outline.enclosingScrollView.nextKeyView);
+    //
+    //    NSClipView *clipView = self.outline.enclosingScrollView.nextKeyView;
+    //    NSLog(@"clipView.nextKeyView = %@", clipView.nextKeyView);
+    //    NSLog(@"clipView.nextResponder = %@", clipView.nextResponder);
 }
 
 - (void) prepareDataSource {

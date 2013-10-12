@@ -11,6 +11,5 @@
 #import "BasicSparrowSidebarViewController.h"
 #import "BasicStyledOutlineViewController.h"
 
-
 @interface CartsSidebarViewController : BasicStyledOutlineViewController
 @end

@@ -7,9 +7,7 @@
 
 #import "BasicArrayViewController.h"
 
-
 @implementation BasicArrayViewController
-
 
 @synthesize arraySource;
 @synthesize arrayController;

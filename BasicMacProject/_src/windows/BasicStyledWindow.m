@@ -10,28 +10,58 @@
 #import "BasicInnerShadowView.h"
 #import "NSColor+DPColors.h"
 #import "BasicWindowDisplayView.h"
+#import "BasicWindowTitleView.h"
 
 @implementation BasicStyledWindow {
 
 }
 
 - (void) setup {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
     [super setup];
-
-    self.topMargin = 30;
     //    self.backgroundColor = [NSColor clearColor];
+    //    [self setWindowBackgroundView: barView];
+    //    [self setPreservesContentDuringLiveResize: YES];
+}
 
-    BasicWindowDisplayView *barView = [[BasicWindowDisplayView alloc] init];
-    barView.identifier = @"WindowBackground";
-    barView.gradient = [[NSGradient alloc] initWithColors: [NSArray arrayWithObjects: [NSColor colorWithDeviceWhite: 0.2 alpha: 1.0], [NSColor blackColor], nil]];
+- (BasicWindowDisplayView *) windowBackground {
 
-    barView.cornerRadius = 5;
-    barView.borderWidth = 0;
-    //    barView.pathOptions.backgroundColor = [NSColor colorWithDeviceWhite: 0.1 alpha: 1.0];
+    BasicWindowDisplayView *ret = [super windowBackground];
+    ret.identifier = @"WindowBackground";
 
-    [self setWindowBackgroundView: barView];
-    [self setPreservesContentDuringLiveResize: YES];
+    ret.gradient = [[BasicGradient alloc] initWithTopColor: [NSColor colorWithWhite: 0.4] bottomColor: [NSColor colorWithWhite: 0.05]];
+    ret.backgroundColor = [NSColor clearColor];
+    ret.backgroundColor = [NSColor blueColor];
+    ret.cornerRadius = 5;
+    [ret setBorderWidth: 0.5 borderColor: [NSColor blackColor]];
+
+    ret.windowHeaderView = self.windowHeaderView;
+    ret.windowFooterView = self.windowFooterView;
+
+    return ret;
+}
+
+- (BasicWindowTitleView *) windowHeaderView {
+    BasicWindowTitleView *windowHeader = [[BasicWindowTitleView alloc] init];
+    windowHeader.gradient = [[BasicGradient alloc] initWithTopColor: [NSColor colorWithWhite: 0.4] bottomColor: [NSColor colorWithWhite: 0.2] percent: 0.5];
+    windowHeader.cornerRadius = 5;
+    windowHeader.cornerOptions = CornerUpperLeft | CornerUpperRight;
+    [windowHeader setBorderWidth: 0.5 borderColor: [NSColor blackColor]];
+
+    BorderOption *topBorder = [BorderOption topBorderWithGradient: [BasicGradient whiteShineGradient] borderWidth: 0.5];
+    [windowHeader addBorder: topBorder];
+
+    return windowHeader;
+
+}
+
+
+- (BasicWindowTitleView *) windowFooterView {
+    BasicWindowTitleView *ret = self.windowHeaderView;
+    ret.cornerOptions = CornerLowerLeft | CornerLowerRight;
+
+    //    ret.gradient = [[BasicGradient alloc] initWithTopColor: [NSColor colorWithWhite: 0.4] bottomColor: [NSColor colorWithWhite: 0.2] percent: 0.5];
+    return ret;
+
 }
 
 

@@ -11,11 +11,9 @@
 #import "TaskInfoViewController.h"
 #import "TaskDetailViewController.h"
 
-
 @interface TaskDiscussionViewController : BasicTableViewController <BasicTextFieldDelegate> {
     __unsafe_unretained TaskDetailViewController *detailController;
 }
-
 
 @property(nonatomic, assign) TaskDetailViewController *detailController;
 - (IBAction) handlePostButton: (id) sender;

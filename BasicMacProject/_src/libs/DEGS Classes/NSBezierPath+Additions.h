@@ -8,18 +8,16 @@
 
 #import <Cocoa/Cocoa.h>
 
-
 enum {
-    JSLowerLeftCorner  = 1 << 0,
+    JSLowerLeftCorner = 1 << 0,
     JSLowerRightCorner = 1 << 1,
-    JSUpperLeftCorner  = 1 << 2,
+    JSUpperLeftCorner = 1 << 2,
     JSUpperRightCorner = 1 << 3,
 };
 typedef NSUInteger JSRoundedCornerOptions;
 
 
 @interface NSBezierPath (Additions)
-
 
 + (NSBezierPath *) bezierPathWithRoundedRect: (NSRect) rect corners: (JSRoundedCornerOptions) corners radius: (CGFloat) radius;
 - (void) appendBezierPathWithRoundedRect: (NSRect) rect corners: (JSRoundedCornerOptions) corners radius: (CGFloat) radius;

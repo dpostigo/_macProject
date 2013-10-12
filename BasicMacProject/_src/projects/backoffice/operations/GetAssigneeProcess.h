@@ -9,11 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "BasicBackOfficeOperation.h"
 
-
 @interface GetAssigneeProcess : BasicBackOfficeOperation {
     NSString *jobId;
 }
-
 
 @property(nonatomic, retain) NSString *jobId;
 - (id) initWithJobId: (NSString *) jobId;

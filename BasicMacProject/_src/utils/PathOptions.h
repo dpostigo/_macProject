@@ -7,45 +7,58 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSBezierPath+DPUtils.h"
+//#import "NSBezierPath+DPUtils.h"
 #import "BorderOption.h"
-
+#import "BasicGradient.h"
+#import "CornerProperties.h"
 
 @interface PathOptions : NSObject <NSCopying> {
     NSColor *backgroundColor;
-    BorderOption *borderOption;
-    NSArray *borderOptions;
+    BasicGradient *gradient;
+    BasicGradient *horizontalGradient;
 
-    CGFloat cornerRadius;
-    NSGradient *gradient;
-    NSGradient *horizontalGradient;
+
+    NSMutableArray *borderOptions;
+    CornerProperties *cornerProperties;
+
+
     NSShadow *innerShadow;
     NSShadow *outerShadow;
-    NSBezierPathCornerOptions cornerOptions;
-
     PathOptions *innerPathOptions;
+
 }
+
+
+#pragma mark Pointers
+@property(nonatomic) CGFloat cornerRadius;
+@property(nonatomic) CornerType cornerType;
+
+
+@property(nonatomic) CGFloat borderWidth;
+@property(nonatomic) BorderType borderType;
+@property(nonatomic, strong) NSColor *borderColor;
+
+#pragma mark Synthesized
+
+@property(nonatomic, strong) BasicGradient *gradient;
+@property(nonatomic, strong) BasicGradient *horizontalGradient;
+
+
+@property(nonatomic, strong) BorderOption *borderOption;
+@property(nonatomic, strong) CornerProperties *cornerProperties;
+@property(nonatomic, strong) NSMutableArray *borderOptions;
 
 @property(nonatomic, strong) NSColor *backgroundColor;
 @property(nonatomic, strong) NSShadow *outerShadow;
 @property(nonatomic, strong) NSShadow *innerShadow;
-@property(nonatomic, strong) NSGradient *gradient;
-@property(nonatomic, strong) NSGradient *horizontalGradient;
-@property(nonatomic, strong) NSColor *borderColor;
-@property(nonatomic) NSBezierPathCornerOptions cornerOptions;
-
-@property(nonatomic, strong) BorderOption *borderOption;
-@property(nonatomic) CGFloat borderWidth;
-@property(nonatomic) CGFloat cornerRadius;
-@property(nonatomic) BorderType borderType;
-
-
-@property(nonatomic, strong) NSArray *borderOptions;
 @property(nonatomic, strong) PathOptions *innerPathOptions;
-- (id) initWithGradient: (NSGradient *) gradient;
-- (id) initWithGradient: (NSGradient *) aGradient borderColor: (NSColor *) aBorderColor;
-- (id) initWithGradient: (NSGradient *) aGradient borderColor: (NSColor *) aBorderColor borderWidth: (CGFloat) aBorderWidth;
-- (id) initWithGradient: (NSGradient *) aGradient borderColor: (NSColor *) aBorderColor borderWidth: (CGFloat) aBorderWidth cornerRadius: (CGFloat) aCornerRadius;
-- (id) initWithGradient: (NSGradient *) aGradient borderColor: (NSColor *) aBorderColor borderWidth: (CGFloat) aBorderWidth cornerRadius: (CGFloat) aCornerRadius cornerOptions: (NSBezierPathCornerOptions) aCornerOptions;
+
+
+- (id) initWithGradient: (BasicGradient *) gradient;
+- (id) initWithGradient: (BasicGradient *) aGradient borderColor: (NSColor *) aBorderColor;
+- (id) initWithGradient: (BasicGradient *) aGradient borderColor: (NSColor *) aBorderColor borderWidth: (CGFloat) aBorderWidth;
+- (id) initWithGradient: (BasicGradient *) aGradient borderColor: (NSColor *) aBorderColor borderWidth: (CGFloat) aBorderWidth cornerRadius: (CGFloat) aCornerRadius;
+- (id) initWithGradient: (BasicGradient *) aGradient borderColor: (NSColor *) aBorderColor borderWidth: (CGFloat) aBorderWidth cornerRadius: (CGFloat) aCornerRadius cornerOptions: (CornerType) aCornerOptions;
+- (void) drawWithRect: (NSRect) rect;
 
 @end

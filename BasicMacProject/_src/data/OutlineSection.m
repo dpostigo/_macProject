@@ -7,10 +7,8 @@
 
 #import "OutlineSection.h"
 
-
 @implementation OutlineSection {
 }
-
 
 @synthesize isExpandable;
 
@@ -30,7 +28,7 @@
 - (id) initWithTitle: (NSString *) aTitle isExpandable: (BOOL) aIsExpandable cellIdentifier: (NSString *) aIdentifier {
     self = [super initWithTitle: aTitle];
     if (self) {
-        self.isExpandable   = aIsExpandable;
+        self.isExpandable = aIsExpandable;
         self.cellIdentifier = aIdentifier;
     }
 

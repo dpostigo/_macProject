@@ -12,6 +12,6 @@
 @interface JSIntroductionTableCellView : JSTableCellView
 
 @property(strong) IBOutlet NSPopUpButton *formatButton;
-@property(strong) IBOutlet JSTextField   *filenameTextField;
+@property(strong) IBOutlet JSTextField *filenameTextField;
 
 @end

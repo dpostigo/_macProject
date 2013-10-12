@@ -7,9 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface BOWhiteTextButton : NSButton
-
 
 - (void) setup;
 @end

@@ -8,7 +8,6 @@
 
 #import "NSAttributedString+DPUtils.h"
 
-
 @implementation NSAttributedString (DPUtils)
 
 + (NSAttributedString *) attributedStringWithString: (NSString *) string font: (NSFont *) font {
@@ -31,8 +30,6 @@
 + (NSAttributedString *) attributedStringWithString: (NSString *) string font: (NSFont *) font paragraphStyle: (NSParagraphStyle *) paragraphStyle {
     return [NSAttributedString attributedStringWithString: string font: font textColor: [NSColor blackColor] paragraphStyle: paragraphStyle];
 }
-
-
 
 
 + (NSAttributedString *) attributedStringWithString: (NSString *) string font: (NSFont *) font textColor: (NSColor *) aColor shadow: (NSShadow *) shadow {

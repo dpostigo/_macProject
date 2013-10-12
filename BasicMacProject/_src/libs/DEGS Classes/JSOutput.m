@@ -109,7 +109,7 @@
 }
 
 - (NSArray *) listOfMomentsIdentifiers {
-    NSArray      *momentsIdentifiers = [NSArray array];
+    NSArray *momentsIdentifiers = [NSArray array];
     for (JSGroup *group in self.groups) {
         momentsIdentifiers = [momentsIdentifiers arrayByAddingObjectsFromArray: group.moments];
     }

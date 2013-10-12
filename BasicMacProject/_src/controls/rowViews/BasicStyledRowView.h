@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "BasicCustomRowView.h"
 
-
 @interface BasicStyledRowView : BasicCustomRowView {
 
 }

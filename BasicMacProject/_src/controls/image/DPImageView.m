@@ -8,7 +8,6 @@
 
 #import "DPImageView.h"
 
-
 @implementation DPImageView {
 
 }

@@ -9,7 +9,6 @@
 
 @interface NSButton (TextColor)
 
-
 - (NSColor *) textColor;
 - (void) setTextColor: (NSColor *) textColor;
 - (void) setFont: (NSFont *) font;

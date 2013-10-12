@@ -8,12 +8,10 @@
 #import <Foundation/Foundation.h>
 #import "BasicViewController.h"
 
-
 @interface BasicListViewController : BasicViewController {
 
     NSMutableArray *dataSource;
 }
-
 
 @property(nonatomic, strong) NSMutableArray *dataSource;
 - (void) prepareDataSource;

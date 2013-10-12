@@ -9,15 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "BasicOperation.h"
 
-
 @interface BasicBackOfficeOperation : BasicOperation {
 
     NSString *urlString;
-    NSURL    *url;
+    NSURL *url;
 }
 
-
-@property(nonatomic, strong) NSURL    *url;
+@property(nonatomic, strong) NSURL *url;
 @property(nonatomic, strong) NSString *urlString;
 
 - (id) initWithURL: (NSString *) URL;

@@ -20,7 +20,7 @@
 #pragma mark - Window Button Group
 
 NSString *const INWindowButtonGroupDidUpdateRolloverStateNotification = @"INWindowButtonGroupDidUpdateRolloverStateNotification";
-NSString *const kINWindowButtonGroupDefault                           = @"com.indragie.inappstorewindow.defaultWindowButtonGroup";
+NSString *const kINWindowButtonGroupDefault = @"com.indragie.inappstorewindow.defaultWindowButtonGroup";
 
 @interface INWindowButtonGroup : NSObject
 
@@ -106,9 +106,9 @@ NSString *const kINWindowButtonGroupDefault                           = @"com.in
 
 @interface INWindowButton ()
 
-@property(nonatomic, copy) NSString                        *groupIdentifier;
+@property(nonatomic, copy) NSString *groupIdentifier;
 @property(nonatomic, strong, readonly) INWindowButtonGroup *group;
-@property(nonatomic, strong) NSTrackingArea                *mouseTrackingArea;
+@property(nonatomic, strong) NSTrackingArea *mouseTrackingArea;
 
 @end
 

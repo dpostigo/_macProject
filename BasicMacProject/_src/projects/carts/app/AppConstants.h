@@ -7,7 +7,6 @@
 
 #import <Foundation/Foundation.h>
 
-
 @protocol AppConstants
 
 #define TESTFLIGHT_TOKEN @"5923614b-ffcf-41af-8a27-1775e808a74e"

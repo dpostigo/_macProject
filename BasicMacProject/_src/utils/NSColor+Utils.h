@@ -7,10 +7,9 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface NSColor (Utils)
 
-
++ (NSColor *) alphaWhite: (CGFloat) alphaValue;
 + (NSColor *) colorWithWhite: (CGFloat) white;
 + (NSColor *) colorWithWhite: (CGFloat) white alpha: (CGFloat) alpha;
 + (CGFloat) colorComponentFrom: (NSString *) string start: (NSUInteger) start length: (NSUInteger) length;

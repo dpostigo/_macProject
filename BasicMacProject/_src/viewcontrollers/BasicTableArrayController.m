@@ -7,15 +7,13 @@
 
 #import "BasicTableArrayController.h"
 
-
 @implementation BasicTableArrayController
-
 
 - (void) loadView {
     [super loadView];
 
     table.dataSource = self;
-    table.delegate   = self;
+    table.delegate = self;
 }
 
 

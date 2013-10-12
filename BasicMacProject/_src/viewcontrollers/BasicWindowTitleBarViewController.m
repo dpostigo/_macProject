@@ -8,15 +8,12 @@
 
 #import "BasicWindowTitleBarViewController.h"
 
-
 @implementation BasicWindowTitleBarViewController {
 
 }
 
-
 @synthesize leftButtons;
 @synthesize rightButtons;
-
 
 - (id) initWithNibName: (NSString *) nibNameOrNil bundle: (NSBundle *) nibBundleOrNil {
     self = [super initWithNibName: nibNameOrNil bundle: nibBundleOrNil];
@@ -33,14 +30,12 @@
     self.leftButtons = [[ButtonContainer alloc] init];
     self.rightButtons = [[ButtonContainer alloc] init];
 
-
     NSRect buttonsRect = self.view.bounds;
 
     NSRect leftRect = buttonsRect;
     leftRect.size.width = buttonsRect.size.width / 2;
     leftButtons.frame = leftRect;
     leftButtons.autoresizingMask = NSViewHeightSizable | NSViewMaxXMargin;
-
 
     NSRect rightRect = buttonsRect;
     rightRect.size.width = buttonsRect.size.width / 2;

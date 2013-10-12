@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #import "BasicButtonCell.h"
 
-
 @interface BOIconButtonCell : BasicButtonCell
 
 @end

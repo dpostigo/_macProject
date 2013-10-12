@@ -7,9 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface NSString (Utils)
-
 
 - (NSURL *) URL;
 - (NSString *) trimWhitespace;

@@ -8,15 +8,13 @@
 #import <Foundation/Foundation.h>
 #import "RowObject.h"
 
-
 @interface TableSection : RowObject {
-    NSString       *title;
+    NSString *title;
     NSMutableArray *rows;
 }
 
-
 @property(nonatomic, strong) NSMutableArray *rows;
-@property(nonatomic, retain) NSString       *title;
+@property(nonatomic, retain) NSString *title;
 - (id) initWithTitle: (NSString *) aTitle;
 
 - (id) initWithTitle: (NSString *) aTitle content: (id) aContent;

@@ -8,10 +8,8 @@
 #import "BOWhiteTextButton.h"
 #import "NSButton+TextColor.h"
 
-
 @implementation BOWhiteTextButton {
 }
-
 
 - (void) setup {
 

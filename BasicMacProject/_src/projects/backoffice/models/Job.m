@@ -8,10 +8,8 @@
 
 #import "Job.h"
 
-
 @implementation Job {
 }
-
 
 @synthesize status;
 
@@ -20,9 +18,9 @@
 - (id) initWithDictionary: (NSDictionary *) dictionary {
     self = [super init];
     if (self) {
-        self.id        = [NSString stringWithFormat: @"%@", [dictionary objectForKey: @"id"]];
-        self.title     = [dictionary objectForKey: @"job_name"];
-        self.status    = [[dictionary objectForKey: @"job_status"] objectForKey: @"status_name"];
+        self.id = [NSString stringWithFormat: @"%@", [dictionary objectForKey: @"id"]];
+        self.title = [dictionary objectForKey: @"job_name"];
+        self.status = [[dictionary objectForKey: @"job_status"] objectForKey: @"status_name"];
         self.jobNumber = [dictionary objectForKey: @"job_number"];
     }
 

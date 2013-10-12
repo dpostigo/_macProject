@@ -26,7 +26,6 @@
     TaskDetailViewController *taskDetailController;
 }
 
-
 @synthesize createdTask;
 @synthesize taskMode;
 
@@ -39,11 +38,10 @@
     //    self.rowSpacing = 1;
     self.taskMode = TASKLISTMODE_MYTASKS;
     [super loadView];
-    self.title                      = @"My Tasks";
+    self.title = @"My Tasks";
     self.view.layer.backgroundColor = [NSColor blackColor].CGColor;
-    self.allowsSelection            = YES;
+    self.allowsSelection = YES;
     [self expand];
-
 
     taskDetailController = [[TaskDetailViewController alloc] initWithDefaultNib];
 }
@@ -62,7 +60,7 @@
     self.title = [_model titleForMode: taskMode];
 
     NSArray *tasks = [_model tasksForMode: taskMode];
-    NSArray *jobs  = [_model jobsForTaskArray: tasks];
+    NSArray *jobs = [_model jobsForTaskArray: tasks];
 
     if ([jobs count] == 0) {
         OutlineSection *tableSection = [[OutlineSection alloc] initWithTitle: @"EmptySection"];
@@ -72,7 +70,7 @@
 
         for (Job *job in jobs) {
             OutlineSection *tableSection = [[OutlineSection alloc] initWithTitle: [NSString stringWithFormat: @"%@ - %@", job.jobNumber, job.title] content: job];
-            NSArray        *jobTasks     = [_model tasksForJobId: job.id fromArray: tasks];
+            NSArray *jobTasks = [_model tasksForJobId: job.id fromArray: tasks];
             for (int j = 0; j < [jobTasks count]; j++) {
                 Task *task = [jobTasks objectAtIndex: j];
                 [tableSection.rows addObject: [[TableRowObject alloc] initWithTextLabel: task.title content: task]];
@@ -93,10 +91,10 @@
     BOModalTableRowView *rowView = [[BOModalTableRowView alloc] init];
     if ([rowObject.textLabel isEqualToString: @"Task"]) {
         rowView.cornerOptions = JSUpperLeftCorner | JSUpperRightCorner;
-        rowView.cornerRadius  = MODAL_CORNER_RADIUS * 0.5;
+        rowView.cornerRadius = MODAL_CORNER_RADIUS * 0.5;
     } else if ([rowObject.textLabel isEqualToString: @"Observers"]) {
         rowView.cornerOptions = JSLowerLeftCorner | JSLowerRightCorner;
-        rowView.cornerRadius  = MODAL_CORNER_RADIUS * 0.5;
+        rowView.cornerRadius = MODAL_CORNER_RADIUS * 0.5;
     }
     //
     //    NSUInteger index = [outlineSection.rows indexOfObject: rowObject];
@@ -136,7 +134,7 @@
 
     switch (task.dueDate.taskDateType) {
         case TaskDateTypeOverdue :
-            cell.detailTextLabel.textColor   = [NSColor colorWithString: RED_COLOR];
+            cell.detailTextLabel.textColor = [NSColor colorWithString: RED_COLOR];
             //            cell.backgroundView.backgroundColor = [NSColor colorWithString: RED_FADED];
             //            cell.backgroundView.layer.borderColor = [NSColor colorWithString: RED_FADED].CGColor;
             //            cell.selectedBackgroundView.backgroundColor = [[NSColor colorWithString: RED_FADED] colorWithAlphaComponent: 0.5];
@@ -159,8 +157,8 @@
 
     [cell.textFieldCustom sizeToFit];
     cell.textFieldCustom.height += 2;
-    cell.textFieldCustom.top            = ((cell.height - cell.textFieldCustom.height) / 2) + 2;
-    cell.captionLabel.left        = cell.textFieldCustom.right + 5;
+    cell.textFieldCustom.top = ((cell.height - cell.textFieldCustom.height) / 2) + 2;
+    cell.captionLabel.left = cell.textFieldCustom.right + 5;
 
     //    cell.textLabel.shadowColor = cell.detailTextLabel.shadowColor;
     //    cell.textLabel.shadowOffset = cell.detailTextLabel.shadowOffset;
@@ -241,16 +239,16 @@
 
 - (IBAction) handleCheckbox: (id) sender {
 
-    NSButton        *button = sender;
-    NSTableCellView *cell   = (NSTableCellView *) button.superview.superview;
+    NSButton *button = sender;
+    NSTableCellView *cell = (NSTableCellView *) button.superview.superview;
     NSLog(@"cell = %@", cell);
 
     //
     NSInteger row = [outline rowForView: cell] - 1;
     //    NSLog(@"row = %li", row);
 
-    TableRowObject *rowObject    = [outline itemAtRow: row];
-    TableSection   *tableSection = [outline parentForItem: rowObject];
+    TableRowObject *rowObject = [outline itemAtRow: row];
+    TableSection *tableSection = [outline parentForItem: rowObject];
 
     NSLog(@"rowObject = %@", rowObject);
 
@@ -326,7 +324,7 @@
 - (void) handleNewTask {
     if (_model.currentNewTask != nil) {
 
-        Task         *task         = _model.currentNewTask;
+        Task *task = _model.currentNewTask;
         TableSection *tableSection = [self tableSectionForJobId: task.job.id];
         if (tableSection == nil) return;
         TableRowObject *rowObject = [[TableRowObject alloc] initWithTextLabel: task.title content: task];

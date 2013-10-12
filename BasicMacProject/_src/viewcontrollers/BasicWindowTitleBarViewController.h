@@ -10,7 +10,6 @@
 #import "BasicViewController.h"
 #import "ButtonContainer.h"
 
-
 @interface BasicWindowTitleBarViewController : BasicViewController {
 
     ButtonContainer *leftButtons;

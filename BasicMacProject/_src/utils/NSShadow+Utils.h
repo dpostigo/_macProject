@@ -7,9 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface NSShadow (Utils)
-
 
 + (void) setShadowWithOffset: (NSSize) offset blurRadius: (CGFloat) radius color: (NSColor *) shadowColor;
 + (void) clearShadow;

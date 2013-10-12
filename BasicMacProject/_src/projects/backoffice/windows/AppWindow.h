@@ -8,9 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "BasicFullWindow.h"
 
-
 @interface AppWindow : BasicFullWindow <NSWindowDelegate>
-
 
 - (void) openSidebar: (id) sender;
 - (IBAction) toggleSidebar: (id) sender;

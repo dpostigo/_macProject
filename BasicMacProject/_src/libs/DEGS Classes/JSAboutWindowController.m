@@ -55,7 +55,7 @@
 // In the window we have some buttons to acknowledge the authors of the some extra code used thourghout the app.
 // When the user clicks on a button we grab the title of the button and open the default web browser at the address relevant for the code
 - (IBAction) modulesClick: (id) sender {
-    NSURL    *url;
+    NSURL *url;
     NSString *senderTitle = [(NSButton *) sender title];
     if ([senderTitle isEqualToString: @"INAppStoreWindow"]) url = [NSURL URLWithString: @"http://github.com/indragiek/INAppStoreWindow"];
     else if ([senderTitle isEqualToString: @"XMDS"]) url = [NSURL URLWithString: @"http://www.xmds.org/"];

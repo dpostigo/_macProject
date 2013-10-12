@@ -13,9 +13,9 @@
 
 @interface JSFilterTableCellView : JSTableCellView
 
-@property(strong) IBOutlet JSTextField         *nameTextField;
-@property(strong) IBOutlet JSTokenField        *dependenciesTokenField;
-@property(strong) IBOutlet JSTokenField        *dependenciesBasisTokenField;
+@property(strong) IBOutlet JSTextField *nameTextField;
+@property(strong) IBOutlet JSTokenField *dependenciesTokenField;
+@property(strong) IBOutlet JSTokenField *dependenciesBasisTokenField;
 @property(strong) IBOutlet JSColorfulTextField *definitionTextField;
 
 @end

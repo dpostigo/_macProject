@@ -8,6 +8,5 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface BasicButton2Cell : NSObject
 @end

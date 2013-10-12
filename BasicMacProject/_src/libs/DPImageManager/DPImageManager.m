@@ -7,11 +7,9 @@
 
 #import "DPImageManager.h"
 
-
 @implementation DPImageManager {
 
 }
-
 
 @synthesize queue;
 @synthesize imageDictionary;

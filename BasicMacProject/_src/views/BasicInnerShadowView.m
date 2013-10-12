@@ -7,10 +7,8 @@
 
 #import "BasicInnerShadowView.h"
 
-
 @implementation BasicInnerShadowView {
 }
-
 
 - (void) setup {
     [super setup];
@@ -18,13 +16,13 @@
     pathOptions.cornerRadius = 0.0;
     pathOptions.borderWidth = 0;
     pathOptions.borderColor = [NSColor clearColor];
-    pathOptions.cornerOptions = CornerNone;
+    pathOptions.cornerType = CornerNone;
     pathOptions.backgroundColor = [NSColor colorWithDeviceWhite: 0.95 alpha: 1.0];
 
     pathOptions.innerShadow = [[NSShadow alloc] init];
     pathOptions.innerShadow.shadowColor = [NSColor colorWithWhite: 0.8];
     pathOptions.innerShadow.shadowBlurRadius = 3;
-//    pathOptions.innerShadow.shadowOffset = NSMakeSize(10, 0);
+    //    pathOptions.innerShadow.shadowOffset = NSMakeSize(10, 0);
 
 }
 

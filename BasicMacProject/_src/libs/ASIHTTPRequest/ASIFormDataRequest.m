@@ -8,7 +8,6 @@
 
 #import "ASIFormDataRequest.h"
 
-
 // Private stuff
 @interface ASIFormDataRequest ()
 
@@ -96,7 +95,7 @@
 
 - (void) addFile: (NSString *) filePath withFileName: (NSString *) fileName andContentType: (NSString *) contentType forKey: (NSString *) key {
     BOOL isDirectory = NO;
-    BOOL fileExists  = [[[[NSFileManager alloc] init] autorelease] fileExistsAtPath: filePath isDirectory: &isDirectory];
+    BOOL fileExists = [[[[NSFileManager alloc] init] autorelease] fileExistsAtPath: filePath isDirectory: &isDirectory];
     if (!fileExists || isDirectory) {
         [self failWithError: [NSError errorWithDomain: NetworkRequestErrorDomain code: ASIInternalErrorWhileBuildingRequestType userInfo: [NSDictionary dictionaryWithObjectsAndKeys: [NSString stringWithFormat: @"No file exists at %@", filePath], NSLocalizedDescriptionKey, nil]]];
     }
@@ -269,13 +268,11 @@
 	[self addToDebugBody:@"\r\n==== Building an application/x-www-form-urlencoded body ====\r\n"]; 
 #endif
 
-
     NSString *charset = (NSString *) CFStringConvertEncodingToIANACharSetName(CFStringConvertNSStringEncodingToEncoding([self stringEncoding]));
 
     [self addRequestHeader: @"Content-Type" value: [NSString stringWithFormat: @"application/x-www-form-urlencoded; charset=%@", charset]];
 
-
-    NSUInteger i     = 0;
+    NSUInteger i = 0;
     NSUInteger count = [[self postData] count] - 1;
     for (NSDictionary *val in [self postData]) {
         NSString *data = [NSString stringWithFormat: @"%@=%@%@", [self encodeURL: [val objectForKey: @"key"]], [self encodeURL: [val objectForKey: @"value"]], (i < count ? @"&" : @"")];

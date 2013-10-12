@@ -112,7 +112,7 @@
                                                           options: NSStringDrawingUsesLineFragmentOrigin];
     containerRect.size.width = containerRect.size.width *= (25 / (containerRect.size.width + 2) + 1);
 
-    NSSize size        = containerRect.size;
+    NSSize size = containerRect.size;
     NSSize popoverSize = NSMakeSize(containerRect.size.width + (padding * 2), containerRect.size.height + (padding * 2));
 
     containerRect = NSMakeRect(0, 0, popoverSize.width, popoverSize.height);
@@ -122,7 +122,6 @@
 #else
     NSTextField *label = [[[NSTextField alloc] initWithFrame:NSMakeRect(padding, padding, size.width, size.height)] retain];
 #endif
-
 
     [label setBezeled: NO];
     [label setDrawsBackground: NO];

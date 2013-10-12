@@ -9,11 +9,9 @@
 #import "BasicStyledRowView.h"
 #import "NSBezierPath+DPUtils.h"
 
-
 @implementation BasicStyledRowView {
 
 }
-
 
 - (id) initWithFrame: (NSRect) frameRect {
     self = [super initWithFrame: frameRect];
@@ -38,11 +36,11 @@
 //    //    }
 //    //
 //    //    else {
-//    //        NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect: dirtyRect corners: self.cornerOptions radius: self.cornerRadius];
+//    //        NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect: dirtyRect cornerProperties: self.cornerType radius: self.cornerRadius];
 //    //        [path drawGradient: self.gradient angle: -90];
 //    //        [path drawStroke: self.borderColor width: self.borderWidth];
 //    //
-//    //        NSBezierPath *topPath = [NSBezierPath bezierPathWithRect: NSMakeRect(0, 0, dirtyRect.size.width, 1)];
+//    //        NSBezierPath *topPath = [NSBezierPath rectBezierPathWithRect: NSMakeRect(0, 0, dirtyRect.size.width, 1)];
 //    //        [topPath drawWithFill: [NSColor whiteColor]];
 //    //    }
 //}

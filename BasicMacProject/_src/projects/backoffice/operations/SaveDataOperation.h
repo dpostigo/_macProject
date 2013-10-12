@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #import "BasicSaveOperation.h"
 
-
 @interface SaveDataOperation : BasicSaveOperation {
 
 }

@@ -29,14 +29,13 @@
 
 #include "yajl_gen.h"
 
-
-extern NSString    *const YAJLGenInvalidObjectException; //! Exception type if we encounter invalid object
+extern NSString *const YAJLGenInvalidObjectException; //! Exception type if we encounter invalid object
 
 //! JSON generate options
 enum YAJLGenOptions {
-    YAJLGenOptionsNone                    = 0, //!< No options
-    YAJLGenOptionsBeautify                = 1 << 0, //!< Beautifiy JSON output
-    YAJLGenOptionsIgnoreUnknownTypes      = 1 << 1, //!< Ignore unknown types (will use null value)
+    YAJLGenOptionsNone = 0, //!< No options
+    YAJLGenOptionsBeautify = 1 << 0, //!< Beautifiy JSON output
+    YAJLGenOptionsIgnoreUnknownTypes = 1 << 1, //!< Ignore unknown types (will use null value)
     YAJLGenOptionsIncludeUnsupportedTypes = 1 << 2, //!< Handle non-JSON types (including NSDate, NSData, NSURL)
 };
 typedef NSUInteger YAJLGenOptions;
@@ -89,7 +88,9 @@ typedef NSUInteger YAJLGenOptions;
  Write bool value to buffer.
  @param b Output true or false
  */
-- (void) bool: (BOOL) b;
+- (void) bool
+: (BOOL)
+b;
 
 /*!
  Write numeric value to buffer.

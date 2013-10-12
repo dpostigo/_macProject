@@ -8,6 +8,5 @@
 #import <Foundation/Foundation.h>
 #import "BasicOutlineViewController.h"
 
-
 @interface BOSidebarViewController : BasicOutlineViewController
 @end

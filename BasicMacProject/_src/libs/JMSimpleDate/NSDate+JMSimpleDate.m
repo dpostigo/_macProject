@@ -64,8 +64,8 @@
 
 - (BOOL) isOnSameDate: (NSDate *) date ignoringTimeOfDay: (BOOL) ignoreTimeOfDay {
     if (ignoreTimeOfDay) {
-        NSCalendar       *currentCalendar     = [NSCalendar currentCalendar];
-        NSDateComponents *selfComponents      = [currentCalendar components: DATE_COMPONENTS fromDate: self];
+        NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+        NSDateComponents *selfComponents = [currentCalendar components: DATE_COMPONENTS fromDate: self];
         NSDateComponents *inputDateComponents = [currentCalendar components: DATE_COMPONENTS fromDate: date];
 
         if ((selfComponents.year == inputDateComponents.year &&
@@ -83,8 +83,8 @@
 }
 
 - (BOOL) isInSameWeekAsDate: (NSDate *) date {
-    NSCalendar       *currentCalendar     = [NSCalendar currentCalendar];
-    NSDateComponents *selfComponents      = [currentCalendar components: DATE_COMPONENTS fromDate: self];
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    NSDateComponents *selfComponents = [currentCalendar components: DATE_COMPONENTS fromDate: self];
     NSDateComponents *inputDateComponents = [currentCalendar components: DATE_COMPONENTS fromDate: date];
 
     if (selfComponents.week == inputDateComponents.week) {
@@ -99,8 +99,8 @@
 }
 
 - (BOOL) isInSameMonthAsDate: (NSDate *) date {
-    NSCalendar       *currentCalendar     = [NSCalendar currentCalendar];
-    NSDateComponents *selfComponents      = [currentCalendar components: NSYearCalendarUnit fromDate: self];
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    NSDateComponents *selfComponents = [currentCalendar components: NSYearCalendarUnit fromDate: self];
     NSDateComponents *inputDateComponents = [currentCalendar components: NSYearCalendarUnit fromDate: date];
 
     if ((selfComponents.month == inputDateComponents.month) &&
@@ -111,8 +111,8 @@
 }
 
 - (BOOL) isInSameYearAsDate: (NSDate *) date {
-    NSCalendar       *currentCalendar     = [NSCalendar currentCalendar];
-    NSDateComponents *selfComponents      = [currentCalendar components: NSYearCalendarUnit fromDate: self];
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    NSDateComponents *selfComponents = [currentCalendar components: NSYearCalendarUnit fromDate: self];
     NSDateComponents *inputDateComponents = [currentCalendar components: NSYearCalendarUnit fromDate: date];
 
     if (selfComponents.year == inputDateComponents.year) {
@@ -174,8 +174,8 @@
 }
 
 - (BOOL) isNextYear {
-    NSCalendar       *currentCalendar       = [NSCalendar currentCalendar];
-    NSDateComponents *selfComponents        = [currentCalendar components: NSYearCalendarUnit fromDate: self];
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    NSDateComponents *selfComponents = [currentCalendar components: NSYearCalendarUnit fromDate: self];
     NSDateComponents *currentDateComponents = [currentCalendar components: NSYearCalendarUnit fromDate: [NSDate date]];
 
     if (selfComponents.year == (currentDateComponents.year + 1)) {
@@ -185,8 +185,8 @@
 }
 
 - (BOOL) isLastYear {
-    NSCalendar       *currentCalendar       = [NSCalendar currentCalendar];
-    NSDateComponents *selfComponents        = [currentCalendar components: NSYearCalendarUnit fromDate: self];
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    NSDateComponents *selfComponents = [currentCalendar components: NSYearCalendarUnit fromDate: self];
     NSDateComponents *currentDateComponents = [currentCalendar components: NSYearCalendarUnit fromDate: [NSDate date]];
 
     if (selfComponents.year == (currentDateComponents.year - 1)) {
@@ -196,8 +196,8 @@
 }
 
 - (BOOL) isWeekend {
-    NSCalendar       *currentCalendar = [NSCalendar currentCalendar];
-    NSDateComponents *components      = [currentCalendar components: NSYearCalendarUnit fromDate: self];
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [currentCalendar components: NSYearCalendarUnit fromDate: self];
     if ((components.weekday == 1) || (components.weekday == 7)) {
         return YES;
     }
@@ -242,16 +242,16 @@
 }
 
 - (NSDate *) dateAtMidnight {
-    NSCalendar       *currentCalendar = [NSCalendar currentCalendar];
-    NSDateComponents *components      = [currentCalendar components: DATE_COMPONENTS fromDate: self];
-    components.hour   = 0;
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [currentCalendar components: DATE_COMPONENTS fromDate: self];
+    components.hour = 0;
     components.minute = 0;
     components.second = 0;
     return [currentCalendar dateFromComponents: components];
 }
 
 - (NSDateComponents *) componentsWithOffsetFromDate: (NSDate *) date {
-    NSCalendar       *currentCalendar      = [NSCalendar currentCalendar];
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
     NSDateComponents *offsetDateComponents = [currentCalendar components: DATE_COMPONENTS fromDate: date toDate: self options: 0];
     return offsetDateComponents;
 }
@@ -298,63 +298,63 @@
 
 - (NSInteger) nearestHour { // determines whether self is closer to hour x or hour x + 1
     NSTimeInterval newDateTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] + kMinute * 30;
-    NSDate           *newDate         = [NSDate dateWithTimeIntervalSinceReferenceDate: newDateTimeInterval];
-    NSCalendar       *currentCalendar = [NSCalendar currentCalendar];
-    NSDateComponents *components      = [currentCalendar components: NSHourCalendarUnit fromDate: newDate];
+    NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate: newDateTimeInterval];
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [currentCalendar components: NSHourCalendarUnit fromDate: newDate];
     return components.hour;
 }
 
 - (NSInteger) hour {
-    NSCalendar       *currentCalendar = [NSCalendar currentCalendar];
-    NSDateComponents *components      = [currentCalendar components: DATE_COMPONENTS fromDate: self];
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [currentCalendar components: DATE_COMPONENTS fromDate: self];
     return components.hour;
 }
 
 - (NSInteger) minute {
-    NSCalendar       *currentCalendar = [NSCalendar currentCalendar];
-    NSDateComponents *components      = [currentCalendar components: DATE_COMPONENTS fromDate: self];
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [currentCalendar components: DATE_COMPONENTS fromDate: self];
     return components.minute;
 }
 
 - (NSInteger) seconds {
-    NSCalendar       *currentCalendar = [NSCalendar currentCalendar];
-    NSDateComponents *components      = [currentCalendar components: DATE_COMPONENTS fromDate: self];
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [currentCalendar components: DATE_COMPONENTS fromDate: self];
     return components.second;
 }
 
 - (NSInteger) day {
-    NSCalendar       *currentCalendar = [NSCalendar currentCalendar];
-    NSDateComponents *components      = [currentCalendar components: DATE_COMPONENTS fromDate: self];
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [currentCalendar components: DATE_COMPONENTS fromDate: self];
     return components.day;
 }
 
 - (NSInteger) month {
-    NSCalendar       *currentCalendar = [NSCalendar currentCalendar];
-    NSDateComponents *components      = [currentCalendar components: DATE_COMPONENTS fromDate: self];
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [currentCalendar components: DATE_COMPONENTS fromDate: self];
     return components.month;
 }
 
 - (NSInteger) week {
-    NSCalendar       *currentCalendar = [NSCalendar currentCalendar];
-    NSDateComponents *components      = [currentCalendar components: DATE_COMPONENTS fromDate: self];
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [currentCalendar components: DATE_COMPONENTS fromDate: self];
     return components.week;
 }
 
 - (NSInteger) weekday {
-    NSCalendar       *currentCalendar = [NSCalendar currentCalendar];
-    NSDateComponents *components      = [currentCalendar components: DATE_COMPONENTS fromDate: self];
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [currentCalendar components: DATE_COMPONENTS fromDate: self];
     return components.weekday;
 }
 
 - (NSInteger) nthWeekday { // e.g. the third Sunday of the month is 3
-    NSCalendar       *currentCalendar = [NSCalendar currentCalendar];
-    NSDateComponents *components      = [currentCalendar components: DATE_COMPONENTS fromDate: self];
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [currentCalendar components: DATE_COMPONENTS fromDate: self];
     return components.weekdayOrdinal;
 }
 
 - (NSInteger) year {
-    NSCalendar       *currentCalendar = [NSCalendar currentCalendar];
-    NSDateComponents *components      = [currentCalendar components: DATE_COMPONENTS fromDate: self];
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [currentCalendar components: DATE_COMPONENTS fromDate: self];
     return components.year;
 }
 

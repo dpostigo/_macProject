@@ -11,7 +11,6 @@
 #import "NSAttributedString+DPUtils.h"
 #import "NSParagraphStyle+DPUtils.h"
 
-
 @implementation BasicCustomWindowFrame {
     int numCursors;
     NSMutableDictionary *cursorDict;
@@ -19,7 +18,6 @@
 
 @synthesize windowFramePadding;
 @synthesize resizeRectSize;
-
 
 @synthesize pathOptions;
 @synthesize rightResizeRect;
@@ -32,33 +30,30 @@
     self = [super initWithFrame: frameRect];
     if (self) {
 
-
         resizeRectSize = NSMakeSize(16, 16);
 
         cornerRadiusInset = 0.5;
 
 
-//        innerPathOptions = [[PathOptions alloc] init];
-//        innerPathOptions.borderColor = [NSColor colorWithDeviceWhite: 1.0 alpha: 0.5];
+        //        innerPathOptions = [[PathOptions alloc] init];
+        //        innerPathOptions.borderColor = [NSColor colorWithDeviceWhite: 1.0 alpha: 0.5];
 
         pathOptions = [[PathOptions alloc] init];
         pathOptions.cornerRadius = 5.0;
         pathOptions.borderWidth = 0.5;
         pathOptions.borderColor = [NSColor blackColor];
-        pathOptions.cornerOptions = CornerLowerLeft | CornerLowerRight | CornerUpperRight | CornerUpperLeft;
-        pathOptions.gradient = [[NSGradient alloc] initWithColorsAndLocations: [NSColor colorWithWhite: 0.3], 0.0,
-                                                                               [NSColor colorWithWhite: 0.2], 0.1,
-                                                                               [NSColor colorWithWhite: 0.2], 0.9,
-                                                                               [NSColor colorWithWhite: 0.3], 1.0,
-                                                                               nil];
-
+        pathOptions.cornerType = CornerLowerLeft | CornerLowerRight | CornerUpperRight | CornerUpperLeft;
+        pathOptions.gradient = [[BasicGradient alloc] initWithColorsAndLocations: [NSColor colorWithWhite: 0.3], 0.0,
+                                                                                  [NSColor colorWithWhite: 0.2], 0.1,
+                                                                                  [NSColor colorWithWhite: 0.2], 0.9,
+                                                                                  [NSColor colorWithWhite: 0.3], 1.0,
+                                                                                  nil];
 
         PathOptions *innerPathOptions = [pathOptions copy];
         innerPathOptions.borderColor = [NSColor colorWithDeviceWhite: 1.0 alpha: 0.3];
         innerPathOptions.borderType = BorderTypeTop;
         innerPathOptions.borderWidth = 1.0;
         pathOptions.innerPathOptions = innerPathOptions;
-
 
         numCursors = 8;
 
@@ -154,7 +149,7 @@
     [NSBezierPath drawBezierPathWithRect: rect options: pathOptions];
 
 
-//    NSBezierPath *innerBorderPath = [NSBezierPath bezierPathWithRect: NSInsetRect(rect, self.borderWidth, self.borderWidth) cornerRadius: self.cornerRadius options: self.cornerOptions];
+    //    NSBezierPath *innerBorderPath = [NSBezierPath rectBezierPathWithRect: NSInsetRect(rect, self.borderWidth, self.borderWidth) cornerRadius: self.cornerRadius options: self.cornerType];
 
 
     //    [self.gradient drawInBezierPath: path angle: 90];
@@ -163,7 +158,7 @@
 
     //
     //    NSRect aRect = self.bottomResizeRect;
-    //    NSBezierPath *rightResizePath = [NSBezierPath bezierPathWithRect: aRect];
+    //    NSBezierPath *rightResizePath = [NSBezierPath rectBezierPathWithRect: aRect];
     //    [rightResizePath drawWithFill: [NSColor blueColor]];
 
 }
@@ -188,11 +183,9 @@
         resizeType = WindowFrameResizeTypeBottom;
     }
 
-
     NSWindow *window = self.window;
     NSPoint originalMouseLocation = [window convertBaseToScreen: [event locationInWindow]];
     NSRect originalFrame = window.frame;
-
 
     while (YES) {
         NSEvent *newEvent = [window nextEventMatchingMask: (NSLeftMouseDraggedMask | NSLeftMouseUpMask)];
@@ -269,12 +262,12 @@
 
 #pragma mark Getters / Setters
 
-- (void) setCornerOptions: (NSBezierPathCornerOptions) cornerOptions1 {
-    pathOptions.cornerOptions = cornerOptions1;
+- (void) setCornerOptions: (CornerType) cornerOptions1 {
+    pathOptions.cornerType = cornerOptions1;
 }
 
-- (NSBezierPathCornerOptions) cornerOptions {
-    return pathOptions.cornerOptions;
+- (CornerType) cornerOptions {
+    return pathOptions.cornerType;
 }
 
 
@@ -302,11 +295,11 @@
     pathOptions.borderWidth = borderWidth1;
 }
 
-- (NSGradient *) gradient {
+- (BasicGradient *) gradient {
     return pathOptions.gradient;
 }
 
-- (void) setGradient: (NSGradient *) gradient1 {
+- (void) setGradient: (BasicGradient *) gradient1 {
     pathOptions.gradient = gradient1;
 }
 

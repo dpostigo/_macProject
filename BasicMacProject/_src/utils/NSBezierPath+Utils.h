@@ -7,9 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface NSBezierPath (Utils)
-
 
 - (CGPathRef) quartzPath;
 

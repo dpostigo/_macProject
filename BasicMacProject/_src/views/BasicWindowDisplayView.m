@@ -9,131 +9,169 @@
 #import "BasicWindowDisplayView.h"
 #import "NSBezierPath+Additions.h"
 
-@implementation BasicWindowDisplayView {
+@implementation BasicWindowDisplayView
 
-    NSBezierPath *undrawablePath;
-}
-////
-//- (BOOL) acceptsFirstResponder {
-//    return YES;
-//}
-//
-//- (BOOL) canBecomeKeyView {
-//    return YES;
-//}
+@synthesize cacheAsBitmap;
+@synthesize topMargin;
+@synthesize bottomMargin;
+@synthesize windowHeaderView;
+@synthesize windowFooterView;
 
-
-- (void) viewDidMoveToWindow {
-    [super viewDidMoveToWindow];
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-
-    //    [self.window setAcceptsMouseMovedEvents: YES];
-//    [self.window setInitialFirstResponder: self];
-//    [self setNextResponder: self.window];
-//    [self.window setNextResponder: self];
-
-    NSLog(@"self.nextResponder = %@", self.nextResponder);
-    NSLog(@"self.nextKeyView = %@", self.nextKeyView);
-    NSLog(@"self.superview = %@", self.superview);
-//    [self.window setInitialFirstResponder: self];
-
-    //    self.superview.responder
-//    [self becomeFirstResponder];
-
-
+- (void) setup {
+    [super setup];
+    self.topMargin = 10;
+    self.bottomMargin = 10;
+    cacheAsBitmap = NO;
 }
 
-- (void) mouseMoved: (NSEvent *) theEvent {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-}
+- (void) updateLayout {
+    if (windowHeaderView) {
+        windowHeaderView.frame = self.northRectFull;
+    }
 
-- (void) mouseDown: (NSEvent *) theEvent {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-}
+    if (windowFooterView) {
+        windowFooterView.frame = self.southRectFull;
+    }
 
-- (void) setNextResponder: (NSResponder *) aResponder {
-    NSLog(@"%s, %@", __PRETTY_FUNCTION__, aResponder);
-    [super setNextResponder: aResponder];
+    if (self.singleSubview) {
+        self.singleSubview.frame = NSInsetRect(self.subviewFrame, self.borderWidth, self.borderWidth);
+    }
+
 }
 
 
 
-//
-//- (BOOL) wantsDefaultClipping {
-//    return NO;
-//}
+#pragma mark DisplayView overrides
 
-//- (BOOL) preservesContentDuringLiveResize {
-//    return NO;
-//}
-//
-//- (NSRect) rectPreservedDuringLiveResize {
-//    return self.topRect;
-//}
+- (void) setBorderWidth: (CGFloat) borderWidth {
+    [super setBorderWidth: borderWidth];
+    [self updateLayout];
+}
+
+- (void) setTopMargin: (CGFloat) topMargin1 {
+    topMargin = topMargin1;
+    [self updateLayout];
+}
+
+- (void) setWindowHeaderView: (NSView *) windowHeaderView1 {
+    windowHeaderView = windowHeaderView1;
+    //    windowHeaderView.autoresizingMask = NSViewMaxYMargin | NSViewWidthSizable;
+    windowHeaderView.autoresizingMask = NSViewWidthSizable | NSViewMinYMargin;
+    [self addSubview: windowHeaderView];
+    [self updateLayout];
+}
+
+
+- (void) setWindowFooterView: (NSView *) windowHeaderView1 {
+    windowFooterView = windowHeaderView1;
+    windowFooterView.autoresizingMask = NSViewWidthSizable | NSViewMaxYMargin;
+    [self addSubview: windowFooterView];
+    [self updateLayout];
+}
+
+- (void) embedView: (NSView *) aSubview {
+    [super embedView: aSubview];
+
+    if (aSubview != windowHeaderView && aSubview != windowFooterView) {
+        //        aSubview.frame = NSInsetRect(aSubview.frame, self.borderWidth, self.borderWidth);
+    }
+}
 
 
 
-//
-//- (NSRect) visibleRect {
-//    NSRect ret = [super visibleRect];
-//    ret = self.topRect;
-//    if (self.inLiveResize) {
-//        //        NSLog(@"ret = %@", NSStringFromRect(ret));
-//
-//    }
-//    return ret;
-//}
+#pragma mark NSView overrides
 
+- (void) addSubview: (NSView *) aView {
+    [super addSubview: aView];
+    [self updateLayout];
+
+}
+
+- (BOOL) isOpaque {
+    return YES;
+}
+
+- (BOOL) mouseDownCanMoveWindow {
+    return YES;
+}
 
 - (BOOL) preservesContentDuringLiveResize {
     return YES;
 }
 
+- (void) viewDidEndLiveResize {
+    [super viewDidEndLiveResize];
+    [self setNeedsDisplay: YES];
+}
 
 - (void) drawRect: (NSRect) dirtyRect {
 
-    NSRect bounds = self.bounds;
+    [self.backgroundColor set];
+    NSRectFill(self.bounds);
 
-    NSGradient *topGradient = [[NSGradient alloc] initWithStartingColor: [NSColor redColor] endingColor: [NSColor whiteColor]];
+    if (windowHeaderView != nil && windowFooterView != nil) {
+        NSLog(@"Has header & footer view.");
 
+    } else {
+
+        NSBezierPath *path = [NSBezierPath bezierPathWithRect: self.bounds pathOptions: pathOptions];
+        if (cacheAsBitmap) {
+
+            [self drawImage];
+
+            if (self.inLiveResize) {
+                //                [self.backgroundColor set];
+                //                [path fill];
+
+            } else {
+
+                if (windowHeaderView == nil) {
+                    [cacheImage drawInRect: self.northWestRect fromRect: self.cacheImageTopLeft operation: NSCompositeSourceOver fraction: 1.0];
+                    [cacheImage drawInRect: self.northEastCornerRect fromRect: self.cacheImageTopRight operation: NSCompositeSourceOver fraction: 1.0];
+                    [cacheImage drawInRect: self.northMiddleRect fromRect: self.northMiddleRectForCachedImage operation: NSCompositeSourceOver fraction: 1.0];
+                }
+
+                [cacheImage drawInRect: self.southMiddleRect fromRect: self.cacheImageBottomMiddle operation: NSCompositeSourceOver fraction: 1.0];
+                [cacheImage drawInRect: self.southWestRect fromRect: self.southWestRect operation: NSCompositeSourceOver fraction: 1.0];
+                [cacheImage drawInRect: self.southEastCornerRect fromRect: self.cacheImageBottomRight operation: NSCompositeSourceOver fraction: 1.0];
+
+                [cacheImage drawInRect: self.westMiddleRect fromRect: self.cacheImageLeftMiddle operation: NSCompositeSourceOver fraction: 1.0];
+                [cacheImage drawInRect: self.eastMiddleRect fromRect: self.cacheImageRightMiddle operation: NSCompositeSourceOver fraction: 1.0];
+            }
+
+        } else {
+            //        [path drawWithPathOptions: pathOptions];
+            NSLog(@"Not caching as bitmap.");
+            [pathOptions drawWithRect: self.bounds];
+        }
+    }
+}
+
+- (void) drawImage {
     if (cacheImage == nil) {
         cacheImage = [[NSImage alloc] initWithSize: self.bounds.size];
         [cacheImage lockFocus];
 
-        NSBezierPath *path;
-        path = [NSBezierPath bezierPathWithRect: self.bounds cornerRadius: self.cornerRadius options: self.cornerOptions];
-        [pathOptions.backgroundColor set];
-        [path fill];
-
+        [pathOptions drawWithRect: self.bounds];
+        //                [path drawWithPathOptions: pathOptions];
         [cacheImage unlockFocus];
     }
-
-    NSView *subview = self.singleSubview;
-    if (subview) {
-        NSRect topRect = NSInsetRect(NSMakeRect(0, subview.top + subview.height, self.bounds.size.width, self.bounds.size.height - (subview.top + subview.height)), self.cornerRadius, 0);
-        NSRect bottomRect = NSInsetRect(NSMakeRect(0, 0, self.bounds.size.width, subview.top), self.cornerRadius, 0);
-
-        [pathOptions.backgroundColor set];
-        NSRectFill(topRect);
-        NSRectFill(bottomRect);
-
-    }
-
-    [cacheImage drawInRect: self.topLeft fromRect: self.cacheImageTopLeft operation: NSCompositeSourceOver fraction: 1.0];
-
-
-    //        [cacheImage drawAtPoint: self.topLeft.origin fromRect: self.cacheImageTopLeft operation: NSCompositeSourceOver fraction: 1.0];
-    [cacheImage drawInRect: self.topRightCornerRect fromRect: self.cacheImageTopRight operation: NSCompositeSourceOver fraction: 1.0];
-    [cacheImage drawInRect: self.bottomLeft fromRect: self.bottomLeft operation: NSCompositeSourceOver fraction: 1.0];
-    [cacheImage drawInRect: self.bottomRight fromRect: self.cacheImageBottomRight operation: NSCompositeSourceOver fraction: 1.0];
+}
 
 
 
-    //        [cacheImage drawInRect: self.topMiddle fromRect: self.cacheImageTopMiddle operation: NSCompositeSourceOver fraction: 1.0];
-    //        [cacheImage drawInRect: self.bottomMiddle fromRect: self.cacheImageBottomMiddle operation: NSCompositeSourceOver fraction: 1.0];
-    //        [cacheImage drawInRect: self.leftMiddle fromRect: self.cacheImageLeftMiddle operation: NSCompositeSourceOver fraction: 1.0];
-    //        [cacheImage drawInRect: self.rightMiddle fromRect: self.cacheImageRightMiddle operation: NSCompositeSourceOver fraction: 1.0];
 
+
+
+#pragma mark Getters
+
+- (CGFloat) subviewHeight {
+    return self.height - topMargin - bottomMargin;
+}
+
+- (NSRect) subviewFrame {
+    NSRect ret = NSMakeRect(0, bottomMargin, self.width, self.subviewHeight);
+    return ret;
 }
 
 
@@ -142,70 +180,120 @@
 #pragma mark Helpers
 
 - (NSView *) singleSubview {
-    return [self.subviews count] == 1 ? [self.subviews objectAtIndex: 0] : nil;
+    NSView *ret = nil;
+    NSArray *subviews = self.subviews;
+    if ([self.subviews count] > 0) {
+        for (NSView *subview in subviews) {
+            if (subview != windowHeaderView && subview != windowFooterView) {
+                ret = subview;
+                break;
+            }
+        }
+    }
+    return ret;
 }
 
+- (NSRect) southMiddleForSize: (NSSize) size {
 
-- (NSRect) topMiddleForSize: (NSSize) size {
-    return NSInsetRect(NSMakeRect(0, size.height - self.cornerRadius, size.width, self.cornerRadius), self.cornerRadius, 0);
+    NSRect ret = NSMakeRect(0, 0, size.width, self.bottomMargin);
+
+    // Subtract corner rects
+    ret = NSInsetRect(ret, self.cornerRadius, 0);
+    return ret;
+
+    //    return NSMakeRect(self.cornerRadius, 0, size.width - (self.cornerRadius * 2), self.cornerRadius);
 }
 
-
-- (NSRect) bottomMiddleForSize: (NSSize) size {
-    return NSMakeRect(self.cornerRadius, 0, size.width - (self.cornerRadius * 2), self.cornerRadius);
+- (NSRect) westMiddleForSize: (NSSize) size {
+    return NSMakeRect(0, self.cornerRadius, self.borderWidth, size.height - (self.cornerRadius * 2));
 }
 
-
-- (NSRect) leftMiddleForSize: (NSSize) size {
-    return NSMakeRect(0, self.cornerRadius, self.cornerRadius, size.height - (self.cornerRadius * 2));
-}
-
-
-- (NSRect) rightMiddleForSize: (NSSize) size {
-    return NSMakeRect(size.width - self.cornerRadius, self.cornerRadius, self.cornerRadius, size.height - (self.cornerRadius * 2));
+- (NSRect) eastMiddleForSize: (NSSize) size {
+    return NSMakeRect(size.width - self.borderWidth, self.cornerRadius, self.borderWidth, size.height - (self.cornerRadius * 2));
 }
 
 - (NSRect) cornerRectForTopCornerRect: (NSRect) cornerRect {
     NSRect ret = cornerRect;
+
     NSView *subview = self.singleSubview;
-    NSRect topRect = NSInsetRect(NSMakeRect(0, subview.top + subview.height, self.bounds.size.width, self.bounds.size.height - (subview.top + subview.height)), self.cornerRadius, 0);
+    NSRect topRect = NSMakeRect(0, subview.top + subview.height, self.bounds.size.width, self.bounds.size.height - (subview.top + subview.height));
+    topRect = NSInsetRect(topRect, self.cornerRadius, 0);
+    //
     CGFloat offset = topRect.size.height - self.cornerRadius;
     ret.origin.y -= offset;
     ret.size.height += offset;
+    //    ret.size.height = self.topMargin;
+    //    ret.origin.y += self.topMargin;
     return ret;
 }
-
 
 - (NSRect) cornerRectForBottomCornerRect: (NSRect) cornerRect {
     NSRect ret = cornerRect;
     NSView *subview = self.singleSubview;
-    NSRect bottomRect = NSInsetRect(NSMakeRect(0, 0, self.bounds.size.width, subview.top), self.cornerRadius, 0);
-    CGFloat offset = bottomRect.size.height - self.cornerRadius;
-    ret.size.height += offset;
+
+    //    NSRect bottomRect = NSInsetRect(NSMakeRect(0, 0, self.bounds.size.width, subview.top), self.cornerRadius, 0);
+    //    CGFloat offset = bottomRect.size.height - self.cornerRadius;
+    //    ret.size.height += offset;
+    ret.size.height = self.bottomMargin;
+
     return ret;
 }
 
-- (NSRect) topLeftForSize: (NSSize) size {
+#pragma mark North
+
+
+- (NSRect) northRectFull {
+    return NSMakeRect(0, self.bounds.size.height - self.topMargin, self.bounds.size.width, self.topMargin);
+}
+
+
+- (NSRect) southRectFull {
+    return NSMakeRect(0, 0, self.bounds.size.width, self.bottomMargin);
+}
+
+- (NSRect) northRectForSize: (NSSize) size {
+    NSRect ret = NSMakeRect(0, size.height - self.topMargin, size.width, self.topMargin);
+    ret = NSInsetRect(ret, self.cornerRadius, 0);  // Subtract corner rects
+    return ret;
+}
+
+- (NSRect) northMiddleRect {
+    return [self northRectForSize: self.bounds.size];
+}
+
+- (NSRect) northWestRect {
+    return [self northWestRectForSize: self.bounds.size];
+}
+
+- (NSRect) northWestRectForSize: (NSSize) size {
     NSRect ret = NSMakeRect(0, size.height - self.cornerRadius, self.cornerRadius, self.cornerRadius);
     NSView *subview = self.singleSubview;
     if (subview) {
-        ret = [self cornerRectForTopCornerRect: ret];
+        ret = NSMakeRect(0, size.height - self.topMargin, self.cornerRadius, self.topMargin);
     }
     return ret;
 }
 
+- (NSRect) northEastCornerRect {
+    return [self northEastRectForSize: self.bounds.size];
+}
 
-- (NSRect) topRightForSize: (NSSize) size {
+- (NSRect) northEastRectForSize: (NSSize) size {
     NSRect ret = NSMakeRect(size.width - self.cornerRadius, size.height - self.cornerRadius, self.cornerRadius, self.cornerRadius);
     NSView *subview = self.singleSubview;
     if (subview) {
-        ret = [self cornerRectForTopCornerRect: ret];
+        //        ret = [self cornerRectForTopCornerRect: ret];
+
+        ret = NSMakeRect(size.width - self.cornerRadius, size.height - self.topMargin, self.cornerRadius, self.topMargin);
     }
     return ret;
 }
 
+- (NSRect) southWestRect {
+    return [self southWestRectForSize: self.bounds.size];
+}
 
-- (NSRect) bottomLeftForSize: (NSSize) size {
+- (NSRect) southWestRectForSize: (NSSize) size {
     NSRect ret = NSMakeRect(0, 0, self.cornerRadius, self.cornerRadius);
     NSView *subview = self.singleSubview;
     if (subview) {
@@ -214,8 +302,11 @@
     return ret;
 }
 
+- (NSRect) southEastCornerRect {
+    return [self southEastRectForSize: self.bounds.size];
+}
 
-- (NSRect) bottomRightForSize: (NSSize) size {
+- (NSRect) southEastRectForSize: (NSSize) size {
     NSRect ret = NSMakeRect(size.width - self.cornerRadius, 0, self.cornerRadius, self.cornerRadius);
     NSView *subview = self.singleSubview;
     if (subview) {
@@ -224,73 +315,50 @@
     return ret;
 }
 
-
-- (NSRect) topLeft {
-    return [self topLeftForSize: self.bounds.size];
+- (NSRect) southMiddleRect {
+    return [self southMiddleForSize: self.bounds.size];
 }
 
-- (NSRect) topRightCornerRect {
-    return [self topRightForSize: self.bounds.size];
+- (NSRect) westMiddleRect {
+    return [self westMiddleForSize: self.bounds.size];
 }
 
-- (NSRect) bottomLeft {
-    return [self bottomLeftForSize: self.bounds.size];
+- (NSRect) eastMiddleRect {
+    return [self eastMiddleForSize: self.bounds.size];
 }
 
-- (NSRect) bottomRight {
-    return [self bottomRightForSize: self.bounds.size];
-}
 
-- (NSRect) topMiddle {
-    return [self topMiddleForSize: self.bounds.size];
-}
 
-- (NSRect) bottomMiddle {
-    return [self bottomMiddleForSize: self.bounds.size];
-}
-
-- (NSRect) leftMiddle {
-    return [self leftMiddleForSize: self.bounds.size];
-}
-
-- (NSRect) rightMiddle {
-    return [self rightMiddleForSize: self.bounds.size];
-}
+#pragma mark Cache image rects
 
 
 - (NSRect) cacheImageTopRight {
-    return [self topRightForSize: cacheImage.size];
+    return [self northEastRectForSize: cacheImage.size];
     NSMakeRect(cacheImage.size.width - self.cornerRadius, cacheImage.size.height - self.cornerRadius, self.cornerRadius, self.cornerRadius);
 }
 
 - (NSRect) cacheImageTopLeft {
-    return [self topLeftForSize: cacheImage.size];
+    return [self northWestRectForSize: cacheImage.size];
 }
 
-
-- (NSRect) cacheImageTopMiddle {
-    return [self topMiddleForSize: cacheImage.size];
+- (NSRect) northMiddleRectForCachedImage {
+    return [self northRectForSize: cacheImage.size];
 }
 
 - (NSRect) cacheImageBottomMiddle {
-    return [self bottomMiddleForSize: cacheImage.size];
+    return [self southMiddleForSize: cacheImage.size];
 }
 
 - (NSRect) cacheImageLeftMiddle {
-    return [self leftMiddleForSize: cacheImage.size];
+    return [self westMiddleForSize: cacheImage.size];
 }
 
 - (NSRect) cacheImageRightMiddle {
-    return [self rightMiddleForSize: cacheImage.size];
+    return [self eastMiddleForSize: cacheImage.size];
 }
 
 - (NSRect) cacheImageBottomRight {
-    return [self bottomRightForSize: cacheImage.size];
-}
-
-
-- (NSRect) topRect {
-    return NSMakeRect(0, self.cornerRadius, self.bounds.size.width, self.bounds.size.height - self.cornerRadius);
+    return [self southEastRectForSize: cacheImage.size];
 }
 
 - (NSRect) bottomRect {

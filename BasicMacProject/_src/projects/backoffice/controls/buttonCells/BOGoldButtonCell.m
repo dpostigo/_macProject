@@ -9,10 +9,8 @@
 #import "BOGoldButtonCell.h"
 #import "NSColor+Utils.h"
 
-
 @implementation BOGoldButtonCell {
 }
-
 
 - (void) setup {
     [super setup];

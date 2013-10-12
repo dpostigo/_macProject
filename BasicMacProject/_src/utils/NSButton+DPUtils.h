@@ -7,9 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface NSButton (DPUtils)
-
 
 + (NSButton *) buttonWithType: (NSButtonType) type;
 + (NSButton *) buttonWithImage: (NSImage *) image;

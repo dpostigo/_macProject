@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface BasicTextFieldCell : NSTextFieldCell {
     CGFloat paddingTop;
     CGFloat paddingBottom;

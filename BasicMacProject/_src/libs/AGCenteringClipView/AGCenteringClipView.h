@@ -8,11 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-
 @interface AGCenteringClipView : NSClipView {
     NSPoint mLookingAt; // the proportion up and across the view, not coordinates.
 }
-
 
 - (void) centerDocument;
 

@@ -10,7 +10,6 @@
 #import "BasicObject.h"
 #import "BasicUserObject.h"
 
-
 #define USERTYPE_MANAGER @"Manager"
 #define USERTYPE_PRODUCER @"Producer"
 #define USERTYPE_ACCOUNTANT @"Accountant"
@@ -18,11 +17,9 @@
 #define USERTYPE_FERELANCER @"Freelancer"
 #define USERTYPE_CLIENT @"Client"
 
-
 @interface User : BasicUserObject {
     NSString *userType;
 }
-
 
 @property(nonatomic, retain) NSString *userType;
 - (id) initWithDictionary: (NSDictionary *) dictionary;

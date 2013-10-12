@@ -9,13 +9,11 @@
 #import "TableRowObject.h"
 #import "TableSection.h"
 
-
 @interface BasicSecureTextField : NSSecureTextField {
     __unsafe_unretained TableRowObject *rowObject;
-    __unsafe_unretained TableSection   *tableSection;
+    __unsafe_unretained TableSection *tableSection;
 }
 
-
 @property(nonatomic, assign) TableRowObject *rowObject;
-@property(nonatomic, assign) TableSection   *tableSection;
+@property(nonatomic, assign) TableSection *tableSection;
 @end

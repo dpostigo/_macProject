@@ -9,11 +9,9 @@
 #import "BasicTableCellView.h"
 #import "BasicTextFieldCellView.h"
 
-
 @interface BasicDatePickerCell : BasicTextFieldCellView {
 
 }
-
 
 - (IBAction) handleDateButton: (id) sender;
 @end

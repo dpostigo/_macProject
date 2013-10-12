@@ -8,10 +8,8 @@
 #import "DPCustomWindowDelegateProxy.h"
 #import "DPCustomWindow.h"
 
-
 @implementation DPCustomWindowDelegateProxy {
 }
-
 
 - (NSMethodSignature *) methodSignatureForSelector: (SEL) selector {
     NSMethodSignature *signature = [[self.secondaryDelegate class] instanceMethodSignatureForSelector: selector];

@@ -68,17 +68,17 @@
     if (self.haltNonFinite) [featuresNode addChild: [NSXMLElement elementWithName: @"halt_non_finite"]];
 
     NSXMLElement *fftwElement = [NSXMLElement elementWithName: @"fftw"];
-    NSString     *fftwPlan    = (self.fftwOptions)[self.fftw];
+    NSString *fftwPlan = (self.fftwOptions)[self.fftw];
     [fftwElement addAttribute: [NSXMLNode attributeWithName: @"plan" stringValue: fftwPlan]];
     if (_fftwThreads) [fftwElement addAttribute: [NSXMLNode attributeWithName: @"threads" stringValue: [@(_fftwThreads) stringValue]]];
     [featuresNode addChild: fftwElement];
 
-    NSString     *precision        = (self.precisionOptions)[self.precision];
+    NSString *precision = (self.precisionOptions)[self.precision];
     NSXMLElement *precisionElement = [NSXMLElement elementWithName: @"precision" stringValue: precision];
     [featuresNode addChild: precisionElement];
 
     NSXMLElement *validationElement = [NSXMLElement elementWithName: @"validation"];
-    NSString     *validationKind    = (self.validationOptions)[self.validation];
+    NSString *validationKind = (self.validationOptions)[self.validation];
     [validationElement addAttribute: [NSXMLNode attributeWithName: @"kind" stringValue: validationKind]];
     [featuresNode addChild: validationElement];
 
@@ -90,7 +90,7 @@
 
     if (_cflags) {
         NSXMLElement *cflagsElement = [NSXMLElement elementWithName: @"cflags"];
-        NSXMLNode    *cflagsText    = [[NSXMLNode alloc] initWithKind: NSXMLTextKind options: NSXMLNodeIsCDATA];
+        NSXMLNode *cflagsText = [[NSXMLNode alloc] initWithKind: NSXMLTextKind options: NSXMLNodeIsCDATA];
         [cflagsText setStringValue: self.cflags];
         [cflagsElement addChild: cflagsText];
         [featuresNode addChild: cflagsText];
@@ -98,14 +98,14 @@
 
     if (_globals) {
         NSXMLElement *globalsElement = [NSXMLElement elementWithName: @"globals"];
-        NSXMLNode    *globalsText    = [[NSXMLNode alloc] initWithKind: NSXMLTextKind options: NSXMLNodeIsCDATA];
+        NSXMLNode *globalsText = [[NSXMLNode alloc] initWithKind: NSXMLTextKind options: NSXMLNodeIsCDATA];
         [globalsText setStringValue: self.globals];
         [globalsElement addChild: globalsText];
         [featuresNode addChild: globalsElement];
     }
 
     if ([_arguments count] || _argumentsGlobals) {
-        NSXMLElement    *argumentsElement = [NSXMLElement elementWithName: @"arguments"];
+        NSXMLElement *argumentsElement = [NSXMLElement elementWithName: @"arguments"];
         for (JSArgument *argument in _arguments) {
             [argumentsElement addChild: [argument exportAsXML]];
         }
@@ -122,12 +122,12 @@
 
 - (id) initFromXML: (NSXMLElement *) anElement {
     if (self = [super init]) {
-        if ([[anElement elementsForName: @"benchmark"] count]) self.benchmark           = YES;
-        if ([[anElement elementsForName: @"bing"] count]) self.bing                     = YES;
-        if ([[anElement elementsForName: @"auto_vectorise"] count]) self.autoVectorise  = YES;
-        if ([[anElement elementsForName: @"openmp"] count]) self.openMP                 = YES;
-        if ([[anElement elementsForName: @"error_check"] count]) self.errorCheck        = YES;
-        if ([[anElement elementsForName: @"diagnostics"] count]) self.diagnostics       = YES;
+        if ([[anElement elementsForName: @"benchmark"] count]) self.benchmark = YES;
+        if ([[anElement elementsForName: @"bing"] count]) self.bing = YES;
+        if ([[anElement elementsForName: @"auto_vectorise"] count]) self.autoVectorise = YES;
+        if ([[anElement elementsForName: @"openmp"] count]) self.openMP = YES;
+        if ([[anElement elementsForName: @"error_check"] count]) self.errorCheck = YES;
+        if ([[anElement elementsForName: @"diagnostics"] count]) self.diagnostics = YES;
         if ([[anElement elementsForName: @"halt_non_finite"] count]) self.haltNonFinite = YES;
 
         if ([[anElement elementsForName: @"fftw"] count]) {
@@ -210,7 +210,7 @@
 }
 
 - (NSArray *) listOfArgumentsIdentifiers {
-    NSArray         *argumentsIdentifiers = [NSArray array];
+    NSArray *argumentsIdentifiers = [NSArray array];
     for (JSArgument *argument in self.arguments) {
         if (argument.name) argumentsIdentifiers = [argumentsIdentifiers arrayByAddingObject: argument.name];
     }
@@ -243,7 +243,7 @@
             @"error_check" : @"errorCheck",
             @"halt_non_finite" : @"haltNonFinite",
             @"openmp" : @"openMP"};
-    NSString     *newName = [mapping objectForKey: elementName];
+    NSString *newName = [mapping objectForKey: elementName];
 
     // if newName is nil it means that the name of the element is the same
     if (!newName) newName = elementName;

@@ -8,12 +8,10 @@
 #import <Foundation/Foundation.h>
 #import "BasicOperation.h"
 
-
 @interface BasicSaveOperation : BasicOperation {
 
     NSMutableDictionary *saveDictionary;
 }
-
 
 - (void) testDearchive;
 - (void) saveImagesForObjects: (NSArray *) objects;

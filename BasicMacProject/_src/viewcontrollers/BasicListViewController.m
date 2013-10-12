@@ -7,10 +7,8 @@
 
 #import "BasicListViewController.h"
 
-
 @implementation BasicListViewController {
 }
-
 
 @synthesize dataSource;
 

@@ -13,12 +13,12 @@
 
 @interface JSComputedVectorTableCellView : JSTableCellView
 
-@property(strong) IBOutlet JSTextField         *nameTextField;
-@property(strong) IBOutlet NSPopUpButton       *typeButton;
-@property(strong) IBOutlet JSTokenField        *componentsTokenField;
-@property(strong) IBOutlet JSTokenField        *dimensionsTokenField;
-@property(strong) IBOutlet JSTokenField        *dependenciesTokenField;
-@property(strong) IBOutlet JSTokenField        *dependenciesBasisTokenField;
+@property(strong) IBOutlet JSTextField *nameTextField;
+@property(strong) IBOutlet NSPopUpButton *typeButton;
+@property(strong) IBOutlet JSTokenField *componentsTokenField;
+@property(strong) IBOutlet JSTokenField *dimensionsTokenField;
+@property(strong) IBOutlet JSTokenField *dependenciesTokenField;
+@property(strong) IBOutlet JSTokenField *dependenciesBasisTokenField;
 @property(strong) IBOutlet JSColorfulTextField *evaluationTextField;
 
 @end

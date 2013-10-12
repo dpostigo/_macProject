@@ -7,13 +7,11 @@
 
 #import "NSImage+EtchedImageDrawing.h"
 
-
 @implementation NSImage (EtchedImageDrawing)
 
-
 - (void) drawEtchedInRect: (NSRect) rect {
-    NSSize  size                  = rect.size;
-    CGFloat dropShadowOffsetY     = size.width <= 64.0 ? -1.0 : -2.0;
+    NSSize size = rect.size;
+    CGFloat dropShadowOffsetY = size.width <= 64.0 ? -1.0 : -2.0;
     CGFloat innerShadowBlurRadius = size.width <= 32.0 ? 1.0 : 4.0;
 
     CGContextRef c = [[NSGraphicsContext currentContext] graphicsPort];
@@ -22,7 +20,7 @@
     CGContextSaveGState(c);
 
     //Create mask image:
-    NSRect     maskRect  = rect;
+    NSRect maskRect = rect;
     CGImageRef maskImage = [self CGImageForProposedRect: &maskRect context: [NSGraphicsContext currentContext] hints: nil];
 
     //Draw image and white drop shadow:
@@ -39,8 +37,8 @@
     CGContextSetShadowWithColor(c, CGSizeMake(0, -1), innerShadowBlurRadius, CGColorGetConstantColor(kCGColorBlack));
 
     //Draw inner shadow with inverted mask:
-    CGColorSpaceRef colorSpace  = CGColorSpaceCreateDeviceRGB();
-    CGContextRef    maskContext = CGBitmapContextCreate(NULL, CGImageGetWidth(maskImage), CGImageGetHeight(maskImage), 8, CGImageGetWidth(maskImage) * 4, colorSpace, kCGImageAlphaPremultipliedLast);
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef maskContext = CGBitmapContextCreate(NULL, CGImageGetWidth(maskImage), CGImageGetHeight(maskImage), 8, CGImageGetWidth(maskImage) * 4, colorSpace, kCGImageAlphaPremultipliedLast);
     CGColorSpaceRelease(colorSpace);
     CGContextSetBlendMode(maskContext, kCGBlendModeXOR);
     CGContextDrawImage(maskContext, maskRect, maskImage);

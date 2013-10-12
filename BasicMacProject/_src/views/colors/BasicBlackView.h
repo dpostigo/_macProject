@@ -8,6 +8,5 @@
 #import <Foundation/Foundation.h>
 #import "BasicBackgroundViewOld.h"
 
-
 @interface BasicBlackView : BasicBackgroundViewOld
 @end

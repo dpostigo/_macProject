@@ -8,19 +8,15 @@
 
 #import "iTableColumnHeaderCell.h"
 
-
 @implementation iTableColumnHeaderCell
-
 
 - (id) initTextCell: (NSString *) text {
     if (self = [super initTextCell: text]) {
         metalBg = [NSImage imageNamed: @"table-header-none.png"];
 
-
         if (text == nil || [text isEqualToString: @""]) {
             [self setTitle: @" "];
         }
-
 
         [metalBg setFlipped: YES];
         attrs = [[NSMutableDictionary dictionaryWithDictionary: [self.attributedStringValue attributesAtIndex: 0 effectiveRange: NULL]] mutableCopy];
@@ -34,21 +30,21 @@
     /* Draw metalBg lowest pixel along the bottom of inFrame. */
 
     NSRect tempSrc = NSZeroRect;
-    tempSrc.size        = [metalBg size];
-    tempSrc.origin.y    = tempSrc.size.height - 1.0;
+    tempSrc.size = [metalBg size];
+    tempSrc.origin.y = tempSrc.size.height - 1.0;
     tempSrc.size.height = 1.0;
 
     NSRect tempDst = inFrame;
-    tempDst.origin.y    = inFrame.size.height - 1.0;
+    tempDst.origin.y = inFrame.size.height - 1.0;
     tempDst.size.height = 1.0;
 
     [metalBg drawInRect: tempDst fromRect: tempSrc operation: NSCompositeSourceOver fraction: 1.0];
 
     /* Draw rest of metalBg along width of inFrame. */
-    tempSrc.origin.y    = 0.0;
+    tempSrc.origin.y = 0.0;
     tempSrc.size.height = [metalBg size].height - 1.0;
 
-    tempDst.origin.y    = 1.0;
+    tempDst.origin.y = 1.0;
     tempDst.size.height = inFrame.size.height - 2.0;
 
     [metalBg drawInRect: tempDst fromRect: tempSrc operation: NSCompositeSourceOver fraction: 1.0];
@@ -59,7 +55,7 @@
     [attrs setValue: [NSColor colorWithCalibratedWhite: 1.0 alpha: 0.7] forKey: @"NSColor"];
 
     NSRect centeredRect = inFrame;
-    centeredRect.size     = [self.stringValue sizeWithAttributes: attrs];
+    centeredRect.size = [self.stringValue sizeWithAttributes: attrs];
     centeredRect.origin.x +=
             ((inFrame.size.width - centeredRect.size.width) / 2.0) - offset;
     centeredRect.origin.y =
