@@ -20,6 +20,10 @@
 - (id) initWithGradient: (BasicGradient *) gradient;
 - (BOOL) isGradient;
 - (BOOL) isColor;
+- (void) drawWithPath: (NSBezierPath *) path;
+- (void) drawGradientWithPath: (NSBezierPath *) path;
+- (void) drawColorWithPath: (NSBezierPath *) path;
+- (void) drawBorderWithPath: (NSBezierPath *) path borderWidth: (CGFloat) aWidth;
 - (void) drawWithRect: (NSRect) rect;
 - (id) initWithColor: (NSColor *) color;
 + (id) fillWithColor: (NSColor *) color;

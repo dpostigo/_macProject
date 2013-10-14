@@ -51,6 +51,41 @@
 }
 
 
+- (void) drawWithPath: (NSBezierPath *) path {
+    if (self.isGradient) {
+        [self drawGradientWithPath: path];
+
+    } else {
+        [self drawColorWithPath: path];
+    }
+
+}
+
+- (void) drawGradientWithPath: (NSBezierPath *) path {
+    if ([self.gradient isKindOfClass: [BasicGradient class]]) {
+        [self.gradient drawInBezierPath: path angle: self.gradient.angle];
+    } else {
+        NSLog(@"NOT A BASICGRADIENT = %@", self.gradient);
+    }
+}
+
+
+- (void) drawColorWithPath: (NSBezierPath *) path {
+    [NSGraphicsContext saveGraphicsState];
+    [self.color setFill];
+    [path fill];
+    [NSGraphicsContext restoreGraphicsState];
+}
+
+- (void) drawBorderWithPath: (NSBezierPath *) path borderWidth: (CGFloat) aWidth {
+    [NSGraphicsContext saveGraphicsState];
+    [self.color setStroke];
+    [path setLineWidth: aWidth];
+    [path setLineCapStyle: NSRoundLineCapStyle];
+    [path setLineJoinStyle: NSBevelLineJoinStyle];
+    [path stroke];
+    [NSGraphicsContext restoreGraphicsState];
+}
 
 
 @end

@@ -7,17 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import "NSBezierPath+DPUtils.h"
 #import "BorderOption.h"
 #import "BasicGradient.h"
 #import "CornerProperties.h"
 
 @interface PathOptions : NSObject <NSCopying> {
-    NSColor *backgroundColor;
-    BasicGradient *gradient;
-    BasicGradient *horizontalGradient;
 
-
+    NSMutableArray *fills;
     NSMutableArray *borderOptions;
     CornerProperties *cornerProperties;
 
@@ -30,29 +26,27 @@
 
 
 #pragma mark Pointers
+
 @property(nonatomic) CGFloat cornerRadius;
 @property(nonatomic) CornerType cornerType;
-
 
 @property(nonatomic) CGFloat borderWidth;
 @property(nonatomic) BorderType borderType;
 @property(nonatomic, strong) NSColor *borderColor;
+@property(nonatomic, strong) NSColor *backgroundColor;
+@property(nonatomic, strong) BasicGradient *gradient;
+@property(nonatomic, strong) BorderOption *borderOption;
+@property(nonatomic, strong) BasicFill *fill;
 
 #pragma mark Synthesized
 
-@property(nonatomic, strong) BasicGradient *gradient;
-@property(nonatomic, strong) BasicGradient *horizontalGradient;
-
-
-@property(nonatomic, strong) BorderOption *borderOption;
-@property(nonatomic, strong) CornerProperties *cornerProperties;
+@property(nonatomic, strong) NSMutableArray *fills;
 @property(nonatomic, strong) NSMutableArray *borderOptions;
+@property(nonatomic, strong) CornerProperties *cornerProperties;
 
-@property(nonatomic, strong) NSColor *backgroundColor;
-@property(nonatomic, strong) NSShadow *outerShadow;
 @property(nonatomic, strong) NSShadow *innerShadow;
+@property(nonatomic, strong) NSShadow *outerShadow;
 @property(nonatomic, strong) PathOptions *innerPathOptions;
-
 
 - (id) initWithGradient: (BasicGradient *) gradient;
 - (id) initWithGradient: (BasicGradient *) aGradient borderColor: (NSColor *) aBorderColor;

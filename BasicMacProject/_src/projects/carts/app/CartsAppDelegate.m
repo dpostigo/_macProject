@@ -21,7 +21,7 @@
     //    [self embedViewController: [[CartsMainViewController alloc] initWithDefaultNib] inView: window.contentView];
 
     CartsMainViewController *mainController = [[CartsMainViewController alloc] init];
-//    basicWindow.contentView = mainController.view;
+    basicWindow.contentView = mainController.view;
     //    [self embedView: mainController.view inView: basicWindow.contentView];
 
 }

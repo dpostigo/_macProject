@@ -18,13 +18,15 @@
     [super loadView];
 
     BasicInnerShadowView *background = [[BasicInnerShadowView alloc] initWithFrame: self.view.bounds];
+    background.innerShadowColor = [NSColor blackColor];
 
     //    backgroundView.borderOptions = [NSArray arrayWithObjects:
     //            [[BorderOption alloc] initWithBorderColor: [NSColor darkGrayColor] borderWidth: 0.5 type: BorderTypeTop],
     //            [[BorderOption alloc] initWithBorderColor: [NSColor darkGrayColor] borderWidth: 0.5 type: BorderTypeLeft],
     //            [[BorderOption alloc] initWithBorderColor: [NSColor darkGrayColor] borderWidth: 0.5 type: BorderTypeRight],
     //            nil];
-    background.gradient = [[NSGradient alloc] initWithColors: [NSArray arrayWithObjects: [NSColor offwhiteColor], [NSColor whiteColor], nil]];
+
+    background.gradient = [[BasicGradient alloc] initWithColors: [NSArray arrayWithObjects: [NSColor offwhiteColor], [NSColor whiteColor], nil]];
     [self embedView: background inView: self.view];
 
 

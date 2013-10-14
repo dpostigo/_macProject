@@ -6,6 +6,8 @@
 
 
 #import "BasicInnerShadowView.h"
+#import "BasicCenteredGradient.h"
+#import "BasicScalingGradient.h"
 
 @implementation BasicInnerShadowView {
 }
@@ -22,10 +24,12 @@
     pathOptions.innerShadow = [[NSShadow alloc] init];
     pathOptions.innerShadow.shadowColor = [NSColor colorWithWhite: 0.8];
     pathOptions.innerShadow.shadowBlurRadius = 3;
-    //    pathOptions.innerShadow.shadowOffset = NSMakeSize(10, 0);
 
 }
 
+
+
+#pragma mark NSView overrides -
 
 - (BOOL) wantsDefaultClipping {
     return NO;
@@ -34,6 +38,57 @@
 
 - (BOOL) isOpaque {
     return NO;
+}
+
+
+#pragma mark Getters
+
+
+- (BasicGradient *) horizontalShadowGradient {
+    if (horizontalShadowGradient == nil) {
+        self.horizontalShadowGradient = [[BasicGradient alloc] initWithBaseColor: [NSColor blackColor] centerColor: [NSColor clearColor]];
+    }
+    return horizontalShadowGradient;
+}
+
+
+- (BasicGradient *) verticalShadowGradient {
+    if (verticalShadowGradient == nil) {
+        self.verticalShadowGradient = [[BasicGradient alloc] initWithBaseColor: [NSColor blackColor] centerColor: [NSColor clearColor]];
+    }
+    return verticalShadowGradient;
+}
+
+
+#pragma mark Setters
+
+
+- (void) setInnerShadowColor: (NSColor *) innerShadowColor1 {
+    //    self.horizontalShadowGradient = [BasicGradient clearGradientWithBaseColor: innerShadowColor1];
+    //    self.horizontalShadowGradient = [[BasicCenteredGradient alloc] initWithBaseColor: innerShadowColor1 centerColor: [NSColor clearColor] centerAmount: 0.8];
+    self.horizontalShadowGradient = [[BasicScalingGradient alloc] initWithBaseColor: innerShadowColor1 centerColor: [NSColor clearColor] centerAmount: 0.9 baseLength: 5.0];
+    self.verticalShadowGradient = [[BasicScalingGradient alloc] initWithBaseColor: innerShadowColor1 centerColor: [NSColor clearColor] centerAmount: 0.9 baseLength: 5.0];
+}
+
+
+- (void) setInnerShadowGradient: (BasicGradient *) innerShadowGradient1 {
+    if (horizontalShadowGradient) [self removeGradient: horizontalShadowGradient];
+    horizontalShadowGradient = innerShadowGradient1;
+    [self addGradient: horizontalShadowGradient];
+}
+
+
+- (void) setHorizontalShadowGradient: (BasicGradient *) innerShadowGradient1 {
+    if (horizontalShadowGradient) [self removeGradient: horizontalShadowGradient];
+    horizontalShadowGradient = innerShadowGradient1;
+    [self addGradient: horizontalShadowGradient];
+}
+
+- (void) setVerticalShadowGradient: (BasicGradient *) innerShadowGradient1 {
+    innerShadowGradient1.isVertical = YES;
+    if (verticalShadowGradient) [self removeGradient: verticalShadowGradient];
+    verticalShadowGradient = innerShadowGradient1;
+    [self addGradient: verticalShadowGradient];
 }
 
 

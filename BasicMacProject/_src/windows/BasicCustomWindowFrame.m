@@ -149,17 +149,7 @@
     [NSBezierPath drawBezierPathWithRect: rect options: pathOptions];
 
 
-    //    NSBezierPath *innerBorderPath = [NSBezierPath rectBezierPathWithRect: NSInsetRect(rect, self.borderWidth, self.borderWidth) cornerRadius: self.cornerRadius options: self.cornerType];
 
-
-    //    [self.gradient drawInBezierPath: path angle: 90];
-    //    [path drawStroke: self.borderColor width: self.borderWidth];
-    //    [innerBorderPath drawStroke: self.innerBorderColor width: self.borderWidth];
-
-    //
-    //    NSRect aRect = self.bottomResizeRect;
-    //    NSBezierPath *rightResizePath = [NSBezierPath rectBezierPathWithRect: aRect];
-    //    [rightResizePath drawWithFill: [NSColor blueColor]];
 
 }
 

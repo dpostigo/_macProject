@@ -14,9 +14,6 @@
 
 }
 
-@synthesize backgroundColor;
-@synthesize gradient;
-@synthesize horizontalGradient;
 @synthesize innerShadow;
 @synthesize outerShadow;
 
@@ -24,6 +21,8 @@
 @synthesize innerPathOptions;
 
 @synthesize cornerProperties;
+
+@synthesize fills;
 
 - (id) initWithGradient: (BasicGradient *) aGradient {
     return [self initWithGradient: aGradient borderColor: nil borderWidth: 0 cornerRadius: 0 cornerOptions: 0];
@@ -70,14 +69,48 @@
     return self;
 }
 
+
+
+#pragma mark Drawing
+
+- (void) drawWithRect: (NSRect) rect {
+
+    NSBezierPath *path = [NSBezierPath bezierPathWithRect: rect pathOptions: self];
+    [self drawFillsWithPath: path];
+    [self drawBordersWithRect: rect];
+
+}
+
+- (void) drawFillsWithPath: (NSBezierPath *) path {
+    for (int j = 0; j < [self.fills count]; j++) {
+        BasicFill *fillOption = [self.fills objectAtIndex: j];
+        [fillOption drawWithPath: path];
+    }
+}
+
+- (void) drawBordersWithRect: (NSRect) rect {
+    CGFloat borderInset = 0;
+    for (int j = 0; j < [borderOptions count]; j++) {
+        BorderOption *border = [borderOptions objectAtIndex: j];
+        border.corners = self.cornerProperties;
+
+        borderInset += (border.borderWidth);
+        NSRect borderRect = NSInsetRect(rect, borderInset, borderInset);
+        [border drawWithRect: borderRect];
+        rect = borderRect;
+    }
+}
+
 #pragma mark Setters
 
-
+- (void) setBackgroundColor: (NSColor *) backgroundColor1 {
+    self.fill.color = backgroundColor1;
+}
 
 - (void) setGradient: (BasicGradient *) gradient1 {
-    gradient = gradient1;
-    if (backgroundColor == nil) {
-        self.backgroundColor = gradient.bottomColor;
+    self.fill.gradient = gradient1;
+    if (self.backgroundColor == nil) {
+        self.backgroundColor = self.gradient.bottomColor;
     }
 }
 
@@ -105,8 +138,34 @@
     self.cornerProperties.type = cornerOptions1;
 }
 
+- (void) setFill: (BasicFill *) fill1 {
+    [self.fills replaceObjectAtIndex: 0 withObject: fill1];
+}
+
+
 
 #pragma mark Getters
+
+
+- (BasicFill *) fill {
+    return [self.fills objectAtIndex: 0];
+}
+
+- (NSMutableArray *) fills {
+    if (fills == nil) {
+        fills = [[NSMutableArray alloc] initWithObjects: [[BasicFill alloc] init], nil];
+    }
+    return fills;
+}
+
+
+- (BasicGradient *) gradient {
+    return self.fill.gradient;
+}
+
+- (NSColor *) backgroundColor {
+    return self.fill.color;
+}
 
 
 - (BorderOption *) borderOption {
@@ -144,7 +203,6 @@
     copy.cornerRadius = self.cornerRadius;
     copy.cornerType = self.cornerType;
     copy.gradient = self.gradient;
-    copy.horizontalGradient = self.horizontalGradient;
     copy.innerShadow = [self.innerShadow copy];
     copy.outerShadow = [self.outerShadow copy];
     return copy;
@@ -155,31 +213,6 @@
 //}
 
 
-
-#pragma mark Drawing
-
-- (void) drawWithRect: (NSRect) rect {
-
-    NSBezierPath *path = [NSBezierPath bezierPathWithRect: rect pathOptions: self];
-
-    if (self.gradient == nil) [path drawWithFill: self.backgroundColor];
-    else [self.gradient drawInBezierPath: path angle: 90];
-
-    if (self.horizontalGradient != nil) [self.horizontalGradient drawInBezierPath: path angle: 0];
-    if (self.innerShadow != nil) [path drawShadow: self.innerShadow];
-
-    CGFloat borderInset = 0;
-    for (int j = 0; j < [borderOptions count]; j++) {
-        BorderOption *border = [borderOptions objectAtIndex: j];
-        border.corners = self.cornerProperties;
-
-        borderInset += (border.borderWidth);
-        NSRect borderRect = NSInsetRect(rect, borderInset, borderInset);
-        [border drawWithRect: borderRect];
-
-        rect = borderRect;
-    }
-}
 
 
 #pragma mark Helpers

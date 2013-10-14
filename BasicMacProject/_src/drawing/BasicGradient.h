@@ -27,6 +27,8 @@
 
 + (BasicGradient *) whiteShineGradient;
 + (BasicGradient *) whiteShineGradientWithBaseColor: (NSColor *) baseColor;
++ (BasicGradient *) clearGradientWithBaseColor: (NSColor *) baseColor;
++ (BasicGradient *) gradientWithBaseColor: (NSColor *) baseColor centerColor: (NSColor *) centerColor;
 - (id) initWithTopColor: (NSColor *) aTopColor bottomColor: (NSColor *) aBottomColor percent: (CGFloat) percentage;
 - (id) initWithTopColor: (NSColor *) aTopColor bottomColor: (NSColor *) aBottomColor;
 - (id) initWithBaseColor: (NSColor *) baseColor centerColor: (NSColor *) centerColor;

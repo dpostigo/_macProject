@@ -115,35 +115,21 @@
 
 - (void) drawWithRect: (NSRect) rect {
     if (self.borderWidth > 0) {
+        NSBezierPath *path;
         if (self.fill.isGradient) {
-            [self drawGradientWithRect: rect];
+
+            rect = NSInsetRect(rect, self.borderWidth, self.borderWidth);
+            path = [self rectBezierPathWithRect: rect];
+            [self.fill drawGradientWithPath: path];
+
         } else if (![self.fill.color isEqualTo: [NSColor clearColor]]) {
-            [self drawColorWithRect: rect];
+            path = [self lineBezierPathWithRect: rect];
+            [self.fill drawBorderWithPath: path borderWidth: self.borderWidth];
         }
     }
 
 }
 
-- (void) drawGradientWithRect: (NSRect) rect {
-    NSBezierPath *path = [self rectBezierPathWithRect: NSInsetRect(rect, self.borderWidth, self.borderWidth)];
-    [self.fill.gradient drawInBezierPath: path angle: self.fill.gradient.angle];
-}
-
-- (void) drawColorWithRect: (NSRect) rect {
-    NSBezierPath *path = [self lineBezierPathWithRect: rect];
-    [self drawWithPath: path];
-}
-
-
-- (void) drawWithPath: (NSBezierPath *) path {
-    [NSGraphicsContext saveGraphicsState];
-    [self.borderColor setStroke];
-    [path setLineWidth: borderWidth];
-    [path setLineCapStyle: NSRoundLineCapStyle];
-    [path setLineJoinStyle: NSBevelLineJoinStyle];
-    [path stroke];
-    [NSGraphicsContext restoreGraphicsState];
-}
 
 
 #pragma mark NSBezierPath

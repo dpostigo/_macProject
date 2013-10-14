@@ -8,6 +8,12 @@
 #import <Foundation/Foundation.h>
 #import "BasicDisplayView.h"
 
-@interface BasicInnerShadowView : BasicDisplayView
+@interface BasicInnerShadowView : BasicDisplayView {
+    BasicGradient *horizontalShadowGradient;
+    BasicGradient *verticalShadowGradient;
+}
+
+@property(nonatomic, strong) NSColor *innerShadowColor;
+@property(nonatomic, strong) BasicGradient *horizontalShadowGradient;
 
 @end

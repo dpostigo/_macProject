@@ -41,7 +41,7 @@ typedef enum {
 - (id) initWithBorderColor: (NSColor *) aColor borderWidth: (CGFloat) aWidth type: (BorderType) aType;
 - (id) initWithBorderColor: (NSColor *) aColor borderWidth: (CGFloat) aWidth;
 - (void) drawWithRect: (NSRect) rect;
-- (void) drawWithPath: (NSBezierPath *) path;
+- (void) drawBorderWithPath: (NSBezierPath *) path;
 //- (void) drawWithPathOptions: (PathOptions *) pathOptions;
 
 - (NSString *) borderTypeString;

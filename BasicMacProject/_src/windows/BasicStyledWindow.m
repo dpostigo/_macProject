@@ -32,7 +32,8 @@
     ret.backgroundColor = [NSColor clearColor];
     ret.backgroundColor = [NSColor blueColor];
     ret.cornerRadius = 5;
-    [ret setBorderWidth: 0.5 borderColor: [NSColor blackColor]];
+    ret.borderColor = [NSColor blackColor];
+    ret.borderWidth = 0.5;
 
     ret.windowHeaderView = self.windowHeaderView;
     ret.windowFooterView = self.windowFooterView;

@@ -28,6 +28,22 @@
 
 #pragma mark Methods
 
+- (void) addGradient: (BasicGradient *) aGradient {
+    [self addFill: [[BasicFill alloc] initWithGradient: aGradient]];
+}
+
+- (void) removeGradient: (BasicGradient *) aGradient {
+    [self removeFill: [self fillForGradient: aGradient]];
+}
+
+- (void) addFill: (BasicFill *) aFill {
+    [self.fills addObject: aFill];
+}
+
+- (void) removeFill: (BasicFill *) aFill {
+    if (aFill) [self.fills removeObject: aFill];
+}
+
 - (void) addBorder: (BorderOption *) aBorder {
     [self.borderOptions addObject: aBorder];
 }
@@ -49,6 +65,10 @@
 
 
 #pragma mark Getters
+
+- (NSMutableArray *) fills {
+    return pathOptions.fills;
+}
 
 - (NSColor *) backgroundColor {
     return pathOptions.backgroundColor;
@@ -143,13 +163,6 @@
 }
 
 
-//- (NSColor *) innerBorderColor {
-//    return innerPathOptions.borderColor;
-//}
-//
-//- (void) setInnerBorderColor: (NSColor *) innerBorderColor1 {
-//    innerPathOptions.borderColor = innerBorderColor1;
-//}
 
 
 
@@ -168,10 +181,8 @@
 - (void) drawRect: (NSRect) dirtyRect {
     [[NSColor clearColor] set];
     NSRectFill(self.bounds);
-    //    dirtyRect = self.bounds;
 
     [pathOptions drawWithRect: self.bounds];
-    //    [NSBezierPath drawBezierPathWithRect: dirtyRect options: pathOptions];
 }
 
 
@@ -184,6 +195,21 @@
     if (customWindow) {
         self.cornerRadius = customWindow.windowFrame.cornerRadius - 1;
     }
+}
+
+
+#pragma mark Helpers
+
+- (BasicFill *) fillForGradient: (BasicGradient *) aGradient {
+    BasicFill *ret = nil;
+    for (int j = 0; j < [self.fills count]; j++) {
+        BasicFill *aFill = [self.fills objectAtIndex: j];
+        if (aFill.gradient == aGradient) {
+            ret = aFill;
+            break;
+        }
+    }
+    return ret;
 }
 
 @end

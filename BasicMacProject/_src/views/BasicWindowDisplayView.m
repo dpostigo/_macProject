@@ -21,21 +21,19 @@
     [super setup];
     self.topMargin = 10;
     self.bottomMargin = 10;
-    cacheAsBitmap = NO;
+    cacheAsBitmap = YES;
 }
 
 - (void) updateLayout {
-    if (windowHeaderView) {
-        windowHeaderView.frame = self.northRectFull;
-    }
+    if (windowHeaderView) windowHeaderView.frame = self.windowHeaderFrame;
+    if (windowFooterView) windowFooterView.frame = self.windowFooterFrame;
 
-    if (windowFooterView) {
-        windowFooterView.frame = self.southRectFull;
-    }
+    if (self.singleSubview) self.singleSubview.frame = self.subviewFrame;
 
-    if (self.singleSubview) {
-        self.singleSubview.frame = NSInsetRect(self.subviewFrame, self.borderWidth, self.borderWidth);
-    }
+    //    NSLog(@"self.frame = %@", NSStringFromRect(self.frame));
+    //    NSLog(@"self.windowHeaderFrame = %@", NSStringFromRect(self.windowHeaderFrame));
+    //    NSLog(@"self.windowFooterFrame = %@", NSStringFromRect(self.windowFooterFrame));
+    //    NSLog(@"self.subviewFrame = %@", NSStringFromRect(self.subviewFrame));
 
 }
 
@@ -55,8 +53,7 @@
 
 - (void) setWindowHeaderView: (NSView *) windowHeaderView1 {
     windowHeaderView = windowHeaderView1;
-    //    windowHeaderView.autoresizingMask = NSViewMaxYMargin | NSViewWidthSizable;
-    windowHeaderView.autoresizingMask = NSViewWidthSizable | NSViewMinYMargin;
+    windowHeaderView.autoresizingMask = NSViewWidthSizable | NSViewMaxYMargin;
     [self addSubview: windowHeaderView];
     [self updateLayout];
 }
@@ -64,19 +61,19 @@
 
 - (void) setWindowFooterView: (NSView *) windowHeaderView1 {
     windowFooterView = windowHeaderView1;
-    windowFooterView.autoresizingMask = NSViewWidthSizable | NSViewMaxYMargin;
+    windowFooterView.autoresizingMask = NSViewWidthSizable | NSViewMinYMargin;
     [self addSubview: windowFooterView];
     [self updateLayout];
 }
 
-- (void) embedView: (NSView *) aSubview {
-    [super embedView: aSubview];
-
-    if (aSubview != windowHeaderView && aSubview != windowFooterView) {
-        //        aSubview.frame = NSInsetRect(aSubview.frame, self.borderWidth, self.borderWidth);
-    }
-}
-
+//- (void) embedView: (NSView *) aSubview {
+//    [super embedView: aSubview];
+//
+//    if (aSubview != windowHeaderView && aSubview != windowFooterView) {
+//        //        aSubview.frame = NSInsetRect(aSubview.frame, self.borderWidth, self.borderWidth);
+//    }
+//}
+//
 
 
 #pragma mark NSView overrides
@@ -88,6 +85,11 @@
 }
 
 - (BOOL) isOpaque {
+    return YES;
+}
+
+
+- (BOOL) isFlipped {
     return YES;
 }
 
@@ -106,11 +108,9 @@
 
 - (void) drawRect: (NSRect) dirtyRect {
 
-    [self.backgroundColor set];
-    NSRectFill(self.bounds);
-
     if (windowHeaderView != nil && windowFooterView != nil) {
-        NSLog(@"Has header & footer view.");
+        //        NSLog(@"Has header & footer view.");
+        [super drawRect: dirtyRect];
 
     } else {
 
@@ -120,6 +120,9 @@
             [self drawImage];
 
             if (self.inLiveResize) {
+
+                [self.backgroundColor set];
+                NSRectFill(self.bounds);
                 //                [self.backgroundColor set];
                 //                [path fill];
 
@@ -165,14 +168,6 @@
 
 #pragma mark Getters
 
-- (CGFloat) subviewHeight {
-    return self.height - topMargin - bottomMargin;
-}
-
-- (NSRect) subviewFrame {
-    NSRect ret = NSMakeRect(0, bottomMargin, self.width, self.subviewHeight);
-    return ret;
-}
 
 
 
@@ -242,14 +237,36 @@
 #pragma mark North
 
 
+- (NSRect) windowHeaderFrame {
+    return self.northRectFull;
+}
+
+- (NSRect) windowFooterFrame {
+    return self.southRectFull;
+}
+
+- (CGFloat) subviewHeight {
+    return self.bounds.size.height - self.topMargin - self.bottomMargin;
+}
+
+- (NSRect) subviewFrame {
+    NSRect ret = NSMakeRect(0, self.topMargin, self.width, self.subviewHeight);
+    ret.origin.y += self.borderWidth;
+    ret.size.height -= self.borderWidth;
+    ret = NSInsetRect(ret, self.borderWidth, 0);
+    return ret;
+}
+
+
 - (NSRect) northRectFull {
-    return NSMakeRect(0, self.bounds.size.height - self.topMargin, self.bounds.size.width, self.topMargin);
+    return NSMakeRect(0, 0, self.bounds.size.width, self.topMargin);
 }
 
 
 - (NSRect) southRectFull {
-    return NSMakeRect(0, 0, self.bounds.size.width, self.bottomMargin);
+    return NSMakeRect(0, self.bounds.size.height - self.bottomMargin, self.bounds.size.width, self.bottomMargin);
 }
+
 
 - (NSRect) northRectForSize: (NSSize) size {
     NSRect ret = NSMakeRect(0, size.height - self.topMargin, size.width, self.topMargin);

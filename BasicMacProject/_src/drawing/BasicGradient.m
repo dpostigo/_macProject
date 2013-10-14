@@ -7,6 +7,7 @@
 //
 
 #import "BasicGradient.h"
+#import "BasicCenteredGradient.h"
 
 @implementation BasicGradient {
 
@@ -21,31 +22,32 @@
 
 
 
-#pragma mark Horizontal gradients
+#pragma mark Horizontal gradients -
+#pragma mark White gradients
 
-+ (BasicGradient *) whiteShineGradient {
-    return [[self alloc] initWithBaseColors: [NSArray arrayWithObjects: [NSColor alphaWhite: 0.5], [NSColor alphaWhite: 0.0], nil] centerColor: [NSColor whiteColor]];
-
-    //    return [BasicGradient whiteShineGradientWithBaseColor: [NSColor colorWithDeviceWhite: 1.0 alpha: 0.5]];
-    //    return [[self alloc] initWithBaseColor: [NSColor colorWithDeviceWhite: 1.0 alpha: 0.0] centerColor: [NSColor whiteColor]];
++ (BasicCenteredGradient *) whiteShineGradient {
+    return [BasicCenteredGradient gradientWithBaseColor: [NSColor clearColor] centerColor: [NSColor whiteColor]];
+    //    return [[self alloc] initWithBaseColors: [NSArray arrayWithObjects: [NSColor alphaWhite: 0.5], [NSColor alphaWhite: 0.1], nil] centerColor: [NSColor alphaWhite: 0.6]];
 }
 
-+ (BasicGradient *) whiteShineGradientWithBaseColor: (NSColor *) baseColor {
-    return [[self alloc] initWithBaseColor: baseColor centerColor: [NSColor whiteColor]];
++ (BasicCenteredGradient *) whiteShineGradientWithBaseColor: (NSColor *) baseColor {
+    return [BasicCenteredGradient gradientWithBaseColor: baseColor centerColor: [NSColor whiteColor]];
+    //    return [[self alloc] initWithBaseColor: baseColor centerColor: [NSColor whiteColor]];
 }
 
-- (id) initWithBaseColor: (NSColor *) baseColor centerColor: (NSColor *) centerColor {
-    return [self initWithBaseColors: [NSArray arrayWithObject: baseColor] centerColor: centerColor];
+
+#pragma mark Clear gradients
+
++ (BasicCenteredGradient *) clearGradientWithBaseColor: (NSColor *) baseColor {
+    return [BasicCenteredGradient gradientWithBaseColor: baseColor centerColor: [NSColor clearColor]];
+    //    return [[self alloc] initWithBaseColors: [NSArray arrayWithObjects: [baseColor colorWithAlphaComponent: 0.1], baseColor, nil] centerColor: [NSColor clearColor]];
 }
 
-- (id) initWithBaseColors: (NSArray *) baseColors centerColor: (NSColor *) centerColor {
-    NSMutableArray *colorArray = [[NSMutableArray alloc] initWithObjects: centerColor, nil];
-    for (NSColor *baseColor in baseColors) {
-        [colorArray insertObject: baseColor atIndex: 0];
-        [colorArray addObject: baseColor];
-    }
-    return [self initWithColors: colorArray];
+
++ (BasicGradient *) gradientWithBaseColor: (NSColor *) baseColor centerColor: (NSColor *) centerColor {
+    return [[self alloc] initWithBaseColor: baseColor centerColor: centerColor];
 }
+
 
 
 #pragma mark Vertical gradients
@@ -57,20 +59,17 @@
 - (id) initWithTopColor: (NSColor *) aTopColor bottomColor: (NSColor *) aBottomColor percent: (CGFloat) percentage {
     self = [super initWithColorsAndLocations: aBottomColor, (1.0 - percentage), aTopColor, 1.0, nil];
     if (self) {
-        self.topColor = aTopColor;
-        self.bottomColor = aBottomColor;
+        self.isVertical = YES;
     }
     return self;
 }
+
 
 - (id) initWithColors: (NSArray *) colorArray {
     self = [super initWithColors: colorArray];
     if (self) {
         self.colors = colorArray;
-        self.topColor = [colorArray lastObject];
-        self.bottomColor = [colorArray objectAtIndex: 0];
     }
-
     return self;
 }
 

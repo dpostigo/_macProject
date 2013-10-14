@@ -151,9 +151,7 @@
         [pathOptions.gradient drawInBezierPath: self angle: 90];
     }
 
-    if (pathOptions.horizontalGradient != nil) {
-        [pathOptions.horizontalGradient drawInBezierPath: self angle: 0];
-    }
+
     if (pathOptions.innerShadow != nil) {
         [self drawShadow: pathOptions.innerShadow];
     }
@@ -192,7 +190,6 @@
     [aColor setFill];
     [self fill];
     [NSGraphicsContext restoreGraphicsState];
-
 }
 
 - (void) drawGradient: (NSGradient *) gradient {
