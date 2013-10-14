@@ -82,7 +82,6 @@
 
     } else {
 
-        NSRect bounds = self.bounds;
         NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect: self.bounds xRadius: cornerRadius yRadius: cornerRadius];
         [path drawGradient: gradient angle: gradientRotation];
         [path drawStroke: borderColor];

@@ -11,8 +11,8 @@
 @implementation NSImageView (DPImageManager)
 
 - (void) setImageWithURL: (NSURL *) url; {
-    NSError *error = nil;
-    NSData *data = nil;
+   // NSError *error = nil;
+    //NSData *data = nil;
     NSString *key = [url absoluteString];
     DPImageManager *manager = [DPImageManager sharedManager];
 

@@ -18,6 +18,7 @@
     CornerProperties *cornerProperties;
 
 
+
     NSShadow *innerShadow;
     NSShadow *outerShadow;
     PathOptions *innerPathOptions;

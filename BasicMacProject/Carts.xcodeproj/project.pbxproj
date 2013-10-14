@@ -26,6 +26,13 @@
 		03386EFB176D2A6200E1F37A /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03386EFA176D2A6200E1F37A /* MainViewController.xib */; };
 		03386EFE176D2AF700E1F37A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03386EFC176D2AF700E1F37A /* MainMenu.xib */; };
 		0367CF8D17D628ED00357D31 /* CartsHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0367CF8C17D628ED00357D31 /* CartsHomeViewController.xib */; };
+		036D4CD8180C3B8D0017481C /* BasicCenteredGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 036D4CCA180C3B8D0017481C /* BasicCenteredGradient.m */; };
+		036D4CDA180C3B8D0017481C /* BasicFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 036D4CCC180C3B8D0017481C /* BasicFill.m */; };
+		036D4CDC180C3B8D0017481C /* BasicGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 036D4CCE180C3B8D0017481C /* BasicGradient.m */; };
+		036D4CDE180C3B8D0017481C /* BasicHorizontalGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 036D4CD0180C3B8D0017481C /* BasicHorizontalGradient.m */; };
+		036D4CE0180C3B8D0017481C /* BorderOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 036D4CD2180C3B8D0017481C /* BorderOption.m */; };
+		036D4CE2180C3B8D0017481C /* CornerProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 036D4CD4180C3B8D0017481C /* CornerProperties.m */; };
+		036D4CE4180C3B8D0017481C /* PathOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 036D4CD6180C3B8D0017481C /* PathOptions.m */; };
 		03D8CB271768AA17000CF88A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D8CB261768AA17000CF88A /* Cocoa.framework */; };
 		03D8CB311768AA17000CF88A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03D8CB2F1768AA17000CF88A /* InfoPlist.strings */; };
 		03D8CB331768AA17000CF88A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CB321768AA17000CF88A /* main.m */; };
@@ -224,8 +231,6 @@
 		03DD36241769FA5D000DB1B7 /* TokenTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DD35E41769FA5D000DB1B7 /* TokenTestViewController.m */; };
 		03DD36251769FA5D000DB1B7 /* AppWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DD35E81769FA5D000DB1B7 /* AppWindow.m */; };
 		7CA4409098F23B33D4033A27 /* CartsFooterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4446F3AFD3671AB072463 /* CartsFooterViewController.m */; };
-		7CA440F2F0132101A8EB6464 /* BasicScalingGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44773C927C556E4829E30 /* BasicScalingGradient.m */; };
-		7CA44187825C3BD5910E243E /* BasicGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA444ECB5DF76D6DE03E430 /* BasicGradient.m */; };
 		7CA4419533A336D2D4A03A5E /* BasicWindowDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44AB5D5F32D692B68C98F /* BasicWindowDisplayView.m */; };
 		7CA4436C9EBEA7615526ABC0 /* BasicLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA447439329A6D119799C42 /* BasicLayoutViewController.m */; };
 		7CA443861CAC795C28A08685 /* NSColor+DPColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA443AC6397F86FE86434EB /* NSColor+DPColors.m */; };
@@ -233,18 +238,13 @@
 		7CA444A6A1A474566BB29FB4 /* BasicStyledRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA444FAE7741E7011923813 /* BasicStyledRowView.m */; };
 		7CA444C22E9A3AA772055517 /* CartsSidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44378F0B370C945527E28 /* CartsSidebarViewController.m */; };
 		7CA444D27027863C5F836141 /* BasicSplitSidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4464056C67BA93DE64B1C /* BasicSplitSidebarViewController.m */; };
-		7CA44570738CB1AEFDD8C621 /* CornerProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44CB667E3327F62CD9766 /* CornerProperties.m */; };
 		7CA445C760F570E0A32BDE92 /* CartsTitleBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44B9A83EC4D420E5B3CED /* CartsTitleBarViewController.m */; };
 		7CA4464F4759E1E4BC45E5EA /* BasicSplitHorizontalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44A907AE4EB2E1ACE4747 /* BasicSplitHorizontalViewController.m */; };
-		7CA446998B2631DCB30CD423 /* BasicHorizontalGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44F1583FD9996CDB8E268 /* BasicHorizontalGradient.m */; };
 		7CA44732B26C803C10501A9A /* BasicWindowTitleBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44DE8E772C6A7359755AA /* BasicWindowTitleBarViewController.m */; };
 		7CA44744641251E8AF3107FA /* ColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44B05EFBD286B14358E87 /* ColorManager.m */; };
-		7CA447F38FBC66A60CD63EB8 /* BasicCenteredGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4431CD6D18E975CFF5F52 /* BasicCenteredGradient.m */; };
 		7CA4481C618A7B309B257986 /* CartsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4462355F52DBAF22B8503 /* CartsHomeViewController.m */; };
 		7CA44825CCE87FF4A69F29CD /* CartsMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA442975AFDE9C2C92F5CCE /* CartsMainViewController.m */; };
 		7CA44863E68E0E1F9641F3ED /* BasicButton2Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA441433C9C640F1BD8B76C /* BasicButton2Cell.m */; };
-		7CA4486A4D9B349FC3806E81 /* PathOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4447771137936908C27BA /* PathOptions.m */; };
-		7CA448B5759AD3FC15D73E67 /* BasicFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44B4C2144BB04228D122F /* BasicFill.m */; };
 		7CA448F0E86B3C3BC896DCE7 /* BasicCustomWindowFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44018205CD3A1DFFBE403 /* BasicCustomWindowFrame.m */; };
 		7CA4491DBED6D24E10AFEA29 /* BasicStyledWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA447BEB41E4A87ADB2E04D /* BasicStyledWindow.m */; };
 		7CA449478C78D38E64E75C85 /* ButtonContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4475654A4B281C86F0324 /* ButtonContainer.m */; };
@@ -253,7 +253,6 @@
 		7CA449BB951E8538DED706A5 /* NSGradient+DPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4489C182E170CD84ABB6B /* NSGradient+DPUtils.m */; };
 		7CA449DAD96710F77E398D02 /* BasicNewCustomWindow0923.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44322D963F508A9B454C7 /* BasicNewCustomWindow0923.m */; };
 		7CA44AC7BD9829B2C97AF6C7 /* VeryBasicButton2Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA445943F36F39ECC47C780 /* VeryBasicButton2Cell.m */; };
-		7CA44B202AA750CC78E7A259 /* BorderOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44000ABF8BEAC657C55F1 /* BorderOption.m */; };
 		7CA44BC46A6C10A462A03CF3 /* BasicCustomWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA442406BF21E5A3706D3A6 /* BasicCustomWindow.m */; };
 		7CA44C5825BAD701C61A111D /* BasicSplitVerticalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44F3D5B8B8CFBA52FA6C5 /* BasicSplitVerticalViewController.m */; };
 		7CA44D02A5C91DFC5ACA7911 /* BasicWindowTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44B36D8AFF15E08AF68D6 /* BasicWindowTitleView.m */; };
@@ -287,6 +286,20 @@
 		03386EFA176D2A6200E1F37A /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController.xib; path = _src/xibs/viewcontrollers/MainViewController.xib; sourceTree = "<group>"; };
 		03386EFD176D2AF700E1F37A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		0367CF8C17D628ED00357D31 /* CartsHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CartsHomeViewController.xib; path = _src/xibs/viewcontrollers/CartsHomeViewController.xib; sourceTree = "<group>"; };
+		036D4CC9180C3B8D0017481C /* BasicCenteredGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicCenteredGradient.h; sourceTree = "<group>"; };
+		036D4CCA180C3B8D0017481C /* BasicCenteredGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicCenteredGradient.m; sourceTree = "<group>"; };
+		036D4CCB180C3B8D0017481C /* BasicFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicFill.h; sourceTree = "<group>"; };
+		036D4CCC180C3B8D0017481C /* BasicFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicFill.m; sourceTree = "<group>"; };
+		036D4CCD180C3B8D0017481C /* BasicGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicGradient.h; sourceTree = "<group>"; };
+		036D4CCE180C3B8D0017481C /* BasicGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicGradient.m; sourceTree = "<group>"; };
+		036D4CCF180C3B8D0017481C /* BasicHorizontalGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicHorizontalGradient.h; sourceTree = "<group>"; };
+		036D4CD0180C3B8D0017481C /* BasicHorizontalGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicHorizontalGradient.m; sourceTree = "<group>"; };
+		036D4CD1180C3B8D0017481C /* BorderOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorderOption.h; sourceTree = "<group>"; };
+		036D4CD2180C3B8D0017481C /* BorderOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorderOption.m; sourceTree = "<group>"; };
+		036D4CD3180C3B8D0017481C /* CornerProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CornerProperties.h; sourceTree = "<group>"; };
+		036D4CD4180C3B8D0017481C /* CornerProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CornerProperties.m; sourceTree = "<group>"; };
+		036D4CD5180C3B8D0017481C /* PathOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathOptions.h; sourceTree = "<group>"; };
+		036D4CD6180C3B8D0017481C /* PathOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathOptions.m; sourceTree = "<group>"; };
 		03D8CB231768AA17000CF88A /* Carts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03D8CB261768AA17000CF88A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		03D8CB291768AA17000CF88A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -665,7 +678,6 @@
 		03DD35E41769FA5D000DB1B7 /* TokenTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenTestViewController.m; sourceTree = "<group>"; };
 		03DD35E71769FA5D000DB1B7 /* AppWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppWindow.h; sourceTree = "<group>"; };
 		03DD35E81769FA5D000DB1B7 /* AppWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppWindow.m; sourceTree = "<group>"; };
-		7CA44000ABF8BEAC657C55F1 /* BorderOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorderOption.m; sourceTree = "<group>"; };
 		7CA44018205CD3A1DFFBE403 /* BasicCustomWindowFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicCustomWindowFrame.m; sourceTree = "<group>"; };
 		7CA440AF824DF0BD2503A333 /* BasicStyledRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicStyledRowView.h; path = rowViews/BasicStyledRowView.h; sourceTree = "<group>"; };
 		7CA440E54824EF63D7A26F54 /* BasicSplitHorizontalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicSplitHorizontalViewController.h; sourceTree = "<group>"; };
@@ -676,9 +688,7 @@
 		7CA4422F3647FD02C445F816 /* BasicSplitSidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicSplitSidebarViewController.h; sourceTree = "<group>"; };
 		7CA442406BF21E5A3706D3A6 /* BasicCustomWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicCustomWindow.m; sourceTree = "<group>"; };
 		7CA442975AFDE9C2C92F5CCE /* CartsMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsMainViewController.m; sourceTree = "<group>"; };
-		7CA442D88F48AE00A8D01F06 /* CornerProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CornerProperties.h; sourceTree = "<group>"; };
 		7CA44300434D7ED70419714A /* BasicSparrowSidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicSparrowSidebarViewController.h; sourceTree = "<group>"; };
-		7CA4431CD6D18E975CFF5F52 /* BasicCenteredGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicCenteredGradient.m; sourceTree = "<group>"; };
 		7CA44322D963F508A9B454C7 /* BasicNewCustomWindow0923.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicNewCustomWindow0923.m; sourceTree = "<group>"; };
 		7CA4433D2C0441339FC3F72C /* NSParagraphStyle+DPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSParagraphStyle+DPUtils.m"; sourceTree = "<group>"; };
 		7CA44378F0B370C945527E28 /* CartsSidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsSidebarViewController.m; sourceTree = "<group>"; };
@@ -686,8 +696,6 @@
 		7CA443AC6397F86FE86434EB /* NSColor+DPColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+DPColors.m"; sourceTree = "<group>"; };
 		7CA443F3A0CB1AD74691EEF0 /* BasicWindowDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicWindowDisplayView.h; sourceTree = "<group>"; };
 		7CA4446F3AFD3671AB072463 /* CartsFooterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsFooterViewController.m; sourceTree = "<group>"; };
-		7CA4447771137936908C27BA /* PathOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathOptions.m; sourceTree = "<group>"; };
-		7CA444ECB5DF76D6DE03E430 /* BasicGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BasicGradient.m; path = drawing/BasicGradient.m; sourceTree = "<group>"; };
 		7CA444FAE7741E7011923813 /* BasicStyledRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BasicStyledRowView.m; path = rowViews/BasicStyledRowView.m; sourceTree = "<group>"; };
 		7CA4451F62962EC8938CB8A9 /* BasicSparrowSidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicSparrowSidebarViewController.m; sourceTree = "<group>"; };
 		7CA4453EDE1831B18FFDC72D /* BasicWindowTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicWindowTitleView.h; sourceTree = "<group>"; };
@@ -702,23 +710,17 @@
 		7CA447439329A6D119799C42 /* BasicLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicLayoutViewController.m; sourceTree = "<group>"; };
 		7CA4475654A4B281C86F0324 /* ButtonContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonContainer.m; sourceTree = "<group>"; };
 		7CA44766DEF42C3DE47CC19E /* CartsCustomWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsCustomWindow.h; sourceTree = "<group>"; };
-		7CA44773C927C556E4829E30 /* BasicScalingGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicScalingGradient.m; sourceTree = "<group>"; };
 		7CA447A91779A935631B6175 /* ImageOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageOptions.m; sourceTree = "<group>"; };
 		7CA447BEB41E4A87ADB2E04D /* BasicStyledWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicStyledWindow.m; sourceTree = "<group>"; };
 		7CA4484337C3BE4EA64A7B3A /* ButtonContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonContainer.h; sourceTree = "<group>"; };
-		7CA44897CE037FD48F970C68 /* BasicGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicGradient.h; path = drawing/BasicGradient.h; sourceTree = "<group>"; };
 		7CA4489C182E170CD84ABB6B /* NSGradient+DPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSGradient+DPUtils.m"; sourceTree = "<group>"; };
 		7CA448B3E0F13FD047AFE8DB /* BasicCustomWindowFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicCustomWindowFrame.h; sourceTree = "<group>"; };
-		7CA449AB6A4AC2BE05A5D466 /* BasicCenteredGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicCenteredGradient.h; sourceTree = "<group>"; };
 		7CA449F22DF1FF28E68232A3 /* BasicDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicDisplayView.h; sourceTree = "<group>"; };
 		7CA44A3BDE6C4E4E5F0C35F0 /* BasicSplitVerticalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicSplitVerticalViewController.h; sourceTree = "<group>"; };
 		7CA44A907AE4EB2E1ACE4747 /* BasicSplitHorizontalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicSplitHorizontalViewController.m; sourceTree = "<group>"; };
 		7CA44AB5D5F32D692B68C98F /* BasicWindowDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicWindowDisplayView.m; sourceTree = "<group>"; };
 		7CA44B05EFBD286B14358E87 /* ColorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorManager.m; sourceTree = "<group>"; };
-		7CA44B2AFF0E8948DA6D4A68 /* BasicFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicFill.h; sourceTree = "<group>"; };
 		7CA44B36D8AFF15E08AF68D6 /* BasicWindowTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicWindowTitleView.m; sourceTree = "<group>"; };
-		7CA44B4C2144BB04228D122F /* BasicFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicFill.m; sourceTree = "<group>"; };
-		7CA44B64C3F039B8AFF3FA61 /* PathOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathOptions.h; sourceTree = "<group>"; };
 		7CA44B701D6BCE536D10F2E8 /* NSGradient+DPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSGradient+DPUtils.h"; sourceTree = "<group>"; };
 		7CA44B7DF4476648DB68F3EA /* BasicStyledWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicStyledWindow.h; sourceTree = "<group>"; };
 		7CA44B9A83EC4D420E5B3CED /* CartsTitleBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsTitleBarViewController.m; sourceTree = "<group>"; };
@@ -727,16 +729,11 @@
 		7CA44C26383C81237932D7B3 /* BasicCustomWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicCustomWindow.h; sourceTree = "<group>"; };
 		7CA44C3050AB8A8FA2599B25 /* NSParagraphStyle+DPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSParagraphStyle+DPUtils.h"; sourceTree = "<group>"; };
 		7CA44C964BDB88169B76803D /* ColorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorManager.h; sourceTree = "<group>"; };
-		7CA44CAEC1401D2993B0913B /* BasicHorizontalGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicHorizontalGradient.h; sourceTree = "<group>"; };
-		7CA44CB667E3327F62CD9766 /* CornerProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CornerProperties.m; sourceTree = "<group>"; };
 		7CA44CDF6D42AEA37F288009 /* VeryBasicButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VeryBasicButton.m; sourceTree = "<group>"; };
 		7CA44D3A19FB83306D4F0D7D /* NSColor+DPColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+DPColors.h"; sourceTree = "<group>"; };
 		7CA44D3FDE1CB33DF8DE8C6F /* CustomWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomWindow.m; sourceTree = "<group>"; };
 		7CA44D5EA0DDF5B457BD3CF7 /* CartsCustomWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsCustomWindow.m; sourceTree = "<group>"; };
-		7CA44DAB26A54622D3E459EA /* BorderOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorderOption.h; sourceTree = "<group>"; };
-		7CA44DC378664416E8D8C34F /* BasicScalingGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicScalingGradient.h; sourceTree = "<group>"; };
 		7CA44DE8E772C6A7359755AA /* BasicWindowTitleBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicWindowTitleBarViewController.m; sourceTree = "<group>"; };
-		7CA44F1583FD9996CDB8E268 /* BasicHorizontalGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicHorizontalGradient.m; sourceTree = "<group>"; };
 		7CA44F3D5B8B8CFBA52FA6C5 /* BasicSplitVerticalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicSplitVerticalViewController.m; sourceTree = "<group>"; };
 		7CA44F4461FEC2552755210A /* CustomWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomWindow.h; sourceTree = "<group>"; };
 		7CA44F4576AA41095186726E /* CartsMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsMainViewController.h; sourceTree = "<group>"; };
@@ -873,6 +870,28 @@
 			path = windows;
 			sourceTree = "<group>";
 		};
+		036D4CC8180C3B8D0017481C /* drawing */ = {
+			isa = PBXGroup;
+			children = (
+				036D4CC9180C3B8D0017481C /* BasicCenteredGradient.h */,
+				036D4CCA180C3B8D0017481C /* BasicCenteredGradient.m */,
+				036D4CCB180C3B8D0017481C /* BasicFill.h */,
+				036D4CCC180C3B8D0017481C /* BasicFill.m */,
+				036D4CCD180C3B8D0017481C /* BasicGradient.h */,
+				036D4CCE180C3B8D0017481C /* BasicGradient.m */,
+				036D4CCF180C3B8D0017481C /* BasicHorizontalGradient.h */,
+				036D4CD0180C3B8D0017481C /* BasicHorizontalGradient.m */,
+				036D4CD1180C3B8D0017481C /* BorderOption.h */,
+				036D4CD2180C3B8D0017481C /* BorderOption.m */,
+				036D4CD3180C3B8D0017481C /* CornerProperties.h */,
+				036D4CD4180C3B8D0017481C /* CornerProperties.m */,
+				036D4CD5180C3B8D0017481C /* PathOptions.h */,
+				036D4CD6180C3B8D0017481C /* PathOptions.m */,
+			);
+			name = drawing;
+			path = _src/drawing;
+			sourceTree = SOURCE_ROOT;
+		};
 		03D8CB1A1768AA17000CF88A = {
 			isa = PBXGroup;
 			children = (
@@ -950,6 +969,7 @@
 		03D8CB451768ACA6000CF88A /* _src */ = {
 			isa = PBXGroup;
 			children = (
+				036D4CC8180C3B8D0017481C /* drawing */,
 				03D8CB461768ACA6000CF88A /* app */,
 				03D8CBDC1768ACA6000CF88A /* controls */,
 				03D8CC0F1768ACA6000CF88A /* data */,
@@ -964,8 +984,6 @@
 				03D8CDA41768ACA6000CF88A /* views */,
 				03D8CDB61768ACA6000CF88A /* windows */,
 				03D8CDC11768ACA6000CF88A /* xibs */,
-				7CA444ECB5DF76D6DE03E430 /* BasicGradient.m */,
-				7CA44897CE037FD48F970C68 /* BasicGradient.h */,
 			);
 			path = _src;
 			sourceTree = SOURCE_ROOT;
@@ -1404,26 +1422,12 @@
 				03D8CD881768ACA6000CF88A /* NSWindow+Animation.m */,
 				7CA4433D2C0441339FC3F72C /* NSParagraphStyle+DPUtils.m */,
 				7CA44C3050AB8A8FA2599B25 /* NSParagraphStyle+DPUtils.h */,
-				7CA4447771137936908C27BA /* PathOptions.m */,
-				7CA44B64C3F039B8AFF3FA61 /* PathOptions.h */,
 				7CA4489C182E170CD84ABB6B /* NSGradient+DPUtils.m */,
 				7CA44B701D6BCE536D10F2E8 /* NSGradient+DPUtils.h */,
-				7CA44000ABF8BEAC657C55F1 /* BorderOption.m */,
-				7CA44DAB26A54622D3E459EA /* BorderOption.h */,
 				7CA447A91779A935631B6175 /* ImageOptions.m */,
 				7CA446107353C65ED3D61061 /* ImageOptions.h */,
 				7CA443AC6397F86FE86434EB /* NSColor+DPColors.m */,
 				7CA44D3A19FB83306D4F0D7D /* NSColor+DPColors.h */,
-				7CA44CB667E3327F62CD9766 /* CornerProperties.m */,
-				7CA442D88F48AE00A8D01F06 /* CornerProperties.h */,
-				7CA44B4C2144BB04228D122F /* BasicFill.m */,
-				7CA44B2AFF0E8948DA6D4A68 /* BasicFill.h */,
-				7CA44F1583FD9996CDB8E268 /* BasicHorizontalGradient.m */,
-				7CA44CAEC1401D2993B0913B /* BasicHorizontalGradient.h */,
-				7CA4431CD6D18E975CFF5F52 /* BasicCenteredGradient.m */,
-				7CA449AB6A4AC2BE05A5D466 /* BasicCenteredGradient.h */,
-				7CA44773C927C556E4829E30 /* BasicScalingGradient.m */,
-				7CA44DC378664416E8D8C34F /* BasicScalingGradient.h */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1848,7 +1852,7 @@
 		03D8CB1B1768AA17000CF88A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Elastic Creative";
 			};
 			buildConfigurationList = 03D8CB1E1768AA17000CF88A /* Build configuration list for PBXProject "Carts" */;
@@ -1950,6 +1954,7 @@
 				03D8CE1E1768ACA6000CF88A /* BasicCustomRowView.m in Sources */,
 				03D8CE1F1768ACA6000CF88A /* BasicDatePickerCell.m in Sources */,
 				03D8CE201768ACA6000CF88A /* BasicTableRowView.m in Sources */,
+				036D4CE4180C3B8D0017481C /* PathOptions.m in Sources */,
 				03D8CE211768ACA6000CF88A /* BasicTableView.m in Sources */,
 				03D8CE221768ACA6000CF88A /* BasicTokenCell.m in Sources */,
 				03D8CE231768ACA6000CF88A /* BasicSecureTextField.m in Sources */,
@@ -1988,6 +1993,7 @@
 				03D8CEB81768ACA6000CF88A /* HoverTableRowView.m in Sources */,
 				03D8CEB91768ACA6000CF88A /* iTableColumnHeaderCell.m in Sources */,
 				03D8CEBA1768ACA6000CF88A /* JMSimpleDate.m in Sources */,
+				036D4CDA180C3B8D0017481C /* BasicFill.m in Sources */,
 				03D8CEBB1768ACA6000CF88A /* JMSimpleDateConstants.m in Sources */,
 				03D8CEBC1768ACA6000CF88A /* NSDate+JMSimpleDate.m in Sources */,
 				03D8CEBD1768ACA6000CF88A /* NSDateFormatter+JMSimpleDate.m in Sources */,
@@ -2045,6 +2051,7 @@
 				03D8CEF11768ACA7000CF88A /* BasicCustomWindowOld.m in Sources */,
 				03D8CEF21768ACA7000CF88A /* BasicFullWindow.m in Sources */,
 				03D8CEF31768ACA7000CF88A /* BasicSplitViewOld.m in Sources */,
+				036D4CD8180C3B8D0017481C /* BasicCenteredGradient.m in Sources */,
 				03D8CEF41768ACA7000CF88A /* BasicWindow.m in Sources */,
 				03D8CEF51768ACA7000CF88A /* ModalWindow.m in Sources */,
 				03D8CFE71768AE5F000CF88A /* BasicTokenField.m in Sources */,
@@ -2057,6 +2064,7 @@
 				03DD35F81769FA5D000DB1B7 /* BOWhiteTextButton.m in Sources */,
 				03DD35F91769FA5D000DB1B7 /* CheckboxButton.m in Sources */,
 				03DD35FA1769FA5D000DB1B7 /* BODiscussionFooterRowView.m in Sources */,
+				036D4CDE180C3B8D0017481C /* BasicHorizontalGradient.m in Sources */,
 				03DD35FB1769FA5D000DB1B7 /* BODiscussionRowView.m in Sources */,
 				03DD35FC1769FA5D000DB1B7 /* BOModalTableRowView.m in Sources */,
 				03DD35FD1769FA5D000DB1B7 /* BOSidebarLabel.m in Sources */,
@@ -2078,6 +2086,7 @@
 				03DD360D1769FA5D000DB1B7 /* GetAssigneeProcess.m in Sources */,
 				03DD360E1769FA5D000DB1B7 /* GetContactsProcess.m in Sources */,
 				03DD360F1769FA5D000DB1B7 /* GetDiscussionProcess.m in Sources */,
+				036D4CE2180C3B8D0017481C /* CornerProperties.m in Sources */,
 				03DD36101769FA5D000DB1B7 /* GetServiceItemsOperation.m in Sources */,
 				03DD36111769FA5D000DB1B7 /* GetTasksOperation.m in Sources */,
 				03DD36121769FA5D000DB1B7 /* LoginOperation.m in Sources */,
@@ -2092,6 +2101,7 @@
 				03DD361B1769FA5D000DB1B7 /* LoginTableViewController.m in Sources */,
 				03DD361C1769FA5D000DB1B7 /* BOMainViewController.m in Sources */,
 				03DD361D1769FA5D000DB1B7 /* BOSidebarViewController.m in Sources */,
+				036D4CE0180C3B8D0017481C /* BorderOption.m in Sources */,
 				03DD361E1769FA5D000DB1B7 /* TaskDetailViewController.m in Sources */,
 				03DD361F1769FA5D000DB1B7 /* TaskDiscussionViewController.m in Sources */,
 				03DD36201769FA5D000DB1B7 /* TaskEditViewController.m in Sources */,
@@ -2110,10 +2120,8 @@
 				030A3E9C1778A603008BD708 /* RoundWindowFrameView.m in Sources */,
 				7CA44E94CACA21EC4C74102E /* NSParagraphStyle+DPUtils.m in Sources */,
 				7CA44D1D78275A20592F18DA /* CartsCustomWindow.m in Sources */,
-				7CA4486A4D9B349FC3806E81 /* PathOptions.m in Sources */,
 				7CA449A5F6290CBD3E53B8D1 /* BasicDisplayView.m in Sources */,
 				7CA449BB951E8538DED706A5 /* NSGradient+DPUtils.m in Sources */,
-				7CA44B202AA750CC78E7A259 /* BorderOption.m in Sources */,
 				7CA445C760F570E0A32BDE92 /* CartsTitleBarViewController.m in Sources */,
 				7CA44732B26C803C10501A9A /* BasicWindowTitleBarViewController.m in Sources */,
 				7CA449478C78D38E64E75C85 /* ButtonContainer.m in Sources */,
@@ -2123,6 +2131,7 @@
 				7CA44948C94EC75330B65557 /* ImageOptions.m in Sources */,
 				7CA44744641251E8AF3107FA /* ColorManager.m in Sources */,
 				7CA4409098F23B33D4033A27 /* CartsFooterViewController.m in Sources */,
+				036D4CDC180C3B8D0017481C /* BasicGradient.m in Sources */,
 				7CA44825CCE87FF4A69F29CD /* CartsMainViewController.m in Sources */,
 				7CA4481C618A7B309B257986 /* CartsHomeViewController.m in Sources */,
 				7CA443861CAC795C28A08685 /* NSColor+DPColors.m in Sources */,
@@ -2134,13 +2143,7 @@
 				7CA4491DBED6D24E10AFEA29 /* BasicStyledWindow.m in Sources */,
 				7CA4419533A336D2D4A03A5E /* BasicWindowDisplayView.m in Sources */,
 				7CA44DBA18E95A098069091B /* CustomWindow.m in Sources */,
-				7CA44187825C3BD5910E243E /* BasicGradient.m in Sources */,
 				7CA44D02A5C91DFC5ACA7911 /* BasicWindowTitleView.m in Sources */,
-				7CA44570738CB1AEFDD8C621 /* CornerProperties.m in Sources */,
-				7CA448B5759AD3FC15D73E67 /* BasicFill.m in Sources */,
-				7CA446998B2631DCB30CD423 /* BasicHorizontalGradient.m in Sources */,
-				7CA447F38FBC66A60CD63EB8 /* BasicCenteredGradient.m in Sources */,
-				7CA440F2F0132101A8EB6464 /* BasicScalingGradient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2178,7 +2181,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -2211,7 +2213,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -2243,6 +2244,10 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BasicMacProject/Carts-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = "BasicMacProject/Carts-Info.plist";
 				PRODUCT_NAME = Carts;
 				WRAPPER_EXTENSION = app;
@@ -2259,6 +2264,10 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BasicMacProject/Carts-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = "BasicMacProject/Carts-Info.plist";
 				PRODUCT_NAME = Carts;
 				WRAPPER_EXTENSION = app;

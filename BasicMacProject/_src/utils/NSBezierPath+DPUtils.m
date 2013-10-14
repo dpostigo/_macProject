@@ -27,7 +27,7 @@
     NSPoint thruPoint;
 
     CGFloat xOffset = rect.origin.x;
-    CGFloat yOffset = rect.origin.y;
+   // CGFloat yOffset = rect.origin.y;
 
     [path moveToPoint: NSMakePoint(radius + xOffset, 0)];
     [path lineToPoint: NSMakePoint(rect.size.width - radius + xOffset, 0)];

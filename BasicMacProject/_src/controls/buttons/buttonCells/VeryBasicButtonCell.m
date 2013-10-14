@@ -136,10 +136,7 @@
     if (autoAdjustsCornerRadius && self.cornerRadius > 0) {
         self.cornerRadius = frame.size.height * 0.4;
     }
-
-    NSGraphicsContext *context = [NSGraphicsContext currentContext];
-
-
+    
     //    frame = NSInsetRect(frame, 0.5, 0.5);
 
 

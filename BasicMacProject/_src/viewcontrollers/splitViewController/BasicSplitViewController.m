@@ -81,7 +81,7 @@
     BOOL ret = YES;
 
     if ([splitView1 isKindOfClass: [BasicSplitView class]]) {
-        BasicSplitView *basicSplitView = (BasicSplitView *) splitView1;
+        // BasicSplitView *basicSplitView = (BasicSplitView *) splitView1;
         SplitViewContainer *splitContainer = (SplitViewContainer *) view1;
         ret = [self basicSplitView: splitView shouldAdjustSizeOfSplitContainer: splitContainer];
     }
@@ -161,7 +161,7 @@
 
 
 - (void) basicSplitView: (BasicSplitView *) basicSplitView didResizeSplitContainer: (SplitViewContainer *) splitContainer {
-    NSUInteger index = [basicSplitView.splitContainers indexOfObject: splitContainer];
+    // NSUInteger index = [basicSplitView.splitContainers indexOfObject: splitContainer];
     //    [self basicSplitView: basicSplitView didResizeSplitContainerAtIndex: index];
 
 }

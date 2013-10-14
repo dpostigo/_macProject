@@ -7,7 +7,6 @@
 
 #import "BasicInnerShadowView.h"
 #import "BasicCenteredGradient.h"
-#import "BasicScalingGradient.h"
 
 @implementation BasicInnerShadowView {
 }
@@ -66,8 +65,8 @@
 - (void) setInnerShadowColor: (NSColor *) innerShadowColor1 {
     //    self.horizontalShadowGradient = [BasicGradient clearGradientWithBaseColor: innerShadowColor1];
     //    self.horizontalShadowGradient = [[BasicCenteredGradient alloc] initWithBaseColor: innerShadowColor1 centerColor: [NSColor clearColor] centerAmount: 0.8];
-    self.horizontalShadowGradient = [[BasicScalingGradient alloc] initWithBaseColor: innerShadowColor1 centerColor: [NSColor clearColor] centerAmount: 0.9 baseLength: 5.0];
-    self.verticalShadowGradient = [[BasicScalingGradient alloc] initWithBaseColor: innerShadowColor1 centerColor: [NSColor clearColor] centerAmount: 0.9 baseLength: 5.0];
+    self.horizontalShadowGradient = [[BasicCenteredGradient alloc] initWithBaseColor: innerShadowColor1 centerColor: [NSColor clearColor]];
+    self.verticalShadowGradient = [[BasicCenteredGradient alloc] initWithBaseColor: innerShadowColor1 centerColor: [NSColor clearColor]];
 }
 
 

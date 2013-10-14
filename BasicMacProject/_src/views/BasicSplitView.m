@@ -80,7 +80,7 @@
 
 - (CGFloat) widthForSplitContainerAtIndex: (NSInteger) index proposedWidth: (CGFloat) proposed {
     CGFloat ret = proposed;
-    CGFloat containersHeight;
+    // CGFloat containersHeight;
     SplitViewContainer *splitContainer = [self.splitContainers objectAtIndex: index];
     SplitViewContainer *sizableContainer = [self sizableContainerForIndex: index];
 

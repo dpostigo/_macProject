@@ -196,7 +196,7 @@
         if ([controlsArray containsObject: control]) {
             NSUInteger index = [controlsArray indexOfObject: control];
             if (index < [controlsArray count] - 1) {
-                NSControl *nextControl = [controlsArray objectAtIndex: index + 1];
+                // NSControl *nextControl = [controlsArray objectAtIndex: index + 1];
                 //                [[nextControl window] becomeFirstResponder];
                 //                [[nextControl window] makeFirstResponder: nextControl];
             }

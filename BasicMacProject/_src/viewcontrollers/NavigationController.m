@@ -141,7 +141,7 @@
 
     VeryBasicViewController *currentController = [viewControllers count] > 0 ? [viewControllers lastObject] : nil ;
     [viewControllers addObject: newController];
-    CGFloat toWidth = contentView.width;
+    // CGFloat toWidth = contentView.width;
 
     if (isAnimated) {
         if (currentController) {

@@ -79,6 +79,25 @@
     [self drawFillsWithPath: path];
     [self drawBordersWithRect: rect];
 
+    if (innerShadow) {
+//
+//        [NSGraphicsContext saveGraphicsState];
+//
+//        // Set the shown path as the clip
+//        [path setClip];
+//
+//        // Create and stroke the shadow
+//        NSShadow *shadow = [[NSShadow alloc] init];
+//        [shadow setShadowColor: [NSColor redColor]];
+//        [shadow setShadowBlurRadius: 10.0];
+//        [shadow set];
+//        [path stroke];
+//
+//        // Restore the graphics state
+//        [NSGraphicsContext restoreGraphicsState];
+
+    }
+
 }
 
 - (void) drawFillsWithPath: (NSBezierPath *) path {

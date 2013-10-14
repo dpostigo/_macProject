@@ -105,7 +105,7 @@
 }
 
 - (BOOL) outlineView: (NSOutlineView *) outlineView shouldShowOutlineCellForItem: (id) item {
-    BOOL isOutlineSection = [item isKindOfClass: [OutlineSection class]];
+    //BOOL isOutlineSection = [item isKindOfClass: [OutlineSection class]];
 
     if ([item isKindOfClass: [OutlineSection class]]) {
         OutlineSection *outlineSection = item;
