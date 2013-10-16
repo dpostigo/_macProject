@@ -27,7 +27,7 @@
     NSPoint thruPoint;
 
     CGFloat xOffset = rect.origin.x;
-   // CGFloat yOffset = rect.origin.y;
+    // CGFloat yOffset = rect.origin.y;
 
     [path moveToPoint: NSMakePoint(radius + xOffset, 0)];
     [path lineToPoint: NSMakePoint(rect.size.width - radius + xOffset, 0)];
@@ -77,6 +77,11 @@
     if (pathOptions.borderWidth > 0 && ![pathOptions.borderColor isEqualTo: [NSColor clearColor]]) {
         rect = NSInsetRect(rect, pathOptions.borderWidth, pathOptions.borderWidth);
     }
+    NSBezierPath *path = [NSBezierPath bezierPathWithRect: rect cornerRadius: pathOptions.cornerRadius cornerType: pathOptions.cornerType];
+    return path;
+}
+
++ (NSBezierPath *) shadowBezierPathWithRect: (NSRect) rect pathOptions: (PathOptions *) pathOptions {
     NSBezierPath *path = [NSBezierPath bezierPathWithRect: rect cornerRadius: pathOptions.cornerRadius cornerType: pathOptions.cornerType];
     return path;
 }
@@ -150,7 +155,6 @@
     } else {
         [pathOptions.gradient drawInBezierPath: self angle: 90];
     }
-
 
     if (pathOptions.innerShadow != nil) {
         [self drawShadow: pathOptions.innerShadow];

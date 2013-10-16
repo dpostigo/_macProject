@@ -16,16 +16,20 @@
     self = [super initWithContentRect: contentRect styleMask: aStyle backing: bufferingType defer: flag];
     if (self) {
         [self setup];
+
     }
 
     return self;
 }
 
 - (void) setup {
-    [self setOpaque: NO];
-    self.backgroundColor = [NSColor clearColor];
+    [self setBackgroundColor: [NSColor clearColor]];
     [self setMovable: YES];
     [self setMovableByWindowBackground: YES];
+    [self setOpaque: NO];
+    [self setShowsResizeIndicator: YES];
+    //    [self setLevel: NSFloatingWindowLevel];
+
     self.topMargin = 30;
     self.bottomMargin = 20;
 }
@@ -68,6 +72,7 @@
         for (NSView *view in subviews) [windowBackground1 addSubview: view];
         windowBackground = windowBackground1;
         [super setContentView: windowBackground];
+
     } else {
 
     }
@@ -100,5 +105,7 @@
     return ret;
 }
 
+
+#pragma mark SNRHUD
 
 @end

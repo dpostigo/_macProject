@@ -33,15 +33,13 @@
 
     BasicLayoutViewController *verticalController = [[BasicLayoutViewController alloc] init];
     [verticalController addViewController: splitViewController];
-    [verticalController addViewController: [[CartsHomeViewController alloc] init]];
+//    [verticalController addViewController: [[CartsHomeViewController alloc] init]];
     verticalController.footerContainer.minimumValue = 40;
     verticalController.footerContainer.maximumValue = 40;
     //        verticalController.splitView.dividerThickness = 0.5;
 
-    NSLog(@"Will embed.");
     [self embedViewController: verticalController inView: self.view];
     //    [self embedViewController: splitViewController inView: self.view];
-    NSLog(@"Did embed.");
 
 
 

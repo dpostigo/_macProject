@@ -81,7 +81,6 @@
 - (void) addSubview: (NSView *) aView {
     [super addSubview: aView];
     [self updateLayout];
-
 }
 
 - (BOOL) isOpaque {

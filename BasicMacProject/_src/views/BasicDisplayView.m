@@ -157,7 +157,6 @@
     pathOptions.innerShadow = innerShadow;
 }
 
-
 - (void) setOuterShadow: (NSShadow *) outerShadow {
     pathOptions.outerShadow = outerShadow;
 }

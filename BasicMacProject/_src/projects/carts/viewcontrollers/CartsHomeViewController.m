@@ -18,7 +18,9 @@
     [super loadView];
 
     BasicInnerShadowView *background = [[BasicInnerShadowView alloc] initWithFrame: self.view.bounds];
-    background.innerShadowColor = [NSColor blackColor];
+//    background.borderColor = [NSColor yellowColor];
+    background.innerShadow.shadowColor = [NSColor blackColor];
+    background.innerShadow.shadowOffset = NSMakeSize(-1, -1);
 
     //    backgroundView.borderOptions = [NSArray arrayWithObjects:
     //            [[BorderOption alloc] initWithBorderColor: [NSColor darkGrayColor] borderWidth: 0.5 type: BorderTypeTop],

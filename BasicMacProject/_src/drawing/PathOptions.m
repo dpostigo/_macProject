@@ -79,22 +79,27 @@
     [self drawFillsWithPath: path];
     [self drawBordersWithRect: rect];
 
-    if (innerShadow) {
-//
-//        [NSGraphicsContext saveGraphicsState];
-//
-//        // Set the shown path as the clip
-//        [path setClip];
-//
-//        // Create and stroke the shadow
-//        NSShadow *shadow = [[NSShadow alloc] init];
-//        [shadow setShadowColor: [NSColor redColor]];
-//        [shadow setShadowBlurRadius: 10.0];
-//        [shadow set];
-//        [path stroke];
-//
-//        // Restore the graphics state
-//        [NSGraphicsContext restoreGraphicsState];
+    if (innerShadow && ![innerShadow.shadowColor isEqualTo: [NSColor clearColor]]) {
+        NSBezierPath *shadowPath = [NSBezierPath shadowBezierPathWithRect: rect pathOptions: self];
+
+
+        [NSGraphicsContext saveGraphicsState];
+        [[NSGraphicsContext currentContext] setCompositingOperation: NSCompositeSourceOver];
+        [path setClip];
+
+        [path setLineWidth: 0.5];
+        [path setLineCapStyle: NSRoundLineCapStyle];
+        [path setLineJoinStyle: NSBevelLineJoinStyle];
+
+        [[NSColor whiteColor] set];
+        [self.innerShadow set];
+
+        [[self.innerShadow.shadowColor colorWithAlphaComponent: 0.5] setStroke];
+        [shadowPath fill];
+        [shadowPath stroke];
+
+        // Restore the graphics state
+        [NSGraphicsContext restoreGraphicsState];
 
     }
 
@@ -139,6 +144,9 @@
 
 - (void) setBorderColor: (NSColor *) borderColor1 {
     self.borderOption.borderColor = borderColor1;
+    if (![self.borderOption.borderColor isEqualTo: [NSColor clearColor]]) {
+        self.borderOption.borderWidth = 0.5;
+    }
 }
 
 - (void) setBorderWidth: (CGFloat) aBorderWidth {
@@ -211,6 +219,13 @@
     return self.cornerProperties.type;
 }
 
+- (NSShadow *) innerShadow {
+    if (innerShadow == nil) {
+        innerShadow = [[NSShadow alloc] init];
+        innerShadow.shadowColor = [NSColor clearColor];
+    }
+    return innerShadow;
+}
 
 
 

@@ -13,14 +13,14 @@
     <file path="$PROJECT_DIR$/_src/frameworks/YAJL.framework/Headers/YAJLGen.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1371328933401" ignored="false" />
     <file path="$PROJECT_DIR$/_src/frameworks/YAJL.framework/Headers/NSObject+YAJL.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1371328933401" ignored="false" />
     <file path="/AppDelegate.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1371329120346" ignored="false" />
-    <file path="/CartsAppDelegate.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1379197294186" ignored="false" />
+    <file path="/CartsAppDelegate.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381851120737" ignored="false" />
     <file path="/MainViewController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1371337479296" ignored="false" />
     <file path="/CartsMainViewController.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378575474428" ignored="false" />
     <file path="/CartsMainViewController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1379195753674" ignored="false" />
     <file path="/BOAppDelegate.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1371338006775" ignored="false" />
     <file path="/CartsSidebarViewController.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372025240123" ignored="false" />
     <file path="/a.js" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1371486072662" ignored="false" />
-    <file path="/a.mm" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380287735133" ignored="false" />
+    <file path="/a.mm" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381924898019" ignored="false" />
     <file path="/AddTaskViewController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1371487179139" ignored="false" />
     <file path="/TaskEditViewController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1371487196519" ignored="false" />
     <file path="/BasicSplitViewController.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378575224022" ignored="false" />
@@ -37,7 +37,7 @@
     <file path="/BasicOutlineViewController.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372034209535" ignored="false" />
     <file path="/BasicOutlineView.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372032928185" ignored="false" />
     <file path="/BasicOutlineView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373046473201" ignored="false" />
-    <file path="/NSBezierPath+DPUtils.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380721697617" ignored="false" />
+    <file path="/NSBezierPath+DPUtils.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381844961881" ignored="false" />
     <file path="/BasicBackgroundView.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373128461451" ignored="false" />
     <file path="/BasicBackgroundView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373128416400" ignored="false" />
     <file path="/BasicCustomRowView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373060764580" ignored="false" />
@@ -70,7 +70,7 @@
     <file path="/NSColor+Utils.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381597793114" ignored="false" />
     <file path="/DPBezierPath.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372863055007" ignored="false" />
     <file path="/DPBezierPath.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372863547156" ignored="false" />
-    <file path="/PathOptions.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381758944109" ignored="false" />
+    <file path="/PathOptions.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381850556760" ignored="false" />
     <file path="/VeryBasicViewController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373217479214" ignored="false" />
     <file path="$PROJECT_DIR$/_src/projects/backoffice/controls/views/BOSidebarBackgroundView.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1372973674483" ignored="false" />
     <file path="$PROJECT_DIR$/_src/xibs/viewcontrollers/BottomViewController.xib" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373291016764" ignored="false" />
@@ -85,7 +85,7 @@
     <file path="/BorderOptions.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1373059044718" ignored="false" />
     <file path="/BorderOption.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380809992302" ignored="false" />
     <file path="/BorderOption.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381600574597" ignored="false" />
-    <file path="/BasicInnerShadowView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381758889430" ignored="false" />
+    <file path="/BasicInnerShadowView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381844197515" ignored="false" />
     <file path="/DPSplitView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378301141213" ignored="false" />
     <file path="/BasicSplitView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1379163165090" ignored="false" />
     <file path="/DPSplitView.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378566002561" ignored="false" />
@@ -150,7 +150,7 @@
     <file path="/BasicSplitLayoutViewController.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378218181385" ignored="false" />
     <file path="/BOMainViewController.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378605065758" ignored="false" />
     <file path="/CartsHomeViewController.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378217582516" ignored="false" />
-    <file path="/CartsHomeViewController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381681381892" ignored="false" />
+    <file path="/CartsHomeViewController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381845544913" ignored="false" />
     <file path="/CartsMainViewController2.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378218437844" ignored="false" />
     <file path="/SplitViewContainer.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378598244696" ignored="false" />
     <file path="/SplitViewContainer.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1378597875969" ignored="false" />
@@ -177,9 +177,9 @@
     <file path="/BasicWindowDisplayView.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380290732159" ignored="false" />
     <file path="/BasicSplitSidebarViewController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1379162721722" ignored="false" />
     <file path="/BasicSplitHorizontalViewController.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1379163096115" ignored="false" />
-    <file path="/BasicWindowDisplayView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381599896465" ignored="false" />
+    <file path="/BasicWindowDisplayView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381923868016" ignored="false" />
     <file path="/CustomWindow.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380289469917" ignored="false" />
-    <file path="/CustomWindow.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380290010167" ignored="false" />
+    <file path="/CustomWindow.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381925604360" ignored="false" />
     <file path="/BasicGradient.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380551225023" ignored="false" />
     <file path="/BasicGradient.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381670160562" ignored="false" />
     <file path="/BasicWindowTitleView.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1380379544640" ignored="false" />
@@ -199,6 +199,17 @@
     <file path="/BasicCenteredGradient.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381681650358" ignored="false" />
     <file path="/BasicScalingGradient.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381672056235" ignored="false" />
     <file path="$PROJECT_DIR$/_src/controls/buttons/buttonCells/VeryBasicButtonCell.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381768964713" ignored="false" />
+    <file path="$PROJECT_DIR$/_src/utils/NSBezierPath+DPUtils.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381844977063" ignored="false" />
+    <file path="$USER_HOME$/Downloads/Chrome/Archived/SNRHUDKit-master/SNRHUDKit/Classes/SNRHUDWindow.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381925636479" ignored="false" />
+    <file path="/SNRHUDWindow.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381925568553" ignored="false" />
+    <file path="$USER_HOME$/Downloads/Chrome/Archived/SNRHUDKit-master/SNRHUDKit/Classes/SNRHUDWindow.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381925283915" ignored="false" />
+    <file path="$USER_HOME$/Downloads/Chrome/Archived/SNRHUDKit-master/SNRHUDKit/SNRHUDWindowButtonCell.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381925256951" ignored="false" />
+    <file path="$USER_HOME$/Downloads/Chrome/Archived/SNRHUDKit-master/SNRHUDKit/SNRHUDWindowButtonCell.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381925168802" ignored="false" />
+    <file path="$USER_HOME$/Downloads/Chrome/Archived/SNRHUDKit-master/SNRHUDKit/SNRHUDConstants.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381925230571" ignored="false" />
+    <file path="$USER_HOME$/Downloads/Chrome/Archived/SNRHUDKit-master/SNRHUDKit/SNRHUDWindowFrameView.m" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381925308566" ignored="false" />
+    <file path="$USER_HOME$/Downloads/Chrome/Archived/SNRHUDKit-master/SNRHUDKit/SNRHUDWindowFrameView.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381925290325" ignored="false" />
+    <file path="/SNRHUDWindowFrameView.h" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381925276587" ignored="false" />
+    <file path="$USER_HOME$/Downloads/Chrome/Archived/SNRHUDKit-master/Catalog/en.lproj/MainMenu.xib" changelist="712e7732-1dd8-4488-bc93-813a0ac4d267" time="1381925531365" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,92 +229,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CartsMainViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsMainViewController.m">
+      <file leaf-file-name="CustomWindow.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/windows/CustomWindow.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="33" selection-start="1557" selection-end="1627" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="10" column="16" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#initWithContentRect:styleMask:backing:defer:#0;n#CustomWindow#0" expanded="true" />
+                <element signature="n#setup#0;n#CustomWindow#0" expanded="true" />
+                <element signature="n#topMargin#0;n#CustomWindow#0" expanded="true" />
+                <element signature="n#setTopMargin:#0;n#CustomWindow#0" expanded="true" />
+                <element signature="n#bottomMargin#0;n#CustomWindow#0" expanded="true" />
+                <element signature="n#setBottomMargin:#0;n#CustomWindow#0" expanded="true" />
+                <element signature="n#windowBackground#0;n#CustomWindow#0" expanded="true" />
+                <element signature="n#setWindowBackground:#0;n#CustomWindow#0" expanded="true" />
+                <element signature="n#contentView#0;n#CustomWindow#0" expanded="true" />
+                <element signature="n#setContentView:#0;n#CustomWindow#0" expanded="true" />
+                <element signature="n#bounds#0;n#CustomWindow#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasicDisplayView.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/views/BasicDisplayView.h">
+      <file leaf-file-name="SNRHUDWindow.m" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_src/libs/SNRHUDKit/Classes/SNRHUDWindow.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="15" selection-start="1169" selection-end="1169" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="23" column="36" selection-start="848" selection-end="848" vertical-scroll-proportion="0.6284153">
+              <folding>
+                <element signature="n#contentRectForFrameRect:#0;n#SNRHUDWindow#0" expanded="true" />
+                <element signature="n#frameRectForContentRect:styleMask:#0;n#SNRHUDWindow#0" expanded="true" />
+                <element signature="n#frameRectForContentRect:#0;n#SNRHUDWindow#0" expanded="true" />
+                <element signature="n#setContentView:#0;n#SNRHUDWindow#0" expanded="true" />
+                <element signature="n#contentView#0;n#SNRHUDWindow#0" expanded="true" />
+                <element signature="n#setTitle:#0;n#SNRHUDWindow#0" expanded="true" />
+                <element signature="n#canBecomeKeyWindow#0;n#SNRHUDWindow#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CartsHomeViewController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsHomeViewController.h">
+      <file leaf-file-name="SNRHUDWindowFrameView.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/libs/SNRHUDKit/Classes/SNRHUDWindowFrameView.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="11" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CartsHomeViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsHomeViewController.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="0" selection-start="969" selection-end="969" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicInnerShadowView.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/views/BasicInnerShadowView.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="68" selection-start="448" selection-end="448" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicInnerShadowView.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/views/BasicInnerShadowView.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="0" selection-start="1114" selection-end="1114" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Carts-Info.plist" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BasicMacProject/Carts-Info.plist">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="38" selection-start="698" selection-end="698" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Carts-Prefix.pch" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BasicMacProject/Carts-Prefix.pch">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Credits.rtf" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BasicMacProject/en.lproj/Credits.rtf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicCenteredGradient.h" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_src/drawing/BasicCenteredGradient.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="23" selection-start="290" selection-end="290" vertical-scroll-proportion="0.4201031">
-              <folding />
+            <state line="15" column="29" selection-start="290" selection-end="290" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#drawRect:#0;n#SNRHUDWindowFrameView#0" expanded="true" />
+                <element signature="n#snr_drawTitleInRect:#0;n#SNRHUDWindowFrameView#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -318,22 +289,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/_src/utils/BasicHorizontalGradient.h" />
-        <option value="$PROJECT_DIR$/_src/utils/BasicHorizontalGradient.m" />
-        <option value="$PROJECT_DIR$/_src/windows/BasicCustomWindowFrame.m" />
-        <option value="$PROJECT_DIR$/_src/views/BasicDisplayView.h" />
-        <option value="$PROJECT_DIR$/_src/views/BasicDisplayView.m" />
-        <option value="$PROJECT_DIR$/_src/utils/BasicScalingGradient.h" />
-        <option value="$PROJECT_DIR$/_src/views/BasicInnerShadowView.h" />
-        <option value="$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsHomeViewController.m" />
-        <option value="$PROJECT_DIR$/_src/drawing/BasicGradient.m" />
-        <option value="$PROJECT_DIR$/_src/utils/BasicCenteredGradient.m" />
         <option value="$PROJECT_DIR$/_src/utils/BasicCenteredGradient.h" />
         <option value="$PROJECT_DIR$/_src/utils/BasicScalingGradient.m" />
-        <option value="$PROJECT_DIR$/_src/views/BasicInnerShadowView.m" />
         <option value="$PROJECT_DIR$/_src/utils/PathOptions.h" />
         <option value="$PROJECT_DIR$/_src/utils/PathOptions.m" />
         <option value="$PROJECT_DIR$/Carts.xcodeproj/project.pbxproj" />
+        <option value="$PROJECT_DIR$/_src/views/BasicDisplayView.m" />
+        <option value="$PROJECT_DIR$/_src/views/BasicInnerShadowView.m" />
+        <option value="$PROJECT_DIR$/_src/utils/NSBezierPath+DPUtils.m" />
+        <option value="$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsHomeViewController.m" />
+        <option value="$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsMainViewController.m" />
+        <option value="$PROJECT_DIR$/_src/projects/carts/app/CartsAppDelegate.h" />
+        <option value="$PROJECT_DIR$/_src/drawing/PathOptions.m" />
+        <option value="$PROJECT_DIR$/_src/projects/carts/app/CartsAppDelegate.m" />
+        <option value="$PROJECT_DIR$/_src/views/BasicWindowDisplayView.m" />
+        <option value="$PROJECT_DIR$/_src/windows/CustomWindow.m" />
+        <option value="$PROJECT_DIR$/_src/libs/SNRHUDKit/Classes/SNRHUDWindow.m" />
       </list>
     </option>
   </component>
@@ -531,6 +502,72 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="_src" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Carts" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_src" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SNRHUDKit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Carts" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_src" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SNRHUDKit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Carts" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="BasicMacProject" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
@@ -630,26 +667,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="803" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4513399" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44992948" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32863188" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32722145" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5486601" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21807748" sideWeight="0.5486601" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2538787" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17073171" sideWeight="0.79407614" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18005739" sideWeight="0.79407614" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20592384" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13761468" sideWeight="0.50070524" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32722145" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -715,120 +752,138 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_src/utils/NSColor+Utils.m">
+    <entry file="file://$PROJECT_DIR$/_src/windows/BasicStyledWindow.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="22" selection-start="198" selection-end="198" vertical-scroll-proportion="0.25502318">
-          <folding>
-            <element signature="n#alphaWhite:#0;n#NSColor#0" expanded="false" />
-            <element signature="n#colorWithWhite:#0;n#NSColor#0" expanded="false" />
-          </folding>
+        <state line="14" column="16" selection-start="325" selection-end="325" vertical-scroll-proportion="0.027322404">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/views/BasicInnerShadowView.h">
+    <entry file="file://$PROJECT_DIR$/_src/windows/BasicStyledWindow.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="68" selection-start="448" selection-end="448" vertical-scroll-proportion="0.0">
+        <state line="12" column="34" selection-start="279" selection-end="279" vertical-scroll-proportion="0.3202847">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_src/projects/carts/app/CartsAppDelegate.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="21" selection-start="391" selection-end="391" vertical-scroll-proportion="0.40983605">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsHomeViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="969" selection-end="969" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_src/drawing/BasicGradient.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="11" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_src/drawing/BasicGradient.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="1" selection-start="1629" selection-end="1629" vertical-scroll-proportion="0.0">
+        <state line="7" column="0" selection-start="153" selection-end="153" vertical-scroll-proportion="0.027322404">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_src/views/BasicInnerShadowView.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="0" selection-start="1114" selection-end="1114" vertical-scroll-proportion="0.0">
+        <state line="25" column="0" selection-start="670" selection-end="670" vertical-scroll-proportion="0.07103825">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BasicMacProject/Carts-Prefix.pch">
+    <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsMainViewController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="11" column="11" selection-start="232" selection-end="232" vertical-scroll-proportion="0.2935943">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BasicMacProject/Carts-Info.plist">
+    <entry file="file://$PROJECT_DIR$/_src/views/BasicDisplayView.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="38" selection-start="698" selection-end="698" vertical-scroll-proportion="0.0">
+        <state line="199" column="7" selection-start="3908" selection-end="3908" vertical-scroll-proportion="0.45355192">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsMainViewController.m">
+    <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsHomeViewController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="33" selection-start="1557" selection-end="1627" vertical-scroll-proportion="0.0">
+        <state line="11" column="11" selection-start="232" selection-end="232" vertical-scroll-proportion="0.2935943">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BasicMacProject/en.lproj/Credits.rtf">
+    <entry file="file://$PROJECT_DIR$/_src/utils/NSBezierPath+DPUtils.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="14" column="0" selection-start="375" selection-end="375" vertical-scroll-proportion="0.027322404">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BasicMacProject/.gitignore">
+    <entry file="file://$PROJECT_DIR$/_src/views/BasicDisplayView.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="25" column="38" selection-start="658" selection-end="658" vertical-scroll-proportion="0.4262295">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BasicMacProject/main.m">
+    <entry file="file://$PROJECT_DIR$/_src/drawing/BasicGradient.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="266" selection-end="266" vertical-scroll-proportion="0.3693182">
-          <folding>
-            <element signature="n#main#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BasicMacProject/en.lproj/InfoPlist.strings">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="10" column="11" selection-start="191" selection-end="191" vertical-scroll-proportion="0.18032786">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/app/BasicAppDelegate.h">
+    <entry file="file://$PROJECT_DIR$/_src/views/BasicInnerShadowView.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Carts.xcodeproj/project.pbxproj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="340" column="54" selection-start="51515" selection-end="51515" vertical-scroll-proportion="0.8">
+        <state line="16" column="68" selection-start="448" selection-end="448" vertical-scroll-proportion="0.42704627">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_src/drawing/BasicCenteredGradient.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="23" selection-start="290" selection-end="290" vertical-scroll-proportion="0.4201031">
+        <state line="22" column="4" selection-start="693" selection-end="693" vertical-scroll-proportion="0.6010929">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_src/windows/CustomWindow.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="16" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#initWithContentRect:styleMask:backing:defer:#0;n#CustomWindow#0" expanded="true" />
+            <element signature="n#setup#0;n#CustomWindow#0" expanded="true" />
+            <element signature="n#topMargin#0;n#CustomWindow#0" expanded="true" />
+            <element signature="n#setTopMargin:#0;n#CustomWindow#0" expanded="true" />
+            <element signature="n#bottomMargin#0;n#CustomWindow#0" expanded="true" />
+            <element signature="n#setBottomMargin:#0;n#CustomWindow#0" expanded="true" />
+            <element signature="n#windowBackground#0;n#CustomWindow#0" expanded="true" />
+            <element signature="n#setWindowBackground:#0;n#CustomWindow#0" expanded="true" />
+            <element signature="n#contentView#0;n#CustomWindow#0" expanded="true" />
+            <element signature="n#setContentView:#0;n#CustomWindow#0" expanded="true" />
+            <element signature="n#bounds#0;n#CustomWindow#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_src/libs/SNRHUDKit/Classes/SNRHUDWindowFrameView.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="29" selection-start="290" selection-end="290" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#drawRect:#0;n#SNRHUDWindowFrameView#0" expanded="true" />
+            <element signature="n#snr_drawTitleInRect:#0;n#SNRHUDWindowFrameView#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_src/libs/SNRHUDKit/Classes/SNRHUDWindow.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="36" selection-start="848" selection-end="848" vertical-scroll-proportion="0.6284153">
+          <folding>
+            <element signature="n#contentRectForFrameRect:#0;n#SNRHUDWindow#0" expanded="true" />
+            <element signature="n#frameRectForContentRect:styleMask:#0;n#SNRHUDWindow#0" expanded="true" />
+            <element signature="n#frameRectForContentRect:#0;n#SNRHUDWindow#0" expanded="true" />
+            <element signature="n#setContentView:#0;n#SNRHUDWindow#0" expanded="true" />
+            <element signature="n#contentView#0;n#SNRHUDWindow#0" expanded="true" />
+            <element signature="n#setTitle:#0;n#SNRHUDWindow#0" expanded="true" />
+            <element signature="n#canBecomeKeyWindow#0;n#SNRHUDWindow#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

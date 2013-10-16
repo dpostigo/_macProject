@@ -13,7 +13,7 @@
 
 @interface CartsAppDelegate : BasicAppDelegate <NSApplicationDelegate, NSMenuDelegate> {
 
-    IBOutlet CartsCustomWindow *window;
+    IBOutlet NSWindow *window;
     IBOutlet NSWindow *macWindow;
     IBOutlet NSWindow *basicWindow;
 }
