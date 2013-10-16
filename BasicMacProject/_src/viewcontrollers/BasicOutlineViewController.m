@@ -27,11 +27,9 @@
 
 
 
-#pragma mark IBActions
-
-#pragma mark Callbacks
 
 #pragma mark Selection
+
 - (BOOL) selectionShouldChangeInOutlineView: (NSOutlineView *) outlineView {
     return self.allowsSelection;
 }

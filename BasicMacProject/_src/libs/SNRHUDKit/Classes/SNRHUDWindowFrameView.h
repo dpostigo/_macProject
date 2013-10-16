@@ -10,8 +10,11 @@
 
 @interface SNRHUDWindowFrameView : NSView {
 
+    NSShadow *shadow;
+
 }
 
+@property(nonatomic, strong) NSShadow *shadow;
 - (void) snr_drawTitleInRect: (NSRect) rect;
 
 @end

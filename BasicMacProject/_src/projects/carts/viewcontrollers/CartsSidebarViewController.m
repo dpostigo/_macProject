@@ -11,17 +11,14 @@
 
 @implementation CartsSidebarViewController {
 
+    NSTrackingArea *trackingArea;
 }
 
 - (void) loadView {
     [super loadView];
+    trackingArea = [[NSTrackingArea alloc] initWithRect: self.view.frame  options: (NSTrackingMouseEnteredAndExited | NSTrackingMouseMoved | NSTrackingActiveInKeyWindow) owner: self userInfo: nil];
+    [self.view addTrackingArea: trackingArea];
 
-    //    NSLog(@"self.outline.refusesFirstResponder = %d", self.outline.refusesFirstResponder);
-    //    NSLog(@"self.outline.enclosingScrollView.nextKeyView = %@", self.outline.enclosingScrollView.nextKeyView);
-    //
-    //    NSClipView *clipView = self.outline.enclosingScrollView.nextKeyView;
-    //    NSLog(@"clipView.nextKeyView = %@", clipView.nextKeyView);
-    //    NSLog(@"clipView.nextResponder = %@", clipView.nextResponder);
 }
 
 - (void) prepareDataSource {
@@ -35,13 +32,16 @@
 }
 
 
-#pragma mark UITableView
+- (void) mouseMoved: (NSEvent *) theEvent {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    [super mouseMoved: theEvent];
 
+}
 
-#pragma mark IBActions
-
-
-#pragma mark Callbacks
+- (void) mouseEntered: (NSEvent *) theEvent {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    [super mouseEntered: theEvent];
+}
 
 
 @end

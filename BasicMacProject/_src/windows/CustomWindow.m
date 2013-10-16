@@ -29,10 +29,13 @@
     [self setOpaque: NO];
     [self setShowsResizeIndicator: YES];
     //    [self setLevel: NSFloatingWindowLevel];
+//    [self setAcceptsMouseMovedEvents: YES];
 
     self.topMargin = 30;
     self.bottomMargin = 20;
 }
+
+
 
 
 #pragma mark Getters / Setters

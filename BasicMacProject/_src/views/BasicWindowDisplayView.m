@@ -78,6 +78,8 @@
 
 #pragma mark NSView overrides
 
+
+
 - (void) addSubview: (NSView *) aView {
     [super addSubview: aView];
     [self updateLayout];
