@@ -25,6 +25,7 @@
 @interface SplitViewContainer : NSView {
 
     __unsafe_unretained id <SplitViewContainerDelegate> delegate;
+    __unsafe_unretained NSViewController *controller;
 
     CGFloat minimumValue;
     CGFloat maximumValue;
@@ -35,6 +36,7 @@
 
 @property(nonatomic) BOOL isLocked;
 @property(nonatomic, assign) id <SplitViewContainerDelegate> delegate;
+@property(nonatomic, assign) NSViewController *controller;
 @property(nonatomic) CGFloat dividerThickness;
 @property(nonatomic) CGFloat minimumValue;
 @property(nonatomic) CGFloat maximumValue;

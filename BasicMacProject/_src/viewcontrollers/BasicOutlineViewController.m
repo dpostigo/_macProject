@@ -7,6 +7,7 @@
 
 #import "BasicOutlineViewController.h"
 #import "BasicTextFieldCellView.h"
+#import "OutlineRowObject.h"
 
 @implementation BasicOutlineViewController
 
@@ -37,7 +38,7 @@
 
 - (BOOL) outlineView: (NSOutlineView *) outlineView shouldSelectItem: (id) item {
     OutlineSection *outlineSection;
-    if ([item isKindOfClass: [TableRowObject class]]) {
+    if ([item isKindOfClass: [OutlineRowObject class]]) {
         TableRowObject *rowObject = item;
         outlineSection = [outline parentForItem: item];
         [self cellSelectedForRowObject: rowObject outlineSection: outlineSection];

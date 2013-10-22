@@ -7,14 +7,12 @@
 
 #import <Foundation/Foundation.h>
 #import "BasicAppDelegate.h"
-#import "BasicCustomWindowOld.h"
-#import "BasicCustomWindow.h"
-#import "CartsCustomWindow.h"
+#import "CustomWindow.h"
 
-@interface CartsAppDelegate : BasicAppDelegate <NSApplicationDelegate, NSMenuDelegate> {
+@interface CartsAppDelegate : BasicAppDelegate <NSApplicationDelegate, NSMenuDelegate, NSWindowDelegate> {
 
-    IBOutlet NSWindow *window;
+    IBOutlet CustomWindow *window;
     IBOutlet NSWindow *macWindow;
-    IBOutlet NSWindow *basicWindow;
+    IBOutlet NSWindow *styledWindow;
 }
 @end

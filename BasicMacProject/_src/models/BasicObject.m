@@ -23,6 +23,20 @@
     return self;
 }
 
+- (id) initWithTitle: (NSString *) aTitle {
+    self = [super init];
+    if (self) {
+        self.title = aTitle;
+    }
+
+    return self;
+}
+
++ (id) objectWithTitle: (NSString *) title {
+    return [[self alloc] initWithTitle: title];
+}
+
+
 - (void) encodeWithCoder: (NSCoder *) coder {
     [self autoEncodeWithCoder: coder];
 }

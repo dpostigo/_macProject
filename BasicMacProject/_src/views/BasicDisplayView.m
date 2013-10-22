@@ -211,4 +211,12 @@
     return ret;
 }
 
+- (id) copyWithZone: (NSZone *) zone {
+    BasicDisplayView *copy = [[BasicDisplayView allocWithZone: zone] init];
+    copy.pathOptions = self.pathOptions;
+    copy.borderOptions = self.borderOptions;
+    return copy;
+}
+
+
 @end

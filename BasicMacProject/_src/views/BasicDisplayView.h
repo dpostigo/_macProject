@@ -38,4 +38,5 @@
 - (void) setup;
 
 - (BasicFill *) fillForGradient: (BasicGradient *) aGradient;
+- (id) copyWithZone: (NSZone *) zone;
 @end

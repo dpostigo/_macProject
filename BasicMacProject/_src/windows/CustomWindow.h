@@ -2,23 +2,28 @@
 //  CustomWindow.h
 //  Carts
 //
-//  Created by Daniela Postigo on 9/23/13.
+//  Created by Daniela Postigo on 10/18/13.
 //  Copyright (c) 2013 Elastic Creative. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "BasicWindowDisplayView.h"
+#import "BasicWindowTitleView.h"
 
 @interface CustomWindow : NSWindow {
 
-    BasicWindowDisplayView *windowBackground;
-    NSView *newContentView;
+    BOOL centersWindowButtons;
+    NSView *privateContentView;
+    NSView *windowHeaderView;
+    NSView *windowFooterView;
 
 }
 
-@property(nonatomic, strong) BasicWindowDisplayView *windowBackground;
-
-@property(nonatomic) CGFloat topMargin;
-@property(nonatomic) CGFloat bottomMargin;
-- (void) setup;
+@property(nonatomic, strong) NSView *windowHeaderView;
+@property(nonatomic, strong) NSView *windowFooterView;
+@property(nonatomic) CGFloat headerBarHeight;
+@property(nonatomic, strong) NSView *privateContentView;
+@property(nonatomic) BOOL centersWindowButtons;
+- (void) setFooterBarHeight: (CGFloat) aHeight;
+- (CGFloat) footerBarHeight;
+- (NSRect) rectForWindowHeader;
 @end

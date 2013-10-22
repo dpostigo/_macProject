@@ -22,7 +22,6 @@
     [super viewWillStartLiveResize];
 }
 
-
 - (void) viewWillMoveToWindow: (NSWindow *) newWindow {
     [super viewWillMoveToWindow: newWindow];
 }

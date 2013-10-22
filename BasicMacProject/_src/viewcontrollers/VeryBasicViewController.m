@@ -61,7 +61,7 @@
     if (self.nibName != nil) [super loadView];
 
     if (_queue == nil) _queue = [NSOperationQueue new];
-    _model = [Model sharedModel];
+    _model = [ModelCarts sharedModel];
     [_model subscribeDelegate: self];
     self.controlsArray = [[NSMutableArray alloc] init];
 }

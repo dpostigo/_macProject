@@ -177,7 +177,11 @@
 
 
 - (void) addViewController: (NSViewController *) controller {
-    [self.splitView addSubview: controller.view];
+    [self.splitView addViewController: controller];
 }
 
+
+- (SplitViewContainer *) splitContainerAtIndex: (NSUInteger) index {
+    return [self.splitView splitViewContainerAtIndex: index];
+}
 @end

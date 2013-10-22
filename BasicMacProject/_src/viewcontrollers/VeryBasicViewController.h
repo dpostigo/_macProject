@@ -6,11 +6,11 @@
 
 
 #import <Foundation/Foundation.h>
-#import "Model.h"
 #import "BasicTextField.h"
 #import "BasicBackgroundViewOld.h"
 #import "NavigationController.h"
 #import "BasicView.h"
+#import "ModelCarts.h"
 
 @class BasicCustomWindowOld;
 
@@ -18,7 +18,7 @@
 @interface VeryBasicViewController : NSViewController <NSTextFieldDelegate> {
 
     NSOperationQueue *_queue;
-    __unsafe_unretained Model *_model;
+    __unsafe_unretained ModelCarts *_model;
 
     BOOL autoTabbing;
     BOOL showsNavigationBar;

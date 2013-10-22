@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "BasicNewCustomWindow0923.h"
-#import "CustomWindow.h"
+#import "CustomWindowOldOct18.h"
 
-@interface BasicStyledWindow : CustomWindow
+@interface BasicStyledWindow : CustomWindowOldOct18
 @end

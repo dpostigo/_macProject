@@ -32,6 +32,7 @@
 @property(nonatomic, assign) id <BasicSplitViewDelegate> secondDelegate;
 - (void) setup;
 - (NSMutableArray *) splitContainers;
+- (void) addViewController: (NSViewController *) viewController;
 - (CGFloat) heightForSplitContainerAtIndex: (NSInteger) index1 proposedHeight: (CGFloat) proposed;
 - (CGFloat) widthForSplitContainerAtIndex: (NSInteger) index1 proposedWidth: (CGFloat) proposed;
 - (SplitViewContainer *) splitViewContainerAtIndex: (NSInteger) index1;

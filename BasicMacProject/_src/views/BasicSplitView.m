@@ -36,6 +36,17 @@
 #pragma mark Display customization
 
 
+- (void) addViewController: (NSViewController *) viewController {
+    SplitViewContainer *container = [[SplitViewContainer alloc] initWithFrame: viewController.view.frame];
+    container.delegate = self;
+    container.controller = viewController;
+    [container embedView: viewController.view];
+    viewController.view.frame = viewController.view.bounds;
+    viewController.view = container;
+    [self.splitContainers addObject: container];
+    [self addSubview: container];
+
+}
 
 - (void) addSubview: (NSView *) aView {
     if (![aView isKindOfClass: [SplitViewContainer class]]) {

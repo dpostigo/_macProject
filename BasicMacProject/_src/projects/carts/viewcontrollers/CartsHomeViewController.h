@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "BasicViewController.h"
+#import "BasicContentViewController.h"
 
-@interface CartsHomeViewController : BasicViewController {
+@interface CartsHomeViewController : BasicContentViewController {
 }
 @end

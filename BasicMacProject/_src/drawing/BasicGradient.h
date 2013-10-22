@@ -32,4 +32,8 @@
 - (id) initWithTopColor: (NSColor *) aTopColor bottomColor: (NSColor *) aBottomColor percent: (CGFloat) percentage;
 - (id) initWithTopColor: (NSColor *) aTopColor bottomColor: (NSColor *) aBottomColor;
 - (id) initWithBaseColor: (NSColor *) baseColor centerColor: (NSColor *) centerColor;
+- (instancetype) initWithTopColor: (NSColor *) topColor bottomColor: (NSColor *) bottomColor;
++ (instancetype) gradientWithTopColor: (NSColor *) topColor bottomColor: (NSColor *) bottomColor;
+
++ (BasicGradient *) gradientWithTopColor: (NSColor *) topColor1 bottomColor: (NSColor *) bottomColor1 percent: (CGFloat) percentage;
 @end

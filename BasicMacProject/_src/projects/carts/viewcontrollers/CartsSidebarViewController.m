@@ -7,7 +7,10 @@
 //
 
 #import "CartsSidebarViewController.h"
-#import "OutlineRowObject.h"
+#import "OutlineSection+Utils.h"
+#import "NSMutableArray+BasicObject.h"
+
+#define USER_LISTS @"My Lists"
 
 @implementation CartsSidebarViewController {
 
@@ -16,32 +19,27 @@
 
 - (void) loadView {
     [super loadView];
-    trackingArea = [[NSTrackingArea alloc] initWithRect: self.view.frame  options: (NSTrackingMouseEnteredAndExited | NSTrackingMouseMoved | NSTrackingActiveInKeyWindow) owner: self userInfo: nil];
+    trackingArea = [[NSTrackingArea alloc] initWithRect: self.view.frame options: (NSTrackingMouseEnteredAndExited | NSTrackingMouseMoved | NSTrackingActiveInKeyWindow) owner: self userInfo: nil];
     [self.view addTrackingArea: trackingArea];
 
 }
 
 - (void) prepareDataSource {
     [super prepareDataSource];
-    OutlineSection *section = [[OutlineSection alloc] initWithTitle: @"Carts By Store" isExpandable: YES];
-    [section.rows addObject: [[OutlineRowObject alloc] initWithTextLabel: @"ASOS"]];
-    [section.rows addObject: [[OutlineRowObject alloc] initWithTextLabel: @"Forever21"]];
-    [section.rows addObject: [[OutlineRowObject alloc] initWithTextLabel: @"Sephora"]];
-    [section.rows addObject: [[OutlineRowObject alloc] initWithTextLabel: @"Urban Outfitters"]];
-    [dataSource addObject: section];
+
+    [dataSource addObject: [OutlineSection expandableSectionWithTitle: @"My Lists" rows: _model.lists]];
+    [dataSource addObject: [OutlineSection expandableSectionWithTitle: @"Lists By Store" rows: [NSArray arrayWithObjects: @"ASOS", @"Forever 21", @"Sephora", @"Urban OutFitters", nil]]];
 }
 
 
-- (void) mouseMoved: (NSEvent *) theEvent {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    [super mouseMoved: theEvent];
+- (void) cellSelectedForRowObject: (TableRowObject *) rowObject outlineSection: (OutlineSection *) outlineSection {
+    [super cellSelectedForRowObject: rowObject outlineSection: outlineSection];
+
+    if ([outlineSection.title isEqualToString: USER_LISTS]) {
+        _model.selectedList = rowObject.content;
+
+    }
 
 }
-
-- (void) mouseEntered: (NSEvent *) theEvent {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    [super mouseEntered: theEvent];
-}
-
 
 @end

@@ -17,6 +17,8 @@
 @synthesize minimumValue;
 @synthesize maximumValue;
 
+@synthesize controller;
+
 - (id) init {
     self = [super init];
     if (self) {

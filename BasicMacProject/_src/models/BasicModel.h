@@ -12,6 +12,9 @@
 
 }
 
++ (BasicModel *) sharedBasicModel;
+
+
 - (NSString *) pathForSearchPath: (NSSearchPathDirectory) searchPath;
 - (NSString *) cacheDirectoryPath;
 - (NSString *) userDocumentsPath;

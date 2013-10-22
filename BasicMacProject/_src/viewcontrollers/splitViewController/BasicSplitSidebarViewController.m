@@ -24,6 +24,32 @@
 }
 
 
+
+#pragma mark Setters
+
+- (void) setSidebarViewController: (NSViewController *) controller {
+    [self addSidebarViewController: controller];
+}
+
+
+- (void) setMainViewController: (NSViewController *) controller {
+    mainControllerIndex = [self.splitView.splitContainers count];
+    [self addViewController: controller];
+}
+
+#pragma mark Getters
+
+
+- (NSViewController *) sidebarViewController {
+    return [self splitContainerAtIndex: sidebarIndex].controller;
+}
+
+- (NSViewController *) mainViewController {
+    return [self splitContainerAtIndex: mainControllerIndex].controller;
+}
+
+#pragma mark Methods
+
 - (void) addSidebarViewController: (NSViewController *) controller {
     self.sidebarIndex = [self.splitView.splitContainers count];
     [self addViewController: controller];

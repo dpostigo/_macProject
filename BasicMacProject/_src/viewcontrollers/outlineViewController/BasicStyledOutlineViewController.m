@@ -43,7 +43,6 @@
 
 }
 
-
 - (BasicTableRowView *) rowViewForOutlineSection: (OutlineSection *) outlineSection {
     BasicCustomRowView *rowView = [[BasicCustomRowView alloc] init];
     rowView.borderColor = [NSColor darkGrayColor];
@@ -51,13 +50,11 @@
     return rowView;
 }
 
-
 - (BasicTableCellView *) headerCellForOutlineSection: (OutlineSection *) outlineSection {
     BasicTableCellView *cell = [super headerCellForOutlineSection: outlineSection];
     //    cell.textFieldCustom.text = [outlineSection.title uppercaseString];
     return cell;
 }
-
 
 - (void) configureCell: (BasicTableCellView *) tableCell forRowObject: (TableRowObject *) rowObject outlineSection: (OutlineSection *) outlineSection {
     [super configureCell: tableCell forRowObject: rowObject outlineSection: outlineSection];

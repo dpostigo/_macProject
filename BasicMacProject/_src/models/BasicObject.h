@@ -16,4 +16,7 @@
 
 @property(nonatomic, retain) NSString *id;
 @property(nonatomic, retain) NSString *title;
+
+- (id) initWithTitle: (NSString *) aTitle;
++ (id) objectWithTitle: (NSString *) title1;
 @end

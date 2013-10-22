@@ -80,27 +80,7 @@
     [self drawBordersWithRect: rect];
 
     if (innerShadow && ![innerShadow.shadowColor isEqualTo: [NSColor clearColor]]) {
-        NSBezierPath *shadowPath = [NSBezierPath shadowBezierPathWithRect: rect pathOptions: self];
-
-
-        [NSGraphicsContext saveGraphicsState];
-        [[NSGraphicsContext currentContext] setCompositingOperation: NSCompositeSourceOver];
-        [path setClip];
-
-        [path setLineWidth: 0.5];
-        [path setLineCapStyle: NSRoundLineCapStyle];
-        [path setLineJoinStyle: NSBevelLineJoinStyle];
-
-        [[NSColor whiteColor] set];
-        [self.innerShadow set];
-
-        [[self.innerShadow.shadowColor colorWithAlphaComponent: 0.5] setStroke];
-        [shadowPath fill];
-        [shadowPath stroke];
-
-        // Restore the graphics state
-        [NSGraphicsContext restoreGraphicsState];
-
+        [self drawShadowWithRect: rect];
     }
 
 }
@@ -123,6 +103,28 @@
         [border drawWithRect: borderRect];
         rect = borderRect;
     }
+}
+
+- (void) drawShadowWithRect: (NSRect) rect {
+    NSBezierPath *shadowPath = [NSBezierPath shadowBezierPathWithRect: rect pathOptions: self];
+
+    [NSGraphicsContext saveGraphicsState];
+
+    [[NSGraphicsContext currentContext] setCompositingOperation: NSCompositeSourceOver];
+    [shadowPath setClip];
+    [shadowPath setLineWidth: 0.5];
+    [shadowPath setLineCapStyle: NSRoundLineCapStyle];
+    [shadowPath setLineJoinStyle: NSBevelLineJoinStyle];
+
+    [[NSColor clearColor] set];
+    [self.innerShadow set];
+
+    [self.innerShadow.shadowColor setStroke];
+    [shadowPath fill];
+    [shadowPath stroke];
+
+    [NSGraphicsContext restoreGraphicsState];
+
 }
 
 #pragma mark Setters

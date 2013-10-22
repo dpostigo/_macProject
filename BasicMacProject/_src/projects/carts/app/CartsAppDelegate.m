@@ -6,35 +6,32 @@
 
 
 #import "CartsAppDelegate.h"
-#import "TitleBarViewController.h"
-#import "BasicInnerShadowView.h"
-#import "CartsTitleBarViewController.h"
 #import "CartsMainViewController.h"
+#import "CustomWindow+Utils.h"
+#import "CartsWindowHeaderView.h"
 
 @implementation CartsAppDelegate
 
 - (void) applicationDelegateDidFinishLaunching: (NSNotification *) notification {
     [super applicationDelegateDidFinishLaunching: notification];
 
-    //    CartsTitleBarViewController *titleController = [[CartsTitleBarViewController alloc] init];
-    //    [self embedViewController: [[CartsTitleBarViewController alloc] init] inView: window.titleBarView];
-    //    [self embedViewController: [[CartsMainViewController alloc] initWithDefaultNib] inView: window.contentView];
+    window.delegate = self;
+    window.centersWindowButtons = YES;
+    window.contentView = ([[CartsMainViewController alloc] init]).view;
 
-    CartsMainViewController *mainController = [[CartsMainViewController alloc] init];
-    basicWindow.contentView = ([[CartsMainViewController alloc] init]).view;
-    window.contentView = mainController.view;
-//    [window makeKeyAndOrderFront: nil];
-    //    basicWindow.contentView = mainController.view;
-    //    [self embedView: mainController.view inView: basicWindow.contentView];
+    window.windowHeaderView = [CustomWindow headerViewWithClass: [CartsWindowHeaderView class]];
+    window.windowFooterView = [CustomWindow defaultFooter];
+
+    window.headerBarHeight = 30;
+    window.footerBarHeight = 32;
 
 }
+
 
 
 #pragma mark Setup
 
-- (void) setupTitleBar {
 
-}
 
 #pragma mark Callbacks
 

@@ -26,8 +26,8 @@
 #pragma mark White gradients
 
 + (BasicCenteredGradient *) whiteShineGradient {
-    return [BasicCenteredGradient gradientWithBaseColor: [NSColor clearColor] centerColor: [NSColor whiteColor]];
-    //    return [[self alloc] initWithBaseColors: [NSArray arrayWithObjects: [NSColor alphaWhite: 0.5], [NSColor alphaWhite: 0.1], nil] centerColor: [NSColor alphaWhite: 0.6]];
+    //    return [BasicCenteredGradient gradientWithBaseColor: [NSColor colorWithDeviceWhite: 1.0 alpha: 0.1] centerColor: [NSColor whiteColor]];
+    return [[BasicCenteredGradient alloc] initWithBaseColors: [NSArray arrayWithObjects: [NSColor alphaWhite: 0.5], [NSColor alphaWhite: 0.1], nil] centerColor: [NSColor alphaWhite: 0.6]];
 }
 
 + (BasicCenteredGradient *) whiteShineGradientWithBaseColor: (NSColor *) baseColor {
@@ -52,9 +52,19 @@
 
 #pragma mark Vertical gradients
 
+
++ (BasicGradient *) gradientWithTopColor: (NSColor *) topColor bottomColor: (NSColor *) bottomColor {
+    return [[self alloc] initWithTopColor: topColor bottomColor: bottomColor];
+}
+
++ (BasicGradient *) gradientWithTopColor: (NSColor *) topColor bottomColor: (NSColor *) bottomColor percent: (CGFloat) percentage {
+    return [[self alloc] initWithTopColor: topColor bottomColor: bottomColor percent: percentage];
+}
+
 - (id) initWithTopColor: (NSColor *) aTopColor bottomColor: (NSColor *) aBottomColor {
     return [self initWithTopColor: aTopColor bottomColor: aBottomColor percent: 0.5];
 }
+
 
 - (id) initWithTopColor: (NSColor *) aTopColor bottomColor: (NSColor *) aBottomColor percent: (CGFloat) percentage {
     self = [super initWithColorsAndLocations: aBottomColor, (1.0 - percentage), aTopColor, 1.0, nil];
