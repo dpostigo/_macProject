@@ -20,6 +20,17 @@
 @synthesize privateContentView;
 @synthesize centersWindowButtons;
 
+- (id) initWithContentRect: (NSRect) contentRect styleMask: (NSUInteger) aStyle backing: (NSBackingStoreType) bufferingType defer: (BOOL) flag {
+    self = [super initWithContentRect: contentRect styleMask: aStyle backing: bufferingType defer: flag];
+    if (self) {
+        //        self.delegate = self;
+
+    }
+
+    return self;
+}
+
+
 - (void) setHeaderBarHeight: (CGFloat) titleBarHeight1 {
     if (!self.isTexturedWindow) self.isTexturedWindow = YES;
     self.contentBorderThicknessForTopEdge = titleBarHeight1;
@@ -29,7 +40,6 @@
 - (CGFloat) headerBarHeight {
     return self.contentBorderThicknessForTopEdge;
 }
-
 
 - (void) setFooterBarHeight: (CGFloat) aHeight {
     self.contentBorderThicknessForBottomEdge = aHeight;
@@ -113,7 +123,6 @@
 
 
 - (NSRect) rectForWindowHeader {
-
     //CGFloat topThicknessDiff = headerBarHeight > self.contentBorderThicknessForTopEdge ?
     NSRect ret = self.bounds;
     ret.size.height = self.contentBorderThicknessForTopEdge;
@@ -121,14 +130,12 @@
     return ret;
 }
 
-
 - (NSRect) rectForWindowFooter {
     NSRect ret = self.bounds;
     ret.size.height = self.contentBorderThicknessForBottomEdge;
     ret.origin.y = 0;
     return ret;
 }
-
 
 - (NSRect) contentRectForFrameRect: (NSRect) windowFrame {
     //    NSLog(@"%s", __PRETTY_FUNCTION__);
@@ -158,6 +165,16 @@
 
     }
     return returnWindowFrame;
+}
+
+- (void) windowDidBecomeKey: (NSNotification *) notification {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+
+}
+
+- (void) windowDidBecomeMain: (NSNotification *) notification {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+
 }
 
 

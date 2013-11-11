@@ -7,23 +7,32 @@
 //
 
 #import "CartsCustomWindow.h"
+#import "CartsMainViewController.h"
+#import "CartsWindowHeaderViewController.h"
+#import "CartsWindowFooterViewController.h"
 
 @implementation CartsCustomWindow
 
 - (id) initWithContentRect: (NSRect) contentRect styleMask: (NSUInteger) aStyle backing: (NSBackingStoreType) bufferingType defer: (BOOL) flag {
     self = [super initWithContentRect: contentRect styleMask: aStyle backing: bufferingType defer: flag];
     if (self) {
-        self.buttonHeight = 40.0;
-        self.buttonSpacing = 8.0;
-        //        self.windowFramePadding = 1.0;
+        NSLog(@"%s", __PRETTY_FUNCTION__);
+
+        self.delegate = self;
+        self.centersWindowButtons = YES;
+        self.contentView = ([[CartsMainViewController alloc] init]).view;
+
+        self.windowHeaderViewController = [[CartsWindowHeaderViewController alloc] initWithDefaultNib];
+        self.windowFooterViewController = [[CartsWindowFooterViewController alloc] initWithDefaultNib];
+
+        self.headerBarHeight = 30;
+        self.footerBarHeight = 32;
+
 
     }
 
     return self;
 }
-
-
-#pragma mark Class
 
 
 @end

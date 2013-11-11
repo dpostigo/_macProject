@@ -23,64 +23,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CartsListViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsListViewController.m">
+      <file leaf-file-name="VeryBasicViewController.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/viewcontrollers/VeryBasicViewController.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="350" selection-end="350" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="405">
+            <state line="44" column="41" selection-start="1231" selection-end="1231" vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="1035">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasicViewController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/viewcontrollers/BasicViewController.h">
+      <file leaf-file-name="NSString+Utils.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/utils/text/NSString+Utils.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="11" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="375">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BannerView.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/views/BannerView.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="21" selection-start="390" selection-end="390" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="435">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicTokenField.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/controls/textfield/BasicTokenField.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModelCarts.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/projects/carts/models/ModelCarts.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="41" selection-start="1055" selection-end="1055" vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="645">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="List.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/projects/carts/models/List.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="25" selection-start="221" selection-end="221" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="300">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicNewTextField.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/controls/text/BasicNewTextField.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="11" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+            <state line="15" column="0" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="405">
               <folding />
             </state>
           </provider>
@@ -89,43 +44,27 @@
       <file leaf-file-name="CartsAppDelegate.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_src/projects/carts/app/CartsAppDelegate.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="436" selection-end="436" vertical-scroll-proportion="0.0" vertical-offset="143" max-vertical-offset="645">
+            <state line="12" column="16" selection-start="293" selection-end="293" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+              <folding>
+                <element signature="n#applicationDelegateDidFinishLaunching:#0;n#CartsAppDelegate#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasicCustomWindowOld.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/windows/BasicCustomWindowOld.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="0" selection-start="309" selection-end="309" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="3360">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasicNewCustomWindow0923.h" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_src/windows/BasicNewCustomWindow0923.h">
+      <file leaf-file-name="BasicCustomWindowOld.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/windows/BasicCustomWindowOld.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="21" selection-start="268" selection-end="268" vertical-scroll-proportion="0.3956044" vertical-offset="0" max-vertical-offset="585">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CartsWindowHeaderView.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/projects/carts/windows/CartsWindowHeaderView.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CartsWindowHeaderView.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/projects/carts/windows/CartsWindowHeaderView.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="221" selection-end="221" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicWindowTitleBarViewController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/viewcontrollers/BasicWindowTitleBarViewController.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="11" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+            <state line="11" column="19" selection-start="241" selection-end="241" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="495">
               <folding />
             </state>
           </provider>
@@ -134,61 +73,129 @@
       <file leaf-file-name="CartsAppDelegate.h" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_src/projects/carts/app/CartsAppDelegate.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="11" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+            <state line="13" column="36" selection-start="313" selection-end="313" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomWindow+Utils.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/utils/windows/CustomWindow+Utils.h">
+      <file leaf-file-name="BasicBannerViewController.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/viewcontrollers/BasicBannerViewController.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="27" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="330">
+            <state line="18" column="0" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasicObject.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/models/BasicObject.h">
+      <file leaf-file-name="BasicBannerViewController.m" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_src/viewcontrollers/BasicBannerViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="4" selection-start="489" selection-end="489" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+            <state line="70" column="6" selection-start="1791" selection-end="2074" vertical-scroll-proportion="0.6258693" vertical-offset="600" max-vertical-offset="1890">
+              <folding>
+                <element signature="n#init#0;n#BasicBannerViewController#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BannerView.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/views/BannerView.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="35" selection-start="609" selection-end="609" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ModelCarts.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/projects/carts/models/ModelCarts.h">
+      <file leaf-file-name="BannerView.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/views/BannerView.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="35" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="420">
+            <state line="81" column="5" selection-start="2355" selection-end="2551" vertical-scroll-proportion="0.0" vertical-offset="1215" max-vertical-offset="2310">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CartsSidebarViewController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsSidebarViewController.h">
+      <file leaf-file-name="BasicDisplayView.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/views/BasicDisplayView.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="51" selection-start="374" selection-end="374" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="300">
+            <state line="12" column="33" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="420">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasicStyledOutlineViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/viewcontrollers/outlineViewController/BasicStyledOutlineViewController.m">
+      <file leaf-file-name="NSObject+InstanceName.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/utils/NSObject+InstanceName.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="0" selection-start="1521" selection-end="1521" vertical-scroll-proportion="0.0" vertical-offset="855" max-vertical-offset="1290">
+            <state line="13" column="4" selection-start="272" selection-end="272" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="285">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SNRHUDWindowFrameView.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_src/libs/SNRHUDKit/Classes/SNRHUDWindowFrameView.h">
+      <file leaf-file-name="CartsCustomWindow.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/projects/carts/windows/CartsCustomWindow.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="19" selection-start="253" selection-end="253" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="375">
+            <state line="13" column="33" selection-start="320" selection-end="337" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="645">
+              <folding>
+                <marker date="1383662781000" expanded="true" signature="337:1105" placeholder="..." />
+                <marker date="1383662781000" expanded="true" signature="482:1102" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CartsCustomWindow.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/projects/carts/windows/CartsCustomWindow.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="29" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="330">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasicView.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/views/BasicView.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="16" selection-start="185" selection-end="185" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="675">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NSView+Debug.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/utils/views/NSView+Debug.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CartListItemsViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartListItemsViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="82" selection-start="603" selection-end="603" vertical-scroll-proportion="0.0" vertical-offset="121" max-vertical-offset="855">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewBasicCollectionViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/NewBasicCollectionViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="72" selection-start="528" selection-end="528" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="720">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CartsListViewController.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsListViewController.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="44" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
               <folding />
             </state>
           </provider>
@@ -204,29 +211,29 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/_src/utils/text/NSTextField+DPUtils.h" />
-        <option value="$PROJECT_DIR$/_src/views/NewBasicView.m" />
-        <option value="$PROJECT_DIR$/_src/views/NewBasicView.h" />
+        <option value="$PROJECT_DIR$/_src/utils/NSView+Utils.m" />
+        <option value="$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsContentViewController.m" />
         <option value="$PROJECT_DIR$/_src/viewcontrollers/BasicViewController.m" />
-        <option value="$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsListViewController.m" />
-        <option value="$PROJECT_DIR$/_src/controls/text/BasicNewTextField.h" />
-        <option value="$PROJECT_DIR$/_src/views/BannerView.h" />
-        <option value="$PROJECT_DIR$/_src/utils/text/NSTextField+DPUtils.m" />
-        <option value="$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsHomeViewController.m" />
+        <option value="$PROJECT_DIR$/_src/utils/views/NSView+LayoutConstraints.m" />
+        <option value="$PROJECT_DIR$/_src/viewcontrollers/navigationController/BasicContentViewController.m" />
         <option value="$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsSidebarViewController.m" />
-        <option value="$PROJECT_DIR$/_src/views/BannerView.m" />
-        <option value="$PROJECT_DIR$/_src/controls/text/BasicNewTextField.m" />
-        <option value="$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsMainViewController.m" />
-        <option value="$PROJECT_DIR$/_src/utils/windows/CustomWindow+Utils.m" />
-        <option value="$PROJECT_DIR$/_src/projects/carts/windows/CartsWindowHeaderView.h" />
+        <option value="$PROJECT_DIR$/_src/views/NewBasicView.m" />
+        <option value="$PROJECT_DIR$/_src/viewcontrollers/BasicBannerViewController.m" />
+        <option value="$PROJECT_DIR$/_src/viewcontrollers/VeryBasicViewController.h" />
+        <option value="$PROJECT_DIR$/_src/viewcontrollers/VeryBasicViewController.m" />
+        <option value="$PROJECT_DIR$/_src/utils/text/NSString+Utils.m" />
+        <option value="$PROJECT_DIR$/_src/projects/carts/windows/CartsCustomWindow.h" />
+        <option value="$PROJECT_DIR$/_src/windows/CustomWindow.m" />
+        <option value="$PROJECT_DIR$/_src/projects/carts/windows/CartsCustomWindow.m" />
         <option value="$PROJECT_DIR$/_src/projects/carts/app/CartsAppDelegate.m" />
+        <option value="$PROJECT_DIR$/_src/projects/carts/app/CartsAppDelegate.h" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1440" />
-    <option name="height" value="803" />
+    <option name="height" value="802" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -382,7 +389,7 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="projects" />
+              <option name="myItemId" value="viewcontrollers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -403,8 +410,22 @@
               <option name="myItemId" value="projects" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="carts" />
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Carts" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_src" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -422,15 +443,7 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="projects" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="carts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="windows" />
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -491,6 +504,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="_src" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Carts" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BasicMacProject" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_src" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="windows" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -604,6 +639,58 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interface" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Carts" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BasicMacProject" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_src" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graphics" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Carts" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BasicMacProject" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_src" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="projects" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
@@ -663,6 +750,80 @@
               <option name="myItemId" value="projects" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="carts" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viewcontrollers" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Carts" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BasicMacProject" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_src" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="projects" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Carts" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BasicMacProject" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_src" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Carts" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BasicMacProject" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_src" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -683,6 +844,58 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="controls" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Carts" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BasicMacProject" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_src" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controls" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cells" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Carts" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BasicMacProject" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_src" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controls" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="buttons" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -759,7 +972,7 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="settings.xslt" />
+    <property name="options.lastSelected" value="editing.templates" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/_src/drawing" />
     <property name="FullScreen" value="false" />
@@ -836,23 +1049,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="803" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="22" width="1440" height="802" extended-state="7" />
+    <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44959128" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32863188" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32561308" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.104166664" sideWeight="0.62125343" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18819444" sideWeight="0.62125343" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3787466" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15625" sideWeight="0.6589359" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18125" sideWeight="0.6589359" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38472033" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13761468" sideWeight="0.50070524" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38472033" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32970026" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34106413" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21418826" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -874,123 +1087,114 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSLayoutConstraint.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="200" column="8" selection-start="9342" selection-end="9342" vertical-scroll-proportion="0.3991684" vertical-offset="2703" max-vertical-offset="4815">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_src/views/BannerView.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="43" selection-start="1411" selection-end="1411" vertical-scroll-proportion="0.7624434" vertical-offset="413" max-vertical-offset="1155">
-          <folding>
-            <element signature="n#layout#0;n#BannerView#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_src/controls/text/BasicNewTextField.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="477" selection-end="477" vertical-scroll-proportion="0.50549453" vertical-offset="130" max-vertical-offset="585">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_src/viewcontrollers/BasicBannerViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="16" selection-start="213" selection-end="213" vertical-scroll-proportion="0.24835165" vertical-offset="37" max-vertical-offset="495">
-          <folding>
-            <element signature="n#loadView#0;n#BasicBannerViewController#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsMainViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="73" selection-start="652" selection-end="652" vertical-scroll-proportion="0.78054297" vertical-offset="15" max-vertical-offset="735">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_src/utils/windows/CustomWindow+Utils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="27" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="330">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_src/controls/text/BasicNewTextField.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="11" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_src/windows/CustomWindow.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="16" selection-start="241" selection-end="241" vertical-scroll-proportion="-0.31868133" vertical-offset="340" max-vertical-offset="990">
-          <folding />
-        </state>
+        <state line="169" column="0" selection-start="5730" selection-end="5730" vertical-scroll-proportion="5.405117" vertical-offset="0" max-vertical-offset="2790" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/utils/windows/CustomWindow+Utils.m">
+    <entry file="file://$PROJECT_DIR$/_src/windows/CustomWindow.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="23" selection-start="224" selection-end="244" vertical-scroll-proportion="0.40723982" vertical-offset="0" max-vertical-offset="675">
+        <state line="11" column="11" selection-start="224" selection-end="224" vertical-scroll-proportion="0.34232366" vertical-offset="0" max-vertical-offset="510" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_src/windows/ControlledCustomWindow.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="39" selection-start="254" selection-end="254" vertical-scroll-proportion="0.34232366" vertical-offset="0" max-vertical-offset="482" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_src/windows/ControlledCustomWindow.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="16" selection-start="207" selection-end="207" vertical-scroll-proportion="0.31982943" vertical-offset="0" max-vertical-offset="510" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_src/projects/carts/windows/CartsCustomWindow.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="33" selection-start="320" selection-end="337" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="645">
           <folding>
-            <element signature="n#headerViewWithClass:#0;n#CustomWindow#0" expanded="true" />
-            <element signature="n#defaultHeaderView#0;n#CustomWindow#0" expanded="true" />
-            <element signature="n#defaultFooter#0;n#CustomWindow#0" expanded="true" />
+            <marker date="1383662781000" expanded="true" signature="337:1105" placeholder="..." />
+            <marker date="1383662781000" expanded="true" signature="482:1102" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/models/BasicObject.h">
+    <entry file="file://$PROJECT_DIR$/_src/windows/BasicCustomWindowOld.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="4" selection-start="489" selection-end="489" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+        <state line="13" column="0" selection-start="309" selection-end="309" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="960">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/projects/carts/windows/CartsWindowHeaderView.h">
+    <entry file="file://$PROJECT_DIR$/_src/windows/BasicCustomWindowOld.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="221" selection-end="221" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+        <state line="11" column="19" selection-start="241" selection-end="241" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/projects/carts/windows/CartsWindowHeaderView.m">
+    <entry file="file://$PROJECT_DIR$/_src/projects/backoffice/app/BOAppDelegate.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+        <state line="10" column="0" selection-start="208" selection-end="208" vertical-scroll-proportion="0.20862308" vertical-offset="0" max-vertical-offset="719">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/viewcontrollers/BasicWindowTitleBarViewController.h">
+    <entry file="file://$PROJECT_DIR$/_src/projects/carts/viewcontrollers/CartsListViewController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="11" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+        <state line="11" column="44" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="330">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/projects/carts/app/CartsAppDelegate.h">
+    <entry file="file://$PROJECT_DIR$/_src/views/BannerView.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="11" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+        <state line="23" column="35" selection-start="609" selection-end="609" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_src/projects/carts/app/CartsAppDelegate.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="436" selection-end="436" vertical-scroll-proportion="0.0" vertical-offset="143" max-vertical-offset="645">
+        <state line="12" column="16" selection-start="293" selection-end="293" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <folding>
+            <element signature="n#applicationDelegateDidFinishLaunching:#0;n#CartsAppDelegate#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_src/projects/app/BasicAppDelegate.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="16" selection-start="169" selection-end="169" vertical-scroll-proportion="0.18776079" vertical-offset="0" max-vertical-offset="719">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_src/windows/BasicNewCustomWindow0923.h">
+    <entry file="file://$PROJECT_DIR$/_src/projects/app/BasicAppDelegate.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="21" selection-start="268" selection-end="268" vertical-scroll-proportion="0.3956044" vertical-offset="0" max-vertical-offset="585">
+        <state line="10" column="11" selection-start="187" selection-end="187" vertical-scroll-proportion="0.20862308" vertical-offset="0" max-vertical-offset="719">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_src/projects/carts/app/CartsAppDelegate.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="36" selection-start="313" selection-end="313" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_src/viewcontrollers/BasicBannerViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_src/viewcontrollers/BasicBannerViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="6" selection-start="1791" selection-end="2074" vertical-scroll-proportion="0.6258693" vertical-offset="600" max-vertical-offset="1890">
+          <folding>
+            <element signature="n#init#0;n#BasicBannerViewController#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

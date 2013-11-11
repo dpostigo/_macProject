@@ -8,10 +8,12 @@
 #import <Foundation/Foundation.h>
 #import "BasicAppDelegate.h"
 #import "CustomWindow.h"
+#import "ControlledCustomWindow.h"
+#import "CartsCustomWindow.h"
 
 @interface CartsAppDelegate : BasicAppDelegate <NSApplicationDelegate, NSMenuDelegate, NSWindowDelegate> {
 
-    IBOutlet CustomWindow *window;
+    IBOutlet CartsCustomWindow *window;
     IBOutlet NSWindow *macWindow;
     IBOutlet NSWindow *styledWindow;
 }

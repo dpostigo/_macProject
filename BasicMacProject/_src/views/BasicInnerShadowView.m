@@ -7,12 +7,13 @@
 
 #import "BasicInnerShadowView.h"
 #import "BasicCenteredGradient.h"
+#import "BasicDisplayView+SurrogateUtils.h"
 
 @implementation BasicInnerShadowView {
 }
 
-- (void) setup {
-    [super setup];
+- (void) pathOptionsInit {
+    [super pathOptionsInit];
 
     pathOptions.cornerRadius = 0.0;
     pathOptions.borderWidth = 0;
@@ -20,8 +21,8 @@
     pathOptions.cornerType = CornerNone;
     pathOptions.backgroundColor = [NSColor colorWithDeviceWhite: 0.95 alpha: 1.0];
 
-//    self.innerShadow = [[NSShadow alloc] init];
-//    self.innerShadow.shadowColor = [NSColor colorWithWhite: 0.8];
+    //    self.innerShadow = [[NSShadow alloc] init];
+    //    self.innerShadow.shadowColor = [NSColor colorWithWhite: 0.8];
     self.innerShadow.shadowBlurRadius = 3;
 
 }

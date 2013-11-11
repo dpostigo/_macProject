@@ -7,10 +7,9 @@
 //
 
 #import "BasicStyledWindow.h"
-#import "BasicInnerShadowView.h"
-#import "NSColor+DPColors.h"
-#import "BasicWindowDisplayView.h"
 #import "BasicWindowTitleView.h"
+#include "BasicDisplayView+Utils.h"
+#include "BasicDisplayView+SurrogateUtils.h"
 
 @implementation BasicStyledWindow {
 
@@ -45,7 +44,8 @@
     BasicWindowTitleView *windowHeader = [[BasicWindowTitleView alloc] init];
     windowHeader.gradient = [[BasicGradient alloc] initWithTopColor: [NSColor colorWithWhite: 0.4] bottomColor: [NSColor colorWithWhite: 0.2] percent: 0.5];
     windowHeader.cornerRadius = 5;
-    windowHeader.cornerOptions = CornerUpperLeft | CornerUpperRight;
+    windowHeader.cornerType = CornerUpperLeft | CornerUpperRight;
+
     [windowHeader setBorderWidth: 0.5 borderColor: [NSColor blackColor]];
 
     BorderOption *topBorder = [BorderOption topBorderWithGradient: [BasicGradient whiteShineGradient] borderWidth: 0.5];
@@ -58,7 +58,7 @@
 
 - (BasicWindowTitleView *) windowFooterView {
     BasicWindowTitleView *ret = self.windowHeaderView;
-    ret.cornerOptions = CornerLowerLeft | CornerLowerRight;
+    ret.cornerType = CornerLowerLeft | CornerLowerRight;
 
     //    ret.gradient = [[BasicGradient alloc] initWithTopColor: [NSColor colorWithWhite: 0.4] bottomColor: [NSColor colorWithWhite: 0.2] percent: 0.5];
     return ret;

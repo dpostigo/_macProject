@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		030A3E9C1778A603008BD708 /* RoundWindowFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 030A3E9A1778A603008BD708 /* RoundWindowFrameView.m */; };
+		0319BB6A1826B5FA006F3B1A /* BasicBannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0319BB691826B5FA006F3B1A /* BasicBannerViewController.xib */; };
 		033217CB176F709B004F1CA5 /* CartsSidebarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033217CA176F709B004F1CA5 /* CartsSidebarViewController.xib */; };
 		033217CD176F72D5004F1CA5 /* CartsMainViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033217CC176F72D5004F1CA5 /* CartsMainViewController2.xib */; };
 		03386ED0176CB9FE00E1F37A /* _assets in Resources */ = {isa = PBXBuildFile; fileRef = 03386ECD176CB9FE00E1F37A /* _assets */; };
@@ -33,7 +34,10 @@
 		036D4CE0180C3B8D0017481C /* BorderOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 036D4CD2180C3B8D0017481C /* BorderOption.m */; };
 		036D4CE2180C3B8D0017481C /* CornerProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 036D4CD4180C3B8D0017481C /* CornerProperties.m */; };
 		036D4CE4180C3B8D0017481C /* PathOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 036D4CD6180C3B8D0017481C /* PathOptions.m */; };
-		038465D91816BBB80061AAD4 /* CartsWindowHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 038465D81816BBB80061AAD4 /* CartsWindowHeaderView.xib */; };
+		038407FA1823E6C400F78AAC /* AutoLayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 038407F71823E6C400F78AAC /* AutoLayoutHelpers.m */; };
+		038407FB1823E6C400F78AAC /* NSView+Autolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 038407F91823E6C400F78AAC /* NSView+Autolayout.m */; };
+		038465D91816BBB80061AAD4 /* CartsWindowHeaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 038465D81816BBB80061AAD4 /* CartsWindowHeaderViewController.xib */; };
+		038465DF181743D90061AAD4 /* CartsWindowFooterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 038465DE181743D90061AAD4 /* CartsWindowFooterViewController.xib */; };
 		038FFB55181415E10039703F /* NSBezierPath+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 038FFB27181415E10039703F /* NSBezierPath+Additions.m */; };
 		038FFB56181415E10039703F /* NSBezierPath+DPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 038FFB29181415E10039703F /* NSBezierPath+DPUtils.m */; };
 		038FFB57181415E10039703F /* NSBezierPath+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 038FFB2B181415E10039703F /* NSBezierPath+Utils.m */; };
@@ -84,8 +88,8 @@
 		03D8CE271768ACA6000CF88A /* OutlineRowObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CC111768ACA6000CF88A /* OutlineRowObject.m */; };
 		03D8CE281768ACA6000CF88A /* OutlineSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CC131768ACA6000CF88A /* OutlineSection.m */; };
 		03D8CE291768ACA6000CF88A /* RowObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CC151768ACA6000CF88A /* RowObject.m */; };
-		03D8CE2A1768ACA6000CF88A /* TableRowObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CC171768ACA6000CF88A /* TableRowObject.m */; };
-		03D8CE2B1768ACA6000CF88A /* TableSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CC191768ACA6000CF88A /* TableSection.m */; };
+		03D8CE2A1768ACA6000CF88A /* DataItemObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CC171768ACA6000CF88A /* DataItemObject.m */; };
+		03D8CE2B1768ACA6000CF88A /* DataSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CC191768ACA6000CF88A /* DataSection.m */; };
 		03D8CE2C1768ACA6000CF88A /* TreeDatum.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CC1B1768ACA6000CF88A /* TreeDatum.m */; };
 		03D8CE2D1768ACA6000CF88A /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D8CC1D1768ACA6000CF88A /* SDWebImage.framework */; };
 		03D8CE2E1768ACA6000CF88A /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D8CC1E1768ACA6000CF88A /* YAJL.framework */; };
@@ -123,7 +127,7 @@
 		03D8CEBD1768ACA6000CF88A /* NSDateFormatter+JMSimpleDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CD431768ACA6000CF88A /* NSDateFormatter+JMSimpleDate.m */; };
 		03D8CEBE1768ACA6000CF88A /* TTTTimeIntervalFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CD471768ACA6000CF88A /* TTTTimeIntervalFormatter.m */; };
 		03D8CEBF1768ACA6000CF88A /* YRKSpinningProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CD4A1768ACA6000CF88A /* YRKSpinningProgressIndicator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		03D8CEC01768ACA6000CF88A /* BasicLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CD4D1768ACA6000CF88A /* BasicLibrary.m */; };
+		03D8CEC01768ACA6000CF88A /* BasicDelegater.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CD4D1768ACA6000CF88A /* BasicDelegater.m */; };
 		03D8CEC11768ACA6000CF88A /* BasicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CD4F1768ACA6000CF88A /* BasicModel.m */; };
 		03D8CEC21768ACA6000CF88A /* BasicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CD511768ACA6000CF88A /* BasicObject.m */; };
 		03D8CEC31768ACA6000CF88A /* BasicUserObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CD531768ACA6000CF88A /* BasicUserObject.m */; };
@@ -204,64 +208,91 @@
 		03DFB372180EBB5F000C09C3 /* SNRHUDWindowButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DFB364180EBB5F000C09C3 /* SNRHUDWindowButtonCell.m */; };
 		03DFB373180EBB5F000C09C3 /* SNRHUDWindowFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DFB366180EBB5F000C09C3 /* SNRHUDWindowFrameView.m */; };
 		03FB8B5E18155D9700C2E36B /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FB8B5D18155D9700C2E36B /* BasicViewController.m */; };
-		7CA4409098F23B33D4033A27 /* CartsFooterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4446F3AFD3671AB072463 /* CartsFooterViewController.m */; };
-		7CA440A4906752D8FE554036 /* CartsWindowHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44A4A16A36525CDDD319D /* CartsWindowHeaderView.m */; };
+		7CA44006A5462FECE8F3132B /* NSMutableArray+DataSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44ADE7294653F3E1B25B3 /* NSMutableArray+DataSection.m */; };
+		7CA440477BAE5F8BC4B1938A /* NSView+LayoutConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA449A4A06A4EB76C7B0A36 /* NSView+LayoutConstraints.m */; };
+		7CA44049385BEA3D3180B0DA /* ControlledCustomWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44FB578C8BC50B8F62F20 /* ControlledCustomWindow.m */; };
+		7CA4409FB65B726144C932D3 /* NSOutlineView+DPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4480280D5B3D52F7C6951 /* NSOutlineView+DPUtils.m */; };
+		7CA440A4906752D8FE554036 /* CartsWindowHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44A4A16A36525CDDD319D /* CartsWindowHeaderViewController.m */; };
 		7CA440CB61DCE11ED4DDA5C1 /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA442F4652BD9F34B82D380 /* List.m */; };
 		7CA44160054853CC80D23AAE /* BasicBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44EA1919542319D0EB54C /* BasicBannerViewController.m */; };
 		7CA441864846AF5109D35889 /* ColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44422999C15F5E794C261 /* ColorManager.m */; };
 		7CA4419533A336D2D4A03A5E /* BasicWindowDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44AB5D5F32D692B68C98F /* BasicWindowDisplayView.m */; };
 		7CA441DD5967517055D8B592 /* BasicGradient+DPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44E554B2FB8B2ABFCA29D /* BasicGradient+DPUtils.m */; };
 		7CA44201153BB628F11A3711 /* CartsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44591BA4FCA23DCACA2C8 /* CartsListViewController.m */; };
+		7CA442725E7972EAC320B177 /* CartListItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA445B2ECB79B8DDB2A18A6 /* CartListItemsViewController.m */; };
+		7CA44294FB7C794BAE2CE645 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44FDD349B6B8C1931A39B /* CustomButton.m */; };
+		7CA442C8EC7055C857AAC9A9 /* NSView+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44AC94D9472C2917D074D /* NSView+Debug.m */; };
+		7CA4433572CD3AAD162867DB /* CartsWindowFooterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4432F7B0D85547E60B84E /* CartsWindowFooterViewController.m */; };
 		7CA4436C9EBEA7615526ABC0 /* BasicLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA447439329A6D119799C42 /* BasicLayoutViewController.m */; };
 		7CA443A30EDE15DA1E2CEC34 /* ModelCarts.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44D9BFFFADF3E2B82F366 /* ModelCarts.m */; };
 		7CA443EF27F5DF917312020B /* BasicGradient+CartsUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44E07E410B55C32F5B096 /* BasicGradient+CartsUtils.m */; };
+		7CA44421324EE8947983BC02 /* CornerProperties+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44D4047C85648A584A6F8 /* CornerProperties+Utils.m */; };
+		7CA4443077E71370941DEB5D /* PathOptions+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44AB68E749DF55E0B97BA /* PathOptions+Utils.m */; };
+		7CA4446DC10AD6D37E50744D /* ResizingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44C9B30624972508A9DBF /* ResizingView.m */; };
 		7CA44473EF61DC5C9AB740F4 /* BasicContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA447C075BB87840AB862AB /* BasicContentViewController.m */; };
 		7CA44494D2D3D2703545CDD7 /* BasicSparrowSidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4451F62962EC8938CB8A9 /* BasicSparrowSidebarViewController.m */; };
-		7CA444A6A1A474566BB29FB4 /* BasicStyledRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA444FAE7741E7011923813 /* BasicStyledRowView.m */; };
+		7CA444A6A1A474566BB29FB4 /* StyledRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA444FAE7741E7011923813 /* StyledRowView.m */; };
 		7CA444C22E9A3AA772055517 /* CartsSidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44378F0B370C945527E28 /* CartsSidebarViewController.m */; };
 		7CA444D27027863C5F836141 /* BasicSplitSidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4464056C67BA93DE64B1C /* BasicSplitSidebarViewController.m */; };
 		7CA444EEA4F215168D63CE4B /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44043BBDB18B47930F7CE /* Model.m */; };
 		7CA4450BF1DFEE83066A0EC7 /* NewBasicView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA442E6BF9B43EA93413404 /* NewBasicView+Utils.m */; };
 		7CA445766705C8CF2ED706D7 /* NSMutableArray+BasicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA445878A890219AD11F84B /* NSMutableArray+BasicObject.m */; };
+		7CA4459245255E8F9B8CD395 /* NSLayoutConstraint+DPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44C831061FCCA40DAACBC /* NSLayoutConstraint+DPUtils.m */; };
 		7CA445C760F570E0A32BDE92 /* CartsTitleBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44B9A83EC4D420E5B3CED /* CartsTitleBarViewController.m */; };
 		7CA4464F4759E1E4BC45E5EA /* BasicSplitHorizontalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44A907AE4EB2E1ACE4747 /* BasicSplitHorizontalViewController.m */; };
 		7CA446676D017F3575A3261F /* CustomWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA448B0BAF908901350527A /* CustomWindow.m */; };
-		7CA44732B26C803C10501A9A /* BasicWindowTitleBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44DE8E772C6A7359755AA /* BasicWindowTitleBarViewController.m */; };
+		7CA4467A2ED52E0F0450AA88 /* NewBasicButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44B7520FF30AE85CA04F7 /* NewBasicButtonCell.m */; };
+		7CA4469882A41A942A766D94 /* DataSection+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44CE3FCB2006B90396687 /* DataSection+Utils.m */; };
+		7CA446C3829B33874B751380 /* NewBasicCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44045B716895C22F0F14C /* NewBasicCollectionViewController.m */; };
+		7CA44732B26C803C10501A9A /* BasicWindowHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44DE8E772C6A7359755AA /* BasicWindowHeaderViewController.m */; };
 		7CA4477B3B3C1FDD3A30AF93 /* BasicObject+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44C80D4D39A565B83B57A /* BasicObject+Utils.m */; };
 		7CA447CE73443FF9E5749763 /* NSWindow+DPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA440BEDACC6FC5BFB0697D /* NSWindow+DPUtils.m */; };
-		7CA4481C618A7B309B257986 /* CartsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4462355F52DBAF22B8503 /* CartsHomeViewController.m */; };
+		7CA4481C618A7B309B257986 /* CartsContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4462355F52DBAF22B8503 /* CartsContentViewController.m */; };
 		7CA44825CCE87FF4A69F29CD /* CartsMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA442975AFDE9C2C92F5CCE /* CartsMainViewController.m */; };
 		7CA4483699D96C0343458B60 /* NSTextField+DPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4461BCA940C78C84DC675 /* NSTextField+DPUtils.m */; };
 		7CA44851D39442CEC36C2AEC /* OutlineRowObject+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44F0DB88CA48796EC372D /* OutlineRowObject+Utils.m */; };
 		7CA44863E68E0E1F9641F3ED /* BasicButton2Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA441433C9C640F1BD8B76C /* BasicButton2Cell.m */; };
 		7CA448BAE0C6E5F01EA39225 /* NSColor+CartsUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4484B30CBCB345D7ACCAA /* NSColor+CartsUtils.m */; };
+		7CA448C6AE04C058480A6C44 /* RowObjectArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44651BFF66AF273D9BDBD /* RowObjectArray.m */; };
 		7CA448F0E86B3C3BC896DCE7 /* BasicCustomWindowFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44018205CD3A1DFFBE403 /* BasicCustomWindowFrame.m */; };
 		7CA4491DBED6D24E10AFEA29 /* BasicStyledWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA447BEB41E4A87ADB2E04D /* BasicStyledWindow.m */; };
+		7CA4492CA158AA06ECF4C5F9 /* BasicViewController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA448ED60EDD79BBFD425A5 /* BasicViewController+Utils.m */; };
+		7CA4492F37339840513B54AE /* BasicWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA440781F6129038DF2B81A /* BasicWindowViewController.m */; };
 		7CA449478C78D38E64E75C85 /* ButtonContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4475654A4B281C86F0324 /* ButtonContainer.m */; };
 		7CA44948C94EC75330B65557 /* ImageOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA447A91779A935631B6175 /* ImageOptions.m */; };
 		7CA449A5F6290CBD3E53B8D1 /* BasicDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA441CF0C84D430FA781F5D /* BasicDisplayView.m */; };
+		7CA449D829017B501F250438 /* BasicDisplayView+SurrogateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA446E8B0EB1E3845A59DF3 /* BasicDisplayView+SurrogateUtils.m */; };
 		7CA449DAD96710F77E398D02 /* BasicNewCustomWindow0923.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44322D963F508A9B454C7 /* BasicNewCustomWindow0923.m */; };
 		7CA44A7994F00799591C9CD3 /* CustomWindowButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA447953A708FAA783BCC9F /* CustomWindowButtonCell.m */; };
 		7CA44AC7BD9829B2C97AF6C7 /* VeryBasicButton2Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA445943F36F39ECC47C780 /* VeryBasicButton2Cell.m */; };
+		7CA44B2C90B8ED125666EE69 /* SurrogateObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44C4B7501FC717915A924 /* SurrogateObject.m */; };
+		7CA44B9E162477F1FC9EF997 /* NSObject+InstanceName.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4408CF4A3C38A7C2FB12A /* NSObject+InstanceName.m */; };
 		7CA44BC46A6C10A462A03CF3 /* BasicCustomWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA442406BF21E5A3706D3A6 /* BasicCustomWindow.m */; };
 		7CA44C25EB0D40AC9BAADAA4 /* BannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44651448363BE14F9BF06 /* BannerView.m */; };
 		7CA44C29EFF556D1757E176E /* BasicAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA441FF6B5B8267665D07BF /* BasicAppDelegate.m */; };
 		7CA44C5825BAD701C61A111D /* BasicSplitVerticalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44F3D5B8B8CFBA52FA6C5 /* BasicSplitVerticalViewController.m */; };
 		7CA44D02A5C91DFC5ACA7911 /* BasicWindowTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44B36D8AFF15E08AF68D6 /* BasicWindowTitleView.m */; };
 		7CA44D1D78275A20592F18DA /* CartsCustomWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44D5EA0DDF5B457BD3CF7 /* CartsCustomWindow.m */; };
+		7CA44D363DCFB9379192CB3C /* NSButton+DefaultButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4463D917F555FE9679767 /* NSButton+DefaultButtons.m */; };
 		7CA44D3D99A1B72209F93ABC /* CustomWindow+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44780C55D9E4E71E59A62 /* CustomWindow+Utils.m */; };
+		7CA44D459B4208EF333ECA69 /* DataItemObject+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44273BBA73F71BDDA7599 /* DataItemObject+Utils.m */; };
 		7CA44D9395577FFD4098E048 /* NewBasicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA444D7DDAF35EF74F11BEC /* NewBasicView.m */; };
+		7CA44D97511DBF3CCEFA2CBC /* BasicDisplayView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44FB3D55CAAA7FA3F03B7 /* BasicDisplayView+Utils.m */; };
 		7CA44DAD0C8DE25B7AA2123E /* BasicSplitSidebarViewController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA443F4581D2CB32610E765 /* BasicSplitSidebarViewController+Utils.m */; };
 		7CA44DBA18E95A098069091B /* CustomWindowOldOct18.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44D3FDE1CB33DF8DE8C6F /* CustomWindowOldOct18.m */; };
 		7CA44E2EC1B6990298F6777B /* OutlineSection+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44585DE663126D86AB571 /* OutlineSection+Utils.m */; };
 		7CA44E99A39161BA231304E6 /* BasicNewTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44589A4DAC041556F569C /* BasicNewTextField.m */; };
+		7CA44EC1EC10F0F4BB2E313F /* NSMutableArray+Sorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44BCAF79323E16B8CB33E /* NSMutableArray+Sorting.m */; };
 		7CA44ECA6E3F372EBF7B645F /* BasicStyledOutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA446BC17E0953198D2127C /* BasicStyledOutlineViewController.m */; };
+		7CA44F2E72379A89349A1DE4 /* BasicCollectionViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44BC1F98302D443A10873 /* BasicCollectionViewItem.m */; };
+		7CA44F7B1A77105AAC018B68 /* BasicWindowFooterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4492D75C03886A7FE047C /* BasicWindowFooterViewController.m */; };
 		7CA44F97C6D48AC64AD655B3 /* VeryBasicButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44CDF6D42AEA37F288009 /* VeryBasicButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		030A3E991778A603008BD708 /* RoundWindowFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundWindowFrameView.h; sourceTree = "<group>"; };
 		030A3E9A1778A603008BD708 /* RoundWindowFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundWindowFrameView.m; sourceTree = "<group>"; };
+		0319BB691826B5FA006F3B1A /* BasicBannerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicBannerViewController.xib; sourceTree = "<group>"; };
 		033217CA176F709B004F1CA5 /* CartsSidebarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CartsSidebarViewController.xib; path = viewcontrollers/CartsSidebarViewController.xib; sourceTree = "<group>"; };
 		033217CC176F72D5004F1CA5 /* CartsMainViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CartsMainViewController2.xib; path = viewcontrollers/CartsMainViewController2.xib; sourceTree = "<group>"; };
 		03386ECD176CB9FE00E1F37A /* _assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _assets; sourceTree = "<group>"; };
@@ -296,7 +327,12 @@
 		036D4CD4180C3B8D0017481C /* CornerProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CornerProperties.m; sourceTree = "<group>"; };
 		036D4CD5180C3B8D0017481C /* PathOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathOptions.h; sourceTree = "<group>"; };
 		036D4CD6180C3B8D0017481C /* PathOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathOptions.m; sourceTree = "<group>"; };
-		038465D81816BBB80061AAD4 /* CartsWindowHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CartsWindowHeaderView.xib; path = window/CartsWindowHeaderView.xib; sourceTree = "<group>"; };
+		038407F61823E6C400F78AAC /* AutoLayoutHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutHelpers.h; sourceTree = "<group>"; };
+		038407F71823E6C400F78AAC /* AutoLayoutHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutHelpers.m; sourceTree = "<group>"; };
+		038407F81823E6C400F78AAC /* NSView+Autolayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+Autolayout.h"; sourceTree = "<group>"; };
+		038407F91823E6C400F78AAC /* NSView+Autolayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+Autolayout.m"; sourceTree = "<group>"; };
+		038465D81816BBB80061AAD4 /* CartsWindowHeaderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CartsWindowHeaderViewController.xib; path = window/CartsWindowHeaderViewController.xib; sourceTree = "<group>"; };
+		038465DE181743D90061AAD4 /* CartsWindowFooterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CartsWindowFooterViewController.xib; path = window/CartsWindowFooterViewController.xib; sourceTree = "<group>"; };
 		038FFB26181415E10039703F /* NSBezierPath+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+Additions.h"; sourceTree = "<group>"; };
 		038FFB27181415E10039703F /* NSBezierPath+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+Additions.m"; sourceTree = "<group>"; };
 		038FFB28181415E10039703F /* NSBezierPath+DPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+DPUtils.h"; sourceTree = "<group>"; };
@@ -399,10 +435,10 @@
 		03D8CC131768ACA6000CF88A /* OutlineSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutlineSection.m; sourceTree = "<group>"; };
 		03D8CC141768ACA6000CF88A /* RowObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowObject.h; sourceTree = "<group>"; };
 		03D8CC151768ACA6000CF88A /* RowObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RowObject.m; sourceTree = "<group>"; };
-		03D8CC161768ACA6000CF88A /* TableRowObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableRowObject.h; sourceTree = "<group>"; };
-		03D8CC171768ACA6000CF88A /* TableRowObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableRowObject.m; sourceTree = "<group>"; };
-		03D8CC181768ACA6000CF88A /* TableSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableSection.h; sourceTree = "<group>"; };
-		03D8CC191768ACA6000CF88A /* TableSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableSection.m; sourceTree = "<group>"; };
+		03D8CC161768ACA6000CF88A /* DataItemObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataItemObject.h; sourceTree = "<group>"; };
+		03D8CC171768ACA6000CF88A /* DataItemObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataItemObject.m; sourceTree = "<group>"; };
+		03D8CC181768ACA6000CF88A /* DataSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSection.h; sourceTree = "<group>"; };
+		03D8CC191768ACA6000CF88A /* DataSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSection.m; sourceTree = "<group>"; };
 		03D8CC1A1768ACA6000CF88A /* TreeDatum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeDatum.h; sourceTree = "<group>"; };
 		03D8CC1B1768ACA6000CF88A /* TreeDatum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeDatum.m; sourceTree = "<group>"; };
 		03D8CC1D1768ACA6000CF88A /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
@@ -481,8 +517,8 @@
 		03D8CD471768ACA6000CF88A /* TTTTimeIntervalFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTimeIntervalFormatter.m; sourceTree = "<group>"; };
 		03D8CD491768ACA6000CF88A /* YRKSpinningProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRKSpinningProgressIndicator.h; sourceTree = "<group>"; };
 		03D8CD4A1768ACA6000CF88A /* YRKSpinningProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRKSpinningProgressIndicator.m; sourceTree = "<group>"; };
-		03D8CD4C1768ACA6000CF88A /* BasicLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicLibrary.h; sourceTree = "<group>"; };
-		03D8CD4D1768ACA6000CF88A /* BasicLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicLibrary.m; sourceTree = "<group>"; };
+		03D8CD4C1768ACA6000CF88A /* BasicDelegater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicDelegater.h; sourceTree = "<group>"; };
+		03D8CD4D1768ACA6000CF88A /* BasicDelegater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicDelegater.m; sourceTree = "<group>"; };
 		03D8CD4E1768ACA6000CF88A /* BasicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicModel.h; sourceTree = "<group>"; };
 		03D8CD4F1768ACA6000CF88A /* BasicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicModel.m; sourceTree = "<group>"; };
 		03D8CD501768ACA6000CF88A /* BasicObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicObject.h; sourceTree = "<group>"; };
@@ -631,55 +667,76 @@
 		03FB8B5D18155D9700C2E36B /* BasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicViewController.m; sourceTree = "<group>"; };
 		7CA44018205CD3A1DFFBE403 /* BasicCustomWindowFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicCustomWindowFrame.m; sourceTree = "<group>"; };
 		7CA44043BBDB18B47930F7CE /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		7CA44045B716895C22F0F14C /* NewBasicCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewBasicCollectionViewController.m; sourceTree = "<group>"; };
 		7CA44071D027056A0741CC26 /* OutlineSection+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "OutlineSection+Utils.h"; path = "data/OutlineSection+Utils.h"; sourceTree = "<group>"; };
-		7CA440AF824DF0BD2503A333 /* BasicStyledRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicStyledRowView.h; path = rowViews/BasicStyledRowView.h; sourceTree = "<group>"; };
+		7CA440781F6129038DF2B81A /* BasicWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicWindowViewController.m; sourceTree = "<group>"; };
+		7CA4408CF4A3C38A7C2FB12A /* NSObject+InstanceName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+InstanceName.m"; sourceTree = "<group>"; };
+		7CA440AF824DF0BD2503A333 /* StyledRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StyledRowView.h; path = rowViews/StyledRowView.h; sourceTree = "<group>"; };
 		7CA440BEDACC6FC5BFB0697D /* NSWindow+DPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+DPUtils.m"; sourceTree = "<group>"; };
+		7CA440DF4532ADE4FAEB9DBA /* NSMutableArray+Sorting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+Sorting.h"; path = "data/NSMutableArray+Sorting.h"; sourceTree = "<group>"; };
 		7CA440E54824EF63D7A26F54 /* BasicSplitHorizontalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicSplitHorizontalViewController.h; sourceTree = "<group>"; };
 		7CA441433C9C640F1BD8B76C /* BasicButton2Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicButton2Cell.m; sourceTree = "<group>"; };
 		7CA4414D798D16A0A9D2771F /* CartsTitleBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsTitleBarViewController.h; sourceTree = "<group>"; };
 		7CA4417E4D258C55B006655C /* BasicAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicAppDelegate.h; sourceTree = "<group>"; };
+		7CA441CC10C8FC14D763E54B /* RowObjectArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowObjectArray.h; sourceTree = "<group>"; };
 		7CA441CF0C84D430FA781F5D /* BasicDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicDisplayView.m; sourceTree = "<group>"; };
 		7CA441EB3300A3E10EDA0CEF /* BasicLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicLayoutViewController.h; sourceTree = "<group>"; };
 		7CA441FF6B5B8267665D07BF /* BasicAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicAppDelegate.m; sourceTree = "<group>"; };
 		7CA4422F3647FD02C445F816 /* BasicSplitSidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicSplitSidebarViewController.h; sourceTree = "<group>"; };
+		7CA44232420D5AA7A3F90F4E /* CornerProperties+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CornerProperties+Utils.h"; sourceTree = "<group>"; };
+		7CA44239A85F24B19ED7EFC9 /* NSObject+InstanceName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+InstanceName.h"; sourceTree = "<group>"; };
 		7CA442406BF21E5A3706D3A6 /* BasicCustomWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicCustomWindow.m; sourceTree = "<group>"; };
+		7CA44273BBA73F71BDDA7599 /* DataItemObject+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DataItemObject+Utils.m"; path = "data/DataItemObject+Utils.m"; sourceTree = "<group>"; };
 		7CA442975AFDE9C2C92F5CCE /* CartsMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsMainViewController.m; sourceTree = "<group>"; };
 		7CA442A1308B6C5BB67635B6 /* CustomWindowButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomWindowButtonCell.h; sourceTree = "<group>"; };
 		7CA442AA40090FBEDF04FC0D /* BasicObject+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BasicObject+Utils.h"; path = "data/BasicObject+Utils.h"; sourceTree = "<group>"; };
 		7CA442AC636B04D096D630DD /* OutlineRowObject+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "OutlineRowObject+Utils.h"; path = "data/OutlineRowObject+Utils.h"; sourceTree = "<group>"; };
 		7CA442E6BF9B43EA93413404 /* NewBasicView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NewBasicView+Utils.m"; path = "views/NewBasicView+Utils.m"; sourceTree = "<group>"; };
 		7CA442F4652BD9F34B82D380 /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List.m; sourceTree = "<group>"; };
+		7CA442FA032582808F9630A7 /* DataSection+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DataSection+Utils.h"; path = "data/DataSection+Utils.h"; sourceTree = "<group>"; };
 		7CA44300434D7ED70419714A /* BasicSparrowSidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicSparrowSidebarViewController.h; sourceTree = "<group>"; };
+		7CA443080EBA4953CD4CE560 /* NSMutableArray+DataSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+DataSection.h"; path = "data/NSMutableArray+DataSection.h"; sourceTree = "<group>"; };
 		7CA44322D963F508A9B454C7 /* BasicNewCustomWindow0923.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicNewCustomWindow0923.m; sourceTree = "<group>"; };
+		7CA4432F7B0D85547E60B84E /* CartsWindowFooterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsWindowFooterViewController.m; sourceTree = "<group>"; };
+		7CA4434E67586E9A25F63050 /* ResizingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResizingView.h; sourceTree = "<group>"; };
 		7CA443734E4514362F391C7F /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		7CA44378F0B370C945527E28 /* CartsSidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsSidebarViewController.m; sourceTree = "<group>"; };
 		7CA4439451CA8B2B2677897F /* BasicButton2Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicButton2Cell.h; sourceTree = "<group>"; };
+		7CA443D0CA58D86FA986930E /* NSLayoutConstraint+DPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+DPUtils.h"; sourceTree = "<group>"; };
 		7CA443F3A0CB1AD74691EEF0 /* BasicWindowDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicWindowDisplayView.h; sourceTree = "<group>"; };
 		7CA443F4581D2CB32610E765 /* BasicSplitSidebarViewController+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BasicSplitSidebarViewController+Utils.m"; path = "controllers/BasicSplitSidebarViewController+Utils.m"; sourceTree = "<group>"; };
 		7CA4440B5C25F503E1787060 /* CartsConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsConstants.h; sourceTree = "<group>"; };
+		7CA4440E398CA8F3657F88A4 /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
 		7CA44422999C15F5E794C261 /* ColorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorManager.m; sourceTree = "<group>"; };
 		7CA4443D8D5827359820D685 /* NSWindow+DPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+DPUtils.h"; sourceTree = "<group>"; };
-		7CA4446F3AFD3671AB072463 /* CartsFooterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsFooterViewController.m; sourceTree = "<group>"; };
 		7CA4448FD16BE4C7F1FD2E2D /* BasicNewTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicNewTextField.h; path = text/BasicNewTextField.h; sourceTree = "<group>"; };
 		7CA444D7DDAF35EF74F11BEC /* NewBasicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewBasicView.m; sourceTree = "<group>"; };
 		7CA444F2A746C6F62A5E1971 /* CustomWindow+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CustomWindow+Utils.h"; path = "windows/CustomWindow+Utils.h"; sourceTree = "<group>"; };
-		7CA444FAE7741E7011923813 /* BasicStyledRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BasicStyledRowView.m; path = rowViews/BasicStyledRowView.m; sourceTree = "<group>"; };
+		7CA444FAE7741E7011923813 /* StyledRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StyledRowView.m; path = rowViews/StyledRowView.m; sourceTree = "<group>"; };
 		7CA4451F62962EC8938CB8A9 /* BasicSparrowSidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicSparrowSidebarViewController.m; sourceTree = "<group>"; };
 		7CA4453EDE1831B18FFDC72D /* BasicWindowTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicWindowTitleView.h; sourceTree = "<group>"; };
+		7CA4454FC735A9230AE72195 /* BasicDisplayView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BasicDisplayView+Utils.h"; sourceTree = "<group>"; };
 		7CA44571BEB8A642162C1D1F /* CartsSidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsSidebarViewController.h; sourceTree = "<group>"; };
 		7CA44585DE663126D86AB571 /* OutlineSection+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "OutlineSection+Utils.m"; path = "data/OutlineSection+Utils.m"; sourceTree = "<group>"; };
 		7CA445878A890219AD11F84B /* NSMutableArray+BasicObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+BasicObject.m"; path = "data/NSMutableArray+BasicObject.m"; sourceTree = "<group>"; };
 		7CA44589A4DAC041556F569C /* BasicNewTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BasicNewTextField.m; path = text/BasicNewTextField.m; sourceTree = "<group>"; };
 		7CA44591BA4FCA23DCACA2C8 /* CartsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsListViewController.m; sourceTree = "<group>"; };
 		7CA445943F36F39ECC47C780 /* VeryBasicButton2Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VeryBasicButton2Cell.m; sourceTree = "<group>"; };
+		7CA445B2ECB79B8DDB2A18A6 /* CartListItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartListItemsViewController.m; sourceTree = "<group>"; };
+		7CA44605E201A17FFED93935 /* NewBasicViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewBasicViewDelegate.h; sourceTree = "<group>"; };
+		7CA4460CC66956A06442A647 /* ControlledCustomWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlledCustomWindow.h; sourceTree = "<group>"; };
 		7CA446107353C65ED3D61061 /* ImageOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageOptions.h; sourceTree = "<group>"; };
 		7CA4461BCA940C78C84DC675 /* NSTextField+DPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextField+DPUtils.m"; sourceTree = "<group>"; };
-		7CA4462355F52DBAF22B8503 /* CartsHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsHomeViewController.m; sourceTree = "<group>"; };
+		7CA4462355F52DBAF22B8503 /* CartsContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsContentViewController.m; sourceTree = "<group>"; };
 		7CA4462A90987C8CFC51E621 /* BasicStyledOutlineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicStyledOutlineViewController.h; path = outlineViewController/BasicStyledOutlineViewController.h; sourceTree = "<group>"; };
+		7CA4463D917F555FE9679767 /* NSButton+DefaultButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSButton+DefaultButtons.m"; sourceTree = "<group>"; };
 		7CA4464056C67BA93DE64B1C /* BasicSplitSidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicSplitSidebarViewController.m; sourceTree = "<group>"; };
 		7CA44651448363BE14F9BF06 /* BannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerView.m; sourceTree = "<group>"; };
+		7CA44651BFF66AF273D9BDBD /* RowObjectArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RowObjectArray.m; sourceTree = "<group>"; };
 		7CA446830134677B38365903 /* BasicNewCustomWindow0923.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicNewCustomWindow0923.h; sourceTree = "<group>"; };
+		7CA446902C87C068F4AE7A1F /* SurrogateObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurrogateObject.h; sourceTree = "<group>"; };
 		7CA446BC17E0953198D2127C /* BasicStyledOutlineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BasicStyledOutlineViewController.m; path = outlineViewController/BasicStyledOutlineViewController.m; sourceTree = "<group>"; };
+		7CA446E8B0EB1E3845A59DF3 /* BasicDisplayView+SurrogateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BasicDisplayView+SurrogateUtils.m"; sourceTree = "<group>"; };
 		7CA447439329A6D119799C42 /* BasicLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicLayoutViewController.m; sourceTree = "<group>"; };
 		7CA4475654A4B281C86F0324 /* ButtonContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonContainer.m; sourceTree = "<group>"; };
 		7CA44766DEF42C3DE47CC19E /* CartsCustomWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsCustomWindow.h; sourceTree = "<group>"; };
@@ -688,6 +745,8 @@
 		7CA447A91779A935631B6175 /* ImageOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageOptions.m; sourceTree = "<group>"; };
 		7CA447BEB41E4A87ADB2E04D /* BasicStyledWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicStyledWindow.m; sourceTree = "<group>"; };
 		7CA447C075BB87840AB862AB /* BasicContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicContentViewController.m; sourceTree = "<group>"; };
+		7CA447E1CBBC41FC47988AB6 /* BasicViewController+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BasicViewController+Utils.h"; path = "controllers/BasicViewController+Utils.h"; sourceTree = "<group>"; };
+		7CA4480280D5B3D52F7C6951 /* NSOutlineView+DPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOutlineView+DPUtils.m"; sourceTree = "<group>"; };
 		7CA4484337C3BE4EA64A7B3A /* ButtonContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonContainer.h; sourceTree = "<group>"; };
 		7CA4484B30CBCB345D7ACCAA /* NSColor+CartsUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+CartsUtils.m"; sourceTree = "<group>"; };
 		7CA44856734C74440BDD6AEC /* NewBasicView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NewBasicView+Utils.h"; path = "views/NewBasicView+Utils.h"; sourceTree = "<group>"; };
@@ -696,46 +755,77 @@
 		7CA448B3E0F13FD047AFE8DB /* BasicCustomWindowFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicCustomWindowFrame.h; sourceTree = "<group>"; };
 		7CA448C49F9CCFC53DB36CF4 /* BasicBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicBannerViewController.h; sourceTree = "<group>"; };
 		7CA448D75F523C51FAB34D56 /* NSTextField+DPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextField+DPUtils.h"; sourceTree = "<group>"; };
+		7CA448ED60EDD79BBFD425A5 /* BasicViewController+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BasicViewController+Utils.m"; path = "controllers/BasicViewController+Utils.m"; sourceTree = "<group>"; };
 		7CA448EDC512883B7ED1A157 /* NSColor+CartsUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+CartsUtils.h"; sourceTree = "<group>"; };
 		7CA448FE58500C2D539BE549 /* CustomWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomWindow.h; sourceTree = "<group>"; };
+		7CA4492D75C03886A7FE047C /* BasicWindowFooterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicWindowFooterViewController.m; sourceTree = "<group>"; };
 		7CA4493081E219583C2804A9 /* NewBasicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewBasicView.h; sourceTree = "<group>"; };
 		7CA4494356816C4C7963DB0C /* BasicGradient+CartsUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BasicGradient+CartsUtils.h"; sourceTree = "<group>"; };
+		7CA449531DD1AAF91FFFC184 /* CartListItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartListItemsViewController.h; sourceTree = "<group>"; };
+		7CA449A4A06A4EB76C7B0A36 /* NSView+LayoutConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSView+LayoutConstraints.m"; path = "views/NSView+LayoutConstraints.m"; sourceTree = "<group>"; };
+		7CA449AECA7A6A1EE49B4E6D /* NSView+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSView+Debug.h"; path = "views/NSView+Debug.h"; sourceTree = "<group>"; };
 		7CA449F22DF1FF28E68232A3 /* BasicDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicDisplayView.h; sourceTree = "<group>"; };
+		7CA44A28F9982C6B5AF99971 /* BasicDisplayView+SurrogateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BasicDisplayView+SurrogateUtils.h"; sourceTree = "<group>"; };
 		7CA44A3BDE6C4E4E5F0C35F0 /* BasicSplitVerticalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicSplitVerticalViewController.h; sourceTree = "<group>"; };
 		7CA44A3BE7835C53E000AAB0 /* BasicGradient+DPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BasicGradient+DPUtils.h"; sourceTree = "<group>"; };
-		7CA44A4A16A36525CDDD319D /* CartsWindowHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsWindowHeaderView.m; sourceTree = "<group>"; };
+		7CA44A4A16A36525CDDD319D /* CartsWindowHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsWindowHeaderViewController.m; sourceTree = "<group>"; };
+		7CA44A4E07A5AC9A86A6C520 /* BasicWindowFooterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicWindowFooterViewController.h; sourceTree = "<group>"; };
 		7CA44A907AE4EB2E1ACE4747 /* BasicSplitHorizontalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicSplitHorizontalViewController.m; sourceTree = "<group>"; };
 		7CA44AB5D5F32D692B68C98F /* BasicWindowDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicWindowDisplayView.m; sourceTree = "<group>"; };
+		7CA44AB68E749DF55E0B97BA /* PathOptions+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PathOptions+Utils.m"; sourceTree = "<group>"; };
+		7CA44AC94D9472C2917D074D /* NSView+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSView+Debug.m"; path = "views/NSView+Debug.m"; sourceTree = "<group>"; };
+		7CA44ADE7294653F3E1B25B3 /* NSMutableArray+DataSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+DataSection.m"; path = "data/NSMutableArray+DataSection.m"; sourceTree = "<group>"; };
 		7CA44B36D8AFF15E08AF68D6 /* BasicWindowTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicWindowTitleView.m; sourceTree = "<group>"; };
+		7CA44B7520FF30AE85CA04F7 /* NewBasicButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewBasicButtonCell.m; path = buttonsNew/NewBasicButtonCell.m; sourceTree = "<group>"; };
 		7CA44B7DF4476648DB68F3EA /* BasicStyledWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicStyledWindow.h; sourceTree = "<group>"; };
 		7CA44B9A83EC4D420E5B3CED /* CartsTitleBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsTitleBarViewController.m; sourceTree = "<group>"; };
+		7CA44BC1F98302D443A10873 /* BasicCollectionViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BasicCollectionViewItem.m; path = collectionViewController/BasicCollectionViewItem.m; sourceTree = "<group>"; };
+		7CA44BCAF79323E16B8CB33E /* NSMutableArray+Sorting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Sorting.m"; path = "data/NSMutableArray+Sorting.m"; sourceTree = "<group>"; };
 		7CA44BCF4B4E4368436A273A /* VeryBasicButton2Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VeryBasicButton2Cell.h; sourceTree = "<group>"; };
-		7CA44C24D91BDEADCB950150 /* CartsHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsHomeViewController.h; sourceTree = "<group>"; };
+		7CA44BE35EBDAC0CCC8BE56B /* PathOptionsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathOptionsProtocol.h; sourceTree = "<group>"; };
+		7CA44C24D91BDEADCB950150 /* CartsContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsContentViewController.h; sourceTree = "<group>"; };
 		7CA44C26383C81237932D7B3 /* BasicCustomWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicCustomWindow.h; sourceTree = "<group>"; };
+		7CA44C4B7501FC717915A924 /* SurrogateObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurrogateObject.m; sourceTree = "<group>"; };
 		7CA44C56A6EADBA35FE64702 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
-		7CA44C6DFE72C78CDC708FAF /* CartsWindowHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsWindowHeaderView.h; sourceTree = "<group>"; };
+		7CA44C6DFE72C78CDC708FAF /* CartsWindowHeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsWindowHeaderViewController.h; sourceTree = "<group>"; };
 		7CA44C80D4D39A565B83B57A /* BasicObject+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BasicObject+Utils.m"; path = "data/BasicObject+Utils.m"; sourceTree = "<group>"; };
+		7CA44C831061FCCA40DAACBC /* NSLayoutConstraint+DPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+DPUtils.m"; sourceTree = "<group>"; };
+		7CA44C9B30624972508A9DBF /* ResizingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResizingView.m; sourceTree = "<group>"; };
 		7CA44CDA6B9C3D86E7C1CD34 /* BasicSplitSidebarViewController+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BasicSplitSidebarViewController+Utils.h"; path = "controllers/BasicSplitSidebarViewController+Utils.h"; sourceTree = "<group>"; };
 		7CA44CDF6D42AEA37F288009 /* VeryBasicButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VeryBasicButton.m; sourceTree = "<group>"; };
+		7CA44CE3FCB2006B90396687 /* DataSection+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DataSection+Utils.m"; path = "data/DataSection+Utils.m"; sourceTree = "<group>"; };
 		7CA44D103B0FE325AE2AA5BA /* ColorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorManager.h; sourceTree = "<group>"; };
 		7CA44D3FDE1CB33DF8DE8C6F /* CustomWindowOldOct18.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomWindowOldOct18.m; sourceTree = "<group>"; };
+		7CA44D4047C85648A584A6F8 /* CornerProperties+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CornerProperties+Utils.m"; sourceTree = "<group>"; };
+		7CA44D4AC563D9068B30B6A2 /* CartsWindowFooterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsWindowFooterViewController.h; sourceTree = "<group>"; };
 		7CA44D5EA0DDF5B457BD3CF7 /* CartsCustomWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsCustomWindow.m; sourceTree = "<group>"; };
 		7CA44D676CEDC45897B9C918 /* BannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerView.h; sourceTree = "<group>"; };
+		7CA44D88042440F570BDEBF3 /* NSButton+DefaultButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSButton+DefaultButtons.h"; sourceTree = "<group>"; };
 		7CA44D9BFFFADF3E2B82F366 /* ModelCarts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelCarts.m; sourceTree = "<group>"; };
-		7CA44DE8E772C6A7359755AA /* BasicWindowTitleBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicWindowTitleBarViewController.m; sourceTree = "<group>"; };
+		7CA44DB3821DB5937830E0A2 /* NewBasicButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewBasicButtonCell.h; path = buttonsNew/NewBasicButtonCell.h; sourceTree = "<group>"; };
+		7CA44DE8E772C6A7359755AA /* BasicWindowHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicWindowHeaderViewController.m; sourceTree = "<group>"; };
+		7CA44DF868AF55E3B29187BD /* DataItemObject+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DataItemObject+Utils.h"; path = "data/DataItemObject+Utils.h"; sourceTree = "<group>"; };
 		7CA44E07E410B55C32F5B096 /* BasicGradient+CartsUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BasicGradient+CartsUtils.m"; sourceTree = "<group>"; };
+		7CA44E202D2DDE0FD99F62F6 /* NSOutlineView+DPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOutlineView+DPUtils.h"; sourceTree = "<group>"; };
 		7CA44E2790FA925F3AD190AB /* BasicContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicContentViewController.h; sourceTree = "<group>"; };
 		7CA44E27D710109CA10D520C /* ModelCarts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelCarts.h; sourceTree = "<group>"; };
+		7CA44E451EF4F51B2BA918E1 /* NSView+LayoutConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSView+LayoutConstraints.h"; path = "views/NSView+LayoutConstraints.h"; sourceTree = "<group>"; };
+		7CA44E4D9C75F01CB13DD996 /* BasicWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicWindowViewController.h; sourceTree = "<group>"; };
+		7CA44E51F821CFBFCCD071B7 /* BasicCollectionViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicCollectionViewItem.h; path = collectionViewController/BasicCollectionViewItem.h; sourceTree = "<group>"; };
 		7CA44E554B2FB8B2ABFCA29D /* BasicGradient+DPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BasicGradient+DPUtils.m"; sourceTree = "<group>"; };
 		7CA44E9CA4ACA3E63E96384B /* NSMutableArray+BasicObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+BasicObject.h"; path = "data/NSMutableArray+BasicObject.h"; sourceTree = "<group>"; };
 		7CA44EA1919542319D0EB54C /* BasicBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicBannerViewController.m; sourceTree = "<group>"; };
+		7CA44ECF0E06266CC1B4E8E4 /* PathOptions+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PathOptions+Utils.h"; sourceTree = "<group>"; };
 		7CA44F0DB88CA48796EC372D /* OutlineRowObject+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "OutlineRowObject+Utils.m"; path = "data/OutlineRowObject+Utils.m"; sourceTree = "<group>"; };
 		7CA44F3D5B8B8CFBA52FA6C5 /* BasicSplitVerticalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicSplitVerticalViewController.m; sourceTree = "<group>"; };
 		7CA44F4461FEC2552755210A /* CustomWindowOldOct18.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomWindowOldOct18.h; sourceTree = "<group>"; };
 		7CA44F4576AA41095186726E /* CartsMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsMainViewController.h; sourceTree = "<group>"; };
-		7CA44F63EECAB9A591D30A5B /* BasicWindowTitleBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicWindowTitleBarViewController.h; sourceTree = "<group>"; };
-		7CA44FBF3979731A3646BAD5 /* CartsFooterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsFooterViewController.h; sourceTree = "<group>"; };
+		7CA44F63EECAB9A591D30A5B /* BasicWindowHeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicWindowHeaderViewController.h; sourceTree = "<group>"; };
+		7CA44F6E4A453F35E09BF562 /* NewBasicCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewBasicCollectionViewController.h; sourceTree = "<group>"; };
+		7CA44FB3D55CAAA7FA3F03B7 /* BasicDisplayView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BasicDisplayView+Utils.m"; sourceTree = "<group>"; };
+		7CA44FB578C8BC50B8F62F20 /* ControlledCustomWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlledCustomWindow.m; sourceTree = "<group>"; };
 		7CA44FD3A5CE819859FF96AC /* VeryBasicButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VeryBasicButton.h; sourceTree = "<group>"; };
+		7CA44FDD349B6B8C1931A39B /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -857,14 +947,16 @@
 				7CA44571BEB8A642162C1D1F /* CartsSidebarViewController.h */,
 				7CA44B9A83EC4D420E5B3CED /* CartsTitleBarViewController.m */,
 				7CA4414D798D16A0A9D2771F /* CartsTitleBarViewController.h */,
-				7CA4446F3AFD3671AB072463 /* CartsFooterViewController.m */,
-				7CA44FBF3979731A3646BAD5 /* CartsFooterViewController.h */,
 				7CA442975AFDE9C2C92F5CCE /* CartsMainViewController.m */,
 				7CA44F4576AA41095186726E /* CartsMainViewController.h */,
-				7CA4462355F52DBAF22B8503 /* CartsHomeViewController.m */,
-				7CA44C24D91BDEADCB950150 /* CartsHomeViewController.h */,
+				7CA4462355F52DBAF22B8503 /* CartsContentViewController.m */,
+				7CA44C24D91BDEADCB950150 /* CartsContentViewController.h */,
 				7CA44591BA4FCA23DCACA2C8 /* CartsListViewController.m */,
 				7CA4488674CFA76D29FC8265 /* CartsListViewController.h */,
+				7CA445B2ECB79B8DDB2A18A6 /* CartListItemsViewController.m */,
+				7CA449531DD1AAF91FFFC184 /* CartListItemsViewController.h */,
+				7CA44045B716895C22F0F14C /* NewBasicCollectionViewController.m */,
+				7CA44F6E4A453F35E09BF562 /* NewBasicCollectionViewController.h */,
 			);
 			path = viewcontrollers;
 			sourceTree = "<group>";
@@ -875,8 +967,10 @@
 				03386EEF176D0A3500E1F37A /* .gitignore */,
 				7CA44D5EA0DDF5B457BD3CF7 /* CartsCustomWindow.m */,
 				7CA44766DEF42C3DE47CC19E /* CartsCustomWindow.h */,
-				7CA44A4A16A36525CDDD319D /* CartsWindowHeaderView.m */,
-				7CA44C6DFE72C78CDC708FAF /* CartsWindowHeaderView.h */,
+				7CA44A4A16A36525CDDD319D /* CartsWindowHeaderViewController.m */,
+				7CA44C6DFE72C78CDC708FAF /* CartsWindowHeaderViewController.h */,
+				7CA4432F7B0D85547E60B84E /* CartsWindowFooterViewController.m */,
+				7CA44D4AC563D9068B30B6A2 /* CartsWindowFooterViewController.h */,
 			);
 			path = windows;
 			sourceTree = "<group>";
@@ -903,10 +997,30 @@
 			path = _src/drawing;
 			sourceTree = SOURCE_ROOT;
 		};
+		038407F41823E6C400F78AAC /* autolayout */ = {
+			isa = PBXGroup;
+			children = (
+				038407F51823E6C400F78AAC /* AutolayoutHelpers */,
+			);
+			path = autolayout;
+			sourceTree = "<group>";
+		};
+		038407F51823E6C400F78AAC /* AutolayoutHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				038407F61823E6C400F78AAC /* AutoLayoutHelpers.h */,
+				038407F71823E6C400F78AAC /* AutoLayoutHelpers.m */,
+				038407F81823E6C400F78AAC /* NSView+Autolayout.h */,
+				038407F91823E6C400F78AAC /* NSView+Autolayout.m */,
+			);
+			path = AutolayoutHelpers;
+			sourceTree = "<group>";
+		};
 		038465DA1816BBC30061AAD4 /* window */ = {
 			isa = PBXGroup;
 			children = (
-				038465D81816BBB80061AAD4 /* CartsWindowHeaderView.xib */,
+				038465D81816BBB80061AAD4 /* CartsWindowHeaderViewController.xib */,
+				038465DE181743D90061AAD4 /* CartsWindowFooterViewController.xib */,
 			);
 			name = window;
 			sourceTree = "<group>";
@@ -936,6 +1050,15 @@
 				038FFB39181415E10039703F /* NSShadow+Utils.m */,
 				7CA44E554B2FB8B2ABFCA29D /* BasicGradient+DPUtils.m */,
 				7CA44A3BE7835C53E000AAB0 /* BasicGradient+DPUtils.h */,
+				7CA44FB3D55CAAA7FA3F03B7 /* BasicDisplayView+Utils.m */,
+				7CA4454FC735A9230AE72195 /* BasicDisplayView+Utils.h */,
+				7CA446E8B0EB1E3845A59DF3 /* BasicDisplayView+SurrogateUtils.m */,
+				7CA44A28F9982C6B5AF99971 /* BasicDisplayView+SurrogateUtils.h */,
+				7CA44AB68E749DF55E0B97BA /* PathOptions+Utils.m */,
+				7CA44ECF0E06266CC1B4E8E4 /* PathOptions+Utils.h */,
+				7CA44D4047C85648A584A6F8 /* CornerProperties+Utils.m */,
+				7CA44232420D5AA7A3F90F4E /* CornerProperties+Utils.h */,
+				7CA44BE35EBDAC0CCC8BE56B /* PathOptionsProtocol.h */,
 			);
 			path = graphics;
 			sourceTree = "<group>";
@@ -964,6 +1087,12 @@
 				038FFB47181415E10039703F /* NSCell+DrawingUtils.m */,
 				038FFB48181415E10039703F /* NSCell+PaddingUtils.h */,
 				038FFB49181415E10039703F /* NSCell+PaddingUtils.m */,
+				7CA4480280D5B3D52F7C6951 /* NSOutlineView+DPUtils.m */,
+				7CA44E202D2DDE0FD99F62F6 /* NSOutlineView+DPUtils.h */,
+				7CA4463D917F555FE9679767 /* NSButton+DefaultButtons.m */,
+				7CA44D88042440F570BDEBF3 /* NSButton+DefaultButtons.h */,
+				7CA44C831061FCCA40DAACBC /* NSLayoutConstraint+DPUtils.m */,
+				7CA443D0CA58D86FA986930E /* NSLayoutConstraint+DPUtils.h */,
 			);
 			path = interface;
 			sourceTree = "<group>";
@@ -1089,12 +1218,14 @@
 				03D8CBF91768ACA6000CF88A /* outline */,
 				03D8CBFA1768ACA6000CF88A /* table */,
 				03D8CC051768ACA6000CF88A /* textfield */,
-				7CA444FAE7741E7011923813 /* BasicStyledRowView.m */,
-				7CA440AF824DF0BD2503A333 /* BasicStyledRowView.h */,
+				7CA444FAE7741E7011923813 /* StyledRowView.m */,
+				7CA440AF824DF0BD2503A333 /* StyledRowView.h */,
 				7CA4475654A4B281C86F0324 /* ButtonContainer.m */,
 				7CA4484337C3BE4EA64A7B3A /* ButtonContainer.h */,
 				7CA44589A4DAC041556F569C /* BasicNewTextField.m */,
 				7CA4448FD16BE4C7F1FD2E2D /* BasicNewTextField.h */,
+				7CA44B7520FF30AE85CA04F7 /* NewBasicButtonCell.m */,
+				7CA44DB3821DB5937830E0A2 /* NewBasicButtonCell.h */,
 			);
 			path = controls;
 			sourceTree = "<group>";
@@ -1113,6 +1244,8 @@
 				03D8CBEC1768ACA6000CF88A /* EtchedButton.m */,
 				7CA441433C9C640F1BD8B76C /* BasicButton2Cell.m */,
 				7CA4439451CA8B2B2677897F /* BasicButton2Cell.h */,
+				7CA44FDD349B6B8C1931A39B /* CustomButton.m */,
+				7CA4440E398CA8F3657F88A4 /* CustomButton.h */,
 			);
 			path = buttons;
 			sourceTree = "<group>";
@@ -1214,12 +1347,14 @@
 				03D8CC131768ACA6000CF88A /* OutlineSection.m */,
 				03D8CC141768ACA6000CF88A /* RowObject.h */,
 				03D8CC151768ACA6000CF88A /* RowObject.m */,
-				03D8CC161768ACA6000CF88A /* TableRowObject.h */,
-				03D8CC171768ACA6000CF88A /* TableRowObject.m */,
-				03D8CC181768ACA6000CF88A /* TableSection.h */,
-				03D8CC191768ACA6000CF88A /* TableSection.m */,
+				03D8CC161768ACA6000CF88A /* DataItemObject.h */,
+				03D8CC171768ACA6000CF88A /* DataItemObject.m */,
+				03D8CC181768ACA6000CF88A /* DataSection.h */,
+				03D8CC191768ACA6000CF88A /* DataSection.m */,
 				03D8CC1A1768ACA6000CF88A /* TreeDatum.h */,
 				03D8CC1B1768ACA6000CF88A /* TreeDatum.m */,
+				7CA44651BFF66AF273D9BDBD /* RowObjectArray.m */,
+				7CA441CC10C8FC14D763E54B /* RowObjectArray.h */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -1423,8 +1558,8 @@
 		03D8CD4B1768ACA6000CF88A /* models */ = {
 			isa = PBXGroup;
 			children = (
-				03D8CD4C1768ACA6000CF88A /* BasicLibrary.h */,
-				03D8CD4D1768ACA6000CF88A /* BasicLibrary.m */,
+				03D8CD4C1768ACA6000CF88A /* BasicDelegater.h */,
+				03D8CD4D1768ACA6000CF88A /* BasicDelegater.m */,
 				03D8CD4E1768ACA6000CF88A /* BasicModel.h */,
 				03D8CD4F1768ACA6000CF88A /* BasicModel.m */,
 				03D8CD501768ACA6000CF88A /* BasicObject.h */,
@@ -1433,6 +1568,8 @@
 				03D8CD531768ACA6000CF88A /* BasicUserObject.m */,
 				03D8CD541768ACA6000CF88A /* Person.h */,
 				03D8CD551768ACA6000CF88A /* Person.m */,
+				7CA44C4B7501FC717915A924 /* SurrogateObject.m */,
+				7CA446902C87C068F4AE7A1F /* SurrogateObject.h */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -1460,6 +1597,7 @@
 		03D8CD5E1768ACA6000CF88A /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				038407F41823E6C400F78AAC /* autolayout */,
 				038FFB25181415E10039703F /* graphics */,
 				038FFB3A181415E10039703F /* image */,
 				038FFB41181415E10039703F /* interface */,
@@ -1486,6 +1624,22 @@
 				7CA44856734C74440BDD6AEC /* NewBasicView+Utils.h */,
 				7CA44780C55D9E4E71E59A62 /* CustomWindow+Utils.m */,
 				7CA444F2A746C6F62A5E1971 /* CustomWindow+Utils.h */,
+				7CA448ED60EDD79BBFD425A5 /* BasicViewController+Utils.m */,
+				7CA447E1CBBC41FC47988AB6 /* BasicViewController+Utils.h */,
+				7CA44273BBA73F71BDDA7599 /* DataItemObject+Utils.m */,
+				7CA44DF868AF55E3B29187BD /* DataItemObject+Utils.h */,
+				7CA44BCAF79323E16B8CB33E /* NSMutableArray+Sorting.m */,
+				7CA440DF4532ADE4FAEB9DBA /* NSMutableArray+Sorting.h */,
+				7CA44CE3FCB2006B90396687 /* DataSection+Utils.m */,
+				7CA442FA032582808F9630A7 /* DataSection+Utils.h */,
+				7CA44ADE7294653F3E1B25B3 /* NSMutableArray+DataSection.m */,
+				7CA443080EBA4953CD4CE560 /* NSMutableArray+DataSection.h */,
+				7CA449A4A06A4EB76C7B0A36 /* NSView+LayoutConstraints.m */,
+				7CA44E451EF4F51B2BA918E1 /* NSView+LayoutConstraints.h */,
+				7CA4408CF4A3C38A7C2FB12A /* NSObject+InstanceName.m */,
+				7CA44239A85F24B19ED7EFC9 /* NSObject+InstanceName.h */,
+				7CA44AC94D9472C2917D074D /* NSView+Debug.m */,
+				7CA449AECA7A6A1EE49B4E6D /* NSView+Debug.h */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1519,10 +1673,12 @@
 				7CA44300434D7ED70419714A /* BasicSparrowSidebarViewController.h */,
 				7CA446BC17E0953198D2127C /* BasicStyledOutlineViewController.m */,
 				7CA4462A90987C8CFC51E621 /* BasicStyledOutlineViewController.h */,
-				7CA44DE8E772C6A7359755AA /* BasicWindowTitleBarViewController.m */,
-				7CA44F63EECAB9A591D30A5B /* BasicWindowTitleBarViewController.h */,
+				7CA44DE8E772C6A7359755AA /* BasicWindowHeaderViewController.m */,
+				7CA44F63EECAB9A591D30A5B /* BasicWindowHeaderViewController.h */,
 				7CA44EA1919542319D0EB54C /* BasicBannerViewController.m */,
 				7CA448C49F9CCFC53DB36CF4 /* BasicBannerViewController.h */,
+				7CA44BC1F98302D443A10873 /* BasicCollectionViewItem.m */,
+				7CA44E51F821CFBFCCD071B7 /* BasicCollectionViewItem.h */,
 			);
 			path = viewcontrollers;
 			sourceTree = "<group>";
@@ -1581,6 +1737,9 @@
 				7CA44D676CEDC45897B9C918 /* BannerView.h */,
 				7CA444D7DDAF35EF74F11BEC /* NewBasicView.m */,
 				7CA4493081E219583C2804A9 /* NewBasicView.h */,
+				7CA44605E201A17FFED93935 /* NewBasicViewDelegate.h */,
+				7CA44C9B30624972508A9DBF /* ResizingView.m */,
+				7CA4434E67586E9A25F63050 /* ResizingView.h */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1627,6 +1786,12 @@
 				7CA442A1308B6C5BB67635B6 /* CustomWindowButtonCell.h */,
 				7CA440BEDACC6FC5BFB0697D /* NSWindow+DPUtils.m */,
 				7CA4443D8D5827359820D685 /* NSWindow+DPUtils.h */,
+				7CA44FB578C8BC50B8F62F20 /* ControlledCustomWindow.m */,
+				7CA4460CC66956A06442A647 /* ControlledCustomWindow.h */,
+				7CA4492D75C03886A7FE047C /* BasicWindowFooterViewController.m */,
+				7CA44A4E07A5AC9A86A6C520 /* BasicWindowFooterViewController.h */,
+				7CA440781F6129038DF2B81A /* BasicWindowViewController.m */,
+				7CA44E4D9C75F01CB13DD996 /* BasicWindowViewController.h */,
 			);
 			path = windows;
 			sourceTree = "<group>";
@@ -1647,6 +1812,7 @@
 		03D8CDC31768ACA6000CF88A /* viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				0319BB691826B5FA006F3B1A /* BasicBannerViewController.xib */,
 				03D8CDC51768ACA6000CF88A /* BasicOutlineViewController.xib */,
 				03D8CDC61768ACA6000CF88A /* BasicTableViewController.xib */,
 				03D8CDC71768ACA6000CF88A /* BottomViewController.xib */,
@@ -1934,6 +2100,7 @@
 				03D8CE3C1768ACA6000CF88A /* CustomMainMenu.xib in Resources */,
 				03D8CE3E1768ACA6000CF88A /* INAppStoreWindow.podspec in Resources */,
 				03D8CE431768ACA6000CF88A /* SampleWindow.xib in Resources */,
+				0319BB6A1826B5FA006F3B1A /* BasicBannerViewController.xib in Resources */,
 				03D8CEF81768ACA7000CF88A /* BasicOutlineViewController.xib in Resources */,
 				03D8CEF91768ACA7000CF88A /* BasicTableViewController.xib in Resources */,
 				03D8CEFA1768ACA7000CF88A /* BottomViewController.xib in Resources */,
@@ -1946,13 +2113,14 @@
 				03386ED2176CB9FE00E1F37A /* _src in Resources */,
 				03386EF0176D0A3500E1F37A /* .gitignore in Resources */,
 				03386EF1176D0A3500E1F37A /* .gitignore in Resources */,
+				038465DF181743D90061AAD4 /* CartsWindowFooterViewController.xib in Resources */,
 				03386EF3176D0A3500E1F37A /* .gitignore in Resources */,
 				03386EF4176D0A3500E1F37A /* .gitignore in Resources */,
 				03386EF5176D0A3500E1F37A /* .gitignore in Resources */,
 				03386EF6176D0A3500E1F37A /* .gitignore in Resources */,
 				03386EF7176D0A3500E1F37A /* .gitignore in Resources */,
 				03386EF8176D0A3500E1F37A /* .gitignore in Resources */,
-				038465D91816BBB80061AAD4 /* CartsWindowHeaderView.xib in Resources */,
+				038465D91816BBB80061AAD4 /* CartsWindowHeaderViewController.xib in Resources */,
 				03386EF9176D0A3500E1F37A /* .gitignore in Resources */,
 				03386EFB176D2A6200E1F37A /* MainViewController.xib in Resources */,
 				03386EFE176D2AF700E1F37A /* MainMenu.xib in Resources */,
@@ -2015,8 +2183,8 @@
 				03D8CE271768ACA6000CF88A /* OutlineRowObject.m in Sources */,
 				03D8CE281768ACA6000CF88A /* OutlineSection.m in Sources */,
 				03D8CE291768ACA6000CF88A /* RowObject.m in Sources */,
-				03D8CE2A1768ACA6000CF88A /* TableRowObject.m in Sources */,
-				03D8CE2B1768ACA6000CF88A /* TableSection.m in Sources */,
+				03D8CE2A1768ACA6000CF88A /* DataItemObject.m in Sources */,
+				03D8CE2B1768ACA6000CF88A /* DataSection.m in Sources */,
 				038FFB66181415E10039703F /* NSAttributedString+DPUtils.m in Sources */,
 				03D8CE2C1768ACA6000CF88A /* TreeDatum.m in Sources */,
 				03D8CE2F1768ACA6000CF88A /* AGCenteringClipView.m in Sources */,
@@ -2057,7 +2225,7 @@
 				038FFB5E181415E10039703F /* NSShadow+Utils.m in Sources */,
 				03D8CEBF1768ACA6000CF88A /* YRKSpinningProgressIndicator.m in Sources */,
 				03DFB36A180EBB5F000C09C3 /* NSBezierPath+MCAdditions.m in Sources */,
-				03D8CEC01768ACA6000CF88A /* BasicLibrary.m in Sources */,
+				03D8CEC01768ACA6000CF88A /* BasicDelegater.m in Sources */,
 				03D8CEC11768ACA6000CF88A /* BasicModel.m in Sources */,
 				03D8CEC21768ACA6000CF88A /* BasicObject.m in Sources */,
 				03D8CEC31768ACA6000CF88A /* BasicUserObject.m in Sources */,
@@ -2137,24 +2305,24 @@
 				7CA44494D2D3D2703545CDD7 /* BasicSparrowSidebarViewController.m in Sources */,
 				7CA44ECA6E3F372EBF7B645F /* BasicStyledOutlineViewController.m in Sources */,
 				03DFB370180EBB5F000C09C3 /* SNRHUDTextView.m in Sources */,
-				7CA444A6A1A474566BB29FB4 /* BasicStyledRowView.m in Sources */,
+				7CA444A6A1A474566BB29FB4 /* StyledRowView.m in Sources */,
 				038FFB5C181415E10039703F /* NSGradient+DPUtils.m in Sources */,
 				7CA44BC46A6C10A462A03CF3 /* BasicCustomWindow.m in Sources */,
+				038407FB1823E6C400F78AAC /* NSView+Autolayout.m in Sources */,
 				7CA448F0E86B3C3BC896DCE7 /* BasicCustomWindowFrame.m in Sources */,
 				030A3E9C1778A603008BD708 /* RoundWindowFrameView.m in Sources */,
 				7CA44D1D78275A20592F18DA /* CartsCustomWindow.m in Sources */,
 				7CA449A5F6290CBD3E53B8D1 /* BasicDisplayView.m in Sources */,
 				7CA445C760F570E0A32BDE92 /* CartsTitleBarViewController.m in Sources */,
-				7CA44732B26C803C10501A9A /* BasicWindowTitleBarViewController.m in Sources */,
+				7CA44732B26C803C10501A9A /* BasicWindowHeaderViewController.m in Sources */,
 				7CA449478C78D38E64E75C85 /* ButtonContainer.m in Sources */,
 				7CA44863E68E0E1F9641F3ED /* BasicButton2Cell.m in Sources */,
 				7CA44AC7BD9829B2C97AF6C7 /* VeryBasicButton2Cell.m in Sources */,
 				7CA44F97C6D48AC64AD655B3 /* VeryBasicButton.m in Sources */,
 				7CA44948C94EC75330B65557 /* ImageOptions.m in Sources */,
-				7CA4409098F23B33D4033A27 /* CartsFooterViewController.m in Sources */,
 				036D4CDC180C3B8D0017481C /* BasicGradient.m in Sources */,
 				7CA44825CCE87FF4A69F29CD /* CartsMainViewController.m in Sources */,
-				7CA4481C618A7B309B257986 /* CartsHomeViewController.m in Sources */,
+				7CA4481C618A7B309B257986 /* CartsContentViewController.m in Sources */,
 				7CA44C5825BAD701C61A111D /* BasicSplitVerticalViewController.m in Sources */,
 				038FFB6A181415E10039703F /* NSTextField+Utils.m in Sources */,
 				7CA4464F4759E1E4BC45E5EA /* BasicSplitHorizontalViewController.m in Sources */,
@@ -2185,13 +2353,41 @@
 				7CA44C25EB0D40AC9BAADAA4 /* BannerView.m in Sources */,
 				7CA44D9395577FFD4098E048 /* NewBasicView.m in Sources */,
 				7CA44473EF61DC5C9AB740F4 /* BasicContentViewController.m in Sources */,
+				038407FA1823E6C400F78AAC /* AutoLayoutHelpers.m in Sources */,
 				7CA4477B3B3C1FDD3A30AF93 /* BasicObject+Utils.m in Sources */,
 				7CA445766705C8CF2ED706D7 /* NSMutableArray+BasicObject.m in Sources */,
 				7CA4450BF1DFEE83066A0EC7 /* NewBasicView+Utils.m in Sources */,
 				7CA4483699D96C0343458B60 /* NSTextField+DPUtils.m in Sources */,
 				7CA44E99A39161BA231304E6 /* BasicNewTextField.m in Sources */,
 				7CA44D3D99A1B72209F93ABC /* CustomWindow+Utils.m in Sources */,
-				7CA440A4906752D8FE554036 /* CartsWindowHeaderView.m in Sources */,
+				7CA440A4906752D8FE554036 /* CartsWindowHeaderViewController.m in Sources */,
+				7CA44049385BEA3D3180B0DA /* ControlledCustomWindow.m in Sources */,
+				7CA44D97511DBF3CCEFA2CBC /* BasicDisplayView+Utils.m in Sources */,
+				7CA449D829017B501F250438 /* BasicDisplayView+SurrogateUtils.m in Sources */,
+				7CA4409FB65B726144C932D3 /* NSOutlineView+DPUtils.m in Sources */,
+				7CA44D363DCFB9379192CB3C /* NSButton+DefaultButtons.m in Sources */,
+				7CA4433572CD3AAD162867DB /* CartsWindowFooterViewController.m in Sources */,
+				7CA44F7B1A77105AAC018B68 /* BasicWindowFooterViewController.m in Sources */,
+				7CA4492F37339840513B54AE /* BasicWindowViewController.m in Sources */,
+				7CA4467A2ED52E0F0450AA88 /* NewBasicButtonCell.m in Sources */,
+				7CA44294FB7C794BAE2CE645 /* CustomButton.m in Sources */,
+				7CA4492CA158AA06ECF4C5F9 /* BasicViewController+Utils.m in Sources */,
+				7CA4443077E71370941DEB5D /* PathOptions+Utils.m in Sources */,
+				7CA44421324EE8947983BC02 /* CornerProperties+Utils.m in Sources */,
+				7CA44B2C90B8ED125666EE69 /* SurrogateObject.m in Sources */,
+				7CA44D459B4208EF333ECA69 /* DataItemObject+Utils.m in Sources */,
+				7CA448C6AE04C058480A6C44 /* RowObjectArray.m in Sources */,
+				7CA44EC1EC10F0F4BB2E313F /* NSMutableArray+Sorting.m in Sources */,
+				7CA4469882A41A942A766D94 /* DataSection+Utils.m in Sources */,
+				7CA44006A5462FECE8F3132B /* NSMutableArray+DataSection.m in Sources */,
+				7CA442725E7972EAC320B177 /* CartListItemsViewController.m in Sources */,
+				7CA446C3829B33874B751380 /* NewBasicCollectionViewController.m in Sources */,
+				7CA44F2E72379A89349A1DE4 /* BasicCollectionViewItem.m in Sources */,
+				7CA4446DC10AD6D37E50744D /* ResizingView.m in Sources */,
+				7CA4459245255E8F9B8CD395 /* NSLayoutConstraint+DPUtils.m in Sources */,
+				7CA440477BAE5F8BC4B1938A /* NSView+LayoutConstraints.m in Sources */,
+				7CA44B9E162477F1FC9EF997 /* NSObject+InstanceName.m in Sources */,
+				7CA442C8EC7055C857AAC9A9 /* NSView+Debug.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
