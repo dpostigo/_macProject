@@ -25,7 +25,20 @@
     self.flippedView.name = @"BasicBannerViewControllerView";
     self.view.translatesAutoresizingMaskIntoConstraints = NO;
 
-    [self addMasonryConstraints];
+//    [self addMasonryConstraints];
+
+    if (bannerView == nil) {
+        NSLog(@"Creating banner view.");
+        bannerView = [[BannerView alloc] initWithFrame: self.view.bounds];
+        [self.view addSubview: bannerView];
+
+
+        [bannerView mas_makeConstraints: ^(MASConstraintMaker *make) {
+            make.width.equalTo(self.view.mas_width);
+//            make.height.equalTo(@100);
+            make.centerX.equalTo(self.view.mas_centerX);
+        }];
+    }
 
 }
 
@@ -34,20 +47,13 @@
 
     BasicDisplayView *fakeBannerView = [BasicDisplayView newWithBackgroundColor: [NSColor whiteColor]];
     [self.view addSubview: fakeBannerView];
-    [fakeBannerView fillSuperviewWidth];
 
-    //if you want to use Masonry without the mas_ prefix
-    //define MAS_SHORTHAND before importing Masonry.h see Masonry iOS Examples-Prefix.pch
-    //    [fakeBannerView mas_makeConstraints: ^(MASConstraintMaker *make) {
-    //        make.top.greaterThanOrEqualTo(superview.mas_top).offset(padding);
-    //        make.left.equalTo(superview.mas_left).offset(padding);
-    //        make.bottom.equalTo(blueView.mas_top).offset(-padding);
-    //        make.right.equalTo(redView.mas_left).offset(-padding);
-    //        make.width.equalTo(redView.mas_width);
-    //
-    //        make.height.equalTo(redView.mas_height);
-    //        make.height.equalTo(blueView.mas_height);
-    //    }];
+
+    [fakeBannerView mas_makeConstraints: ^(MASConstraintMaker *make) {
+        make.width.equalTo(self.view.mas_width);
+        make.height.equalTo(@100);
+        make.centerX.equalTo(self.view.mas_centerX);
+    }];
 
 }
 
@@ -68,7 +74,7 @@
 
     if (!self.view.translatesAutoresizingMaskIntoConstraints) {
         //        bannerView.width = self.view.width;
-        NSLog(@"bannerView.frame = %@", NSStringFromRect(bannerView.frame));
+        // NSLog(@"bannerView.frame = %@", NSStringFromRect(bannerView.frame));
         //        [bannerView constrainWidthToSuperview];
 
     }

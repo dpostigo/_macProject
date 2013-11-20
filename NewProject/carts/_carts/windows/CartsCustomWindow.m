@@ -21,26 +21,26 @@
 
         self.delegate = self;
         self.centersWindowButtons = YES;
-        //        self.contentView = ([[CartsMainViewController alloc] init]).view;
+        self.contentView = ([[CartsMainViewController alloc] init]).view;
 
         self.windowHeaderViewController = [[CartsWindowHeaderViewController alloc] initWithDefaultNib];
         self.windowFooterViewController = [[CartsWindowFooterViewController alloc] initWithDefaultNib];
 
         self.headerBarHeight = 30;
         self.footerBarHeight = 32;
-
-        //        BasicBannerViewController *bannerController = [[BasicBannerViewController alloc] init];
-        //        CartsContentViewController *contentController = [[CartsContentViewController alloc] init];
-        //
-        //        self.contentView = contentController.view;
-        //        contentController.viewController = bannerController;
-
-        //        self.contentView = bannerController.view;
-
-        CartsContentViewController *contentController = [[CartsContentViewController alloc] init];
-
-        self.contentView = contentController.view;
-        contentController.viewController = [[BasicBannerViewController alloc] init];;
+//
+//        //        BasicBannerViewController *bannerController = [[BasicBannerViewController alloc] init];
+//        //        CartsContentViewController *contentController = [[CartsContentViewController alloc] init];
+//        //
+//        //        self.contentView = contentController.view;
+//        //        contentController.viewController = bannerController;
+//
+//        //        self.contentView = bannerController.view;
+//
+//        CartsContentViewController *contentController = [[CartsContentViewController alloc] init];
+//
+//        self.contentView = contentController.view;
+//        contentController.viewController = [[BasicBannerViewController alloc] init];;
 
     }
 

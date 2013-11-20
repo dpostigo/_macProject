@@ -11,7 +11,11 @@
 
 @implementation NSView (Masonry)
 
-- (void) fillSuperviewWithInsets: (NSEdgeInsets) insets {
+- (void) fillToSuperview {
+    [self fillToSuperviewWithInsets: NSEdgeInsetsMake(0, 0, 0, 0)];
+}
+
+- (void) fillToSuperviewWithInsets: (NSEdgeInsets) insets {
     NSView *superview = self.superview;
     [self mas_makeConstraints: ^(MASConstraintMaker *make) {
         make.top.equalTo(superview.mas_top).with.offset(insets.top); //with is an optional semantic filler
@@ -22,7 +26,19 @@
 }
 
 - (void) fillSuperviewWidth {
-    [self fillSuperviewWithInsets: NSEdgeInsetsMake(0, 0, 0, 0)];
+    [self fillToSuperviewWithInsets: NSEdgeInsetsMake(0, 0, 0, 0)];
+}
+
+
+- (void) fillToSuperviewWidth {
+
+    NSView *superview = self.superview;
+    [self mas_makeConstraints: ^(MASConstraintMaker *make) {
+        make.width.equalTo(superview.mas_width);
+        make.height.equalTo(@100);
+        make.centerX.equalTo(superview.mas_centerX);
+    }];
+
 }
 
 
@@ -31,8 +47,9 @@
     [self mas_makeConstraints: ^(MASConstraintMaker *make) {
         make.top.equalTo(superview.mas_top).with.offset(insets.top); //with is an optional semantic filler
         make.left.equalTo(superview.mas_left).with.offset(insets.left);
-        //        make.bottom.equalTo(super view.mas_bottom).with.offset(-insets.bottom);
         make.right.equalTo(superview.mas_right).with.offset(-insets.right);
+
+        //        make.bottom.equalTo(super view.mas_bottom).with.offset(-insets.bottom);
     }];
 }
 @end

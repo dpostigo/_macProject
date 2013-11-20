@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		030A3E9C1778A603008BD708 /* RoundWindowFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 030A3E9A1778A603008BD708 /* RoundWindowFrameView.m */; };
-		0319BB6A1826B5FA006F3B1A /* BasicBannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0319BB691826B5FA006F3B1A /* BasicBannerViewController.xib */; };
 		033217CB176F709B004F1CA5 /* CartsSidebarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033217CA176F709B004F1CA5 /* CartsSidebarViewController.xib */; };
 		033217CD176F72D5004F1CA5 /* CartsMainViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033217CC176F72D5004F1CA5 /* CartsMainViewController2.xib */; };
 		03386ED0176CB9FE00E1F37A /* _assets in Resources */ = {isa = PBXBuildFile; fileRef = 03386ECD176CB9FE00E1F37A /* _assets */; };
@@ -292,7 +291,6 @@
 /* Begin PBXFileReference section */
 		030A3E991778A603008BD708 /* RoundWindowFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundWindowFrameView.h; sourceTree = "<group>"; };
 		030A3E9A1778A603008BD708 /* RoundWindowFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundWindowFrameView.m; sourceTree = "<group>"; };
-		0319BB691826B5FA006F3B1A /* BasicBannerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicBannerViewController.xib; sourceTree = "<group>"; };
 		033217CA176F709B004F1CA5 /* CartsSidebarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CartsSidebarViewController.xib; path = viewcontrollers/CartsSidebarViewController.xib; sourceTree = "<group>"; };
 		033217CC176F72D5004F1CA5 /* CartsMainViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CartsMainViewController2.xib; path = viewcontrollers/CartsMainViewController2.xib; sourceTree = "<group>"; };
 		03386ECD176CB9FE00E1F37A /* _assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _assets; sourceTree = "<group>"; };
@@ -1812,7 +1810,6 @@
 		03D8CDC31768ACA6000CF88A /* viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
-				0319BB691826B5FA006F3B1A /* BasicBannerViewController.xib */,
 				03D8CDC51768ACA6000CF88A /* BasicOutlineViewController.xib */,
 				03D8CDC61768ACA6000CF88A /* BasicTableViewController.xib */,
 				03D8CDC71768ACA6000CF88A /* BottomViewController.xib */,
@@ -2100,7 +2097,6 @@
 				03D8CE3C1768ACA6000CF88A /* CustomMainMenu.xib in Resources */,
 				03D8CE3E1768ACA6000CF88A /* INAppStoreWindow.podspec in Resources */,
 				03D8CE431768ACA6000CF88A /* SampleWindow.xib in Resources */,
-				0319BB6A1826B5FA006F3B1A /* BasicBannerViewController.xib in Resources */,
 				03D8CEF81768ACA7000CF88A /* BasicOutlineViewController.xib in Resources */,
 				03D8CEF91768ACA7000CF88A /* BasicTableViewController.xib in Resources */,
 				03D8CEFA1768ACA7000CF88A /* BottomViewController.xib in Resources */,

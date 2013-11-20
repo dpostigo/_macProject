@@ -10,7 +10,8 @@
 
 @interface NSView (Masonry)
 
-- (void) fillSuperviewWithInsets: (NSEdgeInsets) insets;
+- (void) fillToSuperview;
+- (void) fillToSuperviewWithInsets: (NSEdgeInsets) insets;
 - (void) fillSuperviewWidth;
 - (void) fillSuperviewWidthWithInsets: (NSEdgeInsets) insets;
 @end

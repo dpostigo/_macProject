@@ -17,9 +17,11 @@
     IBOutlet BasicNewTextField *textLabel;
     IBOutlet BasicNewTextField *detailTextLabel;
 
+    NSEdgeInsets insets;
 }
 
 @property(nonatomic, strong) BasicDisplayView *background;
 @property(nonatomic, strong) BasicNewTextField *textLabel;
 @property(nonatomic, strong) BasicNewTextField *detailTextLabel;
+@property(nonatomic) NSEdgeInsets insets;
 @end

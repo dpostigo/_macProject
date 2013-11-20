@@ -11,139 +11,95 @@
 #import "NSTextField+DPUtils.h"
 #import "BasicDisplayView+SurrogateUtils.h"
 #import "NSView+LayoutConstraints.h"
+#import "NSView+Masonry.h"
+#import "Masonry.h"
 
 @implementation BannerView {
 
+    NSSize contentSize;
 }
 
 @synthesize background;
 @synthesize textLabel;
 @synthesize detailTextLabel;
 
-- (id) initWithCoder: (NSCoder *) coder {
-    self = [super initWithCoder: coder];
-    if (self) {
-        NSLog(@"%s", __PRETTY_FUNCTION__);
-
-    }
-
-    return self;
-}
-
-- (id) initWithFrame: (NSRect) frameRect {
-    self = [super initWithFrame: frameRect];
-    if (self) {
-        NSLog(@"%s", __PRETTY_FUNCTION__);
-    }
-
-    return self;
-}
-
-- (void) awakeFromNib {
-    [super awakeFromNib];
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-}
-
-
+@synthesize insets;
 
 - (void) viewInit {
     [super viewInit];
 
-    NSLog(@"%s", __PRETTY_FUNCTION__);
     topMargin = 10;
     bottomMargin = 10;
     leftMargin = rightMargin = 10;
     vPadding = 5;
 
-//    self.translatesAutoresizingMaskIntoConstraints = NO;
+    insets = NSEdgeInsetsMake(10, 10, 10, 10);
 
     if (background == nil) {
         background = [[BasicDisplayView alloc] initWithFrame: self.bounds];
         background.backgroundColor = [NSColor offwhiteColor];
         background.borderColor = [NSColor offwhiteColor];
         [self addSubview: background];
-        [background constrainWidthToSuperview];
+        [background fillToSuperview];
+    }
 
-
-        //        NSArray *constraints = [NSArray arrayWithObjects: constraintLeft(background, self, 0), constraintRight(background, self, 0), constraintBottom(background, self, 0), nil];
-
-        //        NSArray *constraints = [NSArray arrayWithObject: constraintWidthWithOffset(background, self, 0)];
-
-
-        //        NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat: @"|[background]|" options: 0 metrics: nil views: NSDictionaryOfVariableBindings(background)];
-        //        [self addConstraints: constraints];
-
-        //        NSArray *constraints = [self newConstraintWithFormat: @"|[background]|" views: NSDictionaryOfVariableBindings(background)];
-        //        NSArray *constraints = [self newConstraintWithFormat: @"|[background]|" forView: background];
-
-        //        [self addConstraints: [self widthConstraintForView: background]];
-        //        [self addConstraints: constraints];
-
-        //        [self addConstraints: [NSLayoutConstraint constraintsWithVisualFormat: @"|[background]|"  options: 0 metrics: nil views: NSDictionaryOfVariableBindings(background)]];
-        //        background.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
-
-        //
-        //        NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat: @"|[background]|" options: 0 metrics: nil views: NSDictionaryOfVariableBindings(background)];
-        //        [self addConstraints: constraints];
-        //
-        //        constraints = [NSLayoutConstraint constraintsWithVisualFormat: @"V:|[background]|" options: 0 metrics: nil views: NSDictionaryOfVariableBindings(background)];
-        //        [self addConstraints: constraints];
+    if (textLabel == nil) {
+        textLabel = (BasicNewTextField *) [NSTextField clearDisplayTextFieldWithFrame: self.boundsWithMargins type: [BasicNewTextField class]];
+        [textLabel.cell setLineBreakMode: NSLineBreakByWordWrapping];
+        [textLabel.cell setWraps: YES];
+        textLabel.font = [NSFont systemFontOfSize: 14.0];
+        textLabel.stringValue = @"Title";
+        //        [textLabel setBordered: YES];
+        [self addSubview: textLabel];
 
     }
 
-//    if (textLabel == nil) {
-//        textLabel = (BasicNewTextField *) [NSTextField clearDisplayTextFieldWithFrame: self.boundsWithMargins type: [BasicNewTextField class]];
-//        [textLabel.cell setLineBreakMode: NSLineBreakByWordWrapping];
-//        [textLabel.cell setWraps: YES];
-//        //        textLabel.autoresizingMask = NSViewWidthSizable;
-//        textLabel.autosizesToHeight = YES;
-//        textLabel.font = [NSFont systemFontOfSize: 14.0];
-//        [self addSubview: textLabel];
-//        textLabel.stringValue = @"Title";
-//    }
-//
-//    if (detailTextLabel == nil) {
-//        detailTextLabel = [textLabel copy];
-//        //        detailTextLabel.autoresizingMask = NSViewWidthSizable;
-//        detailTextLabel.font = [NSFont systemFontOfSize: [NSFont smallSystemFontSize]];
-//        detailTextLabel.textColor = [NSColor grayColor];
-//        detailTextLabel.top = textLabel.bottom + vPadding;
-//        [self addSubview: detailTextLabel];
-//        detailTextLabel.stringValue = @"Subtitle";
-//
-//    }
+    if (detailTextLabel == nil) {
+        detailTextLabel = (BasicNewTextField *) [NSTextField clearDisplayTextFieldWithFrame: self.boundsWithMargins type: [BasicNewTextField class]];
+        [detailTextLabel.cell setLineBreakMode: NSLineBreakByWordWrapping];
+        [detailTextLabel.cell setWraps: YES];
+        detailTextLabel.font = [NSFont systemFontOfSize: [NSFont smallSystemFontSize]];
+        detailTextLabel.textColor = [NSColor grayColor];
+        detailTextLabel.stringValue = @"Subtitle";
+        //        [detailTextLabel setBordered: YES];
+        [self addSubview: detailTextLabel];
 
-    //    self.height = 100;
-}
+    }
 
-
-
-- (void) viewDidEndLiveResize {
-    [super viewDidEndLiveResize];
+    [self setNeedsUpdateConstraints: YES];
 
 }
 
-//- (void) layout {
-//    //    NSLog(@"%s", __PRETTY_FUNCTION__);
-//    //    self.height = detailTextLabel.bottom + bottomMargin;
-//    [self viewDidResize];
-//    [super layout];
-//}
+- (void) updateConstraints {
+    [super updateConstraints];
 
-//
-//
-//- (void) resizeSubviewsWithOldSize: (NSSize) oldSize {
-//    [super resizeSubviewsWithOldSize: oldSize];
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
-//}
-//
-//
-//- (void) resizeWithOldSuperviewSize: (NSSize) oldSize {
-//    [super resizeWithOldSuperviewSize: oldSize];
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
-//}
+    [textLabel mas_updateConstraints: ^(MASConstraintMaker *make) {
+        make.top.equalTo(self.mas_top).with.offset(insets.top); //with is an optional semantic filler
+        make.left.equalTo(self.mas_left).with.offset(insets.left);
+        make.right.equalTo(self.mas_right).with.offset(-insets.right);
+    }];
 
+    [detailTextLabel mas_updateConstraints: ^(MASConstraintMaker *make) {
+        make.top.equalTo(textLabel.mas_bottom).with.offset(vPadding); //with is an optional semantic filler
+        make.width.equalTo(textLabel.mas_width);
+        make.centerX.equalTo(textLabel.mas_centerX);
+    }];
 
+    [textLabel sizeToFit];
+    [detailTextLabel sizeToFit];
+
+    contentSize = NSMakeSize(0, textLabel.height + detailTextLabel.height + vPadding + insets.top + insets.bottom);
+
+    [self mas_updateConstraints: ^(MASConstraintMaker *make) {
+        make.height.greaterThanOrEqualTo(@(contentSize.height));
+    }];
+}
+
+- (void) viewDidMoveToSuperview {
+    [super viewDidMoveToSuperview];
+    [self setNeedsUpdateConstraints: YES];
+    [self updateConstraints];
+}
 
 
 @end

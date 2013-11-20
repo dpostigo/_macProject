@@ -24,7 +24,7 @@
 - (void) loadView {
     [super loadView];
 
-    insets = NSEdgeInsetsMake(10, 10, 10, 10);
+    insets = NSEdgeInsetsMake(0, 0, 0, 0);
 
 }
 
@@ -40,7 +40,7 @@
     if (viewController) {
         [self.view addSubview: viewController.view];
         //        viewController.view.frame = self.view.bounds;
-        [viewController.view fillSuperviewWithInsets: insets];
+        [viewController.view fillToSuperviewWithInsets: insets];
     }
 }
 

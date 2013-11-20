@@ -44,14 +44,14 @@
 
 - (void) viewWillStartLiveResize {
     [super viewWillStartLiveResize];
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 
 - (void) viewDidEndLiveResize {
     [super viewDidEndLiveResize];
-    [self setNeedsDisplay: YES];
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+//    [self setNeedsDisplay: YES];
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 
