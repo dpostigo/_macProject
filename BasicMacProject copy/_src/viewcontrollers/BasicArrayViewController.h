@@ -6,9 +6,9 @@
 
 
 #import <Foundation/Foundation.h>
-#import "BasicViewController.h"
+#import "BasicFlippedViewController.h"
 
-@interface BasicArrayViewController : BasicViewController {
+@interface BasicArrayViewController : BasicFlippedViewController {
 
     NSMutableArray *arraySource;
     IBOutlet NSArrayController *arrayController;

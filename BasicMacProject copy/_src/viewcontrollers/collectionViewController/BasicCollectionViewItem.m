@@ -9,7 +9,6 @@
 #import "BasicCollectionViewItem.h"
 #import "NSView+Masonry.h"
 #import "BasicDisplayView+Carts.h"
-#import "BasicDisplayView+SurrogateUtils.h"
 #import "View+MASAdditions.h"
 #import "BasicCollectionView.h"
 #import "NSView+DPUtils.h"

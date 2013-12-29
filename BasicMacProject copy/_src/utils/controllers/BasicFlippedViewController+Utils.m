@@ -1,15 +1,15 @@
 //
-//  BasicViewController+PositionUtils.m
+//  BasicFlippedViewController+PositionUtils.m
 //  Carts
 //
 //  Created by Daniela Postigo on 10/22/13.
 //  Copyright (c) 2013 Elastic Creative. All rights reserved.
 //
 
-#import "BasicViewController+Utils.h"
+#import "BasicFlippedViewController+Utils.h"
 #import "CustomButton.h"
 
-@implementation BasicViewController (Utils)
+@implementation BasicFlippedViewController (Utils)
 
 - (void) replaceView: (NSView *) view withView: (NSView *) secondView {
     secondView.frame = view.frame;

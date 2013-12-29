@@ -1,14 +1,14 @@
 //
-//  NSColor+DPUtils.m
+//  NSColor+BlendingUtils.m
 //  Carts
 //
 //  Created by Daniela Postigo on 10/20/13.
 //  Copyright (c) 2013 Elastic Creative. All rights reserved.
 //
 
-#import "NSColor+DPUtils.h"
+#import "NSColor+BlendingUtils.h"
 
-@implementation NSColor (DPUtils)
+@implementation NSColor (BlendingUtils)
 
 + (NSColor *) darken: (NSColor *) aColor amount: (CGFloat) amount {
     return [aColor darken: amount];

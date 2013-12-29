@@ -1,5 +1,5 @@
 //
-//  NSOutlineView+DPUtils.m
+//  NSOutlineView+BlendingUtils.m
 //  Carts
 //
 //  Created by Daniela Postigo on 10/22/13.

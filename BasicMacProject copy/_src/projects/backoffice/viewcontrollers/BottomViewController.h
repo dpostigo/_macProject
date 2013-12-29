@@ -6,11 +6,11 @@
 
 
 #import <Foundation/Foundation.h>
-#import "BasicViewController.h"
+#import "BasicFlippedViewController.h"
 
 @class YRKSpinningProgressIndicator;
 
-@interface BottomViewController : BasicViewController {
+@interface BottomViewController : BasicFlippedViewController {
 
     IBOutlet NSButton *settingsButton;
     IBOutlet YRKSpinningProgressIndicator *indicator;

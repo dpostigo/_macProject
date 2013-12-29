@@ -8,7 +8,6 @@
 
 #import "ListItemView.h"
 #import "TestLayerView.h"
-#import "NSView+Masonry.h"
 
 @implementation ListItemView {
 
@@ -18,8 +17,9 @@
     [super loadView];
 
     TestLayerView *testLayerView = [[TestLayerView alloc] init];
-//    testLayerView.borderColor = [NSColor blueColor];
-    testLayerView.cornerRadius = 20;
+    testLayerView.usesLayers = NO;
+    //    testLayerView.borderColor = [NSColor blueColor];
+    //    testLayerView.cornerRadius = 20;
 
 
     self.background = testLayerView;

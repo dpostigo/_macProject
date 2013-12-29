@@ -18,7 +18,6 @@
 @synthesize borderType;
 @synthesize corners;
 
-
 + (BorderOption *) topBorderWithColor: (NSColor *) aColor borderWidth: (CGFloat) aWidth {
     return [[self alloc] initWithBorderColor: aColor borderWidth: aWidth type: BorderTypeTop];
 }
@@ -118,7 +117,7 @@
 
 - (void) setBorderColor: (NSColor *) borderColor {
     self.fill.backgroundColor = borderColor;
-    if (![self.borderColor isEqualTo: [NSColor clearColor]]) {
+    if (![self.borderColor isEqualTo: [NSColor clearColor]] && self.borderWidth == 0) {
         self.borderWidth = 0.5;
     }
 }
@@ -237,24 +236,27 @@
     CGFloat xOffset = rect.origin.x;
     CGFloat yOffset = rect.origin.y;
 
-    if (self.borderType & BorderTypeAll) {
+
+    BorderType theBorderType = self.borderType;
+
+    if (theBorderType & BorderTypeAll) {
         path = [NSBezierPath bezierPathWithRect: rect cornerRadius: self.cornerRadius cornerType: self.cornerType];
     } else {
 
-        if (self.borderType & BorderTypeTop) {
+        if (theBorderType & BorderTypeTop) {
             [path moveToPoint: NSMakePoint(rect.origin.x + self.cornerRadius, yOffset + rect.size.height)];
             [path lineToPoint: NSMakePoint(rect.size.width + xOffset - self.cornerRadius, yOffset + rect.size.height)];
         }
-        if (self.borderType & BorderTypeBottom) {
+        if (theBorderType & BorderTypeBottom) {
             [path moveToPoint: NSMakePoint(0 + xOffset + self.cornerRadius, 0 + yOffset)];
             [path lineToPoint: NSMakePoint(rect.size.width + xOffset - self.cornerRadius, 0 + yOffset)];
         }
-        if (self.borderType & BorderTypeLeft) {
+        if (theBorderType & BorderTypeLeft) {
             NSLog(@"Left.");
             [path moveToPoint: NSMakePoint(0 + xOffset, 0 + yOffset)];
             [path lineToPoint: NSMakePoint(0 + xOffset, rect.size.height + yOffset)];
         }
-        if (self.borderType & BorderTypeRight) {
+        if (theBorderType & BorderTypeRight) {
             [path moveToPoint: NSMakePoint(rect.size.width + xOffset, 0 + yOffset)];
             [path lineToPoint: NSMakePoint(rect.size.width + xOffset, rect.size.height + yOffset)];
         }
@@ -267,6 +269,28 @@
 
 
 #pragma mark Helpers
+
+- (BorderType) oppositeBorderForType: (BorderType) aType {
+
+    BorderType ret = BorderTypeAll;
+
+    if (aType & BorderTypeTop) {
+        ret = BorderTypeBottom;
+    }
+    if (aType & BorderTypeBottom) {
+        ret = BorderTypeTop;
+    }
+
+    if (aType & BorderTypeLeft) {
+        ret = BorderTypeRight;
+    }
+
+    if (aType & BorderTypeRight) {
+        ret = BorderTypeLeft;
+    }
+    return ret;
+
+}
 
 
 - (NSString *) borderTypeString {

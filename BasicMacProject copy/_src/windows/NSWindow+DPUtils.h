@@ -1,5 +1,5 @@
 //
-//  NSWindow+DPUtils.h
+//  NSWindow+BlendingUtils.h
 //  Carts
 //
 //  Created by Daniela Postigo on 10/18/13.
@@ -25,6 +25,7 @@
 - (void) setContentBorderThicknessForBottomEdge: (CGFloat) thickness;
 - (void) addSubviewToWindowFrame: (NSView *) aView;
 - (NSView *) windowFrame;
+- (NSView *) themeFrame;
 - (NSString *) styleMaskAsString;
 - (void) addViewToTitleBar: (NSView *) viewToAdd atXPosition: (CGFloat) x;
 - (CGFloat) heightOfTitleBar;

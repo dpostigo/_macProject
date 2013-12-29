@@ -6,9 +6,9 @@
 
 
 #import <Foundation/Foundation.h>
-#import "BasicViewController.h"
+#import "BasicFlippedViewController.h"
 
-@interface TitleBarViewController : BasicViewController {
+@interface TitleBarViewController : BasicFlippedViewController {
 
 }
 

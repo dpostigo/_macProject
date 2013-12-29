@@ -283,7 +283,7 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">BasicSplitViewController</string>
-					<string key="superclassName">BasicViewController</string>
+					<string key="superclassName">BasicFlippedViewController</string>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">splitView</string>
 						<string key="NS.object.0">BasicSplitView</string>
@@ -301,11 +301,11 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">BasicViewController</string>
+					<string key="className">BasicFlippedViewController</string>
 					<string key="superclassName">VeryBasicViewController</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/BasicViewController.h</string>
+						<string key="minorKey">./Classes/BasicFlippedViewController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

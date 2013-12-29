@@ -7,7 +7,7 @@
 //
 
 #import "NewBasicView.h"
-#import "BasicViewController.h"
+#import "BasicFlippedViewController.h"
 #import "NSView+LayoutConstraints.h"
 #import "NSView+Debug.h"
 

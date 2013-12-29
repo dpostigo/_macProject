@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BasicViewController.h"
+#import "BasicFlippedViewController.h"
 #import "BannerView.h"
 
-@interface BasicBannerViewController : BasicViewController {
+@interface BasicBannerViewController : BasicFlippedViewController {
 
     IBOutlet BannerView *bannerView;
     IBOutlet NSView *contentView;

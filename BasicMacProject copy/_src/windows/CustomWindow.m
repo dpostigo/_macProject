@@ -8,7 +8,6 @@
 
 #import "CustomWindow.h"
 #import "NSWindow+DPUtils.h"
-#import "NSView+Masonry.h"
 
 #define TITLE_HEIGHT 22
 

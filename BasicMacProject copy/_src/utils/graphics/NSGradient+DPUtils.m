@@ -1,5 +1,5 @@
 //
-//  NSGradient+DPUtils.m
+//  NSGradient+BlendingUtils.m
 //  Carts
 //
 //  Created by Daniela Postigo on 7/4/13.

@@ -1,5 +1,5 @@
 //
-//  BasicGradient+DPUtils.m
+//  BasicGradient+BlendingUtils.m
 //  Carts
 //
 //  Created by Daniela Postigo on 10/20/13.
@@ -7,7 +7,7 @@
 //
 
 #import "BasicGradient+DPUtils.h"
-#import "NSColor+DPUtils.h"
+#import "NSColor+BlendingUtils.h"
 
 @implementation BasicGradient (DPUtils)
 

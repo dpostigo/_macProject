@@ -6,9 +6,9 @@
 
 
 #import <Foundation/Foundation.h>
-#import "BasicViewController.h"
+#import "BasicFlippedViewController.h"
 
-@interface BasicListViewController : BasicViewController {
+@interface BasicListViewController : BasicFlippedViewController {
 
     NSMutableArray *dataSource;
 }

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BasicViewController.h"
+#import "BasicFlippedViewController.h"
 #import "BasicWindowHeaderViewController.h"
 
 @interface CartsTitleBarViewController : BasicWindowHeaderViewController {

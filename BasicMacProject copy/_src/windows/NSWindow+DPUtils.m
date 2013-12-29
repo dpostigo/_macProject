@@ -1,5 +1,5 @@
 //
-//  NSWindow+DPUtils.m
+//  NSWindow+BlendingUtils.m
 //  Carts
 //
 //  Created by Daniela Postigo on 10/18/13.
@@ -108,6 +108,9 @@
     return [self.contentView superview];
 }
 
+- (NSView *) themeFrame {
+    return self.contentAsView.superview;
+}
 
 - (NSString *) styleMaskAsString {
 

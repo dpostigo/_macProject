@@ -7,12 +7,7 @@
 //
 
 #import "CartsContentViewController.h"
-#import "BasicInnerShadowView.h"
-#import "NSColor+CartsUtils.h"
 #import "CartsListViewController.h"
-#include "BasicDisplayView+Utils.h"
-#include "BasicDisplayView+SurrogateUtils.h"
-#import "BasicDisplayView+Carts.h"
 
 @implementation CartsContentViewController {
 
@@ -21,15 +16,17 @@
 - (void) loadView {
     [super loadView];
 
-    BasicInnerShadowView *aView = [[BasicInnerShadowView alloc] initWithFrame: self.view.bounds];
-    aView.innerShadow.shadowColor = [NSColor blackColor];
-    aView.innerShadow.shadowOffset = NSMakeSize(-1, -1);
-    aView.backgroundColor = [NSColor desaturatedDarkSlateHighlight];
-    aView.borderWidth = 0;
+    //    BasicInnerShadowView *aView = [[BasicInnerShadowView alloc] initWithFrame: self.view.bounds];
+    //    aView.innerShadow.shadowColor = [NSColor blackColor];
+    //    aView.innerShadow.shadowOffset = NSMakeSize(-1, -1);
+    //    aView.backgroundColor = [NSColor desaturatedDarkSlateHighlight];
+    //    aView.borderWidth = 0;
 
-    self.background = aView;
 
-//    self.background = [BasicDisplayView newWithBackgroundColor: [NSColor redColor]];
+    NSView *bg = [[NSView alloc] init];
+    //    self.background = aView;
+
+    //    self.background = [BasicDisplayView newWithBackgroundColor: [NSColor redColor]];
 }
 
 

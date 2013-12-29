@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class BasicViewController;
+@class BasicFlippedViewController;
 
 
 @interface NewBasicView : NSView {
@@ -22,13 +22,13 @@
     BOOL shouldNotFlip;
     NSString *name;
 
-    __unsafe_unretained BasicViewController *controller;
+    __unsafe_unretained BasicFlippedViewController *controller;
 
 }
 
 @property(nonatomic) CGFloat hPadding;
 @property(nonatomic) CGFloat vPadding;
-@property(nonatomic, assign) BasicViewController *controller;
+@property(nonatomic, assign) BasicFlippedViewController *controller;
 @property(nonatomic) BOOL shouldNotFlip;
 @property(nonatomic, retain) NSString *name;
 @property(nonatomic) NSEdgeInsets insets;

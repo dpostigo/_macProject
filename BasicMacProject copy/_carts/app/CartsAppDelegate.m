@@ -7,8 +7,6 @@
 
 #import "CartsAppDelegate.h"
 #import "CartsMainViewController.h"
-#import "CartsWindowHeaderViewController.h"
-#import "CartsWindowFooterViewController.h"
 
 @implementation CartsAppDelegate
 
@@ -19,7 +17,7 @@
     //    window.centersWindowButtons = YES;
     //    window.contentView = ([[CartsMainViewController alloc] init]).view;
     //
-    //    window.windowHeaderViewController = [[CartsWindowHeaderViewController alloc] initWithDefaultNib];
+    //    window.windowHeaderViewController = [[CartsWindowHeaderViewControllerOld alloc] initWithDefaultNib];
     //    window.windowFooterViewController = [[CartsWindowFooterViewController alloc] initWithDefaultNib];
     //
     //    window.headerBarHeight = 30;

@@ -1,5 +1,5 @@
 //
-//  BasicViewController+PositionUtils.h
+//  BasicFlippedViewController+PositionUtils.h
 //  Carts
 //
 //  Created by Daniela Postigo on 10/22/13.
@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BasicViewController.h"
+#import "BasicFlippedViewController.h"
 
-@interface BasicViewController (Utils)
+@interface BasicFlippedViewController (Utils)
 
 - (void) replaceView: (NSView *) view1 withView: (NSView *) secondView;
 - (void) replaceButton: (NSButton *) button withButtonCellClass: (Class) buttonCellClass;

@@ -1,46 +1,16 @@
 //
-// Created by dpostigo on 2/17/13.
+// Created by Dani Postigo on 12/28/13.
+// Copyright (c) 2013 Elastic Creative. All rights reserved.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
-
 
 #import "BasicViewController.h"
-#import "NewBasicView+Utils.h"
-#import "NSView+Masonry.h"
+#import "NSView+SuperConstraints.h"
 
 @implementation BasicViewController {
-}
 
-@synthesize titleLabel;
-@synthesize flippedView;
+}
 
 @synthesize background;
-
-@synthesize insets;
-
-- (NewBasicView *) flippedView {
-    if (flippedView == nil) {
-        flippedView = [NewBasicView basicViewFromView: super.view];
-        flippedView.controller = self;
-        //        NSLog(@"flippedView.controller = %@", flippedView.controller);
-    }
-    return flippedView;
-}
-
-- (NSView *) view {
-    if (super.view && ![super.view isKindOfClass: [NewBasicView class]]) {
-        return self.flippedView;
-    }
-    return [super view];
-}
-
-- (void) loadView {
-    [super loadView];
-    insets = NSEdgeInsetsMake(0, 0, 0, 0);
-    if (self.titleLabel != nil) self.titleLabel.stringValue = self.title;
-}
-
 
 - (void) setBackground: (NSView *) background1 {
     if (background) [background removeFromSuperview];
@@ -56,36 +26,11 @@
             [self.view addSubview: background positioned: NSWindowBelow relativeTo: lastSubview];
         }
 
-        [background fillToSuperview];
+        //        [background fillToSuperview];
+        [background superConstrain: NSLayoutAttributeTop constant: 0];
+        [background superConstrain: NSLayoutAttributeBottom constant: 0];
+        [background superConstrain: NSLayoutAttributeLeft constant: 0];
+        [background superConstrain: NSLayoutAttributeRight constant: 0];
     }
-}
-
-
-- (void) subviewDidResize: (NSView *) subview {
-
-}
-
-
-
-#pragma mark View notifications
-
-
-- (void) viewDidMoveToWindow {
-}
-
-- (void) viewDidEndLiveResize {
-}
-
-
-- (void) viewDidSwitchToAutolayout {
-
-}
-
-- (void) viewDidMoveToSuperview {
-
-}
-
-- (void) updateConstraints {
-
 }
 @end

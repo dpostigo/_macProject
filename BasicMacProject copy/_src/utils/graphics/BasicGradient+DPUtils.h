@@ -1,5 +1,5 @@
 //
-//  BasicGradient+DPUtils.h
+//  BasicGradient+BlendingUtils.h
 //  Carts
 //
 //  Created by Daniela Postigo on 10/20/13.

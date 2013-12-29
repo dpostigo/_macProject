@@ -1,0 +1,15 @@
+PODS:
+  - libextobjc/EXTScope (0.2.5):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/RuntimeExtensions (0.2.5)
+  - PMPKVObservation (0.4):
+    - libextobjc/EXTScope (~> 0.2.5)
+
+DEPENDENCIES:
+  - PMPKVObservation
+
+SPEC CHECKSUMS:
+  libextobjc: 2cbc74caf8bdc74a86fdf24673f773c83424ea98
+  PMPKVObservation: ce906efa31c5942b410c9433d3e04ebc4af8fccf
+
+COCOAPODS: 0.28.0

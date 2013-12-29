@@ -6,9 +6,9 @@
 
 
 #import <Foundation/Foundation.h>
-#import "BasicViewController.h"
+#import "BasicFlippedViewController.h"
 
-@interface TokenTestViewController : BasicViewController {
+@interface TokenTestViewController : BasicFlippedViewController {
 
     IBOutlet NSTokenField *tokensField;
     IBOutlet NSMenu *sharedMenu;

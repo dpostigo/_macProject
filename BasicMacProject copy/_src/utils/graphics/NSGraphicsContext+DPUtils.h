@@ -1,5 +1,5 @@
 //
-//  NSGraphicsContext+DPUtils.h
+//  NSGraphicsContext+BlendingUtils.h
 //  TaskManager
 //
 //  Created by Daniela Postigo on 5/26/13.

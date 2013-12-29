@@ -6,7 +6,7 @@
 
 
 #import <Foundation/Foundation.h>
-#import "BasicViewController.h"
+#import "BasicFlippedViewController.h"
 #import "BasicListViewController.h"
 #import "DataItemObject.h"
 #import "DataSection.h"

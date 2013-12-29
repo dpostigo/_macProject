@@ -8,7 +8,7 @@
 
 #import "CartsWindowFooterViewController.h"
 #import "NSButton+DefaultButtons.h"
-#import "BasicViewController+Utils.h"
+#import "BasicFlippedViewController+Utils.h"
 #import "CustomButton.h"
 #import "NewBasicButtonCell.h"
 

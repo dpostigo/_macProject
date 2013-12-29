@@ -23,4 +23,12 @@
     [aShadow set];
 }
 
++ (NSShadow *) shadowWithColor: (NSColor *) shadowColor offset: (NSSize) offset radius: (CGFloat) radius {
+    NSShadow *aShadow = [[NSShadow alloc] init];
+    [aShadow setShadowOffset: offset];
+    [aShadow setShadowBlurRadius: radius];
+    [aShadow setShadowColor: shadowColor];
+    return aShadow;
+}
+
 @end

@@ -20,6 +20,8 @@
 - (void) loadView {
     [super loadView];
 
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+
     self.background = [CustomWindow defaultHeaderView];
 
     self.leftButtons = [[ButtonContainer alloc] init];

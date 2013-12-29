@@ -48,6 +48,7 @@ typedef enum {
 - (void) drawBorderWithPath: (NSBezierPath *) path;
 //- (void) drawWithPathOptions: (PathOptions *) pathOptions;
 
+- (BorderType) oppositeBorderForType: (BorderType) aType;
 - (NSString *) borderTypeString;
 - (NSString *) stringFromBorderType: (BorderType) aType;
 @end

@@ -28,6 +28,9 @@
 }
 
 - (void) addBorder: (BorderOption *) aBorder {
+    if (self.isFlipped) {
+        aBorder.borderType = [aBorder oppositeBorderForType: aBorder.borderType];
+    }
     [self.borders addObject: aBorder];
 }
 

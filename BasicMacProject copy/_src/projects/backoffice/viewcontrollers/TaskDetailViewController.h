@@ -7,7 +7,7 @@
 
 
 #import <Foundation/Foundation.h>
-#import "BasicViewController.h"
+#import "BasicFlippedViewController.h"
 #import "BasicSplitViewController.h"
 #import "SplitViewContainer.h"
 

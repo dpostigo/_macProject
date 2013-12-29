@@ -1,0 +1,681 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0BE3EAF689EA48D3B0588073 /* Pods-PMPKVObservation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF8B574CEAB41088C0326C3 /* Pods-PMPKVObservation-dummy.m */; };
+		113C8141BCC048768A9D2C04 /* metamacros.h in Headers */ = {isa = PBXBuildFile; fileRef = CBA41021D1044305AB519E92 /* metamacros.h */; };
+		2225693341C546B8BCCBEB8D /* Pods-libextobjc-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A80383DFB25941E6AA7165DE /* Pods-libextobjc-dummy.m */; };
+		29005718BF5E433AA5B75FD2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7660F725F4E456B846423C4 /* Cocoa.framework */; };
+		583B231CEEE3423F80634F21 /* EXTRuntimeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D88268C126741628ACD7D25 /* EXTRuntimeExtensions.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		8B1368FB41CC49D69A796C01 /* EXTRuntimeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A5E0C0416B546689568AC04 /* EXTRuntimeExtensions.h */; };
+		923BD7B3B05B43EDB494F97F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7660F725F4E456B846423C4 /* Cocoa.framework */; };
+		A3D7EA612398475EB1792AFF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7660F725F4E456B846423C4 /* Cocoa.framework */; };
+		CDE9827F57DB4EBC9DED2D2B /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = D07F82C9FF14498A8836A171 /* EXTScope.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		D1D21FD78D614E31816E2A2F /* EXTScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 97F786035DC042F7B64588A6 /* EXTScope.h */; };
+		DB2A49D3D7EC4CDABCE4292F /* libPods-libextobjc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0DA4A5EC8E4F64909F72D8 /* libPods-libextobjc.a */; };
+		E6C563117B624B0AB72E1880 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D58BF395DCC42DBA6C3C7BA /* Pods-dummy.m */; };
+		E9A01409B44D47D7A7E79BA9 /* PMPKVObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB148A59024161A47BC214 /* PMPKVObservation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		EC8DFD8AC7354B1EB14BD80B /* libPods-PMPKVObservation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B61A9B591D4548C2B4FD6660 /* libPods-PMPKVObservation.a */; };
+		FCA4A34FD7EC482282FCABD2 /* PMPKVObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 99C524A517F444BD9E307016 /* PMPKVObservation.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		898D1B430AD74CA2A17136FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E6DC1E7064D49898DC9941C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4D99316612349F69896BF86;
+			remoteInfo = "Pods-libextobjc";
+		};
+		A104A02C2E4C404B94343CDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E6DC1E7064D49898DC9941C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2586DC502AF444BB8898C251;
+			remoteInfo = "Pods-PMPKVObservation";
+		};
+		ED982B0A6DBC46758A579AF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E6DC1E7064D49898DC9941C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4D99316612349F69896BF86;
+			remoteInfo = "Pods-libextobjc";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0680655727CE48FF92BCE857 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.xcconfig; sourceTree = "<group>"; };
+		09790056C7CE47C7B14F9B16 /* Pods-PMPKVObservation-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMPKVObservation-Private.xcconfig"; sourceTree = "<group>"; };
+		0A5E0C0416B546689568AC04 /* EXTRuntimeExtensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXTRuntimeExtensions.h; path = extobjc/EXTRuntimeExtensions.h; sourceTree = "<group>"; };
+		0DDB148A59024161A47BC214 /* PMPKVObservation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PMPKVObservation.m; sourceTree = "<group>"; };
+		0F0DA4A5EC8E4F64909F72D8 /* libPods-libextobjc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-libextobjc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D58BF395DCC42DBA6C3C7BA /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		68F5775F45674DA5B845FF86 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		7D88268C126741628ACD7D25 /* EXTRuntimeExtensions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXTRuntimeExtensions.m; path = extobjc/EXTRuntimeExtensions.m; sourceTree = "<group>"; };
+		7E508AB6B98F41A0B883077F /* Pods-PMPKVObservation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PMPKVObservation-prefix.pch"; sourceTree = "<group>"; };
+		8C3F9DDE441742D88A07A505 /* Pods-libextobjc-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-libextobjc-Private.xcconfig"; sourceTree = "<group>"; };
+		8DF8B574CEAB41088C0326C3 /* Pods-PMPKVObservation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PMPKVObservation-dummy.m"; sourceTree = "<group>"; };
+		936C60D747BB42BAB26E0AE8 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		97F786035DC042F7B64588A6 /* EXTScope.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXTScope.h; path = extobjc/EXTScope.h; sourceTree = "<group>"; };
+		99C524A517F444BD9E307016 /* PMPKVObservation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PMPKVObservation.h; sourceTree = "<group>"; };
+		A80383DFB25941E6AA7165DE /* Pods-libextobjc-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-libextobjc-dummy.m"; sourceTree = "<group>"; };
+		AFFB1133B8AD480090C8752D /* Pods-libextobjc-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-libextobjc-prefix.pch"; sourceTree = "<group>"; };
+		B61A9B591D4548C2B4FD6660 /* libPods-PMPKVObservation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PMPKVObservation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B883F3D8DC5C4AFE9C5C94B4 /* Pods-libextobjc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-libextobjc.xcconfig"; sourceTree = "<group>"; };
+		B9CB521F0FAB440EB83E6B48 /* Pods-PMPKVObservation.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PMPKVObservation.xcconfig"; sourceTree = "<group>"; };
+		BDD02214A14246EC9F9FFB44 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		C6496A2C547E40A0B02FC8BB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7660F725F4E456B846423C4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		CBA41021D1044305AB519E92 /* metamacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = metamacros.h; path = extobjc/metamacros.h; sourceTree = "<group>"; };
+		D07F82C9FF14498A8836A171 /* EXTScope.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXTScope.m; path = extobjc/EXTScope.m; sourceTree = "<group>"; };
+		EF0B67F5E6F44ED18DD974AC /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
+		F52F28CB0CBF4419A87EEBD5 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		23C44BFF2C764D4A83334452 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				923BD7B3B05B43EDB494F97F /* Cocoa.framework in Frameworks */,
+				EC8DFD8AC7354B1EB14BD80B /* libPods-PMPKVObservation.a in Frameworks */,
+				DB2A49D3D7EC4CDABCE4292F /* libPods-libextobjc.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A412BD9464674E718CB0DE07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3D7EA612398475EB1792AFF /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2DF865C265A477888AEDEDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29005718BF5E433AA5B75FD2 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		007CC8FC39A342FC9CCDD97E /* EXTScope */ = {
+			isa = PBXGroup;
+			children = (
+				97F786035DC042F7B64588A6 /* EXTScope.h */,
+				D07F82C9FF14498A8836A171 /* EXTScope.m */,
+			);
+			name = EXTScope;
+			sourceTree = "<group>";
+		};
+		0CD9591089184E1D8B3F82D5 /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				C7660F725F4E456B846423C4 /* Cocoa.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		419182CDBDC7407E872C216B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0680655727CE48FF92BCE857 /* Pods.xcconfig */,
+				936C60D747BB42BAB26E0AE8 /* Pods-acknowledgements.markdown */,
+				BDD02214A14246EC9F9FFB44 /* Pods-acknowledgements.plist */,
+				3D58BF395DCC42DBA6C3C7BA /* Pods-dummy.m */,
+				EF0B67F5E6F44ED18DD974AC /* Pods-environment.h */,
+				68F5775F45674DA5B845FF86 /* Pods-resources.sh */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AD10E2A9AA3E469081F02BA2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C6496A2C547E40A0B02FC8BB /* libPods.a */,
+				B61A9B591D4548C2B4FD6660 /* libPods-PMPKVObservation.a */,
+				0F0DA4A5EC8E4F64909F72D8 /* libPods-libextobjc.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AFADCA3EF29C4D5AB5CF78DF /* PMPKVObservation */ = {
+			isa = PBXGroup;
+			children = (
+				99C524A517F444BD9E307016 /* PMPKVObservation.h */,
+				0DDB148A59024161A47BC214 /* PMPKVObservation.m */,
+				F06F92419E8A40438285DA40 /* Support Files */,
+			);
+			name = PMPKVObservation;
+			path = PMPKVObservation;
+			sourceTree = "<group>";
+		};
+		BA86C003A2F346A0A9739AE1 /* libextobjc */ = {
+			isa = PBXGroup;
+			children = (
+				007CC8FC39A342FC9CCDD97E /* EXTScope */,
+				D964F50AB74C485BAC899B18 /* RuntimeExtensions */,
+				E04CB927798A43FB94AABFF2 /* Support Files */,
+			);
+			name = libextobjc;
+			path = libextobjc;
+			sourceTree = "<group>";
+		};
+		C4B5E30B8BB44BF6A2A9A897 = {
+			isa = PBXGroup;
+			children = (
+				F52F28CB0CBF4419A87EEBD5 /* Podfile */,
+				DA371495D9084A48AEBDD841 /* Frameworks */,
+				C93613C06CF342D8BC612870 /* Pods */,
+				AD10E2A9AA3E469081F02BA2 /* Products */,
+				E9C3FF8D934C42F8945CC4EF /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		C93613C06CF342D8BC612870 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AFADCA3EF29C4D5AB5CF78DF /* PMPKVObservation */,
+				BA86C003A2F346A0A9739AE1 /* libextobjc */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D964F50AB74C485BAC899B18 /* RuntimeExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				0A5E0C0416B546689568AC04 /* EXTRuntimeExtensions.h */,
+				7D88268C126741628ACD7D25 /* EXTRuntimeExtensions.m */,
+				CBA41021D1044305AB519E92 /* metamacros.h */,
+			);
+			name = RuntimeExtensions;
+			sourceTree = "<group>";
+		};
+		DA371495D9084A48AEBDD841 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0CD9591089184E1D8B3F82D5 /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E04CB927798A43FB94AABFF2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B883F3D8DC5C4AFE9C5C94B4 /* Pods-libextobjc.xcconfig */,
+				8C3F9DDE441742D88A07A505 /* Pods-libextobjc-Private.xcconfig */,
+				A80383DFB25941E6AA7165DE /* Pods-libextobjc-dummy.m */,
+				AFFB1133B8AD480090C8752D /* Pods-libextobjc-prefix.pch */,
+			);
+			name = "Support Files";
+			sourceTree = SOURCE_ROOT;
+		};
+		E9C3FF8D934C42F8945CC4EF /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				419182CDBDC7407E872C216B /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		F06F92419E8A40438285DA40 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B9CB521F0FAB440EB83E6B48 /* Pods-PMPKVObservation.xcconfig */,
+				09790056C7CE47C7B14F9B16 /* Pods-PMPKVObservation-Private.xcconfig */,
+				8DF8B574CEAB41088C0326C3 /* Pods-PMPKVObservation-dummy.m */,
+				7E508AB6B98F41A0B883077F /* Pods-PMPKVObservation-prefix.pch */,
+			);
+			name = "Support Files";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		53CE3F5F859848D4AF50E4B5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCA4A34FD7EC482282FCABD2 /* PMPKVObservation.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59B23626BB064AE4AC47DF8D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B1368FB41CC49D69A796C01 /* EXTRuntimeExtensions.h in Headers */,
+				D1D21FD78D614E31816E2A2F /* EXTScope.h in Headers */,
+				113C8141BCC048768A9D2C04 /* metamacros.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2586DC502AF444BB8898C251 /* Pods-PMPKVObservation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F48EF95A87A4E20A4AC7763 /* Build configuration list for PBXNativeTarget "Pods-PMPKVObservation" */;
+			buildPhases = (
+				7695B9CD12CD4D06809F41B8 /* Sources */,
+				A412BD9464674E718CB0DE07 /* Frameworks */,
+				53CE3F5F859848D4AF50E4B5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3C242D23C7CB47CAA5505660 /* PBXTargetDependency */,
+			);
+			name = "Pods-PMPKVObservation";
+			productName = "Pods-PMPKVObservation";
+			productReference = B61A9B591D4548C2B4FD6660 /* libPods-PMPKVObservation.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		8091FA52C8D04C20A45B68FB /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05B18869791440EC8E50B41A /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				9F9873ECDDB441D1B026B36D /* Sources */,
+				23C44BFF2C764D4A83334452 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E58C930E485A48A2A57E5044 /* PBXTargetDependency */,
+				09A8F0DA214B40028F095440 /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = C6496A2C547E40A0B02FC8BB /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B4D99316612349F69896BF86 /* Pods-libextobjc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0202F2250ED4FE098BFEA47 /* Build configuration list for PBXNativeTarget "Pods-libextobjc" */;
+			buildPhases = (
+				1258A2F61DAE4CC197A5C000 /* Sources */,
+				B2DF865C265A477888AEDEDB /* Frameworks */,
+				59B23626BB064AE4AC47DF8D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-libextobjc";
+			productName = "Pods-libextobjc";
+			productReference = 0F0DA4A5EC8E4F64909F72D8 /* libPods-libextobjc.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1E6DC1E7064D49898DC9941C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = 2EF6E9ECEC0141E58AF34F60 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C4B5E30B8BB44BF6A2A9A897;
+			productRefGroup = AD10E2A9AA3E469081F02BA2 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+			);
+			projectRoot = "";
+			targets = (
+				8091FA52C8D04C20A45B68FB /* Pods */,
+				2586DC502AF444BB8898C251 /* Pods-PMPKVObservation */,
+				B4D99316612349F69896BF86 /* Pods-libextobjc */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1258A2F61DAE4CC197A5C000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				583B231CEEE3423F80634F21 /* EXTRuntimeExtensions.m in Sources */,
+				CDE9827F57DB4EBC9DED2D2B /* EXTScope.m in Sources */,
+				2225693341C546B8BCCBEB8D /* Pods-libextobjc-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7695B9CD12CD4D06809F41B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9A01409B44D47D7A7E79BA9 /* PMPKVObservation.m in Sources */,
+				0BE3EAF689EA48D3B0588073 /* Pods-PMPKVObservation-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F9873ECDDB441D1B026B36D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6C563117B624B0AB72E1880 /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		09A8F0DA214B40028F095440 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4D99316612349F69896BF86 /* Pods-libextobjc */;
+			targetProxy = ED982B0A6DBC46758A579AF8 /* PBXContainerItemProxy */;
+		};
+		3C242D23C7CB47CAA5505660 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4D99316612349F69896BF86 /* Pods-libextobjc */;
+			targetProxy = 898D1B430AD74CA2A17136FC /* PBXContainerItemProxy */;
+		};
+		E58C930E485A48A2A57E5044 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2586DC502AF444BB8898C251 /* Pods-PMPKVObservation */;
+			targetProxy = A104A02C2E4C404B94343CDA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0BEBCA9AB73D4B60A7A1C802 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C3F9DDE441742D88A07A505 /* Pods-libextobjc-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-libextobjc-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1615F900C9E145B8BF805CB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+		4FA1EB3C497A4EECADE2D4B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0680655727CE48FF92BCE857 /* Pods.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		69A54471F8E94807A4279DC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09790056C7CE47C7B14F9B16 /* Pods-PMPKVObservation-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-PMPKVObservation-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6A8EE96B51B440ADA17509A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09790056C7CE47C7B14F9B16 /* Pods-PMPKVObservation-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-PMPKVObservation-prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		7766276F95964F2D8E47D156 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				STRIP_INSTALLED_PRODUCT = NO;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8BAA35E8F7A243D18691EF2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C3F9DDE441742D88A07A505 /* Pods-libextobjc-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-libextobjc-prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		9CE8545EC71D4D1D8ED085CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0680655727CE48FF92BCE857 /* Pods.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05B18869791440EC8E50B41A /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FA1EB3C497A4EECADE2D4B2 /* Debug */,
+				9CE8545EC71D4D1D8ED085CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EF6E9ECEC0141E58AF34F60 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1615F900C9E145B8BF805CB7 /* Debug */,
+				7766276F95964F2D8E47D156 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F48EF95A87A4E20A4AC7763 /* Build configuration list for PBXNativeTarget "Pods-PMPKVObservation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69A54471F8E94807A4279DC1 /* Debug */,
+				6A8EE96B51B440ADA17509A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0202F2250ED4FE098BFEA47 /* Build configuration list for PBXNativeTarget "Pods-libextobjc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BEBCA9AB73D4B60A7A1C802 /* Debug */,
+				8BAA35E8F7A243D18691EF2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1E6DC1E7064D49898DC9941C /* Project object */;
+}

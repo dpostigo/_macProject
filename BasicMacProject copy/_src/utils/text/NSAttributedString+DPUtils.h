@@ -1,5 +1,5 @@
 //
-//  NSAttributedString+DPUtils.h
+//  NSAttributedString+BlendingUtils.h
 //  PDFUtility
 //
 //  Created by Daniela Postigo on 5/30/13.

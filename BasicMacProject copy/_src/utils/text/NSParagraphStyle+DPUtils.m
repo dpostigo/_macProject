@@ -1,5 +1,5 @@
 //
-//  NSParagraphStyle+DPUtils.m
+//  NSParagraphStyle+BlendingUtils.m
 //  Carts
 //
 //  Created by Daniela Postigo on 6/24/13.

@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BasicViewController.h"
+#import "BasicFlippedViewController.h"
 
-@interface CartsMainViewController : BasicViewController {
+@interface CartsMainViewController : BasicFlippedViewController {
 
 }
 @end

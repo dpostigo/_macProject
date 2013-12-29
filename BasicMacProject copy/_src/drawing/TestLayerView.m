@@ -31,10 +31,16 @@
 
 @synthesize innerShadowLayer;
 
+@synthesize awokeFromNib;
+
+@synthesize viewLayer;
+
+@synthesize noLayers;
+
 - (id) initWithFrame: (NSRect) frameRect {
     self = [super initWithFrame: frameRect];
     if (self) {
-        NSLog(@"%s", __PRETTY_FUNCTION__);
+        [self setupDefaults];
 
     }
 
@@ -49,28 +55,138 @@
     return NO;
 }
 
+- (NSBitmapImageRep *) exportToImageRep: (CALayer *) aLayer {
+    CGContextRef context = NULL;
+    CGColorSpaceRef colorSpace;
+    int bitmapByteCount;
+    int bitmapBytesPerRow;
+
+    int pixelsHigh = (int) [aLayer bounds].size.height;
+    int pixelsWide = (int) [aLayer bounds].size.width;
+
+    bitmapBytesPerRow = (pixelsWide * 4);
+    bitmapByteCount = (bitmapBytesPerRow * pixelsHigh);
+
+    colorSpace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
+    context = CGBitmapContextCreate(NULL, pixelsWide, pixelsHigh, 8, bitmapBytesPerRow, colorSpace, kCGImageAlphaPremultipliedLast);
+
+    if (context == NULL) {
+        NSLog(@"Failed to create context.");
+        return nil;
+    }
+
+    CGColorSpaceRelease(colorSpace);
+    [[aLayer presentationLayer] renderInContext: context];
+
+    CGImageRef img = CGBitmapContextCreateImage(context);
+    NSBitmapImageRep *bitmap = [[NSBitmapImageRep alloc] initWithCGImage: img];
+    CFRelease(img);
+
+    return bitmap;
+}
 
 - (void) drawRect: (NSRect) dirtyRect {
-    [[NSColor clearColor] set];
-    NSRectFillUsingOperation(self.bounds, NSCompositeSourceOver);
 
-    [self layersInit];
+    if (!self.usesLayers) {
+        NSRect backgroundBounds = self.bounds;
+        //    backgroundBounds = NSInsetRect(self.bounds, -100, -100);
 
-    CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
-    [self.layer renderInContext: context];
+        [[NSColor clearColor] set];
+        NSRectFillUsingOperation(self.bounds, NSCompositeSourceOver);
+
+        //        [NSGraphicsContext saveGraphicsState];
+
+        [self layersInit];
+
+        NSShadow *shadow = [[NSShadow alloc] init];
+        shadow.shadowBlurRadius = shadowLayer.shadowRadius;
+        shadow.shadowOffset = shadowLayer.shadowOffset;
+        shadow.shadowColor = [NSColor colorWithCGColor: shadowLayer.shadowColor];
+        [shadow set];
+
+        CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
+        CGContextSaveGState(context);
+        [self.viewLayer renderInContext: context];
+        CGContextRestoreGState(context);
+
+        //        [NSGraphicsContext restoreGraphicsState];
+
+    }
+}
+
+- (void) clearShadowFromLayer: (CALayer *) aLayer {
+
+    aLayer.shadowOpacity = 0;
+
+}
+
+- (NSImageRep *) layerImage {
+    //
+    //    [tmpLayer setNeedsDisplay];
+    //    UIGraphicsBeginImageContextWithOptions([self bounds].size, YES, 0.0);
+    //    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    //    [tmpLayer renderInContext: ctx];
+    //    renderedImageOfMyself = UIGraphicsGetImageFromCurrentImageContext();
+    //    UIGraphicsEndImageContext();
+    //    [self.layer setContents: renderedImageOfMyself.CGImage];
+
+
+    NSSize imageSize = NSMakeSize(50, 50);
+
+    NSImage *image = [[NSImage alloc] initWithSize: imageSize];
+    NSBitmapImageRep *rep = [[NSBitmapImageRep alloc]
+            initWithBitmapDataPlanes: NULL
+                          pixelsWide: imageSize.width
+                          pixelsHigh: imageSize.height
+                       bitsPerSample: 8
+                     samplesPerPixel: 4
+                            hasAlpha: YES
+                            isPlanar: NO
+                      colorSpaceName: NSCalibratedRGBColorSpace
+                         bytesPerRow: 0
+                        bitsPerPixel: 0];
+
+    [image addRepresentation: rep];
+
+    [image lockFocus];
+
+    [[NSColor blueColor] setFill];
+    NSBezierPath *path = [NSBezierPath bezierPathWithRect: self.bounds];
+    [path fill];
+
+
+    //    CGContextRef ctx = [[NSGraphicsContext currentContext] graphicsPort];
+    //    CGContextClearRect(ctx, NSMakeRect(0, 0, imageSize.width, imageSize.height));
+    //    CGContextSetFillColorWithColor(ctx, [[NSColor blueColor] CGColor]);
+    //    CGContextFillEllipseInRect(ctx, NSMakeRect(0, 0, imageSize.width, imageSize.height));
+
+    [image unlockFocus];
+
+    return rep;
+
 }
 
 #pragma mark Layers
 
 - (void) setFrame: (NSRect) frameRect {
     [super setFrame: frameRect];
-    self.layer.frame = self.frame;
+    self.viewLayer.frame = self.frame;
     self.fillLayer.frame = self.bounds;
-    self.borderLayer.frame = self.bounds;
+    self.shadowLayer.frame = self.bounds;
+
+    [self.shadowLayer setNeedsDisplay];
+
 }
 
 #pragma mark Getters / Setters
 
+- (BOOL) usesLayers {
+    return !noLayers;
+}
+
+- (void) setUsesLayers: (BOOL) doesUse {
+    self.noLayers = !doesUse;
+}
 
 //
 //- (void) setCornerRadius: (CGFloat) cornerRadius {
@@ -108,31 +224,38 @@
     self.innerShadowLayer.cornerRadius = self.innerShadowLayer.cornerRadius;
 }
 
-#pragma mark Awake
+#pragma mark Setup
+
+
+- (void) awakeFromNib {
+    [super awakeFromNib];
+    [self layersInit];
+}
 
 
 - (void) layersInit {
-    if (self.layer == nil) {
+    if (self.usesLayers && self.layer == nil) {
         self.layer = [CALayer new];
         [self setWantsLayer: YES];
-        [self layersSetup];
-        [self firstTest];
     }
+
+    [self layersSetup];
 }
 
 - (void) layersSetup {
-
-    //    [self.layer addSublayer: shadowLayer];
-    [self.layer addSublayer: self.fillLayer];
-    //    [self.layer addSublayer: self.borderLayer];
+    if ([self.viewLayer.sublayers count] == 0) {
+        if (self.usesLayers) [self.viewLayer addSublayer: self.shadowLayer];
+        [self.viewLayer addSublayer: self.fillLayer];
+        //        [self.viewLayer addSublayer: self.borderLayer];
+    }
     //    [self.layer addSublayer: self.innerShadowLayer];
-
-    //    self.fillLayer.masksToBounds = NO;
-    //    self.layer.masksToBounds = NO;
+    //        self.fillLayer.masksToBounds = NO;
+    //        self.layer.masksToBounds = NO;
 
 }
 
-- (void) firstTest {
+
+- (void) setupDefaults {
 
     self.borderWidth = 0.5;
     self.cornerRadius = 3;
@@ -153,17 +276,32 @@
 #pragma mark Layer Getters
 
 
+- (CALayer *) viewLayer {
+    if (self.usesLayers) {
+        return self.layer;
+
+    } else {
+        if (viewLayer == nil) {
+            viewLayer = [CALayer new];
+            viewLayer.frame = self.bounds;
+        }
+        return viewLayer;
+    }
+    return nil;
+}
+
 
 - (CALayer *) fillLayer {
-    [self layersInit];
+    //    [self layersInit];
     if (fillLayer == nil) {
         fillLayer = [CALayer new];
+        fillLayer.frame = self.bounds;
     }
     return fillLayer;
 }
 
 - (CALayer *) borderLayer {
-    [self layersInit];
+    //    [self layersInit];
     if (borderLayer == nil) {
         borderLayer = [CALayer new];
         borderLayer.backgroundColor = [NSColor clearColor].CGColor;
@@ -174,9 +312,9 @@
 }
 
 - (CALayer *) shadowLayer {
-    [self layersInit];
     if (shadowLayer == nil) {
         shadowLayer = [CALayer new];
+        shadowLayer.backgroundColor = [NSColor whiteColor].CGColor;
     }
     shadowLayer.cornerRadius = fillLayer.cornerRadius;
     return shadowLayer;
@@ -184,7 +322,7 @@
 
 
 - (DPInnerShadowLayer *) innerShadowLayer {
-    [self layersInit];
+    //    [self layersInit];
     if (innerShadowLayer == nil) {
         innerShadowLayer = [DPInnerShadowLayer layer];
         innerShadowLayer.frame = self.bounds;
@@ -193,6 +331,10 @@
     innerShadowLayer.cornerRadius = fillLayer.cornerRadius;
     return innerShadowLayer;
 }
+
+
+#pragma mark Should be old
+
 
 
 #pragma mark Surrogates / forwarding
@@ -206,10 +348,10 @@
 
     [ret setObject: self.innerShadowLayer forKey: @"innerShadowColor"];
 
-    [ret setObject: self.fillLayer forKey: @"shadowColor"];
-    [ret setObject: self.fillLayer forKey: @"shadowRadius"];
-    [ret setObject: self.fillLayer forKey: @"shadowOpacity"];
-    [ret setObject: self.fillLayer forKey: @"shadowOffset"];
+    [ret setObject: self.shadowLayer forKey: @"shadowColor"];
+    [ret setObject: self.shadowLayer forKey: @"shadowRadius"];
+    [ret setObject: self.shadowLayer forKey: @"shadowOpacity"];
+    [ret setObject: self.shadowLayer forKey: @"shadowOffset"];
     ret = [self translateDictionary: ret];
     return ret;
 }

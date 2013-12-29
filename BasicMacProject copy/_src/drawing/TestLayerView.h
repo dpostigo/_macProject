@@ -15,6 +15,11 @@
     CALayer *borderLayer;
     CALayer *shadowLayer;
     DPInnerShadowLayer *innerShadowLayer;
+
+    BOOL awokeFromNib;
+    CALayer *viewLayer;
+
+    BOOL noLayers;
 }
 
 @property(nonatomic, strong) CALayer *shadowLayer;
@@ -34,4 +39,8 @@
 
 @property(nonatomic, strong) NSColor *backgroundColor;
 @property(nonatomic, strong) NSColor *borderColor;
+@property(nonatomic) BOOL awokeFromNib;
+@property(nonatomic, strong) CALayer *viewLayer;
+@property(nonatomic) BOOL noLayers;
+@property(nonatomic) BOOL usesLayers;
 @end

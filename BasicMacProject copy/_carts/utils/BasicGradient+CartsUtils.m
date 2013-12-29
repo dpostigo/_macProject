@@ -8,7 +8,7 @@
 
 #import "BasicGradient+CartsUtils.h"
 #import "NSColor+CartsUtils.h"
-#import "NSColor+DPUtils.h"
+#import "NSColor+BlendingUtils.h"
 #import "BasicGradient+DPUtils.h"
 
 @implementation BasicGradient (CartsUtils)

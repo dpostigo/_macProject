@@ -7,13 +7,13 @@
 //
 
 #import "NSColor+CartsUtils.h"
-#import "BasicGradient.h"
-#import "NSColor+DPUtils.h"
+#import "NSColor+BlendingUtils.h"
 
 #define DARK_SLATE @"313641"
 #define SLATE_HIGHLIGHT @"414957"
 
 @implementation NSColor (CartsUtils)
+
 
 + (NSColor *) darkSlateColor {
     return [NSColor colorWithString: DARK_SLATE];

@@ -6,7 +6,7 @@
 
 
 #import <Foundation/Foundation.h>
-#import "BasicViewController.h"
+#import "BasicFlippedViewController.h"
 #import "SplitViewContainer.h"
 #import "BasicSplitView.h"
 
@@ -18,7 +18,7 @@
 
 @end
 
-@interface BasicSplitViewController : BasicViewController <NSSplitViewDelegate, BasicSplitViewDelegate> {
+@interface BasicSplitViewController : BasicFlippedViewController <NSSplitViewDelegate, BasicSplitViewDelegate> {
     BOOL dividerEnabled;
     IBOutlet BasicSplitView *splitView;
 

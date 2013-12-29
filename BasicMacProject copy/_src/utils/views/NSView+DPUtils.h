@@ -1,5 +1,5 @@
 //
-//  NSView+DPUtils.h
+//  NSView+BlendingUtils.h
 //  Carts
 //
 //  Created by Daniela Postigo on 11/11/13.

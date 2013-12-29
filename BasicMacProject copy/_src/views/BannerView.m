@@ -36,13 +36,15 @@
     if (displayBackground == nil) {
         self.displayBackground = [[BasicDisplayView alloc] initWithFrame: self.bounds];
         displayBackground.backgroundColor = [NSColor offwhiteColor];
-        displayBackground.borderWidth = 2;
+        displayBackground.borderWidth = 1;
+        displayBackground.borderColor = [NSColor redColor];
         displayBackground.borderColor = [NSColor darkSlateColor];
+        displayBackground.borderType = BorderTypeTop | BorderTypeBottom;
         [displayBackground addBorder: [BorderOption bottomBorderWithColor: [NSColor whiteColor] borderWidth: 1.0]];
-        displayBackground.innerShadow.shadowColor = [NSColor darkSlateColor];
-        displayBackground.innerShadow.shadowBlurRadius = 2;
-        displayBackground.innerShadow.shadowOffset = NSMakeSize(0, -2);
-        displayBackground.name = @"BannerViewBackground";
+        //        displayBackground.innerShadow.shadowColor = [NSColor darkSlateColor];
+        //        displayBackground.innerShadow.shadowBlurRadius = 2;
+        //        displayBackground.innerShadow.shadowOffset = NSMakeSize(0, -2);
+        //        displayBackground.name = @"BannerViewBackground";
     }
 
     if (textLabel == nil) {

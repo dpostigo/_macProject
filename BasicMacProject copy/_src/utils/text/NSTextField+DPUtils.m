@@ -1,5 +1,5 @@
 //
-//  NSTextField+DPUtils.m
+//  NSTextField+BlendingUtils.m
 //  Carts
 //
 //  Created by Daniela Postigo on 10/21/13.
