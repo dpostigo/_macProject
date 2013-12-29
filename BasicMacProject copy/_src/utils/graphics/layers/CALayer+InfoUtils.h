@@ -7,5 +7,6 @@
 
 @interface CALayer (InfoUtils)
 
+- (CALayer *) sublayerWithName: (NSString *) name;
 - (NSString *) infoString;
 @end

@@ -1,5 +1,5 @@
 //
-//  CartsWindowHeaderViewControllerOld.h
+//  CartsWindowHeaderViewController.h
 //  Carts
 //
 //  Created by Daniela Postigo on 10/22/13.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "BasicWindowHeaderViewController.h"
 
-@interface CartsWindowHeaderViewControllerOld : BasicWindowHeaderViewController {
+@interface CartsWindowHeaderViewController : BasicWindowHeaderViewController {
     IBOutlet NSSegmentedControl *control;
 }
 

@@ -9,9 +9,9 @@
 
 @interface NSButton (TextColor)
 
-- (NSColor *) textColor;
+- (NSColor *) attributedTextColor;
 - (void) setTextColor: (NSColor *) textColor;
 - (void) setFont: (NSFont *) font;
 - (NSColor *) shadowColor;
-- (void) setShadowColor: (NSColor *) shadowColor;
+- (void) setAttributedShadow: (NSShadow *) shadow1;
 @end

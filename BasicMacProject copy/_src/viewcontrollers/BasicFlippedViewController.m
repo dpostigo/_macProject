@@ -7,6 +7,7 @@
 
 #import "BasicFlippedViewController.h"
 #import "NewBasicView+Utils.h"
+#import "NSView+Masonry.h"
 
 @implementation BasicFlippedViewController {
 }
@@ -43,6 +44,26 @@
 }
 
 
+#pragma mark setters
+
+- (void) setBackground: (NSView *) background1 {
+    if (background) [background removeFromSuperview];
+    background = background1;
+
+    if (background) {
+        background.frame = self.view.bounds;
+
+        if ([self.view.subviews count] == 0) {
+            [self.view addSubview: background];
+        } else {
+            NSView *lastSubview = [self.view.subviews objectAtIndex: 0];
+            [self.view addSubview: background positioned: NSWindowBelow relativeTo: lastSubview];
+        }
+
+        [background fillToSuperview];
+    }
+}
+
 
 #pragma mark View notifications
 
@@ -62,7 +83,7 @@
 
 }
 
-//- (void) updateConstraints {
-//
-//}
+- (void) updateConstraints {
+
+}
 @end

@@ -13,7 +13,7 @@
 
 - (void) setup {
 
-    self.textColor = [NSColor colorWithDeviceWhite: 0.9 alpha: 1.0];
+//    self.attributedTextColor = [NSColor colorWithDeviceWhite: 0.9 alpha: 1.0];
 }
 
 - (id) initWithFrame: (NSRect) frameRect {

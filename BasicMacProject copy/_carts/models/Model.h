@@ -14,4 +14,5 @@
 
 + (Model *) sharedModel;
 
+- (NSNib *) workspaceNib;
 @end

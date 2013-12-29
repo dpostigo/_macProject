@@ -336,39 +336,6 @@
     return background;
 }
 
-//
-//- (void) setContentView: (NSView *) aView {
-//    NSArray *subviews = nil;
-//    if (self.contentView) {
-//        NSLog(@"Current contentView has %lu subviews.", self.contentAsView.subviews.count);
-//        subviews = [NSArray arrayWithArray: self.contentAsView.subviews];
-//    }
-//
-//    [super setContentView: aView];
-//    //    NSLog(@"aView = %@", aView);
-//
-//    if (subviews) {
-//        NSLog(@"Should add %lu subviews.", [subviews count]);
-//        //        NSLog(@"subviews.count = %lu", subviews.count);
-//        for (NSView *view in subviews) {
-//            if (view == testView) {
-//                NSLog(@"testView found = %@", view);
-//            }
-//            //            NSLog(@"view = %@", view);
-//            [self.contentView addSubview: view];
-//        }
-//        NSLog(@"New content view has %lu subviews.", [self.contentAsView.subviews count]);
-//    }
-//
-//    if (self.contentView != background) {
-//        //        NSLog(@"self.contentAsView.subviews.count = %lu", self.contentAsView.subviews.count);
-//
-//    }
-//
-//    if (testView.superview == background) {
-//        NSLog(@"testView.superview = %@", testView.superview);
-//    }
-//}
 
 - (void) setContentView: (NSView *) aView {
 
@@ -386,11 +353,6 @@
 ////    return result;
 ////}
 //
-- (NSRect) windowWillUseStandardFrame: (NSWindow *) window defaultFrame: (NSRect) newFrame {
-    NSRect result;
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    return result;
-}
 //
 //- (void) windowDidResize: (NSNotification *) notification {
 //
@@ -415,16 +377,16 @@
 
 + (NSRect) frameRectForContentRect: (NSRect) cRect styleMask: (NSUInteger) aStyle {
     NSRect ret = [super frameRectForContentRect: cRect styleMask: aStyle];
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    //    ret = NSInsetRect(ret, -10, 0);
-    NSLog(@"%@, ret = %@", NSStringFromRect(cRect), NSStringFromRect(ret));
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
+    //    //    ret = NSInsetRect(ret, -10, 0);
+    //    NSLog(@"%@, ret = %@", NSStringFromRect(cRect), NSStringFromRect(ret));
     return ret;
 }
 
 + (NSRect) contentRectForFrameRect: (NSRect) fRect styleMask: (NSUInteger) aStyle {
     NSRect ret = [super contentRectForFrameRect: fRect styleMask: aStyle];
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    NSLog(@"%@, ret = %@", NSStringFromRect(fRect), NSStringFromRect(ret));
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
+    //    NSLog(@"%@, ret = %@", NSStringFromRect(fRect), NSStringFromRect(ret));
     return ret;
 }
 

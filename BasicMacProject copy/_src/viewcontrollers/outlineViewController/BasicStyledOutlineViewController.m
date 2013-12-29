@@ -64,7 +64,7 @@
     shadow.shadowBlurRadius = 0;
     shadow.shadowOffset = NSMakeSize(0, -1);
 
-    //    tableCell.textFieldCustom.attributedStringValue = [NSAttributedString attributedStringWithString: rowObject.textLabel font: [NSFont fontWithName: tableCell.textFieldCustom.font.fontName size: 10.0] textColor: tableCell.textFieldCustom.textColor shadow: shadow];
+    //    tableCell.textFieldCustom.attributedStringValue = [NSAttributedString attributedStringWithString: rowObject.textLabel font: [NSFont fontWithName: tableCell.textFieldCustom.font.fontName size: 10.0] attributedTextColor: tableCell.textFieldCustom.textColor shadow: shadow];
     //    [tableCell.textField setHidden: YES];
 }
 

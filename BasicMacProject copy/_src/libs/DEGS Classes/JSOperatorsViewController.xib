@@ -352,7 +352,7 @@
 										<object class="NSColor" key="NSTextColor" id="260081684">
 											<int key="NSColorSpace">6</int>
 											<string key="NSCatalogName">System</string>
-											<string key="NSColorName">textColor</string>
+											<string key="NSColorName">attributedTextColor</string>
 											<reference key="NSColor" ref="190094028"/>
 										</object>
 									</object>

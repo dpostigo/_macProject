@@ -5,11 +5,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CartsHeaderController : NSViewController {
+@interface NSNib (DPUtils)
 
-    IBOutlet NSButton *addButton;
-
-}
-
-- (CALayer *) strokeMaskLayer;
+- (NSArray *) viewControllers;
+- (id) viewControllerForClass: (Class) class;
 @end

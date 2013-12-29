@@ -9,7 +9,7 @@
 
 @implementation NSButton (TextColor)
 
-- (NSColor *) textColor {
+- (NSColor *) attributedTextColor {
     NSAttributedString *attrTitle = [self attributedTitle];
     int len = [attrTitle length];
     NSRange range = NSMakeRange(0, MIN(len, 1)); // take color from first char
@@ -26,8 +26,8 @@
     int len = [attrTitle length];
     NSRange range = NSMakeRange(0, len);
     [attrTitle addAttribute: NSForegroundColorAttributeName
-                      value: textColor
-                      range: range];
+            value: textColor
+            range: range];
     [attrTitle fixAttributesInRange: range];
     [self setAttributedTitle: attrTitle];
 }
@@ -54,7 +54,7 @@
 }
 
 
-- (void) setShadow: (NSShadow *) shadow {
+- (void) setAttributedShadow: (NSShadow *) shadow {
     NSMutableAttributedString *attrTitle = [[NSMutableAttributedString alloc] initWithAttributedString: [self attributedTitle]];
     int len = [attrTitle length];
     NSRange range = NSMakeRange(0, len);

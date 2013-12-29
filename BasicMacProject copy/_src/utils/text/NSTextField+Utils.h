@@ -16,5 +16,5 @@
 //- (void) setText: (NSString *) string;
 //- (NSString *) text;
 //- (NSShadow *) shadow;
-//- (void) setShadow: (NSShadow *) shadow1;
+//- (void) setAttributedShadow: (NSShadow *) shadow1;
 @end

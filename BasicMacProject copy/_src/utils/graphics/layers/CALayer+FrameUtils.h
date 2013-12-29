@@ -13,6 +13,8 @@
 - (CGFloat) width;
 - (void) setTop: (CGFloat) top;
 - (CGFloat) top;
+- (void) setLeft: (CGFloat) left;
+- (CGFloat) left;
 - (void) setSize: (CGSize) size;
 - (CGSize) size;
 @end

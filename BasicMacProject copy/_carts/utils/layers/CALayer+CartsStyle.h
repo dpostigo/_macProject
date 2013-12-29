@@ -5,11 +5,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CartsHeaderController : NSViewController {
+@interface CALayer (CartsStyle)
 
-    IBOutlet NSButton *addButton;
-
-}
-
-- (CALayer *) strokeMaskLayer;
+- (void) applySlateStyle;
+- (CALayer *) applyInnerSlateStyle;
 @end

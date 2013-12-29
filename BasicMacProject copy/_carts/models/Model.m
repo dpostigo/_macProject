@@ -25,4 +25,8 @@
 }
 
 
+- (NSNib *) workspaceNib {
+    return [[NSNib alloc] initWithNibNamed: @"Workspace" bundle: nil];
+}
+
 @end

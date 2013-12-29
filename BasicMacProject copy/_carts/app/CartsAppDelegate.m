@@ -6,25 +6,25 @@
 
 
 #import "CartsAppDelegate.h"
-#import "CartsMainViewController.h"
+#import "NSNib+DPUtils.h"
+#import "CartsHeaderController.h"
+#import "BackgroundWindow.h"
 
 @implementation CartsAppDelegate
 
 - (void) applicationDelegateDidFinishLaunching: (NSNotification *) notification {
     [super applicationDelegateDidFinishLaunching: notification];
 
-    //    window.delegate = self;
-    //    window.centersWindowButtons = YES;
-    //    window.contentView = ([[CartsMainViewController alloc] init]).view;
-    //
-    //    window.windowHeaderViewController = [[CartsWindowHeaderViewControllerOld alloc] initWithDefaultNib];
-    //    window.windowFooterViewController = [[CartsWindowFooterViewController alloc] initWithDefaultNib];
-    //
-    //    window.headerBarHeight = 30;
-    //    window.footerBarHeight = 32;
+    [self testNibs];
 
+}
 
-    //    [[NSUserDefaults standardUserDefaults] setBool: YES forKey: @"NSConstraintBasedLayoutVisualizeMutuallyExclusiveConstraints"];
+- (void) testNibs {
+
+    CartsHeaderController *controller = [_model.workspaceNib viewControllerForClass: [CartsHeaderController class]];
+    NSLog(@"controller = %@", controller);
+
+    bgWindow.headerView = controller.view;
 
 }
 

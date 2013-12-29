@@ -8,7 +8,7 @@
 
 #import "CartsCustomWindow.h"
 #import "CartsMainViewController.h"
-#import "CartsWindowHeaderViewControllerOld.h"
+#import "CartsWindowHeaderViewController.h"
 #import "CartsWindowFooterViewController.h"
 
 @implementation CartsCustomWindow
@@ -22,7 +22,7 @@
         self.centersWindowButtons = YES;
         self.contentView = ([[CartsMainViewController alloc] init]).view;
 
-        self.windowHeaderViewController = [[CartsWindowHeaderViewControllerOld alloc] initWithDefaultNib];
+        self.windowHeaderViewController = [[CartsWindowHeaderViewController alloc] initWithDefaultNib];
         self.windowFooterViewController = [[CartsWindowFooterViewController alloc] initWithDefaultNib];
 
         self.headerBarHeight = 30;

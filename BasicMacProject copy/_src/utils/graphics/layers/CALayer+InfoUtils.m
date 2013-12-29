@@ -8,7 +8,17 @@
 
 @implementation CALayer (InfoUtils)
 
-- (void) logInfo {
+- (CALayer *) sublayerWithName: (NSString *) name {
+    CALayer *ret = nil;
+    NSArray *sublayers = self.sublayers;
+
+    for (CALayer *layer in sublayers) {
+        if ([layer.name isEqualToString: name]) {
+            ret = layer;
+            break;
+        }
+    }
+    return ret;
 
 }
 

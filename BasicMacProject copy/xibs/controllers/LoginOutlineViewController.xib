@@ -79,7 +79,7 @@
 							<object class="NSColor" key="NSTextColor" id="78026944">
 								<int key="NSColorSpace">6</int>
 								<string key="NSCatalogName">System</string>
-								<string key="NSColorName">textColor</string>
+								<string key="NSColorName">attributedTextColor</string>
 								<object class="NSColor" key="NSColor" id="922725782">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MAA</bytes>

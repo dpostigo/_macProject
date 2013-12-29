@@ -11,10 +11,14 @@
 #import "ControlledCustomWindow.h"
 #import "CartsCustomWindow.h"
 
+@class BackgroundWindow;
+
 @interface CartsAppDelegate : BasicAppDelegate <NSApplicationDelegate, NSMenuDelegate, NSWindowDelegate> {
 
     IBOutlet CartsCustomWindow *window;
     IBOutlet NSWindow *macWindow;
     IBOutlet NSWindow *styledWindow;
+
+    IBOutlet BackgroundWindow *bgWindow;
 }
 @end

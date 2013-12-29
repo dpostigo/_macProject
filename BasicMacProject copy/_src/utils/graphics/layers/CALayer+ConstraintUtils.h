@@ -8,10 +8,11 @@
 
 @interface CALayer (ConstraintUtils)
 
-- (void) constrainToSuperlayer;
+- (void) superConstrain;
 - (void) constrainToSuperlayerWidth;
 - (void) constrainToSuperlayerHeight;
 - (void) constrainToSuperlayerBottom;
+- (void) superConstrainEdges: (CGFloat) offset;
 - (void) superConstrain: (CAConstraintAttribute) edge;
 - (void) superConstrain: (CAConstraintAttribute) edge offset: (CGFloat) offset;
 - (void) superConstrain: (CAConstraintAttribute) subviewEdge to: (CAConstraintAttribute) superlayerEdge;

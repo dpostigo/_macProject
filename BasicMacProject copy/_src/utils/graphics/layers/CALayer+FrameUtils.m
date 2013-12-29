@@ -39,6 +39,18 @@
     return self.frame.origin.y;
 }
 
+
+
+- (void) setLeft: (CGFloat) left {
+    NSRect frame = self.frame;
+    frame.origin.x = left;
+    self.frame = frame;
+}
+
+- (CGFloat) left {
+    return self.frame.origin.x;
+}
+
 - (void) setSize: (CGSize) size {
     NSRect frame = self.frame;
     frame.size = size;

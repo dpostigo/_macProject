@@ -8,7 +8,7 @@
 
 @implementation CALayer (ConstraintUtils)
 
-- (void) constrainToSuperlayer {
+- (void) superConstrain {
     [self constrainToSuperlayerWidth];
     [self constrainToSuperlayerHeight];
 }
@@ -32,10 +32,11 @@
 }
 
 
-
 - (void) superConstrainEdges: (CGFloat) offset {
     [self superConstrain: kCAConstraintMinX offset: offset];
+    [self superConstrain: kCAConstraintMaxX offset: -offset];
     [self superConstrain: kCAConstraintMinY offset: offset];
+    [self superConstrain: kCAConstraintMaxY offset: -offset];
 }
 
 

@@ -7,13 +7,10 @@
 #import "CartsBackgroundWindow.h"
 #import "LayerBackedView.h"
 #import "CALayer+ConstraintUtils.h"
-#import "CALayer+FrameUtils.h"
-#import "NSBezierPath+Utils.h"
-#import "NSWindow+DPUtils.h"
 #import "NSColor+CartsUtils.h"
 #import "CartsMainViewController.h"
 #import "CartsWindowFooterViewController.h"
-#import "CartsWindowHeaderViewControllerOld.h"
+#import "CartsWindowHeaderViewController.h"
 
 @implementation CartsBackgroundWindow {
 
@@ -25,7 +22,7 @@
 - (CALayer *) innerBorderLayer {
     if (innerBorderLayer == nil) {
         innerBorderLayer = [CALayer new];
-        innerBorderLayer.name = @"innerBorderLayer";
+        innerBorderLayer.name = @"innerSlateLayer";
         innerBorderLayer.borderColor = [NSColor colorWithWhite: 1.0 alpha: 0.5].CGColor;
         innerBorderLayer.borderWidth = 0.5;
         innerBorderLayer.cornerRadius = backgroundLayer.cornerRadius - 0.5;
@@ -74,7 +71,7 @@
 
 - (NSView *) header {
 
-    CartsWindowHeaderViewControllerOld *headerController = ([[CartsWindowHeaderViewControllerOld alloc] init]);
+    CartsWindowHeaderViewController *headerController = ([[CartsWindowHeaderViewController alloc] init]);
     NSView *header = headerController.view;
     headerController.background = [[NSView alloc] init];
     return header;

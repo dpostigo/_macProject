@@ -22,7 +22,7 @@
 //    return shadow;
 //}
 //
-//- (void) setShadow: (NSShadow *) shadow {
+//- (void) setAttributedShadow: (NSShadow *) shadow {
 //    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString: self.attributedStringValue];
 //    int len = [attributedString length];
 //    NSRange range = NSMakeRange(0, len);
@@ -36,7 +36,7 @@
 //    NSShadow *shadow = self.shadow;
 //    if (shadow == nil) shadow = [[NSShadow alloc] init];
 //    shadow.shadowColor = color;
-//    [self setShadow: shadow];
+//    [self setAttributedShadow: shadow];
 //}
 //
 //- (NSColor *) shadowColor {
@@ -53,7 +53,7 @@
 //    NSShadow *shadow = self.shadow;
 //    if (shadow == nil) shadow = [[NSShadow alloc] init];
 //    shadow.shadowOffset = offset;
-//    [self setShadow: shadow];
+//    [self setAttributedShadow: shadow];
 //}
 //
 //- (void) setText: (NSString *) string {

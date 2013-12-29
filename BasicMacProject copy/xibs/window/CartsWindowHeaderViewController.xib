@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1090" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="CartsWindowHeaderViewControllerOld">
+        <customObject id="-2" userLabel="File's Owner" customClass="CartsWindowHeaderViewController">
             <connections>
-                <outlet property="view" destination="1" id="F7i-eV-2j4"/>
+                <outlet property="view" destination="68D-Mh-09z" id="dMt-ed-xop"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="267"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xc2-KY-zvX">
+                <button verticalHuggingPriority="750" id="xc2-KY-zvX">
                     <rect key="frame" x="384" y="116" width="82" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="p4u-vD-jGY">
@@ -24,12 +24,12 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
-                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9hP-Sg-vbT">
+                <popUpButton verticalHuggingPriority="750" id="9hP-Sg-vbT">
                     <rect key="frame" x="13" y="120" width="75" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="N8C-sF-nM8" id="xDY-Md-Oj7">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="menu"/>
                         <menu key="menu" title="OtherViews" id="vjc-wZ-kac">
                             <items>
                                 <menuItem title="Item 1" state="on" id="N8C-sF-nM8"/>
@@ -40,18 +40,12 @@
                     </popUpButtonCell>
                 </popUpButton>
             </subviews>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="xc2-KY-zvX" secondAttribute="trailing" constant="20" id="0oc-ML-F6Q"/>
-                <constraint firstItem="9hP-Sg-vbT" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="15" id="EFH-Yv-tLe"/>
-                <constraint firstAttribute="centerY" secondItem="xc2-KY-zvX" secondAttribute="centerY" id="ZpR-AG-YIb"/>
-                <constraint firstAttribute="centerY" secondItem="9hP-Sg-vbT" secondAttribute="centerY" id="hiW-ce-eWe"/>
-            </constraints>
         </customView>
         <customView id="68D-Mh-09z">
             <rect key="frame" x="0.0" y="0.0" width="480" height="267"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <segmentedControl focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zge-is-JjX">
+                <segmentedControl focusRingType="none" verticalHuggingPriority="750" id="zge-is-JjX">
                     <rect key="frame" x="365" y="122.5" width="104" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <segmentedCell key="cell" focusRingType="none" alignment="left" style="capsule" trackingMode="selectOne" id="KZp-ei-QxX">
@@ -69,7 +63,7 @@
                         </segments>
                     </segmentedCell>
                 </segmentedControl>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E8b-Gi-RB8">
+                <button verticalHuggingPriority="750" id="E8b-Gi-RB8">
                     <rect key="frame" x="281" y="107" width="82" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MJN-K7-VS7">
