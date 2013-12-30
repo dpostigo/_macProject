@@ -9,135 +9,131 @@
 #import "CALayer+ConstraintUtils.h"
 #import "CALayer+FrameUtils.h"
 #import "CALayer+InfoUtils.h"
-#import "NSColor+CartsUtils.h"
+#import "NSColor+NewUtils.h"
+#import "ButtonCell.h"
 
 @implementation CartsHeaderController {
 
     NSColor *highlightColor;
     NSColor *strokeColor;
+    NSColor *debugColor;
 }
-
-- (void) gradientMaskTest {
-    CALayer *superlayer = addButton.layer;
-    //    superlayer.borderColor = [NSColor colorWithString: @"262a32"].CGColor;
-    //    superlayer.borderWidth = 1;
-    //    superlayer.backgroundColor = [NSColor darkSlateColor].CGColor;
-    //    superlayer.cornerRadius = 5;
-    [superlayer makeSuperlayer];
-
-    CALayer *stroke = [CALayer new];
-    stroke.borderWidth = 0.5;
-    stroke.backgroundColor = [NSColor greenColor].CGColor;
-    stroke.cornerRadius = superlayer.cornerRadius;
-    [superlayer addSublayer: stroke];
-    [stroke superConstrainEdges: 1];
-    [stroke makeSuperlayer];
-
-    CAGradientLayer *strokeMask = [CAGradientLayer layer];
-    strokeMask.colors = [NSArray arrayWithObjects: (__bridge id) [NSColor blackColor].CGColor,
-                                                   (__bridge id) [NSColor clearColor].CGColor,
-                                                   (__bridge id) [NSColor clearColor].CGColor,
-                                                   nil];
-
-    [superlayer addSublayer: strokeMask];
-    [strokeMask superConstrain];
-    stroke.mask = strokeMask;
-}
-
 
 - (CALayer *) shadowLayer {
     CALayer *ret = [CALayer new];
     [ret makeSuperlayer];
-
-    CALayer *innerShadow = [CALayer new];
-    innerShadow.name = @"innerShadow";
-    innerShadow.backgroundColor = [NSColor colorWithWhite: 1.0 alpha: 0.5].CGColor;
-    [ret addSublayer: innerShadow];
-    [innerShadow superConstrain: kCAConstraintMinX];
-    [innerShadow superConstrain: kCAConstraintMaxX];
-    [innerShadow superConstrain: kCAConstraintMinY];
-    [innerShadow superConstrain: kCAConstraintMaxY offset: -1];
-
-    CALayer *outerShadow = [CALayer new];
-    outerShadow.name = @"outerShadow";
-    outerShadow.backgroundColor = [NSColor colorWithWhite: 1.0 alpha: 0.5].CGColor;
-    [ret addSublayer: outerShadow];
-    [outerShadow superConstrain];
-
+    ret.backgroundColor = [NSColor colorWithWhite: 0.5 alpha: 1.0].CGColor;
+    ret.borderColor = [NSColor colorWithWhite: 0.3 alpha: 1.0].CGColor;
+    ret.borderWidth = 0.5;
     return ret;
 }
 
 
-- (CALayer *) strokeLayer {
-    CALayer *stroke = [CALayer new];
-    stroke.borderWidth = 0.5;
-    stroke.borderColor = highlightColor.CGColor;
-    stroke.backgroundColor = strokeColor.CGColor;
-    //    //    stroke.backgroundColor = [NSColor colorWithWhite: 1.0 alpha: 0.2].CGColor;
-    //    stroke.cornerRadius = superlayer.cornerRadius;
-    //    [superlayer addSublayer: stroke];
-    [stroke superConstrainEdges: 1];
-    [stroke makeSuperlayer];
+- (CALayer *) highlightLayer {
+    CALayer *highlight = [CALayer new];
+    highlight.name = @"highlight";
+    highlight.borderWidth = 0.5;
+    highlight.borderColor = highlightColor.CGColor;
+    highlight.backgroundColor = strokeColor.CGColor;
 
-    return stroke;
+    //    highlight.borderColor = [NSColor blueColor].CGColor;
+    //    //    highlight.backgroundColor = [NSColor colorWithWhite: 1.0 alpha: 0.2].CGColor;
+    //    [highlight superConstrainEdges: 1];
+
+    [highlight superConstrain: kCAConstraintMinX offset: 0];
+    [highlight superConstrain: kCAConstraintMaxX offset: 0];
+    [highlight superConstrain: kCAConstraintMinY offset: 1];
+    [highlight superConstrain: kCAConstraintMaxY offset: -1];
+
+    [highlight makeSuperlayer];
+
+    //    CALayer *strokeMask = self.strokeGradientMaskLayer;
+    //
+    //    [highlight addSublayer: strokeMask];
+    //    [strokeMask superConstrainEdgesH: 1];
+    //    [strokeMask superConstrainTopEdge];
+    //    [strokeMask superConstrain: kCAConstraintMaxY to: kCAConstraintMinY offset: 3];
+    //    highlight.mask = strokeMask;
+
+    CALayer *strokeMask = [CALayer new];
+    strokeMask.backgroundColor = [NSColor greenColor].CGColor;
+
+    [highlight addSublayer: strokeMask];
+    [strokeMask superConstrainEdgesH: 1];
+    [strokeMask superConstrainTopEdge];
+    [strokeMask superConstrain: kCAConstraintMaxY to: kCAConstraintMidY];
+    highlight.mask = strokeMask;
+
+    //
+    //    CALayer *highlightMask = [CALayer new];
+    //    highlightMask.backgroundColor = [NSColor greenColor].CGColor;
+    //    [superlayer addSublayer: highlightMask];
+    //    [highlightMask superConstrainEdgesH: 0];
+    //    [highlightMask superConstrain: kCAConstraintMinY offset: 1];
+    //    [highlightMask superConstrain: kCAConstraintMaxY to: kCAConstraintMinY offset: 3];
+    //    highlight.mask = highlightMask;
+
+
+
+
+    return highlight;
 }
 
-- (CALayer *) strokeMaskLayer {
+- (CALayer *) strokeGradientMaskLayer {
     CAGradientLayer *strokeMask = [CAGradientLayer layer];
     strokeMask.colors = [NSArray arrayWithObjects: (__bridge id) [NSColor blackColor].CGColor,
-                                                   (__bridge id) [NSColor clearColor].CGColor,
-                                                   (__bridge id) [NSColor clearColor].CGColor,
+                                                   (__bridge id) [NSColor blackColorWithAlpha: 0.1].CGColor,
                                                    nil];
 
-    //    [superlayer addSublayer: strokeMask];
-    [strokeMask superConstrain];
+    //    [strokeMask superConstrain];
     return strokeMask;
 }
 
 
 - (CALayer *) fillLayer {
     CAGradientLayer *fill = [CAGradientLayer layer];
-    //    fill.backgroundColor = [NSColor darkSlateColor].CGColor;
-    //    fill.borderColor = [NSColor colorWithString: @"555961"].CGColor;
-    fill.borderWidth = 0.5;
-    //    fill.borderColor = stroke.backgroundColor;
-    //    fill.cornerRadius = superlayer.cornerRadius;
+    fill.borderWidth = 0.0;
     fill.colors = [NSArray arrayWithObjects: (__bridge id) [NSColor colorWithString: @"4f535c"].CGColor,
                                              (__bridge id) [NSColor colorWithString: @"3b414d"].CGColor,
                                              nil];
-    //    fill.mask = strokeMask;
-
-    //    [stroke removeFromSuperlayer];
 
     CGFloat inset = 1;
-    CGFloat topInset = 0.5;
     [fill superConstrain: kCAConstraintMinX offset: inset];
     [fill superConstrain: kCAConstraintMaxX offset: -inset];
-    [fill superConstrain: kCAConstraintMinY offset: inset + topInset];
+    [fill superConstrain: kCAConstraintMinY offset: inset + 0.5];
     [fill superConstrain: kCAConstraintMaxY offset: -inset];
+
+    CALayer *stroke = [CALayer layer];
+    stroke.name = @"stroke";
+    stroke.borderWidth = 0.5;
+    stroke.borderColor = [NSColor redColor].CGColor;
+    [fill addSublayer: stroke];
+    [stroke superConstrain];
+
+    CALayer *strokeMask = self.strokeGradientMaskLayer;
+    [stroke addSublayer: strokeMask];
+    [strokeMask superConstrain];
+    stroke.mask = strokeMask;
+
     return fill;
 }
 
-- (CALayer *) contentLayer {
 
+- (CALayer *) contentLayer {
     CALayer *superlayer = [CALayer layer];
-    //    superlayer.borderColor = [NSColor colorWithString: @"262a32"].CGColor;
-    superlayer.borderWidth = 1;
-    superlayer.backgroundColor = [NSColor darkSlateColor].CGColor;
     superlayer.cornerRadius = 5;
     [superlayer makeSuperlayer];
 
-    CALayer *stroke = self.strokeLayer;
-    stroke.cornerRadius = superlayer.cornerRadius;
-    [superlayer addSublayer: stroke];
-
-    CALayer *strokeMask = self.strokeMaskLayer;
-    stroke.mask = strokeMask;
-    [superlayer addSublayer: strokeMask];
+    CALayer *highlight = self.highlightLayer;
+    highlight.cornerRadius = superlayer.cornerRadius;
+    [superlayer addSublayer: highlight];
 
     CALayer *fill = self.fillLayer;
-    fill.borderColor = stroke.backgroundColor;
+    fill.borderColor = highlight.backgroundColor;
+
     fill.cornerRadius = superlayer.cornerRadius;
+    [fill sublayerWithName: @"stroke"].cornerRadius = superlayer.cornerRadius - 1;
+    [fill sublayerWithName: @"stroke"].borderColor = highlight.backgroundColor;
     [superlayer addSublayer: fill];
 
     return superlayer;
@@ -145,144 +141,86 @@
 
 - (void) currentTest {
 
-    highlightColor = [NSColor colorWithString: @"9da0a4"];
-    strokeColor = [NSColor colorWithString: @"6b6f76"];
-
     CALayer *superlayer = addButton.layer;
     superlayer.cornerRadius = 5;
     [superlayer makeSuperlayer];
 
     CALayer *shadowLayer = self.shadowLayer;
-    [shadowLayer sublayerWithName: @"innerShadow"].cornerRadius = superlayer.cornerRadius;
-    [shadowLayer sublayerWithName: @"outerShadow"].cornerRadius = superlayer.cornerRadius;
+    shadowLayer.opacity = 0.5;
     shadowLayer.cornerRadius = superlayer.cornerRadius;
-//    [superlayer insertSublayer: shadowLayer atIndex: 0];
+    [superlayer insertSublayer: shadowLayer atIndex: 0];
     [shadowLayer superConstrain];
 
-
-
-    //    CALayer *superlayer = [CALayer layer];
-    //    superlayer.borderColor = [NSColor colorWithString: @"262a32"].CGColor;
-    //    superlayer.borderWidth = 1;
-    //    superlayer.backgroundColor = [NSColor darkSlateColor].CGColor;
-    superlayer.cornerRadius = 5;
-    [superlayer makeSuperlayer];
-
-    CALayer *stroke = self.strokeLayer;
-    stroke.cornerRadius = superlayer.cornerRadius;
-    [superlayer addSublayer: stroke];
-
-    CALayer *strokeMask = self.strokeMaskLayer;
-    stroke.mask = strokeMask;
-    [superlayer addSublayer: strokeMask];
-
-    CALayer *fill = self.fillLayer;
-    fill.borderColor = stroke.backgroundColor;
-    fill.cornerRadius = superlayer.cornerRadius;
-    [superlayer addSublayer: fill];
-
-    //
-    //
-    //    CALayer *contentLayer;
-    //    contentLayer = [CALayer new];
-    //    contentLayer.backgroundColor = [NSColor darkSlateColor].CGColor;
-    //    contentLayer = self.contentLayer;
-    //    contentLayer.cornerRadius = superlayer.cornerRadius;
-    //    [superlayer addSublayer: contentLayer];
-    //    [contentLayer superConstrain: kCAConstraintMinX];
-    //    [contentLayer superConstrain: kCAConstraintMaxX];
-    //    [contentLayer superConstrain: kCAConstraintMinY];
-    //    [contentLayer superConstrain: kCAConstraintMaxY offset: -2];
-    //    //    CALayer *contentLayer = self.contentLayer;
-    //    //    [superlayer addSublayer: contentLayer];
-    //    //    [contentLayer superConstrain];
+    CALayer *contentLayer = self.contentLayer;
+    contentLayer.borderWidth = 1;
+    contentLayer.borderColor = [NSColor blackColorWithAlpha: 0.5].CGColor;
+    contentLayer.cornerRadius = superlayer.cornerRadius;
+    [superlayer addSublayer: contentLayer];
+    [contentLayer superConstrain: kCAConstraintMinX];
+    [contentLayer superConstrain: kCAConstraintMaxX];
+    [contentLayer superConstrain: kCAConstraintMinY];
+    [contentLayer superConstrain: kCAConstraintMaxY offset: -1];
 
 }
 
 - (void) awakeFromNib {
     [super awakeFromNib];
 
-    //    addButton.layer = [CALayer new];
     addButton.wantsLayer = YES;
 
-    //    [self gradientMaskTest];
+    highlightColor = [NSColor colorWithString: @"9da0a4"];
+    strokeColor = [NSColor colorWithString: @"6b6f76"];
+    debugColor = [NSColor blueColor];
+
+    //    addButton.layer.backgroundColor = debugColor.CGColor;
+
+    NSButtonCell *cell = [addButton cell];
+//    NSLog(@"cell = %@", cell);
+//    NSLog(@"cell.alignment = %lu", cell.alignment);
+//    NSLog(@"cell.bezelStyle = %d", cell.bezelStyle);
+//    NSLog(@"cell.gradientType = %d", cell.gradientType);
+//    NSLog(@"cell.cellSize = %@", NSStringFromSize(cell.cellSize));
+//    NSLog(@"cell.controlSize = %lu", cell.controlSize);
+//    NSLog(@"cell.imageScaling = %lu", cell.imageScaling);
+//    NSLog(@"cell.isBezeled = %d", cell.isBezeled);
+//    NSLog(@"cell.isBordered = %d", cell.isBordered);
+//    NSLog(@"cell.type = %lu", cell.type);
+//    NSLog(@"cell.isOpaque = %d", cell.isOpaque);
+//    NSLog(@"cell.controlTint = %lu", cell.controlTint);
+//    cell.backgroundColor = debugColor;
+
     [self currentTest];
 
+    ButtonCell *newCell = [ButtonCell new];
+    newCell.image = cell.image;
+    newCell.title = cell.title;
+    newCell.bezelStyle = NSRoundedBezelStyle;
+    newCell.imageScaling = cell.imageScaling;
+    [newCell setBordered: NO];
+    //    [addButton setCell: newCell];
 
-
-    //    CAShapeLayer *topHighlight = [CAShapeLayer new];
-    //    topHighlight.backgroundColor = [NSColor alphaWhite: 0.5].CGColor;
-    //    //    topHighlight.backgroundColor = [NSColor blueColor].CGColor;
-    //
-    //    [stroke.superlayer addSublayer: topHighlight];
-    //    stroke.masksToBounds = YES;
-    //
-    //    [topHighlight superConstrain: kCAConstraintWidth];
-    //    [topHighlight superConstrain: kCAConstraintMidX];
-    //    [topHighlight superConstrain: kCAConstraintMinY];
-    //    topHighlight.height = 1;
-    //
-    //    CALayer *innerLayer2 = [CALayer new];
-    //    //    stroke.borderWidth = 1;
-    //    innerLayer2.backgroundColor = superlayer.backgroundColor;
-    //    innerLayer2.borderColor = [NSColor alphaWhite: 0.5].CGColor;
-    //    innerLayer2.borderWidth = 1;
-    //    innerLayer2.cornerRadius = superlayer.cornerRadius;
-    //    //    innerLayer2.borderColor = [NSColor colorWithString: @"555961"].CGColor;
-    //    innerLayer2.borderColor = [NSColor blueColor].CGColor;
-    //    //    [stroke addSublayer: innerLayer2];
-    //
-    //    [innerLayer2 superConstrain: kCAConstraintWidth];
-    //    [innerLayer2 superConstrain: kCAConstraintMidX];
-    //    [innerLayer2 superConstrain: kCAConstraintHeight offset: 1];
-    //    [innerLayer2 superConstrain: kCAConstraintMidY offset: 1];
-    //
-    //    CAGradientLayer *underlayer = [CAGradientLayer layer];
-    //    underlayer.frame = superlayer.bounds;
-    //    underlayer.startPoint = CGPointMake(0.0, 0.5);
-    //    underlayer.endPoint = CGPointMake(1.0, 0.5);
-    //
-    //    NSColor *centerColor = [NSColor colorWithWhite: 1.0 alpha: 0.6];
-    //    NSColor *edgeColor = [NSColor colorWithWhite: 1.0 alpha: 0.05];
-    //    underlayer.colors = [NSArray arrayWithObjects: (__bridge id) edgeColor.CGColor,
-    //                                                   (__bridge id) centerColor.CGColor,
-    //                                                   (__bridge id) centerColor.CGColor,
-    //                                                   (__bridge id) edgeColor.CGColor,
-    //                                                   nil];
-    //    //    underlayer.top = 1;
-    //    //    underlayer.left += 1;
-    //    //    underlayer.width -= 2;
-    //
-    //    [underlayer superConstrain: kCAConstraintWidth offset: 0];
-    //    [underlayer superConstrain: kCAConstraintMidX offset: 0];
-    //    [underlayer superConstrain: kCAConstraintHeight offset: 0];
-    //    [underlayer superConstrain: kCAConstraintMidY offset: 1];
-    //    underlayer.borderColor = [NSColor colorWithString: @"5a606a"].CGColor;
-    //    //    underlayer.borderColor = [NSColor blueColor].CGColor;
-    //    //    underlayer.borderColor = [NSColor whiteColor].CGColor;
-    //    underlayer.borderWidth = 0.5;
-    //    //    underlayer.shadowColor = [NSColor colorWithString: @"262a32"].CGColor;
-    //    //    underlayer.shadowColor = [NSColor whiteColor].CGColor;
-    //    //    underlayer.backgroundColor = [NSColor colorWithWhite: 1.0 alpha: 0.5].CGColor;
-    //    underlayer.cornerRadius = superlayer.cornerRadius;
-    //    //    underlayer.opacity = 0.5;
-    //    [superlayer insertSublayer: underlayer atIndex: 0];
-    //    //    [superlayer addSublayer: underlayer];
-    //
-    //
-    //    //    superlayer.shadowColor = [NSColor colorWithString: @"262a32"].CGColor;
-    //    //    superlayer.shadowColor = [NSColor whiteColor].CGColor;
-    //    //    superlayer.shadowOffset = CGSizeMake(0, 1);
-    //    //    superlayer.shadowOpacity = 0.5;
-    //    //    superlayer.shadowRadius = 1.0;
-
-
-
+    cell = [addButton cell];
+//    NSLog(@"cell = %@", cell);
+//    NSLog(@"cell.alignment = %lu", cell.alignment);
+//    NSLog(@"cell.bezelStyle = %d", cell.bezelStyle);
+//    NSLog(@"cell.gradientType = %d", cell.gradientType);
+//    NSLog(@"cell.cellSize = %@ ", NSStringFromSize(cell.cellSize));
+//    NSLog(@"cell.controlSize = %lu", cell.controlSize);
+//    NSLog(@"cell.imageScaling = %lu", cell.imageScaling);
+//    NSLog(@"cell.isBezeled = %d", cell.isBezeled);
+//    NSLog(@"cell.isBordered = %d", cell.isBordered);
+//    NSLog(@"cell.type = %lu", cell.type);
+//    NSLog(@"cell.isOpaque = %d", cell.isOpaque);
+//
+//    NSLog(@"cell.controlTint = %lu", cell.controlTint);
 }
 
 
-- (void) firstTry {
 
+#pragma mark Deprecated
+
+
+- (void) firstTry {
     CALayer *layer = addButton.layer;
     [layer makeSuperlayer];
 
@@ -333,20 +271,6 @@
 
     layer.edgeAntialiasingMask = kCALayerLeftEdge;
 
-    //    layer.shadowColor = [NSColor redColor].CGColor;
-    //    layer.shadowOffset = CGSizeMake(0, 0);
-    //    layer.shadowOpacity = 1.0;
-    //    layer.shadowRadius = 3.0;
-
-    //
-    //    bgLayer.shadowColor = [NSColor colorWithWhite: 1.0 alpha: 0.5].CGColor;
-    //    bgLayer.shadowOffset = CGSizeMake(0, 0);
-    //    bgLayer.shadowOpacity = 1.0;
-    //    bgLayer.shadowRadius = 1.0;
-
-
-
-
     highColor = [NSColor colorWithWhite: 1.0 alpha: 0.2];
     lowColor = [NSColor colorWithWhite: 1.0 alpha: 0.1];
 
@@ -392,5 +316,6 @@
 
     //    layer.masksToBounds = NO;
 }
+
 
 @end

@@ -11,5 +11,4 @@
 
 }
 
-- (CALayer *) strokeMaskLayer;
 @end

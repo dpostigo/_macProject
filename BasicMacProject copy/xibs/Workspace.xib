@@ -26,15 +26,27 @@
                         <constraint firstAttribute="height" constant="23" id="YLU-Dr-lJc"/>
                         <constraint firstAttribute="width" constant="32" id="e8f-JE-iRB"/>
                     </constraints>
-                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSAddTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="9En-t9-DhI">
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSAddTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="9En-t9-DhI" customClass="ButtonCell">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JzB-Y2-vdI">
+                    <rect key="frame" x="491" y="16" width="44" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="PsC-6O-pfX" customClass="ButtonCell">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
             </subviews>
             <constraints>
+                <constraint firstAttribute="centerY" secondItem="JzB-Y2-vdI" secondAttribute="centerY" id="6rD-JF-bX6"/>
+                <constraint firstItem="ipx-mR-UPb" firstAttribute="height" secondItem="JzB-Y2-vdI" secondAttribute="height" id="ALi-wX-iEm"/>
                 <constraint firstAttribute="centerX" secondItem="QKf-SV-s67" secondAttribute="centerX" id="HSN-gg-evx"/>
                 <constraint firstAttribute="centerY" secondItem="ipx-mR-UPb" secondAttribute="centerY" id="JBV-U3-Fi0"/>
+                <constraint firstItem="ipx-mR-UPb" firstAttribute="leading" secondItem="JzB-Y2-vdI" secondAttribute="trailing" constant="17" id="WbL-2G-WwD"/>
+                <constraint firstItem="ipx-mR-UPb" firstAttribute="width" secondItem="JzB-Y2-vdI" secondAttribute="width" id="XKm-8U-x8G"/>
                 <constraint firstAttribute="centerY" secondItem="QKf-SV-s67" secondAttribute="centerY" id="tjz-Yg-0Im"/>
                 <constraint firstAttribute="trailing" secondItem="ipx-mR-UPb" secondAttribute="trailing" constant="20" id="xxm-ua-Hvv"/>
             </constraints>

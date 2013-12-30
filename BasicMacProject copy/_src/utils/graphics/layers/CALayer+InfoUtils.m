@@ -19,7 +19,14 @@
         }
     }
     return ret;
+}
 
+- (void) setSublayerCornerRadius: (CGFloat) radius {
+    NSArray *sublayers = self.sublayers;
+
+    for (CALayer *layer in sublayers) {
+        layer.cornerRadius = radius;
+    }
 }
 
 - (NSString *) infoString {

@@ -8,5 +8,6 @@
 @interface CALayer (InfoUtils)
 
 - (CALayer *) sublayerWithName: (NSString *) name;
+- (void) setSublayerCornerRadius: (CGFloat) radius;
 - (NSString *) infoString;
 @end
