@@ -10,7 +10,6 @@
 #import "CALayer+FrameUtils.h"
 #import "CALayer+InfoUtils.h"
 #import "NSColor+NewUtils.h"
-#import "ButtonCell.h"
 
 @implementation CartsHeaderController {
 
@@ -172,47 +171,49 @@
     strokeColor = [NSColor colorWithString: @"6b6f76"];
     debugColor = [NSColor blueColor];
 
+
+
     //    addButton.layer.backgroundColor = debugColor.CGColor;
-
-    NSButtonCell *cell = [addButton cell];
-//    NSLog(@"cell = %@", cell);
-//    NSLog(@"cell.alignment = %lu", cell.alignment);
-//    NSLog(@"cell.bezelStyle = %d", cell.bezelStyle);
-//    NSLog(@"cell.gradientType = %d", cell.gradientType);
-//    NSLog(@"cell.cellSize = %@", NSStringFromSize(cell.cellSize));
-//    NSLog(@"cell.controlSize = %lu", cell.controlSize);
-//    NSLog(@"cell.imageScaling = %lu", cell.imageScaling);
-//    NSLog(@"cell.isBezeled = %d", cell.isBezeled);
-//    NSLog(@"cell.isBordered = %d", cell.isBordered);
-//    NSLog(@"cell.type = %lu", cell.type);
-//    NSLog(@"cell.isOpaque = %d", cell.isOpaque);
-//    NSLog(@"cell.controlTint = %lu", cell.controlTint);
-//    cell.backgroundColor = debugColor;
-
-    [self currentTest];
-
-    ButtonCell *newCell = [ButtonCell new];
-    newCell.image = cell.image;
-    newCell.title = cell.title;
-    newCell.bezelStyle = NSRoundedBezelStyle;
-    newCell.imageScaling = cell.imageScaling;
-    [newCell setBordered: NO];
-    //    [addButton setCell: newCell];
-
-    cell = [addButton cell];
-//    NSLog(@"cell = %@", cell);
-//    NSLog(@"cell.alignment = %lu", cell.alignment);
-//    NSLog(@"cell.bezelStyle = %d", cell.bezelStyle);
-//    NSLog(@"cell.gradientType = %d", cell.gradientType);
-//    NSLog(@"cell.cellSize = %@ ", NSStringFromSize(cell.cellSize));
-//    NSLog(@"cell.controlSize = %lu", cell.controlSize);
-//    NSLog(@"cell.imageScaling = %lu", cell.imageScaling);
-//    NSLog(@"cell.isBezeled = %d", cell.isBezeled);
-//    NSLog(@"cell.isBordered = %d", cell.isBordered);
-//    NSLog(@"cell.type = %lu", cell.type);
-//    NSLog(@"cell.isOpaque = %d", cell.isOpaque);
-//
-//    NSLog(@"cell.controlTint = %lu", cell.controlTint);
+    //
+    //    NSButtonCell *cell = [addButton cell];
+    ////    NSLog(@"cell = %@", cell);
+    ////    NSLog(@"cell.alignment = %lu", cell.alignment);
+    ////    NSLog(@"cell.bezelStyle = %d", cell.bezelStyle);
+    ////    NSLog(@"cell.gradientType = %d", cell.gradientType);
+    ////    NSLog(@"cell.cellSize = %@", NSStringFromSize(cell.cellSize));
+    ////    NSLog(@"cell.controlSize = %lu", cell.controlSize);
+    ////    NSLog(@"cell.imageScaling = %lu", cell.imageScaling);
+    ////    NSLog(@"cell.isBezeled = %d", cell.isBezeled);
+    ////    NSLog(@"cell.isBordered = %d", cell.isBordered);
+    ////    NSLog(@"cell.type = %lu", cell.type);
+    ////    NSLog(@"cell.isOpaque = %d", cell.isOpaque);
+    ////    NSLog(@"cell.controlTint = %lu", cell.controlTint);
+    ////    cell.backgroundColor = debugColor;
+    //
+    //    [self currentTest];
+    //
+    //    ButtonCell *newCell = [ButtonCell new];
+    //    newCell.image = cell.image;
+    //    newCell.title = cell.title;
+    //    newCell.bezelStyle = NSRoundedBezelStyle;
+    //    newCell.imageScaling = cell.imageScaling;
+    //    [newCell setBordered: NO];
+    //    //    [addButton setCell: newCell];
+    //
+    //    cell = [addButton cell];
+    ////    NSLog(@"cell = %@", cell);
+    ////    NSLog(@"cell.alignment = %lu", cell.alignment);
+    ////    NSLog(@"cell.bezelStyle = %d", cell.bezelStyle);
+    ////    NSLog(@"cell.gradientType = %d", cell.gradientType);
+    ////    NSLog(@"cell.cellSize = %@ ", NSStringFromSize(cell.cellSize));
+    ////    NSLog(@"cell.controlSize = %lu", cell.controlSize);
+    ////    NSLog(@"cell.imageScaling = %lu", cell.imageScaling);
+    ////    NSLog(@"cell.isBezeled = %d", cell.isBezeled);
+    ////    NSLog(@"cell.isBordered = %d", cell.isBordered);
+    ////    NSLog(@"cell.type = %lu", cell.type);
+    ////    NSLog(@"cell.isOpaque = %d", cell.isOpaque);
+    ////
+    ////    NSLog(@"cell.controlTint = %lu", cell.controlTint);
 }
 
 

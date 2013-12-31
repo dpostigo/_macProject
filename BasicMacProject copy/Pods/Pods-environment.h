@@ -6,6 +6,12 @@
 // project.
 
 
+// NSColor-Crayola
+#define COCOAPODS_POD_AVAILABLE_NSColor_Crayola
+#define COCOAPODS_VERSION_MAJOR_NSColor_Crayola 1
+#define COCOAPODS_VERSION_MINOR_NSColor_Crayola 0
+#define COCOAPODS_VERSION_PATCH_NSColor_Crayola 0
+
 // PMPKVObservation
 #define COCOAPODS_POD_AVAILABLE_PMPKVObservation
 #define COCOAPODS_VERSION_MAJOR_PMPKVObservation 0

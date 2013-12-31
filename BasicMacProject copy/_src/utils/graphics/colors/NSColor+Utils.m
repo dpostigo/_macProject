@@ -5,8 +5,6 @@
 //
 
 
-#import "NSColor+Utils.h"
-
 @implementation NSColor (Utils)
 
 + (NSColor *) alphaWhite: (CGFloat) alphaValue {

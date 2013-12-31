@@ -10,4 +10,12 @@
 + (NSColor *) blackColorWithAlpha: (CGFloat) alpha {
     return [[NSColor blackColor] colorWithAlphaComponent: alpha];
 }
+
+
+
+- (NSColor *) mix: (NSColor *) color fraction: (CGFloat) fraction {
+    return [self blendedColorWithFraction: fraction ofColor: color];
+}
+
+
 @end

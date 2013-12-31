@@ -8,4 +8,5 @@
 @interface NSColor (NewUtils)
 
 + (NSColor *) blackColorWithAlpha: (CGFloat) alpha;
+- (NSColor *) mix: (NSColor *) color fraction: (CGFloat) fraction1;
 @end
