@@ -1,5 +1,5 @@
 //
-//  BasicSplitView.h
+//  DPSplitView.h
 //  TaskManager
 //
 //  Created by Daniela Postigo on 5/26/13.
@@ -7,21 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SplitViewContainer.h"
 
-@class BasicSplitView;
+@class DPSplitView;
 
 
-@protocol BasicSplitViewDelegate <NSObject>
+@protocol DPSplitViewDelegate <NSObject>
 
 @optional
-- (void) basicSplitView: (BasicSplitView *) basicSplitView didResizeSplitContainer: (SplitViewContainer *) splitContainer;
+- (void) basicSplitView: (DPSplitView *) basicSplitView didResizeSplitContainer: (DPSplitViewContainer *) splitContainer;
 
 
 @end
 
-@interface BasicSplitView : NSSplitView <SplitViewContainerDelegate> {
-    __unsafe_unretained id <BasicSplitViewDelegate> secondDelegate;
+@interface DPSplitView : NSSplitView <DPSplitContainerDelegate> {
+    __unsafe_unretained id <DPSplitViewDelegate> secondDelegate;
     NSColor *dividerColor;
 
     NSMutableArray *privateContainers;
@@ -29,12 +28,13 @@
 }
 
 @property(nonatomic, strong) NSColor *dividerColor;
-@property(nonatomic, assign) id <BasicSplitViewDelegate> secondDelegate;
+@property(nonatomic, assign) id <DPSplitViewDelegate> secondDelegate;
 
 - (void) setup;
 - (NSMutableArray *) splitContainers;
 - (void) addViewController: (NSViewController *) viewController;
 - (CGFloat) heightForSplitContainerAtIndex: (NSInteger) index1 proposedHeight: (CGFloat) proposed;
 - (CGFloat) widthForSplitContainerAtIndex: (NSInteger) index1 proposedWidth: (CGFloat) proposed;
-- (SplitViewContainer *) splitViewContainerAtIndex: (NSInteger) index1;
+- (DPSplitViewContainer *) splitViewContainerAtIndex: (NSInteger) index1;
+
 @end

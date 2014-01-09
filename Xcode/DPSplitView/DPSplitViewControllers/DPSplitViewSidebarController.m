@@ -1,21 +1,21 @@
 //
-//  BasicSplitSidebarViewController.m
+//  DPSplitViewSidebarController.m
 //  Carts
 //
 //  Created by Daniela Postigo on 9/7/13.
 //  Copyright (c) 2013 Elastic Creative. All rights reserved.
 //
 
-#import "BasicSplitSidebarViewController.h"
+#import "DPSplitViewSidebarController.h"
 
-@implementation BasicSplitSidebarViewController {
+@implementation DPSplitViewSidebarController {
 
 }
 
 @synthesize sidebarIndex;
 
-- (SplitViewContainer *) sidebarContainer {
-    SplitViewContainer *ret = nil;
+- (DPSplitViewContainer *) sidebarContainer {
+    DPSplitViewContainer *ret = nil;
     NSUInteger length = [self.splitView.subviews count];
     if (length > 0) {
         ret = [self.splitView.subviews objectAtIndex: sidebarIndex];
@@ -57,7 +57,7 @@
 
 #pragma mark Overrides
 
-- (BOOL) basicSplitView: (BasicSplitView *) splitview shouldAdjustSizeOfSplitContainer: (SplitViewContainer *) splitContainer {
+- (BOOL) basicSplitView: (DPSplitView *) splitview shouldAdjustSizeOfSplitContainer: (DPSplitViewContainer *) splitContainer {
     BOOL ret = [super basicSplitView: splitview shouldAdjustSizeOfSplitContainer: splitContainer];
 
     if (splitContainer == self.sidebarContainer) {

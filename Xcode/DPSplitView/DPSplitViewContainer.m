@@ -5,9 +5,9 @@
 //
 
 
-#import "SplitViewContainer.h"
+#import "DPSplitViewContainer.h"
 
-@implementation SplitViewContainer {
+@implementation DPSplitViewContainer {
 }
 
 @synthesize isLocked;

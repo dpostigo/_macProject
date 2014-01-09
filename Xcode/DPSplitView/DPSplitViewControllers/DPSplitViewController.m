@@ -5,9 +5,9 @@
 //
 
 
-#import "BasicSplitViewController.h"
+#import "DPSplitViewController.h"
 
-@implementation BasicSplitViewController {
+@implementation DPSplitViewController {
 }
 
 @synthesize dividerEnabled;
@@ -17,9 +17,9 @@
 #pragma mark Getters
 
 
-- (BasicSplitView *) splitView {
+- (DPSplitView *) splitView {
     if (splitView == nil) {
-        splitView = [[BasicSplitView alloc] initWithFrame: self.view.bounds];
+        splitView = [[DPSplitView alloc] initWithFrame: self.view.bounds];
         splitView.delegate = self;
         splitView.secondDelegate = self;
         [self embedView: splitView inView: self.view];
@@ -44,8 +44,8 @@
 - (CGFloat) splitView: (NSSplitView *) splitView1 constrainMinCoordinate: (CGFloat) proposedMinimumPosition ofSubviewAt: (NSInteger) dividerIndex {
     CGFloat ret = proposedMinimumPosition;
 
-    if ([splitView1 isKindOfClass: [BasicSplitView class]]) {
-        BasicSplitView *basicSplitView = (BasicSplitView *) splitView1;
+    if ([splitView1 isKindOfClass: [DPSplitView class]]) {
+        DPSplitView *basicSplitView = (DPSplitView *) splitView1;
         if ([basicSplitView.splitContainers count] > 0) {
             ret = [self basicSplitView: basicSplitView constrainMinCoordinate: proposedMinimumPosition atIndex: dividerIndex];
         }
@@ -56,8 +56,8 @@
 
 - (CGFloat) splitView: (NSSplitView *) splitView1 constrainMaxCoordinate: (CGFloat) proposedMaximumPosition ofSubviewAt: (NSInteger) dividerIndex {
     CGFloat ret = proposedMaximumPosition;
-    if ([splitView1 isKindOfClass: [BasicSplitView class]]) {
-        BasicSplitView *basicSplitView = (BasicSplitView *) splitView1;
+    if ([splitView1 isKindOfClass: [DPSplitView class]]) {
+        DPSplitView *basicSplitView = (DPSplitView *) splitView1;
         if ([basicSplitView.splitContainers count] > 0) {
             ret = [self basicSplitView: basicSplitView constrainMaxCoordinate: proposedMaximumPosition atIndex: dividerIndex];
         }
@@ -68,8 +68,8 @@
 - (CGFloat) splitView: (NSSplitView *) splitView1 constrainSplitPosition: (CGFloat) proposedPosition ofSubviewAt: (NSInteger) dividerIndex {
 
     CGFloat ret = 0;
-    if ([splitView1 isKindOfClass: [BasicSplitView class]]) {
-        BasicSplitView *basicSplitView = (BasicSplitView *) splitView1;
+    if ([splitView1 isKindOfClass: [DPSplitView class]]) {
+        DPSplitView *basicSplitView = (DPSplitView *) splitView1;
         if ([basicSplitView.splitContainers count] > 0) {
             ret = [self basicSplitView: basicSplitView constrainSplitPosition: proposedPosition atIndex: dividerIndex];
         }
@@ -80,9 +80,9 @@
 - (BOOL) splitView: (NSSplitView *) splitView1 shouldAdjustSizeOfSubview: (NSView *) view1 {
     BOOL ret = YES;
 
-    if ([splitView1 isKindOfClass: [BasicSplitView class]]) {
-        // BasicSplitView *basicSplitView = (BasicSplitView *) splitView1;
-        SplitViewContainer *splitContainer = (SplitViewContainer *) view1;
+    if ([splitView1 isKindOfClass: [DPSplitView class]]) {
+        // DPSplitView *basicSplitView = (DPSplitView *) splitView1;
+        DPSplitViewContainer *splitContainer = (DPSplitViewContainer *) view1;
         ret = [self basicSplitView: splitView shouldAdjustSizeOfSplitContainer: splitContainer];
     }
     return ret;
@@ -110,7 +110,7 @@
 
 - (void) splitViewWillResizeSubviews: (NSNotification *) notification {
     //    NSLog(@"%s", __PRETTY_FUNCTION__);
-    //    for (SplitViewContainer *splitContainer in splitView.splitContainers) {
+    //    for (DPSplitViewContainer *splitContainer in splitView.splitContainers) {
     //        NSUInteger index = [splitView.splitContainers indexOfObject: splitContainer];
     //        if (splitView.isVertical) {
     //            splitContainer.width = [splitView widthForSplitContainerAtIndex: index proposedWidth: splitContainer.width];
@@ -130,25 +130,25 @@
 
 
 
-- (CGFloat) basicSplitView: (BasicSplitView *) splitview constrainSplitPosition: (CGFloat) proposedPosition atIndex: (NSInteger) index {
+- (CGFloat) basicSplitView: (DPSplitView *) splitview constrainSplitPosition: (CGFloat) proposedPosition atIndex: (NSInteger) index {
     CGFloat ret = proposedPosition;
     return ret;
 }
 
 
-- (CGFloat) basicSplitView: (BasicSplitView *) splitview constrainMinCoordinate: (CGFloat) proposedMinimumPosition atIndex: (NSInteger) dividerIndex {
+- (CGFloat) basicSplitView: (DPSplitView *) splitview constrainMinCoordinate: (CGFloat) proposedMinimumPosition atIndex: (NSInteger) dividerIndex {
     CGFloat ret = proposedMinimumPosition;
     return ret;
 
 }
 
-- (CGFloat) basicSplitView: (BasicSplitView *) splitview constrainMaxCoordinate: (CGFloat) proposedMaximumPosition atIndex: (NSInteger) dividerIndex {
+- (CGFloat) basicSplitView: (DPSplitView *) splitview constrainMaxCoordinate: (CGFloat) proposedMaximumPosition atIndex: (NSInteger) dividerIndex {
     CGFloat ret = proposedMaximumPosition;
     return ret;
 }
 
 
-- (BOOL) basicSplitView: (BasicSplitView *) splitview shouldAdjustSizeOfSplitContainer: (SplitViewContainer *) splitContainer {
+- (BOOL) basicSplitView: (DPSplitView *) splitview shouldAdjustSizeOfSplitContainer: (DPSplitViewContainer *) splitContainer {
     BOOL ret = YES;
     ret = !splitContainer.isLocked;
     return ret;
@@ -160,13 +160,13 @@
 #pragma mark BasicSplitViewDelegate
 
 
-- (void) basicSplitView: (BasicSplitView *) basicSplitView didResizeSplitContainer: (SplitViewContainer *) splitContainer {
+- (void) basicSplitView: (DPSplitView *) basicSplitView didResizeSplitContainer: (DPSplitViewContainer *) splitContainer {
     // NSUInteger index = [basicSplitView.splitContainers indexOfObject: splitContainer];
     //    [self basicSplitView: basicSplitView didResizeSplitContainerAtIndex: index];
 
 }
 
-- (void) basicSplitView: (BasicSplitView *) basicSplitView didResizeSplitContainerAtIndex: (NSUInteger) index {
+- (void) basicSplitView: (DPSplitView *) basicSplitView didResizeSplitContainerAtIndex: (NSUInteger) index {
     //    NSLog(@"%s %lu", __PRETTY_FUNCTION__, index);
 }
 
@@ -181,7 +181,7 @@
 }
 
 
-- (SplitViewContainer *) splitContainerAtIndex: (NSUInteger) index {
+- (DPSplitViewContainer *) splitContainerAtIndex: (NSUInteger) index {
     return [self.splitView splitViewContainerAtIndex: index];
 }
 @end

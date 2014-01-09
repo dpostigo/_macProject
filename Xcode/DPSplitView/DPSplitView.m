@@ -1,17 +1,16 @@
 //
-//  BasicSplitView.m
+//  DPSplitView.m
 //  TaskManager
 //
 //  Created by Daniela Postigo on 5/26/13.
 //  Copyright 2013 Dani Postigo. All rights reserved.
 //
 
-#import "BasicSplitView.h"
-#import "SplitViewContainer.h"
+#import "DPSplitViewContainer.h"
+#import "DPSplitView.h"
+#import "DPSplitViewContainer.h"
 
-@implementation BasicSplitView {
-
-}
+@implementation DPSplitView
 
 @synthesize dividerColor;
 @synthesize secondDelegate;
@@ -22,7 +21,6 @@
 
 
 #pragma mark Getters
-
 
 
 - (NSMutableArray *) splitContainers {
@@ -37,7 +35,7 @@
 
 
 - (void) addViewController: (NSViewController *) viewController {
-    SplitViewContainer *container = [[SplitViewContainer alloc] initWithFrame: viewController.view.frame];
+    DPSplitViewContainer *container = [[DPSplitViewContainer alloc] initWithFrame: viewController.view.frame];
     container.delegate = self;
     container.controller = viewController;
     [container embedView: viewController.view];
@@ -49,8 +47,8 @@
 }
 
 - (void) addSubview: (NSView *) aView {
-    if (![aView isKindOfClass: [SplitViewContainer class]]) {
-        SplitViewContainer *container = [[SplitViewContainer alloc] initWithFrame: aView.frame];
+    if (![aView isKindOfClass: [DPSplitViewContainer class]]) {
+        DPSplitViewContainer *container = [[DPSplitViewContainer alloc] initWithFrame: aView.frame];
         container.delegate = self;
         [container embedView: aView];
         aView.frame = aView.bounds;
@@ -75,8 +73,8 @@
 - (CGFloat) heightForSplitContainerAtIndex: (NSInteger) index proposedHeight: (CGFloat) proposed {
     CGFloat ret = proposed;
     CGFloat containersHeight;
-    SplitViewContainer *splitContainer = [self.splitContainers objectAtIndex: index];
-    SplitViewContainer *sizableContainer = [self sizableContainerForIndex: index];
+    DPSplitViewContainer *splitContainer = [self.splitContainers objectAtIndex: index];
+    DPSplitViewContainer *sizableContainer = [self sizableContainerForIndex: index];
 
     if (splitContainer == sizableContainer) {
         ret = [self adjustedHeightForSplitContainer: splitContainer proposedHeight: proposed];
@@ -92,8 +90,8 @@
 - (CGFloat) widthForSplitContainerAtIndex: (NSInteger) index proposedWidth: (CGFloat) proposed {
     CGFloat ret = proposed;
     // CGFloat containersHeight;
-    SplitViewContainer *splitContainer = [self.splitContainers objectAtIndex: index];
-    SplitViewContainer *sizableContainer = [self sizableContainerForIndex: index];
+    DPSplitViewContainer *splitContainer = [self.splitContainers objectAtIndex: index];
+    DPSplitViewContainer *sizableContainer = [self sizableContainerForIndex: index];
 
     if (splitContainer == sizableContainer) {
         ret = [self adjustedWidthForSplitContainer: splitContainer proposedWidth: proposed];
@@ -107,7 +105,7 @@
 }
 
 
-- (CGFloat) adjustedHeightForSplitContainer: (SplitViewContainer *) splitContainer proposedHeight: (CGFloat) proposed {
+- (CGFloat) adjustedHeightForSplitContainer: (DPSplitViewContainer *) splitContainer proposedHeight: (CGFloat) proposed {
     CGFloat ret = proposed;
     if (splitContainer.minimumValue > 0 && proposed < splitContainer.minimumValue) {
         ret = splitContainer.minimumValue;
@@ -119,7 +117,7 @@
 
 }
 
-- (CGFloat) adjustedWidthForSplitContainer: (SplitViewContainer *) splitContainer proposedWidth: (CGFloat) proposed {
+- (CGFloat) adjustedWidthForSplitContainer: (DPSplitViewContainer *) splitContainer proposedWidth: (CGFloat) proposed {
     CGFloat ret = proposed;
     if (splitContainer.minimumValue > 0 && proposed < splitContainer.minimumValue) {
         ret = splitContainer.minimumValue;
@@ -160,8 +158,8 @@
 #pragma mark Helpers
 
 
-- (SplitViewContainer *) sizableContainerForIndex: (NSInteger) index {
-    SplitViewContainer *ret = [self.splitContainers objectAtIndex: index];
+- (DPSplitViewContainer *) sizableContainerForIndex: (NSInteger) index {
+    DPSplitViewContainer *ret = [self.splitContainers objectAtIndex: index];
     if (ret.minimumValue == 0 && ret.maximumValue == 0) {
         ret = [self alternateContainerForIndex: index];
     }
@@ -169,8 +167,8 @@
 
 }
 
-- (SplitViewContainer *) alternateContainerForIndex: (NSUInteger) index {
-    SplitViewContainer *ret = nil;
+- (DPSplitViewContainer *) alternateContainerForIndex: (NSUInteger) index {
+    DPSplitViewContainer *ret = nil;
     if ([self.splitContainers count] > 0) {
         ret = [self.splitContainers objectAtIndex: (index == 0 ? 1 : index - 1)];
     }
@@ -179,10 +177,10 @@
 
 #pragma mark Old
 
-- (SplitViewContainer *) splitViewContainerAtIndex: (NSInteger) index {
+- (DPSplitViewContainer *) splitViewContainerAtIndex: (NSInteger) index {
     NSView *subview = [self.subviews objectAtIndex: index];
-    if (subview && [subview isKindOfClass: [SplitViewContainer class]]) {
-        SplitViewContainer *container = (SplitViewContainer *) subview;
+    if (subview && [subview isKindOfClass: [DPSplitViewContainer class]]) {
+        DPSplitViewContainer *container = (DPSplitViewContainer *) subview;
         return container;
     }
     return nil;
@@ -191,7 +189,7 @@
 
 #pragma mark SplitViewContainerDelegate
 
-- (void) splitContainerChangedMinimumValue: (SplitViewContainer *) splitContainer {
+- (void) splitContainerChangedMinimumValue: (DPSplitViewContainer *) splitContainer {
     if (self.isVertical) {
         splitContainer.width = [self widthForSplitContainerAtIndex: [self.splitContainers indexOfObject: splitContainer] proposedWidth: splitContainer.width];
     } else {
@@ -199,7 +197,7 @@
     }
 }
 
-- (void) splitContainerChangedMaximumValue: (SplitViewContainer *) splitContainer {
+- (void) splitContainerChangedMaximumValue: (DPSplitViewContainer *) splitContainer {
     if (self.isVertical) {
         splitContainer.width = [self widthForSplitContainerAtIndex: [self.splitContainers indexOfObject: splitContainer] proposedWidth: splitContainer.width];
     } else {

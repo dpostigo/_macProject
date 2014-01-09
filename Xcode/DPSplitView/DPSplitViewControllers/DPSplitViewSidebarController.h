@@ -1,5 +1,5 @@
 //
-//  BasicSplitSidebarViewController.h
+//  DPSplitViewSidebarController.h
 //  Carts
 //
 //  Created by Daniela Postigo on 9/7/13.
@@ -7,16 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BasicSplitHorizontalViewController.h"
+#import "DPSplitViewHorizontalController.h"
 
-@interface BasicSplitSidebarViewController : BasicSplitHorizontalViewController {
+@interface DPSplitViewSidebarController : DPSplitViewHorizontalController {
     NSUInteger sidebarIndex;
     NSUInteger mainControllerIndex;
 
 }
 
 @property(nonatomic) NSUInteger sidebarIndex;
-- (SplitViewContainer *) sidebarContainer;
+- (DPSplitViewContainer *) sidebarContainer;
 - (void) setSidebarViewController: (NSViewController *) controller;
 - (void) setMainViewController: (NSViewController *) controller;
 - (NSViewController *) sidebarViewController;

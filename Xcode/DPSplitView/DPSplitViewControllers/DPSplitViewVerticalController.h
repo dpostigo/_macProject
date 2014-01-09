@@ -1,5 +1,5 @@
 //
-//  BasicSplitVerticalViewController.h
+//  DPSplitViewVerticalController.h
 //  Carts
 //
 //  Created by Daniela Postigo on 9/7/13.
@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BasicSplitViewController.h"
+#import "DPSplitViewController.h"
 
-@interface BasicSplitVerticalViewController : BasicSplitViewController {
+@interface DPSplitViewVerticalController : DPSplitViewController {
 
 }
 @end

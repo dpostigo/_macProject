@@ -7,16 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BasicSplitViewController.h"
-#import "SplitViewContainer.h"
-#import "BasicSplitSidebarViewController.h"
+#import "DPSplitViewController.h"
+#import "DPSplitViewContainer.h"
+#import "DPSplitViewSidebarController.h"
 
-@interface BOMainViewController : BasicSplitSidebarViewController {
+@interface BOMainViewController : DPSplitViewSidebarController {
 
-    IBOutlet BasicSplitView *contentSplitView;
-    //    IBOutlet SplitViewContainer *mainView;
-    IBOutlet SplitViewContainer *topView;
-    IBOutlet SplitViewContainer *bottomView;
+    IBOutlet DPSplitView *contentSplitView;
+    //    IBOutlet DPSplitViewContainer *mainView;
+    IBOutlet DPSplitViewContainer *topView;
+    IBOutlet DPSplitViewContainer *bottomView;
 
 }
 @end

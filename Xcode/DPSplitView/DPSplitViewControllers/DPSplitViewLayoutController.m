@@ -1,21 +1,21 @@
 //
-//  BasicLayoutViewController.m
+//  DPSplitViewLayoutController.m
 //  Carts
 //
 //  Created by Daniela Postigo on 9/7/13.
 //  Copyright (c) 2013 Elastic Creative. All rights reserved.
 //
 
-#import "BasicLayoutViewController.h"
+#import "DPSplitViewLayoutController.h"
 
-@implementation BasicLayoutViewController {
+@implementation DPSplitViewLayoutController {
 
 }
 
 @synthesize footerIndex;
 
-- (SplitViewContainer *) footerContainer {
-    SplitViewContainer *ret = nil;
+- (DPSplitViewContainer *) footerContainer {
+    DPSplitViewContainer *ret = nil;
     NSUInteger length = [self.splitView.subviews count];
     if (length > 0) {
         ret = [self.splitView.subviews objectAtIndex: length - 1];
@@ -31,7 +31,7 @@
 
 #pragma mark Overrides
 
-- (BOOL) basicSplitView: (BasicSplitView *) splitview shouldAdjustSizeOfSplitContainer: (SplitViewContainer *) splitContainer {
+- (BOOL) basicSplitView: (DPSplitView *) splitview shouldAdjustSizeOfSplitContainer: (DPSplitViewContainer *) splitContainer {
     BOOL ret = [super basicSplitView: splitview shouldAdjustSizeOfSplitContainer: splitContainer];
 
     if (splitContainer == self.footerContainer) {

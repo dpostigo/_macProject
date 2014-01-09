@@ -1,23 +1,23 @@
 //
-//  BasicSplitHorizontalViewController.m
+//  DPSplitViewHorizontalController.m
 //  Carts
 //
 //  Created by Daniela Postigo on 9/7/13.
 //  Copyright (c) 2013 Elastic Creative. All rights reserved.
 //
 
-#import "BasicSplitHorizontalViewController.h"
-#import "BasicSplitView.h"
+#import "DPSplitViewHorizontalController.h"
+#import "DPSplitView.h"
 
-@implementation BasicSplitHorizontalViewController {
+@implementation DPSplitViewHorizontalController {
 
 }
 
 #pragma mark Getters
 
-- (BasicSplitView *) splitView {
+- (DPSplitView *) splitView {
     if (splitView == nil) {
-        splitView = [[BasicSplitView alloc] initWithFrame: self.view.bounds];
+        splitView = [[DPSplitView alloc] initWithFrame: self.view.bounds];
         splitView.delegate = self;
         splitView.secondDelegate = self;
         [splitView setVertical: YES];
@@ -26,18 +26,18 @@
     return splitView;
 }
 
-- (CGFloat) basicSplitView: (BasicSplitView *) splitview constrainSplitPosition: (CGFloat) proposed atIndex: (NSInteger) index {
+- (CGFloat) basicSplitView: (DPSplitView *) splitview constrainSplitPosition: (CGFloat) proposed atIndex: (NSInteger) index {
     CGFloat ret = [splitview widthForSplitContainerAtIndex: index proposedWidth: proposed];
     return ret;
 }
 
-- (CGFloat) basicSplitView: (BasicSplitView *) splitview constrainMinCoordinate: (CGFloat) proposed atIndex: (NSInteger) index {
+- (CGFloat) basicSplitView: (DPSplitView *) splitview constrainMinCoordinate: (CGFloat) proposed atIndex: (NSInteger) index {
     CGFloat ret = [splitview widthForSplitContainerAtIndex: index proposedWidth: proposed];
     return ret;
 
 }
 
-- (CGFloat) basicSplitView: (BasicSplitView *) splitview constrainMaxCoordinate: (CGFloat) proposed atIndex: (NSInteger) index {
+- (CGFloat) basicSplitView: (DPSplitView *) splitview constrainMaxCoordinate: (CGFloat) proposed atIndex: (NSInteger) index {
     CGFloat ret = [splitview widthForSplitContainerAtIndex: index proposedWidth: proposed];
     return ret;
 }

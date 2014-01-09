@@ -1,5 +1,5 @@
 //
-//  BasicLayoutViewController.h
+//  DPSplitViewLayoutController.h
 //  Carts
 //
 //  Created by Daniela Postigo on 9/7/13.
@@ -7,15 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BasicSplitVerticalViewController.h"
+#import "DPSplitViewVerticalController.h"
 
-@interface BasicLayoutViewController : BasicSplitVerticalViewController {
+@interface DPSplitViewLayoutController : DPSplitViewVerticalController {
 
     NSUInteger footerIndex;
 
 }
 
 @property(nonatomic) NSUInteger footerIndex;
-- (SplitViewContainer *) footerContainer;
+- (DPSplitViewContainer *) footerContainer;
 - (void) addFooterViewController: (NSViewController *) controller;
 @end

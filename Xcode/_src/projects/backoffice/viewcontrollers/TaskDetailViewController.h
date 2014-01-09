@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "BasicFlippedViewController.h"
-#import "BasicSplitViewController.h"
-#import "SplitViewContainer.h"
+#import "DPSplitViewController.h"
+#import "DPSplitViewContainer.h"
 
-@interface TaskDetailViewController : BasicSplitViewController <NSSplitViewDelegate> {
-    IBOutlet SplitViewContainer *infoContainer;
-    IBOutlet SplitViewContainer *discussionContainer;
+@interface TaskDetailViewController : DPSplitViewController <NSSplitViewDelegate> {
+    IBOutlet DPSplitViewContainer *infoContainer;
+    IBOutlet DPSplitViewContainer *discussionContainer;
     BOOL isOpen;
 }
 
