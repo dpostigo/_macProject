@@ -30,3 +30,9 @@
 #define COCOAPODS_VERSION_MINOR_libextobjc_RuntimeExtensions 2
 #define COCOAPODS_VERSION_PATCH_libextobjc_RuntimeExtensions 5
 
+// peanut4
+#define COCOAPODS_POD_AVAILABLE_peanut4
+#define COCOAPODS_VERSION_MAJOR_peanut4 0
+#define COCOAPODS_VERSION_MINOR_peanut4 0
+#define COCOAPODS_VERSION_PATCH_peanut4 2
+

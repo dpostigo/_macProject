@@ -26,7 +26,6 @@
     return [aColor lighten: amount];
 }
 
-
 - (NSColor *) lighten: (CGFloat) percent {
     return [self blendedColorWithFraction: percent ofColor: [NSColor whiteColor]];
 }

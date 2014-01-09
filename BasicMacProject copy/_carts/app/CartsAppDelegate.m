@@ -8,7 +8,8 @@
 #import "CartsAppDelegate.h"
 #import "NSNib+DPUtils.h"
 #import "CartsHeaderController.h"
-#import "BackgroundWindow.h"
+#import "DPWindow.h"
+#import "DPHeaderedWindow.h"
 
 @implementation CartsAppDelegate
 

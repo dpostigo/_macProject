@@ -189,7 +189,6 @@
     [segment setImage: [NSImage imageNamed: NSImageNameListViewTemplate] forSegment: 1];
     [segment setImage: [NSImage imageNamed: NSImageNameFlowViewTemplate] forSegment: 2];
     [segment setAction: @selector(handleSegmentClicked:)];
-    //    [self.titleBarView addSubview: segment];
     segment.right = self.titleBarView.width;
     segment.autoresizingMask = NSViewMinXMargin;
 }

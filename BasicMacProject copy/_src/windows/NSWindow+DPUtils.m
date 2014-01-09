@@ -108,9 +108,6 @@
     return [self.contentView superview];
 }
 
-- (NSView *) themeFrame {
-    return self.contentAsView.superview;
-}
 
 - (NSString *) styleMaskAsString {
 

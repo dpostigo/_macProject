@@ -30,6 +30,7 @@
 
 @property(nonatomic, strong) NSColor *dividerColor;
 @property(nonatomic, assign) id <BasicSplitViewDelegate> secondDelegate;
+
 - (void) setup;
 - (NSMutableArray *) splitContainers;
 - (void) addViewController: (NSViewController *) viewController;

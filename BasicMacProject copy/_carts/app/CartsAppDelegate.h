@@ -11,7 +11,8 @@
 #import "ControlledCustomWindow.h"
 #import "CartsCustomWindow.h"
 
-@class BackgroundWindow;
+@class DPWindow;
+@class DPHeaderedWindow;
 
 @interface CartsAppDelegate : BasicAppDelegate <NSApplicationDelegate, NSMenuDelegate, NSWindowDelegate> {
 
@@ -19,6 +20,6 @@
     IBOutlet NSWindow *macWindow;
     IBOutlet NSWindow *styledWindow;
 
-    IBOutlet BackgroundWindow *bgWindow;
+    IBOutlet DPHeaderedWindow *bgWindow;
 }
 @end

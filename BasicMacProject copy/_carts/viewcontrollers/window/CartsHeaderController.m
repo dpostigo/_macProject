@@ -165,14 +165,14 @@
 - (void) awakeFromNib {
     [super awakeFromNib];
 
-    addButton.wantsLayer = YES;
+//    addButton.wantsLayer = YES;
+//
+//    highlightColor = [NSColor colorWithString: @"9da0a4"];
+//    strokeColor = [NSColor colorWithString: @"6b6f76"];
+//    debugColor = [NSColor blueColor];
+//
 
-    highlightColor = [NSColor colorWithString: @"9da0a4"];
-    strokeColor = [NSColor colorWithString: @"6b6f76"];
-    debugColor = [NSColor blueColor];
-
-
-
+//    [addButton setButtonType: NSMomentaryPushButton];
     //    addButton.layer.backgroundColor = debugColor.CGColor;
     //
     //    NSButtonCell *cell = [addButton cell];
@@ -192,7 +192,7 @@
     //
     //    [self currentTest];
     //
-    //    ButtonCell *newCell = [ButtonCell new];
+    //    ColoredButtonCell *newCell = [ColoredButtonCell new];
     //    newCell.image = cell.image;
     //    newCell.title = cell.title;
     //    newCell.bezelStyle = NSRoundedBezelStyle;

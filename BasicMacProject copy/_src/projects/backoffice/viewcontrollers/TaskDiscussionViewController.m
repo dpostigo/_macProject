@@ -67,7 +67,7 @@
     }
 
     [tableSection.rows addObject: [[DataItemObject alloc] initWithContent: nil cellIdentifier: @"FooterCell"]];
-    [tableSection.rows addObject: [[DataItemObject alloc] initWithContent: nil cellIdentifier: @"ButtonCell"]];
+    [tableSection.rows addObject: [[DataItemObject alloc] initWithContent: nil cellIdentifier: @"ColoredButtonCell"]];
     [dataSource addObject: tableSection];
 
 }
@@ -93,7 +93,7 @@
 
     if ([rowObject.cellIdentifier isEqualToString: @"FooterCell"]) {
         rowView = [[BODiscussionFooterRowView alloc] init];
-    } else if ([rowObject.cellIdentifier isEqualToString: @"ButtonCell"]) {
+    } else if ([rowObject.cellIdentifier isEqualToString: @"ColoredButtonCell"]) {
         rowView = [[NSTableRowView alloc] init];
 
     } else {
@@ -138,7 +138,7 @@
         commentTextField = (BasicTextField *) cell.textField;
         commentTextField.delegate = self;
 
-    } else if ([rowObject.cellIdentifier isEqualToString: @"ButtonCell"]) {
+    } else if ([rowObject.cellIdentifier isEqualToString: @"ColoredButtonCell"]) {
 
         BOGoldButtonCell *buttonCell = cell.button.cell;
         buttonCell.borderColor = [NSColor colorWithDeviceWhite: 0.0 alpha: 0.5];

@@ -8,7 +8,6 @@
 @implementation NSNib (DPUtils)
 
 - (NSArray *) viewControllers {
-
     NSMutableArray *ret = [[NSMutableArray alloc] init];
 
     NSArray *objects = nil;

@@ -4,9 +4,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BackgroundWindow.h"
+#import "DPWindow.h"
+#import "DPHeaderedWindow.h"
 
-@interface CartsBackgroundWindow : BackgroundWindow {
+@interface CartsBackgroundWindow : DPHeaderedWindow {
 
     CALayer *innerBorderLayer;
 }

@@ -7,10 +7,6 @@
 //
 
 #import "CartsWindowFooterViewController.h"
-#import "NSButton+DefaultButtons.h"
-#import "BasicFlippedViewController+Utils.h"
-#import "CustomButton.h"
-#import "NewBasicButtonCell.h"
 
 @implementation CartsWindowFooterViewController {
 
@@ -20,18 +16,6 @@
 
 - (void) loadView {
     [super loadView];
-
-    //    self.flippedView.shouldNotFlip = YES;
-
-    //    NSLog(@"self.view.frame = %@", NSStringFromRect(self.view.frame));
-    //    NSLog(@"self.view.width = %f", self.view.width);
-
-    //    addButton.top = (self.view.height - addButton.height)/2;
-
-    //    NSLog(@"addButton.superview = %@", addButton.superview);
-    //    NSLog(@"addListButton.superview = %@", addListButton.superview);
-
-    [self replaceButton: addButton withButtonCellClass: [NewBasicButtonCell class]];
 
 }
 
