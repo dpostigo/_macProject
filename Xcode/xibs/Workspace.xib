@@ -79,6 +79,7 @@
         </viewController>
         <viewController id="9VW-5O-QpI" customClass="TestCartsSidebarController">
             <connections>
+                <outlet property="outlineView" destination="ckT-Dr-epN" id="1cO-t8-q4B"/>
                 <outlet property="view" destination="aEg-Y6-8dO" id="EsV-7i-zSR"/>
             </connections>
         </viewController>
@@ -93,7 +94,7 @@
                         <rect key="frame" x="1" y="1" width="305" height="297"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="20" rowSizeStyle="systemDefault" viewBased="YES" indentationPerLevel="14" outlineTableColumn="BfZ-b9-zMG" id="ckT-Dr-epN">
+                            <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="20" rowSizeStyle="systemDefault" viewBased="YES" indentationPerLevel="14" outlineTableColumn="BfZ-b9-zMG" id="ckT-Dr-epN" customClass="DPOutlineView">
                                 <rect key="frame" x="0.0" y="0.0" width="305" height="297"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="0.0"/>
@@ -125,6 +126,9 @@
                                                             <color key="textColor" red="0.43921568630000002" green="0.4941176471" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
+                                                        <connections>
+                                                            <binding destination="LmT-9O-IgV" name="value" keyPath="objectValue" id="bfO-zY-AKw"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <connections>
@@ -148,6 +152,9 @@
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
+                                                        <connections>
+                                                            <binding destination="Raf-7w-kgK" name="value" keyPath="objectValue" id="orp-Al-eki"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <connections>
@@ -247,6 +254,64 @@
                 <outlet property="view" destination="n51-Ks-XOx" id="BAg-5S-F13"/>
             </connections>
         </viewController>
+        <window identifier="LoginWindow" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="ar6-lw-EM3" customClass="BOLoginWindow">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <rect key="contentRect" x="131" y="159" width="300" height="270"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <value key="minSize" type="size" width="300" height="270"/>
+            <value key="maxSize" type="size" width="300" height="270"/>
+            <view key="contentView" id="JQc-i0-fat">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="270"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZcQ-Hn-dy7">
+                        <rect key="frame" x="60" y="124" width="180" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="dcq-nb-IDR">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="o0d-G6-t3Z">
+                        <rect key="frame" x="60" y="87" width="180" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="65h-mZ-JBP">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <allowedInputSourceLocales>
+                                <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                            </allowedInputSourceLocales>
+                        </secureTextFieldCell>
+                    </secureTextField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="d7j-CI-ZjI">
+                        <rect key="frame" x="54" y="24" width="192" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Login" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SEN-18-WZJ">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="cellTitle"/>
+                        </buttonCell>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="o0d-G6-t3Z" firstAttribute="width" secondItem="ZcQ-Hn-dy7" secondAttribute="width" id="1Hf-Qp-bD0"/>
+                    <constraint firstAttribute="centerX" secondItem="d7j-CI-ZjI" secondAttribute="centerX" id="7Kk-oA-USC"/>
+                    <constraint firstAttribute="trailing" secondItem="ZcQ-Hn-dy7" secondAttribute="trailing" constant="60" id="SYK-Fj-2Kj"/>
+                    <constraint firstItem="ZcQ-Hn-dy7" firstAttribute="top" secondItem="JQc-i0-fat" secondAttribute="top" constant="124" id="dKh-Ni-iez"/>
+                    <constraint firstItem="o0d-G6-t3Z" firstAttribute="width" secondItem="d7j-CI-ZjI" secondAttribute="width" id="jy3-wf-7LL"/>
+                    <constraint firstAttribute="bottom" secondItem="d7j-CI-ZjI" secondAttribute="bottom" constant="31" id="s97-sZ-jru"/>
+                    <constraint firstAttribute="centerX" secondItem="o0d-G6-t3Z" secondAttribute="centerX" id="tQO-Vu-UQB"/>
+                    <constraint firstItem="o0d-G6-t3Z" firstAttribute="top" secondItem="ZcQ-Hn-dy7" secondAttribute="bottom" constant="15" id="xnh-IS-kcl"/>
+                    <constraint firstItem="ZcQ-Hn-dy7" firstAttribute="leading" secondItem="JQc-i0-fat" secondAttribute="leading" constant="60" id="ySK-xa-O9z"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="passwordField" destination="o0d-G6-t3Z" id="IQN-Mf-i6I"/>
+                <outlet property="submitButton" destination="d7j-CI-ZjI" id="MsA-fG-MTc"/>
+                <outlet property="userField" destination="ZcQ-Hn-dy7" id="stY-AL-dHc"/>
+            </connections>
+        </window>
     </objects>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>

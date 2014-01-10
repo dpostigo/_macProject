@@ -317,16 +317,16 @@
 		F29B83345D1D481FAA87CF9A /* BlueLayerBackedView.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8981FC0B87D81070FCD5 /* BlueLayerBackedView.m */; };
 		F29B8366381747C48A606974 /* CALayer+CartsStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B895A8E738BE3C67F9598 /* CALayer+CartsStyle.m */; };
 		F29B837D2952A7FCDFE35040 /* NSViewController+Carts.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8C4BEF1324365C890EA0 /* NSViewController+Carts.m */; };
+		F29B83F6449291C463CF8624 /* BOWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B872324B6BC988E26FC3D /* BOWindow.m */; };
 		F29B84D6B6C846BA35F3B77D /* LayerHostingView.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8F87DA48169D949F773C /* LayerHostingView.m */; };
-		F29B85B840C36440F243177C /* DPHeaderedWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B81C68C6ED6606524A0E1 /* DPHeaderedWindow.m */; };
 		F29B85D47C22D5109C2952CC /* TestCartsSidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B85F9A883EA8B553CBFF6 /* TestCartsSidebarController.m */; };
-		F29B862B9291AE7BA9E503E6 /* DPWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B82FDAB6817C0A2C6D558 /* DPWindow.m */; };
 		F29B8728E0CA1126302BC4E8 /* CartsBackgroundWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8B7FE9D3A7ECEE8F10B3 /* CartsBackgroundWindow.m */; };
 		F29B878B52D4C2036F0CBF44 /* BackgroundTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8BDD4D2F69AB4E18B8AF /* BackgroundTitleBar.m */; };
 		F29B87E63396F3BA62639F00 /* BackgroundWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B847650191FCF53A5A447 /* BackgroundWindowController.m */; };
 		F29B88AEB6EF19B9C102A38D /* DDSplitViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B86F70AD4A5D03E5E8E17 /* DDSplitViewContainer.m */; };
 		F29B88DE81A40A6B11ED574C /* CartsCustomWindowLayerHosting.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B802653FD34CB268671DC /* CartsCustomWindowLayerHosting.m */; };
 		F29B8994D17293967E216C67 /* ColoredButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8A0C813F5F9447C83AAD /* ColoredButtonCell.m */; };
+		F29B8A3C778A09A060E0D228 /* BOLoginWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B812F80ECC21FFE982535 /* BOLoginWindow.m */; };
 		F29B8B6A4266929345A09B64 /* DDSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B80A3511A918F329F0ECB /* DDSplitView.m */; };
 		F29B8C456B81756F076236EF /* LayerBackedView.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8D99874A4AAA52AF2DCE /* LayerBackedView.m */; };
 		F29B8C7DFDF7A3E0413B2206 /* CALayer+InfoUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8A401F19F78F9145A273 /* CALayer+InfoUtils.m */; };
@@ -733,7 +733,7 @@
 		330F00CA186F0F4500E737F8 /* NSColor+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+Utils.m"; sourceTree = "<group>"; };
 		330F00CC186F0F4500E737F8 /* CALayer+ConstraintUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+ConstraintUtils.h"; sourceTree = "<group>"; };
 		330F00CD186F0F4500E737F8 /* CALayer+ConstraintUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+ConstraintUtils.m"; sourceTree = "<group>"; };
-		3353EAE118707B50001798B1 /* Workspace.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Workspace.xib; sourceTree = "<group>"; };
+		3353EAE118707B50001798B1 /* Workspace.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Workspace.xib; path = ../xibs/Workspace.xib; sourceTree = "<group>"; };
 		3353EAF218707F0F001798B1 /* CartsWindowFooterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartsWindowFooterViewController.xib; sourceTree = "<group>"; };
 		3353EAF318707F0F001798B1 /* CartsWindowHeaderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartsWindowHeaderViewController.xib; sourceTree = "<group>"; };
 		3353EB0318707F73001798B1 /* BasicCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicCollectionViewController.xib; sourceTree = "<group>"; };
@@ -925,18 +925,18 @@
 		7CA44FDD349B6B8C1931A39B /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
 		CAFE9E5C826842B1B9AF7100 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		F29B802653FD34CB268671DC /* CartsCustomWindowLayerHosting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartsCustomWindowLayerHosting.m; sourceTree = "<group>"; };
+		F29B8040BFD01D931697FBAB /* BOLoginWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOLoginWindow.h; sourceTree = "<group>"; };
 		F29B805F984212D6F8B1DA2C /* CartsHeaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartsHeaderController.h; path = window/CartsHeaderController.h; sourceTree = "<group>"; };
 		F29B80A3511A918F329F0ECB /* DDSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDSplitView.m; sourceTree = "<group>"; };
+		F29B80F7215D1803BD984F4B /* BOWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOWindow.h; sourceTree = "<group>"; };
 		F29B811967D2E54E97169F2E /* BlueLayerBackedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueLayerBackedView.h; sourceTree = "<group>"; };
-		F29B81C68C6ED6606524A0E1 /* DPHeaderedWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPHeaderedWindow.m; sourceTree = "<group>"; };
+		F29B812F80ECC21FFE982535 /* BOLoginWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOLoginWindow.m; sourceTree = "<group>"; };
 		F29B81CB67D88FC58D37D877 /* CartsBackgroundWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsBackgroundWindow.h; sourceTree = "<group>"; };
 		F29B81E642BAAF7E351C2A56 /* LayerHostingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerHostingView.h; sourceTree = "<group>"; };
 		F29B823342A5374CB13BD6A4 /* CartsHeaderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartsHeaderController.m; path = window/CartsHeaderController.m; sourceTree = "<group>"; };
 		F29B8263C653AFF28FF0425C /* CALayer+FrameUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+FrameUtils.h"; sourceTree = "<group>"; };
 		F29B82907E31BFA5CA54A8AF /* NSView+ConstraintGetters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+ConstraintGetters.m"; sourceTree = "<group>"; };
-		F29B82D11FC68C6384493C69 /* DPWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPWindow.h; sourceTree = "<group>"; };
 		F29B82E5A1AA2886831D93DF /* CartsCustomWindowLayerHosting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsCustomWindowLayerHosting.h; sourceTree = "<group>"; };
-		F29B82FDAB6817C0A2C6D558 /* DPWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPWindow.m; sourceTree = "<group>"; };
 		F29B840247012766969742E6 /* NSView+SuperConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+SuperConstraints.h"; sourceTree = "<group>"; };
 		F29B842597B67ACAB6AEF502 /* ButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonCell.m; sourceTree = "<group>"; };
 		F29B847650191FCF53A5A447 /* BackgroundWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundWindowController.m; sourceTree = "<group>"; };
@@ -946,8 +946,8 @@
 		F29B86EB7C9097C0FB360C15 /* DPOutlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPOutlineView.h; sourceTree = "<group>"; };
 		F29B86EFC18E77E49CC8AA35 /* NSView+SuperConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+SuperConstraints.m"; sourceTree = "<group>"; };
 		F29B86F70AD4A5D03E5E8E17 /* DDSplitViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDSplitViewContainer.m; sourceTree = "<group>"; };
+		F29B872324B6BC988E26FC3D /* BOWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOWindow.m; sourceTree = "<group>"; };
 		F29B885BB3154C311622E7F2 /* BackgroundTitleBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackgroundTitleBar.h; path = "background-window/BackgroundTitleBar.h"; sourceTree = "<group>"; };
-		F29B8891A477BD3E0BD3D0FD /* DPHeaderedWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPHeaderedWindow.h; sourceTree = "<group>"; };
 		F29B88C37D6AAE8EDD96BDD9 /* CADelegatingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADelegatingLayer.h; sourceTree = "<group>"; };
 		F29B88D54A2F97DA7FD55E37 /* LayerBackedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerBackedView.h; sourceTree = "<group>"; };
 		F29B88D598ADAD466257D6A9 /* NSView+ConstraintGetters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+ConstraintGetters.h"; sourceTree = "<group>"; };
@@ -1159,6 +1159,7 @@
 		03D8CB1A1768AA17000CF88A = {
 			isa = PBXGroup;
 			children = (
+				33557CB518805F0300986377 /* Windows */,
 				339C5162187F8BE00020AB80 /* DPOutlineView */,
 				33A4E02C187F0800003E6FD0 /* DDSplitView */,
 				33A4DFC9187F0389003E6FD0 /* DPSplitView */,
@@ -1217,6 +1218,7 @@
 			isa = PBXGroup;
 			children = (
 				03386EFC176D2AF700E1F37A /* MainMenu.xib */,
+				3353EAE118707B50001798B1 /* Workspace.xib */,
 				03D8CB2D1768AA17000CF88A /* Supporting Files */,
 			);
 			path = Carts;
@@ -1781,14 +1783,10 @@
 				7CA44A4E07A5AC9A86A6C520 /* BasicWindowFooterViewController.h */,
 				7CA440781F6129038DF2B81A /* BasicWindowViewController.m */,
 				7CA44E4D9C75F01CB13DD996 /* BasicWindowViewController.h */,
-				F29B82FDAB6817C0A2C6D558 /* DPWindow.m */,
-				F29B82D11FC68C6384493C69 /* DPWindow.h */,
 				F29B847650191FCF53A5A447 /* BackgroundWindowController.m */,
 				F29B8A2DCEBEFDFF05981B86 /* BackgroundWindowController.h */,
 				F29B8BDD4D2F69AB4E18B8AF /* BackgroundTitleBar.m */,
 				F29B885BB3154C311622E7F2 /* BackgroundTitleBar.h */,
-				F29B81C68C6ED6606524A0E1 /* DPHeaderedWindow.m */,
-				F29B8891A477BD3E0BD3D0FD /* DPHeaderedWindow.h */,
 			);
 			path = windows;
 			sourceTree = "<group>";
@@ -2215,7 +2213,6 @@
 				3353EB0218707F73001798B1 /* controllers */,
 				3353EAF018707F0F001798B1 /* views */,
 				3353EAF118707F0F001798B1 /* window */,
-				3353EAE118707B50001798B1 /* Workspace.xib */,
 			);
 			path = xibs;
 			sourceTree = "<group>";
@@ -2253,6 +2250,17 @@
 				3353EB0E18707F73001798B1 /* TitleBarViewController.xib */,
 			);
 			path = controllers;
+			sourceTree = "<group>";
+		};
+		33557CB518805F0300986377 /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				F29B812F80ECC21FFE982535 /* BOLoginWindow.m */,
+				F29B8040BFD01D931697FBAB /* BOLoginWindow.h */,
+				F29B872324B6BC988E26FC3D /* BOWindow.m */,
+				F29B80F7215D1803BD984F4B /* BOWindow.h */,
+			);
+			path = Windows;
 			sourceTree = "<group>";
 		};
 		339C5162187F8BE00020AB80 /* DPOutlineView */ = {
@@ -2783,7 +2791,6 @@
 				33A4E02B187F059F003E6FD0 /* DPSplitViewController.m in Sources */,
 				F29B84D6B6C846BA35F3B77D /* LayerHostingView.m in Sources */,
 				F29B88DE81A40A6B11ED574C /* CartsCustomWindowLayerHosting.m in Sources */,
-				F29B862B9291AE7BA9E503E6 /* DPWindow.m in Sources */,
 				33A4E018187F03F2003E6FD0 /* NavigationBar.m in Sources */,
 				F29B87E63396F3BA62639F00 /* BackgroundWindowController.m in Sources */,
 				F29B8728E0CA1126302BC4E8 /* CartsBackgroundWindow.m in Sources */,
@@ -2801,13 +2808,14 @@
 				F29B8366381747C48A606974 /* CALayer+CartsStyle.m in Sources */,
 				F29B8994D17293967E216C67 /* ColoredButtonCell.m in Sources */,
 				F29B810B8E3E1CA0FF396D2F /* ButtonCell.m in Sources */,
-				F29B85B840C36440F243177C /* DPHeaderedWindow.m in Sources */,
 				F29B8B6A4266929345A09B64 /* DDSplitView.m in Sources */,
 				F29B85D47C22D5109C2952CC /* TestCartsSidebarController.m in Sources */,
 				F29B8DE2DE6B28276F62501D /* TestCartsMainController.m in Sources */,
 				F29B837D2952A7FCDFE35040 /* NSViewController+Carts.m in Sources */,
 				F29B88AEB6EF19B9C102A38D /* DDSplitViewContainer.m in Sources */,
 				F29B8DA99091B2680F3A8771 /* DPOutlineView.m in Sources */,
+				F29B8A3C778A09A060E0D228 /* BOLoginWindow.m in Sources */,
+				F29B83F6449291C463CF8624 /* BOWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

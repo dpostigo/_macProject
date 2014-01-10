@@ -5,15 +5,179 @@
 
 #import "DPOutlineView.h"
 
-@implementation DPOutlineView
+
+
+#pragma mark DPOutlineViewSection
+@interface DPOutlineViewSection () {
+
+    NSMutableArray *items;
+}
+
+@property(nonatomic, strong) NSMutableArray *items;
+
+@end
+
+
+@implementation DPOutlineViewSection
+
+@synthesize title;
+@synthesize items;
+
+- (instancetype) initWithTitle: (NSString *) aTitle items: (NSMutableArray *) anItems {
+    self = [super init];
+    if (self) {
+        title = aTitle;
+        items = [NSMutableArray arrayWithArray: anItems];
+    }
+
+    return self;
+}
+
+
+- (instancetype) initWithTitle: (NSString *) aTitle {
+    return [self initWithTitle: aTitle items: nil];
+}
+
+- (NSUInteger) itemCount {
+    return [self.items count];
+}
+
+- (DPOutlineViewItem *) itemAtIndex: (NSUInteger) index {
+    return [self.items objectAtIndex: index];
+}
+
+- (void) addItem: (DPOutlineViewItem *) item {
+    [self.items addObject: item];
+}
+
+@end
+
+
+#pragma mark  DPOutlineViewItem
+
+@implementation DPOutlineViewItem
+
+@synthesize title;
+
+- (instancetype) initWithTitle: (NSString *) aTitle {
+    self = [super init];
+    if (self) {
+        title = aTitle;
+    }
+
+    return self;
+}
+
+
+@end
+
+
+#pragma mark DPOutlineView
+
+@interface DPOutlineView ()
+
+@property(nonatomic, strong) NSMutableArray *sections;
+@end
+
+@implementation DPOutlineView {
+    NSMutableArray *sections;
+    NSObject *cellsHolder;
+}
+
+@synthesize sections;
+
+@synthesize autoExpands;
 
 - (void) awakeFromNib {
     [super awakeFromNib];
 
-    super.delegate = self;
-    super.dataSource = self;
+    autoExpands = YES;
+
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    [self awakeCells];
+
+    self.dataSource = self;
+    self.delegate = self;
+
+    [self reloadData];
 }
 
+- (void) awakeCells {
+
+    cellsHolder = [[NSObject alloc] init];
+    NSView *ret = nil;
+    ret = [self makeViewWithIdentifier: @"HeaderCell" owner: cellsHolder];
+    ret = [self makeViewWithIdentifier: @"DataCell" owner: cellsHolder];
+
+}
+
+
+- (void) reloadData {
+    [self prepareDatasource];
+    [super reloadData];
+
+    if (autoExpands) {
+        [self expandAllItems];
+    }
+}
+
+- (void) expandAllItems {
+
+    for (int j = 0; j < [self sectionCount]; j++) {
+        [self expandItem: [self sectionAtIndex: j]];
+    }
+
+}
+
+
+
+//- (BOOL) isExpandable: (id) item {
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
+//    return [super isExpandable: item];
+//}
+//
+//- (id) parentForItem: (id) item {
+//    NSLog(@"%s, item = %@", __PRETTY_FUNCTION__, item);
+//    return [super parentForItem: item];
+//}
+//
+//- (id) itemAtRow: (NSInteger) row {
+//    id ret = [super itemAtRow: row];
+//    //    NSLog(@"%s, row = %li, ret = %@", __PRETTY_FUNCTION__, row, ret);
+//    return ret;
+//}
+
+//- (NSInteger) rowForItem: (id) item {
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
+//    return [super rowForItem: item];
+//}
+
+
+- (void) prepareDatasource {
+    sections = [[NSMutableArray alloc] init];
+
+    DPOutlineViewSection *section = [[DPOutlineViewSection alloc] initWithTitle: @"Section 1"];
+    [section addItem: [[DPOutlineViewItem alloc] initWithTitle: @"Item 1"]];
+    [section addItem: [[DPOutlineViewItem alloc] initWithTitle: @"Item 2"]];
+    [section addItem: [[DPOutlineViewItem alloc] initWithTitle: @"Item 3"]];
+    //    [section addItem: [[DPOutlineViewItem alloc] initWithTitle: @"Item 4"]];
+
+    [self.sections addObject: section];
+
+}
+
+- (void) addSection {
+
+}
+
+
+- (DPOutlineViewSection *) sectionAtIndex: (NSUInteger) index {
+    DPOutlineViewSection *ret = nil;
+    if ([self.sections count] > index) {
+        ret = [self.sections objectAtIndex: index];
+    }
+    return ret;
+}
 
 
 #pragma mark NSOutlineViewDataSource
@@ -21,70 +185,120 @@
 
 - (NSInteger) outlineView: (NSOutlineView *) outlineView numberOfChildrenOfItem: (id) item {
     NSInteger ret = 0;
-    NSLog(@"%s, item = %@", __PRETTY_FUNCTION__, item);
-    return 0;
+    if (item == nil) {
+        ret = [self.sections count];
+    } else {
+        DPOutlineViewSection *section = item;
+        ret = [section itemCount];
+    }
+    return ret;
 }
 
 - (id) outlineView: (NSOutlineView *) outlineView child: (NSInteger) index1 ofItem: (id) item {
-    return nil;
+    id ret = nil;
+    if (item == nil) {
+        ret = [self sectionAtIndex: index1];
+    } else {
+        DPOutlineViewSection *section = item;
+        ret = [section itemAtIndex: index1];
+    }
+    //    NSLog(@"%s, index = %li, item = %@, ret = %@", __PRETTY_FUNCTION__, index1, item, ret);
+    return ret;
 }
 
 - (BOOL) outlineView: (NSOutlineView *) outlineView isItemExpandable: (id) item {
-    return NO;
+    BOOL ret = NO;
+    if ([item isKindOfClass: [DPOutlineViewSection class]]) {
+        DPOutlineViewSection *section = item;
+        ret = section.itemCount > 0;
+    }
+    return ret;
 }
+
 
 - (id) outlineView: (NSOutlineView *) outlineView objectValueForTableColumn: (NSTableColumn *) tableColumn byItem: (id) item {
-    return nil;
+    id ret = nil;
+    ret = [item title];
+    //    if (item == nil) {
+    //        ret = [self sectionAtIndex: index];
+    //    } else {
+    //        DPOutlineViewSection *section = item;
+    //        ret = [section itemAtIndex: index];
+    //    }
+
+    return ret;
 }
 
 
-
-- (void) outlineView: (NSOutlineView *) outlineView setObjectValue: (id) object forTableColumn: (NSTableColumn *) tableColumn byItem: (id) item {
-
-}
-
+//
+//#pragma mark Additional
+//- (void) outlineView: (NSOutlineView *) outlineView setObjectValue: (id) object forTableColumn: (NSTableColumn *) tableColumn byItem: (id) item {
+//
+//}
+//
 - (id) outlineView: (NSOutlineView *) outlineView itemForPersistentObject: (id) object {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     return nil;
 }
 
 - (id) outlineView: (NSOutlineView *) outlineView persistentObjectForItem: (id) item {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     return nil;
 }
 
-- (void) outlineView: (NSOutlineView *) outlineView sortDescriptorsDidChange: (NSArray *) oldDescriptors {
 
+
+
+
+#pragma mark NSOutlineView delegate
+
+- (NSView *) outlineView: (NSOutlineView *) outlineView viewForTableColumn: (NSTableColumn *) tableColumn item: (id) item {
+
+    NSView *ret = nil;
+    if ([item isKindOfClass: [DPOutlineViewSection class]]) {
+        ret = [outlineView makeViewWithIdentifier: @"HeaderCell" owner: cellsHolder];
+    } else {
+        ret = [outlineView makeViewWithIdentifier: @"DataCell" owner: cellsHolder];
+    }
+
+    NSLog(@"%s, item = %@, ret = %@", __PRETTY_FUNCTION__, item, ret);
+    return ret;
 }
 
-- (id <NSPasteboardWriting>) outlineView: (NSOutlineView *) outlineView pasteboardWriterForItem: (id) item {
-    return nil;
+- (BOOL) outlineView: (NSOutlineView *) outlineView isGroupItem: (id) item {
+    BOOL ret = [item isKindOfClass: [DPOutlineViewSection class]];
+    ret = [self.sections containsObject: item];
+    //    NSLog(@"%s, item = %@, ret = %d", __PRETTY_FUNCTION__, item, ret);
+    return ret;
+}
+//
+//- (BOOL) outlineView: (NSOutlineView *) outlineView shouldExpandItem: (id) item {
+//    BOOL ret = NO;
+//    if ([item isKindOfClass: [DPOutlineViewSection class]]) {
+//       ret = YES;
+//    }
+//    return ret;
+//}
+
+//- (BOOL) outlineView: (NSOutlineView *) outlineView shouldCollapseItem: (id) item {
+//    return NO;
+//}
+
+
+
+
+
+#pragma mark Sections
+
+- (NSUInteger) sectionCount {
+    return [self.sections count];
 }
 
-- (void) outlineView: (NSOutlineView *) outlineView draggingSession: (NSDraggingSession *) session willBeginAtPoint: (NSPoint) screenPoint forItems: (NSArray *) draggedItems {
-
-}
-
-- (void) outlineView: (NSOutlineView *) outlineView draggingSession: (NSDraggingSession *) session endedAtPoint: (NSPoint) screenPoint operation: (NSDragOperation) operation {
-
-}
-
-- (BOOL) outlineView: (NSOutlineView *) outlineView writeItems: (NSArray *) items toPasteboard: (NSPasteboard *) pasteboard {
-    return NO;
-}
-
-- (void) outlineView: (NSOutlineView *) outlineView updateDraggingItemsForDrag: (id <NSDraggingInfo>) draggingInfo {
-
-}
-
-- (NSDragOperation) outlineView: (NSOutlineView *) outlineView validateDrop: (id <NSDraggingInfo>) info proposedItem: (id) item proposedChildIndex: (NSInteger) index1 {
-    return 0;
-}
-
-- (BOOL) outlineView: (NSOutlineView *) outlineView acceptDrop: (id <NSDraggingInfo>) info item: (id) item childIndex: (NSInteger) index1 {
-    return NO;
-}
-
-- (NSArray *) outlineView: (NSOutlineView *) outlineView namesOfPromisedFilesDroppedAtDestination: (NSURL *) dropDestination forDraggedItems: (NSArray *) items {
-    return nil;
+- (NSMutableArray *) sections {
+    if (sections == nil) {
+        sections = [[NSMutableArray alloc] init];
+    }
+    return sections;
 }
 
 

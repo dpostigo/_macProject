@@ -6,6 +6,6 @@
 #import <Foundation/Foundation.h>
 
 @interface TestCartsSidebarController : NSViewController {
-
+    IBOutlet NSOutlineView *outlineView;
 }
 @end

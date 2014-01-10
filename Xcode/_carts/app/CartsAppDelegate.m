@@ -7,9 +7,10 @@
 
 #import "CartsAppDelegate.h"
 #import "NSNib+WorkspaceNib.h"
-#import "DPHeaderedWindow.h"
 #import "NSWorkspaceNib.h"
 #import "NSWindow+DPUtils.h"
+#import "DPStyledWindow.h"
+#import "BOAPIModel.h"
 
 @implementation CartsAppDelegate {
     NSWindow *window;
@@ -25,14 +26,22 @@
     //    [macWindow setContentView: view];
     //    NSLog(@"macWindow.contentView = %@", macWindow.contentView);
 
-    NSLog(@"view = %@", view);
-    bgWindow.headerView = [_model.masterNib viewForClass: @"CartsHeaderController"];
+    //    bgWindow.headerView = [_model.masterNib viewForClass: @"CartsHeaderController"];
     bgWindow.contentContentView = view;
+    bgWindow.isVisible = NO;
     [bgWindow close];
+    [bgWindow performClose: nil];
 
-    window = [[NSWindow alloc] initWithContentRect: view.bounds styleMask: (NSResizableWindowMask | NSClosableWindowMask | NSTitledWindowMask) backing: NSBackingStoreBuffered defer: NO];
-    [window setContentView: view];
-    [window makeKeyAndOrderFront: nil];
+    //    window = [[NSWindow alloc] initWithContentRect: view.bounds styleMask: (NSResizableWindowMask | NSClosableWindowMask | NSTitledWindowMask) backing: NSBackingStoreBuffered defer: NO];
+    //    [window setContentView: view];
+    //    [window makeKeyAndOrderFront: nil];
+
+
+    [BOAPIModel sharedModel].delegate = [Model sharedModel];
+
+    NSWindow *loginWindow = [_model.masterNib objectWithIdentifier: @"LoginWindow"];
+    NSLog(@"loginWindow = %@", loginWindow);
+    [loginWindow makeKeyAndOrderFront: nil];
 
 }
 

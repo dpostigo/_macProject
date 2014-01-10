@@ -79,6 +79,18 @@
     return rowView;
 }
 
+- (NSInteger) outlineView: (NSOutlineView *) outlineView numberOfChildrenOfItem: (id) item {
+    NSInteger ret = -1;
+    if (item == nil) {
+        ret = [dataSource count];
+    } else {
+        OutlineSection *tableSection = item;
+        ret = [tableSection.rows count];
+    }
+    return ret;
+}
+
+
 - (id) outlineView: (NSOutlineView *) outlineView child: (NSInteger) index ofItem: (id) item {
     id ret;
     if (item == nil) {
@@ -90,16 +102,11 @@
     return ret;
 }
 
-- (NSInteger) outlineView: (NSOutlineView *) outlineView numberOfChildrenOfItem: (id) item {
-    NSInteger ret = -1;
-    if (item == nil) {
-        ret = [dataSource count];
-    } else {
-        OutlineSection *tableSection = item;
-        ret = [tableSection.rows count];
-    }
-    return ret;
+
+- (BOOL) outlineView: (NSOutlineView *) outlineView isItemExpandable: (id) item {
+    return [item isKindOfClass: [OutlineSection class]];
 }
+
 
 - (BOOL) outlineView: (NSOutlineView *) outlineView shouldShowOutlineCellForItem: (id) item {
     //BOOL isOutlineSection = [item isKindOfClass: [OutlineSection class]];
@@ -115,10 +122,6 @@
 - (BOOL) outlineView: (NSOutlineView *) outlineView isGroupItem: (id) item {
     BOOL ret = [dataSource containsObject: item];
     return ret;
-}
-
-- (BOOL) outlineView: (NSOutlineView *) outlineView isItemExpandable: (id) item {
-    return [item isKindOfClass: [OutlineSection class]];
 }
 
 

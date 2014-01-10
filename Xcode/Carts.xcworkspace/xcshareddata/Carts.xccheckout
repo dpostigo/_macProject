@@ -12,6 +12,8 @@
 	<dict>
 		<key>5CA014FD-C104-4D2C-8311-6D9F45C87465</key>
 		<string>https://github.com/dpostigo/_macProject.git</string>
+		<key>AE2669EA-2A40-40EE-9C70-27F31632F73B</key>
+		<string>https://github.com/dpostigo/DPWindow.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>BasicMacProject copy/Carts.xcworkspace</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>5CA014FD-C104-4D2C-8311-6D9F45C87465</key>
 		<string>../..</string>
+		<key>AE2669EA-2A40-40EE-9C70-27F31632F73B</key>
+		<string>../../../LocalPods/DPWindow</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/dpostigo/_macProject.git</string>
@@ -35,6 +39,14 @@
 			<string>5CA014FD-C104-4D2C-8311-6D9F45C87465</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Carts</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AE2669EA-2A40-40EE-9C70-27F31632F73B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DPWindow</string>
 		</dict>
 	</array>
 </dict>

@@ -27,8 +27,8 @@
 
     //    self.contentContentView = ([[CartsMainViewController alloc] init]).view;
 
-    self.footerView = self.footer;
-    self.headerView = self.header;
+//    self.footerView = self.footer;
+//    self.headerView = self.header;
     self.titleBarHeight = 35;
 }
 

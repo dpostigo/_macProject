@@ -1,7 +1,10 @@
-platform :osx, '10.7'
+platform :osx, '10.8'
 
 pod 'PMPKVObservation'
 pod 'NSColor-Crayola'
 
 
+pod 'BOAPI',  :path => '~/Development/LocalPods/BOAPI'
+pod 'DPWindow',  :path => '~/Development/LocalPods/DPWindow'
 pod 'DPKit', :path => '~/Development/LocalPods/DPKit'
+

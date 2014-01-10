@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "BasicModel.h"
 #import "List.h"
+#import "BOAPIDelegate.h"
 
 @class NSWorkspaceNib;
 
-@interface Model : BasicModel   {
+@interface Model : BasicModel <BOAPIDelegate> {
 
     NSWorkspaceNib *masterNib;
 }

@@ -6,12 +6,12 @@
 //
 
 
-#import "LoginOperation.h"
+#import "BOLoginOperation.h"
 #import "ASIFormDataRequest.h"
 #import "ASIDataDecompressor.h"
 #import <YAJL/YAJL.h>
 
-@implementation LoginOperation {
+@implementation BOLoginOperation {
 }
 
 @synthesize username;

@@ -9,9 +9,7 @@
 #import "Model.h"
 #import "NSWorkspaceNib.h"
 
-@implementation Model {
-
-}
+@implementation Model
 
 @synthesize masterNib;
 

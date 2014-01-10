@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "BasicBackOfficeOperation.h"
 
-@interface LoginOperation : BasicBackOfficeOperation {
+@interface BOLoginOperation : BasicBackOfficeOperation {
 
     NSString *username;
     NSString *password;

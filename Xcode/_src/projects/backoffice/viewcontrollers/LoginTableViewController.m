@@ -7,7 +7,7 @@
 
 #import "LoginTableViewController.h"
 #import "BasicSecureTextField.h"
-#import "LoginOperation.h"
+#import "BOLoginOperation.h"
 #import "BOGoldButtonCell.h"
 #import "BasicTextFieldCell.h"
 #import "BasicSecureTextFieldCell.h"
@@ -103,7 +103,7 @@
     [self resignAllTextFields];
 
     if (selectedUsername == nil || selectedPassword == nil) return;
-    [_queue addOperation: [[LoginOperation alloc] initWithUsername: selectedUsername password: selectedPassword]];
+    [_queue addOperation: [[BOLoginOperation alloc] initWithUsername: selectedUsername password: selectedPassword]];
 }
 
 

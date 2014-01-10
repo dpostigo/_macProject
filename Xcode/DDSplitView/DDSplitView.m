@@ -25,14 +25,6 @@
 }
 
 
-- (void) setSubviews: (NSArray *) newSubviews {
-    [super setSubviews: newSubviews];
-}
-
-- (void) addSubview: (NSView *) aView {
-    [super addSubview: aView];
-}
-
 
 #pragma mark Containers
 
@@ -100,7 +92,7 @@
     DDSplitViewContainer *container = [self containerAtIndex: index];
     if (container) {
         container.isLocked = YES;
-//        NSLog(@"Locked -> %@", container.subview);
+        //        NSLog(@"Locked -> %@", container.subview);
     }
 }
 
@@ -125,7 +117,7 @@
         // TODO : Right left lock
     }
 
-//    NSLog(@"%s, dividerIndex = %li, oldRet = %f, ret = %f", __PRETTY_FUNCTION__, dividerIndex, oldRet, ret);
+    //    NSLog(@"%s, dividerIndex = %li, oldRet = %f, ret = %f", __PRETTY_FUNCTION__, dividerIndex, oldRet, ret);
     return oldRet;
 }
 
@@ -149,32 +141,13 @@
         // TODO : Right left lock
     }
 
-//    NSLog(@"%s, dividerIndex = %li, oldRet = %f, ret = %f", __PRETTY_FUNCTION__, dividerIndex, oldRet, ret);
+    //    NSLog(@"%s, dividerIndex = %li, oldRet = %f, ret = %f", __PRETTY_FUNCTION__, dividerIndex, oldRet, ret);
 
     return oldRet;
 }
 
 
 #pragma mark Overrides subviews resize
-//
-//- (void) adjustSubviews {
-//    [super adjustSubviews];
-//
-//}
-//
-
-//- (void) resizeSubviewsWithOldSize: (NSSize) oldSize {
-//    [super resizeSubviewsWithOldSize: oldSize];
-//
-//    for (int j = 0; j < [self.subviews count]; j++) {
-//        DDSplitViewContainer *container = [self containerAtIndex: j];
-//        if (container.isLocked) {
-//            NSLog(@"%s, container = %@", __PRETTY_FUNCTION__, container);
-//            container.width = container.lockedValue;
-//        }
-//    }
-//
-//}
 
 
 #pragma mark Delegate
@@ -182,47 +155,9 @@
 - (void) setDelegate: (id <NSSplitViewDelegate>) delegate {
 }
 
-//
-//- (CGFloat) splitView: (NSSplitView *) splitView constrainMinCoordinate: (CGFloat) proposedMinimumPosition ofSubviewAt: (NSInteger) dividerIndex {
-////    NSLog(@"%s, proposedPosition = %f, dividerIndex = %li", __PRETTY_FUNCTION__, proposedMinimumPosition, dividerIndex);
-//    CGFloat ret = 0;
-//    ret = proposedMinimumPosition;
-//    return ret;
-//}
-
-//- (CGFloat) splitView: (NSSplitView *) splitView constrainMaxCoordinate: (CGFloat) proposedMaximumPosition ofSubviewAt: (NSInteger) dividerIndex {
-////    NSLog(@"%s, proposedMaximumPosition = %f, dividerIndex = %li", __PRETTY_FUNCTION__, proposedMaximumPosition, dividerIndex);
-//    CGFloat ret = 0;
-//    ret = proposedMaximumPosition;
-//    return ret;
-//}
-
-
-//- (CGFloat) splitView: (NSSplitView *) splitView constrainSplitPosition: (CGFloat) proposedPosition ofSubviewAt: (NSInteger) dividerIndex {
-//    CGFloat ret = 0;
-//    //    NSLog(@"%s, proposedPosition = %f, dividerIndex = %li", __PRETTY_FUNCTION__, proposedPosition, dividerIndex);
-//
-//    return ret;
-//}
-
-//- (BOOL) splitView: (NSSplitView *) splitView shouldAdjustSizeOfSubview: (NSView *) view {
-//    BOOL ret = NO;
-//    if ([view isKindOfClass: [DDSplitViewContainer class]]) {
-//        DDSplitViewContainer *container = (DDSplitViewContainer *) view;
-//        ret = container.isLocked;
-//    }
-//    return ret;
-//}
-
-
 
 
 #pragma mark Sidebar index
-
-- (void) setSidebarIndex: (NSUInteger) sidebarIndex1 {
-    sidebarIndex = sidebarIndex1;
-
-}
 
 
 

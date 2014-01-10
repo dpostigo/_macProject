@@ -8,12 +8,13 @@
 #import <Foundation/Foundation.h>
 #import "BasicAppDelegate.h"
 
-@class DPHeaderedWindow;
+@class DPStyledWindow;
+
 
 @interface CartsAppDelegate : BasicAppDelegate <NSApplicationDelegate, NSMenuDelegate, NSWindowDelegate> {
 
     IBOutlet NSWindow *macWindow;
     IBOutlet NSWindow *styledWindow;
-    IBOutlet DPHeaderedWindow *bgWindow;
+    IBOutlet DPStyledWindow *bgWindow;
 }
 @end
