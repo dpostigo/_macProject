@@ -77,6 +77,11 @@
                 <outlet property="view" destination="qKv-Md-5AG" id="BG3-50-qwg"/>
             </connections>
         </viewController>
+        <viewController id="9VW-5O-QpI" customClass="TestCartsSidebarController">
+            <connections>
+                <outlet property="view" destination="aEg-Y6-8dO" id="EsV-7i-zSR"/>
+            </connections>
+        </viewController>
         <customView id="aEg-Y6-8dO">
             <rect key="frame" x="0.0" y="0.0" width="307" height="299"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -174,6 +179,74 @@
                 <constraint firstAttribute="trailing" secondItem="14P-5K-bVh" secondAttribute="trailing" id="tcC-mB-0sp"/>
             </constraints>
         </customView>
+        <customView id="n51-Ks-XOx">
+            <rect key="frame" x="0.0" y="0.0" width="583" height="413"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EQv-bo-oIM">
+                    <rect key="frame" x="18" y="366" width="38" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="n0C-Zv-Mgm">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <splitView dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oaq-FJ-BcJ" customClass="DDSplitView">
+                    <rect key="frame" x="0.0" y="214" width="583" height="132"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <subviews>
+                        <customView fixedFrame="YES" id="eBO-cn-muA">
+                            <rect key="frame" x="0.0" y="0.0" width="260" height="132"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </customView>
+                        <customView fixedFrame="YES" id="vSk-Uk-iSp">
+                            <rect key="frame" x="270" y="0.0" width="313" height="132"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </customView>
+                    </subviews>
+                    <holdingPriorities>
+                        <real value="250"/>
+                        <real value="250"/>
+                    </holdingPriorities>
+                </splitView>
+                <splitView dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2pk-w9-VZa">
+                    <rect key="frame" x="0.0" y="59" width="583" height="96"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <subviews>
+                        <customView fixedFrame="YES" id="I0P-XF-vkH">
+                            <rect key="frame" x="0.0" y="0.0" width="226" height="96"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </customView>
+                        <customView fixedFrame="YES" id="6pU-sb-v0r">
+                            <rect key="frame" x="236" y="0.0" width="347" height="96"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </customView>
+                    </subviews>
+                    <holdingPriorities>
+                        <real value="250"/>
+                        <real value="250"/>
+                    </holdingPriorities>
+                </splitView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Oaq-FJ-BcJ" firstAttribute="leading" secondItem="n51-Ks-XOx" secondAttribute="leading" id="1qx-5V-e2b"/>
+                <constraint firstAttribute="trailing" secondItem="Oaq-FJ-BcJ" secondAttribute="trailing" id="DHU-9C-gGb"/>
+                <constraint firstAttribute="bottom" secondItem="Oaq-FJ-BcJ" secondAttribute="bottom" constant="214" id="E5i-sE-Amn"/>
+                <constraint firstAttribute="bottom" secondItem="2pk-w9-VZa" secondAttribute="bottom" constant="59" id="Ez2-Q2-s4d"/>
+                <constraint firstItem="2pk-w9-VZa" firstAttribute="leading" secondItem="n51-Ks-XOx" secondAttribute="leading" id="NI6-9F-h7G"/>
+                <constraint firstItem="Oaq-FJ-BcJ" firstAttribute="top" secondItem="n51-Ks-XOx" secondAttribute="top" constant="67" id="eF7-bG-idT"/>
+                <constraint firstItem="2pk-w9-VZa" firstAttribute="top" secondItem="Oaq-FJ-BcJ" secondAttribute="bottom" constant="59" id="qoM-ep-c72"/>
+                <constraint firstAttribute="trailing" secondItem="2pk-w9-VZa" secondAttribute="trailing" id="vle-Du-GvY"/>
+            </constraints>
+        </customView>
+        <viewController id="21c-gX-ubW" customClass="TestCartsMainController">
+            <connections>
+                <outlet property="splitView" destination="Oaq-FJ-BcJ" id="5Oz-8o-xed"/>
+                <outlet property="vanilla" destination="2pk-w9-VZa" id="1iU-lR-Ewm"/>
+                <outlet property="view" destination="n51-Ks-XOx" id="BAg-5S-F13"/>
+            </connections>
+        </viewController>
     </objects>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>

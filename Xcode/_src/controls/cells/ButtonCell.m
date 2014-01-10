@@ -20,8 +20,8 @@
 
 
 - (void) setupButton {
-    NSLog(@"self.highlightsBy = %li", self.highlightsBy);
-    NSLog(@"self.showsStateBy = %li", self.showsStateBy);
+    //NSLog(@"self.highlightsBy = %li", self.highlightsBy);
+    //NSLog(@"self.showsStateBy = %li", self.showsStateBy);
 
 }
 
@@ -29,7 +29,7 @@
 - (void) drawInteriorWithFrame: (NSRect) cellFrame inView: (NSView *) controlView {
     [super drawInteriorWithFrame: cellFrame inView: controlView];
 
-    NSLog(@"self.state = %li", self.state);
+    //NSLog(@"self.state = %li", self.state);
 
 }
 

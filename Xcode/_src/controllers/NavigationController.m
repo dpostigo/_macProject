@@ -89,7 +89,7 @@
 }
 
 - (void) pushViewController: (VeryBasicViewController *) controller animated: (BOOL) isAnimated completion: (void (^)()) completionHandler {
-    //    NSViewController *lastController = [viewControllers lastObject];
+    //    NSViewController *lastController = [controllersForNib lastObject];
     [self addViewController: controller animated: isAnimated completion: completionHandler];
 }
 

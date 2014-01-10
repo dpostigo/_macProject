@@ -58,16 +58,16 @@
 
 }
 
-
-- (void) updateConstraintsIfNeeded {
-    [super updateConstraintsIfNeeded];
-
-
-    if (footerView) {
-        NSLayoutConstraint *bottomConstraint = [windowView bottomConstraintForItem: footerView];
-        bottomConstraint.constant = -self.hackInset;
-    }
-
-}
+//
+//- (void) updateConstraintsIfNeeded {
+//    [super updateConstraintsIfNeeded];
+//
+////
+////    if (footerView) {
+////        NSLayoutConstraint *bottomConstraint = [windowView bottomConstraintForItem: footerView];
+////        bottomConstraint.constant = -self.hackInset;
+////    }
+//
+//}
 
 @end

@@ -5,17 +5,13 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "CartsBackgroundWindow.h"
-#import "LayerBackedView.h"
 #import "CALayer+ConstraintUtils.h"
 #import "NSColor+CartsUtils.h"
 #import "CartsMainViewController.h"
 #import "CartsWindowFooterViewController.h"
 #import "CartsWindowHeaderViewController.h"
 
-@implementation CartsBackgroundWindow {
-
-    LayerBackedView *cartsBackground;
-}
+@implementation CartsBackgroundWindow
 
 @synthesize innerBorderLayer;
 
@@ -29,7 +25,7 @@
     [backgroundLayer makeSuperlayer];
     [backgroundLayer addSublayer: self.innerBorderLayer];
 
-    self.contentContentView = ([[CartsMainViewController alloc] init]).view;
+    //    self.contentContentView = ([[CartsMainViewController alloc] init]).view;
 
     self.footerView = self.footer;
     self.headerView = self.header;

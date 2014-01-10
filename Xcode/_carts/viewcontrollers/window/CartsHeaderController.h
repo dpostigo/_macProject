@@ -6,9 +6,7 @@
 #import <Foundation/Foundation.h>
 
 @interface CartsHeaderController : NSViewController {
-
     IBOutlet NSButton *addButton;
-
 }
 
 @end

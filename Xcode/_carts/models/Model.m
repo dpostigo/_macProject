@@ -7,10 +7,13 @@
 //
 
 #import "Model.h"
+#import "NSWorkspaceNib.h"
 
 @implementation Model {
 
 }
+
+@synthesize masterNib;
 
 + (Model *) sharedModel {
     static Model *_instance = nil;
@@ -25,8 +28,11 @@
 }
 
 
-- (NSNib *) workspaceNib {
-    return [[NSNib alloc] initWithNibNamed: @"Workspace" bundle: nil];
+- (NSWorkspaceNib *) masterNib {
+    if (masterNib == nil) {
+        masterNib = [[NSWorkspaceNib alloc] initWithNibNamed: @"Workspace" bundle: nil];
+    }
+    return masterNib;
 }
 
 @end

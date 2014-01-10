@@ -88,7 +88,11 @@
 
 
 - (void) setContentContentView: (NSView *) contentContentView1 {
+    if (contentContentView && contentContentView.superview) {
+        [contentContentView removeFromSuperview];
+    }
     contentContentView = contentContentView1;
+
     [windowView addSubview: contentContentView];
 
     contentContentView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -103,27 +107,29 @@
 
 #pragma mark Constraints
 
-- (void) updateConstraintsIfNeeded {
-    [super updateConstraintsIfNeeded];
-
-    if (contentContentView) {
-        NSLayoutConstraint *topConstraint = [windowView topConstraintForItem: contentContentView];
-        if (topConstraint == nil) NSLog(@"did not find");
-
-        topConstraint.constant = self.titleBarHeight - self.existingTitleBarHeight;
-
-        NSLayoutConstraint *bottomConstraint = [windowView bottomConstraintForItem: contentContentView];
-        bottomConstraint.constant = -self.footerBarHeight;
-    }
-
-    NSArray *buttons = self.windowButtonLayers;
-    for (CALayer *layer in buttons) {
-        //        NSLog(@"layer.frame = %@", NSStringFromRect(layer.frame));
-        CGFloat position = (self.titleBarHeight - layer.height) / 2;
-        layer.top = self.frame.size.height - self.titleBarHeight + (layer.height / 2) + 2;
-    }
-
-}
+//
+//
+//- (void) updateConstraintsIfNeeded {
+//    [super updateConstraintsIfNeeded];
+//
+////    if (contentContentView) {
+////        NSLayoutConstraint *topConstraint = [windowView topConstraintForItem: contentContentView];
+////        if (topConstraint == nil) NSLog(@"did not find");
+////
+////        topConstraint.constant = self.titleBarHeight - self.existingTitleBarHeight;
+////
+////        NSLayoutConstraint *bottomConstraint = [windowView bottomConstraintForItem: contentContentView];
+////        bottomConstraint.constant = -self.footerBarHeight;
+////    }
+////
+////    NSArray *buttons = self.windowButtonLayers;
+////    for (CALayer *layer in buttons) {
+////        //        NSLog(@"layer.frame = %@", NSStringFromRect(layer.frame));
+////        CGFloat position = (self.titleBarHeight - layer.height) / 2;
+////        layer.top = self.frame.size.height - self.titleBarHeight + (layer.height / 2) + 2;
+////    }
+//
+//}
 
 
 
@@ -192,7 +198,6 @@
 - (id <CAAction>) actionForLayer: (CALayer *) layer forKey: (NSString *) event {
     return (id) [NSNull null]; // disable all implicit animations
 }
-
 
 
 - (void) logtests {

@@ -8,7 +8,6 @@
 
 #import "DPSplitViewContainer.h"
 #import "DPSplitView.h"
-#import "DPSplitViewContainer.h"
 
 @implementation DPSplitView
 
@@ -29,10 +28,7 @@
 }
 
 
-#pragma mark Overrides
-
 #pragma mark Display customization
-
 
 - (void) addViewController: (NSViewController *) viewController {
     DPSplitViewContainer *container = [[DPSplitViewContainer alloc] initWithFrame: viewController.view.frame];
@@ -56,17 +52,6 @@
         [self.splitContainers addObject: container];
     }
     [super addSubview: aView];
-}
-
-
-- (void) awakeFromNib {
-    [super awakeFromNib];
-
-}
-
-- (void) adjustSubviews {
-    [super adjustSubviews];
-
 }
 
 

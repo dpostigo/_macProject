@@ -6,26 +6,33 @@
 
 
 #import "CartsAppDelegate.h"
-#import "NSNib+DPUtils.h"
-#import "CartsHeaderController.h"
-#import "DPWindow.h"
+#import "NSNib+WorkspaceNib.h"
 #import "DPHeaderedWindow.h"
+#import "NSWorkspaceNib.h"
+#import "NSWindow+DPUtils.h"
 
-@implementation CartsAppDelegate
+@implementation CartsAppDelegate {
+    NSWindow *window;
+}
 
 - (void) applicationDelegateDidFinishLaunching: (NSNotification *) notification {
     [super applicationDelegateDidFinishLaunching: notification];
 
-    [self testNibs];
 
-}
+    //    NSLog(@"macWindow.contentView = %@", macWindow.contentView);
+    [_model.masterNib load];
+    NSView *view = [_model.masterNib viewForClass: @"TestCartsMainController"];
+    //    [macWindow setContentView: view];
+    //    NSLog(@"macWindow.contentView = %@", macWindow.contentView);
 
-- (void) testNibs {
+    NSLog(@"view = %@", view);
+    bgWindow.headerView = [_model.masterNib viewForClass: @"CartsHeaderController"];
+    bgWindow.contentContentView = view;
+    [bgWindow close];
 
-    CartsHeaderController *controller = [_model.workspaceNib viewControllerForClass: [CartsHeaderController class]];
-    NSLog(@"controller = %@", controller);
-
-    bgWindow.headerView = controller.view;
+    window = [[NSWindow alloc] initWithContentRect: view.bounds styleMask: (NSResizableWindowMask | NSClosableWindowMask | NSTitledWindowMask) backing: NSBackingStoreBuffered defer: NO];
+    [window setContentView: view];
+    [window makeKeyAndOrderFront: nil];
 
 }
 

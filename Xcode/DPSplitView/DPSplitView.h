@@ -9,15 +9,16 @@
 #import <Foundation/Foundation.h>
 
 @class DPSplitView;
-
+@class DPSplitViewContainer;
 
 @protocol DPSplitViewDelegate <NSObject>
 
 @optional
+
 - (void) basicSplitView: (DPSplitView *) basicSplitView didResizeSplitContainer: (DPSplitViewContainer *) splitContainer;
 
-
 @end
+
 
 @interface DPSplitView : NSSplitView <DPSplitContainerDelegate> {
     __unsafe_unretained id <DPSplitViewDelegate> secondDelegate;

@@ -7,39 +7,21 @@
 
 #import "DPSplitViewController.h"
 
-@implementation DPSplitViewController {
-}
+@implementation DPSplitViewController
 
-@synthesize dividerEnabled;
 @synthesize splitView;
-
-
-#pragma mark Getters
-
-
-- (DPSplitView *) splitView {
-    if (splitView == nil) {
-        splitView = [[DPSplitView alloc] initWithFrame: self.view.bounds];
-        splitView.delegate = self;
-        splitView.secondDelegate = self;
-        [self embedView: splitView inView: self.view];
-    }
-    return splitView;
-}
+@synthesize dividerEnabled;
 
 - (void) loadView {
     [super loadView];
-
     self.splitView.dividerStyle = NSSplitViewDividerStyleThin;
     self.dividerEnabled = YES;
-
 }
 
 
 
 
 #pragma mark NSSplitViewDelegate
-
 
 - (CGFloat) splitView: (NSSplitView *) splitView1 constrainMinCoordinate: (CGFloat) proposedMinimumPosition ofSubviewAt: (NSInteger) dividerIndex {
     CGFloat ret = proposedMinimumPosition;
@@ -184,4 +166,20 @@
 - (DPSplitViewContainer *) splitContainerAtIndex: (NSUInteger) index {
     return [self.splitView splitViewContainerAtIndex: index];
 }
+
+
+
+#pragma mark Getters
+
+
+- (DPSplitView *) splitView {
+    if (splitView == nil) {
+        splitView = [[DPSplitView alloc] initWithFrame: self.view.bounds];
+        splitView.delegate = self;
+        splitView.secondDelegate = self;
+        [self embedView: splitView inView: self.view];
+    }
+    return splitView;
+}
+
 @end

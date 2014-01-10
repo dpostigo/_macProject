@@ -1,21 +1,28 @@
 PODS:
+  - DPKit (0.0.3):
+    - NSView-DPAutolayout
   - libextobjc/EXTScope (0.2.5):
     - libextobjc/RuntimeExtensions
   - libextobjc/RuntimeExtensions (0.2.5)
   - NSColor-Crayola (1.0)
-  - peanut4 (0.0.2)
+  - NSView-DPAutolayout (0.0.11)
   - PMPKVObservation (0.4):
     - libextobjc/EXTScope (~> 0.2.5)
 
 DEPENDENCIES:
+  - DPKit (from `~/Development/LocalPods/DPKit`)
   - NSColor-Crayola
-  - peanut4
   - PMPKVObservation
 
+EXTERNAL SOURCES:
+  DPKit:
+    :path: ~/Development/LocalPods/DPKit
+
 SPEC CHECKSUMS:
+  DPKit: 16039337bf1f1ed7b2446fdeb80319b2d52396fc
   libextobjc: 2cbc74caf8bdc74a86fdf24673f773c83424ea98
   NSColor-Crayola: 4ce6313cd2ab3170bfb0f0e0964b31ac9b680b9e
-  peanut4: 37860203db62c0db62021e1595b13489f2438a9e
+  NSView-DPAutolayout: 1edb506a3c0bd8141a484ccbd4ea631f897baa29
   PMPKVObservation: ce906efa31c5942b410c9433d3e04ebc4af8fccf
 
 COCOAPODS: 0.28.0

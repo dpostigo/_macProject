@@ -37,7 +37,6 @@
 - (id) init {
     self = [super init];
     if (self) {
-        NSLog(@"%s", __PRETTY_FUNCTION__);
         [self setupButton];
     }
 
@@ -48,7 +47,6 @@
 - (id) initWithCoder: (NSCoder *) coder {
     self = [super initWithCoder: coder];
     if (self) {
-        NSLog(@"%s", __PRETTY_FUNCTION__);
         [self setupButton];
     }
 
@@ -60,8 +58,8 @@
     self.highlightsBy = 14;
     self.showsStateBy = 0;
 
-    NSLog(@"coloredbutton self.showsStateBy = %li", self.showsStateBy);
-    NSLog(@"coloredbutton self.highlightsBy = %li", self.highlightsBy);
+    //NSLog(@"coloredbutton self.showsStateBy = %li", self.showsStateBy);
+    //NSLog(@"coloredbutton self.highlightsBy = %li", self.highlightsBy);
 
 }
 

@@ -270,15 +270,15 @@
 					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="toolbar">NSToolbar</string>
-						<string key="viewControllers">NSArray</string>
+						<string key="controllersForNib">NSArray</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="toolbar">
 							<string key="name">toolbar</string>
 							<string key="candidateClassName">NSToolbar</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="viewControllers">
-							<string key="name">viewControllers</string>
+						<object class="IBToOneOutletInfo" key="controllersForNib">
+							<string key="name">controllersForNib</string>
 							<string key="candidateClassName">NSArray</string>
 						</object>
 					</dictionary>

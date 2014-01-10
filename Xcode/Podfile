@@ -3,4 +3,5 @@ platform :osx, '10.7'
 pod 'PMPKVObservation'
 pod 'NSColor-Crayola'
 
-pod 'peanut4'
+
+pod 'DPKit', :path => '~/Development/LocalPods/DPKit'

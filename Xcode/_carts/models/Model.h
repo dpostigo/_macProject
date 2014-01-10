@@ -10,9 +10,15 @@
 #import "BasicModel.h"
 #import "List.h"
 
-@interface Model : BasicModel
+@class NSWorkspaceNib;
+
+@interface Model : BasicModel   {
+
+    NSWorkspaceNib *masterNib;
+}
+
+@property(nonatomic, strong) NSWorkspaceNib *masterNib;
 
 + (Model *) sharedModel;
-
-- (NSNib *) workspaceNib;
+- (NSWorkspaceNib *) masterNib;
 @end
