@@ -13,7 +13,16 @@ Pod::Spec.new do |s|
   s.source_files = 'BOAPI/*.{h,m}'
 
   s.subspec 'Operations' do |operations|
-    operations.source_files = 'BOAPI/Operations/**/*.{h,m}'
+    operations.source_files = 'BOAPI/Operations/*.{h,m}'
+
+    operations.subspec 'account' do |account|
+      account.source_files = 'BOAPI/Operations/account/*.{h,m}'
+    end
+
+    operations.subspec 'tasks' do |tasks|
+      tasks.source_files = 'BOAPI/Operations/tasks/*.{h,m}'
+    end
+
   end
 
   s.subspec 'Models' do |models|

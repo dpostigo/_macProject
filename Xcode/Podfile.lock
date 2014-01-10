@@ -31,6 +31,18 @@ PODS:
     - NSObject-UserDefaults
   - BOAPI/Operations (0.0.1):
     - AFNetworking (~> 2.0.3)
+    - BOAPI/Operations/account
+    - BOAPI/Operations/tasks
+    - NSDictionary-Deserialize
+    - NSObject+AutoDescription
+    - NSObject-UserDefaults
+  - BOAPI/Operations/account (0.0.1):
+    - AFNetworking (~> 2.0.3)
+    - NSDictionary-Deserialize
+    - NSObject+AutoDescription
+    - NSObject-UserDefaults
+  - BOAPI/Operations/tasks (0.0.1):
+    - AFNetworking (~> 2.0.3)
     - NSDictionary-Deserialize
     - NSObject+AutoDescription
     - NSObject-UserDefaults
@@ -77,7 +89,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
   AutoCoding: 1cb0f7373249cefc73aa22cc3a7cc62ba4b886a7
-  BOAPI: a7766f09c5d6603deb3c9d089936de2ac27a170a
+  BOAPI: f216a57d710a7f7785fcdd8331cd124caaccaba4
   CALayer-DPUtils: 1701a955e663c91e9d5f120cbce822ca83c64ecc
   DPKit: a749b5d767e18d2e15469fdcab641da9baea4417
   DPWindow: 0034b4715f3e4e396d9bb66afb59fc26ffff5265

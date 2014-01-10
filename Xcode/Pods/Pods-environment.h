@@ -66,6 +66,18 @@
 #define COCOAPODS_VERSION_MINOR_BOAPI_Operations 0
 #define COCOAPODS_VERSION_PATCH_BOAPI_Operations 1
 
+// BOAPI/Operations/account
+#define COCOAPODS_POD_AVAILABLE_BOAPI_Operations_account
+#define COCOAPODS_VERSION_MAJOR_BOAPI_Operations_account 0
+#define COCOAPODS_VERSION_MINOR_BOAPI_Operations_account 0
+#define COCOAPODS_VERSION_PATCH_BOAPI_Operations_account 1
+
+// BOAPI/Operations/tasks
+#define COCOAPODS_POD_AVAILABLE_BOAPI_Operations_tasks
+#define COCOAPODS_VERSION_MAJOR_BOAPI_Operations_tasks 0
+#define COCOAPODS_VERSION_MINOR_BOAPI_Operations_tasks 0
+#define COCOAPODS_VERSION_PATCH_BOAPI_Operations_tasks 1
+
 // BOAPI/Utils
 #define COCOAPODS_POD_AVAILABLE_BOAPI_Utils
 #define COCOAPODS_VERSION_MAJOR_BOAPI_Utils 0

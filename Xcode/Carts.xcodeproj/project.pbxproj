@@ -46,7 +46,6 @@
 		03D8CB311768AA17000CF88A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03D8CB2F1768AA17000CF88A /* InfoPlist.strings */; };
 		03D8CB331768AA17000CF88A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CB321768AA17000CF88A /* main.m */; };
 		03D8CB371768AA17000CF88A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 03D8CB351768AA17000CF88A /* Credits.rtf */; };
-		03D8CE121768ACA6000CF88A /* BONavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CBDE1768ACA6000CF88A /* BONavigationBar.m */; };
 		03D8CE131768ACA6000CF88A /* BasicBackgroundViewOld.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CBE11768ACA6000CF88A /* BasicBackgroundViewOld.m */; };
 		03D8CE141768ACA6000CF88A /* BasicButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CBE31768ACA6000CF88A /* BasicButton.m */; };
 		03D8CE151768ACA6000CF88A /* BasicButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CBE51768ACA6000CF88A /* BasicButtonCell.m */; };
@@ -143,22 +142,6 @@
 		03D8CFF61768B14E000CF88A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D8CFF51768B14E000CF88A /* QuartzCore.framework */; };
 		03D8CFF81768B15D000CF88A /* libSystem.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D8CFF71768B15D000CF88A /* libSystem.dylib */; };
 		03D8CFFA1768B171000CF88A /* libobjc.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D8CFF91768B171000CF88A /* libobjc.A.dylib */; };
-		03DD35F31769FA5D000DB1B7 /* BOGoldButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DD35781769FA5D000DB1B7 /* BOGoldButtonCell.m */; };
-		03DD35F41769FA5D000DB1B7 /* BOIconButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DD357A1769FA5D000DB1B7 /* BOIconButtonCell.m */; };
-		03DD35F51769FA5D000DB1B7 /* BOSilverButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DD357C1769FA5D000DB1B7 /* BOSilverButtonCell.m */; };
-		03DD35F61769FA5D000DB1B7 /* BOGoldButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DD357F1769FA5D000DB1B7 /* BOGoldButton.m */; };
-		03DD35F71769FA5D000DB1B7 /* BOSilverButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DD35811769FA5D000DB1B7 /* BOSilverButton.m */; };
-		03DD35F81769FA5D000DB1B7 /* BOWhiteTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DD35831769FA5D000DB1B7 /* BOWhiteTextButton.m */; };
-		03DD35F91769FA5D000DB1B7 /* CheckboxButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DD35851769FA5D000DB1B7 /* CheckboxButton.m */; };
-		03DD35FA1769FA5D000DB1B7 /* BODiscussionFooterRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DD35891769FA5D000DB1B7 /* BODiscussionFooterRowView.m */; };
-		03DD35FB1769FA5D000DB1B7 /* BODiscussionRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DD358B1769FA5D000DB1B7 /* BODiscussionRowView.m */; };
-		03DD35FC1769FA5D000DB1B7 /* BOModalTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DD358D1769FA5D000DB1B7 /* BOModalTableRowView.m */; };
-		03DD35FD1769FA5D000DB1B7 /* BOSidebarLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DD35901769FA5D000DB1B7 /* BOSidebarLabel.m */; };
-		03DD35FE1769FA5D000DB1B7 /* BOModalBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DD35931769FA5D000DB1B7 /* BOModalBackgroundView.m */; };
-		03DD35FF1769FA5D000DB1B7 /* BOModalFooterBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DD35951769FA5D000DB1B7 /* BOModalFooterBackgroundView.m */; };
-		03DD36001769FA5D000DB1B7 /* BOSidebarBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DD35971769FA5D000DB1B7 /* BOSidebarBackgroundView.m */; };
-		03DD36011769FA5D000DB1B7 /* BOTitleBarBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DD35991769FA5D000DB1B7 /* BOTitleBarBackground.m */; };
-		03DD36161769FA5D000DB1B7 /* NSDate+BOUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DD35C71769FA5D000DB1B7 /* NSDate+BOUtils.m */; };
 		03DFB36A180EBB5F000C09C3 /* NSBezierPath+MCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DFB353180EBB5F000C09C3 /* NSBezierPath+MCAdditions.m */; };
 		03DFB36B180EBB5F000C09C3 /* SNRHUDButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DFB356180EBB5F000C09C3 /* SNRHUDButtonCell.m */; };
 		03DFB36C180EBB5F000C09C3 /* SNRHUDImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DFB358180EBB5F000C09C3 /* SNRHUDImageCell.m */; };
@@ -416,8 +399,6 @@
 		03D8CB321768AA17000CF88A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		03D8CB341768AA17000CF88A /* Carts-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Carts-Prefix.pch"; sourceTree = "<group>"; };
 		03D8CB361768AA17000CF88A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		03D8CBDD1768ACA6000CF88A /* BONavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BONavigationBar.h; sourceTree = "<group>"; };
-		03D8CBDE1768ACA6000CF88A /* BONavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BONavigationBar.m; sourceTree = "<group>"; };
 		03D8CBE01768ACA6000CF88A /* BasicBackgroundViewOld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicBackgroundViewOld.h; sourceTree = "<group>"; };
 		03D8CBE11768ACA6000CF88A /* BasicBackgroundViewOld.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicBackgroundViewOld.m; sourceTree = "<group>"; };
 		03D8CBE21768ACA6000CF88A /* BasicButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicButton.h; sourceTree = "<group>"; };
@@ -603,39 +584,6 @@
 		03D8CFF51768B14E000CF88A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		03D8CFF71768B15D000CF88A /* libSystem.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSystem.dylib; path = usr/lib/libSystem.dylib; sourceTree = SDKROOT; };
 		03D8CFF91768B171000CF88A /* libobjc.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjc.A.dylib; path = usr/lib/libobjc.A.dylib; sourceTree = SDKROOT; };
-		03DD35721769FA5D000DB1B7 /* BOAppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOAppConstants.h; sourceTree = "<group>"; };
-		03DD35771769FA5D000DB1B7 /* BOGoldButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOGoldButtonCell.h; sourceTree = "<group>"; };
-		03DD35781769FA5D000DB1B7 /* BOGoldButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOGoldButtonCell.m; sourceTree = "<group>"; };
-		03DD35791769FA5D000DB1B7 /* BOIconButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOIconButtonCell.h; sourceTree = "<group>"; };
-		03DD357A1769FA5D000DB1B7 /* BOIconButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOIconButtonCell.m; sourceTree = "<group>"; };
-		03DD357B1769FA5D000DB1B7 /* BOSilverButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOSilverButtonCell.h; sourceTree = "<group>"; };
-		03DD357C1769FA5D000DB1B7 /* BOSilverButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOSilverButtonCell.m; sourceTree = "<group>"; };
-		03DD357E1769FA5D000DB1B7 /* BOGoldButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOGoldButton.h; sourceTree = "<group>"; };
-		03DD357F1769FA5D000DB1B7 /* BOGoldButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOGoldButton.m; sourceTree = "<group>"; };
-		03DD35801769FA5D000DB1B7 /* BOSilverButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOSilverButton.h; sourceTree = "<group>"; };
-		03DD35811769FA5D000DB1B7 /* BOSilverButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOSilverButton.m; sourceTree = "<group>"; };
-		03DD35821769FA5D000DB1B7 /* BOWhiteTextButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOWhiteTextButton.h; sourceTree = "<group>"; };
-		03DD35831769FA5D000DB1B7 /* BOWhiteTextButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOWhiteTextButton.m; sourceTree = "<group>"; };
-		03DD35841769FA5D000DB1B7 /* CheckboxButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckboxButton.h; sourceTree = "<group>"; };
-		03DD35851769FA5D000DB1B7 /* CheckboxButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckboxButton.m; sourceTree = "<group>"; };
-		03DD35881769FA5D000DB1B7 /* BODiscussionFooterRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BODiscussionFooterRowView.h; sourceTree = "<group>"; };
-		03DD35891769FA5D000DB1B7 /* BODiscussionFooterRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BODiscussionFooterRowView.m; sourceTree = "<group>"; };
-		03DD358A1769FA5D000DB1B7 /* BODiscussionRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BODiscussionRowView.h; sourceTree = "<group>"; };
-		03DD358B1769FA5D000DB1B7 /* BODiscussionRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BODiscussionRowView.m; sourceTree = "<group>"; };
-		03DD358C1769FA5D000DB1B7 /* BOModalTableRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOModalTableRowView.h; sourceTree = "<group>"; };
-		03DD358D1769FA5D000DB1B7 /* BOModalTableRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOModalTableRowView.m; sourceTree = "<group>"; };
-		03DD358F1769FA5D000DB1B7 /* BOSidebarLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOSidebarLabel.h; sourceTree = "<group>"; };
-		03DD35901769FA5D000DB1B7 /* BOSidebarLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOSidebarLabel.m; sourceTree = "<group>"; };
-		03DD35921769FA5D000DB1B7 /* BOModalBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOModalBackgroundView.h; sourceTree = "<group>"; };
-		03DD35931769FA5D000DB1B7 /* BOModalBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOModalBackgroundView.m; sourceTree = "<group>"; };
-		03DD35941769FA5D000DB1B7 /* BOModalFooterBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOModalFooterBackgroundView.h; sourceTree = "<group>"; };
-		03DD35951769FA5D000DB1B7 /* BOModalFooterBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOModalFooterBackgroundView.m; sourceTree = "<group>"; };
-		03DD35961769FA5D000DB1B7 /* BOSidebarBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOSidebarBackgroundView.h; sourceTree = "<group>"; };
-		03DD35971769FA5D000DB1B7 /* BOSidebarBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOSidebarBackgroundView.m; sourceTree = "<group>"; };
-		03DD35981769FA5D000DB1B7 /* BOTitleBarBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOTitleBarBackground.h; sourceTree = "<group>"; };
-		03DD35991769FA5D000DB1B7 /* BOTitleBarBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOTitleBarBackground.m; sourceTree = "<group>"; };
-		03DD35C61769FA5D000DB1B7 /* NSDate+BOUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+BOUtils.h"; sourceTree = "<group>"; };
-		03DD35C71769FA5D000DB1B7 /* NSDate+BOUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+BOUtils.m"; sourceTree = "<group>"; };
 		03DFB352180EBB5F000C09C3 /* NSBezierPath+MCAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+MCAdditions.h"; sourceTree = "<group>"; };
 		03DFB353180EBB5F000C09C3 /* NSBezierPath+MCAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+MCAdditions.m"; sourceTree = "<group>"; };
 		03DFB355180EBB5F000C09C3 /* SNRHUDButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNRHUDButtonCell.h; sourceTree = "<group>"; };
@@ -1272,8 +1220,6 @@
 		03D8CBDC1768ACA6000CF88A /* controls */ = {
 			isa = PBXGroup;
 			children = (
-				03D8CBDD1768ACA6000CF88A /* BONavigationBar.h */,
-				03D8CBDE1768ACA6000CF88A /* BONavigationBar.m */,
 				03D8CBDF1768ACA6000CF88A /* buttons */,
 				03D8CBED1768ACA6000CF88A /* cells */,
 				03D8CBF61768ACA6000CF88A /* image */,
@@ -1807,162 +1753,9 @@
 		03DD355B1769FA5D000DB1B7 /* projects */ = {
 			isa = PBXGroup;
 			children = (
-				03DD35701769FA5D000DB1B7 /* backoffice */,
 				7CA44991717653B81CE66CE9 /* app */,
 			);
 			path = projects;
-			sourceTree = "<group>";
-		};
-		03DD35701769FA5D000DB1B7 /* backoffice */ = {
-			isa = PBXGroup;
-			children = (
-				03DD35711769FA5D000DB1B7 /* app */,
-				03DD35751769FA5D000DB1B7 /* controls */,
-				03DD359A1769FA5D000DB1B7 /* data */,
-				03DD35AC1769FA5D000DB1B7 /* operations */,
-				03DD35C51769FA5D000DB1B7 /* utils */,
-				03DD35C81769FA5D000DB1B7 /* viewcontrollers */,
-				03DD35E51769FA5D000DB1B7 /* views */,
-				03DD35E61769FA5D000DB1B7 /* windows */,
-			);
-			path = backoffice;
-			sourceTree = "<group>";
-		};
-		03DD35711769FA5D000DB1B7 /* app */ = {
-			isa = PBXGroup;
-			children = (
-				03DD35721769FA5D000DB1B7 /* BOAppConstants.h */,
-			);
-			path = app;
-			sourceTree = "<group>";
-		};
-		03DD35751769FA5D000DB1B7 /* controls */ = {
-			isa = PBXGroup;
-			children = (
-				03DD35761769FA5D000DB1B7 /* buttonCells */,
-				03DD357D1769FA5D000DB1B7 /* buttons */,
-				03DD35841769FA5D000DB1B7 /* CheckboxButton.h */,
-				03DD35851769FA5D000DB1B7 /* CheckboxButton.m */,
-				03DD35861769FA5D000DB1B7 /* table */,
-				03DD358E1769FA5D000DB1B7 /* textfield */,
-				03DD35911769FA5D000DB1B7 /* views */,
-			);
-			path = controls;
-			sourceTree = "<group>";
-		};
-		03DD35761769FA5D000DB1B7 /* buttonCells */ = {
-			isa = PBXGroup;
-			children = (
-				03DD35771769FA5D000DB1B7 /* BOGoldButtonCell.h */,
-				03DD35781769FA5D000DB1B7 /* BOGoldButtonCell.m */,
-				03DD35791769FA5D000DB1B7 /* BOIconButtonCell.h */,
-				03DD357A1769FA5D000DB1B7 /* BOIconButtonCell.m */,
-				03DD357B1769FA5D000DB1B7 /* BOSilverButtonCell.h */,
-				03DD357C1769FA5D000DB1B7 /* BOSilverButtonCell.m */,
-			);
-			path = buttonCells;
-			sourceTree = "<group>";
-		};
-		03DD357D1769FA5D000DB1B7 /* buttons */ = {
-			isa = PBXGroup;
-			children = (
-				03DD357E1769FA5D000DB1B7 /* BOGoldButton.h */,
-				03DD357F1769FA5D000DB1B7 /* BOGoldButton.m */,
-				03DD35801769FA5D000DB1B7 /* BOSilverButton.h */,
-				03DD35811769FA5D000DB1B7 /* BOSilverButton.m */,
-				03DD35821769FA5D000DB1B7 /* BOWhiteTextButton.h */,
-				03DD35831769FA5D000DB1B7 /* BOWhiteTextButton.m */,
-			);
-			path = buttons;
-			sourceTree = "<group>";
-		};
-		03DD35861769FA5D000DB1B7 /* table */ = {
-			isa = PBXGroup;
-			children = (
-				03DD35871769FA5D000DB1B7 /* rowViews */,
-			);
-			path = table;
-			sourceTree = "<group>";
-		};
-		03DD35871769FA5D000DB1B7 /* rowViews */ = {
-			isa = PBXGroup;
-			children = (
-				03DD35881769FA5D000DB1B7 /* BODiscussionFooterRowView.h */,
-				03DD35891769FA5D000DB1B7 /* BODiscussionFooterRowView.m */,
-				03DD358A1769FA5D000DB1B7 /* BODiscussionRowView.h */,
-				03DD358B1769FA5D000DB1B7 /* BODiscussionRowView.m */,
-				03DD358C1769FA5D000DB1B7 /* BOModalTableRowView.h */,
-				03DD358D1769FA5D000DB1B7 /* BOModalTableRowView.m */,
-			);
-			path = rowViews;
-			sourceTree = "<group>";
-		};
-		03DD358E1769FA5D000DB1B7 /* textfield */ = {
-			isa = PBXGroup;
-			children = (
-				03DD358F1769FA5D000DB1B7 /* BOSidebarLabel.h */,
-				03DD35901769FA5D000DB1B7 /* BOSidebarLabel.m */,
-			);
-			path = textfield;
-			sourceTree = "<group>";
-		};
-		03DD35911769FA5D000DB1B7 /* views */ = {
-			isa = PBXGroup;
-			children = (
-				03DD35921769FA5D000DB1B7 /* BOModalBackgroundView.h */,
-				03DD35931769FA5D000DB1B7 /* BOModalBackgroundView.m */,
-				03DD35941769FA5D000DB1B7 /* BOModalFooterBackgroundView.h */,
-				03DD35951769FA5D000DB1B7 /* BOModalFooterBackgroundView.m */,
-				03DD35961769FA5D000DB1B7 /* BOSidebarBackgroundView.h */,
-				03DD35971769FA5D000DB1B7 /* BOSidebarBackgroundView.m */,
-				03DD35981769FA5D000DB1B7 /* BOTitleBarBackground.h */,
-				03DD35991769FA5D000DB1B7 /* BOTitleBarBackground.m */,
-			);
-			path = views;
-			sourceTree = "<group>";
-		};
-		03DD359A1769FA5D000DB1B7 /* data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = data;
-			sourceTree = "<group>";
-		};
-		03DD35AC1769FA5D000DB1B7 /* operations */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = operations;
-			sourceTree = "<group>";
-		};
-		03DD35C51769FA5D000DB1B7 /* utils */ = {
-			isa = PBXGroup;
-			children = (
-				03DD35C61769FA5D000DB1B7 /* NSDate+BOUtils.h */,
-				03DD35C71769FA5D000DB1B7 /* NSDate+BOUtils.m */,
-			);
-			path = utils;
-			sourceTree = "<group>";
-		};
-		03DD35C81769FA5D000DB1B7 /* viewcontrollers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = viewcontrollers;
-			sourceTree = "<group>";
-		};
-		03DD35E51769FA5D000DB1B7 /* views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = views;
-			sourceTree = "<group>";
-		};
-		03DD35E61769FA5D000DB1B7 /* windows */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = windows;
 			sourceTree = "<group>";
 		};
 		03DFB350180EBB5F000C09C3 /* SNRHUDKit */ = {
@@ -2566,7 +2359,6 @@
 			files = (
 				330F00CE186F0F4500E737F8 /* NSColor+CGColor.m in Sources */,
 				03D8CB331768AA17000CF88A /* main.m in Sources */,
-				03D8CE121768ACA6000CF88A /* BONavigationBar.m in Sources */,
 				03D8CE131768ACA6000CF88A /* BasicBackgroundViewOld.m in Sources */,
 				03D8CE141768ACA6000CF88A /* BasicButton.m in Sources */,
 				03D8CE151768ACA6000CF88A /* BasicButtonCell.m in Sources */,
@@ -2684,30 +2476,15 @@
 				03D8CEF41768ACA7000CF88A /* BasicWindow.m in Sources */,
 				03D8CEF51768ACA7000CF88A /* ModalWindow.m in Sources */,
 				03D8CFE71768AE5F000CF88A /* BasicTokenField.m in Sources */,
-				03DD35F31769FA5D000DB1B7 /* BOGoldButtonCell.m in Sources */,
-				03DD35F41769FA5D000DB1B7 /* BOIconButtonCell.m in Sources */,
-				03DD35F51769FA5D000DB1B7 /* BOSilverButtonCell.m in Sources */,
-				03DD35F61769FA5D000DB1B7 /* BOGoldButton.m in Sources */,
 				33A4E00C187F03F2003E6FD0 /* BasicFlippedViewController.m in Sources */,
 				038FFB57181415E10039703F /* NSBezierPath+Utils.m in Sources */,
 				038FFB69181415E10039703F /* NSString+Utils.m in Sources */,
-				03DD35F71769FA5D000DB1B7 /* BOSilverButton.m in Sources */,
 				33A4E029187F059F003E6FD0 /* DPSplitViewHorizontalController.m in Sources */,
-				03DD35F81769FA5D000DB1B7 /* BOWhiteTextButton.m in Sources */,
-				03DD35F91769FA5D000DB1B7 /* CheckboxButton.m in Sources */,
-				03DD35FA1769FA5D000DB1B7 /* BODiscussionFooterRowView.m in Sources */,
 				33A4E00A187F03F2003E6FD0 /* BasicBannerViewController.m in Sources */,
 				03DFB372180EBB5F000C09C3 /* SNRHUDWindowButtonCell.m in Sources */,
 				036D4CDE180C3B8D0017481C /* BasicHorizontalGradient.m in Sources */,
-				03DD35FB1769FA5D000DB1B7 /* BODiscussionRowView.m in Sources */,
 				03EC34CE183155880007FBF8 /* Model.m in Sources */,
-				03DD35FC1769FA5D000DB1B7 /* BOModalTableRowView.m in Sources */,
-				03DD35FD1769FA5D000DB1B7 /* BOSidebarLabel.m in Sources */,
 				03DFB36D180EBB5F000C09C3 /* SNRHUDScrollView.m in Sources */,
-				03DD35FE1769FA5D000DB1B7 /* BOModalBackgroundView.m in Sources */,
-				03DD35FF1769FA5D000DB1B7 /* BOModalFooterBackgroundView.m in Sources */,
-				03DD36001769FA5D000DB1B7 /* BOSidebarBackgroundView.m in Sources */,
-				03DD36011769FA5D000DB1B7 /* BOTitleBarBackground.m in Sources */,
 				038FFB62181415E10039703F /* NSButton+DPUtils.m in Sources */,
 				038FFB63181415E10039703F /* NSButton+TextColor.m in Sources */,
 				330F00CF186F0F4500E737F8 /* NSColor+DPColors.m in Sources */,
@@ -2719,7 +2496,6 @@
 				03DFB36C180EBB5F000C09C3 /* SNRHUDImageCell.m in Sources */,
 				03DFB373180EBB5F000C09C3 /* SNRHUDWindowFrameView.m in Sources */,
 				038FFB5F181415E10039703F /* NSImage+EtchedImageDrawing.m in Sources */,
-				03DD36161769FA5D000DB1B7 /* NSDate+BOUtils.m in Sources */,
 				036D4CE0180C3B8D0017481C /* BorderOption.m in Sources */,
 				03DFB370180EBB5F000C09C3 /* SNRHUDTextView.m in Sources */,
 				7CA444A6A1A474566BB29FB4 /* StyledRowView.m in Sources */,
