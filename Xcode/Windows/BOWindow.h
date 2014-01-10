@@ -6,8 +6,11 @@
 #import <Foundation/Foundation.h>
 #import <DPWindow/DPStyledWindow.h>
 
+@class Model;
+
 @interface BOWindow : DPStyledWindow {
 
+    Model *_model;
     NSOperationQueue *_queue;
 
 }

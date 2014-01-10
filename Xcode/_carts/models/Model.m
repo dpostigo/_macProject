@@ -8,10 +8,13 @@
 
 #import "Model.h"
 #import "NSWorkspaceNib.h"
+#import "OperationHandler.h"
+#import "NSObject+UserDefaults.h"
 
 @implementation Model
 
 @synthesize masterNib;
+@synthesize operationHandler;
 
 + (Model *) sharedModel {
     static Model *_instance = nil;
@@ -33,4 +36,48 @@
     return masterNib;
 }
 
+- (id <BOAPIDelegate>) operationHandler {
+    if (operationHandler == nil) {
+        operationHandler = [[OperationHandler alloc] init];
+    }
+    return operationHandler;
+}
+
+
+
+#pragma mark Defaults
+//
+//- (void) setUsername: (NSString *) username {
+//    _username = [username mutableCopy];
+//    [[NSUserDefaults standardUserDefaults] setObject: self.username forKey: @"username"];
+//
+//}
+
+
+- (void) setPassword: (NSString *) password {
+    [self saveObject: password forKey: @"password"];
+}
+
+- (NSString *) password {
+    NSString *ret = [self savedObjectForKey: @"password"];
+    if (ret == nil) {
+        ret = @"";
+    }
+    return ret;
+}
+
+- (void) setUsername: (NSString *) username {
+    [self saveObject: username forKey: @"username"];
+}
+
+- (NSString *) username {
+    NSString *ret = [self savedObjectForKey: @"username"];
+    if (ret == nil) {
+        ret = @"";
+    }
+    return ret;
+}
+
 @end
+
+

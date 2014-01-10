@@ -18,7 +18,9 @@
 @end
 
 
-@implementation DPOutlineViewSection
+@implementation DPOutlineViewSection {
+    NSString *title;
+}
 
 @synthesize title;
 @synthesize items;
@@ -55,19 +57,28 @@
 
 #pragma mark  DPOutlineViewItem
 
-@implementation DPOutlineViewItem
+@implementation DPOutlineViewItem {
+    NSString *title;
+    NSImage *image;
+}
 
 @synthesize title;
+@synthesize image;
 
 - (instancetype) initWithTitle: (NSString *) aTitle {
+    return [self initWithTitle: aTitle image: nil];
+}
+
+
+- (instancetype) initWithTitle: (NSString *) aTitle image: (NSImage *) anImage {
     self = [super init];
     if (self) {
         title = aTitle;
+        image = anImage;
     }
 
     return self;
 }
-
 
 @end
 
@@ -85,34 +96,34 @@
 }
 
 @synthesize sections;
-
 @synthesize autoExpands;
+
+@synthesize outlineDelegate;
 
 - (void) awakeFromNib {
     [super awakeFromNib];
 
-    autoExpands = YES;
-
-    NSLog(@"%s", __PRETTY_FUNCTION__);
     [self awakeCells];
 
-    self.dataSource = self;
-    self.delegate = self;
+    autoExpands = YES;
 
-    [self reloadData];
+    super.dataSource = self;
+    super.delegate = self;
+    self.floatsGroupRows = NO;
+
+    //    [self reloadData];
 }
 
 - (void) awakeCells {
-
     cellsHolder = [[NSObject alloc] init];
     NSView *ret = nil;
     ret = [self makeViewWithIdentifier: @"HeaderCell" owner: cellsHolder];
     ret = [self makeViewWithIdentifier: @"DataCell" owner: cellsHolder];
-
 }
 
 
 - (void) reloadData {
+    [self callSelector: @selector(prepareDatasource) object: nil];
     [self prepareDatasource];
     [super reloadData];
 
@@ -154,15 +165,14 @@
 
 
 - (void) prepareDatasource {
-    sections = [[NSMutableArray alloc] init];
 
-    DPOutlineViewSection *section = [[DPOutlineViewSection alloc] initWithTitle: @"Section 1"];
-    [section addItem: [[DPOutlineViewItem alloc] initWithTitle: @"Item 1"]];
-    [section addItem: [[DPOutlineViewItem alloc] initWithTitle: @"Item 2"]];
-    [section addItem: [[DPOutlineViewItem alloc] initWithTitle: @"Item 3"]];
+    //    DPOutlineViewSection *section = [[DPOutlineViewSection alloc] initWithTitle: @"Section 1"];
+    //    [section addItem: [[DPOutlineViewItem alloc] initWithTitle: @"Item 1"]];
+    //    [section addItem: [[DPOutlineViewItem alloc] initWithTitle: @"Item 2"]];
+    //    [section addItem: [[DPOutlineViewItem alloc] initWithTitle: @"Item 3"]];
     //    [section addItem: [[DPOutlineViewItem alloc] initWithTitle: @"Item 4"]];
-
-    [self.sections addObject: section];
+    //
+    //    [self.sections addObject: section];
 
 }
 
@@ -171,13 +181,6 @@
 }
 
 
-- (DPOutlineViewSection *) sectionAtIndex: (NSUInteger) index {
-    DPOutlineViewSection *ret = nil;
-    if ([self.sections count] > index) {
-        ret = [self.sections objectAtIndex: index];
-    }
-    return ret;
-}
 
 
 #pragma mark NSOutlineViewDataSource
@@ -218,7 +221,12 @@
 
 - (id) outlineView: (NSOutlineView *) outlineView objectValueForTableColumn: (NSTableColumn *) tableColumn byItem: (id) item {
     id ret = nil;
-    ret = [item title];
+    if ([item isKindOfClass: [DPOutlineViewSection class]]) {
+
+        ret = [item title];
+    } else {
+        ret = item;
+    }
     //    if (item == nil) {
     //        ret = [self sectionAtIndex: index];
     //    } else {
@@ -232,17 +240,17 @@
 
 //
 //#pragma mark Additional
-//- (void) outlineView: (NSOutlineView *) outlineView setObjectValue: (id) object forTableColumn: (NSTableColumn *) tableColumn byItem: (id) item {
+//- (void) outline: (NSOutlineView *) outline setObjectValue: (id) object forTableColumn: (NSTableColumn *) tableColumn byItem: (id) item {
 //
 //}
 //
 - (id) outlineView: (NSOutlineView *) outlineView itemForPersistentObject: (id) object {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+    //    NSLog(@"%s", __PRETTY_FUNCTION__);
     return nil;
 }
 
 - (id) outlineView: (NSOutlineView *) outlineView persistentObjectForItem: (id) item {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+    //    NSLog(@"%s", __PRETTY_FUNCTION__);
     return nil;
 }
 
@@ -261,7 +269,7 @@
         ret = [outlineView makeViewWithIdentifier: @"DataCell" owner: cellsHolder];
     }
 
-    NSLog(@"%s, item = %@, ret = %@", __PRETTY_FUNCTION__, item, ret);
+    //    NSLog(@"%s, item = %@, ret = %@", __PRETTY_FUNCTION__, item, ret);
     return ret;
 }
 
@@ -272,7 +280,7 @@
     return ret;
 }
 //
-//- (BOOL) outlineView: (NSOutlineView *) outlineView shouldExpandItem: (id) item {
+//- (BOOL) outline: (NSOutlineView *) outline shouldExpandItem: (id) item {
 //    BOOL ret = NO;
 //    if ([item isKindOfClass: [DPOutlineViewSection class]]) {
 //       ret = YES;
@@ -280,7 +288,7 @@
 //    return ret;
 //}
 
-//- (BOOL) outlineView: (NSOutlineView *) outlineView shouldCollapseItem: (id) item {
+//- (BOOL) outline: (NSOutlineView *) outline shouldCollapseItem: (id) item {
 //    return NO;
 //}
 
@@ -289,6 +297,24 @@
 
 
 #pragma mark Sections
+
+#pragma mark Sections
+
+- (void) clearSections {
+    [self.sections removeAllObjects];
+}
+
+- (DPOutlineViewSection *) sectionAtIndex: (NSUInteger) index {
+    DPOutlineViewSection *ret = nil;
+    if ([self.sections count] > index) {
+        ret = [self.sections objectAtIndex: index];
+    }
+    return ret;
+}
+
+- (void) addSection: (DPOutlineViewSection *) section {
+    [self.sections addObject: section];
+}
 
 - (NSUInteger) sectionCount {
     return [self.sections count];
@@ -302,4 +328,24 @@
 }
 
 
+
+#pragma mark Call selectors
+
+
+- (void) callSelector: (SEL) selector object: (id) object {
+    [self callSelector: selector object: object object: nil object: nil];
+}
+
+- (void) callSelector: (SEL) selector object: (id) object object: (id) object2 {
+    [self callSelector: selector object: object object: object2 object: nil];
+}
+
+- (void) callSelector: (SEL) selector object: (id) object object: (id) object2 object: (id) object3 {
+    if (outlineDelegate && [outlineDelegate respondsToSelector: selector]) {
+        id theDelegate = outlineDelegate;
+        IMP imp = [theDelegate methodForSelector: selector];
+        void (*func)(id, SEL, id, id, id) = (void *) imp;
+        func(theDelegate, selector, object, object2, object3);
+    }
+}
 @end

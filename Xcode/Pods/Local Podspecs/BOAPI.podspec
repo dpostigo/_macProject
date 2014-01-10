@@ -27,5 +27,6 @@ Pod::Spec.new do |s|
   s.dependency   'AFNetworking', '~> 2.0.3'
   s.dependency   'NSObject+AutoDescription'
   s.dependency   'NSDictionary-Deserialize'
+  s.dependency   'NSObject-UserDefaults'
 
 end

@@ -16,6 +16,7 @@
 @synthesize splitView;
 
 - (void) viewDidLoad {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     CartsSidebarViewController *controller = [[CartsSidebarViewController alloc] init];
     CartsContentViewController *controller2 = [[CartsContentViewController alloc] init];
 
@@ -26,8 +27,15 @@
 
 }
 
+- (void) awakeFromNib {
+    [super awakeFromNib];
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+
 - (NSView *) sidebarView {
-    return [self.model.masterNib viewForClass: @"TestCartsSidebarController"];
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    return [self.model.masterNib viewForClass: @"BOSidebarController"];
 }
 
 
@@ -40,25 +48,6 @@
 }
 
 
-- (void) setView: (NSView *) view1 {
-    [super setView: view1];
-    //    self.view.translatesAutoresizingMaskIntoConstraints = NO;
-
-}
-
-
-- (void) setSplitView: (DDSplitView *) splitView1 {
-    splitView = splitView1;
-}
-
-
-- (void) loadView {
-    [super loadView];
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-
-}
-
-
 - (void) oldviewDidLoad {
 
     CartsSidebarViewController *controller = [[CartsSidebarViewController alloc] init];
@@ -66,7 +55,7 @@
 
 
     NSWorkspaceNib *nib = self.model.masterNib;
-    NSView *sidebarView = [nib viewForClass: @"TestCartsSidebarController"];
+    NSView *sidebarView = [nib viewForClass: @"BOSidebarController"];
 
 
     NSView *vanillaSubview1 = [vanilla.subviews objectAtIndex: 0];

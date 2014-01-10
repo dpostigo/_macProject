@@ -8,3 +8,6 @@ pod 'BOAPI',  :path => '~/Development/LocalPods/BOAPI'
 pod 'DPWindow',  :path => '~/Development/LocalPods/DPWindow'
 pod 'DPKit', :path => '~/Development/LocalPods/DPKit'
 
+
+
+pod 'AutoCoding'

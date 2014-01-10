@@ -4,9 +4,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <BOAPI/BOAPIDelegate.h>
 #import "BOWindow.h"
 
-@interface BOLoginWindow : BOWindow {
+@interface BOLoginWindow : BOWindow <BOAPIDelegate> {
 
     IBOutlet NSTextField *userField;
     IBOutlet NSTextField *passwordField;
@@ -15,4 +16,6 @@
 }
 
 @property(nonatomic, strong) NSButton *submitButton;
+@property(nonatomic, strong) NSTextField *userField;
+@property(nonatomic, strong) NSTextField *passwordField;
 @end

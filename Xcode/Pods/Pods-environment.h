@@ -42,6 +42,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_Serialization 0
 #define COCOAPODS_VERSION_PATCH_AFNetworking_Serialization 3
 
+// AutoCoding
+#define COCOAPODS_POD_AVAILABLE_AutoCoding
+#define COCOAPODS_VERSION_MAJOR_AutoCoding 2
+#define COCOAPODS_VERSION_MINOR_AutoCoding 1
+#define COCOAPODS_VERSION_PATCH_AutoCoding 0
+
 // BOAPI
 #define COCOAPODS_POD_AVAILABLE_BOAPI
 #define COCOAPODS_VERSION_MAJOR_BOAPI 0
@@ -107,6 +113,12 @@
 #define COCOAPODS_VERSION_MAJOR_NSObject_AutoDescription 0
 #define COCOAPODS_VERSION_MINOR_NSObject_AutoDescription 1
 #define COCOAPODS_VERSION_PATCH_NSObject_AutoDescription 0
+
+// NSObject-UserDefaults
+#define COCOAPODS_POD_AVAILABLE_NSObject_UserDefaults
+#define COCOAPODS_VERSION_MAJOR_NSObject_UserDefaults 0
+#define COCOAPODS_VERSION_MINOR_NSObject_UserDefaults 0
+#define COCOAPODS_VERSION_PATCH_NSObject_UserDefaults 1
 
 // NSView-DPAutolayout
 #define COCOAPODS_POD_AVAILABLE_NSView_DPAutolayout

@@ -8,17 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import "BasicModel.h"
-#import "List.h"
 #import "BOAPIDelegate.h"
 
 @class NSWorkspaceNib;
+@class OperationHandler;
 
 @interface Model : BasicModel <BOAPIDelegate> {
-
     NSWorkspaceNib *masterNib;
+    NSObject <BOAPIDelegate> *operationHandler;
 }
 
 @property(nonatomic, strong) NSWorkspaceNib *masterNib;
+@property(nonatomic, strong) NSObject <BOAPIDelegate> *operationHandler;
+@property(nonatomic, strong) NSString *username;
+@property(nonatomic, strong) NSString *password;
+
 
 + (Model *) sharedModel;
 - (NSWorkspaceNib *) masterNib;
