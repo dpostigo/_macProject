@@ -10,11 +10,20 @@
 #import "NSWorkspaceNib.h"
 #import "OperationHandler.h"
 #import "NSObject+UserDefaults.h"
+#import "BOAPIModel.h"
+#import "BOFocusTypes.h"
+#import "Job.h"
 
 @implementation Model
 
 @synthesize masterNib;
 @synthesize operationHandler;
+
+@synthesize currentUser;
+
+@synthesize selectedJob;
+@synthesize selectedArtist;
+@synthesize selectedFocusType;
 
 + (Model *) sharedModel {
     static Model *_instance = nil;
@@ -76,6 +85,35 @@
         ret = @"";
     }
     return ret;
+}
+
+
+- (NSString *) selectedFocusType {
+    if (selectedFocusType == nil) {
+        selectedFocusType = [NSString stringWithFormat: @"%@", kBOFocusTypeMyTasks];
+    }
+    return selectedFocusType;
+}
+
+
+
+#pragma mark Data getters
+
+
+- (NSMutableArray *) jobs {
+    return [BOAPIModel sharedModel].jobs;
+}
+
+- (NSMutableArray *) tasks {
+    return [BOAPIModel sharedModel].tasks;
+}
+
+- (NSMutableArray *) contacts {
+    return [BOAPIModel sharedModel].contacts;
+}
+
+- (NSMutableArray *) serviceItems {
+    return [BOAPIModel sharedModel].serviceItems;
 }
 
 @end

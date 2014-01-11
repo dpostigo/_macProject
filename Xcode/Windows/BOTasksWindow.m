@@ -8,15 +8,11 @@
 #import "Model.h"
 #import "NSWorkspaceNib.h"
 #import "DDSplitView.h"
+#import "GetTasksOperation.h"
 
 @implementation BOTasksWindow
 
 @synthesize splitView;
-
-- (void) setSplitView: (DDSplitView *) splitView1 {
-    splitView = splitView1;
-}
-
 
 - (id) initWithContentRect: (NSRect) contentRect styleMask: (NSUInteger) aStyle backing: (NSBackingStoreType) bufferingType defer: (BOOL) flag {
     self = [super initWithContentRect: contentRect styleMask: aStyle backing: bufferingType defer: flag];
@@ -33,7 +29,7 @@
 
 
 - (void) userDidLogin: (User *) user {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+    [_queue addOperation: [[GetTasksOperation alloc] init]];
 
 }
 

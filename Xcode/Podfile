@@ -4,10 +4,11 @@ pod 'PMPKVObservation'
 pod 'NSColor-Crayola'
 
 
-pod 'BOAPI',  :path => '~/Development/LocalPods/BOAPI'
-pod 'DPWindow',  :path => '~/Development/LocalPods/DPWindow'
+pod 'BOAPI', :path => '~/Development/LocalPods/BOAPI'
+pod 'DPWindow', :path => '~/Development/LocalPods/DPWindow'
 pod 'DPKit', :path => '~/Development/LocalPods/DPKit'
 
-
+#pod 'JMSimpleDate', :podspec => '~/Development/LocalPods/JMSimpleDate'
+#pod 'JMSimpleDate', :git => 'https://github.com/jamescmartinez/JMSimpleDate', :branch => 'master'
 
 pod 'AutoCoding'

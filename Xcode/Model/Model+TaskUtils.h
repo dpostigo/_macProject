@@ -4,9 +4,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Model.h"
 
-@interface NSObject (UserDefaults)
+@interface Model (TaskUtils)
 
-- (id) savedObjectForKey: (NSString *) key;
-- (void) saveObject: (id) object forKey: (NSString *) key;
+- (NSArray *) tasksForSelectedFocusType;
+- (NSArray *) tasksForFocusType: (NSString *) mode;
 @end

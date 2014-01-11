@@ -102,10 +102,6 @@
 		03D8CEB31768ACA6000CF88A /* NSImageView+DPImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CD2A1768ACA6000CF88A /* NSImageView+DPImageManager.m */; };
 		03D8CEB81768ACA6000CF88A /* HoverTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CD361768ACA6000CF88A /* HoverTableRowView.m */; };
 		03D8CEB91768ACA6000CF88A /* iTableColumnHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CD391768ACA6000CF88A /* iTableColumnHeaderCell.m */; };
-		03D8CEBA1768ACA6000CF88A /* JMSimpleDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CD3D1768ACA6000CF88A /* JMSimpleDate.m */; };
-		03D8CEBB1768ACA6000CF88A /* JMSimpleDateConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CD3F1768ACA6000CF88A /* JMSimpleDateConstants.m */; };
-		03D8CEBC1768ACA6000CF88A /* NSDate+JMSimpleDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CD411768ACA6000CF88A /* NSDate+JMSimpleDate.m */; };
-		03D8CEBD1768ACA6000CF88A /* NSDateFormatter+JMSimpleDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CD431768ACA6000CF88A /* NSDateFormatter+JMSimpleDate.m */; };
 		03D8CEBE1768ACA6000CF88A /* TTTTimeIntervalFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CD471768ACA6000CF88A /* TTTTimeIntervalFormatter.m */; };
 		03D8CEBF1768ACA6000CF88A /* YRKSpinningProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CD4A1768ACA6000CF88A /* YRKSpinningProgressIndicator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		03D8CEC01768ACA6000CF88A /* BasicDelegater.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8CD4D1768ACA6000CF88A /* BasicDelegater.m */; };
@@ -208,6 +204,7 @@
 		3353EB1918707F73001798B1 /* SidebarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3353EB0D18707F73001798B1 /* SidebarViewController.xib */; };
 		3353EB1A18707F73001798B1 /* TitleBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3353EB0E18707F73001798B1 /* TitleBarViewController.xib */; };
 		33557CB91880AC3600986377 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33557CB81880AC3600986377 /* Images.xcassets */; };
+		33557CBD1880B9EC00986377 /* BOSidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33557CBC1880B9EC00986377 /* BOSidebarController.m */; };
 		33A4DFCC187F0389003E6FD0 /* DPSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A4DFCB187F0389003E6FD0 /* DPSplitView.m */; };
 		33A4DFDE187F03D9003E6FD0 /* DPSplitViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A4DFD8187F03D9003E6FD0 /* DPSplitViewContainer.m */; };
 		33A4E009187F03F2003E6FD0 /* BasicArrayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A4DFE1187F03F2003E6FD0 /* BasicArrayViewController.m */; };
@@ -304,19 +301,20 @@
 		F29B837D2952A7FCDFE35040 /* NSViewController+Carts.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8C4BEF1324365C890EA0 /* NSViewController+Carts.m */; };
 		F29B83F6449291C463CF8624 /* BOWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B872324B6BC988E26FC3D /* BOWindow.m */; };
 		F29B84D6B6C846BA35F3B77D /* LayerHostingView.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8F87DA48169D949F773C /* LayerHostingView.m */; };
-		F29B85D47C22D5109C2952CC /* BOSidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B85F9A883EA8B553CBFF6 /* BOSidebarController.m */; };
-		F29B85FEA8E4A53E44358496 /* BOFocusTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B82633CF8D8AC39B16F2C /* BOFocusTypes.m */; };
 		F29B8728E0CA1126302BC4E8 /* CartsBackgroundWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8B7FE9D3A7ECEE8F10B3 /* CartsBackgroundWindow.m */; };
 		F29B878B52D4C2036F0CBF44 /* BackgroundTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8BDD4D2F69AB4E18B8AF /* BackgroundTitleBar.m */; };
 		F29B87E63396F3BA62639F00 /* BackgroundWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B847650191FCF53A5A447 /* BackgroundWindowController.m */; };
+		F29B88AD7B6031237ED8E8AC /* BOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B880BA779C0E69A861185 /* BOViewController.m */; };
 		F29B88AEB6EF19B9C102A38D /* DDSplitViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B86F70AD4A5D03E5E8E17 /* DDSplitViewContainer.m */; };
 		F29B88DE81A40A6B11ED574C /* CartsCustomWindowLayerHosting.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B802653FD34CB268671DC /* CartsCustomWindowLayerHosting.m */; };
+		F29B898A10EA2F517B22C9EF /* BOTasksController.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B87A3C4ED6C937A8D2079 /* BOTasksController.m */; };
 		F29B8994D17293967E216C67 /* ColoredButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8A0C813F5F9447C83AAD /* ColoredButtonCell.m */; };
 		F29B8A3A8B909857B9C1D265 /* OperationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8CF2FF6ADC06E39D39A2 /* OperationHandler.m */; };
 		F29B8A3C778A09A060E0D228 /* BOLoginWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B812F80ECC21FFE982535 /* BOLoginWindow.m */; };
 		F29B8B6A4266929345A09B64 /* DDSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B80A3511A918F329F0ECB /* DDSplitView.m */; };
 		F29B8C456B81756F076236EF /* LayerBackedView.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8D99874A4AAA52AF2DCE /* LayerBackedView.m */; };
 		F29B8C7DFDF7A3E0413B2206 /* CALayer+InfoUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8A401F19F78F9145A273 /* CALayer+InfoUtils.m */; };
+		F29B8CA02F1EBC4B6C33F338 /* Model+TaskUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B899295240A66349E67BD /* Model+TaskUtils.m */; };
 		F29B8CB751CC6A582562BD61 /* CartsHeaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B823342A5374CB13BD6A4 /* CartsHeaderController.m */; };
 		F29B8DA99091B2680F3A8771 /* DPOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B89C783750F7B478D63AA /* DPOutlineView.m */; };
 		F29B8DCDE0E799571341D904 /* NSView+SuperConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B86EFC18E77E49CC8AA35 /* NSView+SuperConstraints.m */; };
@@ -514,15 +512,6 @@
 		03D8CD361768ACA6000CF88A /* HoverTableRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoverTableRowView.m; sourceTree = "<group>"; };
 		03D8CD381768ACA6000CF88A /* iTableColumnHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTableColumnHeaderCell.h; sourceTree = "<group>"; };
 		03D8CD391768ACA6000CF88A /* iTableColumnHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTableColumnHeaderCell.m; sourceTree = "<group>"; };
-		03D8CD3B1768ACA6000CF88A /* JMSimpleDate-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JMSimpleDate-Prefix.pch"; sourceTree = "<group>"; };
-		03D8CD3C1768ACA6000CF88A /* JMSimpleDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMSimpleDate.h; sourceTree = "<group>"; };
-		03D8CD3D1768ACA6000CF88A /* JMSimpleDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMSimpleDate.m; sourceTree = "<group>"; };
-		03D8CD3E1768ACA6000CF88A /* JMSimpleDateConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMSimpleDateConstants.h; sourceTree = "<group>"; };
-		03D8CD3F1768ACA6000CF88A /* JMSimpleDateConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMSimpleDateConstants.m; sourceTree = "<group>"; };
-		03D8CD401768ACA6000CF88A /* NSDate+JMSimpleDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+JMSimpleDate.h"; sourceTree = "<group>"; };
-		03D8CD411768ACA6000CF88A /* NSDate+JMSimpleDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+JMSimpleDate.m"; sourceTree = "<group>"; };
-		03D8CD421768ACA6000CF88A /* NSDateFormatter+JMSimpleDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+JMSimpleDate.h"; sourceTree = "<group>"; };
-		03D8CD431768ACA6000CF88A /* NSDateFormatter+JMSimpleDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+JMSimpleDate.m"; sourceTree = "<group>"; };
 		03D8CD461768ACA6000CF88A /* TTTTimeIntervalFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTimeIntervalFormatter.h; sourceTree = "<group>"; };
 		03D8CD471768ACA6000CF88A /* TTTTimeIntervalFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTimeIntervalFormatter.m; sourceTree = "<group>"; };
 		03D8CD491768ACA6000CF88A /* YRKSpinningProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRKSpinningProgressIndicator.h; sourceTree = "<group>"; };
@@ -701,6 +690,8 @@
 		3353EB0D18707F73001798B1 /* SidebarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SidebarViewController.xib; sourceTree = "<group>"; };
 		3353EB0E18707F73001798B1 /* TitleBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleBarViewController.xib; sourceTree = "<group>"; };
 		33557CB81880AC3600986377 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		33557CBB1880B9EC00986377 /* BOSidebarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOSidebarController.h; sourceTree = "<group>"; };
+		33557CBC1880B9EC00986377 /* BOSidebarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOSidebarController.m; sourceTree = "<group>"; };
 		33A4DFCA187F0389003E6FD0 /* DPSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPSplitView.h; sourceTree = "<group>"; };
 		33A4DFCB187F0389003E6FD0 /* DPSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPSplitView.m; sourceTree = "<group>"; };
 		33A4DFD7187F03D9003E6FD0 /* DPSplitViewContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPSplitViewContainer.h; sourceTree = "<group>"; };
@@ -887,30 +878,32 @@
 		F29B81CB67D88FC58D37D877 /* CartsBackgroundWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsBackgroundWindow.h; sourceTree = "<group>"; };
 		F29B81E642BAAF7E351C2A56 /* LayerHostingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerHostingView.h; sourceTree = "<group>"; };
 		F29B823342A5374CB13BD6A4 /* CartsHeaderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartsHeaderController.m; path = window/CartsHeaderController.m; sourceTree = "<group>"; };
-		F29B82633CF8D8AC39B16F2C /* BOFocusTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOFocusTypes.m; sourceTree = "<group>"; };
 		F29B8263C653AFF28FF0425C /* CALayer+FrameUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+FrameUtils.h"; sourceTree = "<group>"; };
 		F29B82907E31BFA5CA54A8AF /* NSView+ConstraintGetters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+ConstraintGetters.m"; sourceTree = "<group>"; };
 		F29B82E5A1AA2886831D93DF /* CartsCustomWindowLayerHosting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartsCustomWindowLayerHosting.h; sourceTree = "<group>"; };
 		F29B840247012766969742E6 /* NSView+SuperConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+SuperConstraints.h"; sourceTree = "<group>"; };
+		F29B841546E9987780D0488A /* BOViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOViewController.h; sourceTree = "<group>"; };
 		F29B842597B67ACAB6AEF502 /* ButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonCell.m; sourceTree = "<group>"; };
 		F29B847650191FCF53A5A447 /* BackgroundWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundWindowController.m; sourceTree = "<group>"; };
-		F29B8552AD59127E5A7A07DC /* BOFocusTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOFocusTypes.h; sourceTree = "<group>"; };
 		F29B856064913B9546CF0734 /* CALayer+InfoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+InfoUtils.h"; sourceTree = "<group>"; };
 		F29B8569AC185DBFDC7E3835 /* CALayer+CartsStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CALayer+CartsStyle.h"; path = "layers/CALayer+CartsStyle.h"; sourceTree = "<group>"; };
-		F29B85F9A883EA8B553CBFF6 /* BOSidebarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOSidebarController.m; sourceTree = "<group>"; };
 		F29B86EB7C9097C0FB360C15 /* DPOutlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPOutlineView.h; sourceTree = "<group>"; };
 		F29B86EFC18E77E49CC8AA35 /* NSView+SuperConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+SuperConstraints.m"; sourceTree = "<group>"; };
 		F29B86F70AD4A5D03E5E8E17 /* DDSplitViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDSplitViewContainer.m; sourceTree = "<group>"; };
 		F29B872324B6BC988E26FC3D /* BOWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOWindow.m; sourceTree = "<group>"; };
+		F29B87A3C4ED6C937A8D2079 /* BOTasksController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOTasksController.m; sourceTree = "<group>"; };
+		F29B880BA779C0E69A861185 /* BOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOViewController.m; sourceTree = "<group>"; };
 		F29B885BB3154C311622E7F2 /* BackgroundTitleBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackgroundTitleBar.h; path = "background-window/BackgroundTitleBar.h"; sourceTree = "<group>"; };
 		F29B88C37D6AAE8EDD96BDD9 /* CADelegatingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADelegatingLayer.h; sourceTree = "<group>"; };
 		F29B88D54A2F97DA7FD55E37 /* LayerBackedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerBackedView.h; sourceTree = "<group>"; };
 		F29B88D598ADAD466257D6A9 /* NSView+ConstraintGetters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+ConstraintGetters.h"; sourceTree = "<group>"; };
 		F29B88D615CC0D3EEA863BE4 /* OperationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationHandler.h; sourceTree = "<group>"; };
 		F29B895A8E738BE3C67F9598 /* CALayer+CartsStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CALayer+CartsStyle.m"; path = "layers/CALayer+CartsStyle.m"; sourceTree = "<group>"; };
-		F29B8967BE4990A3B96EE357 /* BOSidebarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOSidebarController.h; sourceTree = "<group>"; };
 		F29B8981FC0B87D81070FCD5 /* BlueLayerBackedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueLayerBackedView.m; sourceTree = "<group>"; };
+		F29B899295240A66349E67BD /* Model+TaskUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Model+TaskUtils.m"; sourceTree = "<group>"; };
+		F29B89A56B680A459BEC71B2 /* BOTasksController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOTasksController.h; sourceTree = "<group>"; };
 		F29B89C783750F7B478D63AA /* DPOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPOutlineView.m; sourceTree = "<group>"; };
+		F29B8A0C5672CEEA2CD1FF31 /* Model+TaskUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Model+TaskUtils.h"; sourceTree = "<group>"; };
 		F29B8A0C813F5F9447C83AAD /* ColoredButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColoredButtonCell.m; sourceTree = "<group>"; };
 		F29B8A1B7C84F92DE1C20CAD /* DDSplitViewContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDSplitViewContainer.h; sourceTree = "<group>"; };
 		F29B8A2DCEBEFDFF05981B86 /* BackgroundWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundWindowController.h; sourceTree = "<group>"; };
@@ -1118,6 +1111,7 @@
 		03D8CB1A1768AA17000CF88A = {
 			isa = PBXGroup;
 			children = (
+				33557CBA1880B56500986377 /* Controllers */,
 				33557CB61880922700986377 /* Model */,
 				33557CB518805F0300986377 /* Windows */,
 				339C5162187F8BE00020AB80 /* DPOutlineView */,
@@ -1383,9 +1377,6 @@
 		03D8CC1F1768ACA6000CF88A /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				0344D4B1183AC03800A9F3E5 /* YIInnerShadowView-master */,
-				03DFB350180EBB5F000C09C3 /* SNRHUDKit */,
-				030A3E961778A603008BD708 /* RoundWindow */,
 				03D8CC201768ACA6000CF88A /* AGCenteringClipView */,
 				03D8CC231768ACA6000CF88A /* Archiver */,
 				03D8CC281768ACA6000CF88A /* ASIHTTPRequest */,
@@ -1395,9 +1386,11 @@
 				03D8CD261768ACA6000CF88A /* DPImageManager */,
 				03D8CD341768ACA6000CF88A /* HoverTableDemo */,
 				03D8CD371768ACA6000CF88A /* iTableColumnHeader */,
-				03D8CD3A1768ACA6000CF88A /* JMSimpleDate */,
+				030A3E961778A603008BD708 /* RoundWindow */,
+				03DFB350180EBB5F000C09C3 /* SNRHUDKit */,
 				03D8CD441768ACA6000CF88A /* Test */,
 				03D8CD451768ACA6000CF88A /* TTTTimeIntervalFormatter */,
+				0344D4B1183AC03800A9F3E5 /* YIInnerShadowView-master */,
 				03D8CD481768ACA6000CF88A /* YRKSpinningProgressIndicator */,
 			);
 			path = libs;
@@ -1525,22 +1518,6 @@
 				03D8CD391768ACA6000CF88A /* iTableColumnHeaderCell.m */,
 			);
 			path = iTableColumnHeader;
-			sourceTree = "<group>";
-		};
-		03D8CD3A1768ACA6000CF88A /* JMSimpleDate */ = {
-			isa = PBXGroup;
-			children = (
-				03D8CD3B1768ACA6000CF88A /* JMSimpleDate-Prefix.pch */,
-				03D8CD3C1768ACA6000CF88A /* JMSimpleDate.h */,
-				03D8CD3D1768ACA6000CF88A /* JMSimpleDate.m */,
-				03D8CD3E1768ACA6000CF88A /* JMSimpleDateConstants.h */,
-				03D8CD3F1768ACA6000CF88A /* JMSimpleDateConstants.m */,
-				03D8CD401768ACA6000CF88A /* NSDate+JMSimpleDate.h */,
-				03D8CD411768ACA6000CF88A /* NSDate+JMSimpleDate.m */,
-				03D8CD421768ACA6000CF88A /* NSDateFormatter+JMSimpleDate.h */,
-				03D8CD431768ACA6000CF88A /* NSDateFormatter+JMSimpleDate.m */,
-			);
-			path = JMSimpleDate;
 			sourceTree = "<group>";
 		};
 		03D8CD441768ACA6000CF88A /* Test */ = {
@@ -1927,8 +1904,6 @@
 				03EC34B6183155880007FBF8 /* NewBasicCollectionViewController.m */,
 				F29B823342A5374CB13BD6A4 /* CartsHeaderController.m */,
 				F29B805F984212D6F8B1DA2C /* CartsHeaderController.h */,
-				F29B85F9A883EA8B553CBFF6 /* BOSidebarController.m */,
-				F29B8967BE4990A3B96EE357 /* BOSidebarController.h */,
 				F29B8E6430490D09EA32212D /* TestCartsMainController.m */,
 				F29B8B93F36100478E31F183 /* TestCartsMainController.h */,
 				F29B8C4BEF1324365C890EA0 /* NSViewController+Carts.m */,
@@ -2076,10 +2051,23 @@
 			children = (
 				F29B8CF2FF6ADC06E39D39A2 /* OperationHandler.m */,
 				F29B88D615CC0D3EEA863BE4 /* OperationHandler.h */,
-				F29B82633CF8D8AC39B16F2C /* BOFocusTypes.m */,
-				F29B8552AD59127E5A7A07DC /* BOFocusTypes.h */,
+				F29B899295240A66349E67BD /* Model+TaskUtils.m */,
+				F29B8A0C5672CEEA2CD1FF31 /* Model+TaskUtils.h */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		33557CBA1880B56500986377 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				33557CBB1880B9EC00986377 /* BOSidebarController.h */,
+				33557CBC1880B9EC00986377 /* BOSidebarController.m */,
+				F29B880BA779C0E69A861185 /* BOViewController.m */,
+				F29B841546E9987780D0488A /* BOViewController.h */,
+				F29B87A3C4ED6C937A8D2079 /* BOTasksController.m */,
+				F29B89A56B680A459BEC71B2 /* BOTasksController.h */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		339C5162187F8BE00020AB80 /* DPOutlineView */ = {
@@ -2430,12 +2418,8 @@
 				03EC34CB183155880007FBF8 /* View+MASAdditions.m in Sources */,
 				03D8CEB91768ACA6000CF88A /* iTableColumnHeaderCell.m in Sources */,
 				038FFB56181415E10039703F /* NSBezierPath+DPUtils.m in Sources */,
-				03D8CEBA1768ACA6000CF88A /* JMSimpleDate.m in Sources */,
 				036D4CDA180C3B8D0017481C /* BasicFill.m in Sources */,
-				03D8CEBB1768ACA6000CF88A /* JMSimpleDateConstants.m in Sources */,
 				038FFB55181415E10039703F /* NSBezierPath+Additions.m in Sources */,
-				03D8CEBC1768ACA6000CF88A /* NSDate+JMSimpleDate.m in Sources */,
-				03D8CEBD1768ACA6000CF88A /* NSDateFormatter+JMSimpleDate.m in Sources */,
 				03D8CEBE1768ACA6000CF88A /* TTTTimeIntervalFormatter.m in Sources */,
 				038FFB5E181415E10039703F /* NSShadow+Utils.m in Sources */,
 				03D8CEBF1768ACA6000CF88A /* YRKSpinningProgressIndicator.m in Sources */,
@@ -2534,6 +2518,7 @@
 				7CA441864846AF5109D35889 /* ColorManager.m in Sources */,
 				7CA441DD5967517055D8B592 /* BasicGradient+DPUtils.m in Sources */,
 				7CA44E2EC1B6990298F6777B /* OutlineSection+Utils.m in Sources */,
+				33557CBD1880B9EC00986377 /* BOSidebarController.m in Sources */,
 				03EC34D6183155880007FBF8 /* CartsContentViewController.m in Sources */,
 				7CA44851D39442CEC36C2AEC /* OutlineRowObject+Utils.m in Sources */,
 				33A4E017187F03F2003E6FD0 /* BasicContentViewController.m in Sources */,
@@ -2612,7 +2597,6 @@
 				F29B8994D17293967E216C67 /* ColoredButtonCell.m in Sources */,
 				F29B810B8E3E1CA0FF396D2F /* ButtonCell.m in Sources */,
 				F29B8B6A4266929345A09B64 /* DDSplitView.m in Sources */,
-				F29B85D47C22D5109C2952CC /* BOSidebarController.m in Sources */,
 				F29B8DE2DE6B28276F62501D /* TestCartsMainController.m in Sources */,
 				F29B837D2952A7FCDFE35040 /* NSViewController+Carts.m in Sources */,
 				F29B88AEB6EF19B9C102A38D /* DDSplitViewContainer.m in Sources */,
@@ -2621,7 +2605,9 @@
 				F29B83F6449291C463CF8624 /* BOWindow.m in Sources */,
 				F29B8A3A8B909857B9C1D265 /* OperationHandler.m in Sources */,
 				F29B8250C7F9F53C5778834C /* BOTasksWindow.m in Sources */,
-				F29B85FEA8E4A53E44358496 /* BOFocusTypes.m in Sources */,
+				F29B88AD7B6031237ED8E8AC /* BOViewController.m in Sources */,
+				F29B898A10EA2F517B22C9EF /* BOTasksController.m in Sources */,
+				F29B8CA02F1EBC4B6C33F338 /* Model+TaskUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

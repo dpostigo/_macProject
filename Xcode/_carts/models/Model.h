@@ -12,8 +12,16 @@
 
 @class NSWorkspaceNib;
 @class OperationHandler;
+@class Job;
 
 @interface Model : BasicModel <BOAPIDelegate> {
+
+    User *currentUser;
+
+    Job *selectedJob;
+    User *selectedArtist;
+    NSString *selectedFocusType;
+
     NSWorkspaceNib *masterNib;
     NSObject <BOAPIDelegate> *operationHandler;
 }
@@ -24,6 +32,14 @@
 @property(nonatomic, strong) NSString *password;
 
 
+@property(nonatomic, copy) NSString *selectedFocusType;
+@property(nonatomic, strong) User *currentUser;
+@property(nonatomic, strong) Job *selectedJob;
+@property(nonatomic, strong) User *selectedArtist;
 + (Model *) sharedModel;
 - (NSWorkspaceNib *) masterNib;
+- (NSMutableArray *) jobs;
+- (NSMutableArray *) tasks;
+- (NSMutableArray *) contacts;
+- (NSMutableArray *) serviceItems;
 @end

@@ -37,5 +37,7 @@ Pod::Spec.new do |s|
   s.dependency   'NSObject+AutoDescription'
   s.dependency   'NSDictionary-Deserialize'
   s.dependency   'NSObject-UserDefaults'
+  s.dependency   'JMSimpleDate'
+
 
 end

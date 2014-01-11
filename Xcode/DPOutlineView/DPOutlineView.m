@@ -97,7 +97,6 @@
 
 @synthesize sections;
 @synthesize autoExpands;
-
 @synthesize outlineDelegate;
 
 - (void) awakeFromNib {
@@ -133,35 +132,10 @@
 }
 
 - (void) expandAllItems {
-
     for (int j = 0; j < [self sectionCount]; j++) {
         [self expandItem: [self sectionAtIndex: j]];
     }
-
 }
-
-
-
-//- (BOOL) isExpandable: (id) item {
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
-//    return [super isExpandable: item];
-//}
-//
-//- (id) parentForItem: (id) item {
-//    NSLog(@"%s, item = %@", __PRETTY_FUNCTION__, item);
-//    return [super parentForItem: item];
-//}
-//
-//- (id) itemAtRow: (NSInteger) row {
-//    id ret = [super itemAtRow: row];
-//    //    NSLog(@"%s, row = %li, ret = %@", __PRETTY_FUNCTION__, row, ret);
-//    return ret;
-//}
-
-//- (NSInteger) rowForItem: (id) item {
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
-//    return [super rowForItem: item];
-//}
 
 
 - (void) prepareDatasource {
@@ -173,10 +147,6 @@
     //    [section addItem: [[DPOutlineViewItem alloc] initWithTitle: @"Item 4"]];
     //
     //    [self.sections addObject: section];
-
-}
-
-- (void) addSection {
 
 }
 

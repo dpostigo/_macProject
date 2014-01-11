@@ -40,6 +40,7 @@
 
 
 - (NSView *) contentView {
+    return [self.model.masterNib viewForClass: @"BOTasksController"];
     NSView *testView2 = [[NSView alloc] init];
     testView2.frame = [splitView subviewAtIndex: 0].bounds;
     testView2.wantsLayer = YES;

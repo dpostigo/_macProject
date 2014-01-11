@@ -102,6 +102,12 @@
 #define COCOAPODS_VERSION_MINOR_DPWindow 0
 #define COCOAPODS_VERSION_PATCH_DPWindow 2
 
+// JMSimpleDate
+#define COCOAPODS_POD_AVAILABLE_JMSimpleDate
+#define COCOAPODS_VERSION_MAJOR_JMSimpleDate 0
+#define COCOAPODS_VERSION_MINOR_JMSimpleDate 0
+#define COCOAPODS_VERSION_PATCH_JMSimpleDate 1
+
 // NSColor-BlendingUtils
 #define COCOAPODS_POD_AVAILABLE_NSColor_BlendingUtils
 #define COCOAPODS_VERSION_MAJOR_NSColor_BlendingUtils 0

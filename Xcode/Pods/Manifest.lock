@@ -21,11 +21,13 @@ PODS:
     - BOAPI/Models
     - BOAPI/Operations
     - BOAPI/Utils
+    - JMSimpleDate
     - NSDictionary-Deserialize
     - NSObject+AutoDescription
     - NSObject-UserDefaults
   - BOAPI/Models (0.0.1):
     - AFNetworking (~> 2.0.3)
+    - JMSimpleDate
     - NSDictionary-Deserialize
     - NSObject+AutoDescription
     - NSObject-UserDefaults
@@ -33,21 +35,25 @@ PODS:
     - AFNetworking (~> 2.0.3)
     - BOAPI/Operations/account
     - BOAPI/Operations/tasks
+    - JMSimpleDate
     - NSDictionary-Deserialize
     - NSObject+AutoDescription
     - NSObject-UserDefaults
   - BOAPI/Operations/account (0.0.1):
     - AFNetworking (~> 2.0.3)
+    - JMSimpleDate
     - NSDictionary-Deserialize
     - NSObject+AutoDescription
     - NSObject-UserDefaults
   - BOAPI/Operations/tasks (0.0.1):
     - AFNetworking (~> 2.0.3)
+    - JMSimpleDate
     - NSDictionary-Deserialize
     - NSObject+AutoDescription
     - NSObject-UserDefaults
   - BOAPI/Utils (0.0.1):
     - AFNetworking (~> 2.0.3)
+    - JMSimpleDate
     - NSDictionary-Deserialize
     - NSObject+AutoDescription
     - NSObject-UserDefaults
@@ -58,6 +64,7 @@ PODS:
     - CALayer-DPUtils
     - NSColor-BlendingUtils
     - NSView-DPAutolayout
+  - JMSimpleDate (0.0.1)
   - libextobjc/EXTScope (0.2.5):
     - libextobjc/RuntimeExtensions
   - libextobjc/RuntimeExtensions (0.2.5)
@@ -89,10 +96,11 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
   AutoCoding: 1cb0f7373249cefc73aa22cc3a7cc62ba4b886a7
-  BOAPI: f216a57d710a7f7785fcdd8331cd124caaccaba4
+  BOAPI: f552b0a0f9565699395e13f7aa75261235b5143e
   CALayer-DPUtils: 1701a955e663c91e9d5f120cbce822ca83c64ecc
   DPKit: a749b5d767e18d2e15469fdcab641da9baea4417
   DPWindow: 0034b4715f3e4e396d9bb66afb59fc26ffff5265
+  JMSimpleDate: ea28a4ddd5dee6b8463634d66050fc8ea70760d7
   libextobjc: 2cbc74caf8bdc74a86fdf24673f773c83424ea98
   NSColor-BlendingUtils: 66ee9f5a9828f57617c02aa0fe02574a2cf4b4ce
   NSColor-Crayola: 4ce6313cd2ab3170bfb0f0e0964b31ac9b680b9e

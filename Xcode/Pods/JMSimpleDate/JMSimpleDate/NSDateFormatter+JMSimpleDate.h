@@ -1,4 +1,4 @@
-// JMSimpleDate-Prefix.pch
+// NSDateFormatter+JMSimpleDate.h
 //
 // Copyright (c) 2013 James Martinez
 //
@@ -20,12 +20,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-//
-// Prefix header for all source files of the 'JMSimpleDate' target in the 'JMSimpleDate' project
-//
-
-#ifdef __OBJC__
-
 #import <Foundation/Foundation.h>
 
-#endif
+@interface NSDateFormatter (JMSimpleDate)
+
++ (NSString *)formattedStringTimeElapsedFromDate:(NSDate *)date;
+
+#pragma mark - Date Format Templates
++ (NSString *)timeFormatStringShowingSeconds:(BOOL)showSeconds;
++ (NSString *)timeFormatString;
+
++ (NSString *)dateFormatStringWithAmericanFormat:(BOOL)isAmerican;
++ (NSString *)dateFormatString;
+
++ (NSString *)timestampFormatStringWithAmericanFormat:(BOOL)isAmerican showingSeconds:(BOOL)showSeconds;
++ (NSString *)timestampFormatString;
+
+@end

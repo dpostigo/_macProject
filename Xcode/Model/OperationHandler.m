@@ -22,7 +22,17 @@
 
 
 - (void) userDidLogin: (User *) user {
+    _model.currentUser = user;
     [_model notifyDelegates: @selector(userDidLogin:) object: user];
+}
+
+
+
+#pragma mark Tasks
+
+- (void) getTasksSucceeded {
+    [_model notifyDelegates: @selector(getTasksSucceeded) object: nil];
+
 }
 
 
