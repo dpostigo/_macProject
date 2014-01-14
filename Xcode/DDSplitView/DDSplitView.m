@@ -13,6 +13,8 @@
 @synthesize isAwake;
 @synthesize sidebarIndex;
 
+@synthesize splitDividerColor;
+
 - (void) awakeFromNib {
     [super awakeFromNib];
 
@@ -22,6 +24,19 @@
     isAwake = YES;
 
     [self setSubviews: [self containersFromSubviews: self.subviews]];
+}
+
+
+- (NSColor *) splitDividerColor {
+    if (splitDividerColor == nil) {
+        splitDividerColor = [NSColor grayColor];
+    }
+    return splitDividerColor;
+}
+
+
+- (NSColor *) dividerColor {
+    return self.splitDividerColor;
 }
 
 
@@ -76,9 +91,17 @@
 
 - (void) setSubviewAtIndex: (NSInteger) index with: (NSView *) view {
     NSView *oldView = [self.subviews objectAtIndex: index];
+
+    view.frame = oldView.frame;
     [self replaceSubview: oldView with: view];
+    [self setContainers];
 }
 
+
+- (void) setMinimumValue: (CGFloat) value atIndex: (NSInteger) index {
+    DDSplitViewContainer *container = [self containerAtIndex: index];
+    container.minimumValue = value;
+}
 
 - (void) setContainers {
     NSArray *containerArray = [self containersFromSubviews: self.subviews];
@@ -147,6 +170,8 @@
 }
 
 
+
+
 #pragma mark Overrides subviews resize
 
 
@@ -155,6 +180,52 @@
 - (void) setDelegate: (id <NSSplitViewDelegate>) delegate {
 }
 
+//
+//
+//- (CGFloat) splitView: (NSSplitView *) splitView constrainMinCoordinate: (CGFloat) proposedMinimumPosition ofSubviewAt: (NSInteger) dividerIndex {
+//
+//    CGFloat ret = proposedMinimumPosition;
+//    DDSplitViewContainer *left = [self containerAtIndex: dividerIndex];
+//    DDSplitViewContainer *right = [self containerAtIndex: dividerIndex + 1];
+//
+//    if (left.isLocked) {
+//
+//    }
+//    NSLog(@"%s, dividerIndex = %li, ret = %f", __PRETTY_FUNCTION__, dividerIndex, ret);
+//
+//    return ret;
+//}
+//
+- (CGFloat) splitView: (NSSplitView *) splitView constrainSplitPosition: (CGFloat) proposedPosition ofSubviewAt: (NSInteger) dividerIndex {
+
+    CGFloat ret = proposedPosition;
+
+    DDSplitViewContainer *left = [self containerAtIndex: dividerIndex];
+    DDSplitViewContainer *right = [self containerAtIndex: dividerIndex + 1];
+
+
+    CGFloat minValue = [self minPossiblePositionOfDividerAtIndex: dividerIndex];
+    //
+    //    if (left.isLocked) {
+    //        ret = minValue + left.lockedValue;
+    //
+    //    } else if (left.minimumValue > 0) {
+    //        if (proposedPosition <= minValue + left.minimumValue) {
+    //            ret = minValue + left.minimumValue;
+    //
+    //        }
+    //    }
+    if (left.minimumValue > 0) {
+        if (proposedPosition <= minValue + left.minimumValue) {
+            ret = minValue + left.minimumValue;
+
+        }
+    }
+
+    //    NSLog(@"%s, dividerIndex = %li, ret = %f", __PRETTY_FUNCTION__, dividerIndex, ret);
+
+    return ret;
+}
 
 
 #pragma mark Sidebar index

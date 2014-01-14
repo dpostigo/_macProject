@@ -6,12 +6,13 @@
 #import <Foundation/Foundation.h>
 #import <BOAPI/BOAPIDelegate.h>
 #import "DPOutlineView.h"
-#import "BOViewController.h"
+#import "BOController.h"
 
 @class DPOutlineView;
 
-@interface BOSidebarController : BOViewController <DPOutlineViewDelegate,
-        BOAPIDelegate> {
+@interface SidebarController : BOController <DPOutlineViewDelegate,
+        BOAPIDelegate,
+        NSTextViewDelegate> {
     IBOutlet DPOutlineView *outline;
 }
 

@@ -4,14 +4,12 @@
 //
 
 #import "DPOutlineView.h"
+#import "NSOutlineView+DPUtils.h"
 
 
 
 #pragma mark DPOutlineViewSection
-@interface DPOutlineViewSection () {
-
-    NSMutableArray *items;
-}
+@interface DPOutlineViewSection ()
 
 @property(nonatomic, strong) NSMutableArray *items;
 
@@ -20,6 +18,7 @@
 
 @implementation DPOutlineViewSection {
     NSString *title;
+    NSMutableArray *items;
 }
 
 @synthesize title;
@@ -49,6 +48,7 @@
 }
 
 - (void) addItem: (DPOutlineViewItem *) item {
+    item.section = self;
     [self.items addObject: item];
 }
 
@@ -60,10 +60,14 @@
 @implementation DPOutlineViewItem {
     NSString *title;
     NSImage *image;
+    NSString *identifier;
 }
 
 @synthesize title;
 @synthesize image;
+@synthesize identifier;
+
+@synthesize section;
 
 - (instancetype) initWithTitle: (NSString *) aTitle {
     return [self initWithTitle: aTitle image: nil];
@@ -71,10 +75,19 @@
 
 
 - (instancetype) initWithTitle: (NSString *) aTitle image: (NSImage *) anImage {
+    return [self initWithTitle: aTitle image: anImage identifier: nil];
+}
+
+- (instancetype) initWithTitle: (NSString *) aTitle identifier: (NSString *) anIdentifier {
+    return [self initWithTitle: aTitle image: nil identifier: anIdentifier];
+}
+
+- (instancetype) initWithTitle: (NSString *) aTitle image: (NSImage *) anImage identifier: (NSString *) anIdentifier {
     self = [super init];
     if (self) {
         title = aTitle;
         image = anImage;
+        identifier = anIdentifier;
     }
 
     return self;
@@ -113,6 +126,7 @@
     //    [self reloadData];
 }
 
+
 - (void) awakeCells {
     cellsHolder = [[NSObject alloc] init];
     NSView *ret = nil;
@@ -129,6 +143,9 @@
     if (autoExpands) {
         [self expandAllItems];
     }
+
+
+    [self callSelector: @selector(outlineViewDidReload) object: nil];
 }
 
 - (void) expandAllItems {
@@ -154,7 +171,6 @@
 
 
 #pragma mark NSOutlineViewDataSource
-#pragma mark Conventional data source -
 
 - (NSInteger) outlineView: (NSOutlineView *) outlineView numberOfChildrenOfItem: (id) item {
     NSInteger ret = 0;
@@ -169,13 +185,12 @@
 
 - (id) outlineView: (NSOutlineView *) outlineView child: (NSInteger) index1 ofItem: (id) item {
     id ret = nil;
-    if (item == nil) {
+    if (item == nil)
         ret = [self sectionAtIndex: index1];
-    } else {
+    else {
         DPOutlineViewSection *section = item;
         ret = [section itemAtIndex: index1];
     }
-    //    NSLog(@"%s, index = %li, item = %@, ret = %@", __PRETTY_FUNCTION__, index1, item, ret);
     return ret;
 }
 
@@ -188,7 +203,6 @@
     return ret;
 }
 
-
 - (id) outlineView: (NSOutlineView *) outlineView objectValueForTableColumn: (NSTableColumn *) tableColumn byItem: (id) item {
     id ret = nil;
     if ([item isKindOfClass: [DPOutlineViewSection class]]) {
@@ -197,33 +211,8 @@
     } else {
         ret = item;
     }
-    //    if (item == nil) {
-    //        ret = [self sectionAtIndex: index];
-    //    } else {
-    //        DPOutlineViewSection *section = item;
-    //        ret = [section itemAtIndex: index];
-    //    }
-
     return ret;
 }
-
-
-//
-//#pragma mark Additional
-//- (void) outline: (NSOutlineView *) outline setObjectValue: (id) object forTableColumn: (NSTableColumn *) tableColumn byItem: (id) item {
-//
-//}
-//
-- (id) outlineView: (NSOutlineView *) outlineView itemForPersistentObject: (id) object {
-    //    NSLog(@"%s", __PRETTY_FUNCTION__);
-    return nil;
-}
-
-- (id) outlineView: (NSOutlineView *) outlineView persistentObjectForItem: (id) item {
-    //    NSLog(@"%s", __PRETTY_FUNCTION__);
-    return nil;
-}
-
 
 
 
@@ -235,32 +224,102 @@
     NSView *ret = nil;
     if ([item isKindOfClass: [DPOutlineViewSection class]]) {
         ret = [outlineView makeViewWithIdentifier: @"HeaderCell" owner: cellsHolder];
+        [self callSelector: @selector(willDisplayCellView:forSection:) object: ret object: item];
     } else {
         ret = [outlineView makeViewWithIdentifier: @"DataCell" owner: cellsHolder];
+        [self callSelector: @selector(willDisplayCellView:forItem:) object: ret object: item];
     }
 
-    //    NSLog(@"%s, item = %@, ret = %@", __PRETTY_FUNCTION__, item, ret);
     return ret;
 }
 
 - (BOOL) outlineView: (NSOutlineView *) outlineView isGroupItem: (id) item {
-    BOOL ret = [item isKindOfClass: [DPOutlineViewSection class]];
-    ret = [self.sections containsObject: item];
-    //    NSLog(@"%s, item = %@, ret = %d", __PRETTY_FUNCTION__, item, ret);
+    return [self.sections containsObject: item];
+}
+
+
+- (void) outlineView: (NSOutlineView *) outlineView willDisplayCell: (id) cell forTableColumn: (NSTableColumn *) tableColumn item: (id) item {
+}
+
+
+- (void) outlineView: (NSOutlineView *) outlineView mouseDownInHeaderOfTableColumn: (NSTableColumn *) tableColumn {
+
+}
+
+
+
+
+
+
+#pragma mark Row views
+
+- (NSTableRowView *) outlineView: (NSOutlineView *) outlineView rowViewForItem: (id) item {
+    NSTableRowView *ret = [self rowViewForItem: item];
     return ret;
 }
-//
-//- (BOOL) outline: (NSOutlineView *) outline shouldExpandItem: (id) item {
-//    BOOL ret = NO;
-//    if ([item isKindOfClass: [DPOutlineViewSection class]]) {
-//       ret = YES;
-//    }
-//    return ret;
-//}
 
-//- (BOOL) outline: (NSOutlineView *) outline shouldCollapseItem: (id) item {
-//    return NO;
-//}
+
+- (NSTableRowView *) rowViewForItem: (id) item {
+    NSTableRowView *ret = nil;
+    if (outlineDelegate && [outlineDelegate respondsToSelector: @selector(rowViewForItem:)]) {
+        ret = [outlineDelegate rowViewForItem: item];
+    }
+    return ret;
+}
+
+- (void) didAddRowView: (NSTableRowView *) rowView forRow: (NSInteger) row {
+    [super didAddRowView: rowView forRow: row];
+
+    id item = [self itemAtRow: row];
+    if ([item isKindOfClass: [DPOutlineViewSection class]]) {
+        [self didAddRowView: rowView forSection: item];
+    } else {
+        [self didAddRowView: rowView forItem: item];
+    }
+}
+
+
+- (void) didAddRowView: (NSTableRowView *) rowView forSection: (DPOutlineViewSection *) section {
+    [self callSelector: @selector(didAddRowView:forSection:) object: rowView object: section];
+}
+
+
+- (void) didAddRowView: (NSTableRowView *) rowView forItem: (DPOutlineViewItem *) item {
+    [self callSelector: @selector(didAddRowView:forItem:) object: rowView object: item];
+}
+
+
+
+#pragma mark Selection
+
+
+
+- (BOOL) selectionShouldChangeInOutlineView: (NSOutlineView *) outlineView {
+    return YES;
+}
+
+- (BOOL) outlineView: (NSOutlineView *) outlineView shouldSelectItem: (id) item {
+    BOOL ret = YES;
+    if ([item isKindOfClass: [DPOutlineViewSection class]]) {
+        ret = NO;
+    }
+    return ret;
+}
+
+- (void) outlineViewSelectionDidChange: (NSNotification *) notification {
+    id item = [self itemAtRow: self.selectedRow];
+    if ([item isKindOfClass: [DPOutlineViewSection class]]) {
+
+    } else {
+        [self didSelectItem: item];
+    }
+
+}
+
+- (void) didSelectItem: (DPOutlineViewItem *) item {
+    [self callSelector: @selector(didSelectItem:) object: item];
+}
+
 
 
 

@@ -23,6 +23,10 @@ Pod::Spec.new do |s|
       tasks.source_files = 'BOAPI/Operations/tasks/*.{h,m}'
     end
 
+    operations.subspec 'logs' do |logs|
+      logs.source_files = 'BOAPI/Operations/logs/*.{h,m}'
+    end
+
   end
 
   s.subspec 'Models' do |models|

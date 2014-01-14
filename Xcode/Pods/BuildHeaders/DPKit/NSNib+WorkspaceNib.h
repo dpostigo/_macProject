@@ -1,1 +1,1 @@
-../../../../../LocalPods/DPKit/DPKit/NSNib+WorkspaceNib.h
+../../../../../LocalPods/DPKit/DPKit/osx/NSNib+WorkspaceNib.h

@@ -34,12 +34,19 @@ PODS:
   - BOAPI/Operations (0.0.1):
     - AFNetworking (~> 2.0.3)
     - BOAPI/Operations/account
+    - BOAPI/Operations/logs
     - BOAPI/Operations/tasks
     - JMSimpleDate
     - NSDictionary-Deserialize
     - NSObject+AutoDescription
     - NSObject-UserDefaults
   - BOAPI/Operations/account (0.0.1):
+    - AFNetworking (~> 2.0.3)
+    - JMSimpleDate
+    - NSDictionary-Deserialize
+    - NSObject+AutoDescription
+    - NSObject-UserDefaults
+  - BOAPI/Operations/logs (0.0.1):
     - AFNetworking (~> 2.0.3)
     - JMSimpleDate
     - NSDictionary-Deserialize
@@ -59,7 +66,14 @@ PODS:
     - NSObject-UserDefaults
   - CALayer-DPUtils (0.1.3):
     - DPKit
-  - DPKit (0.0.3)
+  - DPKit (0.0.5):
+    - DPKit/Mac OS X
+    - DPKit/Shared
+    - NSView-DPAutolayout
+  - DPKit/Mac OS X (0.0.5):
+    - NSView-DPAutolayout
+  - DPKit/Shared (0.0.5):
+    - NSView-DPAutolayout
   - DPWindow (0.0.2):
     - CALayer-DPUtils
     - NSColor-BlendingUtils
@@ -83,6 +97,7 @@ DEPENDENCIES:
   - DPKit (from `~/Development/LocalPods/DPKit`)
   - DPWindow (from `~/Development/LocalPods/DPWindow`)
   - NSColor-Crayola
+  - NSView-DPAutolayout
   - PMPKVObservation
 
 EXTERNAL SOURCES:
@@ -96,9 +111,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
   AutoCoding: 1cb0f7373249cefc73aa22cc3a7cc62ba4b886a7
-  BOAPI: f552b0a0f9565699395e13f7aa75261235b5143e
+  BOAPI: c37f5e54168398c89888b2172c6913aba763b020
   CALayer-DPUtils: 1701a955e663c91e9d5f120cbce822ca83c64ecc
-  DPKit: a749b5d767e18d2e15469fdcab641da9baea4417
+  DPKit: 1e17a2eeedaacb34fe9136b2dc94c5b2acaadb0c
   DPWindow: 0034b4715f3e4e396d9bb66afb59fc26ffff5265
   JMSimpleDate: ea28a4ddd5dee6b8463634d66050fc8ea70760d7
   libextobjc: 2cbc74caf8bdc74a86fdf24673f773c83424ea98

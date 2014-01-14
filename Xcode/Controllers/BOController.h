@@ -7,8 +7,9 @@
 
 @class Model;
 @class BOAPIModel;
+@class Task;
 
-@interface BOViewController : NSViewController {
+@interface BOController : NSViewController {
 
     Model *_model;
     BOAPIModel *_apiModel;
@@ -16,4 +17,7 @@
 }
 
 - (void) viewDidLoad;
+- (void) modelDidSelectFocusType;
+- (void) modelDidSelectTask: (Task *) task;
+- (void) logsDidUpdate: (Task *) task;
 @end

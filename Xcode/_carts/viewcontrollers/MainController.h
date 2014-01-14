@@ -4,11 +4,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BOController.h"
 
 @class DDSplitView;
 
-@interface TestCartsMainController : NSViewController {
+@interface MainController : BOController {
     IBOutlet DDSplitView *splitView;
+    IBOutlet DDSplitView *contentSplitView;
     IBOutlet NSSplitView *vanilla;
 
 }

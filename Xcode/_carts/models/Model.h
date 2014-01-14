@@ -13,12 +13,14 @@
 @class NSWorkspaceNib;
 @class OperationHandler;
 @class Job;
+@class Task;
 
 @interface Model : BasicModel <BOAPIDelegate> {
 
     User *currentUser;
 
     Job *selectedJob;
+    Task *selectedTask;
     User *selectedArtist;
     NSString *selectedFocusType;
 
@@ -36,6 +38,7 @@
 @property(nonatomic, strong) User *currentUser;
 @property(nonatomic, strong) Job *selectedJob;
 @property(nonatomic, strong) User *selectedArtist;
+@property(nonatomic, strong) Task *selectedTask;
 + (Model *) sharedModel;
 - (NSWorkspaceNib *) masterNib;
 - (NSMutableArray *) jobs;

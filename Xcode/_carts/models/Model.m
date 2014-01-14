@@ -13,6 +13,7 @@
 #import "BOAPIModel.h"
 #import "BOFocusTypes.h"
 #import "Job.h"
+#import "Task.h"
 
 @implementation Model
 
@@ -23,7 +24,8 @@
 
 @synthesize selectedJob;
 @synthesize selectedArtist;
-@synthesize selectedFocusType;
+
+@synthesize selectedTask;
 
 + (Model *) sharedModel {
     static Model *_instance = nil;
@@ -93,6 +95,28 @@
         selectedFocusType = [NSString stringWithFormat: @"%@", kBOFocusTypeMyTasks];
     }
     return selectedFocusType;
+}
+
+
+
+#pragma mark Selected object setters
+
+
+- (void) setSelectedFocusType: (NSString *) selectedFocusType1 {
+    if (![selectedFocusType1 isEqualToString: kBOFocusTypeJobs] && ![selectedFocusType1 isEqualToString: kBOFocusTypeJobs])   {
+        self.selectedJob = nil;
+        self.selectedArtist = nil;
+    }
+    selectedFocusType = [selectedFocusType1 mutableCopy];
+
+}
+
+- (void) setSelectedJob: (Job *) selectedJob1 {
+
+    selectedJob = selectedJob1;
+    if (selectedJob) {
+        self.selectedFocusType = kBOFocusTypeJobs;
+    }
 }
 
 

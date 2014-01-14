@@ -30,7 +30,11 @@
 
 - (void) userDidLogin: (User *) user {
     [_queue addOperation: [[GetTasksOperation alloc] init]];
-
 }
+
+
+
+#pragma mark Navigation
+
 
 @end

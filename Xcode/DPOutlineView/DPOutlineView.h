@@ -5,13 +5,21 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DPOutlineViewItem : NSObject
+@class DPOutlineViewSection;
+
+@interface DPOutlineViewItem : NSObject     {
+    __unsafe_unretained DPOutlineViewSection *section;
+}
 
 @property(nonatomic, copy) NSString *title;
+@property(nonatomic, copy) NSString *identifier;
 @property(nonatomic, strong) NSImage *image;
+@property(nonatomic, assign) DPOutlineViewSection *section;
+
 - (instancetype) initWithTitle: (NSString *) aTitle;
 - (instancetype) initWithTitle: (NSString *) aTitle image: (NSImage *) anImage;
-
+- (instancetype) initWithTitle: (NSString *) aTitle identifier: (NSString *) anIdentifier;
+- (instancetype) initWithTitle: (NSString *) aTitle image: (NSImage *) anImage identifier: (NSString *) anIdentifier;
 
 @end
 
@@ -32,14 +40,26 @@
 
 @protocol DPOutlineViewDelegate <NSObject>
 
-@optional
+@required
 - (void) prepareDatasource;
+
+@optional
+- (NSTableRowView *) rowViewForItem: (id) item;
+- (void) didAddRowView: (NSTableRowView *) rowView;
+- (void) didAddRowView: (NSTableRowView *) rowView forSection: (DPOutlineViewSection *) section;
+- (void) didAddRowView: (NSTableRowView *) rowView forItem: (DPOutlineViewItem *) item;
+
+- (void) willDisplayCellView: (NSView *) view forSection: (DPOutlineViewSection *) section;
+- (void) willDisplayCellView: (NSTableCellView *) cellView forItem: (DPOutlineViewItem *) item;
+- (void) didSelectItem: (DPOutlineViewItem *) item;
+
+- (void) outlineViewDidReload;
 
 @end
 
 
 @interface DPOutlineView : NSOutlineView <NSOutlineViewDelegate, NSOutlineViewDataSource> {
-    id<DPOutlineViewDelegate> outlineDelegate;
+    id <DPOutlineViewDelegate> outlineDelegate;
     BOOL autoExpands;
 }
 

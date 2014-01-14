@@ -10,15 +10,32 @@
 
 - (NSString *) stringForKey: (NSString *) key {
 
+    NSString *failure = nil;
     NSString *ret = nil;
-    id value = [self objectForKey: key];
-    if (value == nil || [value isEqual: [NSNull null]]) {
 
+    id object = [self objectForKey: key];
+
+    if (object == nil) {
+        //        NSLog(@"Value for %@ was nil.", key);
+    } else if ([object isEqual: [NSNull null]]) {
+        //        NSLog(@"object = %@, key = %@", object, key);
+
+    } else if ([object isKindOfClass: [NSNumber class]]) {
+        NSNumber *number = (NSNumber *) object;
+        NSString *numberString = [[self objectForKey: key] stringValue];
+        ret = numberString;
     } else {
-        ret = [NSString stringWithFormat: @"%@", value];
+        ret = [NSString stringWithFormat: @"%@", object];
+
         if ([ret isEqualToString: @"<null>"]) {
+            NSLog(@"Ret was equal to <null>.");
             ret = nil;
         }
+    }
+
+    if (ret == nil && [key isEqualToString: @"id"]) {
+        NSLog(@"Returning nil, key = %@, dict = %@", key, self);
+        [NSException raise: @"Returning nil for an id" format: @"key = %@, dict = %@", key, self];
     }
     return ret;
 
