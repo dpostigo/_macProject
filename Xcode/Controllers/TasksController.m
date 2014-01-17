@@ -69,15 +69,15 @@
 }
 
 
-- (void) didAddRowView: (NSTableRowView *) rowView forItem: (DPOutlineViewItem *) item {
+- (void) willDisplayCellView: (NSTableCellView *) cellView forSection: (DPOutlineViewSection *) section {
+    cellView.textField.stringValue = [section.title uppercaseString];
 
+    NSLog(@"section.title = %@", section.title);
+    NSLog(@"cellView.textField.stringValue = %@", cellView.textField.stringValue);
 
-    //    rowView.wantsLayer = YES;
-    //    rowView.layer.backgroundColor = [NSColor blueColor].CGColor;
-    //    rowView.backgroundColor = [NSColor whiteColor];
-}
+    NSLog(@"%s", __PRETTY_FUNCTION__);
 
-- (void) willDisplayCellView: (NSView *) view forSection: (DPOutlineViewSection *) section {
+    //    [cellView.textField bind: @"value" toObject: section withKeyPath: @"title" options: nil];
 
 }
 
@@ -121,7 +121,12 @@
 }
 
 - (void) didSelectItem: (DPOutlineViewItem *) item {
-    _model.selectedTask = [_apiModel taskForId: item.identifier];
+
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+
+    NSLog(@"item.identifier = %@", item.identifier);
+    Task *task = [_apiModel taskForId: item.identifier];
+    _model.selectedTask = task;
 
 }
 

@@ -31,28 +31,42 @@
     [splitView setMinimumValue: 200 atIndex: 1];
 
     [splitView setHoldingPriority: 20 forSubviewAtIndex: 1];
-    //    [contentSplitView setSubviewAtIndex: 0 with: self.contentView];
 
 }
+
+
+- (NSView *) contentView {
+    return [splitView subviewAtIndex: 2];
+}
+
+- (void) setContentView: (NSView *) view {
+    [splitView setSubviewAtIndex: 2 with: view];
+
+}
+
+
+
+#pragma mark Navigation
+
+- (void) modelDidSelectFocusType {
+    [super modelDidSelectFocusType];
+
+}
+
+
+- (void) modelDidSelectTask: (Task *) task {
+    [super modelDidSelectTask: task];
+
+    self.contentView = self.taskInfoView;
+}
+
+
+#pragma mark Various views
 
 
 - (NSView *) sidebarView {
     return [self.model.masterNib viewForClass: @"SidebarController"];
 }
-
-//
-//- (NSView *) contentView {
-////    NSView *ret = nil;
-////    if (_model.selectedTask) {
-////        ret = [self.model.masterNib viewForClass: @"TaskDetailController"];
-////
-////    } else {
-////        ret =
-////    }
-////
-////    return ret;
-////}
-
 
 
 - (NSView *) taskInfoView {
@@ -61,26 +75,6 @@
 
 - (NSView *) taskListView {
     return [self.model.masterNib viewForClass: @"TasksController"];
-}
-
-
-#pragma mark Navigation
-
-- (void) modelDidSelectFocusType {
-    [super modelDidSelectFocusType];
-
-    //    NSLog(@"%s", __PRETTY_FUNCTION__);
-    //    NSLog(@"_model.selectedTask = %@", _model.selectedTask);
-    //    [splitView setSubviewAtIndex: 1 with: self.contentView];
-
-}
-
-
-- (void) modelDidSelectTask: (Task *) task {
-    [super modelDidSelectTask: task];
-
-    NSView *newView = [[NSView alloc] init];
-    [splitView setSubviewAtIndex: 2 with: self.taskInfoView];
 }
 
 

@@ -21,7 +21,7 @@
         //        NSLog(@"object = %@, key = %@", object, key);
 
     } else if ([object isKindOfClass: [NSNumber class]]) {
-        NSNumber *number = (NSNumber *) object;
+        
         NSString *numberString = [[self objectForKey: key] stringValue];
         ret = numberString;
     } else {

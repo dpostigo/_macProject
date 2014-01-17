@@ -70,7 +70,7 @@
 #pragma mark Selection
 
 - (void) didSelectItem: (DPOutlineViewItem *) item {
-//    _model.selectedTask = nil;
+    //    _model.selectedTask = nil;
     if ([item.section.title isEqualToString: @"Focus"]) {
         _model.selectedFocusType = item.title;
     } else {
@@ -86,6 +86,10 @@
 - (void) getTasksSucceeded {
     [outline reloadData];
 }
+
+
+
+#pragma mark Cells
 
 
 #pragma mark Navigation

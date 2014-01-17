@@ -12,17 +12,18 @@
 #import "Task.h"
 #import "Job.h"
 #import "NSColor+DPColors.h"
+#import "NSView+ConstraintGetters.h"
+#import "NSArray+BOBasicObject.h"
 
 @implementation TaskEditController
 
-@synthesize outline;
-
 @synthesize task;
+@synthesize outline;
 
 - (void) viewDidLoad {
     [super viewDidLoad];
 
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+    [outline reloadData];
     [self customizeBackground];
 
 }
@@ -32,20 +33,11 @@
     outline = outline1;
     if (outline) {
         outline.outlineDelegate = self;
+        outline.fitsScrollViewToHeight = YES;
+        outline.allowsSelection = NO;
     }
 }
 
-
-#pragma mark Outline data
-
-- (void) prepareDatasource {
-    [outline clearSections];
-    DPOutlineViewSection *section = [[DPOutlineViewSection alloc] initWithTitle: self.task.title];
-    [section addItem: [[DPOutlineViewItem alloc] initWithTitle: self.task.job.title]];
-    [section addItem: [[DPOutlineViewItem alloc] initWithTitle: self.task.assignee.title image: [NSImage imageNamed: @"assignee-icon"]]];
-    [outline addSection: section];
-
-}
 
 - (void) customizeBackground {
     self.view.wantsLayer = YES;
@@ -70,24 +62,88 @@
 
 }
 
+#pragma mark Outline data
+
+- (void) prepareDatasource {
+    [outline clearSections];
+    DPOutlineViewSection *section = [[DPOutlineViewSection alloc] initWithTitle: self.task.title];
+    [section addItem: [[DPOutlineViewItem alloc] initWithTitle: self.task.job.title subtitle: @"Job" image: [NSImage imageNamed: @"job-icon-dark"]]];
+    [section addItem: [[DPOutlineViewItem alloc] initWithTitle: self.task.assignee.title image: [NSImage imageNamed: @"assignee-icon"]]];
+    [section addItem: [[DPOutlineViewItem alloc] initWithTitle: self.task.observerNames subtitle: @"Observers" image: [NSImage imageNamed: @"observers-icon"]]];
+
+    [section addItem: [[DPOutlineViewItem alloc] initWithTitle: self.task.notes subtitle: @"Notes" image: [NSImage imageNamed: @"notes-icon"]]];
+    [outline addSection: section];
+
+}
+
 - (void) modelDidSelectTask: (Task *) task {
     [super modelDidSelectTask: task];
+
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     self.task = _model.selectedTask;
 
     [outline reloadData];
 
+    [NSAnimationContext beginGrouping];
+    [[NSAnimationContext currentContext] setDuration: 0];
+    [outline noteHeightOfRowsWithIndexesChanged: [NSIndexSet indexSetWithIndex: 1]];
+    [NSAnimationContext endGrouping];
+
 }
 
+
+
+#pragma mark Outline
 
 - (void) outlineViewDidReload {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    NSLog(@"outline.height = %f", outline.height);
+    NSLayoutConstraint *heightConstraint = self.viewHeightConstraint;
+    if (heightConstraint == nil) {
 
-//    NSLayoutConstraint *heightConstraint = outline.heightC;
+        //        heightConstraint.constant = outline.outlineHeight;
+    }
 
 }
 
 
+- (NSLayoutConstraint *) viewHeightConstraint {
+    NSLayoutConstraint *ret = nil;
+    NSArray *constraints = [NSArray arrayWithArray: self.view.constraints];
+
+    for (NSLayoutConstraint *constraint in constraints) {
+
+        if (constraint.firstAttribute == NSLayoutAttributeHeight) {
+            ret = constraint;
+            break;
+        }
+    }
+    return ret;
+}
+
+
+
+#pragma mark Cells
+
+- (void) willDisplayCellView: (NSTableCellView *) cellView forItem: (DPOutlineViewItem *) item {
+    //    if (item.subtitle) {
+    //        [[cellView.textField cell] setPlaceholderString: item.subtitle];
+    //    }
+    //
+    //    if ([item.subtitle isEqualToString: @"Observers"]) {
+    //        NSLog(@"cellView.textField.stringValue = %@", cellView.textField.stringValue);
+    //        NSLog(@"[cellView.textField.cell placeholderString] = %@", [cellView.textField.cell placeholderString]);
+    //
+    //    }
+
+
+
+    NSDictionary *options = nil;
+    if (item.subtitle) {
+        options = [NSDictionary dictionaryWithObject: item.subtitle forKey: NSNullPlaceholderBindingOption];
+    }
+
+    [cellView.textField bind: @"value" toObject: item withKeyPath: @"title" options: options];
+
+}
 
 
 @end

@@ -7,8 +7,8 @@ pod 'NSColor-Crayola'
 pod 'BOAPI', :path => '~/Development/LocalPods/BOAPI'
 pod 'DPWindow', :path => '~/Development/LocalPods/DPWindow'
 pod 'DPKit', :path => '~/Development/LocalPods/DPKit'
-pod 'NSView-DPAutolayout'
 
+#pod 'NSView-DPAutolayout', :path => '~/Development/LocalPods/NSView-DPAutolayout'
 #pod 'JMSimpleDate', :podspec => '~/Development/LocalPods/JMSimpleDate'
 #pod 'JMSimpleDate', :git => 'https://github.com/jamescmartinez/JMSimpleDate', :branch => 'master'
 

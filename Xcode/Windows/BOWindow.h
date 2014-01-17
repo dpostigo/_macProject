@@ -5,10 +5,11 @@
 
 #import <Foundation/Foundation.h>
 #import <DPWindow/DPStyledWindow.h>
+#import "DPHeaderedWindow.h"
 
 @class Model;
 
-@interface BOWindow : DPStyledWindow {
+@interface BOWindow : DPHeaderedWindow {
 
     Model *_model;
     NSOperationQueue *_queue;

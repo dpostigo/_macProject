@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
   # s.osx.dependency 'DPKit'
 
   s.osx.frameworks   = 'QuartzCore', 'AppKit'
-  s.osx.dependency   'NSView-DPAutolayout'
+  s.osx.dependency   'NSView-DPAutolayout', '~> 0.0.11'
   s.ios.frameworks   = 'AppKit', 'UIKit'
 
 

@@ -97,7 +97,6 @@ DEPENDENCIES:
   - DPKit (from `~/Development/LocalPods/DPKit`)
   - DPWindow (from `~/Development/LocalPods/DPWindow`)
   - NSColor-Crayola
-  - NSView-DPAutolayout
   - PMPKVObservation
 
 EXTERNAL SOURCES:

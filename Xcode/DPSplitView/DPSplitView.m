@@ -19,6 +19,12 @@
 }
 
 
+- (void) viewDidMoveToWindow {
+    [super viewDidMoveToWindow];
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+
+}
+
 #pragma mark Getters
 
 

@@ -148,6 +148,8 @@
     [super modelDidSelectTask: task];
 
     [outline reloadData];
+
+    NSLog(@"_model.selectedTask = %@", _model.selectedTask);
     if (_model.selectedTask) {
         [_queue addOperation: [[GetLogsOperation alloc] initWithTask: self.task]];
         [self.task addObserver: self forKeyPath: @"logs" options: 0 context: NULL];

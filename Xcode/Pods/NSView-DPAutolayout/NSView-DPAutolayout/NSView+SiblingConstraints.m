@@ -32,11 +32,11 @@
 }
 
 
-- (NSLayoutConstraint *) heightConstraint {
+- (NSLayoutConstraint *) staticHeightConstraint {
     return self.superview == nil ? nil : [self.superview constraintForAttribute: NSLayoutAttributeHeight item: self attribute: NSLayoutAttributeNotAnAttribute secondItem: nil];
 }
 
-- (NSLayoutConstraint *) widthConstraint {
+- (NSLayoutConstraint *) staticWidthConstraint {
     return self.superview == nil ? nil : [self.superview constraintForAttribute: NSLayoutAttributeWidth item: self attribute: NSLayoutAttributeNotAnAttribute secondItem: nil];
 }
 

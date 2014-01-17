@@ -3,6 +3,7 @@
 // Copyright (c) 2014 Elastic Creative. All rights reserved.
 //
 
+#import <DPKit/NSObject+CallSelector.h>
 #import "DDSplitView.h"
 #import "DDSplitViewContainer.h"
 #import "NSView+SuperConstraints.h"
@@ -14,6 +15,14 @@
 @synthesize sidebarIndex;
 
 @synthesize splitDividerColor;
+@synthesize splitDelegate;
+
+@synthesize allowsMouseDown;
+
+- (BOOL) mouseDownCanMoveWindow {
+    return self.allowsMouseDown;
+}
+
 
 - (void) awakeFromNib {
     [super awakeFromNib];
@@ -60,7 +69,9 @@
         ret = (DDSplitViewContainer *) view;
     } else {
         ret = [[DDSplitViewContainer alloc] initWithFrame: view.frame];
+        ret.translatesAutoresizingMaskIntoConstraints = NO;
         [self replaceSubview: view with: ret];
+
         [ret addSubview: view];
         view.frame = view.bounds;
         view.translatesAutoresizingMaskIntoConstraints = NO;
@@ -241,4 +252,55 @@
     return containers;
 }
 
+
+//- (void) splitView: (NSSplitView *) splitView resizeSubviewsWithOldSize: (NSSize) oldSize {
+//
+//}
+//
+//- (BOOL) splitView: (NSSplitView *) splitView shouldAdjustSizeOfSubview: (NSView *) view {
+//    return NO;
+//}
+//
+//- (BOOL) splitView: (NSSplitView *) splitView shouldHideDividerAtIndex: (NSInteger) dividerIndex {
+//    return NO;
+//}
+//
+//- (NSRect) splitView: (NSSplitView *) splitView effectiveRect: (NSRect) proposedEffectiveRect forDrawnRect: (NSRect) drawnRect ofDividerAtIndex: (NSInteger) dividerIndex {
+//    NSRect result;
+//    return result;
+//}
+//
+//- (NSRect) splitView: (NSSplitView *) splitView additionalEffectiveRectOfDividerAtIndex: (NSInteger) dividerIndex {
+//    NSRect result;
+//    return result;
+//}
+
+- (void) splitViewWillResizeSubviews: (NSNotification *) notification {
+    [self forwardSelector: @selector(splitViewWillResizeSubviews:) object: notification];
+
+}
+
+- (void) splitViewDidResizeSubviews: (NSNotification *) notification {
+    [self forwardSelector: @selector(splitViewDidResizeSubviews:) object: notification];
+
+}
+
+
+- (void) forwardSelector: (SEL) selector object: (id) object {
+    [self forwardSelector: selector delegate: splitDelegate object: object];
+}
+
+- (void) forwardSelector: (SEL) selector object: (id) object object: (id) object2 {
+    [self forwardSelector: selector delegate: splitDelegate object: object object: object2];
+}
+
+
+- (void) forwardSelector: (SEL) selector object: (id) object object: (id) object2 object: (id) object3 {
+    [self forwardSelector: selector delegate: splitDelegate object: object object: object2 object: object3];
+}
+
+
 @end
+
+
+

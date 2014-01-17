@@ -48,7 +48,10 @@
     //    [loginWindow makeKeyAndOrderFront: nil];
 
 
-    //    [self createDummyData];
+//        [self createDummyData];
+
+
+
 
 }
 
@@ -69,6 +72,7 @@
     Log *log = [[Log alloc] initWithTitle: [NSString stringWithFormat: @"Log note %lu", index]];
     log.serviceItem = [_model.serviceItems objectAtIndex: 0];
     log.id = [NSString stringWithFormat: @"%lu", index];
+    log.date = [NSDate date];
     return log;
 
 }

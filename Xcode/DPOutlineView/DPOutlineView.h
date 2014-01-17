@@ -7,7 +7,7 @@
 
 @class DPOutlineViewSection;
 
-@interface DPOutlineViewItem : NSObject     {
+@interface DPOutlineViewItem : NSObject {
     __unsafe_unretained DPOutlineViewSection *section;
 }
 
@@ -16,10 +16,14 @@
 @property(nonatomic, strong) NSImage *image;
 @property(nonatomic, assign) DPOutlineViewSection *section;
 
+@property(nonatomic, copy) NSString *subtitle;
 - (instancetype) initWithTitle: (NSString *) aTitle;
 - (instancetype) initWithTitle: (NSString *) aTitle image: (NSImage *) anImage;
 - (instancetype) initWithTitle: (NSString *) aTitle identifier: (NSString *) anIdentifier;
 - (instancetype) initWithTitle: (NSString *) aTitle image: (NSImage *) anImage identifier: (NSString *) anIdentifier;
+- (instancetype) initWithTitle: (NSString *) aTitle subtitle: (NSString *) aSubtitle image: (NSImage *) anImage identifier: (NSString *) anIdentifier;
+- (instancetype) initWithTitle: (NSString *) aTitle subtitle: (NSString *) aSubtitle image: (NSImage *) anImage;
+
 
 @end
 
@@ -49,11 +53,16 @@
 - (void) didAddRowView: (NSTableRowView *) rowView forSection: (DPOutlineViewSection *) section;
 - (void) didAddRowView: (NSTableRowView *) rowView forItem: (DPOutlineViewItem *) item;
 
-- (void) willDisplayCellView: (NSView *) view forSection: (DPOutlineViewSection *) section;
+- (void) willDisplayCellView: (NSTableCellView *) cellView forSection: (DPOutlineViewSection *) section;
 - (void) willDisplayCellView: (NSTableCellView *) cellView forItem: (DPOutlineViewItem *) item;
 - (void) didSelectItem: (DPOutlineViewItem *) item;
 
 - (void) outlineViewDidReload;
+
+- (void) outlineViewItemWillCollapse: (NSNotification *) notification;
+- (void) outlineViewItemDidCollapse: (NSNotification *) notification;
+- (void) outlineViewItemWillExpand: (NSNotification *) notification;
+- (void) outlineViewItemDidExpand: (NSNotification *) notification;
 
 @end
 
@@ -61,13 +70,31 @@
 @interface DPOutlineView : NSOutlineView <NSOutlineViewDelegate, NSOutlineViewDataSource> {
     id <DPOutlineViewDelegate> outlineDelegate;
     BOOL autoExpands;
+
+    BOOL fitsScrollViewToHeight;
+    BOOL isExpanding;
+    BOOL isAnimatingBackground;
+
+    BOOL allowsSelection;
+
+
+    CGFloat expandedHeight;
+    CGFloat unexpandedHeight;
 }
 
 @property(nonatomic) BOOL autoExpands;
 @property(nonatomic, strong) id <DPOutlineViewDelegate> outlineDelegate;
+@property(nonatomic) BOOL fitsScrollViewToHeight;
+@property(nonatomic) BOOL isExpanding;
+@property(nonatomic) BOOL isAnimatingBackground;
+@property(nonatomic) BOOL allowsSelection;
+@property(nonatomic) CGFloat expandedHeight;
+@property(nonatomic) CGFloat unexpandedHeight;
+
 - (void) prepareDatasource;
 - (void) clearSections;
 - (DPOutlineViewSection *) sectionAtIndex: (NSUInteger) index1;
 - (void) addSection: (DPOutlineViewSection *) section;
 - (NSUInteger) sectionCount;
+- (CGFloat) outlineHeight;
 @end

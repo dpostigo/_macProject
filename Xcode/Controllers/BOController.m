@@ -31,7 +31,7 @@
 
             // TODO: Remove old observer
             //            NSLog(@"change = %@", change);
-            [self modelDidSelectTask: nil];
+            [self modelDidSelectTask: _model.selectedTask];
         }
     }
 
