@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Elastic Creative. All rights reserved.
 //
 
+#import <BOAPI/User.h>
+#import <BOAPI/Log.h>
 #import "Model.h"
 #import "NSWorkspaceNib.h"
 #import "OperationHandler.h"
@@ -14,6 +16,7 @@
 #import "BOFocusTypes.h"
 #import "Job.h"
 #import "Task.h"
+#import "ServiceItem.h"
 
 @implementation Model
 
@@ -26,6 +29,8 @@
 @synthesize selectedArtist;
 
 @synthesize selectedTask;
+
+@synthesize usesDummyData;
 
 + (Model *) sharedModel {
     static Model *_instance = nil;
@@ -103,7 +108,7 @@
 
 
 - (void) setSelectedFocusType: (NSString *) selectedFocusType1 {
-    if (![selectedFocusType1 isEqualToString: kBOFocusTypeJobs] && ![selectedFocusType1 isEqualToString: kBOFocusTypeJobs])   {
+    if (![selectedFocusType1 isEqualToString: kBOFocusTypeJobs] && ![selectedFocusType1 isEqualToString: kBOFocusTypeJobs]) {
         self.selectedJob = nil;
         self.selectedArtist = nil;
     }
@@ -138,6 +143,64 @@
 
 - (NSMutableArray *) serviceItems {
     return [BOAPIModel sharedModel].serviceItems;
+}
+
+
+
+
+
+#pragma mark Dummy data
+
+- (void) setUsesDummyData: (BOOL) usesDummyData1 {
+    usesDummyData = usesDummyData1;
+
+    if (usesDummyData) {
+        [self.serviceItems addObject: [[ServiceItem alloc] initWithTitle: @"Design"]];
+        [self.serviceItems addObject: [[ServiceItem alloc] initWithTitle: @"Development"]];
+
+        User *user = [[User alloc] initWithTitle: @"Dani"];
+        user.id = @"1";
+        [self.contacts addObject: user];
+        self.currentUser = user;
+
+        Task *task = self.dummyTask;
+        task.assignee = user;
+
+        Job *job = [[Job alloc] initWithTitle: @"Dummy job"];
+        job.id = @"1";
+        task.job = job;
+
+        [self.tasks addObject: task];
+        [self.jobs addObject: job];
+
+        [self notifyDelegates: @selector(getTasksSucceeded) object: nil];
+
+        NSWindow *tasksWindow = [self.masterNib objectWithIdentifier: @"TasksWindow"];
+        [tasksWindow makeKeyAndOrderFront: nil];
+    }
+}
+
+
+- (Task *) dummyTask {
+    Task *task = [[Task alloc] initWithTitle: @"Task"];
+    task.id = @"1";
+
+    [task.logs addObject: [self dummyLog: 1]];
+    [task.logs addObject: [self dummyLog: 2]];
+    [task.logs addObject: [self dummyLog: 3]];
+    [task.logs addObject: [self dummyLog: 4]];
+    return task;
+
+}
+
+
+- (Log *) dummyLog: (NSUInteger) index {
+    Log *log = [[Log alloc] initWithTitle: [NSString stringWithFormat: @"Log note %lu", index]];
+    log.serviceItem = [self.serviceItems objectAtIndex: 0];
+    log.id = [NSString stringWithFormat: @"%lu", index];
+    log.date = [NSDate date];
+    return log;
+
 }
 
 @end

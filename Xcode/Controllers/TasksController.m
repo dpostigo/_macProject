@@ -72,10 +72,6 @@
 - (void) willDisplayCellView: (NSTableCellView *) cellView forSection: (DPOutlineViewSection *) section {
     cellView.textField.stringValue = [section.title uppercaseString];
 
-    NSLog(@"section.title = %@", section.title);
-    NSLog(@"cellView.textField.stringValue = %@", cellView.textField.stringValue);
-
-    NSLog(@"%s", __PRETTY_FUNCTION__);
 
     //    [cellView.textField bind: @"value" toObject: section withKeyPath: @"title" options: nil];
 

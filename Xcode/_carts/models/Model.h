@@ -17,6 +17,7 @@
 
 @interface Model : BasicModel <BOAPIDelegate> {
 
+    BOOL usesDummyData;
     User *currentUser;
 
     Job *selectedJob;
@@ -39,6 +40,7 @@
 @property(nonatomic, strong) Job *selectedJob;
 @property(nonatomic, strong) User *selectedArtist;
 @property(nonatomic, strong) Task *selectedTask;
+@property(nonatomic) BOOL usesDummyData;
 + (Model *) sharedModel;
 - (NSWorkspaceNib *) masterNib;
 - (NSMutableArray *) jobs;

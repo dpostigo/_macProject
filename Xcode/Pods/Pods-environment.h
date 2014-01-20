@@ -168,6 +168,12 @@
 #define COCOAPODS_VERSION_MINOR_PMPKVObservation 4
 #define COCOAPODS_VERSION_PATCH_PMPKVObservation 0
 
+// ZKTextField
+#define COCOAPODS_POD_AVAILABLE_ZKTextField
+#define COCOAPODS_VERSION_MAJOR_ZKTextField 0
+#define COCOAPODS_VERSION_MINOR_ZKTextField 0
+#define COCOAPODS_VERSION_PATCH_ZKTextField 1
+
 // libextobjc/EXTScope
 #define COCOAPODS_POD_AVAILABLE_libextobjc_EXTScope
 #define COCOAPODS_VERSION_MAJOR_libextobjc_EXTScope 0

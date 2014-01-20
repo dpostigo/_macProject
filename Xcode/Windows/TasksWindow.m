@@ -8,42 +8,56 @@
 #import "Model.h"
 #import "NSWorkspaceNib.h"
 #import "GetTasksOperation.h"
-#import "TestLayerView.h"
 #import "MainController.h"
-#import "DDSplitView.h"
-#import "DDSplitViewContainer.h"
+#import "TitleController.h"
 
 @implementation TasksWindow
 
 @synthesize splitView;
-
-
-- (id) initWithContentRect: (NSRect) contentRect styleMask: (NSUInteger) aStyle backing: (NSBackingStoreType) bufferingType defer: (BOOL) flag {
-    self = [super initWithContentRect: contentRect styleMask: aStyle backing: bufferingType defer: flag];
-    if (self) {
-    }
-
-    return self;
-}
-
-
-- (void) awakeFromNib {
-    [super awakeFromNib];
-
-
-}
-
+@synthesize titleController;
 
 - (void) userDidLogin: (User *) user {
     [_queue addOperation: [[GetTasksOperation alloc] init]];
 
-    NSView *view = [_model.masterNib viewForClass: @"TitleController"];
-    //    NSLog(@"view = %@", view);
-    self.titleBarView = view;
-
-
-//    self.contentContentView = nil;
+    self.titleBarView = self.titleController.view;
 }
 
+
+- (void) setViewController: (NSViewController *) viewController1 {
+    [super setViewController: viewController1];
+
+    if (viewController) {
+        self.contentTitle = viewController.title;
+    }
+
+}
+
+
+- (NSString *) contentTitle {
+    return self.titleController.title;
+}
+
+- (void) setContentTitle: (NSString *) contentTitle1 {
+    self.titleController.title = contentTitle1;
+}
+
+
+- (void) setContentDisplayView: (NSView *) contentDisplayView1 {
+    contentDisplayView = contentDisplayView1;
+    if (contentDisplayView) {
+        mainController.contentView = contentDisplayView;
+    }
+}
+
+
+- (TitleController *) titleController {
+    return [_model.masterNib controllerForClass: @"TitleController"];
+}
+
+
+- (NSView *) titleControllerView {
+    //    return [_model.masterNib viewForClass: @"TitleController"];
+    return self.titleController.view;
+}
 
 @end

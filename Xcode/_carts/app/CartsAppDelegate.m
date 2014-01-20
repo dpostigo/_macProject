@@ -48,59 +48,10 @@
     //    [loginWindow makeKeyAndOrderFront: nil];
 
 
-//        [self createDummyData];
 
 
+//    _model.usesDummyData = YES;
 
-
-}
-
-- (Task *) dummyTask {
-    Task *task = [[Task alloc] initWithTitle: @"Task"];
-    task.id = @"1";
-
-    [task.logs addObject: [self dummyLog: 1]];
-    [task.logs addObject: [self dummyLog: 2]];
-    [task.logs addObject: [self dummyLog: 3]];
-    [task.logs addObject: [self dummyLog: 4]];
-    return task;
-
-}
-
-
-- (Log *) dummyLog: (NSUInteger) index {
-    Log *log = [[Log alloc] initWithTitle: [NSString stringWithFormat: @"Log note %lu", index]];
-    log.serviceItem = [_model.serviceItems objectAtIndex: 0];
-    log.id = [NSString stringWithFormat: @"%lu", index];
-    log.date = [NSDate date];
-    return log;
-
-}
-
-- (void) createDummyData {
-
-    [_model.serviceItems addObject: [[ServiceItem alloc] initWithTitle: @"Design"]];
-    [_model.serviceItems addObject: [[ServiceItem alloc] initWithTitle: @"Development"]];
-
-    User *user = [[User alloc] initWithTitle: @"Dani"];
-    user.id = @"1";
-    [_model.contacts addObject: user];
-    _model.currentUser = user;
-
-    Task *task = self.dummyTask;
-    task.assignee = user;
-
-    Job *job = [[Job alloc] initWithTitle: @"Dummy job"];
-    job.id = @"1";
-    task.job = job;
-
-    [_model.tasks addObject: task];
-    [_model.jobs addObject: job];
-
-    [_model notifyDelegates: @selector(getTasksSucceeded) object: nil];
-
-    NSWindow *tasksWindow = [_model.masterNib objectWithIdentifier: @"TasksWindow"];
-    [tasksWindow makeKeyAndOrderFront: nil];
 }
 
 

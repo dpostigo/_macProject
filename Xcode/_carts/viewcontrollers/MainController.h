@@ -13,7 +13,10 @@
     IBOutlet DDSplitView *contentSplitView;
     IBOutlet NSSplitView *vanilla;
 
+    NSView *contentView;
+
 }
 
 @property(nonatomic, strong) DDSplitView *splitView;
+@property(nonatomic, strong) NSView *contentView;
 @end

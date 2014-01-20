@@ -6,8 +6,11 @@
 #import "BOWindow.h"
 #import "Model.h"
 
-@implementation BOWindow {
-}
+@implementation BOWindow
+
+
+@synthesize viewController;
+@synthesize contentDisplayView;
 
 - (id) initWithContentRect: (NSRect) contentRect styleMask: (NSUInteger) aStyle backing: (NSBackingStoreType) bufferingType defer: (BOOL) flag {
     self = [super initWithContentRect: contentRect styleMask: aStyle backing: bufferingType defer: flag];
@@ -19,5 +22,14 @@
 
     return self;
 }
+
+
+- (void) setViewController: (NSViewController *) contentController1 {
+    viewController = contentController1;
+    if (viewController) {
+        self.contentDisplayView = viewController.view;
+    }
+}
+
 
 @end

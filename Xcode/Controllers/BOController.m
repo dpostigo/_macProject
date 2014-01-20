@@ -8,10 +8,47 @@
 #import "Model.h"
 #import "BOAPIModel.h"
 #import "Task.h"
+#import "BOWindow.h"
 
 @implementation BOController
 
+
+
+- (NSString *) nibName {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    return [super nibName];
+}
+
+- (NSBundle *) nibBundle {
+    return [super nibBundle];
+}
+
+
+- (id) initWithNibName: (NSString *) nibNameOrNil bundle: (NSBundle *) nibBundleOrNil {
+    self = [super initWithNibName: nibNameOrNil bundle: nibBundleOrNil];
+    if (self) {
+
+        NSLog(@"%s", __PRETTY_FUNCTION__);
+    }
+
+    return self;
+}
+
+
+- (void) loadView {
+    [super loadView];
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    [self viewDidLoad];
+}
+
+- (void) setView: (NSView *) view1 {
+    [super setView: view1];
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+
 - (void) viewDidLoad {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     _model = [Model sharedModel];
     _apiModel = [BOAPIModel sharedModel];
     [_model subscribeDelegate: self];
@@ -41,6 +78,8 @@
             [self logsDidUpdate: _model.selectedTask];
         }
     }
+
+
     //    [super observeValueForKeyPath: keyPath ofObject: object change: change context: context];
 }
 
@@ -59,4 +98,11 @@
 - (void) logsDidUpdate: (Task *) task {
 
 }
+
+
+- (BOWindow *) window {
+    NSWindow *window = self.view.window;
+    return ([window isKindOfClass: [BOWindow class]] ? ((BOWindow *) window) : nil);
+}
+
 @end

@@ -8,6 +8,7 @@
 @class Model;
 @class BOAPIModel;
 @class Task;
+@class BOWindow;
 
 @interface BOController : NSViewController {
 
@@ -20,4 +21,5 @@
 - (void) modelDidSelectFocusType;
 - (void) modelDidSelectTask: (Task *) task;
 - (void) logsDidUpdate: (Task *) task;
+- (BOWindow *) window;
 @end

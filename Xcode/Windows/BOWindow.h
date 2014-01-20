@@ -14,5 +14,11 @@
     Model *_model;
     NSOperationQueue *_queue;
 
+    NSView *contentDisplayView;
+    NSViewController *viewController;
+
 }
+
+@property(nonatomic, strong) NSView *contentDisplayView;
+@property(nonatomic, strong) NSViewController *viewController;
 @end

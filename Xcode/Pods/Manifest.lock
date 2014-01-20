@@ -69,11 +69,11 @@ PODS:
   - DPKit (0.0.5):
     - DPKit/Mac OS X
     - DPKit/Shared
-    - NSView-DPAutolayout
+    - NSView-DPAutolayout (~> 0.0.11)
   - DPKit/Mac OS X (0.0.5):
-    - NSView-DPAutolayout
+    - NSView-DPAutolayout (~> 0.0.11)
   - DPKit/Shared (0.0.5):
-    - NSView-DPAutolayout
+    - NSView-DPAutolayout (~> 0.0.11)
   - DPWindow (0.0.2):
     - CALayer-DPUtils
     - NSColor-BlendingUtils
@@ -90,6 +90,7 @@ PODS:
   - NSView-DPAutolayout (0.0.11)
   - PMPKVObservation (0.4):
     - libextobjc/EXTScope (~> 0.2.5)
+  - ZKTextField (0.0.1)
 
 DEPENDENCIES:
   - AutoCoding
@@ -98,6 +99,7 @@ DEPENDENCIES:
   - DPWindow (from `~/Development/LocalPods/DPWindow`)
   - NSColor-Crayola
   - PMPKVObservation
+  - ZKTextField
 
 EXTERNAL SOURCES:
   BOAPI:
@@ -112,7 +114,7 @@ SPEC CHECKSUMS:
   AutoCoding: 1cb0f7373249cefc73aa22cc3a7cc62ba4b886a7
   BOAPI: c37f5e54168398c89888b2172c6913aba763b020
   CALayer-DPUtils: 1701a955e663c91e9d5f120cbce822ca83c64ecc
-  DPKit: 1e17a2eeedaacb34fe9136b2dc94c5b2acaadb0c
+  DPKit: f2cb559d6788fa7ae88de2752de6ccd82823ec8b
   DPWindow: 0034b4715f3e4e396d9bb66afb59fc26ffff5265
   JMSimpleDate: ea28a4ddd5dee6b8463634d66050fc8ea70760d7
   libextobjc: 2cbc74caf8bdc74a86fdf24673f773c83424ea98
@@ -123,5 +125,6 @@ SPEC CHECKSUMS:
   NSObject-UserDefaults: a88bab6ed9dbdbc11eb9d89c69f964d6ba4ead4a
   NSView-DPAutolayout: 1edb506a3c0bd8141a484ccbd4ea631f897baa29
   PMPKVObservation: ce906efa31c5942b410c9433d3e04ebc4af8fccf
+  ZKTextField: c48a5472579cdfe64bcca71d1a8c6558f59f7149
 
 COCOAPODS: 0.29.0

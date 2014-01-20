@@ -11,6 +11,8 @@
 @implementation BasicWhiteView {
 }
 
+
+
 - (void) setup {
     [super setup];
 
