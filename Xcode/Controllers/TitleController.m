@@ -9,14 +9,16 @@
 #import "NSButton+DPUtils.h"
 #import "BOWindow.h"
 #import "TaskCreationController.h"
+#import "DDSplitViewContainer.h"
 
 @implementation TitleController
 
 @synthesize addButton;
 @synthesize titleLabel;
-
 @synthesize splitView;
 @synthesize mainSplitView;
+
+@synthesize thirdView;
 
 - (void) setAddButton: (NSButton *) addButton1 {
     addButton = addButton1;
@@ -30,33 +32,63 @@
 }
 
 
-
 - (void) setTitleLabel: (NSTextField *) titleLabel1 {
     titleLabel = titleLabel1;
     titleLabel.stringValue = @"";
 }
 
 
+- (void) setThirdView: (NSView *) thirdView1 {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    if (thirdView) {
+        [[NSNotificationCenter defaultCenter] removeObserver: self name: NSViewFrameDidChangeNotification object: thirdView];
+    }
+
+    thirdView = thirdView1;
+
+    if (thirdView) {
+        thirdView.postsFrameChangedNotifications = YES;
+        [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(viewDidChange:) name: NSViewFrameDidChangeNotification object: thirdView];
+    }
+}
+
+
+- (void) setMainSplitView: (DDSplitView *) mainSplitView1 {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    mainSplitView = mainSplitView1;
+
+    DDSplitViewContainer *aView = [mainSplitView containerAtIndex: 2];
+
+}
+
+
 #pragma mark Actions
 
 - (IBAction) addClicked: (id) sender {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    //    self.window.contentDisplayView = [[TaskCreationController alloc] init]
-
     self.window.viewController = [[TaskCreationController alloc] initWithNibName: @"TaskCreationView" bundle: nil];
 }
 
 
-#pragma mark Load
+
+
+#pragma mark View lifecycle
 
 - (void) viewDidLoad {
     [super viewDidLoad];
-
     splitView.allowsMouseDown = YES;
-    thirdView.postsFrameChangedNotifications = YES;
-    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(viewDidChange:) name: NSViewFrameDidChangeNotification object: thirdView];
+}
+
+- (void) viewDidChange: (NSNotification *) notification {
+
+    NSView *lastMainView = [mainSplitView.subviews lastObject];
+
+    CGFloat widthValue = lastMainView.left;
+    widthValue = lastMainView.left;
+    widthValue = lastMainView.left - (splitView.dividerThickness * 2);
+    [splitView setPosition: widthValue ofDividerAtIndex: 0];
 
 }
+
 
 #pragma mark Callbacks
 
@@ -68,28 +100,9 @@
 
 
 - (void) userDidLogin: (User *) user {
-
     NSImage *image = [addButton.image copy];
     [image setTemplate: YES];
     [addButton setImage: image];
-
-}
-
-
-- (void) awakeFromNib {
-    [super awakeFromNib];
-
-}
-
-
-- (void) viewDidChange: (NSNotification *) notification {
-
-    NSView *lastMainView = [mainSplitView.subviews lastObject];
-
-    CGFloat widthValue = lastMainView.left;
-    widthValue = lastMainView.left;
-    widthValue = lastMainView.left - (splitView.dividerThickness * 2);
-    [splitView setPosition: widthValue ofDividerAtIndex: 0];
 
 }
 

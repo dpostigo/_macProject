@@ -20,6 +20,8 @@
     [_queue addOperation: [[GetTasksOperation alloc] init]];
 
     self.titleBarView = self.titleController.view;
+    [[NSUserDefaults standardUserDefaults] setBool: YES forKey: @"NSConstraintBasedLayoutVisualizeMutuallyExclusiveConstraints"];
+
 }
 
 
@@ -43,7 +45,7 @@
 
 
 - (void) setContentDisplayView: (NSView *) contentDisplayView1 {
-    contentDisplayView = contentDisplayView1;
+    [super setContentDisplayView: contentDisplayView1];
     if (contentDisplayView) {
         mainController.contentView = contentDisplayView;
     }

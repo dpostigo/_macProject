@@ -41,10 +41,15 @@
 @property(nonatomic, strong) User *selectedArtist;
 @property(nonatomic, strong) Task *selectedTask;
 @property(nonatomic) BOOL usesDummyData;
+
+@property(nonatomic, strong) NSMutableArray *jobs;
+@property(nonatomic, strong) NSMutableArray *contacts;
+
+
 + (Model *) sharedModel;
 - (NSWorkspaceNib *) masterNib;
-- (NSMutableArray *) jobs;
+//- (NSMutableArray *) jobs;
 - (NSMutableArray *) tasks;
-- (NSMutableArray *) contacts;
+//- (NSMutableArray *) contacts;
 - (NSMutableArray *) serviceItems;
 @end

@@ -18,14 +18,17 @@
 
 
 - (NSLayoutConstraint *) superConstrainAttributeWithSelf: (NSLayoutAttribute) attribute offset: (CGFloat) offset {
+    return [self superConstrainAttribute: attribute offset: offset firstItem: self secondItem: self.superview];
+}
+
+- (NSLayoutConstraint *) superConstrainAttribute: (NSLayoutAttribute) attribute offset: (CGFloat) offset firstItem: (id) item secondItem: (id) item2 {
     NSLayoutConstraint *ret = nil;
     if (self.superview) {
-        ret = [NSLayoutConstraint constraintWithItem: self attribute: attribute relatedBy: NSLayoutRelationEqual toItem: self.superview attribute: attribute multiplier: 1.0 constant: offset];
+        ret = [NSLayoutConstraint constraintWithItem: item attribute: attribute relatedBy: NSLayoutRelationEqual toItem: item2 attribute: attribute multiplier: 1.0 constant: offset];
         [self.superview addConstraint: ret];
     }
     return ret;
 }
-
 
 
 #pragma mark Width
@@ -73,6 +76,19 @@
 }
 
 
+- (NSLayoutConstraint *) superConstrainLeadingToItem: (id) item {
+    return [self superConstrainLeadingToItem: item offset: 0];
+}
+
+- (NSLayoutConstraint *) superConstrainLeadingToItem: (id) item offset: (CGFloat) offset {
+    return [self superConstrainAttribute: NSLayoutAttributeLeading offset: offset firstItem: item secondItem: self];
+}
+
+
+
+
+
+
 #pragma mark Trailing
 
 - (NSLayoutConstraint *) superTrailingConstraint {
@@ -100,6 +116,16 @@
 
 - (NSLayoutConstraint *) superConstrainTop {
     return [self superConstrainLeading: 0];
+}
+
+#pragma mark Top, item
+
+- (NSLayoutConstraint *) superConstrainTopToItem: (id) item {
+    return [self superConstrainTopToItem: item offset: 0];
+}
+
+- (NSLayoutConstraint *) superConstrainTopToItem: (id) item offset: (CGFloat) offset {
+    return [self superConstrainAttribute: NSLayoutAttributeTop offset: offset firstItem: item secondItem: self];
 }
 
 
@@ -137,10 +163,20 @@
         [ret addObject: [self superConstrainTop: offset]];
         [ret addObject: [self superConstrainBottom: offset]];
     }
-
     return ret;
 }
 
+
+- (NSArray *) superConstrainWithInsets: (NSEdgeInsets) insets {
+    NSMutableArray *ret = [[NSMutableArray alloc] init];
+    if (self.superview) {
+        [ret addObject: [self superConstrainLeading: insets.left]];
+        [ret addObject: [self superConstrainTrailing: insets.right]];
+        [ret addObject: [self superConstrainTop: insets.top]];
+        [ret addObject: [self superConstrainBottom: insets.bottom]];
+    }
+    return ret;
+}
 
 
 

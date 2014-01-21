@@ -5,14 +5,22 @@
 
 #import <Foundation/Foundation.h>
 #import "BOController.h"
+#import "BOAPIDelegate.h"
 
-@class InputTextField;
+@class FinalInputTextField;
 
-@interface TaskCreationController : BOController {
-
+@interface TaskCreationController : BOController <BOAPIDelegate> {
     IBOutlet NSTextField *taskField;
-    IBOutlet NSTextField *jobField;
+    IBOutlet FinalInputTextField *jobField;
+    IBOutlet FinalInputTextField *assigneeField;
 
+    IBOutlet NSPopUpButton *jobButton;
+
+    IBOutlet NSArrayController *arrayController;
 
 }
+
+@property(nonatomic, strong) NSArray *jobs;
+
+@property(nonatomic, strong) NSPopUpButton *jobButton;
 @end

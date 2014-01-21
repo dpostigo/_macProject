@@ -42,7 +42,6 @@
 
 - (void) setContentView: (NSView *) view {
     [splitView setSubviewAtIndex: 2 with: view];
-
 }
 
 

@@ -13,6 +13,8 @@
 
 @synthesize leftOffset;
 
+@synthesize attributedLabelString;
+
 - (id) initWithCoder: (NSCoder *) coder {
     self = [super initWithCoder: coder];
     if (self) {[self setup];}
@@ -29,38 +31,27 @@
     [super drawWithFrame: cellFrame inView: controlView];
 
     NSRect titleRect = [self labelRectForBounds: cellFrame];
-    NSAttributedString *placeholder = self.placeholderAttributedString;
+    NSAttributedString *label = self.attributedLabelString;
+
+    if (label.length > 0) {
+        [label drawInRect: titleRect];
+        //        [label drawWithRect: titleRect options: NSStringDrawingUsesLineFragmentOrigin];
+        //        [label drawWithRect: titleRect options: NSStringDrawingOneShot];
+        //                [label drawWithRect: titleRect options: NSStringDrawingUsesDeviceMetrics];
+        //                [label drawWithRect: titleRect options: NSStringDrawingTruncatesLastVisibleLine];
+        //        [label drawWithRect: titleRect options: NSStringDrawingUsesFontLeading];
+
+    }
     //
-    //    if (placeholder.length > 0) {
-    //        [placeholder drawInRect: titleRect];
-    //    }
-
-    CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
-    NSGraphicsContext *newCtx = [NSGraphicsContext graphicsContextWithGraphicsPort: context flipped: true];
-    [NSGraphicsContext saveGraphicsState];
-    [NSGraphicsContext setCurrentContext: newCtx];
-    [placeholder drawInRect: titleRect];
-    [NSGraphicsContext restoreGraphicsState];
-
-
-    //    NSLog(@"self.controlView.layer.infoString = %@", self.controlView.layer.infoString);
-
-    CALayer *layer = self.controlView.layer;
-    //    [layer renderInContext: context];
-
-
-    //    nsGraphicsContext = [NSGraphicsContext graphicsContextWithGraphicsPort: ctx
-    //            flipped: NO];
+    //    CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
+    //    NSGraphicsContext *newCtx = [NSGraphicsContext graphicsContextWithGraphicsPort: context flipped: true];
     //    [NSGraphicsContext saveGraphicsState];
-    //    [NSGraphicsContext setCurrentContext: nsGraphicsContext];
-    //
-    //    // ...Draw content using NS APIs...
-    //    NSRect aRect = NSMakeRect(10.0, 10.0, 30.0, 30.0);
-    //    NSBezierPath *thePath = [NSBezierPath bezierPathWithRect: aRect];
-    //    [[NSColor redColor] set];
-    //    [thePath fill];
-    //
+    //    [NSGraphicsContext setCurrentContext: newCtx];
+    //    [label drawInRect: titleRect];
     //    [NSGraphicsContext restoreGraphicsState];
+
+
+
 }
 
 
@@ -70,11 +61,18 @@
 
 #pragma mark Rects
 
+
+- (CGFloat) topOffset {
+    return 0.0;
+}
+
 - (NSRect) labelRectForBounds: (NSRect) bounds {
     NSRect ret = bounds;
     NSRect titleRect = [self titleRectForBounds: bounds];
     CGFloat padding = 3;
+
     ret.size.width = titleRect.origin.x - padding;
+    ret.origin.y -= self.topOffset;
     return ret;
 }
 
@@ -83,6 +81,14 @@
     NSRect ret = [super titleRectForBounds: bounds];
     ret.origin.x += leftOffset;
 
+    //    NSAttributedString *title = self.attributedStringValue;
+    //    NSLog(@"title = %@", title);
+    //    if (title) {
+    //        ret.size = [title size];
+    //    } else {
+    //        ret.size = NSZeroSize;
+    //    }
+
     CGFloat maxX = NSMaxX(bounds);
     CGFloat maxWidth = maxX - NSMinX(ret);
     if (maxWidth < 0) {
@@ -90,6 +96,8 @@
     }
 
     ret.size.width = MIN(NSWidth(ret), maxWidth);
+    ret.origin.y += self.topOffset;
+    //    NSLog(@"ret = %@, bounds = %@", NSStringFromRect(ret), NSStringFromRect(bounds));
 
     return ret;
 }
@@ -110,6 +118,14 @@
 
 
 #pragma mark Label / placeholder
+
+
+- (NSAttributedString *) attributedLabelString {
+    if (attributedLabelString == nil) {
+        attributedLabelString = [self.placeholderAttributedString mutableCopy];
+    }
+    return attributedLabelString;
+}
 
 - (NSAttributedString *) placeholderAttributedString {
     NSAttributedString *ret = [super placeholderAttributedString];

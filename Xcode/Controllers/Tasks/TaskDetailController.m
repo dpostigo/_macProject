@@ -10,7 +10,9 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
 
-//    [_queue addOperation: [[Get alloc] init]];
+    NSLog(@"self.view.translatesAutoresizingMaskIntoConstraints = %d", self.view.translatesAutoresizingMaskIntoConstraints);
+
+    //    [_queue addOperation: [[Get alloc] init]];
 }
 
 

@@ -73,13 +73,7 @@
         [self replaceSubview: view with: ret];
 
         [ret addSubview: view];
-        view.frame = view.bounds;
-        view.translatesAutoresizingMaskIntoConstraints = NO;
-
-        [ret addConstraint: [NSLayoutConstraint constraintWithItem: view attribute: NSLayoutAttributeLeading relatedBy: NSLayoutRelationEqual toItem: ret attribute: NSLayoutAttributeLeading multiplier: 1.0 constant: 0]];
-        [ret addConstraint: [NSLayoutConstraint constraintWithItem: view attribute: NSLayoutAttributeTrailing relatedBy: NSLayoutRelationEqual toItem: ret attribute: NSLayoutAttributeTrailing multiplier: 1.0 constant: 0]];
-        [ret addConstraint: [NSLayoutConstraint constraintWithItem: view attribute: NSLayoutAttributeTop relatedBy: NSLayoutRelationEqual toItem: ret attribute: NSLayoutAttributeTop multiplier: 1.0 constant: 0]];
-        [ret addConstraint: [NSLayoutConstraint constraintWithItem: view attribute: NSLayoutAttributeBottom relatedBy: NSLayoutRelationEqual toItem: ret attribute: NSLayoutAttributeBottom multiplier: 1.0 constant: 0]];
+        [ret setupConstraints];
     }
     return ret;
 }
@@ -98,14 +92,27 @@
 
 
 
+
+
 #pragma mark Actions At Index
 
 - (void) setSubviewAtIndex: (NSInteger) index with: (NSView *) view {
-    NSView *oldView = [self.subviews objectAtIndex: index];
+    NSView *oldView;
+
+    DDSplitViewContainer *container = [self containerAtIndex: index];
+    oldView = [container.subviews objectAtIndex: 0];
 
     view.frame = oldView.frame;
-    [self replaceSubview: oldView with: view];
-    [self setContainers];
+    [container replaceSubview: oldView with: view];
+
+    [container setupConstraints];
+
+
+    //    oldView = [self.subviews objectAtIndex: index];
+    //
+    //    view.frame = oldView.frame;
+    //    [self replaceSubview: oldView with: view];
+    //    [self setContainers];
 }
 
 

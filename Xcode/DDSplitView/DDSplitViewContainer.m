@@ -24,4 +24,18 @@
 - (NSView *) subview {
     return [self.subviews objectAtIndex: 0];
 }
+
+
+- (void) setupConstraints {
+    NSView *view = self.subview;
+    view.frame = view.bounds;
+    view.translatesAutoresizingMaskIntoConstraints = NO;
+
+    [self addConstraint: [NSLayoutConstraint constraintWithItem: view attribute: NSLayoutAttributeLeading relatedBy: NSLayoutRelationEqual toItem: self attribute: NSLayoutAttributeLeading multiplier: 1.0 constant: 0]];
+    [self addConstraint: [NSLayoutConstraint constraintWithItem: view attribute: NSLayoutAttributeTrailing relatedBy: NSLayoutRelationEqual toItem: self attribute: NSLayoutAttributeTrailing multiplier: 1.0 constant: 0]];
+    [self addConstraint: [NSLayoutConstraint constraintWithItem: view attribute: NSLayoutAttributeTop relatedBy: NSLayoutRelationEqual toItem: self attribute: NSLayoutAttributeTop multiplier: 1.0 constant: 0]];
+    [self addConstraint: [NSLayoutConstraint constraintWithItem: view attribute: NSLayoutAttributeBottom relatedBy: NSLayoutRelationEqual toItem: self attribute: NSLayoutAttributeBottom multiplier: 1.0 constant: 0]];
+}
+
+
 @end

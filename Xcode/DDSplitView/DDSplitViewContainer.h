@@ -19,4 +19,5 @@
 @property(nonatomic) BOOL isLocked;
 @property(nonatomic) CGFloat lockedValue;
 - (NSView *) subview;
+- (void) setupConstraints;
 @end

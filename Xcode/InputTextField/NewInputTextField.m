@@ -14,8 +14,9 @@
 @implementation NewInputTextField
 
 @synthesize holderLayer;
-
 @synthesize backgroundView;
+
+@synthesize backgroundContained;
 
 - (id) initWithCoder: (NSCoder *) origCoder {
     BOOL sub = YES;
@@ -55,22 +56,48 @@
 
 - (void) setup {
 
-    self.inputCell.leftOffset = 50;
+    backgroundContained = YES;
 
+    self.inputCell.leftOffset = 50;
     self.wantsLayer = YES;
-    //
-    //    CALayer *layer = self.layer;
-    //    [layer makeSuperlayer];
-    //
-    //    //    layer.backgroundColor = [NSColor whiteColor].CGColor;
-    //    layer.borderColor = [NSColor blackColor].CGColor;
-    //    layer.borderWidth = 1.0;
-    //
-    //    [self addSubview: self.backgroundView];
-    //    [backgroundView superConstrainEdges];
-    //
-    //    CALayer *bgLayer = backgroundView.layer;
-    //    bgLayer.backgroundColor = [NSColor whiteColor].CGColor;
+
+    CALayer *layer = self.layer;
+    [layer makeSuperlayer];
+    layer.borderColor = [NSColor blackColor].CGColor;
+    layer.borderWidth = 1.0;
+
+    //    self.canDrawSubviewsIntoLayer = YES;
+    [self setupBackgroundView];
+
+}
+
+- (void) setupBackgroundView {
+
+    if (backgroundContained) {
+        [self addSubview: self.backgroundView];
+        [backgroundView superConstrainEdges];
+
+    } else {
+
+//        if (self.superview) {
+//
+//        }
+
+    }
+
+    self.backgroundView.wantsLayer = YES;
+    self.backgroundView.layer.backgroundColor = [NSColor blueColor].CGColor;
+
+}
+
+//
+//- (void) setFrame: (NSRect) frameRect {
+//    [super setFrame: frameRect];
+//    //    self.backgroundView.frame = self.frame;
+//}
+
+
+- (void) setupGradient {
     //
     //    CAGradientLayer *gradient;
     //    gradient = [CAGradientLayer layer];
@@ -81,8 +108,37 @@
     //    [gradient superConstrain];
     //
     //    bgLayer.hidden = YES;
-
 }
+//
+//- (void) viewDidMoveToSuperview {
+//    [super viewDidMoveToSuperview];
+//
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
+//    //    [self.superview addSubview: self.backgroundView];
+//
+//
+//    //    [backgroundView superConstrainEdges];
+//
+//    if (!backgroundContained) {
+//
+//        NSLog(@"Adding backgroundView.");
+//        NSLog(@"self.superview = %@", self.superview);
+//        [self.superview addSubview: self.backgroundView];
+//        //        [backgroundView superConstrainTopToItem: self];
+//        //        [backgroundView superConstrainLeadingToItem: self];
+//        //        backgroundView.width = 200;
+//        //        backgroundView.height = 200;
+//    }
+//
+//}
+//
+//- (void) removeFromSuperview {
+//    if (!backgroundContained && backgroundView.superview) {
+//        [self.backgroundView removeFromSuperview];
+//    }
+//    [super removeFromSuperview];
+//
+//}
 
 
 - (NSView *) backgroundView {
@@ -147,33 +203,33 @@
 
 #pragma mark Cell methods
 
-
-- (void) selectCell: (NSCell *) aCell {
-    [super selectCell: aCell];
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-}
-
-
-- (void) updateCellInside: (NSCell *) aCell {
-    [super updateCellInside: aCell];
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-}
-
-- (void) drawCellInside: (NSCell *) aCell {
-    [super drawCellInside: aCell];
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-}
-
-- (void) drawCell: (NSCell *) aCell {
-    [super drawCell: aCell];
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-}
-
-
-- (void) updateCell: (NSCell *) aCell {
-    [super updateCell: aCell];
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-}
+//
+//- (void) selectCell: (NSCell *) aCell {
+//    [super selectCell: aCell];
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
+//}
+//
+//
+//- (void) updateCellInside: (NSCell *) aCell {
+//    [super updateCellInside: aCell];
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
+//}
+//
+//- (void) drawCellInside: (NSCell *) aCell {
+//    [super drawCellInside: aCell];
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
+//}
+//
+//- (void) drawCell: (NSCell *) aCell {
+//    [super drawCell: aCell];
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
+//}
+//
+//
+//- (void) updateCell: (NSCell *) aCell {
+//    [super updateCell: aCell];
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
+//}
 
 
 #pragma mark Core graphics

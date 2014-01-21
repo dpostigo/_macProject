@@ -7,16 +7,18 @@
 
 @class NewInputTextFieldCell;
 
-@interface NewInputTextField : NSTextField  {
+@interface FinalInputTextField : NSTextField {
 
-    NSView *backgroundView;
-    CALayer *holderLayer;
+    IBOutlet NSView *backgroundView;
+    CALayer *backgroundLayer;
 
-    BOOL backgroundContained;
+
+    NSEdgeInsets insets;
+
 }
 
-@property(nonatomic, strong) CALayer *holderLayer;
 @property(nonatomic, strong) NSView *backgroundView;
-@property(nonatomic) BOOL backgroundContained;
+@property(nonatomic, strong) CALayer *backgroundLayer;
+@property(nonatomic) NSEdgeInsets insets;
 - (NewInputTextFieldCell *) inputCell;
 @end

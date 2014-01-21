@@ -12,10 +12,8 @@
 
 @interface TitleController : BOController <BOAPIDelegate, DDSplitViewDelegate> {
 
-
     IBOutlet NSButton *addButton;
     IBOutlet NSTextField *titleLabel;
-
 
     IBOutlet DDSplitView *splitView;
     IBOutlet DDSplitView *mainSplitView;
@@ -28,4 +26,5 @@
 @property(nonatomic, strong) DDSplitView *mainSplitView;
 @property(nonatomic, strong) NSButton *addButton;
 @property(nonatomic, strong) NSTextField *titleLabel;
+@property(nonatomic, strong) NSView *thirdView;
 @end

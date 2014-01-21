@@ -7,8 +7,10 @@
 
 @interface NewInputTextFieldCell : NSTextFieldCell {
 
+    NSAttributedString *attributedLabelString;
     CGFloat leftOffset;
 }
 
 @property(nonatomic) CGFloat leftOffset;
+@property(nonatomic, strong) NSAttributedString *attributedLabelString;
 @end

@@ -129,12 +129,22 @@
 #pragma mark Data getters
 
 
+- (void) setJobs: (NSMutableArray *) jobs {
+    [BOAPIModel sharedModel].jobs = jobs;
+}
+
 - (NSMutableArray *) jobs {
     return [BOAPIModel sharedModel].jobs;
 }
 
 - (NSMutableArray *) tasks {
     return [BOAPIModel sharedModel].tasks;
+}
+
+
+- (void) setContacts: (NSMutableArray *) contacts {
+    [BOAPIModel sharedModel].contacts = contacts;
+
 }
 
 - (NSMutableArray *) contacts {
