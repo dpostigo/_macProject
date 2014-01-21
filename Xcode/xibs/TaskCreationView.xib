@@ -6,8 +6,9 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TaskCreationController">
             <connections>
-                <outlet property="arrayController" destination="bdv-qo-I1g" id="nD0-g8-JHZ"/>
+                <outlet property="assigneeController" destination="3hn-aO-yMB" id="Bt4-m7-up7"/>
                 <outlet property="assigneeField" destination="3tZ-Lc-xoS" id="zK8-mY-rwm"/>
+                <outlet property="jobController" destination="bdv-qo-I1g" id="nD0-g8-JHZ"/>
                 <outlet property="jobField" destination="udB-OP-EPc" id="ME4-De-oYC"/>
                 <outlet property="taskField" destination="MBd-ka-Ymu" id="Z4w-Bh-myk"/>
                 <outlet property="view" destination="1" id="zyt-ck-GyU"/>
@@ -47,12 +48,14 @@
                         </menu>
                     </popUpButtonCell>
                     <connections>
+                        <action selector="updateSelectedJob:" target="-2" id="fxn-an-APi"/>
                         <binding destination="bdv-qo-I1g" name="content" keyPath="arrangedObjects" id="51O-SO-qOQ"/>
                         <binding destination="bdv-qo-I1g" name="contentValues" keyPath="arrangedObjects.title" previousBinding="51O-SO-qOQ" id="0fD-Kc-7Qr">
                             <dictionary key="options">
                                 <string key="NSNullPlaceholder">Null</string>
                             </dictionary>
                         </binding>
+                        <binding destination="bdv-qo-I1g" name="selectedValue" keyPath="selection.title" previousBinding="0fD-Kc-7Qr" id="2NH-lX-uBs"/>
                     </connections>
                 </popUpButton>
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oVp-Ts-zjx">
@@ -70,20 +73,34 @@
                         </menu>
                     </popUpButtonCell>
                     <connections>
-                        <binding destination="bdv-qo-I1g" name="content" keyPath="arrangedObjects" id="pmS-fy-7a1"/>
-                        <binding destination="bdv-qo-I1g" name="contentValues" keyPath="arrangedObjects.title" previousBinding="pmS-fy-7a1" id="peb-99-qWX">
+                        <binding destination="3hn-aO-yMB" name="content" keyPath="arrangedObjects" id="D5U-Yr-ocy"/>
+                        <binding destination="3hn-aO-yMB" name="contentValues" keyPath="arrangedObjects.title" previousBinding="D5U-Yr-ocy" id="zSr-5M-YKj">
                             <dictionary key="options">
                                 <string key="NSNullPlaceholder">Null</string>
                             </dictionary>
                         </binding>
+                        <binding destination="3hn-aO-yMB" name="selectedValue" keyPath="selection.title" previousBinding="zSr-5M-YKj" id="BzW-6q-ZdO"/>
                     </connections>
                 </popUpButton>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wQY-p8-R1F">
+                    <rect key="frame" x="371" y="13" width="85" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" title="Submit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sTe-jf-Rf1">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="submit:" target="-2" id="bXr-K8-ngh"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="wQY-p8-R1F" secondAttribute="trailing" constant="20" id="6zG-1O-JIt"/>
                 <constraint firstItem="MBd-ka-Ymu" firstAttribute="top" secondItem="1" secondAttribute="top" id="CMm-nl-Gm4"/>
                 <constraint firstAttribute="trailing" secondItem="MBd-ka-Ymu" secondAttribute="trailing" id="Fo6-hg-Jmz"/>
                 <constraint firstItem="5HT-oS-mjU" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="10" id="XVw-de-C4T"/>
                 <constraint firstItem="5HT-oS-mjU" firstAttribute="top" secondItem="MBd-ka-Ymu" secondAttribute="bottom" constant="10" id="f2Q-6a-cix"/>
+                <constraint firstAttribute="bottom" secondItem="wQY-p8-R1F" secondAttribute="bottom" constant="20" id="h7G-fO-4db"/>
                 <constraint firstItem="oVp-Ts-zjx" firstAttribute="leading" secondItem="5HT-oS-mjU" secondAttribute="trailing" constant="10" id="ljl-Gf-eqP"/>
                 <constraint firstItem="oVp-Ts-zjx" firstAttribute="top" secondItem="MBd-ka-Ymu" secondAttribute="bottom" constant="10" id="oiH-rS-SDO"/>
                 <constraint firstItem="MBd-ka-Ymu" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="sho-it-Zzb"/>
@@ -151,7 +168,11 @@
                 </popUpButton>
             </subviews>
         </customView>
-        <arrayController objectClassName="Job" editable="NO" automaticallyPreparesContent="YES" id="bdv-qo-I1g" userLabel="Jobs Array Controller"/>
+        <arrayController objectClassName="Job" editable="NO" automaticallyPreparesContent="YES" id="bdv-qo-I1g" userLabel="Jobs Array Controller">
+            <connections>
+                <binding destination="RPs-47-hdL" name="contentArray" keyPath="self.jobs" id="hAb-zw-Njc"/>
+            </connections>
+        </arrayController>
         <userDefaultsController representsSharedInstance="YES" id="8ag-2C-1ly"/>
         <customObject id="RPs-47-hdL" customClass="Model"/>
         <customView id="70D-Qp-V77">
@@ -196,5 +217,10 @@
                 <constraint firstItem="NxO-td-nS5" firstAttribute="leading" secondItem="70D-Qp-V77" secondAttribute="leading" id="f14-c8-q3N"/>
             </constraints>
         </customView>
+        <arrayController objectClassName="User" editable="NO" automaticallyPreparesContent="YES" id="3hn-aO-yMB" userLabel="Assignee Array Controller">
+            <connections>
+                <binding destination="-2" name="contentArray" keyPath="self.selectedJob.assignees" id="tVu-Jo-qSB"/>
+            </connections>
+        </arrayController>
     </objects>
 </document>

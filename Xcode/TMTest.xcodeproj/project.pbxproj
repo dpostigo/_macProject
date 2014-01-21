@@ -187,6 +187,8 @@
 		330F00D1186F0F4500E737F8 /* NSColor+NewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F00C8186F0F4500E737F8 /* NSColor+NewUtils.m */; };
 		330F00D2186F0F4500E737F8 /* NSColor+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F00CA186F0F4500E737F8 /* NSColor+Utils.m */; };
 		330F00D3186F0F4500E737F8 /* CALayer+ConstraintUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F00CD186F0F4500E737F8 /* CALayer+ConstraintUtils.m */; };
+		3334D6EE188F096B004D82F1 /* SidebarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3334D6ED188F096B004D82F1 /* SidebarController.xib */; };
+		3334D6F0188F267A004D82F1 /* FooterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3334D6EF188F267A004D82F1 /* FooterController.xib */; };
 		335003DD18859F7100800FC1 /* TaskDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 335003DC18859F7100800FC1 /* TaskDetailController.m */; };
 		335003E21885E21000800FC1 /* AutoLayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 335003DF1885E21000800FC1 /* AutoLayoutHelpers.m */; };
 		335003E31885E21000800FC1 /* NSView+Autolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 335003E11885E21000800FC1 /* NSView+Autolayout.m */; };
@@ -311,6 +313,7 @@
 		F29B84FFAC9FFA03BA36A3E2 /* NewInputTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B87ADB11AC865DFEDF0C8 /* NewInputTextField.m */; };
 		F29B853E972DE5B6E0B9973E /* DPTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8B6B6C1D4CA53C8E56AE /* DPTableRowView.m */; };
 		F29B85B85BA5E828397CA5E7 /* LayerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8FA01A7E36D83A7DEA26 /* LayerDelegate.m */; };
+		F29B85FD4945EDF5F0AB76B8 /* FooterController.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8C449AEA1E59A9A1C79E /* FooterController.m */; };
 		F29B8728E0CA1126302BC4E8 /* CartsBackgroundWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8B7FE9D3A7ECEE8F10B3 /* CartsBackgroundWindow.m */; };
 		F29B8761EDB95CB51AF4F6A6 /* TaskCreationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8CEC5E0609E453B532F3 /* TaskCreationController.m */; };
 		F29B878B52D4C2036F0CBF44 /* BackgroundTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8BDD4D2F69AB4E18B8AF /* BackgroundTitleBar.m */; };
@@ -327,6 +330,7 @@
 		F29B8A3A8B909857B9C1D265 /* OperationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8CF2FF6ADC06E39D39A2 /* OperationHandler.m */; };
 		F29B8A3C778A09A060E0D228 /* BOLoginWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B812F80ECC21FFE982535 /* BOLoginWindow.m */; };
 		F29B8A7F2B4C9E561F479F9A /* NSLayoutConstraint+DPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B81D29CF0102035F48BC7 /* NSLayoutConstraint+DPUtils.m */; };
+		F29B8B5652124BF58678CE69 /* Model+BOControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8D15416EE22BAFF6B57F /* Model+BOControllers.m */; };
 		F29B8B6A4266929345A09B64 /* DDSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B80A3511A918F329F0ECB /* DDSplitView.m */; };
 		F29B8B93C90A921CC9415E6A /* LogsController.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B87E0EC6245662BC6014D /* LogsController.m */; };
 		F29B8BBF2E361F682FFC2365 /* NewInputTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B881D52BBD2D01FCB8FA3 /* NewInputTextFieldCell.m */; };
@@ -404,15 +408,15 @@
 		038FFB52181415E10039703F /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
 		038FFB53181415E10039703F /* NSTextField+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextField+Utils.h"; sourceTree = "<group>"; };
 		038FFB54181415E10039703F /* NSTextField+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextField+Utils.m"; sourceTree = "<group>"; };
-		03D8CB231768AA17000CF88A /* Carts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		03D8CB231768AA17000CF88A /* TMTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03D8CB261768AA17000CF88A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		03D8CB291768AA17000CF88A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		03D8CB2A1768AA17000CF88A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		03D8CB2B1768AA17000CF88A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		03D8CB2E1768AA17000CF88A /* Carts-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Carts-Info.plist"; sourceTree = "<group>"; };
+		03D8CB2E1768AA17000CF88A /* TMTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TMTest-Info.plist"; sourceTree = "<group>"; };
 		03D8CB301768AA17000CF88A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		03D8CB321768AA17000CF88A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		03D8CB341768AA17000CF88A /* Carts-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Carts-Prefix.pch"; sourceTree = "<group>"; };
+		03D8CB341768AA17000CF88A /* TMTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TMTest-Prefix.pch"; sourceTree = "<group>"; };
 		03D8CB361768AA17000CF88A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		03D8CBE01768ACA6000CF88A /* BasicBackgroundViewOld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicBackgroundViewOld.h; sourceTree = "<group>"; };
 		03D8CBE11768ACA6000CF88A /* BasicBackgroundViewOld.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicBackgroundViewOld.m; sourceTree = "<group>"; };
@@ -692,6 +696,8 @@
 		330F00CA186F0F4500E737F8 /* NSColor+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+Utils.m"; sourceTree = "<group>"; };
 		330F00CC186F0F4500E737F8 /* CALayer+ConstraintUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+ConstraintUtils.h"; sourceTree = "<group>"; };
 		330F00CD186F0F4500E737F8 /* CALayer+ConstraintUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+ConstraintUtils.m"; sourceTree = "<group>"; };
+		3334D6ED188F096B004D82F1 /* SidebarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SidebarController.xib; sourceTree = "<group>"; };
+		3334D6EF188F267A004D82F1 /* FooterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FooterController.xib; path = xibs/FooterController.xib; sourceTree = SOURCE_ROOT; };
 		335003DB18859F7100800FC1 /* TaskDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailController.h; sourceTree = "<group>"; };
 		335003DC18859F7100800FC1 /* TaskDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailController.m; sourceTree = "<group>"; };
 		335003DE1885E21000800FC1 /* AutoLayoutHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutoLayoutHelpers.h; path = AutolayoutHelpers/AutoLayoutHelpers.h; sourceTree = "<group>"; };
@@ -916,6 +922,7 @@
 		F29B84605EE3FC2353324A45 /* TaskEditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskEditController.h; sourceTree = "<group>"; };
 		F29B84616031068FF7647092 /* ContainedWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainedWindow.m; sourceTree = "<group>"; };
 		F29B847650191FCF53A5A447 /* BackgroundWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundWindowController.m; sourceTree = "<group>"; };
+		F29B847EA262D0CF5A47440F /* FooterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FooterController.h; sourceTree = "<group>"; };
 		F29B8551B6EB3E91A0C4F17C /* InputTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputTextFieldCell.h; sourceTree = "<group>"; };
 		F29B856064913B9546CF0734 /* CALayer+InfoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+InfoUtils.h"; sourceTree = "<group>"; };
 		F29B8569AC185DBFDC7E3835 /* CALayer+CartsStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CALayer+CartsStyle.h"; path = "layers/CALayer+CartsStyle.h"; sourceTree = "<group>"; };
@@ -942,6 +949,7 @@
 		F29B88D54A2F97DA7FD55E37 /* LayerBackedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerBackedView.h; sourceTree = "<group>"; };
 		F29B88D615CC0D3EEA863BE4 /* OperationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationHandler.h; sourceTree = "<group>"; };
 		F29B894BD30F3CBBFC03A699 /* NewInputTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewInputTextField.h; sourceTree = "<group>"; };
+		F29B8959E12B9124A0350F49 /* Model+BOControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Model+BOControllers.h"; sourceTree = "<group>"; };
 		F29B895A8E738BE3C67F9598 /* CALayer+CartsStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CALayer+CartsStyle.m"; path = "layers/CALayer+CartsStyle.m"; sourceTree = "<group>"; };
 		F29B895D26CAD3B8AFAA8712 /* ContainedWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainedWindow.h; sourceTree = "<group>"; };
 		F29B89695BB54DB853874B1C /* NSView+NewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+NewConstraint.h"; sourceTree = "<group>"; };
@@ -967,10 +975,12 @@
 		F29B8BDAB0B3D6F724FB3440 /* DDSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDSplitView.h; sourceTree = "<group>"; };
 		F29B8BDD4D2F69AB4E18B8AF /* BackgroundTitleBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BackgroundTitleBar.m; path = "background-window/BackgroundTitleBar.m"; sourceTree = "<group>"; };
 		F29B8C21376989C21D3DA7D7 /* TextFieldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldView.h; sourceTree = "<group>"; };
+		F29B8C449AEA1E59A9A1C79E /* FooterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FooterController.m; sourceTree = "<group>"; };
 		F29B8C4BEF1324365C890EA0 /* NSViewController+Carts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSViewController+Carts.m"; sourceTree = "<group>"; };
 		F29B8C95EB90457B047D3D0C /* ZKInputField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKInputField.h; sourceTree = "<group>"; };
 		F29B8CEC5E0609E453B532F3 /* TaskCreationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCreationController.m; sourceTree = "<group>"; };
 		F29B8CF2FF6ADC06E39D39A2 /* OperationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationHandler.m; sourceTree = "<group>"; };
+		F29B8D15416EE22BAFF6B57F /* Model+BOControllers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Model+BOControllers.m"; sourceTree = "<group>"; };
 		F29B8D6B1E51903295AC30D9 /* DPClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPClipView.m; sourceTree = "<group>"; };
 		F29B8D99874A4AAA52AF2DCE /* LayerBackedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerBackedView.m; sourceTree = "<group>"; };
 		F29B8DACE43FA6A36BFA8C85 /* TasksWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TasksWindow.h; sourceTree = "<group>"; };
@@ -1187,7 +1197,7 @@
 		03D8CB241768AA17000CF88A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				03D8CB231768AA17000CF88A /* Carts.app */,
+				03D8CB231768AA17000CF88A /* TMTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1229,6 +1239,8 @@
 				03D8CB2D1768AA17000CF88A /* Supporting Files */,
 				330E45BA1889772200E6A56C /* TaskCreationView.xib */,
 				3353EAE118707B50001798B1 /* Workspace.xib */,
+				3334D6ED188F096B004D82F1 /* SidebarController.xib */,
+				3334D6EF188F267A004D82F1 /* FooterController.xib */,
 			);
 			path = Carts;
 			sourceTree = "<group>";
@@ -1236,10 +1248,10 @@
 		03D8CB2D1768AA17000CF88A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				03D8CB2E1768AA17000CF88A /* Carts-Info.plist */,
+				03D8CB2E1768AA17000CF88A /* TMTest-Info.plist */,
 				03D8CB2F1768AA17000CF88A /* InfoPlist.strings */,
 				03D8CB321768AA17000CF88A /* main.m */,
-				03D8CB341768AA17000CF88A /* Carts-Prefix.pch */,
+				03D8CB341768AA17000CF88A /* TMTest-Prefix.pch */,
 				03D8CB351768AA17000CF88A /* Credits.rtf */,
 			);
 			name = "Supporting Files";
@@ -2152,6 +2164,8 @@
 				F29B88D615CC0D3EEA863BE4 /* OperationHandler.h */,
 				F29B899295240A66349E67BD /* Model+TaskUtils.m */,
 				F29B8A0C5672CEEA2CD1FF31 /* Model+TaskUtils.h */,
+				F29B8D15416EE22BAFF6B57F /* Model+BOControllers.m */,
+				F29B8959E12B9124A0350F49 /* Model+BOControllers.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2169,6 +2183,8 @@
 				F29B89A56B680A459BEC71B2 /* TasksController.h */,
 				F29B8B1C1E570A2CC2A87AF0 /* TitleController.m */,
 				F29B8B941E2699335F82BAF3 /* TitleController.h */,
+				F29B8C449AEA1E59A9A1C79E /* FooterController.m */,
+				F29B847EA262D0CF5A47440F /* FooterController.h */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -2353,9 +2369,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		03D8CB221768AA17000CF88A /* Carts */ = {
+		03D8CB221768AA17000CF88A /* TMTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03D8CB401768AA17000CF88A /* Build configuration list for PBXNativeTarget "Carts" */;
+			buildConfigurationList = 03D8CB401768AA17000CF88A /* Build configuration list for PBXNativeTarget "TMTest" */;
 			buildPhases = (
 				EAF4487531074F3FA0CF991B /* Check Pods Manifest.lock */,
 				03D8CB1F1768AA17000CF88A /* Sources */,
@@ -2368,9 +2384,9 @@
 			);
 			dependencies = (
 			);
-			name = Carts;
+			name = TMTest;
 			productName = BasicMacProject;
-			productReference = 03D8CB231768AA17000CF88A /* Carts.app */;
+			productReference = 03D8CB231768AA17000CF88A /* TMTest.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -2382,7 +2398,7 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Elastic Creative";
 			};
-			buildConfigurationList = 03D8CB1E1768AA17000CF88A /* Build configuration list for PBXProject "Carts" */;
+			buildConfigurationList = 03D8CB1E1768AA17000CF88A /* Build configuration list for PBXProject "TMTest" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -2394,7 +2410,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				03D8CB221768AA17000CF88A /* Carts */,
+				03D8CB221768AA17000CF88A /* TMTest */,
 			);
 		};
 /* End PBXProject section */
@@ -2408,6 +2424,7 @@
 				03EC34D4183155880007FBF8 /* .gitignore in Resources */,
 				03D8CB311768AA17000CF88A /* InfoPlist.strings in Resources */,
 				03EC34CC183155880007FBF8 /* .gitignore in Resources */,
+				3334D6EE188F096B004D82F1 /* SidebarController.xib in Resources */,
 				03D8CB371768AA17000CF88A /* Credits.rtf in Resources */,
 				0344D4B7183AC03800A9F3E5 /* .gitignore in Resources */,
 				3353EB1318707F73001798B1 /* CartsHomeViewController.xib in Resources */,
@@ -2427,6 +2444,7 @@
 				3353EB0F18707F73001798B1 /* BasicCollectionViewController.xib in Resources */,
 				3353EB1118707F73001798B1 /* BasicTableViewController.xib in Resources */,
 				3353EB1918707F73001798B1 /* SidebarViewController.xib in Resources */,
+				3334D6F0188F267A004D82F1 /* FooterController.xib in Resources */,
 				03EC34D0183155880007FBF8 /* .gitignore in Resources */,
 				3353EB1618707F73001798B1 /* LoginOutlineViewController.xib in Resources */,
 				03EC34C0183155880007FBF8 /* .gitignore in Resources */,
@@ -2780,6 +2798,8 @@
 				F29B81805964590A220D3822 /* NSView+ConstraintFinders.m in Sources */,
 				F29B85B85BA5E828397CA5E7 /* LayerDelegate.m in Sources */,
 				F29B81E047C3EEB7496CBCE3 /* NSView+ConstraintBased.m in Sources */,
+				F29B8B5652124BF58678CE69 /* Model+BOControllers.m in Sources */,
+				F29B85FD4945EDF5F0AB76B8 /* FooterController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2881,14 +2901,14 @@
 					"\"$(SRCROOT)/_src/frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Carts/Carts-Prefix.pch";
+				GCC_PREFIX_HEADER = "Carts/TMTest-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Carts/Carts-Info.plist";
+				INFOPLIST_FILE = "Carts/TMTest-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = Carts;
+				PRODUCT_NAME = TMTest;
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2905,14 +2925,14 @@
 					"\"$(SRCROOT)/_src/frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Carts/Carts-Prefix.pch";
+				GCC_PREFIX_HEADER = "Carts/TMTest-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Carts/Carts-Info.plist";
+				INFOPLIST_FILE = "Carts/TMTest-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = Carts;
+				PRODUCT_NAME = TMTest;
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2921,7 +2941,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		03D8CB1E1768AA17000CF88A /* Build configuration list for PBXProject "Carts" */ = {
+		03D8CB1E1768AA17000CF88A /* Build configuration list for PBXProject "TMTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03D8CB3E1768AA17000CF88A /* Debug */,
@@ -2930,7 +2950,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03D8CB401768AA17000CF88A /* Build configuration list for PBXNativeTarget "Carts" */ = {
+		03D8CB401768AA17000CF88A /* Build configuration list for PBXNativeTarget "TMTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03D8CB411768AA17000CF88A /* Debug */,

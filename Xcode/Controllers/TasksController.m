@@ -139,10 +139,11 @@
 
 #pragma mark BOAPIDelegate
 
-- (void) getTasksSucceeded {
+- (void) tasksDidUpdate {
     [outline reloadData];
-
 }
+
+
 
 #pragma mark Navigation
 

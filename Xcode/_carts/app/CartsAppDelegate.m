@@ -50,9 +50,32 @@
 
 
 
-//    _model.usesDummyData = YES;
+    //    _model.usesDummyData = YES;
+
+    [_model subscribeDelegate: self];
 
 }
 
+
+#pragma mark IBActions
+
+- (IBAction) signOut: (id) sender {
+    [_model signOut];
+
+}
+
+- (void) userDidSignOff {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    NSWindow *loginWindow = [_model.masterNib objectWithIdentifier: @"LoginWindow"];
+
+
+    NSArray *windows = [[NSApplication sharedApplication] windows];
+    for (NSWindow *openWindow in windows) {
+        [openWindow performClose: nil];
+    }
+
+    [loginWindow makeKeyAndOrderFront: nil];
+
+}
 
 @end

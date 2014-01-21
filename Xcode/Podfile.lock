@@ -18,6 +18,7 @@ PODS:
   - AutoCoding (2.1)
   - BOAPI (0.0.1):
     - AFNetworking (~> 2.0.3)
+    - AutoCoding
     - BOAPI/Models
     - BOAPI/Operations
     - BOAPI/Utils
@@ -27,12 +28,14 @@ PODS:
     - NSObject-UserDefaults
   - BOAPI/Models (0.0.1):
     - AFNetworking (~> 2.0.3)
+    - AutoCoding
     - JMSimpleDate
     - NSDictionary-Deserialize
     - NSObject+AutoDescription
     - NSObject-UserDefaults
   - BOAPI/Operations (0.0.1):
     - AFNetworking (~> 2.0.3)
+    - AutoCoding
     - BOAPI/Operations/account
     - BOAPI/Operations/logs
     - BOAPI/Operations/tasks
@@ -42,24 +45,28 @@ PODS:
     - NSObject-UserDefaults
   - BOAPI/Operations/account (0.0.1):
     - AFNetworking (~> 2.0.3)
+    - AutoCoding
     - JMSimpleDate
     - NSDictionary-Deserialize
     - NSObject+AutoDescription
     - NSObject-UserDefaults
   - BOAPI/Operations/logs (0.0.1):
     - AFNetworking (~> 2.0.3)
+    - AutoCoding
     - JMSimpleDate
     - NSDictionary-Deserialize
     - NSObject+AutoDescription
     - NSObject-UserDefaults
   - BOAPI/Operations/tasks (0.0.1):
     - AFNetworking (~> 2.0.3)
+    - AutoCoding
     - JMSimpleDate
     - NSDictionary-Deserialize
     - NSObject+AutoDescription
     - NSObject-UserDefaults
   - BOAPI/Utils (0.0.1):
     - AFNetworking (~> 2.0.3)
+    - AutoCoding
     - JMSimpleDate
     - NSDictionary-Deserialize
     - NSObject+AutoDescription
@@ -112,7 +119,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
   AutoCoding: 1cb0f7373249cefc73aa22cc3a7cc62ba4b886a7
-  BOAPI: c37f5e54168398c89888b2172c6913aba763b020
+  BOAPI: 732d21d5715b6a131ce90f192c1e1145708fbc77
   CALayer-DPUtils: 1701a955e663c91e9d5f120cbce822ca83c64ecc
   DPKit: 1e17a2eeedaacb34fe9136b2dc94c5b2acaadb0c
   DPWindow: 0034b4715f3e4e396d9bb66afb59fc26ffff5265

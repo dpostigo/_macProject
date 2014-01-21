@@ -3,12 +3,15 @@
 // Copyright (c) 2014 Elastic Creative. All rights reserved.
 //
 
+#import <NSColor-Crayola/NSColor+Crayola.h>
 #import "SidebarController.h"
 #import "BOFocusTypes.h"
 #import "BOAPIModel.h"
 #import "Model.h"
 #import "Job.h"
 #import "BOAPIModel+Utils.h"
+#import "NSColor+NewUtils.h"
+#import "DPTableCellView.h"
 
 @implementation SidebarController
 
@@ -17,6 +20,13 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     [outline reloadData];
+
+    self.view.wantsLayer = YES;
+    self.view.layer.backgroundColor = self.backgroundColor.CGColor;
+
+    NSLog(@"outline.enclosingScrollView.contentSize = ", outline.enclosingScrollView.contentSize);
+
+    NSLog(@"NSStringFromSize(outline.enclosingScrollView.contentSize) = %@", NSStringFromSize(outline.enclosingScrollView.contentSize));
 }
 
 
@@ -63,14 +73,38 @@
 }
 
 
+
+
 #pragma mark Cells
 
 
 
-#pragma mark Selection
+- (void) willDisplayTableCellView: (DPTableCellView *) cellView forSection: (DPOutlineViewSection *) section {
+    cellView.textLabel.textColor = self.headerTextColor;
+    cellView.wantsLayer = YES;
+//    cellView.layer.backgroundColor = [NSColor blackColorWithAlpha: 0.5].CGColor;
+}
+
+- (void) willDisplayTableCellView: (DPTableCellView *) cellView forItem: (DPOutlineViewItem *) item {
+    cellView.textLabel.textColor = self.itemTextColor;
+}
+
+
+- (void) willDisplayCellView: (NSTableCellView *) cellView forSection: (DPOutlineViewSection *) section {
+    if ([cellView isKindOfClass: [DPTableCellView class]]) {
+        [self willDisplayTableCellView: (DPTableCellView *) cellView forSection: section];
+    }
+}
+
+
+- (void) willDisplayCellView: (NSTableCellView *) cellView forItem: (DPOutlineViewItem *) item {
+    if ([cellView isKindOfClass: [DPTableCellView class]]) {
+        [self willDisplayTableCellView: (DPTableCellView *) cellView forItem: item];
+    }
+}
+
 
 - (void) didSelectItem: (DPOutlineViewItem *) item {
-    //    _model.selectedTask = nil;
     if ([item.section.title isEqualToString: @"Focus"]) {
         _model.selectedFocusType = item.title;
     } else {
@@ -89,15 +123,19 @@
 
 
 
-#pragma mark Cells
+#pragma mark Colors
 
 
-#pragma mark Navigation
+- (NSColor *) backgroundColor {
+    return [NSColor crayolaOnyxColor];
+}
 
+- (NSColor *) headerTextColor {
+    return [NSColor crayolaQuickSilverColor];
+}
 
-
-#pragma mark NSTextViewDelegate
-
-
+- (NSColor *) itemTextColor {
+    return [NSColor controlColor];
+}
 
 @end

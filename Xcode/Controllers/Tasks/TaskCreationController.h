@@ -16,11 +16,17 @@
 
     IBOutlet NSPopUpButton *jobButton;
 
-    IBOutlet NSArrayController *arrayController;
+    IBOutlet NSArrayController *jobController;
+    IBOutlet NSArrayController *assigneeController;
+
+    Job *selectedJob;
 
 }
 
 @property(nonatomic, strong) NSArray *jobs;
 
 @property(nonatomic, strong) NSPopUpButton *jobButton;
+@property(nonatomic, strong) Job *selectedJob;
+- (IBAction) popupButtonClicked: (id) sender;
+- (NSArray *) assignees;
 @end

@@ -10,11 +10,22 @@
 #import "GetTasksOperation.h"
 #import "MainController.h"
 #import "TitleController.h"
+#import "BlueView.h"
+#import "Model+BOControllers.h"
 
 @implementation TasksWindow
 
 @synthesize splitView;
 @synthesize titleController;
+
+- (void) awakeFromNib {
+    [super awakeFromNib];
+
+//    self.footerBarHeight = 20;
+//    self.footerBarColor = self.titleBarColor;
+//    self.footerBarView = _model.footerController.view;
+}
+
 
 - (void) userDidLogin: (User *) user {
     [_queue addOperation: [[GetTasksOperation alloc] init]];
@@ -56,9 +67,7 @@
     return [_model.masterNib controllerForClass: @"TitleController"];
 }
 
-
 - (NSView *) titleControllerView {
-    //    return [_model.masterNib viewForClass: @"TitleController"];
     return self.titleController.view;
 }
 

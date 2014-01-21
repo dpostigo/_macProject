@@ -11,18 +11,18 @@
 #import "CartsSidebarViewController.h"
 #import "CartsContentViewController.h"
 #import "Task.h"
+#import "Model+BOControllers.h"
 
 @implementation MainController
 
 @synthesize splitView;
-
 
 - (void) viewDidLoad {
     [super viewDidLoad];
 
     splitView.splitDividerColor = [NSColor lightGrayColor];
 
-    [splitView setSubviewAtIndex: 0 with: self.sidebarView];
+    [splitView setSubviewAtIndex: 0 with: _model.sidebarController.view];
     [splitView setSubviewAtIndex: 1 with: self.taskListView];
     //    [splitView setSubviewAtIndex: 1 with: contentSplitView];
 

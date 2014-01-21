@@ -26,9 +26,8 @@
 @synthesize currentUser;
 
 @synthesize selectedJob;
-@synthesize selectedArtist;
-
 @synthesize selectedTask;
+@synthesize selectedArtist;
 
 @synthesize usesDummyData;
 
@@ -183,7 +182,7 @@
         [self.tasks addObject: task];
         [self.jobs addObject: job];
 
-        [self notifyDelegates: @selector(getTasksSucceeded) object: nil];
+        [self notifyDelegates: @selector(tasksDidUpdate) object: nil];
 
         NSWindow *tasksWindow = [self.masterNib objectWithIdentifier: @"TasksWindow"];
         [tasksWindow makeKeyAndOrderFront: nil];
@@ -211,6 +210,14 @@
     log.date = [NSDate date];
     return log;
 
+}
+
+- (void) signOut {
+
+    self.username = @"";
+    self.password = @"";
+
+    [self notifyDelegates: @selector(userDidSignOff) object: nil];
 }
 
 @end

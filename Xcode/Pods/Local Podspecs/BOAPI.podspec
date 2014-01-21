@@ -42,6 +42,7 @@ Pod::Spec.new do |s|
   s.dependency   'NSDictionary-Deserialize'
   s.dependency   'NSObject-UserDefaults'
   s.dependency   'JMSimpleDate'
+  s.dependency   'AutoCoding'
 
 
 end

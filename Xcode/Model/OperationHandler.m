@@ -31,7 +31,7 @@
 #pragma mark Tasks
 
 - (void) getTasksSucceeded {
-    [_model notifyDelegates: @selector(getTasksSucceeded) object: nil];
+    [_model notifyDelegates: @selector(tasksDidUpdate) object: nil];
 
 }
 

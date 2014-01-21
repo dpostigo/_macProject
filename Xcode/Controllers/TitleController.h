@@ -9,9 +9,12 @@
 #import "DDSplitView.h"
 
 @class DDSplitView;
+@class MainController;
 
 @interface TitleController : BOController <BOAPIDelegate, DDSplitViewDelegate> {
 
+
+    IBOutlet MainController *mainController;
     IBOutlet NSButton *addButton;
     IBOutlet NSTextField *titleLabel;
 
@@ -27,4 +30,5 @@
 @property(nonatomic, strong) NSButton *addButton;
 @property(nonatomic, strong) NSTextField *titleLabel;
 @property(nonatomic, strong) NSView *thirdView;
+@property(nonatomic, strong) MainController *mainController;
 @end

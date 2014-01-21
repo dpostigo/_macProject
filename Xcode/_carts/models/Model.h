@@ -52,4 +52,5 @@
 - (NSMutableArray *) tasks;
 //- (NSMutableArray *) contacts;
 - (NSMutableArray *) serviceItems;
+- (void) signOut;
 @end

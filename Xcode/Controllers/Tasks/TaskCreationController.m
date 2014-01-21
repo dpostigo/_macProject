@@ -15,12 +15,15 @@
 #import "CALayer+InfoUtils.h"
 #import "Model.h"
 #import "BOAPIModel.h"
+#import "GetAssigneeProcess.h"
 
 @implementation TaskCreationController {
     NSArray *genders;
 }
 
 @synthesize jobButton;
+
+@synthesize selectedJob;
 
 - (id) initWithNibName: (NSString *) nibNameOrNil bundle: (NSBundle *) nibBundleOrNil {
     self = [super initWithNibName: nibNameOrNil bundle: nibBundleOrNil];
@@ -35,7 +38,7 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
 
-    [_apiModel addDelegate: self];
+    [_apiModel subscribeDelegate: self];
 
     NSArray *fields = [NSArray arrayWithObjects: @"Task",
                                                  @"Job",
@@ -56,9 +59,9 @@
                                                 [NSDictionary dictionaryWithObjectsAndKeys: @"female", @"name", @"f", @"value", nil],
                                                 nil];
 
-//    genders = self.jobs;
-//    [arrayController setContent: genders];
-    [arrayController setContent: _model.jobs];
+    //    genders = self.jobs;
+    //    [jobController setContent: genders];
+    [jobController setContent: _model.jobs];
 
 }
 
@@ -122,8 +125,68 @@
 
 
 - (void) jobsDidUpdate: (Job *) job {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+    [jobController setContent: _model.jobs];
+}
 
+- (void) jobDidUpdate: (Job *) job assignees: (NSArray *) assignees {
+    //    [assigneeController setContent: self.assignees];
+}
+
+
+
+
+#pragma mark IBActions
+
+- (IBAction) popupButtonClicked: (id) sender {
+    NSPopUpButton *button = sender;
+    id value = [jobController.selection valueForKeyPath: @"self"];
+}
+
+
+- (IBAction) updateSelectedJob: (id) sender {
+    NSPopUpButton *button = sender;
+    self.selectedJob = [jobController.selection valueForKeyPath: @"self"];
+
+}
+
+
+- (IBAction) updateSelectedAssignee: (id) sender {
+    NSPopUpButton *button = sender;
+    //    NSLog(@"[button valueClassForBinding: <#(NSString *)binding#>] = %@", [button valueClassForBinding: <#(NSString *)binding#>]);
+    //    id value = [jobController.selection valueForKeyPath: @"self"];
+    //    self.selectedJob = value;
+
+}
+
+
+
+#pragma mark Setters
+
+- (void) setSelectedJob: (Job *) selectedJob1 {
+    selectedJob = selectedJob1;
+    if (selectedJob) {
+        [_queue addOperation: [[GetAssigneeProcess alloc] initWithJob: selectedJob]];
+    }
+}
+
+- (User *) selectedAssignee {
+    return [assigneeController.selection valueForKeyPath: @"self"];
+}
+
+#pragma mark Getters
+
+
+- (NSArray *) assignees {
+    return self.selectedJob == nil ? nil : self.selectedJob.assignees;
+}
+
+
+#pragma mark Submit
+
+- (IBAction) submit: (id) sender {
+
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    NSLog(@"self.selectedAssignee = %@", self.selectedAssignee);
 }
 
 
