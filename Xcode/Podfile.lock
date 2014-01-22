@@ -22,14 +22,12 @@ PODS:
     - BOAPI/Models
     - BOAPI/Operations
     - BOAPI/Utils
-    - JMSimpleDate
     - NSDictionary-Deserialize
     - NSObject+AutoDescription
     - NSObject-UserDefaults
   - BOAPI/Models (0.0.1):
     - AFNetworking (~> 2.0.3)
     - AutoCoding
-    - JMSimpleDate
     - NSDictionary-Deserialize
     - NSObject+AutoDescription
     - NSObject-UserDefaults
@@ -39,35 +37,30 @@ PODS:
     - BOAPI/Operations/account
     - BOAPI/Operations/logs
     - BOAPI/Operations/tasks
-    - JMSimpleDate
     - NSDictionary-Deserialize
     - NSObject+AutoDescription
     - NSObject-UserDefaults
   - BOAPI/Operations/account (0.0.1):
     - AFNetworking (~> 2.0.3)
     - AutoCoding
-    - JMSimpleDate
     - NSDictionary-Deserialize
     - NSObject+AutoDescription
     - NSObject-UserDefaults
   - BOAPI/Operations/logs (0.0.1):
     - AFNetworking (~> 2.0.3)
     - AutoCoding
-    - JMSimpleDate
     - NSDictionary-Deserialize
     - NSObject+AutoDescription
     - NSObject-UserDefaults
   - BOAPI/Operations/tasks (0.0.1):
     - AFNetworking (~> 2.0.3)
     - AutoCoding
-    - JMSimpleDate
     - NSDictionary-Deserialize
     - NSObject+AutoDescription
     - NSObject-UserDefaults
   - BOAPI/Utils (0.0.1):
     - AFNetworking (~> 2.0.3)
     - AutoCoding
-    - JMSimpleDate
     - NSDictionary-Deserialize
     - NSObject+AutoDescription
     - NSObject-UserDefaults
@@ -85,7 +78,7 @@ PODS:
     - CALayer-DPUtils
     - NSColor-BlendingUtils
     - NSView-DPAutolayout
-  - JMSimpleDate (0.0.1)
+  - JMSimpleDate (0.0.3)
   - libextobjc/EXTScope (0.2.5):
     - libextobjc/RuntimeExtensions
   - libextobjc/RuntimeExtensions (0.2.5)
@@ -97,16 +90,15 @@ PODS:
   - NSView-DPAutolayout (0.0.11)
   - PMPKVObservation (0.4):
     - libextobjc/EXTScope (~> 0.2.5)
-  - ZKTextField (0.0.1)
 
 DEPENDENCIES:
   - AutoCoding
   - BOAPI (from `~/Development/LocalPods/BOAPI`)
   - DPKit (from `~/Development/LocalPods/DPKit`)
   - DPWindow (from `~/Development/LocalPods/DPWindow`)
+  - JMSimpleDate
   - NSColor-Crayola
   - PMPKVObservation
-  - ZKTextField
 
 EXTERNAL SOURCES:
   BOAPI:
@@ -119,11 +111,11 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
   AutoCoding: 1cb0f7373249cefc73aa22cc3a7cc62ba4b886a7
-  BOAPI: 732d21d5715b6a131ce90f192c1e1145708fbc77
+  BOAPI: dda76d336f368d5cc094dfd50b583fe7f7d7189e
   CALayer-DPUtils: 1701a955e663c91e9d5f120cbce822ca83c64ecc
   DPKit: 1e17a2eeedaacb34fe9136b2dc94c5b2acaadb0c
   DPWindow: 0034b4715f3e4e396d9bb66afb59fc26ffff5265
-  JMSimpleDate: ea28a4ddd5dee6b8463634d66050fc8ea70760d7
+  JMSimpleDate: 8b5f4ee00d247b76b5397cf2e230f19ce1cea8fb
   libextobjc: 2cbc74caf8bdc74a86fdf24673f773c83424ea98
   NSColor-BlendingUtils: 66ee9f5a9828f57617c02aa0fe02574a2cf4b4ce
   NSColor-Crayola: 4ce6313cd2ab3170bfb0f0e0964b31ac9b680b9e
@@ -132,6 +124,5 @@ SPEC CHECKSUMS:
   NSObject-UserDefaults: a88bab6ed9dbdbc11eb9d89c69f964d6ba4ead4a
   NSView-DPAutolayout: 1edb506a3c0bd8141a484ccbd4ea631f897baa29
   PMPKVObservation: ce906efa31c5942b410c9433d3e04ebc4af8fccf
-  ZKTextField: c48a5472579cdfe64bcca71d1a8c6558f59f7149
 
 COCOAPODS: 0.29.0

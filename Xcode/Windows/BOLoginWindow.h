@@ -18,4 +18,5 @@
 @property(nonatomic, strong) NSButton *submitButton;
 @property(nonatomic, strong) NSTextField *userField;
 @property(nonatomic, strong) NSTextField *passwordField;
+- (void) validate;
 @end

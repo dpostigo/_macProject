@@ -10,10 +10,8 @@
 - (void) awakeFromNib {
     [super awakeFromNib];
 
-    NSLog(@"%s", __PRETTY_FUNCTION__);
 
     testWindow.delegate = self;
-
     [self addChildWindow: testWindow ordered: NSWindowAbove];
 }
 

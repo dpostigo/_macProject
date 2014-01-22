@@ -26,7 +26,19 @@
 }
 
 
+- (void) didAddSubview: (NSView *) subview {
+    [super didAddSubview: subview];
 
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    if ([subview isKindOfClass: [NSButton class]]) {
+        // This is (presumably) the button holding the
+        // outline triangle button.
+        // We set our own images here.
+        NSLog(@"%s", __PRETTY_FUNCTION__);
+        [(NSButton *) subview setImage: [NSImage imageNamed: @"disclosure-closed"]];
+        [(NSButton *) subview setAlternateImage: [NSImage imageNamed: @"disclosure-open"]];
+    }
+}
 //
 //- (void) drawBackgroundInRect: (NSRect) dirtyRect {
 //    [super drawBackgroundInRect: dirtyRect];

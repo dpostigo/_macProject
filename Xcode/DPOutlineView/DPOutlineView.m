@@ -131,15 +131,12 @@
 @synthesize allowsSelection;
 
 @synthesize expandedHeight;
-
 @synthesize unexpandedHeight;
 
 - (id) initWithCoder: (NSCoder *) coder {
     self = [super initWithCoder: coder];
     if (self) {
-
         allowsSelection = YES;
-        NSLog(@"%s", __PRETTY_FUNCTION__);
     }
 
     return self;
@@ -323,6 +320,21 @@
 
 
 
+#pragma mark Overrides
+
+//- (id) makeViewWithIdentifier: (NSString *) identifier owner: (id) owner {
+//    id view = [super makeViewWithIdentifier: identifier owner: owner];
+//
+//    NSLog(@"identifier = %@", identifier);
+//
+//    if ([identifier isEqualToString: NSOutlineViewDisclosureButtonKey]) {
+//        // Do your customization
+//    }
+//
+//    return view;
+//}
+
+
 
 #pragma mark NSOutlineViewDataSource
 
@@ -388,16 +400,10 @@
 
 
 - (void) willDisplayCellView: (NSTableCellView *) cellView forSection: (DPOutlineViewSection *) section {
-//    cellView.textField.stringValue = [section.title uppercaseString];
+    //    cellView.textField.stringValue = [section.title uppercaseString];
     [self callSelector: @selector(willDisplayCellView:forSection:) object: cellView object: section];
 
 }
-
-
-- (BOOL) outlineView: (NSOutlineView *) outlineView isGroupItem: (id) item {
-    return [self.sections containsObject: item];
-}
-
 
 
 
@@ -492,10 +498,34 @@
 
 }
 
+//
+//- (void) outlineView: (NSOutlineView *) outlineView willDisplayOutlineCell: (id) cell forTableColumn: (NSTableColumn *) tableColumn item: (id) item {
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
+//
+//}
 
+
+//- (BOOL) outlineView: (NSOutlineView *) outlineView shouldShowCellExpansionForTableColumn: (NSTableColumn *) tableColumn item: (id) item {
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
+//    return YES;
+//}
+//
+//
+//- (BOOL) outlineView: (NSOutlineView *) outlineView shouldShowOutlineCellForItem: (id) item {
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
+//    return YES;
+//}
+
+
+- (BOOL) outlineView: (NSOutlineView *) outlineView isGroupItem: (id) item {
+    return [self.sections containsObject: item];
+}
 
 
 #pragma mark Re-worked
+
+
+
 
 
 - (void) didAddRowView: (NSTableRowView *) rowView forSection: (DPOutlineViewSection *) section {
@@ -555,12 +585,12 @@
 }
 
 - (void) callSelector: (SEL) selector object: (id) object object: (id) object2 object: (id) object3 {
-//    if (outlineDelegate && [outlineDelegate respondsToSelector: selector]) {
-//        id theDelegate = outlineDelegate;
-//        IMP imp = [theDelegate methodForSelector: selector];
-//        void (*func)(id, SEL, id, id, id) = (void *) imp;
-//        func(theDelegate, selector, object, object2, object3);
-//    }
+    //    if (outlineDelegate && [outlineDelegate respondsToSelector: selector]) {
+    //        id theDelegate = outlineDelegate;
+    //        IMP imp = [theDelegate methodForSelector: selector];
+    //        void (*func)(id, SEL, id, id, id) = (void *) imp;
+    //        func(theDelegate, selector, object, object2, object3);
+    //    }
     [self forwardSelector: selector delegate: outlineDelegate object: object object: object2 object: object2];
 }
 

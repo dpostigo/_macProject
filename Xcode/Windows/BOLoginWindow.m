@@ -14,6 +14,7 @@
 #import "NSColor+NewUtils.h"
 #import "CALayer+ConstraintUtils.h"
 #import "CALayer+FrameUtils.h"
+#import "BOAPIModel.h"
 
 @implementation BOLoginWindow
 
@@ -24,6 +25,7 @@
 - (void) awakeFromNib {
     [super awakeFromNib];
 
+    [[BOAPIModel sharedModel] subscribeDelegate: self];
     userField.nextKeyView = passwordField;
     //    passwordField.nextKeyView = submitButton;
 
@@ -110,13 +112,21 @@
 
 - (void) validate: (id) sender {
 
+    [self endEditingFor: passwordField];
     if (submitButton.isEnabled) {
+
+        //        [userField resignFirstResponder];
+        //        [passwordField resignFirstResponder];
+        [self selectNextKeyView: passwordField];
+
         [userField setEnabled: NO];
         [passwordField setEnabled: NO];
         [submitButton setEnabled: NO];
 
         NSString *username = userField.stringValue;
         NSString *password = passwordField.stringValue;
+
+        NSLog(@"password = %@", password);
 
         if ((username && [username length] > 0) && (password && [password length] > 0)) {
             [self validateSucceeded];
@@ -144,7 +154,6 @@
     NSString *password = passwordField.stringValue;
 
     NSLog(@"password = %@", password);
-
     _model.username = username;
     _model.password = password;
     [_queue addOperation: [[BOLoginOperation alloc] initWithUsername: username password: password]];
@@ -157,6 +166,8 @@
     [submitButton setEnabled: YES];
 }
 
+#pragma mark BOAPIDelegate
+
 - (void) userDidLogin: (User *) user {
 
     NSWindow *newWindow = [_model.masterNib objectWithIdentifier: @"TasksWindow"];
@@ -165,16 +176,26 @@
     [self performClose: nil];
     [self enableLogin];
 
-    userField.stringValue = @"";
-    passwordField.stringValue = @"";
+    //    userField.stringValue = @"";
+    //    passwordField.stringValue = @"";
 
+}
+
+- (void) loginFailed {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    [self enableLogin];
+
+    NSAlert *alert = [NSAlert alertWithMessageText: @"Login failed."
+            defaultButton: @"OK"
+            alternateButton: nil
+            otherButton: nil
+            informativeTextWithFormat: @""];
+    [alert runModal];
 }
 
 
 - (void) becomeKeyWindow {
     [super becomeKeyWindow];
-    [self enableLogin];
-    [self validate];
     //    [self validate: nil];
 }
 

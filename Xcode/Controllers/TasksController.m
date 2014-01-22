@@ -20,7 +20,6 @@
 
 - (void) viewDidLoad {
     [super viewDidLoad];
-    [outline reloadData];
 
     self.view.wantsLayer = YES;
 
@@ -37,15 +36,21 @@
     innerShadow.shadowRadius = 1.0;
 
     outline.wantsLayer = YES;
+
+    //    [outline reloadData];
+
 }
 
 
 #pragma mark DPOutlineView
 
+
+
 - (void) prepareDatasource {
     [outline clearSections];
 
     NSArray *jobs = [_apiModel jobsForTaskArray: _model.tasksForSelectedFocusType];
+
 
     DPOutlineViewSection *section;
     for (Job *job in jobs) {
@@ -118,9 +123,6 @@
 
 - (void) didSelectItem: (DPOutlineViewItem *) item {
 
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-
-    NSLog(@"item.identifier = %@", item.identifier);
     Task *task = [_apiModel taskForId: item.identifier];
     _model.selectedTask = task;
 
@@ -140,6 +142,7 @@
 #pragma mark BOAPIDelegate
 
 - (void) tasksDidUpdate {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     [outline reloadData];
 }
 

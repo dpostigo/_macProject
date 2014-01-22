@@ -12,8 +12,6 @@
 
 @implementation BOController
 
-
-
 - (NSString *) nibName {
     return [super nibName];
 }
@@ -46,7 +44,7 @@
 - (void) viewDidLoad {
     _model = [Model sharedModel];
     _apiModel = [BOAPIModel sharedModel];
-    [_model subscribeDelegate: self];
+    [_apiModel subscribeDelegate: self];
     _queue = [NSOperationQueue new];
 
     [_model addObserver: self forKeyPath: @"selectedFocusType" options: 0 context: NULL];

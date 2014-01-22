@@ -24,9 +24,6 @@
     self.view.wantsLayer = YES;
     self.view.layer.backgroundColor = self.backgroundColor.CGColor;
 
-    NSLog(@"outline.enclosingScrollView.contentSize = ", outline.enclosingScrollView.contentSize);
-
-    NSLog(@"NSStringFromSize(outline.enclosingScrollView.contentSize) = %@", NSStringFromSize(outline.enclosingScrollView.contentSize));
 }
 
 
@@ -82,7 +79,7 @@
 - (void) willDisplayTableCellView: (DPTableCellView *) cellView forSection: (DPOutlineViewSection *) section {
     cellView.textLabel.textColor = self.headerTextColor;
     cellView.wantsLayer = YES;
-//    cellView.layer.backgroundColor = [NSColor blackColorWithAlpha: 0.5].CGColor;
+    //    cellView.layer.backgroundColor = [NSColor blackColorWithAlpha: 0.5].CGColor;
 }
 
 - (void) willDisplayTableCellView: (DPTableCellView *) cellView forItem: (DPOutlineViewItem *) item {
@@ -117,8 +114,13 @@
 
 #pragma mark BOAPIDelegate
 
-- (void) getTasksSucceeded {
+- (void) jobsDidUpdate {
     [outline reloadData];
+}
+
+- (void) jobsDidUpdate: (Job *) job {
+    [outline reloadData];
+
 }
 
 

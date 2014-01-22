@@ -17,6 +17,7 @@
 #import "Job.h"
 #import "Task.h"
 #import "ServiceItem.h"
+#import "BOAPIStorage.h"
 
 @implementation Model
 
@@ -89,17 +90,13 @@
     NSString *ret = [self savedObjectForKey: @"username"];
     if (ret == nil) {
         ret = @"";
+    } else {
+        [BOAPIModel sharedModel].storage.username = ret;
     }
     return ret;
 }
 
 
-- (NSString *) selectedFocusType {
-    if (selectedFocusType == nil) {
-        selectedFocusType = [NSString stringWithFormat: @"%@", kBOFocusTypeMyTasks];
-    }
-    return selectedFocusType;
-}
 
 
 
@@ -156,6 +153,14 @@
 
 
 
+#pragma mark Getters
+
+- (NSString *) selectedFocusType {
+    if (selectedFocusType == nil) {
+        selectedFocusType = [NSString stringWithFormat: @"%@", kBOFocusTypeMyTasks];
+    }
+    return selectedFocusType;
+}
 
 
 #pragma mark Dummy data
