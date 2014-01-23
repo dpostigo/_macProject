@@ -12,8 +12,9 @@
 #import "DDSplitViewContainer.h"
 #import "MainController.h"
 #import "NSView+SiblingConstraints.h"
+#import "Model.h"
 
-@implementation TitleController
+@implementation     TitleController
 
 @synthesize addButton;
 @synthesize titleLabel;
@@ -48,7 +49,8 @@
 
 - (IBAction) addClicked: (id) sender {
 
-//    Task *task = [[Task alloc] initWithTitle: @"New task"];
+    [_model createTask: @"New Task"];
+    //    Task *task = [[Task alloc] initWithTitle: @"New task"];
 
     self.window.viewController = [[TaskCreationController alloc] initWithNibName: @"TaskCreationView" bundle: nil];
 }

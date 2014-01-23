@@ -10,7 +10,7 @@
 @class Task;
 @class BOWindow;
 
-@interface BOController : NSViewController {
+@interface BOController : NSViewController  {
 
     Model *_model;
     BOAPIModel *_apiModel;

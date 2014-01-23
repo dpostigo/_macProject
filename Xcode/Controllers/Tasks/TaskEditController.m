@@ -16,6 +16,7 @@
 #import "NSArray+BOBasicObject.h"
 #import "DPOutlineViewItem.h"
 #import "DPOutlineViewSection.h"
+#import "DPTableCellView.h"
 
 @implementation TaskEditController
 
@@ -136,14 +137,17 @@
     //
     //    }
 
+    if ([cellView isKindOfClass: [DPTableCellView class]]) {
+        DPTableCellView *cell = (DPTableCellView *) cellView;
 
+        NSDictionary *options = nil;
+        if (item.subtitle) {
+            options = [NSDictionary dictionaryWithObject: item.subtitle forKey: NSNullPlaceholderBindingOption];
+        }
 
-    NSDictionary *options = nil;
-    if (item.subtitle) {
-        options = [NSDictionary dictionaryWithObject: item.subtitle forKey: NSNullPlaceholderBindingOption];
+        [cell.textLabel bind: @"value" toObject: item withKeyPath: @"title" options: options];
+
     }
-
-    [cellView.textField bind: @"value" toObject: item withKeyPath: @"title" options: options];
 
 }
 

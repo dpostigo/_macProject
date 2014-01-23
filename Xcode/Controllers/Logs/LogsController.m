@@ -48,7 +48,7 @@
 - (void) setOutline: (DPOutlineView *) outline1 {
     outline = outline1;
     outline.outlineDelegate = self;
-//    outline.fitsScrollViewToHeight = YES;
+    //    outline.fitsScrollViewToHeight = YES;
 }
 
 
@@ -143,6 +143,18 @@
 
             NSLog(@"log = %@", log);
         }
+    }
+
+}
+
+
+- (void) didSelectItem: (DPOutlineViewItem *) item {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    Log *log = [self.task logForId: item.identifier];
+    if (log) {
+        [_model notifyDelegates: @selector(modelDidSelectLog:) object: log];
+    } else {
+        NSLog(@"log = %@", log);
     }
 
 }

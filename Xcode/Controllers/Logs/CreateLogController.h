@@ -5,8 +5,16 @@
 
 #import <Foundation/Foundation.h>
 #import "BOController.h"
+#import "NotificationDelegate.h"
 
-@interface CreateLogController : BOController {
+@interface CreateLogController : BOController <NotificationDelegate> {
+    Log *selectedLog;
+
+    IBOutlet NSButton *submitButton;
+    IBOutlet NSDatePicker *datePicker;
+    IBOutlet NSObjectController *objectController;
 
 }
+
+@property(nonatomic, strong) Log *selectedLog;
 @end

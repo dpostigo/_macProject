@@ -34,8 +34,11 @@
 
 - (void) viewDidLoad {
     _model = [Model sharedModel];
+    [_model subscribeDelegate: self];
+
     _apiModel = [BOAPIModel sharedModel];
     [_apiModel subscribeDelegate: self];
+
     _queue = [NSOperationQueue new];
 
     [_model addObserver: self forKeyPath: @"selectedFocusType" options: 0 context: NULL];

@@ -8,6 +8,7 @@
 
 #import <BOAPI/User.h>
 #import <BOAPI/Log.h>
+#import <BOAPI/BOAPIModel+Utils.h>
 #import "Model.h"
 #import "NSWorkspaceNib.h"
 #import "OperationHandler.h"
@@ -18,11 +19,9 @@
 #import "Task.h"
 #import "ServiceItem.h"
 #import "BOAPIStorage.h"
+#import "Model+TaskUtils.h"
 
 @implementation Model
-
-@synthesize masterNib;
-@synthesize operationHandler;
 
 @synthesize currentUser;
 
@@ -30,9 +29,11 @@
 @synthesize selectedTask;
 @synthesize selectedArtist;
 
-@synthesize usesDummyData;
-
 @synthesize controllers;
+
+@synthesize masterNib;
+@synthesize operationHandler;
+@synthesize usesDummyData;
 
 + (Model *) sharedModel {
     static Model *_instance = nil;
@@ -64,13 +65,6 @@
 
 
 #pragma mark Defaults
-//
-//- (void) setUsername: (NSString *) username {
-//    _username = [username mutableCopy];
-//    [[NSUserDefaults standardUserDefaults] setObject: self.username forKey: @"username"];
-//
-//}
-
 
 - (void) setPassword: (NSString *) password {
     [self saveObject: password forKey: @"password"];
@@ -156,6 +150,14 @@
 
 #pragma mark Getters
 
+- (NSMutableDictionary *) controllers {
+    if (controllers == nil) {
+        controllers = [[NSMutableDictionary alloc] init];
+    }
+    return controllers;
+}
+
+
 - (NSString *) selectedFocusType {
     if (selectedFocusType == nil) {
         selectedFocusType = [NSString stringWithFormat: @"%@", kBOFocusTypeMyTasks];
@@ -163,8 +165,8 @@
     return selectedFocusType;
 }
 
-
 #pragma mark Dummy data
+
 
 - (void) setUsesDummyData: (BOOL) usesDummyData1 {
     usesDummyData = usesDummyData1;
@@ -208,7 +210,6 @@
 
 }
 
-
 - (Log *) dummyLog: (NSUInteger) index {
     Log *log = [[Log alloc] initWithTitle: [NSString stringWithFormat: @"Log note %lu", index]];
     log.serviceItem = [self.serviceItems objectAtIndex: 0];
@@ -217,6 +218,9 @@
     return log;
 
 }
+
+
+#pragma mark Actions
 
 - (void) signOut {
 
@@ -227,11 +231,36 @@
 }
 
 
-- (NSMutableDictionary *) controllers {
-    if (controllers == nil) {
-        controllers = [[NSMutableDictionary alloc] init]    ;
+- (void) createTask: (NSString *) name {
+
+    Job *job = nil;
+
+    if (self.selectedTask) {
+        job = self.selectedTask.job;
+    } else if ([self.selectedFocusType isEqualToString: kBOFocusTypeJobs]) {
+        job = self.selectedJob;
+    } else {
+        job = [[self.apiModel jobsForTaskArray: self.tasksForSelectedFocusType] lastObject];
     }
-    return controllers;
+
+    [self createTask: name withJob: job];
+
+}
+
+- (void) createTask: (NSString *) name withJob: (Job *) job {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    Task *task = [[Task alloc] initWithTitle: name];
+    task.job = job;
+    [self.tasks addObject: task];
+
+    [self.apiModel notifyDelegate: @selector(tasksDidUpdate:) object: task];
+    [self.apiModel notifyDelegate: @selector(tasksDidUpdate) object: nil];
+
+}
+
+
+- (BOAPIModel *) apiModel {
+    return [BOAPIModel sharedModel];
 }
 
 @end

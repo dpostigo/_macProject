@@ -53,7 +53,9 @@
 - (NSWorkspaceNib *) masterNib;
 //- (NSMutableArray *) jobs;
 - (NSMutableArray *) tasks;
+
 //- (NSMutableArray *) contacts;
 - (NSMutableArray *) serviceItems;
 - (void) signOut;
+- (void) createTask: (NSString *) name;
 @end

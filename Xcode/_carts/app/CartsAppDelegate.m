@@ -11,6 +11,7 @@
 #import "BOAPIModel.h"
 #import "Task.h"
 #import "BOLoginWindow.h"
+#import "Model+BOControllers.h"
 
 @implementation CartsAppDelegate {
     NSWindow *window;
@@ -23,20 +24,28 @@
 
     [BOAPIModel sharedModel].delegate = _model.operationHandler;
 
-    //    [loginWindow makeKeyAndOrderFront: nil];
-
-
-
-
-    //    _model.usesDummyData = YES;
-
+    [[BOAPIModel sharedModel] subscribeDelegate: self];
     [_model subscribeDelegate: self];
 
     BOLoginWindow *loginWindow = [_model.masterNib objectWithIdentifier: @"LoginWindow"];
     [loginWindow validate];
 
+    [self doWindowControllerTest];
+
 }
 
+- (void) doWindowControllerTest {
+
+}
+
+#pragma mark BOAPIDelegate
+
+
+- (void) userDidLogin: (User *) user {
+    NSWindowController *controller = [[NSWindowController alloc] initWithWindow: _model.tasksWindow];
+    [controller.window makeKeyAndOrderFront: nil];
+
+}
 
 #pragma mark IBActions
 

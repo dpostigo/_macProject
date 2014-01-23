@@ -42,6 +42,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_Serialization 0
 #define COCOAPODS_VERSION_PATCH_AFNetworking_Serialization 3
 
+// ASHDatePicker
+#define COCOAPODS_POD_AVAILABLE_ASHDatePicker
+#define COCOAPODS_VERSION_MAJOR_ASHDatePicker 0
+#define COCOAPODS_VERSION_MINOR_ASHDatePicker 0
+#define COCOAPODS_VERSION_PATCH_ASHDatePicker 1
+
 // AutoCoding
 #define COCOAPODS_POD_AVAILABLE_AutoCoding
 #define COCOAPODS_VERSION_MAJOR_AutoCoding 2
@@ -94,7 +100,13 @@
 #define COCOAPODS_POD_AVAILABLE_CALayer_DPUtils
 #define COCOAPODS_VERSION_MAJOR_CALayer_DPUtils 0
 #define COCOAPODS_VERSION_MINOR_CALayer_DPUtils 1
-#define COCOAPODS_VERSION_PATCH_CALayer_DPUtils 3
+#define COCOAPODS_VERSION_PATCH_CALayer_DPUtils 4
+
+// DPBackgroundTextField
+#define COCOAPODS_POD_AVAILABLE_DPBackgroundTextField
+#define COCOAPODS_VERSION_MAJOR_DPBackgroundTextField 0
+#define COCOAPODS_VERSION_MINOR_DPBackgroundTextField 0
+#define COCOAPODS_VERSION_PATCH_DPBackgroundTextField 1
 
 // DPKit
 #define COCOAPODS_POD_AVAILABLE_DPKit
@@ -113,6 +125,24 @@
 #define COCOAPODS_VERSION_MAJOR_DPKit_Shared 0
 #define COCOAPODS_VERSION_MINOR_DPKit_Shared 0
 #define COCOAPODS_VERSION_PATCH_DPKit_Shared 5
+
+// DPOutlineView
+#define COCOAPODS_POD_AVAILABLE_DPOutlineView
+#define COCOAPODS_VERSION_MAJOR_DPOutlineView 0
+#define COCOAPODS_VERSION_MINOR_DPOutlineView 0
+#define COCOAPODS_VERSION_PATCH_DPOutlineView 1
+
+// DPOutlineView/Objects
+#define COCOAPODS_POD_AVAILABLE_DPOutlineView_Objects
+#define COCOAPODS_VERSION_MAJOR_DPOutlineView_Objects 0
+#define COCOAPODS_VERSION_MINOR_DPOutlineView_Objects 0
+#define COCOAPODS_VERSION_PATCH_DPOutlineView_Objects 1
+
+// DPOutlineView/Utilities
+#define COCOAPODS_POD_AVAILABLE_DPOutlineView_Utilities
+#define COCOAPODS_VERSION_MAJOR_DPOutlineView_Utilities 0
+#define COCOAPODS_VERSION_MINOR_DPOutlineView_Utilities 0
+#define COCOAPODS_VERSION_PATCH_DPOutlineView_Utilities 1
 
 // DPWindow
 #define COCOAPODS_POD_AVAILABLE_DPWindow
@@ -161,6 +191,18 @@
 #define COCOAPODS_VERSION_MAJOR_NSView_DPAutolayout 0
 #define COCOAPODS_VERSION_MINOR_NSView_DPAutolayout 0
 #define COCOAPODS_VERSION_PATCH_NSView_DPAutolayout 11
+
+// NSView-DPFrameUtils
+#define COCOAPODS_POD_AVAILABLE_NSView_DPFrameUtils
+#define COCOAPODS_VERSION_MAJOR_NSView_DPFrameUtils 0
+#define COCOAPODS_VERSION_MINOR_NSView_DPFrameUtils 0
+#define COCOAPODS_VERSION_PATCH_NSView_DPFrameUtils 1
+
+// NSView-NewConstraints
+#define COCOAPODS_POD_AVAILABLE_NSView_NewConstraints
+#define COCOAPODS_VERSION_MAJOR_NSView_NewConstraints 0
+#define COCOAPODS_VERSION_MINOR_NSView_NewConstraints 0
+#define COCOAPODS_VERSION_PATCH_NSView_NewConstraints 1
 
 // PMPKVObservation
 #define COCOAPODS_POD_AVAILABLE_PMPKVObservation

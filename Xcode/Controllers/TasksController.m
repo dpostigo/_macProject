@@ -18,6 +18,8 @@
 #import "AppStyles.h"
 #import "NSView+NewConstraint.h"
 #import "CALayer+SublayerUtils.h"
+#import "DPOutlineView+ItemUtils.h"
+#import "DPOutlineView+Selection.h"
 
 @implementation TasksController
 
@@ -48,27 +50,8 @@
     //
     NSScrollView *scrollView = outline.enclosingScrollView;
     NSClipView *clipView = scrollView.contentView;
-    //
-    //    NSRulerView *rulerView = scrollView.verticalRulerView;
-    //    NSLog(@"rulerView = %@", rulerView);
-    //
-    //    NSLog(@"scrollView.frame = %@", NSStringFromRect(scrollView.frame));
-    //    NSLog(@"clipView.frame = %@", NSStringFromRect(clipView.frame));
-    //
-    //    [scrollView setHasVerticalScroller: YES];
-    //    scrollView.verticalScroller
+
     NSLog(@"scrollView.verticalScroller = %@", scrollView.verticalScroller);
-    //    [[scrollView horizontalScroller] setAlphaValue: 0];
-    //    NSTableView *docView = (NSTableView *) scrollView.documentView;
-    //    id newClipView = [[CustomClipView alloc] initWithFrame: [self.scrollView.contentView frame]];
-    //    [self.scrollView setContentView: (NSClipView *) newClipView];
-    //    [newClipView setDrawsBackground: NO];
-    //
-    //    NSView *documentContentView = [[NSView alloc] initWithFrame: docView.bounds];
-    //    docView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
-    //    [documentContentView addSubview: docView];
-    //    [self.scrollView setDocumentView: documentContentView];
-    //    [self.scrollView setDrawsBackground: NO];
 
 }
 
@@ -100,8 +83,17 @@
         }
         [outline addSection: section];
     }
+}
+
+
+- (void) outlineViewDidReload {
+    if (_model.selectedTask) {
+        [outline selectItemByIdentifier: _model.selectedTask.id];
+    }
 
 }
+
+#pragma mark Cells
 
 - (void) willDisplayHeader: (NSTableCellView *) cellView forSection: (DPOutlineViewSection *) section {
     cellView.textField.stringValue = [section.title uppercaseString];
@@ -128,11 +120,9 @@
 
 - (void) didSelectItem: (DPOutlineViewItem *) item {
     Task *task = [_apiModel taskForId: item.identifier];
-    NSLog(@"task = %@", task);
     if (task) {
-        NSLog(@"_model = %@", _model);
         _model.selectedTask = task;
-
+        //        _model.selectedJob = task.job;
     }
 }
 

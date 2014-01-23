@@ -170,8 +170,8 @@
 
 - (void) userDidLogin: (User *) user {
 
-    NSWindow *newWindow = [_model.masterNib objectWithIdentifier: @"TasksWindow"];
-    [newWindow makeKeyAndOrderFront: nil];
+    //    NSWindow *newWindow = [_model.masterNib objectWithIdentifier: @"TasksWindow"];
+    //    [newWindow makeKeyAndOrderFront: nil];
 
     [self performClose: nil];
     [self enableLogin];

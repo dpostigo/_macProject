@@ -4,10 +4,9 @@
 //
 
 #import <NSColor-Crayola/NSColor+Crayola.h>
-#import <QuartzCore/QuartzCore.h>
 #import "AppStyles.h"
 #import "NSColor+NewUtils.h"
-#import "LayerDelegate.h"
+#import "DPLayerDelegate.h"
 #import "CALayer+ConstraintUtils.h"
 
 @implementation AppStyles
@@ -26,6 +25,7 @@
 + (NSShadow *) defaultShadowWithRadius: (CGFloat) radius offset: (NSSize) offset {
     NSShadow *dropShadow = [[NSShadow alloc] init];
     dropShadow.shadowColor = [NSColor crayolaMummysTombColor];
+//    dropShadow.shadowColor = [NSColor crayolaOuterSpaceColor];
     dropShadow.shadowOffset = offset;
     dropShadow.shadowBlurRadius = radius;
     return dropShadow;
@@ -40,7 +40,7 @@
             (__bridge id) [NSColor whiteColor].CGColor,
             (__bridge id) [NSColor whiteColor].CGColor];
 
-    gradient.delegate = [LayerDelegate sharedDelegate];
+    gradient.delegate = [DPLayerDelegate sharedDelegate];
     gradient.masksToBounds = YES;
     return gradient;
 }

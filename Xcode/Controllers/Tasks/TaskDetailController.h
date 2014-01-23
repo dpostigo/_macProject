@@ -10,8 +10,8 @@
 
 @interface TaskDetailController : BOController {
 
-    IBOutlet NSObjectController *objectController;
 
+    IBOutlet NSObjectController *objectController;
     IBOutlet  NSTextField *titleField;
 }
 

@@ -12,6 +12,8 @@
 	<dict>
 		<key>5CA014FD-C104-4D2C-8311-6D9F45C87465</key>
 		<string>https://github.com/dpostigo/_macProject.git</string>
+		<key>8D98549F-E51A-424A-A931-CEDFADFDEB8B</key>
+		<string>https://github.com/dpostigo/CALayer-DPUtils.git</string>
 		<key>AE2669EA-2A40-40EE-9C70-27F31632F73B</key>
 		<string>https://github.com/dpostigo/DPWindow.git</string>
 		<key>E6BEFD35-0D52-4894-A7A2-F5162BC13C07</key>
@@ -23,6 +25,10 @@
 	<dict>
 		<key>5CA014FD-C104-4D2C-8311-6D9F45C87465</key>
 		<string>../..</string>
+		<key>8D98549F-E51A-424A-A931-CEDFADFDEB8B</key>
+		<string>../../../LocalPods/CALayer-DPUtils</string>
+		<key>9538D13B-5832-4F16-A19B-AF1D1F9890DE</key>
+		<string>../../../LocalPods/Controls/DPBackgroundTextField</string>
 		<key>AE2669EA-2A40-40EE-9C70-27F31632F73B</key>
 		<string>../../../LocalPods/DPWindow</string>
 		<key>E6BEFD35-0D52-4894-A7A2-F5162BC13C07</key>
@@ -40,9 +46,25 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8D98549F-E51A-424A-A931-CEDFADFDEB8B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CALayer-DPUtils</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>5CA014FD-C104-4D2C-8311-6D9F45C87465</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Carts</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9538D13B-5832-4F16-A19B-AF1D1F9890DE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DPBackgroundTextField</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>

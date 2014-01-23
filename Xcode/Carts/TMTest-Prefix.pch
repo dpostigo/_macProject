@@ -7,6 +7,7 @@
 #import <Cocoa/Cocoa.h>
 #import "CartsConstants.h"
 #import "NSView+PositionUtils.h"
+#import "NSView+DPFrameUtils.h"
 #import "NSColor+Utils.h"
 #import "NSAttributedString+DPUtils.h"
 

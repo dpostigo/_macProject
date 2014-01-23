@@ -3,6 +3,8 @@
 // Copyright (c) 2014 Elastic Creative. All rights reserved.
 //
 
+#import <BOAPI/Task.h>
+#import <BOAPI/User.h>
 #import "NewTaskDetailController.h"
 #import "LogsController.h"
 #import "TaskEditController.h"
@@ -10,20 +12,54 @@
 #import "CreateLogController.h"
 #import "NSView+SuperConstraints.h"
 #import "NSView+NewConstraint.h"
+#import "AppStyles.h"
 
 @implementation NewTaskDetailController
+
+@synthesize selectedTask;
 
 - (void) viewDidLoad {
     [super viewDidLoad];
 
     [logsController viewDidLoad];
     [editController viewDidLoad];
+    [createLogController viewDidLoad];
 
     [logsController modelDidSelectTask: _model.selectedTask];
     [editController modelDidSelectTask: _model.selectedTask];
 
+    createLogView.translatesAutoresizingMaskIntoConstraints = NO;
+
+    createLogController.view.frame = createLogView.bounds;
+
     [createLogView addSubview: createLogController.view];
-    [createLogController.view superConstrainEdges];
+    //    [createLogController.view superConstrainEdges];
+    [createLogController.view superConstrainWidth];
+    [createLogController.view superConstrainLeading];
+    [createLogController.view superConstrainTop];
+    [createLogController.view superConstrainBottom];
+
+    createLogView.wantsLayer = YES;
+    createLogView.layer.masksToBounds = NO;
+
+    createLogView.shadow = [AppStyles defaultShadowWithRadius: 1.0 offset: NSMakeSize(0, -1)];
+
+    //    NSLayoutConstraint *trailing = [createLogController.view superTrailingConstraint];
+    //    trailing.priority = NSLayoutPriorityDragThatCanResizeWindow;
+    //    trailing.priority = NSLayoutPriorityDefaultLow;
+
+
+    NSLog(@"_model.selectedTask = %@", _model.selectedTask);
+
+    self.selectedTask = _model.selectedTask;
+
+}
+
+
+- (void) modelDidSelectTask: (Task *) task {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    self.selectedTask = _model.selectedTask;
+
 }
 
 

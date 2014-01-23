@@ -7,9 +7,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="TaskCreationController">
             <connections>
                 <outlet property="assigneeController" destination="3hn-aO-yMB" id="Bt4-m7-up7"/>
-                <outlet property="assigneeField" destination="3tZ-Lc-xoS" id="zK8-mY-rwm"/>
                 <outlet property="jobController" destination="bdv-qo-I1g" id="nD0-g8-JHZ"/>
-                <outlet property="jobField" destination="udB-OP-EPc" id="ME4-De-oYC"/>
                 <outlet property="taskField" destination="MBd-ka-Ymu" id="Z4w-Bh-myk"/>
                 <outlet property="view" destination="1" id="zyt-ck-GyU"/>
             </connections>
@@ -20,14 +18,14 @@
             <rect key="frame" x="0.0" y="0.0" width="470" height="467"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MBd-ka-Ymu" customClass="BackgroundTextField">
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MBd-ka-Ymu" customClass="BOBackgroundTextField">
                     <rect key="frame" x="0.0" y="446" width="470" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <shadow key="shadow" blurRadius="1">
                         <size key="offset" width="0.0" height="2"/>
                         <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </shadow>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" title="Task" placeholderString="" drawsBackground="YES" id="tRD-Id-PUP" customClass="NewInputTextFieldCell">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" title="Task" placeholderString="" drawsBackground="YES" id="tRD-Id-PUP">
                         <font key="font" size="14" name="HelveticaNeue-Medium"/>
                         <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -105,68 +103,6 @@
                 <constraint firstItem="oVp-Ts-zjx" firstAttribute="top" secondItem="MBd-ka-Ymu" secondAttribute="bottom" constant="10" id="oiH-rS-SDO"/>
                 <constraint firstItem="MBd-ka-Ymu" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="sho-it-Zzb"/>
             </constraints>
-        </customView>
-        <customView id="yrb-IY-r9h">
-            <rect key="frame" x="0.0" y="0.0" width="439" height="332"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <subviews>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="udB-OP-EPc" customClass="BackgroundTextField">
-                    <rect key="frame" x="-9" y="247" width="213" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" title="Job" placeholderString="" drawsBackground="YES" id="D9X-tP-vhE" customClass="NewInputTextFieldCell">
-                        <font key="font" size="13" name="HelveticaNeue-Medium"/>
-                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3tZ-Lc-xoS" customClass="BackgroundTextField">
-                    <rect key="frame" x="226" y="247" width="213" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" title="Assignee" placeholderString="" drawsBackground="YES" id="mvh-w6-WCk" customClass="NewInputTextFieldCell">
-                        <font key="font" size="13" name="HelveticaNeue-Medium"/>
-                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jkc-Z8-Gpg">
-                    <rect key="frame" x="-72" y="136" width="227" height="26"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="n1D-Jv-HGC">
-                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
-                        <menu key="menu" title="OtherViews" id="o9s-Xh-QzR">
-                            <items>
-                                <menuItem title="Item 1" id="0cJ-x2-D3g"/>
-                                <menuItem title="Item 2" id="QF2-lk-Abn"/>
-                                <menuItem title="Item 3" id="tzr-4T-kdt"/>
-                            </items>
-                        </menu>
-                    </popUpButtonCell>
-                    <connections>
-                        <binding destination="bdv-qo-I1g" name="content" keyPath="arrangedObjects" id="fs1-r0-kH2"/>
-                        <binding destination="bdv-qo-I1g" name="contentValues" keyPath="arrangedObjects.title" previousBinding="fs1-r0-kH2" id="1up-4b-QV3">
-                            <dictionary key="options">
-                                <string key="NSNullPlaceholder">Null</string>
-                            </dictionary>
-                        </binding>
-                    </connections>
-                </popUpButton>
-                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zaf-PD-flH">
-                    <rect key="frame" x="170" y="136" width="227" height="26"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="UEw-E1-unD">
-                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
-                        <menu key="menu" title="OtherViews" id="8IB-RV-Vdg">
-                            <items>
-                                <menuItem title="Item 1" id="xTQ-Xk-Bq3"/>
-                                <menuItem title="Item 2" id="Tax-FL-CYt"/>
-                                <menuItem title="Item 3" id="qua-AR-mQO"/>
-                            </items>
-                        </menu>
-                    </popUpButtonCell>
-                </popUpButton>
-            </subviews>
         </customView>
         <arrayController objectClassName="Job" editable="NO" automaticallyPreparesContent="YES" id="bdv-qo-I1g" userLabel="Jobs Array Controller">
             <connections>

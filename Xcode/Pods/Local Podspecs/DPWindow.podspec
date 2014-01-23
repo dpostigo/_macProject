@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.frameworks   = 'QuartzCore'
   s.requires_arc = true
 
-  s.dependency   'CALayer-DPUtils'
+  s.dependency   'CALayer-DPUtils', '~> 0.1.3'
   s.dependency   'NSView-DPAutolayout'
   s.dependency   'NSColor-BlendingUtils'
   # s.dependency   'NSView-DPAutolayout', :git => '/Users/danipostigo/Development/LocalPods/NSView-DPAutolayout'

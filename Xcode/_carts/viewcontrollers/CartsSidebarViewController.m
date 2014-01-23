@@ -9,7 +9,7 @@
 #import "CartsSidebarViewController.h"
 #import "OutlineSection+Utils.h"
 #import "NSMutableArray+BasicObject.h"
-#import "NSOutlineView+DPUtils.h"
+#import "NSOutlineView+Insertion.h"
 #import "DataSection+Utils.h"
 
 #define USER_LISTS @"My Lists"

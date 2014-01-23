@@ -1,0 +1,1 @@
+PODS_NSVIEW_NEWCONSTRAINTS_OTHER_LDFLAGS = -framework Foundation

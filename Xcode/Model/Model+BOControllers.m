@@ -13,6 +13,11 @@
 
 @implementation Model (BOControllers)
 
+- (NSViewController *) tasksWindow {
+    return [self.masterNib objectWithIdentifier: @"TasksWindow"];
+
+}
+
 - (NSViewController *) sidebarController {
     return [self.masterNib controllerForClass: @"SidebarController"];
     //    return [[TaskCreationController alloc] initWithNibName: @"TaskCreationView" bundle: nil];

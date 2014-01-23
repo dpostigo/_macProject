@@ -5,18 +5,25 @@
 
 #import <Foundation/Foundation.h>
 #import "BOController.h"
+#import "NotificationDelegate.h"
 
 @class LogsController;
 @class TaskEditController;
 @class CreateLogController;
+@class Task;
 
-@interface NewTaskDetailController : BOController {
+@interface NewTaskDetailController : BOController <NotificationDelegate> {
 
+    Task *selectedTask;
     IBOutlet LogsController *logsController;
     IBOutlet TaskEditController *editController;
     IBOutlet CreateLogController *createLogController;
 
+    IBOutlet NSObjectController *objectController;
+
     IBOutlet NSView *createLogView;
 
 }
+
+@property(nonatomic, strong) Task *selectedTask;
 @end

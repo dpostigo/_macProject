@@ -43,6 +43,7 @@ Pod::Spec.new do |s|
 
   s.osx.dependency   'NSView-DPAutolayout', '~> 0.0.11'
   s.osx.dependency   'JMSimpleDate'
+  
   s.ios.frameworks   = 'AppKit', 'UIKit'
 
 

@@ -7,7 +7,7 @@
 #import <BOAPI/Task.h>
 #import <NSView-DPAutolayout/NSView+SiblingConstraints.h>
 #import "TaskDetailController.h"
-#import "BackgroundTextField.h"
+#import "DPBackgroundTextField.h"
 #import "Model.h"
 #import "NSView+NewConstraint.h"
 #import "NSLayoutConstraint+DPUtils.h"

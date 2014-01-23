@@ -7,10 +7,10 @@
 #import <NSColor-Crayola/NSColor+Crayola.h>
 #import <BOAPI/Job.h>
 #import "TaskCreationController.h"
-#import "BackgroundTextField.h"
+#import "DPBackgroundTextField.h"
 #import "CALayer+ConstraintUtils.h"
 #import "NSColor+NewUtils.h"
-#import "NewInputTextFieldCell.h"
+#import "DPBackgroundTextFieldCell.h"
 #import "NSMutableAttributedString+DPKit.h"
 #import "CALayer+InfoUtils.h"
 #import "Model.h"
@@ -37,6 +37,7 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
 
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     [_apiModel subscribeDelegate: self];
 
     NSArray *fields = [NSArray arrayWithObjects: @"Task", @"Job", nil];
@@ -47,30 +48,36 @@
 
     [self setupFields];
 
-
     //    self.window.initialFirstResponder = taskField;
     //    [self.window selectNextKeyView: taskField];
+    taskField.stringValue = @"New task";
+//    [taskField selectText: self];
+    NSLog(@"taskField.window = %@", taskField.window);
+    [taskField.window makeFirstResponder: taskField];
 
 }
+
+
 
 
 - (void) awakeFromNib {
     [super awakeFromNib];
     NSLog(@"%s", __PRETTY_FUNCTION__);
-    [taskField becomeFirstResponder];
+    NSLog(@"taskField.window = %@", taskField.window);
+    NSLog(@"self.window = %@", self.window);
 }
 
 
 - (void) setupFields {
 
-    [self customizeField: taskField];
-    [self customizeField: jobField];
-    [self customizeField: assigneeField];
-    [jobField.backgroundLayer sublayerWithName: @"gradient"].cornerRadius = 3.0;
-    [assigneeField.backgroundLayer sublayerWithName: @"gradient"].cornerRadius = 3.0;
-
-    taskField.nextKeyView = jobField;
-    jobField.nextKeyView = assigneeField;
+    //    [self customizeField: taskField];
+    //    [self customizeField: jobField];
+    //    [self customizeField: assigneeField];
+    //    [jobField.backgroundLayer sublayerWithName: @"gradient"].cornerRadius = 3.0;
+    //    [assigneeField.backgroundLayer sublayerWithName: @"gradient"].cornerRadius = 3.0;
+    //
+    //    taskField.nextKeyView = jobField;
+    //    jobField.nextKeyView = assigneeField;
 
 }
 
@@ -151,38 +158,40 @@
 
 
 
-- (void) customizeField: (BackgroundTextField *) field {
-
-    CAGradientLayer *gradient;
-    gradient = [CAGradientLayer layer];
-    gradient.name = @"gradient";
-    gradient.colors = @[
-            (__bridge id) [[NSColor crayolaMummysTombColor] mix: [NSColor whiteColor] fraction: 0.9].CGColor,
-            (__bridge id) [NSColor whiteColor].CGColor,
-            (__bridge id) [NSColor whiteColor].CGColor];
-
-    CALayer *layer = field.backgroundView.layer;
-    [layer addSublayer: gradient];
-    gradient.delegate = layer.delegate;
-    gradient.masksToBounds = YES;
-    [gradient superConstrain];
-
-    NSShadow *dropShadow = [[NSShadow alloc] init];
-    dropShadow.shadowColor = [NSColor crayolaMummysTombColor];
-    dropShadow.shadowOffset = NSMakeSize(0, -1);
-    dropShadow.shadowBlurRadius = 2.0;
-    field.backgroundView.shadow = dropShadow;
-
-    NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString: [NSString stringWithFormat: @"%@:", field.inputCell.stringValue]];
-    [string addAttribute: NSForegroundColorAttributeName value: [NSColor crayolaMummysTombColor]];
-
-    NSFont *font = [NSFont fontWithName: @"HelveticaNeue" size: field.font.pointSize];
-    [string addAttribute: NSFontAttributeName value: font];
-
-    field.inputCell.attributedLabelString = string;
-    field.stringValue = @"";
-
-}
+//
+//
+//- (void) customizeField: (DPBackgroundTextField *) field {
+//
+//    CAGradientLayer *gradient;
+//    gradient = [CAGradientLayer layer];
+//    gradient.name = @"gradient";
+//    gradient.colors = @[
+//            (__bridge id) [[NSColor crayolaMummysTombColor] mix: [NSColor whiteColor] fraction: 0.9].CGColor,
+//            (__bridge id) [NSColor whiteColor].CGColor,
+//            (__bridge id) [NSColor whiteColor].CGColor];
+//
+//    CALayer *layer = field.backgroundView.layer;
+//    [layer addSublayer: gradient];
+//    gradient.delegate = layer.delegate;
+//    gradient.masksToBounds = YES;
+//    [gradient superConstrain];
+//
+//    NSShadow *dropShadow = [[NSShadow alloc] init];
+//    dropShadow.shadowColor = [NSColor crayolaMummysTombColor];
+//    dropShadow.shadowOffset = NSMakeSize(0, -1);
+//    dropShadow.shadowBlurRadius = 2.0;
+//    field.backgroundView.shadow = dropShadow;
+//
+////    NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString: [NSString stringWithFormat: @"%@:", field.inputCell.stringValue]];
+////    [string addAttribute: NSForegroundColorAttributeName value: [NSColor crayolaMummysTombColor]];
+////
+////    NSFont *font = [NSFont fontWithName: @"HelveticaNeue" size: field.font.pointSize];
+////    [string addAttribute: NSFontAttributeName value: font];
+////
+////    field.inputCell.attributedLabelString = string;
+////    field.stringValue = @"";
+//
+//}
 
 
 @end
