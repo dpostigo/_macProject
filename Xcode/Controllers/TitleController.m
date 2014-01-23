@@ -47,6 +47,9 @@
 #pragma mark Actions
 
 - (IBAction) addClicked: (id) sender {
+
+//    Task *task = [[Task alloc] initWithTitle: @"New task"];
+
     self.window.viewController = [[TaskCreationController alloc] initWithNibName: @"TaskCreationView" bundle: nil];
 }
 

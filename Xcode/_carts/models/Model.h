@@ -27,6 +27,8 @@
 
     NSWorkspaceNib *masterNib;
     NSObject <BOAPIDelegate> *operationHandler;
+
+    NSMutableDictionary *controllers;
 }
 
 @property(nonatomic, strong) NSWorkspaceNib *masterNib;
@@ -46,6 +48,7 @@
 @property(nonatomic, strong) NSMutableArray *contacts;
 
 
+@property(nonatomic, strong) NSMutableDictionary *controllers;
 + (Model *) sharedModel;
 - (NSWorkspaceNib *) masterNib;
 //- (NSMutableArray *) jobs;

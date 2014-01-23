@@ -4,7 +4,7 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-#import "FinalInputTextField.h"
+#import "BackgroundTextField.h"
 #import "CALayer+ConstraintUtils.h"
 #import "NewInputTextFieldCell.h"
 #import "NSView+ConstraintFinders.h"
@@ -13,11 +13,13 @@
 #import "TextFieldView.h"
 #import "LayerDelegate.h"
 
-@implementation FinalInputTextField
+@implementation BackgroundTextField
 
 @synthesize backgroundView;
 @synthesize backgroundLayer;
 @synthesize insets;
+
+@synthesize isAwake;
 
 - (void) setBackgroundView: (NSView *) backgroundView1 {
     if (backgroundView && backgroundView.superview) {
@@ -48,11 +50,11 @@
 - (void) awakeFromNib {
     [super awakeFromNib];
 
+    isAwake = YES;
     self.inputCell.leftOffset = 50;
 
     if (backgroundView == nil) {
         [self setDefaultBackgroundView];
-        [self setNeedsUpdateConstraints: YES];
 
     } else {
 
@@ -60,19 +62,38 @@
 
 }
 
+- (void) viewDidMoveToSuperview {
+    [super viewDidMoveToSuperview];
+
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    if (isAwake && backgroundView == nil) {
+        [self setDefaultBackgroundView];
+    }
+
+    if (self.superview != backgroundView) {
+        NSLog(@"Wrong superview.");
+    }
+
+}
+
+- (void) checkBackgroundView {
+}
 
 - (void) setDefaultBackgroundView {
-    self.backgroundView = [[TextFieldView alloc] init];
-    [self.superview addSubview: backgroundView];
+    if (self.superview) {
+        self.backgroundView = [[TextFieldView alloc] init];
+        [self.superview addSubview: backgroundView];
 
-    NSArray *constraints = [self.superview constraintsForItem: self];
-    NSArray *modified = [NSLayoutConstraint replaceItem: self inConstraints: constraints withItem: backgroundView];
-    [self.superview removeConstraints: constraints];
-    [self.superview addConstraints: modified];
+        NSArray *constraints = [self.superview constraintsForItem: self];
+        NSArray *modified = [NSLayoutConstraint replaceItem: self inConstraints: constraints withItem: backgroundView];
+        [self.superview removeConstraints: constraints];
+        [self.superview addConstraints: modified];
 
-    [backgroundView addSubview: self];
+        [backgroundView addSubview: self];
 
-    [self superConstrainWithInsets: insets];
+        [self superConstrainWithInsets: insets];
+        [self setNeedsUpdateConstraints: YES];
+    }
 }
 
 
@@ -101,7 +122,6 @@
 
     return self;
 }
-
 
 
 @end

@@ -62,10 +62,10 @@
 
 
 #pragma mark Super constrain explicit edges
-
-- (NSLayoutConstraint *) superConstrainLeading: (CGFloat) constant {
-    return [self superConstrain: NSLayoutAttributeLeading constant: constant];
-}
+//
+//- (NSLayoutConstraint *) superConstrainLeading: (CGFloat) constant {
+//    return [self superConstrain: NSLayoutAttributeLeading constant: constant];
+//}
 
 
 - (NSLayoutConstraint *) superConstrainToItem: (id) item attribute: (NSLayoutAttribute) attribute constant: (CGFloat) constant {

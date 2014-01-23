@@ -7,5 +7,8 @@
 
 @interface DPTableRowView : NSTableRowView {
 
+    BOOL showsHideText;
 }
+
+@property(nonatomic) BOOL showsHideText;
 @end

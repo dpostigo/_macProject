@@ -103,6 +103,7 @@
     oldView = [container.subviews objectAtIndex: 0];
 
     view.frame = oldView.frame;
+    [view invalidateIntrinsicContentSize];
     [container replaceSubview: oldView with: view];
 
     [container setupConstraints];

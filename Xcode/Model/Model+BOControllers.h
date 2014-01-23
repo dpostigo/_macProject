@@ -9,6 +9,8 @@
 @interface Model (BOControllers)
 
 - (NSViewController *) taskCreationController;
+- (NSViewController *) taskDetailController;
+- (NSViewController *) logCreationController;
 - (NSViewController *) sidebarController;
 - (NSViewController *) footerController;
 @end

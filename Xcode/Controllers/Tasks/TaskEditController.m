@@ -14,6 +14,8 @@
 #import "NSColor+DPColors.h"
 #import "NSView+ConstraintGetters.h"
 #import "NSArray+BOBasicObject.h"
+#import "DPOutlineViewItem.h"
+#import "DPOutlineViewSection.h"
 
 @implementation TaskEditController
 
@@ -123,7 +125,7 @@
 
 #pragma mark Cells
 
-- (void) willDisplayCellView: (NSTableCellView *) cellView forItem: (DPOutlineViewItem *) item {
+- (void) willDisplayCell: (NSTableCellView *) cellView forItem: (DPOutlineViewItem *) item {
     //    if (item.subtitle) {
     //        [[cellView.textField cell] setPlaceholderString: item.subtitle];
     //    }

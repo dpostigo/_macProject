@@ -57,9 +57,9 @@
 - (void) modelDidSelectTask: (Task *) task {
     [super modelDidSelectTask: task];
 
-    self.contentView = self.taskInfoView;
-}
+    self.contentView = _model.taskDetailController.view;
 
+}
 
 #pragma mark Various views
 
@@ -70,7 +70,7 @@
 
 
 - (NSView *) taskInfoView {
-    return [self.model.masterNib viewForClass: @"TaskDetailController"];
+    return _model.taskDetailController.view;
 }
 
 - (NSView *) taskListView {

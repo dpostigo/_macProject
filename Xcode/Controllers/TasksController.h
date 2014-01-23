@@ -7,11 +7,11 @@
 #import <BOAPI/BOAPIDelegate.h>
 #import "BOController.h"
 #import "DPOutlineView.h"
+#import "DPOutlineViewDelegate.h"
 
 @class DPOutlineView;
 
 @interface TasksController : BOController <DPOutlineViewDelegate, BOAPIDelegate> {
-
     IBOutlet DPOutlineView *outline;
 
 }

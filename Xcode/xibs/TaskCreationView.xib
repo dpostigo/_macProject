@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="470" height="467"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MBd-ka-Ymu" customClass="FinalInputTextField">
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MBd-ka-Ymu" customClass="BackgroundTextField">
                     <rect key="frame" x="0.0" y="446" width="470" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <shadow key="shadow" blurRadius="1">
@@ -110,7 +110,7 @@
             <rect key="frame" x="0.0" y="0.0" width="439" height="332"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="udB-OP-EPc" customClass="FinalInputTextField">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="udB-OP-EPc" customClass="BackgroundTextField">
                     <rect key="frame" x="-9" y="247" width="213" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" title="Job" placeholderString="" drawsBackground="YES" id="D9X-tP-vhE" customClass="NewInputTextFieldCell">
@@ -119,7 +119,7 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3tZ-Lc-xoS" customClass="FinalInputTextField">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3tZ-Lc-xoS" customClass="BackgroundTextField">
                     <rect key="frame" x="226" y="247" width="213" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" title="Assignee" placeholderString="" drawsBackground="YES" id="mvh-w6-WCk" customClass="NewInputTextFieldCell">
@@ -175,48 +175,6 @@
         </arrayController>
         <userDefaultsController representsSharedInstance="YES" id="8ag-2C-1ly"/>
         <customObject id="RPs-47-hdL" customClass="Model"/>
-        <customView id="70D-Qp-V77">
-            <rect key="frame" x="0.0" y="0.0" width="504" height="467"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xEk-8A-SwM">
-                    <rect key="frame" x="-2" y="0.0" width="37" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" usesSingleLineMode="YES" id="k9d-Dh-Ipi">
-                        <font key="font" size="13" name="HelveticaNeue-Medium"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CKv-0D-2lq">
-                    <rect key="frame" x="-2" y="0.0" width="38" height="17"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="pyj-al-Hfq">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NxO-td-nS5" customClass="FinalInputTextField">
-                    <rect key="frame" x="0.0" y="446" width="504" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <shadow key="shadow" blurRadius="1">
-                        <size key="offset" width="0.0" height="2"/>
-                        <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </shadow>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" title="Task" placeholderString="" drawsBackground="YES" id="vXj-Yw-Ecl" customClass="NewInputTextFieldCell">
-                        <font key="font" size="14" name="HelveticaNeue-Medium"/>
-                        <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-            </subviews>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="NxO-td-nS5" secondAttribute="trailing" id="D6D-t8-3BZ"/>
-                <constraint firstItem="NxO-td-nS5" firstAttribute="top" secondItem="70D-Qp-V77" secondAttribute="top" id="awP-vK-LDk"/>
-                <constraint firstItem="NxO-td-nS5" firstAttribute="leading" secondItem="70D-Qp-V77" secondAttribute="leading" id="f14-c8-q3N"/>
-            </constraints>
-        </customView>
         <arrayController objectClassName="User" editable="NO" automaticallyPreparesContent="YES" id="3hn-aO-yMB" userLabel="Assignee Array Controller">
             <connections>
                 <binding destination="-2" name="contentArray" keyPath="self.selectedJob.assignees" id="tVu-Jo-qSB"/>

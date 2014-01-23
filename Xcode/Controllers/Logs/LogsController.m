@@ -19,6 +19,8 @@
 #import "NSColor+Crayola.h"
 #import "NSColor+BlendingUtils.h"
 #import "NSMutableAttributedString+DPKit.h"
+#import "DPOutlineViewItem.h"
+#import "DPOutlineViewSection.h"
 
 @implementation LogsController
 
@@ -31,6 +33,24 @@
     [self customizeBackground];
 
 }
+
+//- (NSArray *) logsForDate: (NSDate *) date {
+//    NSMutableArray *ret = [[NSMutableArray alloc] init];
+//    for (Log *log in logs) {
+//        if ([log.date isOnSameDate: date ignoringTimeOfDay: YES]) {
+//
+//        }
+//
+//    }
+//    return ret;
+
+
+- (void) setOutline: (DPOutlineView *) outline1 {
+    outline = outline1;
+    outline.outlineDelegate = self;
+//    outline.fitsScrollViewToHeight = YES;
+}
+
 
 - (void) customizeBackground {
     self.view.wantsLayer = YES;
@@ -55,13 +75,13 @@
 
 }
 
-
 - (Task *) task {
     return _model.selectedTask;
 }
 
-#pragma mark DPOutlineView delegate
 
+
+#pragma mark DPOutlineView delegate
 
 
 - (void) prepareDatasource {
@@ -82,29 +102,19 @@
 
 }
 
-
-//- (NSArray *) logsForDate: (NSDate *) date {
-//    NSMutableArray *ret = [[NSMutableArray alloc] init];
-//    for (Log *log in logs) {
-//        if ([log.date isOnSameDate: date ignoringTimeOfDay: YES]) {
-//
-//        }
-//
-//    }
-//    return ret;
 //}
 
 #pragma mark Cells
 
-- (void) willDisplayCellView: (NSTableCellView *) view forItem: (DPOutlineViewItem *) item {
+- (void) willDisplayCell: (NSTableCellView *) view forItem: (DPOutlineViewItem *) item {
     if ([view isKindOfClass: [DPTableCellView class]]) {
         [self willDisplayOutlineCellView: (DPTableCellView *) view forItem: item];
     }
 }
 
+
 - (void) willDisplayOutlineCellView: (DPTableCellView *) view forItem: (DPOutlineViewItem *) item {
     Log *log = (Log *) [self.task.logs basicObjectForId: item.identifier];
-    NSLog(@"item.identifier = %@", item.identifier);
 
     if (log) {
 
@@ -135,12 +145,6 @@
         }
     }
 
-}
-
-
-- (void) setOutline: (DPOutlineView *) outline1 {
-    outline = outline1;
-    outline.outlineDelegate = self;
 }
 
 

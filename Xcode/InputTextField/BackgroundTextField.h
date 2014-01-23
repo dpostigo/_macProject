@@ -7,7 +7,7 @@
 
 @class NewInputTextFieldCell;
 
-@interface FinalInputTextField : NSTextField {
+@interface BackgroundTextField : NSTextField {
 
     IBOutlet NSView *backgroundView;
     CALayer *backgroundLayer;
@@ -15,10 +15,13 @@
 
     NSEdgeInsets insets;
 
+    BOOL isAwake;
 }
 
 @property(nonatomic, strong) NSView *backgroundView;
 @property(nonatomic, strong) CALayer *backgroundLayer;
 @property(nonatomic) NSEdgeInsets insets;
+@property(nonatomic) BOOL isAwake;
+- (void) setDefaultBackgroundView;
 - (NewInputTextFieldCell *) inputCell;
 @end

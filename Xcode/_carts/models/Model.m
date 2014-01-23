@@ -32,6 +32,8 @@
 
 @synthesize usesDummyData;
 
+@synthesize controllers;
+
 + (Model *) sharedModel {
     static Model *_instance = nil;
 
@@ -113,7 +115,6 @@
 }
 
 - (void) setSelectedJob: (Job *) selectedJob1 {
-
     selectedJob = selectedJob1;
     if (selectedJob) {
         self.selectedFocusType = kBOFocusTypeJobs;
@@ -223,6 +224,14 @@
     self.password = @"";
 
     [self notifyDelegates: @selector(userDidSignOff) object: nil];
+}
+
+
+- (NSMutableDictionary *) controllers {
+    if (controllers == nil) {
+        controllers = [[NSMutableDictionary alloc] init]    ;
+    }
+    return controllers;
 }
 
 @end

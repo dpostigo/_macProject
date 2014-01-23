@@ -7,12 +7,12 @@
 #import "BOController.h"
 #import "BOAPIDelegate.h"
 
-@class FinalInputTextField;
+@class BackgroundTextField;
 
 @interface TaskCreationController : BOController <BOAPIDelegate> {
     IBOutlet NSTextField *taskField;
-    IBOutlet FinalInputTextField *jobField;
-    IBOutlet FinalInputTextField *assigneeField;
+    IBOutlet BackgroundTextField *jobField;
+    IBOutlet BackgroundTextField *assigneeField;
 
     IBOutlet NSPopUpButton *jobButton;
 

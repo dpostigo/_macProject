@@ -17,7 +17,6 @@
 - (NSLayoutConstraint *) superConstrain: (NSLayoutAttribute) attribute constant: (CGFloat) constant;
 - (NSLayoutConstraint *) updateSuperConstraint: (NSLayoutAttribute) attribute offset: (CGFloat) offset;
 
-- (NSLayoutConstraint *) superConstrainLeading: (CGFloat) constant;
 - (NSLayoutConstraint *) superConstrainToItem: (id) item attribute: (NSLayoutAttribute) attribute constant: (CGFloat) constant;
 - (NSLayoutConstraint *) selfConstrain: (NSLayoutAttribute) attribute constant: (CGFloat) constant;
 @end

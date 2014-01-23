@@ -10,8 +10,11 @@
 #import "Model.h"
 #import "Job.h"
 #import "BOAPIModel+Utils.h"
-#import "NSColor+NewUtils.h"
 #import "DPTableCellView.h"
+#import "DPOutlineViewItem.h"
+#import "DPOutlineViewSection.h"
+#import "DPTableRowView.h"
+#import "DPOutlineView.h"
 
 @implementation SidebarController
 
@@ -33,6 +36,7 @@
         outline.outlineDelegate = self;
         outline.target = self;
         outline.action = @selector(testAction:);
+        outline.rowViewClass = [DPTableRowView class];
     }
 }
 
@@ -75,8 +79,20 @@
 #pragma mark Cells
 
 
+- (void) willDisplayHeader: (NSTableCellView *) cellView forSection: (DPOutlineViewSection *) section {
+    if ([cellView isKindOfClass: [DPTableCellView class]]) {
+        [self willDisplayDPHeader: (DPTableCellView *) cellView forSection: section];
+    }
+}
 
-- (void) willDisplayTableCellView: (DPTableCellView *) cellView forSection: (DPOutlineViewSection *) section {
+
+- (void) willDisplayCell: (NSTableCellView *) cellView forItem: (DPOutlineViewItem *) item {
+    if ([cellView isKindOfClass: [DPTableCellView class]]) {
+        [self willDisplayTableCellView: (DPTableCellView *) cellView forItem: item];
+    }
+}
+
+- (void) willDisplayDPHeader: (DPTableCellView *) cellView forSection: (DPOutlineViewSection *) section {
     cellView.textLabel.textColor = self.headerTextColor;
     cellView.wantsLayer = YES;
     //    cellView.layer.backgroundColor = [NSColor blackColorWithAlpha: 0.5].CGColor;
@@ -84,20 +100,6 @@
 
 - (void) willDisplayTableCellView: (DPTableCellView *) cellView forItem: (DPOutlineViewItem *) item {
     cellView.textLabel.textColor = self.itemTextColor;
-}
-
-
-- (void) willDisplayCellView: (NSTableCellView *) cellView forSection: (DPOutlineViewSection *) section {
-    if ([cellView isKindOfClass: [DPTableCellView class]]) {
-        [self willDisplayTableCellView: (DPTableCellView *) cellView forSection: section];
-    }
-}
-
-
-- (void) willDisplayCellView: (NSTableCellView *) cellView forItem: (DPOutlineViewItem *) item {
-    if ([cellView isKindOfClass: [DPTableCellView class]]) {
-        [self willDisplayTableCellView: (DPTableCellView *) cellView forItem: item];
-    }
 }
 
 
@@ -110,6 +112,8 @@
         _model.selectedJob = [_apiModel jobForId: jobId];
     }
 }
+
+
 
 
 #pragma mark BOAPIDelegate

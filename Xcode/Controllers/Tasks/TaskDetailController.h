@@ -6,7 +6,14 @@
 #import <Foundation/Foundation.h>
 #import "BOController.h"
 
+@class Task;
+
 @interface TaskDetailController : BOController {
 
+    IBOutlet NSObjectController *objectController;
+
+    IBOutlet  NSTextField *titleField;
 }
+
+- (Task *) task;
 @end

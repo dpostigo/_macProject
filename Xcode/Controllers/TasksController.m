@@ -13,6 +13,11 @@
 #import "DPTableRowView.h"
 #import "NSColor+DPColors.h"
 #import "CALayer+ConstraintUtils.h"
+#import "DPOutlineViewItem.h"
+#import "DPOutlineViewSection.h"
+#import "AppStyles.h"
+#import "NSView+NewConstraint.h"
+#import "CALayer+SublayerUtils.h"
 
 @implementation TasksController
 
@@ -21,29 +26,63 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
 
-    self.view.wantsLayer = YES;
+    //    self.view.wantsLayer = YES;
+    //
+    //    CALayer *layer = self.view.layer;
+    //    layer.backgroundColor = [NSColor colorWithWhite: 0.9 alpha: 1.0].CGColor;
+    //
+    //    CALayer *innerShadow = [CALayer layer];
+    //    innerShadow.borderColor = [NSColor redColor].CGColor;
+    //    innerShadow.borderWidth = 1.0;
+    //
+    //    innerShadow.shadowColor = [NSColor blackColor].CGColor;
+    //    innerShadow.shadowOpacity = 1.0;
+    //    innerShadow.shadowOffset = CGSizeMake(0, -2);
+    //    innerShadow.shadowRadius = 1.0;
 
-    CALayer *layer = self.view.layer;
-    layer.backgroundColor = [NSColor colorWithWhite: 0.9 alpha: 1.0].CGColor;
-
-    CALayer *innerShadow = [CALayer layer];
-    innerShadow.borderColor = [NSColor redColor].CGColor;
-    innerShadow.borderWidth = 1.0;
-
-    innerShadow.shadowColor = [NSColor blackColor].CGColor;
-    innerShadow.shadowOpacity = 1.0;
-    innerShadow.shadowOffset = CGSizeMake(0, -2);
-    innerShadow.shadowRadius = 1.0;
-
-    outline.wantsLayer = YES;
+    //    outline.wantsLayer = YES;
 
     //    [outline reloadData];
+
+    //    NSLog(@"outline.frame = %@", NSStringFromRect(outline.frame));
+    //
+    NSScrollView *scrollView = outline.enclosingScrollView;
+    NSClipView *clipView = scrollView.contentView;
+    //
+    //    NSRulerView *rulerView = scrollView.verticalRulerView;
+    //    NSLog(@"rulerView = %@", rulerView);
+    //
+    //    NSLog(@"scrollView.frame = %@", NSStringFromRect(scrollView.frame));
+    //    NSLog(@"clipView.frame = %@", NSStringFromRect(clipView.frame));
+    //
+    //    [scrollView setHasVerticalScroller: YES];
+    //    scrollView.verticalScroller
+    NSLog(@"scrollView.verticalScroller = %@", scrollView.verticalScroller);
+    //    [[scrollView horizontalScroller] setAlphaValue: 0];
+    //    NSTableView *docView = (NSTableView *) scrollView.documentView;
+    //    id newClipView = [[CustomClipView alloc] initWithFrame: [self.scrollView.contentView frame]];
+    //    [self.scrollView setContentView: (NSClipView *) newClipView];
+    //    [newClipView setDrawsBackground: NO];
+    //
+    //    NSView *documentContentView = [[NSView alloc] initWithFrame: docView.bounds];
+    //    docView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    //    [documentContentView addSubview: docView];
+    //    [self.scrollView setDocumentView: documentContentView];
+    //    [self.scrollView setDrawsBackground: NO];
 
 }
 
 
-#pragma mark DPOutlineView
+#pragma mark IBOutlets
 
+- (void) setOutline: (DPOutlineView *) outline1 {
+    outline = outline1;
+    outline.outlineDelegate = self;
+    outline.dragsItems = YES;
+}
+
+
+#pragma mark Cells
 
 
 - (void) prepareDatasource {
@@ -64,77 +103,86 @@
 
 }
 
+- (void) willDisplayHeader: (NSTableCellView *) cellView forSection: (DPOutlineViewSection *) section {
+    cellView.textField.stringValue = [section.title uppercaseString];
+
+    //    [cellView.textField bind: @"value" toObject: section withKeyPath: @"title" options: nil];
+}
+
+
+- (void) willDisplayCell: (NSTableCellView *) view forItem: (DPOutlineViewItem *) item {
+
+    view.wantsLayer = YES;
+    CALayer *layer = view.layer;
+    //    layer.backgroundColor = [NSColor whiteColor].CGColor;
+
+    //    view.wantsLayer = YES;
+    //
+    //    CALayer *layer = view.layer;
+    ////    [layer setGeometryFlipped: YES];
+    //
+    //    view.shadow = [AppStyles defaultShadowWithRadius: YES];
+    //    [AppStyles addDefaultGradient: view.layer];
+    ////    [view setNeedsDisplay: YES];
+}
+
+- (void) didSelectItem: (DPOutlineViewItem *) item {
+    Task *task = [_apiModel taskForId: item.identifier];
+    NSLog(@"task = %@", task);
+    if (task) {
+        NSLog(@"_model = %@", _model);
+        _model.selectedTask = task;
+
+    }
+}
+
 
 - (NSTableRowView *) rowViewForItem: (id) item {
-    DPTableRowView *ret = nil;
-    //    if ([item isKindOfClass: [DPOutlineViewSection class]]) {
-    ret = [[DPTableRowView alloc] init];
-    //    }
+    NSTableRowView *ret = nil;
+    if ([item isKindOfClass: [DPOutlineViewSection class]]) {
+        ret = [self rowViewForHeader: item];
+    } else if ([item isKindOfClass: [DPOutlineViewItem class]]) {
+        ret = [self rowViewForCell: item];
+    }
     return ret;
 }
 
 
-- (void) willDisplayCellView: (NSTableCellView *) cellView forSection: (DPOutlineViewSection *) section {
-    cellView.textField.stringValue = [section.title uppercaseString];
+- (NSTableRowView *) rowViewForHeader: (DPOutlineViewSection *) section {
 
-
-    //    [cellView.textField bind: @"value" toObject: section withKeyPath: @"title" options: nil];
-
+    return nil;
 }
 
-- (void) willDisplayCellView: (NSTableCellView *) view forItem: (DPOutlineViewItem *) item {
+- (NSTableRowView *) rowViewForCell: (DPOutlineViewItem *) item {
 
-    //    view.wantsLayer = YES;
-    //
-    //    [view.layer makeSuperlayer];
-    //    //    view.layer.masksToBounds = NO;
-    //
-    //    CALayer *fillLayer = [CALayer layer];
-    //    fillLayer.backgroundColor = [NSColor offwhiteColor].CGColor;
-    //    fillLayer.borderColor = [NSColor whiteColor].CGColor;
-    //    fillLayer.borderWidth = 1;
-    //    fillLayer.cornerRadius = 3.0;
-    //
-    //    //    fillLayer.shadowColor = [NSColor blackColor].CGColor;
-    //    //    fillLayer.shadowOpacity = 1.0;
-    //    //    fillLayer.shadowOffset = CGSizeMake(0, -2);
-    //    //    fillLayer.shadowRadius = 1.0;
-    //    [view.layer insertSublayer: fillLayer atIndex: 0];
-    //    [fillLayer superConstrain];
-    //
-    //
-    //    //    [fillLayer superConstrainEdgesH: 0];
-    //    //    [fillLayer superConstrainTopEdge: 5];
-    //    //    [fillLayer superConstrainBottomEdge: 0];
-    //
-    //    //    CALayer *shadowLayer = [CALayer layer];
-    //    //    shadowLayer.masksToBounds = NO;
-    //    //    shadowLayer.backgroundColor = [NSColor offwhiteColor].CGColor;
-    //    //    shadowLayer.shadowColor = [NSColor blackColor].CGColor;
-    //    //    shadowLayer.shadowOpacity = 1.0;
-    //    //    shadowLayer.shadowOffset = CGSizeMake(0, 1);
-    //    //    shadowLayer.shadowRadius = 5.0;
-    //    //    [view.layer insertSublayer: shadowLayer atIndex: 0];
-    //    //    [shadowLayer superConstrainEdges: 2];
-    //
-    //    view.layer.bounds = view.bounds;
+    DPTableRowView *ret = [[DPTableRowView alloc] init];
+    ret.wantsLayer = YES;
+    ret.layer.masksToBounds = NO;
 
-}
+    NSView *subview = [[NSView alloc] init];
+    subview.translatesAutoresizingMaskIntoConstraints = NO;
+    [ret addSubview: subview];
+    //    [subview superConstrainLeading: 5];
+    //    [subview superConstrainTrailing: 5];
+    //    [subview superConstrainTop: 2];
+    //    [subview superConstrainBottom: 2];
+    [subview superConstrainWithInsets: NSEdgeInsetsMake(0, 0, 4, 0)];
 
-- (void) didSelectItem: (DPOutlineViewItem *) item {
+    subview.wantsLayer = YES;
+    subview.shadow = [AppStyles defaultShadowWithRadius: 1.0];
 
-    Task *task = [_apiModel taskForId: item.identifier];
-    _model.selectedTask = task;
+    CALayer *layer = subview.layer;
+    [layer makeSuperlayer];
+    [layer setGeometryFlipped: YES];
+    layer.masksToBounds = NO;
 
-}
+    //    layer.masksToBounds = YES;
+    [AppStyles addDefaultGradient: layer];
+    //    [layer setSublayerCornerRadius: 3.0];
+    //    [subview setNeedsDisplay: YES];
 
+    return ret;
 
-
-#pragma mark Setters
-
-- (void) setOutline: (DPOutlineView *) outline1 {
-    outline = outline1;
-    outline.outlineDelegate = self;
 }
 
 

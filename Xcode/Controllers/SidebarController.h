@@ -5,8 +5,8 @@
 
 #import <Foundation/Foundation.h>
 #import <BOAPI/BOAPIDelegate.h>
-#import "DPOutlineView.h"
 #import "BOController.h"
+#import "DPOutlineViewDelegate.h"
 
 @class DPOutlineView;
 

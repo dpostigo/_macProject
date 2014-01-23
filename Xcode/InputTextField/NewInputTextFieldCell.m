@@ -35,22 +35,7 @@
 
     if (label.length > 0) {
         [label drawInRect: titleRect];
-        //        [label drawWithRect: titleRect options: NSStringDrawingUsesLineFragmentOrigin];
-        //        [label drawWithRect: titleRect options: NSStringDrawingOneShot];
-        //                [label drawWithRect: titleRect options: NSStringDrawingUsesDeviceMetrics];
-        //                [label drawWithRect: titleRect options: NSStringDrawingTruncatesLastVisibleLine];
-        //        [label drawWithRect: titleRect options: NSStringDrawingUsesFontLeading];
-
     }
-    //
-    //    CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
-    //    NSGraphicsContext *newCtx = [NSGraphicsContext graphicsContextWithGraphicsPort: context flipped: true];
-    //    [NSGraphicsContext saveGraphicsState];
-    //    [NSGraphicsContext setCurrentContext: newCtx];
-    //    [label drawInRect: titleRect];
-    //    [NSGraphicsContext restoreGraphicsState];
-
-
 
 }
 
@@ -60,6 +45,11 @@
 
 
 #pragma mark Rects
+
+- (void) setLeftOffset: (CGFloat) leftOffset1 {
+    leftOffset = leftOffset1;
+    [self.controlView setNeedsDisplay: YES];
+}
 
 
 - (CGFloat) topOffset {

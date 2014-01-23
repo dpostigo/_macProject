@@ -28,7 +28,7 @@
     //NSLog(@"%s", __PRETTY_FUNCTION__);
     //NSLog(@"[_model.lists count] = %lu", [_model.lists count]);
     if ([_model.lists count] > 0) {
-        [outline selectFirstItem];
+        //[outline selectFirstItem];
     }
 }
 

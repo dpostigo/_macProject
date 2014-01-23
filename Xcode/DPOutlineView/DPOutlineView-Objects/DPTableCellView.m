@@ -9,4 +9,16 @@
 
 @synthesize detailTextLabel;
 @synthesize textLabel;
+
+- (id) initWithFrame: (NSRect) frameRect {
+    self = [super initWithFrame: frameRect];
+    if (self) {
+
+        self.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+
+    return self;
+}
+
+
 @end
