@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSWindowController">
+            <connections>
+                <outlet property="window" destination="1" id="bff-mR-H9B"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window title="New Tasks Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" animationBehavior="default" id="1" customClass="NewTasksWindow">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <rect key="contentRect" x="196" y="240" width="900" height="600"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <value key="minSize" type="size" width="900" height="600"/>
+            <view key="contentView" id="2">
+                <rect key="frame" x="0.0" y="0.0" width="900" height="600"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <splitView horizontalHuggingPriority="1000" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9nb-Lj-eL6" userLabel="Sidebar Split View">
+                        <rect key="frame" x="0.0" y="0.0" width="900" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <subviews>
+                            <customView fixedFrame="YES" id="WOb-YA-h6v">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="600"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </customView>
+                            <splitView fixedFrame="YES" dividerStyle="thin" vertical="YES" id="LZL-dC-7KA" customClass="DividerSplitView">
+                                <rect key="frame" x="201" y="0.0" width="699" height="600"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <customView fixedFrame="YES" id="70Z-Vp-1Lg">
+                                        <rect key="frame" x="0.0" y="0.0" width="236" height="600"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </customView>
+                                    <customView fixedFrame="YES" id="3Cm-UV-t98">
+                                        <rect key="frame" x="237" y="0.0" width="462" height="600"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </customView>
+                                </subviews>
+                                <holdingPriorities>
+                                    <real value="251"/>
+                                    <real value="250"/>
+                                </holdingPriorities>
+                            </splitView>
+                        </subviews>
+                        <holdingPriorities>
+                            <real value="402"/>
+                            <real value="250"/>
+                        </holdingPriorities>
+                    </splitView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="9nb-Lj-eL6" secondAttribute="trailing" id="ASu-wB-QNQ"/>
+                    <constraint firstItem="9nb-Lj-eL6" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="DdQ-zH-Bwm"/>
+                    <constraint firstAttribute="bottom" secondItem="9nb-Lj-eL6" secondAttribute="bottom" id="SbB-tn-kdS"/>
+                    <constraint firstItem="9nb-Lj-eL6" firstAttribute="top" secondItem="2" secondAttribute="top" id="cky-WG-XBM"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="contentController" destination="Qbh-i1-iyI" id="Etx-3e-0lZ"/>
+                <outlet property="left" destination="WOb-YA-h6v" id="AiK-XE-i3j"/>
+                <outlet property="middle" destination="70Z-Vp-1Lg" id="FgG-Dn-PDl"/>
+                <outlet property="right" destination="3Cm-UV-t98" id="A54-vt-XYd"/>
+                <outlet property="sidebarController" destination="WYs-vc-86u" id="Wdg-ft-y88"/>
+                <outlet property="sidebarSplit" destination="9nb-Lj-eL6" id="wrT-fv-CtB"/>
+                <outlet property="splitView" destination="LZL-dC-7KA" id="hhB-WG-Ko1"/>
+                <outlet property="tasksController" destination="s1b-9p-kff" id="k8p-S8-eZJ"/>
+                <outlet property="titleController" destination="zt2-vd-AdB" id="jNZ-mU-JsT"/>
+                <outlet property="windowView" destination="2" id="1Ua-7B-g2T"/>
+            </connections>
+        </window>
+        <viewController nibName="SidebarController" id="WYs-vc-86u" customClass="SidebarController"/>
+        <viewController nibName="TasksController" id="s1b-9p-kff" customClass="TasksController"/>
+        <arrayController objectClassName="Job" editable="NO" automaticallyPreparesContent="YES" id="hOM-Zx-0Bn" userLabel="Jobs Array Controller"/>
+        <arrayController objectClassName="User" editable="NO" automaticallyPreparesContent="YES" id="PCt-Xz-YoG" userLabel="Assignee Array Controller"/>
+        <customView id="S9f-Zv-NOL" userLabel="Content Controller View">
+            <rect key="frame" x="0.0" y="0.0" width="265" height="327"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+        </customView>
+        <viewController id="Qbh-i1-iyI" customClass="ContentController">
+            <connections>
+                <outlet property="view" destination="S9f-Zv-NOL" id="Xbb-zN-gIL"/>
+            </connections>
+        </viewController>
+        <viewController id="zt2-vd-AdB" customClass="NewTitleController">
+            <connections>
+                <outlet property="splitView" destination="2rF-y7-Gsi" id="4j8-rk-cRD"/>
+                <outlet property="textLabel" destination="UFg-5M-3Vj" id="8f3-Iy-nGy"/>
+                <outlet property="view" destination="85K-mP-M3r" id="evy-Ub-63P"/>
+            </connections>
+        </viewController>
+        <customView translatesAutoresizingMaskIntoConstraints="NO" id="85K-mP-M3r" userLabel="Title Controller View">
+            <rect key="frame" x="0.0" y="0.0" width="783" height="43"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2rF-y7-Gsi" customClass="DDSplitView">
+                    <rect key="frame" x="0.0" y="0.0" width="783" height="43"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <subviews>
+                        <customView id="ndp-lL-DlK">
+                            <rect key="frame" x="0.0" y="0.0" width="394" height="43"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <button wantsLayer="YES" alphaValue="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="vk8-w5-qbG">
+                                    <rect key="frame" x="364" y="12.5" width="20" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <shadow key="shadow" blurRadius="1">
+                                        <size key="offset" width="0.0" height="1"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </shadow>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="add-text-icon" imagePosition="only" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="j2n-C5-N55">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="createTaskClicked:" target="1" id="ZBN-UZ-ghW"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="centerY" secondItem="vk8-w5-qbG" secondAttribute="centerY" id="5jW-0U-ncb"/>
+                                <constraint firstAttribute="trailing" secondItem="vk8-w5-qbG" secondAttribute="trailing" constant="10" id="gxV-qu-2Po"/>
+                            </constraints>
+                        </customView>
+                        <customView id="4bz-LD-NNk">
+                            <rect key="frame" x="395" y="0.0" width="388" height="43"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <textField wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UFg-5M-3Vj">
+                                    <rect key="frame" x="156" y="11" width="76" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <shadow key="shadow">
+                                        <size key="offset" width="0.0" height="1"/>
+                                        <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </shadow>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Task Name" id="nSY-jh-AED">
+                                        <font key="font" size="14" name="HelveticaNeue-Medium"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <binding destination="-2" name="value" keyPath="self.model.selectedTask.title" id="sL6-wM-u8c"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="centerY" secondItem="UFg-5M-3Vj" secondAttribute="centerY" id="21F-7F-3ws"/>
+                                <constraint firstAttribute="centerX" secondItem="UFg-5M-3Vj" secondAttribute="centerX" id="xuZ-LN-eEp"/>
+                            </constraints>
+                        </customView>
+                    </subviews>
+                    <holdingPriorities>
+                        <real value="250"/>
+                        <real value="250"/>
+                    </holdingPriorities>
+                </splitView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="2rF-y7-Gsi" secondAttribute="bottom" id="Cmm-B2-fey"/>
+                <constraint firstItem="2rF-y7-Gsi" firstAttribute="top" secondItem="85K-mP-M3r" secondAttribute="top" id="PEy-Y5-SuO"/>
+                <constraint firstItem="2rF-y7-Gsi" firstAttribute="leading" secondItem="85K-mP-M3r" secondAttribute="leading" id="jnR-62-pxn"/>
+                <constraint firstAttribute="trailing" secondItem="2rF-y7-Gsi" secondAttribute="trailing" id="n7d-qP-p1r"/>
+            </constraints>
+        </customView>
+    </objects>
+    <resources>
+        <image name="add-text-icon" width="20" height="18"/>
+    </resources>
+</document>

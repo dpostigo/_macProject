@@ -8,7 +8,6 @@
 
 @implementation BOWindow
 
-
 @synthesize viewController;
 @synthesize contentDisplayView;
 

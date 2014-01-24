@@ -126,8 +126,6 @@
         NSString *username = userField.stringValue;
         NSString *password = passwordField.stringValue;
 
-        NSLog(@"password = %@", password);
-
         if ((username && [username length] > 0) && (password && [password length] > 0)) {
             [self validateSucceeded];
         } else {
@@ -137,7 +135,6 @@
 }
 
 - (void) validateFailed {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
     [self enableLogin];
 
 }
@@ -153,7 +150,6 @@
     NSString *username = userField.stringValue;
     NSString *password = passwordField.stringValue;
 
-    NSLog(@"password = %@", password);
     _model.username = username;
     _model.password = password;
     [_queue addOperation: [[BOLoginOperation alloc] initWithUsername: username password: password]];

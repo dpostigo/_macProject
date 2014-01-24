@@ -20,7 +20,6 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
 
-    NSLog(@"%s", __PRETTY_FUNCTION__);
     datePicker.dateValue = [NSDate date];
     [self customizeBackground];
 }

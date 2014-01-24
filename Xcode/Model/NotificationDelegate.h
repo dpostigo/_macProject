@@ -11,6 +11,8 @@
 
 @protocol NotificationDelegate <NSObject>
 
+@optional
+- (void) modelDidCreateTask: (Task *) task;
 - (void) modelDidSelectTask: (Task *) task;
 - (void) modelDidSelectLog: (Log *) log;
 @end

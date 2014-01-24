@@ -5,7 +5,7 @@
 
 #import <DPKit/NSWorkspaceNib.h>
 #import "Model+BOControllers.h"
-#import "TaskCreationController.h"
+#import "CreateTaskController.h"
 #import "FooterController.h"
 #import "TaskDetailController.h"
 #import "CreateLogController.h"
@@ -13,14 +13,23 @@
 
 @implementation Model (BOControllers)
 
-- (NSViewController *) tasksWindow {
+- (NSWindow *) tasksWindow {
     return [self.masterNib objectWithIdentifier: @"TasksWindow"];
-
 }
+
+- (NSWindow *) newTasksWindow {
+    return [self.masterNib objectWithIdentifier: @"newTasksWindow"];
+}
+
+
+- (NSViewController *) titleController {
+    return [self.masterNib controllerForClass: @"TitleController"];
+}
+
 
 - (NSViewController *) sidebarController {
     return [self.masterNib controllerForClass: @"SidebarController"];
-    //    return [[TaskCreationController alloc] initWithNibName: @"TaskCreationView" bundle: nil];
+    //    return [[CreateTaskController alloc] initWithNibName: @"TaskCreationView" bundle: nil];
 }
 
 
@@ -29,7 +38,7 @@
 }
 
 - (NSViewController *) taskCreationController {
-    return [[TaskCreationController alloc] initWithNibName: @"TaskCreationView" bundle: nil];
+    return [[CreateTaskController alloc] initWithNibName: @"TaskCreationView" bundle: nil];
 }
 
 
@@ -51,7 +60,6 @@
     if (ret == nil) {
         NSString *classString = [NSString stringWithFormat: @"%@Controller", key];
         ret = [[NSClassFromString(classString) alloc] initWithNibName: [NSString stringWithFormat: @"%@View", key] bundle: nil];
-        NSLog(@"ret = %@", ret);
         if (ret != nil) {
             [self.controllers setObject: ret forKey: key];
         }

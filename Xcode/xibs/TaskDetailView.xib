@@ -21,7 +21,7 @@
                 <outlet property="view" destination="b4I-yr-yvb" id="Mf9-qF-Iud"/>
             </connections>
         </viewController>
-        <customView wantsLayer="YES" id="IgM-5U-4Mq" userLabel="TaskDetailController">
+        <customView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IgM-5U-4Mq" userLabel="TaskDetailController">
             <rect key="frame" x="0.0" y="0.0" width="500" height="505"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>

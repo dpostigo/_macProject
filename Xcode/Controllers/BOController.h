@@ -22,4 +22,5 @@
 - (void) modelDidSelectTask: (Task *) task;
 - (void) logsDidUpdate: (Task *) task;
 - (BOWindow *) window;
+- (Model *) model;
 @end

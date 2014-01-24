@@ -82,7 +82,6 @@
 - (void) modelDidSelectTask: (Task *) task {
     [super modelDidSelectTask: task];
 
-    NSLog(@"%s", __PRETTY_FUNCTION__);
     self.task = _model.selectedTask;
 
     [outline reloadData];

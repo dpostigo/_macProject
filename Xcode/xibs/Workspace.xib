@@ -77,13 +77,6 @@
                 <outlet property="view" destination="qKv-Md-5AG" id="BG3-50-qwg"/>
             </connections>
         </viewController>
-        <viewController id="21c-gX-ubW" customClass="MainController">
-            <connections>
-                <outlet property="splitView" destination="Thz-E8-946" id="la8-dC-lQ1"/>
-                <outlet property="vanilla" destination="2pk-w9-VZa" id="1iU-lR-Ewm"/>
-                <outlet property="view" destination="n51-Ks-XOx" id="BAg-5S-F13"/>
-            </connections>
-        </viewController>
         <viewController id="9VW-5O-QpI" customClass="SidebarController">
             <connections>
                 <outlet property="outline" destination="ckT-Dr-epN" id="1cO-t8-q4B"/>
@@ -273,10 +266,10 @@
                 <constraint firstAttribute="trailing" secondItem="2pk-w9-VZa" secondAttribute="trailing" id="vle-Du-GvY"/>
             </constraints>
         </customView>
-        <window identifier="LoginWindow" title="Login" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="ar6-lw-EM3" customClass="BOLoginWindow">
+        <window identifier="LoginWindow" title="Login" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="ar6-lw-EM3" customClass="BOLoginWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <rect key="contentRect" x="131" y="159" width="300" height="270"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <value key="minSize" type="size" width="300" height="270"/>
             <value key="maxSize" type="size" width="300" height="270"/>
             <view key="contentView" id="JQc-i0-fat">
@@ -334,7 +327,7 @@
         <window identifier="TasksWindow" title="Tasks" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="raF-N5-uIR" customClass="TasksWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <rect key="contentRect" x="131" y="159" width="800" height="400"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <value key="minSize" type="size" width="800" height="400"/>
             <view key="contentView" id="94o-0N-nHD">
                 <rect key="frame" x="0.0" y="0.0" width="800" height="400"/>
@@ -384,7 +377,6 @@
                 </constraints>
             </view>
             <connections>
-                <outlet property="mainController" destination="21c-gX-ubW" id="yxW-0a-Kv2"/>
                 <outlet property="windowView" destination="94o-0N-nHD" id="A8T-xv-Wf3"/>
             </connections>
         </window>
@@ -521,7 +513,6 @@
         <viewController id="M5t-eg-JKB" customClass="TitleController">
             <connections>
                 <outlet property="addButton" destination="VRE-gY-0kk" id="A0F-Vh-A6v"/>
-                <outlet property="mainController" destination="21c-gX-ubW" id="Irx-Lh-Xqr"/>
                 <outlet property="mainSplitView" destination="Thz-E8-946" id="IOL-Rq-2FB"/>
                 <outlet property="splitView" destination="05h-jt-krS" id="TPq-bk-SzY"/>
                 <outlet property="thirdView" destination="Oy1-pa-ciG" id="EGn-PR-d01"/>
@@ -847,15 +838,11 @@
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <textField wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8TK-uo-OJj">
-                                    <rect key="frame" x="251" y="38" width="78" height="17"/>
+                                    <rect key="frame" x="253" y="37" width="74" height="20"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <shadow key="shadow" blurRadius="1">
-                                        <size key="offset" width="0.0" height="1"/>
-                                        <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                    </shadow>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Task Name" id="7hy-qn-gXP">
-                                        <font key="font" metaFont="systemBold"/>
-                                        <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <font key="font" size="14" name="HelveticaNeue"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
@@ -879,24 +866,11 @@
                 <constraint firstItem="05h-jt-krS" firstAttribute="top" secondItem="vHM-Q9-Zte" secondAttribute="top" id="qLl-Qa-dpY"/>
             </constraints>
         </customView>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="8dS-fA-xGp" customClass="NewTasksWindow">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="163" y="199" width="480" height="273"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
-            <view key="contentView" id="P3Q-H8-kIk">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="273"/>
-                <autoresizingMask key="autoresizingMask"/>
-            </view>
-            <connections>
-                <outlet property="testWindow" destination="iPF-IS-Wui" id="D0p-JR-ZR9"/>
-            </connections>
-        </window>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="iPF-IS-Wui">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="163" y="199" width="215" height="270"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="BMD-Uv-KrU">
                 <rect key="frame" x="0.0" y="0.0" width="215" height="270"/>
                 <autoresizingMask key="autoresizingMask"/>

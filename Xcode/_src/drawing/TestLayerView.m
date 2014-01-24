@@ -9,7 +9,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import "TestLayerView.h"
 #import "NSBezierPath+Utils.h"
-#import "NSString+Utils.h"
 #import "NSColor+DPColors.h"
 
 @implementation TestLayerView {

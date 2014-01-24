@@ -8,13 +8,13 @@
 #import "TitleController.h"
 #import "NSButton+DPUtils.h"
 #import "BOWindow.h"
-#import "TaskCreationController.h"
+#import "CreateTaskController.h"
 #import "DDSplitViewContainer.h"
 #import "MainController.h"
 #import "NSView+SiblingConstraints.h"
 #import "Model.h"
 
-@implementation     TitleController
+@implementation TitleController
 
 @synthesize addButton;
 @synthesize titleLabel;
@@ -52,7 +52,7 @@
     [_model createTask: @"New Task"];
     //    Task *task = [[Task alloc] initWithTitle: @"New task"];
 
-    self.window.viewController = [[TaskCreationController alloc] initWithNibName: @"TaskCreationView" bundle: nil];
+    self.window.viewController = [[CreateTaskController alloc] initWithNibName: @"TaskCreationView" bundle: nil];
 }
 
 
@@ -86,6 +86,14 @@
 
 #pragma mark Third view
 
+- (void) setMainController: (MainController *) mainController1 {
+    if (mainController) {
+        [mainController removeObserver: self forKeyPath: @"contentView"];
+    }
+    mainController = mainController1;
+    [mainController addObserver: self forKeyPath: @"contentView" options: 0 context: NULL];
+}
+
 
 - (void) setThirdView: (NSView *) thirdView1 {
     if (thirdView) {
@@ -101,17 +109,14 @@
 }
 
 
-- (void) setMainController: (MainController *) mainController1 {
-    mainController = mainController1;
-    [mainController addObserver: self forKeyPath: @"contentView" options: 0 context: NULL];
-}
-
 - (void) observeValueForKeyPath: (NSString *) keyPath ofObject: (id) object change: (NSDictionary *) change context: (void *) context {
-    [super observeValueForKeyPath: keyPath ofObject: object change: change context: context];
     if (object == mainController) {
         if ([keyPath isEqualToString: @"contentView"]) {
             [self mainContentViewDidChange];
         }
+    } else {
+        [super observeValueForKeyPath: keyPath ofObject: object change: change context: context];
+
     }
 }
 

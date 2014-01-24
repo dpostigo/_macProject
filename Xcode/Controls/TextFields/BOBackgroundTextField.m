@@ -15,7 +15,6 @@
 
 - (void) setDefaultBackgroundView {
     [super setDefaultBackgroundView];
-    NSLog(@"%s", __PRETTY_FUNCTION__);
     [self customizeField: self];
 }
 

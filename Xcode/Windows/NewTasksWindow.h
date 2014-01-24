@@ -6,10 +6,37 @@
 #import <Foundation/Foundation.h>
 #import <BOAPI/BOAPIDelegate.h>
 #import "BOWindow.h"
+#import "NotificationDelegate.h"
 
-@interface NewTasksWindow : BOWindow <BOAPIDelegate> {
+@class SidebarController;
+@class TasksController;
+@class BOController;
+@class ContentController;
+@class DividerSplitView;
+@class NewTitleController;
 
-    IBOutlet NSWindow *testWindow;
+@interface NewTasksWindow : BOWindow <BOAPIDelegate, NotificationDelegate> {
+
+
+    IBOutlet NSSplitView *sidebarSplit;
+    IBOutlet DividerSplitView *splitView;
+
+    IBOutlet NewTitleController *titleController;
+    IBOutlet SidebarController *sidebarController;
+    IBOutlet TasksController *tasksController;
+    IBOutlet ContentController *contentController;
+//    IBOutlet BOController *mainController;
+
+    IBOutlet NSView *left;
+    IBOutlet NSView *middle;
+    IBOutlet NSView *right;
+
+    NSView *mainContent;
 
 }
+
+@property(nonatomic, strong) NSView *mainContent;
+@property(nonatomic, strong) NSView *left;
+@property(nonatomic, strong) NSView *middle;
+@property(nonatomic, strong) NSView *right;
 @end

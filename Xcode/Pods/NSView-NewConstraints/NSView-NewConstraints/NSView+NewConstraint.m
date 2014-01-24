@@ -63,6 +63,11 @@
 
 #pragma mark Leading
 
+- (void) updateSuperLeadingConstraint: (CGFloat) offset {
+    NSLayoutConstraint *constraint = self.superLeadingConstraint;
+    constraint.constant = offset;
+}
+
 - (NSLayoutConstraint *) superLeadingConstraint {
     return [self superConstraintForAttribute: NSLayoutAttributeLeading];
 }
@@ -91,6 +96,12 @@
 
 #pragma mark Trailing
 
+
+- (void) updateSuperTrailingConstraint: (CGFloat) offset {
+    NSLayoutConstraint *constraint = self.superTrailingConstraint;
+    constraint.constant = offset;
+}
+
 - (NSLayoutConstraint *) superTrailingConstraint {
     return [self superConstraintForAttribute: NSLayoutAttributeTrailing];
 }
@@ -105,6 +116,13 @@
 
 
 #pragma mark Top
+
+
+- (void) updateSuperTopConstraint: (CGFloat) offset {
+    NSLayoutConstraint *constraint = self.superTopConstraint;
+    constraint.constant = offset;
+}
+
 
 - (NSLayoutConstraint *) superTopConstraint {
     return [self superConstraintForAttribute: NSLayoutAttributeTop];
@@ -132,10 +150,15 @@
 
 #pragma mark Bottom
 
+
+- (void) updateSuperBottomConstraint: (CGFloat) offset {
+    NSLayoutConstraint *constraint = self.superBottomConstraint;
+    constraint.constant = offset;
+}
+
 - (NSLayoutConstraint *) superBottomConstraint {
     return [self superConstraintForAttribute: NSLayoutAttributeBottom];
 }
-
 
 - (NSLayoutConstraint *) superConstrainBottom {
     return [self superConstrainBottom: 0];
@@ -179,6 +202,12 @@
 }
 
 
+- (void) updateSuperConstrainInsets: (NSEdgeInsets) insets {
+    [self updateSuperLeadingConstraint: insets.left];
+    [self updateSuperTrailingConstraint: insets.right];
+    [self updateSuperTopConstraint: insets.top];
+    [self updateSuperBottomConstraint: insets.bottom];
+}
 
 #pragma mark Find constraints
 

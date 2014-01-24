@@ -16,15 +16,18 @@
 - (NSLayoutConstraint *) superConstrainHeight: (CGFloat) offset;
 
 - (NSLayoutConstraint *) superLeadingConstraint;
+- (void) updateSuperLeadingConstraint: (CGFloat) offset;
 - (NSLayoutConstraint *) superConstrainLeading;
 - (NSLayoutConstraint *) superConstrainLeading: (CGFloat) offset;
 - (NSLayoutConstraint *) superConstrainLeadingToItem: (id) item;
 - (NSLayoutConstraint *) superConstrainLeadingToItem: (id) item offset: (CGFloat) offset;
 
+- (void) updateSuperTrailingConstraint: (CGFloat) offset;
 - (NSLayoutConstraint *) superTrailingConstraint;
 - (NSLayoutConstraint *) superConstrainTrailing;
 - (NSLayoutConstraint *) superConstrainTrailing: (CGFloat) offset;
 
+- (void) updateSuperTopConstraint: (CGFloat) offset;
 - (NSLayoutConstraint *) superTopConstraint;
 - (NSLayoutConstraint *) superConstrainTop;
 - (NSLayoutConstraint *) superConstrainTop: (CGFloat) offset;
@@ -35,4 +38,5 @@
 - (NSArray *) superConstrainEdges;
 - (NSArray *) superConstrainEdges: (CGFloat) offset;
 - (NSArray *) superConstrainWithInsets: (NSEdgeInsets) insets;
+- (void) updateSuperConstrainInsets: (NSEdgeInsets) insets;
 @end

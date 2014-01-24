@@ -28,31 +28,6 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
 
-    //    self.view.wantsLayer = YES;
-    //
-    //    CALayer *layer = self.view.layer;
-    //    layer.backgroundColor = [NSColor colorWithWhite: 0.9 alpha: 1.0].CGColor;
-    //
-    //    CALayer *innerShadow = [CALayer layer];
-    //    innerShadow.borderColor = [NSColor redColor].CGColor;
-    //    innerShadow.borderWidth = 1.0;
-    //
-    //    innerShadow.shadowColor = [NSColor blackColor].CGColor;
-    //    innerShadow.shadowOpacity = 1.0;
-    //    innerShadow.shadowOffset = CGSizeMake(0, -2);
-    //    innerShadow.shadowRadius = 1.0;
-
-    //    outline.wantsLayer = YES;
-
-    //    [outline reloadData];
-
-    //    NSLog(@"outline.frame = %@", NSStringFromRect(outline.frame));
-    //
-    NSScrollView *scrollView = outline.enclosingScrollView;
-    NSClipView *clipView = scrollView.contentView;
-
-    NSLog(@"scrollView.verticalScroller = %@", scrollView.verticalScroller);
-
 }
 
 
@@ -180,7 +155,6 @@
 #pragma mark BOAPIDelegate
 
 - (void) tasksDidUpdate {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
     [outline reloadData];
 }
 
@@ -190,6 +164,7 @@
 
 - (void) modelDidSelectFocusType {
     [super modelDidSelectFocusType];
+
     [outline reloadData];
 }
 

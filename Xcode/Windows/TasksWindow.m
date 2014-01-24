@@ -21,9 +21,9 @@
 - (void) awakeFromNib {
     [super awakeFromNib];
 
-//    self.footerBarHeight = 20;
-//    self.footerBarColor = self.titleBarColor;
-//    self.footerBarView = _model.footerController.view;
+    //    self.footerBarHeight = 20;
+    //    self.footerBarColor = self.titleBarColor;
+    //    self.footerBarView = _model.footerController.view;
 }
 
 
@@ -62,10 +62,6 @@
     }
 }
 
-
-- (TitleController *) titleController {
-    return [_model.masterNib controllerForClass: @"TitleController"];
-}
 
 - (NSView *) titleControllerView {
     return self.titleController.view;

@@ -12,6 +12,7 @@
 #import "Task.h"
 #import "BOLoginWindow.h"
 #import "Model+BOControllers.h"
+#import "TasksWindowController.h"
 
 @implementation CartsAppDelegate {
     NSWindow *window;
@@ -28,23 +29,40 @@
     [_model subscribeDelegate: self];
 
     BOLoginWindow *loginWindow = [_model.masterNib objectWithIdentifier: @"LoginWindow"];
+    [loginWindow makeKeyAndOrderFront: nil];
     [loginWindow validate];
 
-    [self doWindowControllerTest];
+//    if (self.apiModel.isReady) {
+//
+//        [self showTasksWindow];
+//    } else {
+//        BOLoginWindow *loginWindow = [_model.masterNib objectWithIdentifier: @"LoginWindow"];
+//        [loginWindow validate];
+//    }
 
 }
 
-- (void) doWindowControllerTest {
+#pragma mark Getters
 
+- (BOAPIModel *) apiModel {
+    return [BOAPIModel sharedModel];
 }
 
+
+- (void) showTasksWindow {
+    TasksWindowController *controller = [[TasksWindowController alloc] initWithWindowNibName: @"NewTasksWindow" owner: self];
+    [controller.window makeKeyAndOrderFront: nil];
+
+}
 #pragma mark BOAPIDelegate
 
 
 - (void) userDidLogin: (User *) user {
-    NSWindowController *controller = [[NSWindowController alloc] initWithWindow: _model.tasksWindow];
-    [controller.window makeKeyAndOrderFront: nil];
+    //    NSWindowController *controller = [[NSWindowController alloc] initWithWindow: _model.tasksWindow];
+    //    [controller.window makeKeyAndOrderFront: nil];
 
+
+    [self showTasksWindow];
 }
 
 #pragma mark IBActions

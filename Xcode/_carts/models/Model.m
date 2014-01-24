@@ -41,10 +41,48 @@
     @synchronized (self) {
         if (_instance == nil) {
             _instance = [[self alloc] init];
+
         }
     }
 
     return _instance;
+}
+
+
+- (id) init {
+    self = [super init];
+    if (self) {
+        [self addObserver: self forKeyPath: @"selectedFocusType" options: 0 context: NULL];
+        [self addObserver: self forKeyPath: @"selectedTask" options: NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context: NULL];
+
+    }
+
+    return self;
+}
+
+
+- (void) observeValueForKeyPath: (NSString *) keyPath ofObject: (id) object change: (NSDictionary *) change context: (void *) context {
+    if (object == self) {
+
+        if ([keyPath isEqualToString: @"selectedFocusType"]) {
+            [self notifyDelegates: @selector(modelDidSelectFocusType) object: nil];
+
+        } else if ([keyPath isEqualToString: @"selectedTask"]) {
+            if (self.selectedTask) {
+                [self notifyDelegates: @selector(modelDidSelectTask:) object: self.selectedTask];
+            }
+        }
+    }
+
+    //    else if (object == _model.selectedTask) {
+    //
+    //        if ([keyPath isEqualToString: @"logs"]) {
+    //            [self logsDidUpdate: _model.selectedTask];
+    //        }
+    //    }
+
+
+    //    [super observeValueForKeyPath: keyPath ofObject: object change: change context: context];
 }
 
 
@@ -248,13 +286,16 @@
 }
 
 - (void) createTask: (NSString *) name withJob: (Job *) job {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+
     Task *task = [[Task alloc] initWithTitle: name];
     task.job = job;
+    task.id = @"-";
     [self.tasks addObject: task];
 
+    [self notifyDelegates: @selector(modelDidCreateTask:) object: task];
     [self.apiModel notifyDelegate: @selector(tasksDidUpdate:) object: task];
     [self.apiModel notifyDelegate: @selector(tasksDidUpdate) object: nil];
+    self.selectedTask = task;
 
 }
 

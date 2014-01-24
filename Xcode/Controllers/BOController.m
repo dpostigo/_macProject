@@ -41,34 +41,34 @@
 
     _queue = [NSOperationQueue new];
 
-    [_model addObserver: self forKeyPath: @"selectedFocusType" options: 0 context: NULL];
-    [_model addObserver: self forKeyPath: @"selectedTask" options: NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context: NULL];
+    //    [_model addObserver: self forKeyPath: @"selectedFocusType" options: 0 context: NULL];
+    //    [_model addObserver: self forKeyPath: @"selectedTask" options: NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context: NULL];
 
 }
 
-
-- (void) observeValueForKeyPath: (NSString *) keyPath ofObject: (id) object change: (NSDictionary *) change context: (void *) context {
-    if (object == _model) {
-        if ([keyPath isEqualToString: @"selectedFocusType"]) {
-            [self modelDidSelectFocusType];
-        } else if ([keyPath isEqualToString: @"selectedTask"]) {
-
-            // TODO: Remove old observer
-            //            NSLog(@"change = %@", change);
-            [self modelDidSelectTask: _model.selectedTask];
-        }
-    }
-
-    else if (object == _model.selectedTask) {
-
-        if ([keyPath isEqualToString: @"logs"]) {
-            [self logsDidUpdate: _model.selectedTask];
-        }
-    }
-
-
-    //    [super observeValueForKeyPath: keyPath ofObject: object change: change context: context];
-}
+//
+//- (void) observeValueForKeyPath: (NSString *) keyPath ofObject: (id) object change: (NSDictionary *) change context: (void *) context {
+//    if (object == _model) {
+//        if ([keyPath isEqualToString: @"selectedFocusType"]) {
+//            [self modelDidSelectFocusType];
+//        } else if ([keyPath isEqualToString: @"selectedTask"]) {
+//
+//            // TODO: Remove old observer
+//            //            NSLog(@"change = %@", change);
+//            [self modelDidSelectTask: _model.selectedTask];
+//        }
+//    }
+//
+//    else if (object == _model.selectedTask) {
+//
+//        if ([keyPath isEqualToString: @"logs"]) {
+//            [self logsDidUpdate: _model.selectedTask];
+//        }
+//    }
+//
+//
+//    //    [super observeValueForKeyPath: keyPath ofObject: object change: change context: context];
+//}
 
 
 - (void) modelDidSelectFocusType {
@@ -77,7 +77,7 @@
 
 - (void) modelDidSelectTask: (Task *) task {
     if (_model.selectedTask) {
-        [_model.selectedTask addObserver: self forKeyPath: @"logs" options: 0 context: NULL];
+        //        [_model.selectedTask addObserver: self forKeyPath: @"logs" options: 0 context: NULL];
     }
 }
 
@@ -92,4 +92,8 @@
     return ([window isKindOfClass: [BOWindow class]] ? ((BOWindow *) window) : nil);
 }
 
+
+- (Model *) model {
+    return _model;
+}
 @end

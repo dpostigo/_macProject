@@ -14,7 +14,6 @@
 @interface TasksWindow : BOWindow <BOAPIDelegate> {
     IBOutlet DDSplitView *splitView;
     IBOutlet MainController *mainController;
-
     IBOutlet TitleController *titleController;
 
     NSString *contentTitle;
