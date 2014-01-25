@@ -125,7 +125,7 @@
     if (ret == nil) {
         ret = @"";
     } else {
-        [BOAPIModel sharedModel].storage.username = ret;
+//        [BOAPIModel sharedModel].storage.username = ret;
     }
     return ret;
 }

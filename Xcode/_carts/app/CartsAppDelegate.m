@@ -5,14 +5,15 @@
 //
 
 
+#import <BOAPI/BOAPIStorage.h>
+#import <BOAPI/Task.h>
 #import "CartsAppDelegate.h"
 #import "NSWorkspaceNib.h"
 #import "DPStyledWindow.h"
 #import "BOAPIModel.h"
-#import "Task.h"
-#import "BOLoginWindow.h"
-#import "Model+BOControllers.h"
 #import "TasksWindowController.h"
+#import "BOLoginWindow.h"
+#import "AutoCoding.h"
 
 @implementation CartsAppDelegate {
     NSWindow *window;
@@ -21,24 +22,41 @@
 - (void) applicationDelegateDidFinishLaunching: (NSNotification *) notification {
     [super applicationDelegateDidFinishLaunching: notification];
 
-    [_model.masterNib load];
+    BOAPIStorage *storage = [[BOAPIStorage alloc] initWithUsername: @"hello"];
+    [storage.tasks addObject: [[Task alloc] initWithTitle: @"hello"]];
 
-    [BOAPIModel sharedModel].delegate = _model.operationHandler;
+    [storage archive];
 
-    [[BOAPIModel sharedModel] subscribeDelegate: self];
-    [_model subscribeDelegate: self];
+    NSLog(@"storage.filename = %@", storage.filename);
 
-    BOLoginWindow *loginWindow = [_model.masterNib objectWithIdentifier: @"LoginWindow"];
-    [loginWindow makeKeyAndOrderFront: nil];
-    [loginWindow validate];
+    BOAPIStorage *unarchived = [BOAPIStorage objectWithContentsOfFile: storage.filename];
+    NSLog(@"unarchived = %@", unarchived);
+    NSLog(@"[unarchived.tasks count] = %lu", [unarchived.tasks count]);
 
-//    if (self.apiModel.isReady) {
+    //    [BOAPIModel sharedModel].defaultUsername = _model.username;
+//    //    if (_model.username) {
+//    //        [self showTasksWindow];
+//    //    } else {
+//    //        BOLoginWindow *loginWindow = [_model.masterNib objectWithIdentifier: @"LoginWindow"];
+//    //        [loginWindow makeKeyAndOrderFront: nil];
+//    //        [loginWindow validate];
+//    //
+//    //    }
 //
-//        [self showTasksWindow];
-//    } else {
-//        BOLoginWindow *loginWindow = [_model.masterNib objectWithIdentifier: @"LoginWindow"];
-//        [loginWindow validate];
-//    }
+//
+//    NSLog(@"_model.username = %@", _model.username);
+//    //
+//    [BOAPIModel sharedModel].delegate = _model.operationHandler;
+//
+//    [[BOAPIModel sharedModel] subscribeDelegate: self];
+//    [_model subscribeDelegate: self];
+//
+//    [_model.masterNib load];
+//
+//
+//    BOLoginWindow *loginWindow = [_model.masterNib objectWithIdentifier: @"LoginWindow"];
+//    [loginWindow makeKeyAndOrderFront: nil];
+//    [loginWindow validate];
 
 }
 

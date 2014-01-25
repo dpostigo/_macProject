@@ -47,7 +47,7 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="p05-XX-qWq"/>
                     </constraints>
-                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxX" autoenablesItems="NO" selectedItem="q5g-Dm-6qh" id="ZAB-HZ-G9m">
+                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" preferredEdge="maxX" autoenablesItems="NO" selectedItem="q5g-Dm-6qh" id="ZAB-HZ-G9m">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" title="OtherViews" autoenablesItems="NO" id="NPJ-R5-cxC">
@@ -60,29 +60,37 @@
                     </popUpButtonCell>
                     <connections>
                         <action selector="updateSelectedJob:" target="-2" id="fxn-an-APi"/>
-                        <binding destination="bdv-qo-I1g" name="content" keyPath="arrangedObjects" id="bsu-Bj-2Ke"/>
-                        <binding destination="bdv-qo-I1g" name="contentValues" keyPath="arrangedObjects.title" previousBinding="bsu-Bj-2Ke" id="v3S-Ig-g52"/>
+                        <binding destination="bdv-qo-I1g" name="content" keyPath="arrangedObjects" id="ge1-Da-OI2">
+                            <dictionary key="options">
+                                <bool key="NSInsertsNullPlaceholder" value="YES"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="bdv-qo-I1g" name="contentValues" keyPath="arrangedObjects.title" previousBinding="ge1-Da-OI2" id="FIo-FM-Bye">
+                            <dictionary key="options">
+                                <string key="NSNullPlaceholder">Select a job</string>
+                                <bool key="NSInsertsNullPlaceholder" value="YES"/>
+                            </dictionary>
+                        </binding>
                     </connections>
                 </popUpButton>
-                <popUpButton verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oVp-Ts-zjx">
-                    <rect key="frame" x="76" y="414" width="76" height="26"/>
+                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oVp-Ts-zjx">
+                    <rect key="frame" x="75" y="414" width="77" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" autoenablesItems="NO" selectedItem="lEs-wQ-OMa" id="2ky-JP-X6p">
+                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" pullsDown="YES" autoenablesItems="NO" selectedItem="lEs-wQ-OMa" id="2ky-JP-X6p">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" title="OtherViews" autoenablesItems="NO" id="e6h-lU-jsD">
                             <items>
-                                <menuItem title="Item 1" state="on" id="lEs-wQ-OMa"/>
+                                <menuItem title="Item 1" state="on" hidden="YES" id="lEs-wQ-OMa"/>
                                 <menuItem title="Item 2" id="6hq-Yj-Yof"/>
                                 <menuItem title="Item 3" id="ayl-ze-OQy"/>
                             </items>
                         </menu>
                     </popUpButtonCell>
                     <connections>
-                        <binding destination="3hn-aO-yMB" name="content" keyPath="arrangedObjects" id="D5U-Yr-ocy"/>
-                        <binding destination="3hn-aO-yMB" name="contentValues" keyPath="arrangedObjects.title" previousBinding="D5U-Yr-ocy" id="zSr-5M-YKj">
+                        <binding destination="3hn-aO-yMB" name="content" keyPath="arrangedObjects" id="Itn-C1-rq0">
                             <dictionary key="options">
-                                <string key="NSNullPlaceholder">Null</string>
+                                <bool key="NSInsertsNullPlaceholder" value="YES"/>
                             </dictionary>
                         </binding>
                     </connections>
@@ -161,7 +169,7 @@
                 <binding destination="-2" name="contentArray" keyPath="self.model.jobs" id="xVQ-s6-Mhm"/>
             </connections>
         </arrayController>
-        <arrayController objectClassName="User" editable="NO" id="3hn-aO-yMB" userLabel="Assignee Array Controller">
+        <arrayController objectClassName="User" editable="NO" preservesSelection="NO" avoidsEmptySelection="NO" clearsFilterPredicateOnInsertion="NO" automaticallyRearrangesObjects="YES" id="3hn-aO-yMB" userLabel="Assignee Array Controller">
             <connections>
                 <binding destination="-2" name="contentArray" keyPath="self.selectedJob.assignees" id="tVu-Jo-qSB"/>
             </connections>

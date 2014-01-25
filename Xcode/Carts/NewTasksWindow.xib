@@ -43,13 +43,13 @@
                                 </subviews>
                                 <holdingPriorities>
                                     <real value="251"/>
-                                    <real value="250"/>
+                                    <real value="1"/>
                                 </holdingPriorities>
                             </splitView>
                         </subviews>
                         <holdingPriorities>
-                            <real value="402"/>
-                            <real value="250"/>
+                            <real value="251"/>
+                            <real value="1"/>
                         </holdingPriorities>
                     </splitView>
                 </subviews>
@@ -88,6 +88,7 @@
         </viewController>
         <viewController id="zt2-vd-AdB" customClass="NewTitleController">
             <connections>
+                <outlet property="rightView" destination="e5n-ke-9Zr" id="NpX-Uh-tUv"/>
                 <outlet property="splitView" destination="2rF-y7-Gsi" id="4j8-rk-cRD"/>
                 <outlet property="textLabel" destination="UFg-5M-3Vj" id="8f3-Iy-nGy"/>
                 <outlet property="view" destination="85K-mP-M3r" id="evy-Ub-63P"/>
@@ -106,7 +107,7 @@
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <button wantsLayer="YES" alphaValue="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="vk8-w5-qbG">
-                                    <rect key="frame" x="364" y="12.5" width="20" height="18"/>
+                                    <rect key="frame" x="364" y="12" width="20" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <shadow key="shadow" blurRadius="1">
                                         <size key="offset" width="0.0" height="1"/>
@@ -126,12 +127,12 @@
                                 <constraint firstAttribute="trailing" secondItem="vk8-w5-qbG" secondAttribute="trailing" constant="10" id="gxV-qu-2Po"/>
                             </constraints>
                         </customView>
-                        <customView id="4bz-LD-NNk">
+                        <customView wantsLayer="YES" id="4bz-LD-NNk">
                             <rect key="frame" x="395" y="0.0" width="388" height="43"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <textField wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UFg-5M-3Vj">
-                                    <rect key="frame" x="156" y="11" width="76" height="21"/>
+                                    <rect key="frame" x="8" y="11" width="76" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <shadow key="shadow">
                                         <size key="offset" width="0.0" height="1"/>
@@ -145,10 +146,38 @@
                                         <binding destination="-2" name="value" keyPath="self.model.selectedTask.title" id="sL6-wM-u8c"/>
                                     </connections>
                                 </textField>
+                                <customView translatesAutoresizingMaskIntoConstraints="NO" id="0NF-4h-z9t">
+                                    <rect key="frame" x="352" y="7" width="28" height="28"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <subviews>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="urO-XV-R5J" customClass="BOImageView">
+                                            <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="grA-Di-45Z"/>
+                                            <connections>
+                                                <binding destination="-2" name="valueURL" keyPath="model.currentUser.thumbnailURL" id="o7d-8n-gvb"/>
+                                            </connections>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="28" id="6tV-mc-6kz"/>
+                                        <constraint firstItem="urO-XV-R5J" firstAttribute="leading" secondItem="0NF-4h-z9t" secondAttribute="leading" id="Gem-am-MLB"/>
+                                        <constraint firstAttribute="bottom" secondItem="urO-XV-R5J" secondAttribute="bottom" id="HwZ-5i-kdV"/>
+                                        <constraint firstAttribute="width" constant="28" id="MfL-e0-Wgg"/>
+                                        <constraint firstItem="urO-XV-R5J" firstAttribute="top" secondItem="0NF-4h-z9t" secondAttribute="top" id="c4S-9p-Om0"/>
+                                        <constraint firstAttribute="trailing" secondItem="urO-XV-R5J" secondAttribute="trailing" id="qO8-dv-NyY"/>
+                                    </constraints>
+                                    <shadow key="shadow">
+                                        <size key="offset" width="0.0" height="1"/>
+                                        <color key="color" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </shadow>
+                                </customView>
                             </subviews>
                             <constraints>
                                 <constraint firstAttribute="centerY" secondItem="UFg-5M-3Vj" secondAttribute="centerY" id="21F-7F-3ws"/>
-                                <constraint firstAttribute="centerX" secondItem="UFg-5M-3Vj" secondAttribute="centerX" id="xuZ-LN-eEp"/>
+                                <constraint firstAttribute="trailing" secondItem="0NF-4h-z9t" secondAttribute="trailing" constant="8" id="LaY-Do-mQj"/>
+                                <constraint firstItem="UFg-5M-3Vj" firstAttribute="leading" secondItem="4bz-LD-NNk" secondAttribute="leading" constant="10" id="OzS-Oc-t0W"/>
+                                <constraint firstAttribute="centerY" secondItem="0NF-4h-z9t" secondAttribute="centerY" id="mud-Ew-xbR"/>
                             </constraints>
                         </customView>
                     </subviews>
@@ -163,6 +192,13 @@
                 <constraint firstItem="2rF-y7-Gsi" firstAttribute="top" secondItem="85K-mP-M3r" secondAttribute="top" id="PEy-Y5-SuO"/>
                 <constraint firstItem="2rF-y7-Gsi" firstAttribute="leading" secondItem="85K-mP-M3r" secondAttribute="leading" id="jnR-62-pxn"/>
                 <constraint firstAttribute="trailing" secondItem="2rF-y7-Gsi" secondAttribute="trailing" id="n7d-qP-p1r"/>
+            </constraints>
+        </customView>
+        <customView translatesAutoresizingMaskIntoConstraints="NO" id="e5n-ke-9Zr">
+            <rect key="frame" x="0.0" y="0.0" width="163" height="33"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <constraints>
+                <constraint firstAttribute="width" constant="163" id="eOt-9N-goo"/>
             </constraints>
         </customView>
     </objects>

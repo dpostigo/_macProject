@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="UserImageViewController">
+            <connections>
+                <outlet property="view" destination="Idz-fe-piZ" id="AfY-34-5IG"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <customView id="1">
+            <rect key="frame" x="0.0" y="0.0" width="339" height="43"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3ck-HN-smI" customClass="BOImageView">
+                    <rect key="frame" x="10" y="6" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="Cow-ne-qij"/>
+                        <constraint firstAttribute="height" constant="30" id="ULK-Bh-CXu"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="sampleimage" id="B5I-j5-EPd"/>
+                    <connections>
+                        <binding destination="-2" name="valueURL" keyPath="model.currentUser.thumbnailURL" id="Z8g-mR-hQG"/>
+                    </connections>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XhA-S4-eom">
+                    <rect key="frame" x="46" y="18" width="81" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Dani Postigo" usesSingleLineMode="YES" id="Vmg-Eu-hIE">
+                        <font key="font" size="12" name="HelveticaNeue-Medium"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H4S-jW-DHe">
+                    <rect key="frame" x="46" y="4" width="115" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="dani@firstperson.is" usesSingleLineMode="YES" id="zPa-yn-vbN">
+                        <font key="font" size="12" name="HelveticaNeue"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="3ck-HN-smI" secondAttribute="centerY" id="3Jw-d6-3pU"/>
+                <constraint firstItem="3ck-HN-smI" firstAttribute="top" secondItem="XhA-S4-eom" secondAttribute="top" constant="2" id="Dxz-kt-8Oc"/>
+                <constraint firstItem="XhA-S4-eom" firstAttribute="leading" secondItem="3ck-HN-smI" secondAttribute="trailing" constant="8" id="F24-gh-DdR"/>
+                <constraint firstItem="H4S-jW-DHe" firstAttribute="top" secondItem="XhA-S4-eom" secondAttribute="bottom" constant="-5" id="eTE-2F-LTO"/>
+                <constraint firstItem="3ck-HN-smI" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="10" id="sKi-uf-bh0"/>
+                <constraint firstItem="H4S-jW-DHe" firstAttribute="leading" secondItem="XhA-S4-eom" secondAttribute="leading" id="sTN-rH-bCJ"/>
+            </constraints>
+        </customView>
+        <customView wantsLayer="YES" id="Idz-fe-piZ">
+            <rect key="frame" x="0.0" y="0.0" width="268" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vJV-Lb-SrQ">
+                    <rect key="frame" x="150" y="31" width="70" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Dani Postigo" usesSingleLineMode="YES" id="p3l-ra-5AK">
+                        <font key="font" size="11" name="HelveticaNeue-Medium"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dbp-3A-y4w">
+                    <rect key="frame" x="114" y="16" width="106" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="dani@firstperson.is" usesSingleLineMode="YES" id="Iff-Gf-p5u">
+                        <font key="font" size="12" name="HelveticaNeue"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="103-lD-pXd">
+                    <rect key="frame" x="228" y="15" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aFC-uL-JHt" customClass="BOImageView">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="sampleimage" id="UYs-8t-WsY"/>
+                            <connections>
+                                <binding destination="-2" name="valueURL" keyPath="model.currentUser.thumbnailURL" id="9OG-ln-94w"/>
+                            </connections>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="J3S-OY-1pd"/>
+                        <constraint firstAttribute="width" constant="30" id="UzM-Q9-WIN"/>
+                        <constraint firstItem="aFC-uL-JHt" firstAttribute="leading" secondItem="103-lD-pXd" secondAttribute="leading" id="hXu-Zf-KWo"/>
+                        <constraint firstAttribute="trailing" secondItem="aFC-uL-JHt" secondAttribute="trailing" id="iyj-2K-AM9"/>
+                        <constraint firstItem="aFC-uL-JHt" firstAttribute="top" secondItem="103-lD-pXd" secondAttribute="top" id="oKA-5z-Ppv"/>
+                        <constraint firstAttribute="bottom" secondItem="aFC-uL-JHt" secondAttribute="bottom" id="st4-GQ-aJZ"/>
+                    </constraints>
+                    <shadow key="shadow" blurRadius="1">
+                        <size key="offset" width="0.0" height="1"/>
+                        <color key="color" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </shadow>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Dbp-3A-y4w" firstAttribute="top" secondItem="vJV-Lb-SrQ" secondAttribute="bottom" constant="-3" id="2GB-cS-dNU"/>
+                <constraint firstAttribute="trailing" secondItem="103-lD-pXd" secondAttribute="trailing" constant="10" id="DQY-Fl-uw7"/>
+                <constraint firstItem="103-lD-pXd" firstAttribute="leading" secondItem="Dbp-3A-y4w" secondAttribute="trailing" constant="10" id="Lp4-6C-JmV"/>
+                <constraint firstAttribute="centerY" secondItem="103-lD-pXd" secondAttribute="centerY" id="M9N-cc-byZ"/>
+                <constraint firstItem="vJV-Lb-SrQ" firstAttribute="bottom" secondItem="103-lD-pXd" secondAttribute="bottom" constant="-16" id="kIy-PP-8F3"/>
+                <constraint firstItem="103-lD-pXd" firstAttribute="leading" secondItem="vJV-Lb-SrQ" secondAttribute="trailing" constant="10" id="nIS-iP-zRh"/>
+            </constraints>
+        </customView>
+    </objects>
+    <resources>
+        <image name="sampleimage" width="1425" height="617"/>
+    </resources>
+</document>

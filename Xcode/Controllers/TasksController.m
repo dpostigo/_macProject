@@ -28,6 +28,9 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
 
+    NSLog(@"[_model.tasks count] = %lu", [_model.tasks count]);
+
+    NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 

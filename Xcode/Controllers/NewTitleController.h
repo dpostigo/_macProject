@@ -16,6 +16,8 @@
     IBOutlet DDSplitView *splitView;
     IBOutlet NSView *referenceView;
 
+    IBOutlet NSView *rightView;
+
 }
 
 @property(nonatomic, strong) NSView *referenceView;

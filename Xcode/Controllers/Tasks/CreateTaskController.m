@@ -122,6 +122,7 @@
 #pragma mark Setters
 
 - (void) setSelectedJob: (Job *) selectedJob1 {
+    self.selectedTask.assignee = nil;
     selectedJob = selectedJob1;
     if (selectedJob) {
         [_queue addOperation: [[GetAssigneeProcess alloc] initWithJob: selectedJob]];
@@ -130,7 +131,6 @@
     id value = [jobController.selection valueForKeyPath: @"self"];
 
     Task *taskValue = [objectController.selection valueForKeyPath: @"self"];
-    NSLog(@"taskValue.assignee.title = %@", taskValue.assignee.title);
 }
 
 - (User *) selectedAssignee {

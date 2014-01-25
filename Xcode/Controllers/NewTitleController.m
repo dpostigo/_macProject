@@ -6,8 +6,11 @@
 #import <NSView-NewConstraints/NSView+NewConstraint.h>
 #import <NSView-DPAutolayout/NSView+SiblingConstraints.h>
 #import <BOAPI/Task.h>
+#import <BOAPI/User.h>
 #import "NewTitleController.h"
 #import "DDSplitView.h"
+#import "Model.h"
+#import "UserImageViewController.h"
 
 @implementation NewTitleController
 
@@ -15,13 +18,23 @@
 
 - (void) awakeFromNib {
     [super awakeFromNib];
-    [self viewDidLoad];
+    //    [self viewDidLoad];
 
     splitView.allowsMouseDown = YES;
     splitView.splitDividerColor = [NSColor blackColor];
     splitView.translatesAutoresizingMaskIntoConstraints = NO;
     self.middle.translatesAutoresizingMaskIntoConstraints = NO;
     self.right.translatesAutoresizingMaskIntoConstraints = NO;
+
+
+    //    UserImageViewController *controller = [[UserImageViewController alloc] initWithNibName: @"UserImageView" bundle: nil];
+    //    NSView *userView = controller.view;
+    //
+    //
+    //    userView.frame = rightView.frame;
+    //    [rightView.superview replaceSubview: rightView with: userView];
+    //    rightView = userView;
+
 }
 
 - (void) viewDidLoad {

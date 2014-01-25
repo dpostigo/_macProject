@@ -25,48 +25,6 @@
 @synthesize middle;
 @synthesize right;
 
-- (void) setLeft: (NSView *) newLeft {
-    if (left) {
-        left.translatesAutoresizingMaskIntoConstraints = NO;
-        newLeft.frame = left.frame;
-        [left.superview replaceSubview: left with: newLeft];
-        left = newLeft;
-        left.translatesAutoresizingMaskIntoConstraints = NO;
-
-    } else {
-        left = newLeft;
-    }
-}
-
-
-- (void) setMiddle: (NSView *) newView {
-    if (middle) {
-        middle.translatesAutoresizingMaskIntoConstraints = NO;
-        newView.frame = middle.frame;
-        [middle.superview replaceSubview: middle with: newView];
-        middle = newView;
-        middle.translatesAutoresizingMaskIntoConstraints = NO;
-
-    } else {
-        middle = newView;
-    }
-}
-
-
-- (void) setRight: (NSView *) newView {
-    if (right) {
-        right.translatesAutoresizingMaskIntoConstraints = NO;
-        newView.frame = right.frame;
-        [right.superview replaceSubview: right with: newView];
-        right = newView;
-        right.translatesAutoresizingMaskIntoConstraints = NO;
-
-    } else {
-        right = newView;
-    }
-}
-
-
 - (void) awakeFromNib {
     [super awakeFromNib];
 
@@ -127,6 +85,50 @@
 }
 
 
+#pragma mark Set views
+
+- (void) setLeft: (NSView *) newLeft {
+    if (left) {
+        left.translatesAutoresizingMaskIntoConstraints = NO;
+        newLeft.frame = left.frame;
+        [left.superview replaceSubview: left with: newLeft];
+        left = newLeft;
+        left.translatesAutoresizingMaskIntoConstraints = NO;
+
+    } else {
+        left = newLeft;
+    }
+}
+
+
+- (void) setMiddle: (NSView *) newView {
+    if (middle) {
+        middle.translatesAutoresizingMaskIntoConstraints = NO;
+        newView.frame = middle.frame;
+        [middle.superview replaceSubview: middle with: newView];
+        middle = newView;
+        middle.translatesAutoresizingMaskIntoConstraints = NO;
+
+    } else {
+        middle = newView;
+    }
+}
+
+
+- (void) setRight: (NSView *) newView {
+    if (right) {
+        right.translatesAutoresizingMaskIntoConstraints = NO;
+        newView.frame = right.frame;
+        [right.superview replaceSubview: right with: newView];
+        right = newView;
+        right.translatesAutoresizingMaskIntoConstraints = NO;
+
+    } else {
+        right = newView;
+    }
+}
+
+
 - (void) setMainContent: (NSView *) mainContent1 {
 
     NSLog(@"right.frame before = %@", NSStringFromRect(right.frame));
@@ -166,9 +168,6 @@
     topRule.shadowOpacity = 0.8;
 
 }
-
-
-
 
 
 - (IBAction) createTaskClicked: (id) sender {

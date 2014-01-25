@@ -23,6 +23,7 @@
 
 
 - (NSViewController *) titleController {
+    
     return [self.masterNib controllerForClass: @"TitleController"];
 }
 
