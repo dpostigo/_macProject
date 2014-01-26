@@ -144,7 +144,7 @@
 
     [apiModel subscribeDelegate: self];
     [_model subscribeDelegate: self];
-//    [_model.masterNib load];
+    //    [_model.masterNib load];
 
     BOLoginWindow *loginWindow = [_model.masterNib objectWithIdentifier: @"LoginWindow"];
     [loginWindow makeKeyAndOrderFront: nil];

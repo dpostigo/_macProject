@@ -185,7 +185,6 @@
 		330F00D1186F0F4500E737F8 /* NSColor+NewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F00C8186F0F4500E737F8 /* NSColor+NewUtils.m */; };
 		330F00D2186F0F4500E737F8 /* NSColor+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F00CA186F0F4500E737F8 /* NSColor+Utils.m */; };
 		330F00D3186F0F4500E737F8 /* CALayer+ConstraintUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F00CD186F0F4500E737F8 /* CALayer+ConstraintUtils.m */; };
-		335003DD18859F7100800FC1 /* TaskDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 335003DC18859F7100800FC1 /* TaskDetailController.m */; };
 		335003E21885E21000800FC1 /* AutoLayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 335003DF1885E21000800FC1 /* AutoLayoutHelpers.m */; };
 		335003E31885E21000800FC1 /* NSView+Autolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 335003E11885E21000800FC1 /* NSView+Autolayout.m */; };
 		3353EAE218707B50001798B1 /* Workspace.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3353EAE118707B50001798B1 /* Workspace.xib */; };
@@ -213,7 +212,6 @@
 		335FE2861895AF710000C458 /* NewTaskDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335FE27A1895AF710000C458 /* NewTaskDetailController.xib */; };
 		335FE2871895AF710000C458 /* NewTitleController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335FE27B1895AF710000C458 /* NewTitleController.xib */; };
 		335FE2881895AF710000C458 /* SidebarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335FE27C1895AF710000C458 /* SidebarController.xib */; };
-		335FE2891895AF710000C458 /* TaskDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335FE27D1895AF710000C458 /* TaskDetailController.xib */; };
 		335FE28A1895AF710000C458 /* TasksController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335FE27E1895AF710000C458 /* TasksController.xib */; };
 		335FE28B1895AF710000C458 /* NewTasksWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335FE2801895AF710000C458 /* NewTasksWindow.xib */; };
 		338136F41891719D0011631F /* BOBackgroundTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 338136F31891719D0011631F /* BOBackgroundTextField.m */; };
@@ -711,8 +709,6 @@
 		330F00CA186F0F4500E737F8 /* NSColor+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+Utils.m"; sourceTree = "<group>"; };
 		330F00CC186F0F4500E737F8 /* CALayer+ConstraintUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+ConstraintUtils.h"; sourceTree = "<group>"; };
 		330F00CD186F0F4500E737F8 /* CALayer+ConstraintUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+ConstraintUtils.m"; sourceTree = "<group>"; };
-		335003DB18859F7100800FC1 /* TaskDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailController.h; sourceTree = "<group>"; };
-		335003DC18859F7100800FC1 /* TaskDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailController.m; sourceTree = "<group>"; };
 		335003DE1885E21000800FC1 /* AutoLayoutHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutoLayoutHelpers.h; path = AutolayoutHelpers/AutoLayoutHelpers.h; sourceTree = "<group>"; };
 		335003DF1885E21000800FC1 /* AutoLayoutHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutoLayoutHelpers.m; path = AutolayoutHelpers/AutoLayoutHelpers.m; sourceTree = "<group>"; };
 		335003E01885E21000800FC1 /* NSView+Autolayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSView+Autolayout.h"; path = "AutolayoutHelpers/NSView+Autolayout.h"; sourceTree = "<group>"; };
@@ -743,7 +739,6 @@
 		335FE27A1895AF710000C458 /* NewTaskDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTaskDetailController.xib; sourceTree = "<group>"; };
 		335FE27B1895AF710000C458 /* NewTitleController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTitleController.xib; sourceTree = "<group>"; };
 		335FE27C1895AF710000C458 /* SidebarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SidebarController.xib; sourceTree = "<group>"; };
-		335FE27D1895AF710000C458 /* TaskDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskDetailController.xib; sourceTree = "<group>"; };
 		335FE27E1895AF710000C458 /* TasksController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TasksController.xib; sourceTree = "<group>"; };
 		335FE2801895AF710000C458 /* NewTasksWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTasksWindow.xib; sourceTree = "<group>"; };
 		338136F21891719D0011631F /* BOBackgroundTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOBackgroundTextField.h; sourceTree = "<group>"; };
@@ -2108,8 +2103,6 @@
 		335003DA18859F5A00800FC1 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
-				335003DB18859F7100800FC1 /* TaskDetailController.h */,
-				335003DC18859F7100800FC1 /* TaskDetailController.m */,
 				F29B89FCCD841703F56ACBB8 /* TaskEditController.m */,
 				F29B84605EE3FC2353324A45 /* TaskEditController.h */,
 				F29B8CEC5E0609E453B532F3 /* CreateTaskController.m */,
@@ -2236,7 +2229,6 @@
 				335FE27A1895AF710000C458 /* NewTaskDetailController.xib */,
 				335FE27B1895AF710000C458 /* NewTitleController.xib */,
 				335FE27C1895AF710000C458 /* SidebarController.xib */,
-				335FE27D1895AF710000C458 /* TaskDetailController.xib */,
 				335FE27E1895AF710000C458 /* TasksController.xib */,
 				335FE27F1895AF710000C458 /* Windows */,
 			);
@@ -2565,7 +2557,6 @@
 				335FE28B1895AF710000C458 /* NewTasksWindow.xib in Resources */,
 				335FE2881895AF710000C458 /* SidebarController.xib in Resources */,
 				3353EB1118707F73001798B1 /* BasicTableViewController.xib in Resources */,
-				335FE2891895AF710000C458 /* TaskDetailController.xib in Resources */,
 				3353EB1918707F73001798B1 /* SidebarViewController.xib in Resources */,
 				03EC34D0183155880007FBF8 /* .gitignore in Resources */,
 				3353EB1618707F73001798B1 /* LoginOutlineViewController.xib in Resources */,
@@ -2655,7 +2646,6 @@
 				03D8CE1E1768ACA6000CF88A /* BasicCustomRowView.m in Sources */,
 				038FFB65181415E10039703F /* NSCell+PaddingUtils.m in Sources */,
 				03DFB36B180EBB5F000C09C3 /* SNRHUDButtonCell.m in Sources */,
-				335003DD18859F7100800FC1 /* TaskDetailController.m in Sources */,
 				03D8CE1F1768ACA6000CF88A /* BasicDatePickerCell.m in Sources */,
 				33A4DFCC187F0389003E6FD0 /* DPSplitView.m in Sources */,
 				03D8CE201768ACA6000CF88A /* BasicTableRowView.m in Sources */,

@@ -7,9 +7,7 @@
 #import "Model+BOControllers.h"
 #import "CreateTaskController.h"
 #import "FooterController.h"
-#import "TaskDetailController.h"
 #import "CreateLogController.h"
-#import "NewTaskDetailController.h"
 
 @implementation Model (BOControllers)
 
