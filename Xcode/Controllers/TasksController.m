@@ -28,9 +28,6 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
 
-    NSLog(@"[_model.tasks count] = %lu", [_model.tasks count]);
-
-    NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 
@@ -47,6 +44,8 @@
 
 
 - (void) prepareDatasource {
+
+    NSLog(@"%s, %lu tasks ", __PRETTY_FUNCTION__, _model.tasks.count);
     [outline clearSections];
 
     NSArray *jobs = [_apiModel jobsForTaskArray: _model.tasksForSelectedFocusType];
@@ -158,6 +157,7 @@
 #pragma mark BOAPIDelegate
 
 - (void) tasksDidUpdate {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     [outline reloadData];
 }
 

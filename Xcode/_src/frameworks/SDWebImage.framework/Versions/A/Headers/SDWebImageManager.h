@@ -78,7 +78,7 @@ typedef void(^SDWebImageCompletedWithFinishedBlock)(UIImage *image, NSError *err
 
 /**
  * The SDWebImageManager is the class behind the UIImageView+WebCache category and likes.
- * It ties the asynchronous downloader (SDWebImageDownloader) with the image cache store (SDImageCache).
+ * It ties the asynchronous downloader (SDWebImageDownloader) with the image cache save (SDImageCache).
  * You can use this class directly to benefit from web image downloading with caching in another context than
  * a UIView.
  *

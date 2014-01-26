@@ -46,14 +46,14 @@ typedef enum SDImageCacheType SDImageCacheType;
 /**
  * Init a new cache store with a specific namespace
  *
- * @param ns The namespace to use for this cache store
+ * @param ns The namespace to use for this cache save
  */
 - (id) initWithNamespace: (NSString *) ns;
 
 /**
  * Store an image into memory and disk cache at the given key.
  *
- * @param image The image to store
+ * @param image The image to save
  * @param key The unique image cache key, usually it's image absolute URL
  */
 - (void) storeImage: (UIImage *) image forKey: (NSString *) key;
@@ -61,7 +61,7 @@ typedef enum SDImageCacheType SDImageCacheType;
 /**
  * Store an image into memory and optionally disk cache at the given key.
  *
- * @param image The image to store
+ * @param image The image to save
  * @param key The unique image cache key, usually it's image absolute URL
  * @param toDisk Store the image to disk cache if YES
  */
@@ -70,7 +70,7 @@ typedef enum SDImageCacheType SDImageCacheType;
 /**
  * Store an image into memory and optionally disk cache at the given key.
  *
- * @param image The image to store
+ * @param image The image to save
  * @param data The image data as returned by the server, this representation will be used for disk storage
  *             instead of converting the given image object into a storable/compressed image format in order
  *             to save quality and CPU
@@ -82,21 +82,21 @@ typedef enum SDImageCacheType SDImageCacheType;
 /**
  * Query the disk cache asynchronousely.
  *
- * @param key The unique key used to store the wanted image
+ * @param key The unique key used to save the wanted image
  */
 - (void) queryDiskCacheForKey: (NSString *) key done: (void (^)(UIImage *image, SDImageCacheType cacheType)) doneBlock;
 
 /**
  * Query the memory cache.
  *
- * @param key The unique key used to store the wanted image
+ * @param key The unique key used to save the wanted image
  */
 - (UIImage *) imageFromMemoryCacheForKey: (NSString *) key;
 
 /**
  * Query the disk cache synchronousely.
  *
- * @param key The unique key used to store the wanted image
+ * @param key The unique key used to save the wanted image
  */
 - (UIImage *) imageFromDiskCacheForKey: (NSString *) key;
 

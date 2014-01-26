@@ -101,7 +101,7 @@ yajl_gen yajl_gen_alloc(const yajl_gen_config *config,
 /** allocate a generator handle that will print to the specified
  *  callback rather than storing the results in an internal buffer.
  *  \param callback   a pointer to a printer function.  May be NULL
- *                    in which case, the results will be store in an
+ *                    in which case, the results will be save in an
  *                    internal buffer.
  *  \param config     a pointer to a structure containing parameters
  *                    which configure the behavior of the json

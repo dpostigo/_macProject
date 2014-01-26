@@ -81,7 +81,7 @@ static NSMutableArray *persistentConnectionsPool = nil;
 // Mediates access to the persistent connections pool
 static NSRecursiveLock *connectionsLock = nil;
 
-// Each request gets a new id, we store this rather than a ref to the request itself in the connectionInfo dictionary.
+// Each request gets a new id, we save this rather than a ref to the request itself in the connectionInfo dictionary.
 // We do this so we don't have to keep the request around while we wait for the connection to expire
 static unsigned int nextRequestID = 0;
 
@@ -953,7 +953,7 @@ static NSOperationQueue *sharedQueue = nil;
 
         } else {
 
-            // See if we have any cached credentials we can use in the session store
+            // See if we have any cached credentials we can use in the session save
             if ([self useSessionPersistence]) {
                 credentials = [self findSessionAuthenticationCredentials];
 
@@ -972,7 +972,7 @@ static NSOperationQueue *sharedQueue = nil;
                         } else {
                             [[self class] removeAuthenticationCredentialsFromSessionStore: [credentials objectForKey: @"Credentials"]];
 #if DEBUG_HTTP_AUTHENTICATION
-							ASI_DEBUG_LOG(@"[AUTH] Failed to apply cached credentials to request %@. These will be removed from the session store, and this request will wait for an authentication challenge",self);
+							ASI_DEBUG_LOG(@"[AUTH] Failed to apply cached credentials to request %@. These will be removed from the session save, and this request will wait for an authentication challenge",self);
 							#endif
                         }
 
@@ -1002,7 +1002,7 @@ static NSOperationQueue *sharedQueue = nil;
 }
 
 - (void) applyCookieHeader {
-    // Add cookies from the persistent (mac os global) store
+    // Add cookies from the persistent (mac os global) save
     if ([self useCookiePersistence]) {
         NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL: [[self url] absoluteURL]];
         if (cookies) {
@@ -1251,7 +1251,7 @@ static NSOperationQueue *sharedQueue = nil;
         [self setShouldAttemptPersistentConnection: NO];
     }
 
-    // Will store the old stream that was using this connection (if there was one) so we can clean it up once we've opened our own stream
+    // Will save the old stream that was using this connection (if there was one) so we can clean it up once we've opened our own stream
     NSInputStream *oldStream = nil;
 
     // Use a persistent connection if possible
@@ -1553,7 +1553,7 @@ static NSOperationQueue *sharedQueue = nil;
         }
     }
 
-    // Clean up any temporary file used to store request body for streaming
+    // Clean up any temporary file used to save request body for streaming
     if (![self authenticationNeeded] && ![self willRetryRequest] && [self didCreateTemporaryPostDataFile]) {
         [self removeTemporaryUploadFile];
         [self removeTemporaryCompressedUploadFile];
@@ -2120,7 +2120,7 @@ static NSOperationQueue *sharedQueue = nil;
         if (!requestAuthentication && [[self authenticationScheme] isEqualToString: (NSString *) kCFHTTPAuthenticationSchemeBasic] && [self username] && [self password] && [self useSessionPersistence]) {
 
 #if DEBUG_HTTP_AUTHENTICATION
-			ASI_DEBUG_LOG(@"[AUTH] Request %@ passed BASIC authentication, and will save credentials in the session store for future use",self);
+			ASI_DEBUG_LOG(@"[AUTH] Request %@ passed BASIC authentication, and will save credentials in the session save for future use",self);
 			#endif
 
             NSMutableDictionary *newCredentials = [NSMutableDictionary dictionaryWithCapacity: 2];
@@ -2145,7 +2145,7 @@ static NSOperationQueue *sharedQueue = nil;
 
     if ([self useCookiePersistence]) {
 
-        // Store cookies in global persistent store
+        // Store cookies in global persistent save
         [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookies: newCookies forURL: [self url] mainDocumentURL: nil];
 
         // We also keep any cookies in the sessionCookies array, so that we have a reference to them if we need to remove them later
@@ -2280,7 +2280,7 @@ static NSOperationQueue *sharedQueue = nil;
     [self setNeedsRedirect: YES];
 
     // Clear the request cookies
-    // This means manually added cookies will not be added to the redirect request - only those stored in the global persistent store
+    // This means manually added cookies will not be added to the redirect request - only those stored in the global persistent save
     // But, this is probably the safest option - we might be redirecting to a different domain
     [self setRequestCookies: [NSMutableArray array]];
 
@@ -2713,7 +2713,7 @@ static NSOperationQueue *sharedQueue = nil;
             // Prevent more than one request from asking for credentials at once
             [delegateAuthenticationLock lock];
 
-            // We know the credentials we just presented are bad, we should remove them from the session store too
+            // We know the credentials we just presented are bad, we should remove them from the session save too
             [[self class] removeProxyAuthenticationCredentialsFromSessionStore: proxyCredentials];
             [self setProxyCredentials: nil];
 
@@ -2903,13 +2903,13 @@ static NSOperationQueue *sharedQueue = nil;
         if (err.domain == kCFStreamErrorDomainHTTP && (err.error == kCFStreamErrorHTTPAuthenticationBadUserName || err.error == kCFStreamErrorHTTPAuthenticationBadPassword)) {
 
 #if DEBUG_HTTP_AUTHENTICATION
-			ASI_DEBUG_LOG(@"[AUTH] Request %@ had bad credentials, will remove them from the session store if they are cached",self);
+			ASI_DEBUG_LOG(@"[AUTH] Request %@ had bad credentials, will remove them from the session save if they are cached",self);
 			#endif
 
             // Prevent more than one request from asking for credentials at once
             [delegateAuthenticationLock lock];
 
-            // We know the credentials we just presented are bad, we should remove them from the session store too
+            // We know the credentials we just presented are bad, we should remove them from the session save too
             [[self class] removeAuthenticationCredentialsFromSessionStore: requestCredentials];
             [self setRequestCredentials: nil];
 
@@ -3285,7 +3285,7 @@ static NSOperationQueue *sharedQueue = nil;
             }
 
 
-            //Otherwise, let's add the data to our in-memory store
+            //Otherwise, let's add the data to our in-memory save
         } else {
             if ([self isResponseCompressed] && ![self shouldWaitToInflateCompressedResponses]) {
                 [rawResponseData appendData: inflatedData];
@@ -4194,7 +4194,7 @@ static NSOperationQueue *sharedQueue = nil;
 
 + (void) setSessionCookies: (NSMutableArray *) newSessionCookies {
     [sessionCookiesLock lock];
-    // Remove existing cookies from the persistent store
+    // Remove existing cookies from the persistent save
     for (NSHTTPCookie *cookie in sessionCookies) {
         [[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie: cookie];
     }

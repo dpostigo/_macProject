@@ -3,14 +3,10 @@
 // Copyright (c) 2014 Elastic Creative. All rights reserved.
 //
 
-#import <QuartzCore/QuartzCore.h>
 #import <BOAPI/Task.h>
-#import <NSView-DPAutolayout/NSView+SiblingConstraints.h>
 #import "TaskDetailController.h"
-#import "DPBackgroundTextField.h"
 #import "Model.h"
 #import "NSView+NewConstraint.h"
-#import "NSLayoutConstraint+DPUtils.h"
 #import "NSView+ConstraintGetters.h"
 
 @implementation TaskDetailController
@@ -24,7 +20,7 @@
     //    NSLog(@"widthConstraint.secondItem = %@", widthConstraint.secondItem);
     //    NSLog(@"widthConstraint.firstAttributeAsString = %@", widthConstraint.firstAttributeAsString);
     //    NSLog(@"widthConstraint.secondAttributeAsString = %@", widthConstraint.secondAttributeAsString);
-    NSLog(@"widthConstraint = %@", widthConstraint);
+   // NSLog(@"widthConstraint = %@", widthConstraint);
     if (widthConstraint) {
         [titleField removeConstraint: widthConstraint];
         [titleField.superview superConstrainWidth];

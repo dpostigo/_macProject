@@ -11,7 +11,14 @@
 
 - (void) windowDidLoad {
     [super windowDidLoad];
+    NSLog(@"%s", __PRETTY_FUNCTION__);
 
 }
+
+- (IBAction) showWindow: (id) sender {
+    [super showWindow: sender];
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
 
 @end

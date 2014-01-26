@@ -93,7 +93,7 @@
 
 /*
  DDG extensions include:
- Each reachability object now has a copy of the key used to store it in a
+ Each reachability object now has a copy of the key used to save it in a
  dictionary. This allows each observer to quickly determine if the event is
  important to them.
  

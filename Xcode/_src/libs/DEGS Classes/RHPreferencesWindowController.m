@@ -105,7 +105,7 @@ static const CGFloat RHPreferencesWindowControllerResizeAnimationDurationPer100P
         //default settings
         _windowTitleShouldAutomaticlyUpdateToReflectSelectedViewController = YES;
 
-        //store the controllers
+        //save the controllers
         [self setViewControllers: controllers];
         _unloadedWindowTitle = [title copy];
 

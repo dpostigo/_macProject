@@ -12,7 +12,7 @@
 @interface ASIDownloadCache : NSObject <ASICacheDelegate> {
 
     // The default cache policy for this cache
-    // Requests that store data in the cache will use this cache policy if their cache policy is set to ASIUseDefaultCachePolicy
+    // Requests that save data in the cache will use this cache policy if their cache policy is set to ASIUseDefaultCachePolicy
     // Defaults to ASIAskServerIfModifiedWhenStaleCachePolicy
     ASICachePolicy defaultCachePolicy;
 
@@ -23,7 +23,7 @@
     // Mediates access to the cache
     NSRecursiveLock *accessLock;
 
-    // When YES, the cache will look for cache-control / pragma: no-cache headers, and won't reuse store responses if it finds them
+    // When YES, the cache will look for cache-control / pragma: no-cache headers, and won't reuse save responses if it finds them
     BOOL shouldRespectCacheControlHeaders;
 }
 

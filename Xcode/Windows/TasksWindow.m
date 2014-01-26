@@ -28,7 +28,7 @@
 
 
 - (void) userDidLogin: (User *) user {
-    [_queue addOperation: [[GetTasksOperation alloc] init]];
+    //[_queue addOperation: [[GetTasksOperation alloc] init]];
 
     self.titleBarView = self.titleController.view;
     [[NSUserDefaults standardUserDefaults] setBool: YES forKey: @"NSConstraintBasedLayoutVisualizeMutuallyExclusiveConstraints"];

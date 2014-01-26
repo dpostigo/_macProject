@@ -141,7 +141,7 @@ static NSArray *fileExtensionsToHandleAsHTML = nil;
 
     // Create a special 'X-ASIHTTPRequest-Expires' header
     // This is what we use for deciding if cached data is current, rather than parsing the expires / max-age headers individually each time
-    // We store this as a timestamp to make reading it easier as NSDateFormatter is quite expensive
+    // We save this as a timestamp to make reading it easier as NSDateFormatter is quite expensive
 
     NSDate *expires = [self expiryDateForRequest: request maxAge: maxAge];
     if (expires) {
@@ -219,13 +219,13 @@ static NSArray *fileExtensionsToHandleAsHTML = nil;
 
     NSFileManager *fileManager = [[[NSFileManager alloc] init] autorelease];
 
-    // Look in the session store
+    // Look in the session save
     NSString *dataPath = [[[self storagePath] stringByAppendingPathComponent: sessionCacheFolder] stringByAppendingPathComponent: file];
     if ([fileManager fileExistsAtPath: dataPath]) {
         [[self accessLock] unlock];
         return dataPath;
     }
-    // Look in the permanent store
+    // Look in the permanent save
     dataPath = [[[self storagePath] stringByAppendingPathComponent: permanentCacheFolder] stringByAppendingPathComponent: file];
     if ([fileManager fileExistsAtPath: dataPath]) {
         [[self accessLock] unlock];
@@ -404,7 +404,7 @@ static NSArray *fileExtensionsToHandleAsHTML = nil;
 + (BOOL) serverAllowsResponseCachingForRequest: (ASIHTTPRequest *) request {
     NSString *cacheControl = [[[request responseHeaders] objectForKey: @"Cache-Control"] lowercaseString];
     if (cacheControl) {
-        if ([cacheControl isEqualToString: @"no-cache"] || [cacheControl isEqualToString: @"no-store"]) {
+        if ([cacheControl isEqualToString: @"no-cache"] || [cacheControl isEqualToString: @"no-save"]) {
             return NO;
         }
     }

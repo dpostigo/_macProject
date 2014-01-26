@@ -179,15 +179,12 @@
 		03EC34F118315CA30007FBF8 /* BasicGradient+CartsUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EC34E918315CA30007FBF8 /* BasicGradient+CartsUtils.m */; };
 		03EC34F218315CA30007FBF8 /* NSColor+CartsUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EC34EB18315CA30007FBF8 /* NSColor+CartsUtils.m */; };
 		03EC34F318315CA30007FBF8 /* NSView+Masonry.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EC34EE18315CA30007FBF8 /* NSView+Masonry.m */; };
-		330E45BB1889772200E6A56C /* TaskCreationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 330E45BA1889772200E6A56C /* TaskCreationView.xib */; };
 		330F00CE186F0F4500E737F8 /* NSColor+CGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F00C2186F0F4500E737F8 /* NSColor+CGColor.m */; };
 		330F00CF186F0F4500E737F8 /* NSColor+DPColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F00C4186F0F4500E737F8 /* NSColor+DPColors.m */; };
 		330F00D0186F0F4500E737F8 /* NSColor+BlendingUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F00C6186F0F4500E737F8 /* NSColor+BlendingUtils.m */; };
 		330F00D1186F0F4500E737F8 /* NSColor+NewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F00C8186F0F4500E737F8 /* NSColor+NewUtils.m */; };
 		330F00D2186F0F4500E737F8 /* NSColor+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F00CA186F0F4500E737F8 /* NSColor+Utils.m */; };
 		330F00D3186F0F4500E737F8 /* CALayer+ConstraintUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F00CD186F0F4500E737F8 /* CALayer+ConstraintUtils.m */; };
-		3334D6EE188F096B004D82F1 /* SidebarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3334D6ED188F096B004D82F1 /* SidebarController.xib */; };
-		3334D6F0188F267A004D82F1 /* FooterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3334D6EF188F267A004D82F1 /* FooterController.xib */; };
 		335003DD18859F7100800FC1 /* TaskDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 335003DC18859F7100800FC1 /* TaskDetailController.m */; };
 		335003E21885E21000800FC1 /* AutoLayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 335003DF1885E21000800FC1 /* AutoLayoutHelpers.m */; };
 		335003E31885E21000800FC1 /* NSView+Autolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 335003E11885E21000800FC1 /* NSView+Autolayout.m */; };
@@ -208,14 +205,18 @@
 		3353EB1A18707F73001798B1 /* TitleBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3353EB0E18707F73001798B1 /* TitleBarViewController.xib */; };
 		33557CB91880AC3600986377 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33557CB81880AC3600986377 /* Images.xcassets */; };
 		33557CBD1880B9EC00986377 /* SidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33557CBC1880B9EC00986377 /* SidebarController.m */; };
-		33786B0818909FE10040A87C /* TaskDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33786B0718909FE10040A87C /* TaskDetailView.xib */; };
-		33786B0A1890B6450040A87C /* CreateLogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33786B091890B6450040A87C /* CreateLogView.xib */; };
-		33786B0C1890B8790040A87C /* NewTaskDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33786B0B1890B8790040A87C /* NewTaskDetailView.xib */; };
-		338109D71893041800CDB776 /* TextSuggestionPrototype.xib in Resources */ = {isa = PBXBuildFile; fileRef = 338109D61893041800CDB776 /* TextSuggestionPrototype.xib */; };
-		338109D918931E7000CDB776 /* NewTitleController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 338109D818931E7000CDB776 /* NewTitleController.xib */; };
+		335FE2811895AF710000C458 /* TextSuggestionPrototype.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335FE2751895AF710000C458 /* TextSuggestionPrototype.xib */; };
+		335FE2821895AF710000C458 /* UserImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335FE2761895AF710000C458 /* UserImageView.xib */; };
+		335FE2831895AF710000C458 /* CreateLogController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335FE2771895AF710000C458 /* CreateLogController.xib */; };
+		335FE2841895AF710000C458 /* CreateTaskController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335FE2781895AF710000C458 /* CreateTaskController.xib */; };
+		335FE2851895AF710000C458 /* FooterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335FE2791895AF710000C458 /* FooterController.xib */; };
+		335FE2861895AF710000C458 /* NewTaskDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335FE27A1895AF710000C458 /* NewTaskDetailController.xib */; };
+		335FE2871895AF710000C458 /* NewTitleController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335FE27B1895AF710000C458 /* NewTitleController.xib */; };
+		335FE2881895AF710000C458 /* SidebarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335FE27C1895AF710000C458 /* SidebarController.xib */; };
+		335FE2891895AF710000C458 /* TaskDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335FE27D1895AF710000C458 /* TaskDetailController.xib */; };
+		335FE28A1895AF710000C458 /* TasksController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335FE27E1895AF710000C458 /* TasksController.xib */; };
+		335FE28B1895AF710000C458 /* NewTasksWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335FE2801895AF710000C458 /* NewTasksWindow.xib */; };
 		338136F41891719D0011631F /* BOBackgroundTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 338136F31891719D0011631F /* BOBackgroundTextField.m */; };
-		338136F61891BD870011631F /* NewTasksWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 338136F51891BD870011631F /* NewTasksWindow.xib */; };
-		338136F81891C6AA0011631F /* TasksController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 338136F71891C6AA0011631F /* TasksController.xib */; };
 		339F013F18921F0600E6BC66 /* CustomMenusAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 339F013018921F0600E6BC66 /* CustomMenusAppDelegate.m */; };
 		339F014018921F0600E6BC66 /* HighlightingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 339F013218921F0600E6BC66 /* HighlightingView.m */; };
 		339F014118921F0600E6BC66 /* ImagePickerMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 339F013418921F0600E6BC66 /* ImagePickerMenuItemView.m */; };
@@ -251,7 +252,6 @@
 		33A4E029187F059F003E6FD0 /* DPSplitViewHorizontalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A4E022187F059F003E6FD0 /* DPSplitViewHorizontalController.m */; };
 		33A4E02A187F059F003E6FD0 /* DPSplitViewLayoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A4E024187F059F003E6FD0 /* DPSplitViewLayoutController.m */; };
 		33A4E02B187F059F003E6FD0 /* DPSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A4E026187F059F003E6FD0 /* DPSplitViewController.m */; };
-		33E53C0F18932E95004A0ED6 /* UserImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33E53C0E18932E95004A0ED6 /* UserImageView.xib */; };
 		7CA44006A5462FECE8F3132B /* NSMutableArray+DataSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA44ADE7294653F3E1B25B3 /* NSMutableArray+DataSection.m */; };
 		7CA44011B819AFBCB06F5AA7 /* BasicShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA443EBA840486AFED333F9 /* BasicShadow.m */; };
 		7CA440477BAE5F8BC4B1938A /* NSView+LayoutConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA449A4A06A4EB76C7B0A36 /* NSView+LayoutConstraints.m */; };
@@ -699,7 +699,6 @@
 		03EC34EB18315CA30007FBF8 /* NSColor+CartsUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+CartsUtils.m"; sourceTree = "<group>"; };
 		03EC34ED18315CA30007FBF8 /* NSView+Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+Masonry.h"; sourceTree = "<group>"; };
 		03EC34EE18315CA30007FBF8 /* NSView+Masonry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+Masonry.m"; sourceTree = "<group>"; };
-		330E45BA1889772200E6A56C /* TaskCreationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskCreationView.xib; path = xibs/TaskCreationView.xib; sourceTree = SOURCE_ROOT; };
 		330F00C1186F0F4500E737F8 /* NSColor+CGColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+CGColor.h"; sourceTree = "<group>"; };
 		330F00C2186F0F4500E737F8 /* NSColor+CGColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+CGColor.m"; sourceTree = "<group>"; };
 		330F00C3186F0F4500E737F8 /* NSColor+DPColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+DPColors.h"; sourceTree = "<group>"; };
@@ -712,8 +711,6 @@
 		330F00CA186F0F4500E737F8 /* NSColor+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+Utils.m"; sourceTree = "<group>"; };
 		330F00CC186F0F4500E737F8 /* CALayer+ConstraintUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+ConstraintUtils.h"; sourceTree = "<group>"; };
 		330F00CD186F0F4500E737F8 /* CALayer+ConstraintUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+ConstraintUtils.m"; sourceTree = "<group>"; };
-		3334D6ED188F096B004D82F1 /* SidebarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SidebarController.xib; sourceTree = "<group>"; };
-		3334D6EF188F267A004D82F1 /* FooterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FooterController.xib; path = xibs/FooterController.xib; sourceTree = SOURCE_ROOT; };
 		335003DB18859F7100800FC1 /* TaskDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailController.h; sourceTree = "<group>"; };
 		335003DC18859F7100800FC1 /* TaskDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailController.m; sourceTree = "<group>"; };
 		335003DE1885E21000800FC1 /* AutoLayoutHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutoLayoutHelpers.h; path = AutolayoutHelpers/AutoLayoutHelpers.h; sourceTree = "<group>"; };
@@ -738,15 +735,19 @@
 		33557CB81880AC3600986377 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		33557CBB1880B9EC00986377 /* SidebarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarController.h; sourceTree = "<group>"; };
 		33557CBC1880B9EC00986377 /* SidebarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarController.m; sourceTree = "<group>"; };
-		33786B0718909FE10040A87C /* TaskDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskDetailView.xib; path = xibs/TaskDetailView.xib; sourceTree = SOURCE_ROOT; };
-		33786B091890B6450040A87C /* CreateLogView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateLogView.xib; path = xibs/CreateLogView.xib; sourceTree = SOURCE_ROOT; };
-		33786B0B1890B8790040A87C /* NewTaskDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewTaskDetailView.xib; path = ../Carts/NewTaskDetailView.xib; sourceTree = "<group>"; };
-		338109D61893041800CDB776 /* TextSuggestionPrototype.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextSuggestionPrototype.xib; sourceTree = "<group>"; };
-		338109D818931E7000CDB776 /* NewTitleController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewTitleController.xib; path = Interface/NewTitleController.xib; sourceTree = SOURCE_ROOT; };
+		335FE2751895AF710000C458 /* TextSuggestionPrototype.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextSuggestionPrototype.xib; sourceTree = "<group>"; };
+		335FE2761895AF710000C458 /* UserImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserImageView.xib; sourceTree = "<group>"; };
+		335FE2771895AF710000C458 /* CreateLogController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateLogController.xib; sourceTree = "<group>"; };
+		335FE2781895AF710000C458 /* CreateTaskController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateTaskController.xib; sourceTree = "<group>"; };
+		335FE2791895AF710000C458 /* FooterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FooterController.xib; sourceTree = "<group>"; };
+		335FE27A1895AF710000C458 /* NewTaskDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTaskDetailController.xib; sourceTree = "<group>"; };
+		335FE27B1895AF710000C458 /* NewTitleController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTitleController.xib; sourceTree = "<group>"; };
+		335FE27C1895AF710000C458 /* SidebarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SidebarController.xib; sourceTree = "<group>"; };
+		335FE27D1895AF710000C458 /* TaskDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskDetailController.xib; sourceTree = "<group>"; };
+		335FE27E1895AF710000C458 /* TasksController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TasksController.xib; sourceTree = "<group>"; };
+		335FE2801895AF710000C458 /* NewTasksWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTasksWindow.xib; sourceTree = "<group>"; };
 		338136F21891719D0011631F /* BOBackgroundTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOBackgroundTextField.h; sourceTree = "<group>"; };
 		338136F31891719D0011631F /* BOBackgroundTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOBackgroundTextField.m; sourceTree = "<group>"; };
-		338136F51891BD870011631F /* NewTasksWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewTasksWindow.xib; path = ../Carts/NewTasksWindow.xib; sourceTree = "<group>"; };
-		338136F71891C6AA0011631F /* TasksController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TasksController.xib; sourceTree = "<group>"; };
 		339F012F18921F0600E6BC66 /* CustomMenusAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMenusAppDelegate.h; sourceTree = "<group>"; };
 		339F013018921F0600E6BC66 /* CustomMenusAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMenusAppDelegate.m; sourceTree = "<group>"; };
 		339F013118921F0600E6BC66 /* HighlightingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighlightingView.h; sourceTree = "<group>"; };
@@ -816,7 +817,6 @@
 		33A4E024187F059F003E6FD0 /* DPSplitViewLayoutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPSplitViewLayoutController.m; sourceTree = "<group>"; };
 		33A4E025187F059F003E6FD0 /* DPSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPSplitViewController.h; sourceTree = "<group>"; };
 		33A4E026187F059F003E6FD0 /* DPSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPSplitViewController.m; sourceTree = "<group>"; };
-		33E53C0E18932E95004A0ED6 /* UserImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserImageView.xib; sourceTree = "<group>"; };
 		3AB7701A94844C4C916716D2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA44018205CD3A1DFFBE403 /* BasicCustomWindowFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicCustomWindowFrame.m; sourceTree = "<group>"; };
 		7CA44071D027056A0741CC26 /* OutlineSection+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "OutlineSection+Utils.h"; path = "data/OutlineSection+Utils.h"; sourceTree = "<group>"; };
@@ -1211,7 +1211,7 @@
 		03D8CB1A1768AA17000CF88A = {
 			isa = PBXGroup;
 			children = (
-				338109D01893038400CDB776 /* Interface */,
+				335FE2721895AF710000C458 /* Interface */,
 				338109CF1892B30800CDB776 /* DPSuggestibleTextField */,
 				339F012E18921F0600E6BC66 /* CustomMenus */,
 				338136F01891719D0011631F /* Controls */,
@@ -1277,15 +1277,9 @@
 		03D8CB2C1768AA17000CF88A /* Carts */ = {
 			isa = PBXGroup;
 			children = (
-				33786B091890B6450040A87C /* CreateLogView.xib */,
-				3334D6EF188F267A004D82F1 /* FooterController.xib */,
 				33557CB81880AC3600986377 /* Images.xcassets */,
 				03386EFC176D2AF700E1F37A /* MainMenu.xib */,
-				3334D6ED188F096B004D82F1 /* SidebarController.xib */,
 				03D8CB2D1768AA17000CF88A /* Supporting Files */,
-				330E45BA1889772200E6A56C /* TaskCreationView.xib */,
-				33786B0718909FE10040A87C /* TaskDetailView.xib */,
-				338136F71891C6AA0011631F /* TasksController.xib */,
 				3353EAE118707B50001798B1 /* Workspace.xib */,
 			);
 			path = Carts;
@@ -2231,6 +2225,48 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		335FE2721895AF710000C458 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				335FE2731895AF710000C458 /* Controllers */,
+				335FE2741895AF710000C458 /* Controls */,
+				335FE2771895AF710000C458 /* CreateLogController.xib */,
+				335FE2781895AF710000C458 /* CreateTaskController.xib */,
+				335FE2791895AF710000C458 /* FooterController.xib */,
+				335FE27A1895AF710000C458 /* NewTaskDetailController.xib */,
+				335FE27B1895AF710000C458 /* NewTitleController.xib */,
+				335FE27C1895AF710000C458 /* SidebarController.xib */,
+				335FE27D1895AF710000C458 /* TaskDetailController.xib */,
+				335FE27E1895AF710000C458 /* TasksController.xib */,
+				335FE27F1895AF710000C458 /* Windows */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		335FE2731895AF710000C458 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		335FE2741895AF710000C458 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				335FE2751895AF710000C458 /* TextSuggestionPrototype.xib */,
+				335FE2761895AF710000C458 /* UserImageView.xib */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		335FE27F1895AF710000C458 /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				335FE2801895AF710000C458 /* NewTasksWindow.xib */,
+			);
+			path = Windows;
+			sourceTree = "<group>";
+		};
 		338109CF1892B30800CDB776 /* DPSuggestibleTextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -2245,26 +2281,6 @@
 			);
 			name = DPSuggestibleTextField;
 			path = ../../LocalPods/Controls/DPSuggestibleTextField/DPSuggestibleTextField;
-			sourceTree = "<group>";
-		};
-		338109D01893038400CDB776 /* Interface */ = {
-			isa = PBXGroup;
-			children = (
-				338136F51891BD870011631F /* NewTasksWindow.xib */,
-				33786B0B1890B8790040A87C /* NewTaskDetailView.xib */,
-				338109D818931E7000CDB776 /* NewTitleController.xib */,
-				338109D11893038400CDB776 /* Controls */,
-			);
-			path = Interface;
-			sourceTree = "<group>";
-		};
-		338109D11893038400CDB776 /* Controls */ = {
-			isa = PBXGroup;
-			children = (
-				338109D61893041800CDB776 /* TextSuggestionPrototype.xib */,
-				33E53C0E18932E95004A0ED6 /* UserImageView.xib */,
-			);
-			path = Controls;
 			sourceTree = "<group>";
 		};
 		338136F01891719D0011631F /* Controls */ = {
@@ -2520,43 +2536,44 @@
 			buildActionMask = 2147483647;
 			files = (
 				3353EB1A18707F73001798B1 /* TitleBarViewController.xib in Resources */,
-				338109D918931E7000CDB776 /* NewTitleController.xib in Resources */,
-				33786B0C1890B8790040A87C /* NewTaskDetailView.xib in Resources */,
 				03EC34D4183155880007FBF8 /* .gitignore in Resources */,
 				03D8CB311768AA17000CF88A /* InfoPlist.strings in Resources */,
-				33786B0A1890B6450040A87C /* CreateLogView.xib in Resources */,
 				03EC34CC183155880007FBF8 /* .gitignore in Resources */,
-				3334D6EE188F096B004D82F1 /* SidebarController.xib in Resources */,
 				03D8CB371768AA17000CF88A /* Credits.rtf in Resources */,
+				335FE2861895AF710000C458 /* NewTaskDetailController.xib in Resources */,
 				0344D4B7183AC03800A9F3E5 /* .gitignore in Resources */,
+				335FE2851895AF710000C458 /* FooterController.xib in Resources */,
 				3353EB1318707F73001798B1 /* CartsHomeViewController.xib in Resources */,
 				03EC34EF18315CA30007FBF8 /* .gitignore in Resources */,
 				3353EB1418707F73001798B1 /* CartsMainViewController2.xib in Resources */,
 				33557CB91880AC3600986377 /* Images.xcassets in Resources */,
 				03EC34DC183155880007FBF8 /* .gitignore in Resources */,
-				33786B0818909FE10040A87C /* TaskDetailView.xib in Resources */,
+				335FE2811895AF710000C458 /* TextSuggestionPrototype.xib in Resources */,
 				3353EAE218707B50001798B1 /* Workspace.xib in Resources */,
+				335FE2871895AF710000C458 /* NewTitleController.xib in Resources */,
 				339F01481892233F00E6BC66 /* suggestionprototype.xib in Resources */,
 				03D8CE3C1768ACA6000CF88A /* CustomMainMenu.xib in Resources */,
 				03D8CE3E1768ACA6000CF88A /* INAppStoreWindow.podspec in Resources */,
-				338136F81891C6AA0011631F /* TasksController.xib in Resources */,
 				03D8CE431768ACA6000CF88A /* SampleWindow.xib in Resources */,
-				330E45BB1889772200E6A56C /* TaskCreationView.xib in Resources */,
 				3353EB1718707F73001798B1 /* LoginTableViewController.xib in Resources */,
+				335FE2831895AF710000C458 /* CreateLogController.xib in Resources */,
 				0344D4BB183AC8C200A9F3E5 /* _carts in Resources */,
 				03EC34C3183155880007FBF8 /* .gitignore in Resources */,
 				3353EB1818707F73001798B1 /* MainViewController.xib in Resources */,
 				3353EB0F18707F73001798B1 /* BasicCollectionViewController.xib in Resources */,
+				335FE2821895AF710000C458 /* UserImageView.xib in Resources */,
+				335FE28B1895AF710000C458 /* NewTasksWindow.xib in Resources */,
+				335FE2881895AF710000C458 /* SidebarController.xib in Resources */,
 				3353EB1118707F73001798B1 /* BasicTableViewController.xib in Resources */,
+				335FE2891895AF710000C458 /* TaskDetailController.xib in Resources */,
 				3353EB1918707F73001798B1 /* SidebarViewController.xib in Resources */,
-				3334D6F0188F267A004D82F1 /* FooterController.xib in Resources */,
-				33E53C0F18932E95004A0ED6 /* UserImageView.xib in Resources */,
-				338136F61891BD870011631F /* NewTasksWindow.xib in Resources */,
 				03EC34D0183155880007FBF8 /* .gitignore in Resources */,
 				3353EB1618707F73001798B1 /* LoginOutlineViewController.xib in Resources */,
 				03EC34C0183155880007FBF8 /* .gitignore in Resources */,
 				3353EB1218707F73001798B1 /* BottomViewController.xib in Resources */,
+				335FE2841895AF710000C458 /* CreateTaskController.xib in Resources */,
 				3353EB0018707F0F001798B1 /* CartsWindowFooterViewController.xib in Resources */,
+				335FE28A1895AF710000C458 /* TasksController.xib in Resources */,
 				03386ED0176CB9FE00E1F37A /* _assets in Resources */,
 				03386ED1176CB9FE00E1F37A /* _scripts in Resources */,
 				3353EB1518707F73001798B1 /* CartsSidebarViewController.xib in Resources */,
@@ -2564,7 +2581,6 @@
 				3353EB1018707F73001798B1 /* BasicOutlineViewController.xib in Resources */,
 				03386EFE176D2AF700E1F37A /* MainMenu.xib in Resources */,
 				03EC34C2183155880007FBF8 /* .gitignore in Resources */,
-				338109D71893041800CDB776 /* TextSuggestionPrototype.xib in Resources */,
 				3353EB0118707F0F001798B1 /* CartsWindowHeaderViewController.xib in Resources */,
 				03EC34C7183155880007FBF8 /* Masonry-Info.plist in Resources */,
 			);

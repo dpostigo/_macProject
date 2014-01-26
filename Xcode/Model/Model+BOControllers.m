@@ -13,21 +13,6 @@
 
 @implementation Model (BOControllers)
 
-- (NSWindow *) tasksWindow {
-    return [self.masterNib objectWithIdentifier: @"TasksWindow"];
-}
-
-- (NSWindow *) newTasksWindow {
-    return [self.masterNib objectWithIdentifier: @"newTasksWindow"];
-}
-
-
-- (NSViewController *) titleController {
-    
-    return [self.masterNib controllerForClass: @"TitleController"];
-}
-
-
 - (NSViewController *) sidebarController {
     return [self.masterNib controllerForClass: @"SidebarController"];
     //    return [[CreateTaskController alloc] initWithNibName: @"TaskCreationView" bundle: nil];
@@ -39,28 +24,26 @@
 }
 
 - (NSViewController *) taskCreationController {
-    return [[CreateTaskController alloc] initWithNibName: @"TaskCreationView" bundle: nil];
+    return [[CreateTaskController alloc] initWithNibName: @"CreateTaskController" bundle: nil];
 }
 
 
 - (NSViewController *) taskDetailController {
     //    return [self.masterNib controllerForClass: @"TaskDetailController"];
-    return [self controllerForKey: @"NewTaskDetail"];
-    return [[NewTaskDetailController alloc] initWithNibName: @"NewTaskDetailView" bundle: nil];
-    return [[TaskDetailController alloc] initWithNibName: @"TaskDetailView" bundle: nil];
+    return [self controllerForKey: @"NewTaskDetailController"];
 }
 
 
 - (NSViewController *) logCreationController {
-    return [[CreateLogController alloc] initWithNibName: @"CreateLogView" bundle: nil];
+    return [[CreateLogController alloc] initWithNibName: @"CreateLogController" bundle: nil];
 }
 
 - (NSViewController *) controllerForKey: (NSString *) key {
     NSViewController *ret = nil;
     ret = [self.controllers objectForKey: key];
     if (ret == nil) {
-        NSString *classString = [NSString stringWithFormat: @"%@Controller", key];
-        ret = [[NSClassFromString(classString) alloc] initWithNibName: [NSString stringWithFormat: @"%@View", key] bundle: nil];
+        NSString *classString = [NSString stringWithFormat: @"%@", key];
+        ret = [[NSClassFromString(classString) alloc] initWithNibName: key bundle: nil];
         if (ret != nil) {
             [self.controllers setObject: ret forKey: key];
         }

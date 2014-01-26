@@ -62,25 +62,10 @@
     titleController.referenceView = right;
 
     NSLog(@"middle.frame = %@", NSStringFromRect(middle.frame));
-    //    middle.wantsLayer = YES;
-    //    middle.shadow = [AppStyles defaultShadowWithRadius: 1.0 offset: NSMakeSize(2, 0)];
 
-
-    //    right.translatesAutoresizingMaskIntoConstraints = NO;
-    //    contentController.view.frame = right.frame;
-    //    [right.superview replaceSubview: right with: contentController.view];
-
-
-
-    //    self.mainContent = mainController.view;
-
-    //    NSView *newView = _model.taskDetailController.view;
-    //    self.mainContent = newView;
-
-    //    NSViewController *controller = [[NewTaskDetailController alloc] initWithNibName: @"NewTaskDetailView" bundle: nil   ];
-    //    controller.view.frame = right.frame;
-    //    [right.superview replaceSubview: right with: controller.view];
-
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    NSLog(@"sidebarController.outline = %@", sidebarController.outline);
+    [sidebarController.outline reloadData];
 
 }
 

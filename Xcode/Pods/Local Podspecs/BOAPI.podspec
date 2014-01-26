@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = "http://dpostigo.com"
   s.license      = 'BSD'
   s.author       = { "Dani Postigo" => "dani@firstperson.is" }
-  s.source       = { :git => "https://github.com/dpostigo/DPKit.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/dpostigo/BOAPI.git", :tag => s.version.to_s }
   s.platform     = :osx, '10.8'
   s.frameworks   = 'Foundation', 'AppKit'
   s.requires_arc = true

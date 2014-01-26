@@ -70,7 +70,7 @@ typedef enum _ASINetworkErrorType {
 extern NSString *const NetworkRequestErrorDomain;
 
 // You can use this number to throttle upload and download bandwidth in iPhone OS apps send or receive a large amount of data
-// This may help apps that might otherwise be rejected for inclusion into the app store for using excessive bandwidth
+// This may help apps that might otherwise be rejected for inclusion into the app save for using excessive bandwidth
 // This number is not official, as far as I know there is no officially documented bandwidth limit
 extern unsigned long const ASIWWANBandwidthThrottleAmount;
 
@@ -114,11 +114,11 @@ typedef void (^ASIDataBlock)(NSData *data);
     // Automatically set to true in ASIFormDataRequests when using setFile:forKey:
     BOOL shouldStreamPostDataFromDisk;
 
-    // Path to file used to store post body (when shouldStreamPostDataFromDisk is true)
+    // Path to file used to save post body (when shouldStreamPostDataFromDisk is true)
     // You can set this yourself - useful if you want to PUT a file from local disk
     NSString *postBodyFilePath;
 
-    // Path to a temporary file used to store a deflated post body (when shouldCompressPostBody is YES)
+    // Path to a temporary file used to save a deflated post body (when shouldCompressPostBody is YES)
     NSString *compressedPostBodyFilePath;
 
     // Set to true when ASIHTTPRequest automatically created a temporary file containing the request body (when true, the file at postBodyFilePath will be deleted at the end of the request)
@@ -385,7 +385,7 @@ typedef void (^ASIDataBlock)(NSData *data);
     // See ASIAuthenticationState values above. 0 == default == No authentication needed yet
     ASIAuthenticationState authenticationNeeded;
 
-    // When YES, ASIHTTPRequests will present credentials from the session store for requests to the same server before being asked for them
+    // When YES, ASIHTTPRequests will present credentials from the session save for requests to the same server before being asked for them
     // This avoids an extra round trip for requests after authentication has succeeded, which is much for efficient for authenticated requests with large bodies, or on slower connections
     // Set to NO to only present credentials when explicitly asked for them
     // This only affects credentials stored in the session cache when useSessionPersistence is YES. Credentials from the keychain are never presented unless the server asks for them
@@ -429,7 +429,7 @@ typedef void (^ASIDataBlock)(NSData *data);
     // * The id we set for a particular connection, incremented every time we want to specify that we need a new connection
     // * The date that connection should expire
     // * A host, port and scheme for the connection. These are used to determine whether that connection can be reused by a subsequent request (all must match the new request)
-    // * An id for the request that is currently using the connection. This is used for determining if a connection is available or not (we store a number rather than a reference to the request so we don't need to hang onto a request until the connection expires)
+    // * An id for the request that is currently using the connection. This is used for determining if a connection is available or not (we save a number rather than a reference to the request so we don't need to hang onto a request until the connection expires)
     // * A reference to the stream that is currently using the connection. This is necessary because we need to keep the old stream open until we've opened a new one.
     //   The stream will be closed + released either when another request comes to use the connection, or when the timer fires to tell the connection to expire
     NSMutableDictionary *connectionInfo;
@@ -572,7 +572,7 @@ typedef void (^ASIDataBlock)(NSData *data);
 // Add a custom header to the request
 - (void) addRequestHeader: (NSString *) header value: (NSString *) value;
 
-// Called during buildRequestHeaders and after a redirect to create a cookie header from request cookies and the global store
+// Called during buildRequestHeaders and after a redirect to create a cookie header from request cookies and the global save
 - (void) applyCookieHeader;
 
 // Populate the request headers dictionary. Called before a request is started, or by a HEAD request that needs to borrow them
@@ -724,16 +724,16 @@ typedef void (^ASIDataBlock)(NSData *data);
 
 // Cleans up temporary files. There's normally no reason to call these yourself, they are called automatically when a request completes or fails
 
-// Clean up the temporary file used to store the downloaded data when it comes in (if downloadDestinationPath is set)
+// Clean up the temporary file used to save the downloaded data when it comes in (if downloadDestinationPath is set)
 - (BOOL) removeTemporaryDownloadFile;
 
-// Clean up the temporary file used to store data that is inflated (decompressed) as it comes in
+// Clean up the temporary file used to save data that is inflated (decompressed) as it comes in
 - (BOOL) removeTemporaryUncompressedDownloadFile;
 
-// Clean up the temporary file used to store the request body (when shouldStreamPostDataFromDisk is YES)
+// Clean up the temporary file used to save the request body (when shouldStreamPostDataFromDisk is YES)
 - (BOOL) removeTemporaryUploadFile;
 
-// Clean up the temporary file used to store a deflated (compressed) request body when shouldStreamPostDataFromDisk is YES
+// Clean up the temporary file used to save a deflated (compressed) request body when shouldStreamPostDataFromDisk is YES
 - (BOOL) removeTemporaryCompressedUploadFile;
 
 // Remove a file on disk, returning NO and populating the passed error pointer if it fails
@@ -787,7 +787,7 @@ typedef void (^ASIDataBlock)(NSData *data);
 + (void) removeCredentialsForHost: (NSString *) host port: (int) port protocol: (NSString *) protocol realm: (NSString *) realm;
 + (void) removeCredentialsForProxy: (NSString *) host port: (int) port realm: (NSString *) realm;
 
-// We keep track of any cookies we accept, so that we can remove them from the persistent store later
+// We keep track of any cookies we accept, so that we can remove them from the persistent save later
 + (void) setSessionCookies: (NSMutableArray *) newSessionCookies;
 + (NSMutableArray *) sessionCookies;
 
