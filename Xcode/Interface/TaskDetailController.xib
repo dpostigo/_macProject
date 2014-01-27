@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="NewTaskDetailController">
+        <customObject id="-2" userLabel="File's Owner" customClass="TaskDetailController">
             <connections>
                 <outlet property="createLogController" destination="ZHl-nF-DrP" id="STO-tB-hJU"/>
                 <outlet property="createLogView" destination="BzY-bn-vel" id="rtH-dr-DIV"/>

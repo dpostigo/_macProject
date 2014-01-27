@@ -17,13 +17,11 @@
     return @[@"Log note", @"Service Item", @"Date", @"Time"];
 }
 
-- (void) viewDidLoad {
-    [super viewDidLoad];
-
+- (void) awakeFromNib {
+    [super awakeFromNib];
     datePicker.dateValue = [NSDate date];
     [self customizeBackground];
 }
-
 
 - (void) customizeBackground {
     self.view.wantsLayer = YES;

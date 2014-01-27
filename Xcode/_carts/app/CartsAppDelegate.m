@@ -24,22 +24,31 @@
 - (void) applicationDelegateDidFinishLaunching: (NSNotification *) notification {
     [super applicationDelegateDidFinishLaunching: notification];
 
-    //    [self testDPStorage];
-    //    [self testStorageTest];
-    //
-    //    [self testStorage];
-
-    //    [self testDataContainer];
-    //    [self testSavedUsername];
-    //    [self testBOAPIModel];
+    //    [self testObservers];
+//    [self testStorageTest];
     [self initApp];
 
 }
 
+- (void) testStorageTest {
+
+    NSString *username = @"testing";
+    NSString *storageName = [username filenameEscapedString];
+
+    storage = [[BOAPIStorage alloc] initWithName: storageName];
+    //    [storagei addObserver: self forKeyPath: @"items" options: (NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew) context: NULL];
+
+    [storage.tasks addObject: @"Hello1"];
+    [storage.tasks addObject: @"Hello2"];
+    [storage.tasks addObject: @"Hello3"];
+    [storage.tasks addObject: @"Hello4"];
+    [storage.tasks removeObject: storage.tasks.lastObject];
+
+    NSLog(@"storage = %@", storage);
+
+}
 
 - (void) initApp {
-
-//    [self saveObject: @"nouser" forKey: kBOStoredUsername];
 
     BOAPIModel *apiModel = [BOAPIModel sharedModel];
     apiModel.delegate = _model.operationHandler;
@@ -52,10 +61,24 @@
         [self showTasksWindow];
 
     } else {
-        NSWindowController *controller = [[NSWindowController alloc] initWithWindowNibName: @"LoginWindow"];
-        [controller.window makeKeyAndOrderFront: nil];
+        [self showLoginWindow];
     }
 
+}
+
+
+- (void) testObservers {
+
+    BOAPIModel *apiModel = [BOAPIModel sharedModel];
+    apiModel.delegate = _model.operationHandler;
+    //    [apiModel subscribeDelegate: self];
+    //    [_model subscribeDelegate: self];
+
+
+    storage = apiModel.storage;
+    NSLog(@"apiModel.tasks = %@", apiModel.tasks);
+    NSMutableArray *tasks = storage.tasks;
+    [tasks removeObject: tasks.lastObject];
 }
 
 - (void) testSavedUsername {
@@ -89,95 +112,7 @@
     return [ret filenameEscapedString];
 }
 
-- (void) testStorageTest {
 
-    NSString *username = @"fernando@firstperson.is";
-    NSString *storageName = [username filenameEscapedString];
-
-    storage = [[BOAPIStorage alloc] initWithName: storageName];
-    //    [storagei addObserver: self forKeyPath: @"items" options: (NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew) context: NULL];
-
-    [storage.exampleItems addObject: @"Hello1"];
-    [storage.exampleItems addObject: @"Hello2"];
-    [storage.exampleItems addObject: @"Hello3"];
-    [storage.exampleItems addObject: @"Hello4"];
-    [storage save];
-
-    NSLog(@"storage = %@", storage);
-
-}
-
-
-//}
-
-
-- (void) testDPStorage {
-    //    DPStorage *storage = [[DPStorage alloc] init];
-    //    storage.storageName = @"TestStorage";
-    //    [storage save];
-    //
-    //    DPStorage *destored = [storage destore];
-    //
-    //    DPStorage *lameStorage = [DPStorage destoreWithName: @"Lame"];
-    //    NSLog(@"lameStorage = %@", lameStorage);
-
-}
-
-- (void) testStorage {
-
-    //    BOAPIStorage *storage = [[BOAPIStorage alloc] initWithUsername: @"hello"];
-    //    [storage.tasks addObject: [[Task alloc] initWithTitle: @"hello"]];
-    //
-    //    [storage archive];
-    //
-    //    BOAPIStorage *unarchived = [BOAPIStorage objectWithContentsOfFile: storage.filename];
-    //    NSLog(@"unarchived = %@", unarchived);
-    //    NSLog(@"[unarchived.tasks count] = %lu", [unarchived.tasks count]);
-
-}
-
-
-- (void) initAppOld {
-    //    if (apiModel.)
-    //
-    //    if (_model.username) {
-    //
-    //        NSString *filename = [User safeUsername: _model.username];
-    //        filename = [BOAPIStorage pathForUsername: filename];
-    //
-    //        NSLog(@"filename = %@", filename);
-    //        BOAPIStorage *instance = [BOAPIStorage objectWithContentsOfFile: filename];
-    //        NSLog(@"[instance.tasks count] = %lu", [instance.tasks count]);
-    //
-    //    } else {
-    //    }
-    //
-    //    //
-    //    //    [BOAPIModel sharedModel].defaultUsername = _model.username;
-    //    if (_model.username) {
-    //        [self showTasksWindow];
-    //    } else {
-    //        BOLoginWindow *loginWindow = [_model.masterNib objectWithIdentifier: @"LoginWindow"];
-    //        [loginWindow makeKeyAndOrderFront: nil];
-    //        [loginWindow validate];
-    //
-    //    }
-    //
-    //    //    NSLog(@"_model.username = %@", _model.username);
-    //    //    //
-    //    //    [BOAPIModel sharedModel].delegate = _model.operationHandler;
-    //    //
-    //    //    [[BOAPIModel sharedModel] subscribeDelegate: self];
-    //    //    [_model subscribeDelegate: self];
-    //    //
-    //    //    [_model.masterNib load];
-    //    //
-    //    //    BOLoginWindow *loginWindow = [_model.masterNib objectWithIdentifier: @"LoginWindow"];
-    //    //    [loginWindow makeKeyAndOrderFront: nil];
-    //    //    [loginWindow validate];
-
-
-}
 
 #pragma mark Getters
 
@@ -190,7 +125,11 @@
     NSLog(@"%s", __PRETTY_FUNCTION__);
     TasksWindowController *controller = [[TasksWindowController alloc] initWithWindowNibName: @"TasksWindow"];
     [controller.window makeKeyAndOrderFront: nil];
+}
 
+- (void) showLoginWindow {
+    NSWindowController *controller = [[NSWindowController alloc] initWithWindowNibName: @"LoginWindow"];
+    [controller.window makeKeyAndOrderFront: nil];
 }
 #pragma mark BOAPIDelegate
 
@@ -215,7 +154,7 @@
         [openWindow performClose: nil];
     }
 
-    //    [loginWindow makeKeyAndOrderFront: nil];
+    [self showLoginWindow];
 
 }
 
@@ -224,7 +163,6 @@
 - (IBAction) signOut: (id) sender {
     [_model signOut];
 }
-
 
 
 @end

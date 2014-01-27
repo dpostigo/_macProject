@@ -12,7 +12,7 @@
 @class CreateLogController;
 @class Task;
 
-@interface NewTaskDetailController : BOController <NotificationDelegate> {
+@interface TaskDetailController : BOController <NotificationDelegate> {
 
     Task *selectedTask;
     IBOutlet LogsController *logsController;

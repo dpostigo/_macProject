@@ -5,6 +5,7 @@
 
 #import <BOAPI/ServiceItem.h>
 #import <JMSimpleDate/NSDate+JMSimpleDate.h>
+#import <DPOutlineView/DPTableRowView.h>
 #import "LogsController.h"
 #import "DPOutlineView.h"
 #import "Log.h"
@@ -25,11 +26,6 @@
 @implementation LogsController
 
 @synthesize outline;
-
-- (void) viewDidLoad {
-    [super viewDidLoad];
-
-}
 
 - (void) awakeFromNib {
     [super awakeFromNib];
@@ -141,18 +137,21 @@
 }
 
 
+
+
 - (void) didSelectItem: (DPOutlineViewItem *) item {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
     Log *log = [self.task logForId: item.identifier];
     if (log) {
         [_model notifyDelegates: @selector(modelDidSelectLog:) object: log];
     } else {
-        NSLog(@"log = %@", log);
     }
 
 }
 
 
+
+
+#pragma mark BOAPIDelegate
 - (void) modelDidSelectTask: (Task *) task {
     [super modelDidSelectTask: task];
 
@@ -168,6 +167,7 @@
 
 - (void) logsDidUpdate: (Task *) task {
     [super logsDidUpdate: task];
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     [outline reloadData];
 }
 

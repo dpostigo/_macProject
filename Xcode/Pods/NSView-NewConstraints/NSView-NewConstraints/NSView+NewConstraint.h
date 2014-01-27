@@ -34,7 +34,10 @@
 - (NSLayoutConstraint *) superConstrainTopToItem: (id) item;
 
 
+- (void) updateSuperBottomConstraint: (CGFloat) offset;
+- (NSLayoutConstraint *) superBottomConstraint;
 - (NSLayoutConstraint *) superConstrainBottom;
+- (NSLayoutConstraint *) superConstrainBottom: (CGFloat) offset;
 - (NSArray *) superConstrainEdges;
 - (NSArray *) superConstrainEdges: (CGFloat) offset;
 - (NSArray *) superConstrainWithInsets: (NSEdgeInsets) insets;

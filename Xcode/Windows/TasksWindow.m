@@ -80,9 +80,6 @@
 
     titleController.referenceView = right;
 
-
-    //[tasksController viewDidLoad];
-
 }
 
 
@@ -128,7 +125,6 @@
         right = newView;
     }
 }
-
 
 
 - (void) stylize {

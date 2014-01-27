@@ -18,7 +18,7 @@
 
 - (NSViewController *) taskDetailController {
     //    return [self.masterNib controllerForClass: @"TaskDetailController"];
-    return [self controllerForKey: @"NewTaskDetailController"];
+    return [self controllerForKey: @"TaskDetailController"];
 }
 
 

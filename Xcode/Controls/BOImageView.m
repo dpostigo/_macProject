@@ -27,9 +27,7 @@
     [placeholder setImage: [NSImage imageNamed: @"default-user"]];
     [self addSubview: placeholder];
 
-
 }
-
 
 
 @end

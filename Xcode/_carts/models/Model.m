@@ -257,8 +257,9 @@
 
     [self.apiModel signOut];
 
-    self.username = @"";
-    self.password = @"";
+    [self saveObject: @"nouser" forKey: kBOStoredUsername];
+    //    self.username = @"";
+    //    self.password = @"";
     [self notifyDelegates: @selector(userDidSignOff) object: nil];
 }
 

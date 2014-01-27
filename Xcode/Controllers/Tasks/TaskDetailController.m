@@ -4,34 +4,28 @@
 //
 
 #import <BOAPI/Task.h>
-#import <BOAPI/User.h>
-#import "NewTaskDetailController.h"
+#import "TaskDetailController.h"
 #import "LogsController.h"
 #import "TaskEditController.h"
 #import "Model.h"
 #import "CreateLogController.h"
-#import "NSView+SuperConstraints.h"
 #import "NSView+NewConstraint.h"
 #import "AppStyles.h"
 
-@implementation NewTaskDetailController
+@implementation TaskDetailController
 
 @synthesize selectedTask;
 
-- (void) viewDidLoad {
-    [super viewDidLoad];
 
-    [logsController viewDidLoad];
-    [editController viewDidLoad];
-    [createLogController viewDidLoad];
+
+- (void) awakeFromNib {
+    [super awakeFromNib];
 
     [logsController modelDidSelectTask: _model.selectedTask];
     [editController modelDidSelectTask: _model.selectedTask];
 
     createLogView.translatesAutoresizingMaskIntoConstraints = NO;
-
     createLogController.view.frame = createLogView.bounds;
-
     [createLogView addSubview: createLogController.view];
     //    [createLogController.view superConstrainEdges];
     [createLogController.view superConstrainWidth];
