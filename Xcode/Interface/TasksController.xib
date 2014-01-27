@@ -100,12 +100,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </clipView>
-                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="ogT-sn-3Fi">
-                        <rect key="frame" x="0.0" y="295" width="240" height="16"/>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" controlSize="mini" horizontal="YES" id="ogT-sn-3Fi">
+                        <rect key="frame" x="0.0" y="295" width="240" height="11"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="O9m-9e-M7G">
-                        <rect key="frame" x="224" y="0.0" width="16" height="311"/>
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" controlSize="mini" horizontal="NO" id="O9m-9e-M7G">
+                        <rect key="frame" x="224" y="0.0" width="11" height="311"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>

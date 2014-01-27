@@ -1,3 +1,4 @@
+#import <DPKit/NSString+DPKitUtils.h>
 #import "RoundedCornersView.h"
 #import "SuggestionsWindowController.h"
 #import "HighlightingView.h"
@@ -7,6 +8,7 @@
 #import "NSImage+Utils.h"
 #import "NSWindow+DPUtils.h"
 #import "NSWindow+DPKit.h"
+#import "SuggestionItemController.h"
 
 APPKIT_EXTERN NSString *kSuggestionImage;
 
@@ -275,7 +277,7 @@ APPKIT_EXTERN NSString *kSuggestionImage;
     for (NSDictionary *entry in _suggestions) {
         frame.origin.y += frame.size.height;
 
-        NSViewController *viewController = [[NSViewController alloc] initWithNibName: self.itemPrototypeName bundle: nil];
+        NSViewController *viewController = [[SuggestionItemController alloc] initWithNibName: self.itemPrototypeName bundle: nil];
         HighlightingView *view = (HighlightingView *) viewController.view;
 
         // Make the selectedView the samee as the 0th.
@@ -302,30 +304,58 @@ APPKIT_EXTERN NSString *kSuggestionImage;
         /* If the suggestion entry does not contain an NSImage (and never does in this sample code), then create a thumbnail from the fileURL on a background que
         */
 
+        NSImage *image = [mutableEntry objectForKey: kSuggestionImage];
+        if (image == nil) {
 
-        if (![mutableEntry objectForKey: kSuggestionImage]) {
-            NSString *imageURL = [mutableEntry objectForKey: kSuggestionImage];
+            NSString *fileURLString = [mutableEntry objectForKey: kSuggestionImageURL];
+            if ([fileURLString length] > 0) {
 
-            if (imageURL && ![imageURL isEqualToString: @""]) {
-
-                // Load the image in an operation block so that the window pops up immediatly
+                NSURL *fileURL = fileURLString.URL;
                 [ITESharedOperationQueue() addOperationWithBlock: ^(void) {
-                    NSURL *fileURL = [mutableEntry objectForKey: kSuggestionImageURL];
-                    if (fileURL) {
 
-                        NSImage *thumbnailImage = [NSImage iteThumbnailImageWithContentsOfURL: fileURL width: THUMBNAIL_WIDTH];
+                    NSImage *thumbnailImage = [NSImage iteThumbnailImageWithContentsOfURL: fileURL width: THUMBNAIL_WIDTH];
 
-                        if (thumbnailImage != nil) {
-                            [[NSOperationQueue mainQueue] addOperationWithBlock: ^(void) {
-                                [mutableEntry setObject: thumbnailImage forKey: kSuggestionImage];
-                            }];
-                        } else if (defaultImage) {
-                            [mutableEntry setObject: defaultImage forKey: kSuggestionImage];
-                        }
+                    if (thumbnailImage != nil) {
+                        [[NSOperationQueue mainQueue] addOperationWithBlock: ^(void) {
+                            [mutableEntry setObject: thumbnailImage forKey: kSuggestionImage];
+                        }];
+                    } else if (defaultImage) {
+                        [mutableEntry setObject: defaultImage forKey: kSuggestionImage];
                     }
                 }];
+
             }
+
         }
+
+        //        if ([mutableEntry objectForKey: kSuggestionImage]) {
+        //            NSString *imageURL = [mutableEntry objectForKey: kSuggestionImage];
+        //
+        //            if (imageURL && ![imageURL isEqualToString: @""]) {
+        //
+        //                NSLog(@"imageURL = %@", imageURL);
+        //
+        //                // Load the image in an operation block so that the window pops up immediatly
+        //                //                [ITESharedOperationQueue() addOperationWithBlock: ^(void) {
+        //                //                    NSURL *fileURL = [mutableEntry objectForKey: kSuggestionImageURL];
+        //                //                    if (fileURL) {
+        //                //
+        //                //                        NSImage *thumbnailImage = [NSImage iteThumbnailImageWithContentsOfURL: fileURL width: THUMBNAIL_WIDTH];
+        //                //
+        //                //                        if (thumbnailImage != nil) {
+        //                //                            [[NSOperationQueue mainQueue] addOperationWithBlock: ^(void) {
+        //                //                                [mutableEntry setObject: thumbnailImage forKey: kSuggestionImage];
+        //                //                            }];
+        //                //                        } else if (defaultImage) {
+        //                //                            [mutableEntry setObject: defaultImage forKey: kSuggestionImage];
+        //                //                        }
+        //                //                    }
+        //                //                }];
+        //            } else {
+        //                NSLog(@"No images.");
+        //
+        //            }
+        //        }
 
     }
 

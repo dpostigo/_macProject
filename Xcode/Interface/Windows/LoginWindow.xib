@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSWindowController">
+            <connections>
+                <outlet property="window" destination="p16-Ks-fze" id="x0Q-SI-aIm"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window identifier="LoginWindow" title="Login" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="p16-Ks-fze" customClass="BOLoginWindow">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <rect key="contentRect" x="131" y="159" width="300" height="270"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <value key="minSize" type="size" width="300" height="270"/>
+            <value key="maxSize" type="size" width="300" height="270"/>
+            <view key="contentView" id="wsf-iR-wzT">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="270"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nxb-2X-YoK">
+                        <rect key="frame" x="60" y="124" width="180" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="gIZ-5s-nqS">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JGb-xm-hVp">
+                        <rect key="frame" x="60" y="87" width="180" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="tg8-hw-UYM">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <allowedInputSourceLocales>
+                                <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                            </allowedInputSourceLocales>
+                        </secureTextFieldCell>
+                    </secureTextField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lhf-Ew-Qfp">
+                        <rect key="frame" x="54" y="24" width="192" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Login" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QCc-Rw-eQT">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="titleBar" size="12"/>
+                        </buttonCell>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="JGb-xm-hVp" firstAttribute="top" secondItem="Nxb-2X-YoK" secondAttribute="bottom" constant="15" id="07M-Ai-czF"/>
+                    <constraint firstAttribute="centerX" secondItem="JGb-xm-hVp" secondAttribute="centerX" id="4Lb-9Q-1x3"/>
+                    <constraint firstAttribute="bottom" secondItem="Lhf-Ew-Qfp" secondAttribute="bottom" constant="31" id="MAV-Y9-sE1"/>
+                    <constraint firstAttribute="trailing" secondItem="Nxb-2X-YoK" secondAttribute="trailing" constant="60" id="RPH-mD-dmD"/>
+                    <constraint firstAttribute="centerX" secondItem="Lhf-Ew-Qfp" secondAttribute="centerX" id="RXL-Hc-MKH"/>
+                    <constraint firstItem="JGb-xm-hVp" firstAttribute="width" secondItem="Lhf-Ew-Qfp" secondAttribute="width" id="cPE-hv-hLS"/>
+                    <constraint firstItem="Nxb-2X-YoK" firstAttribute="leading" secondItem="wsf-iR-wzT" secondAttribute="leading" constant="60" id="nrv-V2-0y9"/>
+                    <constraint firstItem="JGb-xm-hVp" firstAttribute="width" secondItem="Nxb-2X-YoK" secondAttribute="width" id="tRz-iZ-zCF"/>
+                    <constraint firstItem="Nxb-2X-YoK" firstAttribute="top" secondItem="wsf-iR-wzT" secondAttribute="top" constant="124" id="uwQ-T5-46j"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="passwordField" destination="JGb-xm-hVp" id="wa4-Fb-sfI"/>
+                <outlet property="submitButton" destination="Lhf-Ew-Qfp" id="A6C-oj-Znn"/>
+                <outlet property="userField" destination="Nxb-2X-YoK" id="FMw-Ka-Da7"/>
+            </connections>
+        </window>
+    </objects>
+</document>

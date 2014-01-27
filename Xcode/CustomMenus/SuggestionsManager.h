@@ -7,20 +7,27 @@
 
 @class SuggestionsWindowController;
 
+typedef void (^SuggestionsManagerCompletionBlock)(NSTextField *, NSString *id);
+
+
 @interface SuggestionsManager : NSObject <NSTextFieldDelegate> {
     SuggestionsWindowController *suggestionsController;
     NSMutableArray *textFields;
 
 
     NSURL *suggestedURL;
+    NSDictionary *selectedSuggestion;
     BOOL skipNextSuggestion;
 
 
     NSMutableArray *itemPrototypeStorage;
     NSMutableArray *suggestionStorage;
+    NSMutableArray *suggestionIdStorage;
     NSMutableArray *suggestionImageStorage;
 
     NSTextField *selectedTextField;
+
+    SuggestionsManagerCompletionBlock completion;
 
 }
 
@@ -35,6 +42,10 @@
 
 
 @property(nonatomic, strong) NSMutableArray *itemPrototypeStorage;
+@property(nonatomic, strong) SuggestionsManagerCompletionBlock completion;
+
+
+@property(nonatomic, strong) NSMutableArray *suggestionIdStorage;
 + (SuggestionsManager *) manager;
 - (void) addTextField: (NSTextField *) textField suggestions: (NSArray *) suggestions;
 - (void) addTextField: (NSTextField *) textField suggestions: (NSArray *) suggestions images: (NSArray *) images;
@@ -42,5 +53,7 @@
 
 
 - (void) setItemPrototype: (NSString *) string textField: (NSTextField *) textField;
+- (void) setSuggestionStrings: (NSArray *) suggestions textField: (NSTextField *) textField;
+- (void) setImages: (NSArray *) images textField: (NSTextField *) textField;
 - (NSString *) itemPrototype;
 @end

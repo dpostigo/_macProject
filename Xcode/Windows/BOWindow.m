@@ -10,6 +10,7 @@
 
 @synthesize viewController;
 @synthesize contentDisplayView;
+@synthesize queue = _queue;
 
 - (id) initWithContentRect: (NSRect) contentRect styleMask: (NSUInteger) aStyle backing: (NSBackingStoreType) bufferingType defer: (BOOL) flag {
     self = [super initWithContentRect: contentRect styleMask: aStyle backing: bufferingType defer: flag];
@@ -28,6 +29,14 @@
     if (viewController) {
         self.contentDisplayView = viewController.view;
     }
+}
+
+
+- (NSOperationQueue *) queue {
+    if (_queue == nil) {
+        _queue = [NSOperationQueue new];
+    }
+    return _queue;
 }
 
 

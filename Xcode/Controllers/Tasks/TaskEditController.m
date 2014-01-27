@@ -26,9 +26,13 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
 
+
+}
+
+- (void) awakeFromNib {
+    [super awakeFromNib];
     [outline reloadData];
     [self customizeBackground];
-
 }
 
 

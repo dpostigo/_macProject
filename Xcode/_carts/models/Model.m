@@ -10,20 +10,15 @@
 #import <BOAPI/Log.h>
 #import <BOAPI/BOAPIModel+Utils.h>
 #import "Model.h"
-#import "NSWorkspaceNib.h"
 #import "OperationHandler.h"
 #import "NSObject+UserDefaults.h"
-#import "BOAPIModel.h"
 #import "BOFocusTypes.h"
 #import "Job.h"
 #import "Task.h"
 #import "ServiceItem.h"
-#import "BOAPIStorage.h"
 #import "Model+TaskUtils.h"
 
 @implementation Model
-
-@synthesize currentUser;
 
 @synthesize selectedJob;
 @synthesize selectedTask;
@@ -31,7 +26,6 @@
 
 @synthesize controllers;
 
-@synthesize masterNib;
 @synthesize operationHandler;
 @synthesize usesDummyData;
 
@@ -86,13 +80,6 @@
 }
 
 
-- (NSWorkspaceNib *) masterNib {
-    if (masterNib == nil) {
-        masterNib = [[NSWorkspaceNib alloc] initWithNibNamed: @"Workspace" bundle: nil];
-    }
-    return masterNib;
-}
-
 - (id <BOAPIDelegate>) operationHandler {
     if (operationHandler == nil) {
         operationHandler = [[OperationHandler alloc] init];
@@ -125,7 +112,7 @@
     if (ret == nil) {
         ret = @"";
     } else {
-//        [BOAPIModel sharedModel].storage.username = ret;
+        //        [BOAPIModel sharedModel].storage.username = ret;
     }
     return ret;
 }
@@ -180,6 +167,15 @@
     return [BOAPIModel sharedModel].contacts;
 }
 
+
+- (User *) currentUser {
+    return self.apiModel.user;
+}
+
+- (void) setCurrentUser: (User *) currentUser1 {
+    self.apiModel.user = currentUser1;
+}
+
 - (NSMutableArray *) serviceItems {
     return [BOAPIModel sharedModel].serviceItems;
 }
@@ -229,9 +225,6 @@
         [self.jobs addObject: job];
 
         [self notifyDelegates: @selector(tasksDidUpdate) object: nil];
-
-        NSWindow *tasksWindow = [self.masterNib objectWithIdentifier: @"TasksWindow"];
-        [tasksWindow makeKeyAndOrderFront: nil];
     }
 }
 
@@ -262,9 +255,10 @@
 
 - (void) signOut {
 
+    [self.apiModel signOut];
+
     self.username = @"";
     self.password = @"";
-
     [self notifyDelegates: @selector(userDidSignOff) object: nil];
 }
 

@@ -11,9 +11,4 @@
 - (NSViewController *) taskCreationController;
 - (NSViewController *) taskDetailController;
 - (NSViewController *) logCreationController;
-- (NSWindow *) tasksWindow;
-- (NSWindow *) newTasksWindow;
-- (NSViewController *) titleController;
-- (NSViewController *) sidebarController;
-- (NSViewController *) footerController;
 @end

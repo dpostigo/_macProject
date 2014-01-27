@@ -3,21 +3,27 @@
 // Copyright (c) 2014 Elastic Creative. All rights reserved.
 //
 
+#import <BOAPI/GetTasksOperation.h>
 #import "TasksWindowController.h"
 #import "TasksController.h"
-#import "SidebarController.h"
+#import "TasksWindow.h"
+#import "Model.h"
 
 @implementation TasksWindowController
 
-- (void) windowDidLoad {
-    [super windowDidLoad];
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-
+- (Model *) model {
+    return [Model sharedModel];
 }
 
-- (IBAction) showWindow: (id) sender {
-    [super showWindow: sender];
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+- (TasksWindow *) tasksWindow {
+    return (TasksWindow *) self.window;
+}
+
+- (void) windowDidLoad {
+    [super windowDidLoad];
+
+    [self.tasksWindow.queue addOperation: [[GetTasksOperation alloc] init]];
+
 }
 
 

@@ -28,21 +28,14 @@
 
 - (void) viewDidLoad {
     [super viewDidLoad];
-    [outline reloadData];
-
-    [self customizeBackground];
 
 }
 
-//- (NSArray *) logsForDate: (NSDate *) date {
-//    NSMutableArray *ret = [[NSMutableArray alloc] init];
-//    for (Log *log in logs) {
-//        if ([log.date isOnSameDate: date ignoringTimeOfDay: YES]) {
-//
-//        }
-//
-//    }
-//    return ret;
+- (void) awakeFromNib {
+    [super awakeFromNib];
+    [outline reloadData];
+    [self customizeBackground];
+}
 
 
 - (void) setOutline: (DPOutlineView *) outline1 {

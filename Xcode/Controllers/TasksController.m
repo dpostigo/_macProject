@@ -11,14 +11,11 @@
 #import "Job.h"
 #import "Task.h"
 #import "DPTableRowView.h"
-#import "NSColor+DPColors.h"
 #import "CALayer+ConstraintUtils.h"
 #import "DPOutlineViewItem.h"
 #import "DPOutlineViewSection.h"
 #import "AppStyles.h"
 #import "NSView+NewConstraint.h"
-#import "CALayer+SublayerUtils.h"
-#import "DPOutlineView+ItemUtils.h"
 #import "DPOutlineView+Selection.h"
 
 @implementation TasksController
@@ -28,6 +25,11 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
 
+}
+
+
+- (void) awakeFromNib {
+    [super awakeFromNib];
 }
 
 
@@ -45,16 +47,16 @@
 
 - (void) prepareDatasource {
 
-    NSLog(@"%s, %lu tasks ", __PRETTY_FUNCTION__, _model.tasks.count);
     [outline clearSections];
 
-    NSArray *jobs = [_apiModel jobsForTaskArray: _model.tasksForSelectedFocusType];
+    NSArray *tasks = _model.tasksForSelectedFocusType;
+    NSArray *jobs = [_apiModel jobsForTaskArray: tasks];
 
 
     DPOutlineViewSection *section;
     for (Job *job in jobs) {
         section = [[DPOutlineViewSection alloc] initWithTitle: job.title];
-        NSArray *tasks = [_apiModel tasksForJobId: job.id];
+        tasks = [_apiModel tasksForJobId: job.id];
         for (Task *task in tasks) {
             [section addItem: [[DPOutlineViewItem alloc] initWithTitle: task.title identifier: task.id]];
         }
@@ -167,6 +169,7 @@
 
 - (void) modelDidSelectFocusType {
     [super modelDidSelectFocusType];
+    NSLog(@"%s", __PRETTY_FUNCTION__);
 
     [outline reloadData];
 }

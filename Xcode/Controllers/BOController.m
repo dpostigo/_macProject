@@ -15,24 +15,23 @@
 - (id) initWithNibName: (NSString *) nibNameOrNil bundle: (NSBundle *) nibBundleOrNil {
     self = [super initWithNibName: nibNameOrNil bundle: nibBundleOrNil];
     if (self) {
-
+        [self setup];
     }
 
     return self;
 }
 
 
-- (void) loadView {
-    [super loadView];
-    [self viewDidLoad];
+- (id) initWithCoder: (NSCoder *) coder {
+    self = [super initWithCoder: coder];
+    if (self) {
+        [self setup];
+    }
+    return self;
 }
 
-- (void) setView: (NSView *) view1 {
-    [super setView: view1];
-}
+- (void) setup {
 
-
-- (void) viewDidLoad {
     _model = [Model sharedModel];
     [_model subscribeDelegate: self];
 
@@ -41,6 +40,9 @@
 
     _queue = [NSOperationQueue new];
 
+}
+
+- (void) viewDidLoad {
     //    [_model addObserver: self forKeyPath: @"selectedFocusType" options: 0 context: NULL];
     //    [_model addObserver: self forKeyPath: @"selectedTask" options: NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context: NULL];
 

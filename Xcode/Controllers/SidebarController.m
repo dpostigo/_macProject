@@ -24,11 +24,14 @@
     [super viewDidLoad];
     [outline reloadData];
 
-    self.view.wantsLayer = YES;
-    self.view.layer.backgroundColor = self.backgroundColor.CGColor;
 
 }
 
+- (void) awakeFromNib {
+    [super awakeFromNib];
+    self.view.wantsLayer = YES;
+    self.view.layer.backgroundColor = self.backgroundColor.CGColor;
+}
 
 - (void) setOutline: (DPOutlineView *) outlineView1 {
     outline = outlineView1;

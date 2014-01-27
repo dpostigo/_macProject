@@ -55,6 +55,7 @@
         NSView *view = currentController.view;
         view.frame = self.view.bounds;
         [self.view addSubview: view];
+        view.translatesAutoresizingMaskIntoConstraints = NO;
         [view superConstrainWithInsets: NSEdgeInsetsMake(0, 0, 0, 0)];
     }
 }

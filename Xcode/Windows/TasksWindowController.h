@@ -7,9 +7,12 @@
 
 @class TasksController;
 @class SidebarController;
+@class TasksWindow;
 
 @interface TasksWindowController : NSWindowController {
     IBOutlet SidebarController *sidebarController;
     IBOutlet TasksController *tasksController;
 }
+
+- (TasksWindow *) tasksWindow;
 @end

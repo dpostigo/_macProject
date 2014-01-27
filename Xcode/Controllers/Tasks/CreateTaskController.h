@@ -17,6 +17,7 @@
     IBOutlet NSTextField *taskField;
 
     IBOutlet NSPopUpButton *jobButton;
+    IBOutlet NSPopUpButton *assigneeButton;
 
     IBOutlet NSArrayController *jobController;
     IBOutlet NSArrayController *assigneeController;
@@ -24,7 +25,7 @@
     IBOutlet NSObjectController *objectController;
 
     IBOutlet NSTextField *jobField;
-    IBOutlet SuggestibleTextField *assigneeField;
+    IBOutlet NSTextField *assigneeField;
 
     Job *selectedJob;
 
@@ -37,6 +38,7 @@
 @property(nonatomic, strong) NSTextField *taskField;
 @property(nonatomic, strong) NSButton *submitButton;
 @property(nonatomic, strong) Task *selectedTask;
+@property(nonatomic, strong) NSTextField *assigneeField;
 - (IBAction) popupButtonClicked: (id) sender;
 - (NSArray *) assignees;
 @end

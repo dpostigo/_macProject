@@ -10,7 +10,6 @@
 #import "BasicModel.h"
 #import "BOAPIDelegate.h"
 
-@class NSWorkspaceNib;
 @class OperationHandler;
 @class Job;
 @class Task;
@@ -18,20 +17,17 @@
 @interface Model : BasicModel <BOAPIDelegate> {
 
     BOOL usesDummyData;
-    User *currentUser;
 
     Job *selectedJob;
     Task *selectedTask;
     User *selectedArtist;
     NSString *selectedFocusType;
 
-    NSWorkspaceNib *masterNib;
     NSObject <BOAPIDelegate> *operationHandler;
 
     NSMutableDictionary *controllers;
 }
 
-@property(nonatomic, strong) NSWorkspaceNib *masterNib;
 @property(nonatomic, strong) NSObject <BOAPIDelegate> *operationHandler;
 @property(nonatomic, strong) NSString *username;
 @property(nonatomic, strong) NSString *password;
@@ -50,7 +46,6 @@
 
 @property(nonatomic, strong) NSMutableDictionary *controllers;
 + (Model *) sharedModel;
-- (NSWorkspaceNib *) masterNib;
 //- (NSMutableArray *) jobs;
 - (NSMutableArray *) tasks;
 

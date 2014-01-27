@@ -29,6 +29,7 @@
 - (id) initWithFrame: (NSRect) frame {
     self = [super initWithFrame: frame];
     if (self) {
+        NSLog(@"%s", __PRETTY_FUNCTION__);
         self.selectedIndex = kNoSelection;
     }
     return self;
@@ -37,6 +38,8 @@
 /* Place all the image views and spinners (circular progress indicators) that are wired up in the nib into NSArrays. This dramtically reduces code allowing us to easily link image view, spinners and URL sets.
 */
 - (void) awakeFromNib {
+
+    NSLog(@"imageView1 = %@", imageView1);
     _imageViews = [[NSArray alloc] initWithObjects: imageView1, imageView2, imageView3, imageView4, nil];
     _spinners = [[NSArray alloc] initWithObjects: spinner1, spinner2, spinner3, spinner4, nil];
 }

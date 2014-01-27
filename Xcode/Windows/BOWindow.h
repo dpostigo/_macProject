@@ -21,4 +21,5 @@
 
 @property(nonatomic, strong) NSView *contentDisplayView;
 @property(nonatomic, strong) NSViewController *viewController;
+@property(nonatomic, strong) NSOperationQueue *queue;
 @end

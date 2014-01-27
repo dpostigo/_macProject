@@ -19,6 +19,10 @@
 
 @synthesize itemPrototypeStorage;
 
+@synthesize completion;
+
+@synthesize suggestionIdStorage;
+
 + (SuggestionsManager *) manager {
     static SuggestionsManager *_instance = nil;
 
@@ -37,7 +41,7 @@
 }
 
 - (void) addTextField: (NSTextField *) textField suggestions: (NSArray *) suggestions images: (NSArray *) images {
-    [self addTextField: textField suggestions: suggestions images: [NSArray array] prototype: @""];
+    [self addTextField: textField suggestions: suggestions images: [NSArray array] prototype: @"suggestionprototype"];
 }
 
 
@@ -64,7 +68,22 @@
         NSUInteger index = [self.textFields indexOfObject: textField];
         [self.itemPrototypeStorage replaceObjectAtIndex: index withObject: string];
     }
+}
 
+
+- (void) setSuggestionStrings: (NSArray *) suggestions textField: (NSTextField *) textField {
+    if ([self.textFields containsObject: textField]) {
+        NSUInteger index = [self.textFields indexOfObject: textField];
+        [self.suggestionStorage replaceObjectAtIndex: index withObject: suggestions];
+    }
+}
+
+
+- (void) setImages: (NSArray *) images textField: (NSTextField *) textField {
+    if ([self.textFields containsObject: textField]) {
+        NSUInteger index = [self.textFields indexOfObject: textField];
+        [self.suggestionImageStorage replaceObjectAtIndex: index withObject: images];
+    }
 }
 
 
@@ -101,8 +120,6 @@
 */
 - (BOOL) control: (NSControl *) control textView: (NSTextView *) textView doCommandBySelector: (SEL) commandSelector {
 
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    NSLog(@"NSStringFromSelector(commandSelector) = %@", NSStringFromSelector(commandSelector));
     if (commandSelector == @selector(moveUp:)) {
         // Move up in the suggested selections list
         [self.suggestionsController moveUp: textView];
@@ -134,6 +151,7 @@
     }
 
     if (commandSelector == @selector(insertNewline:) || commandSelector == @selector(insertTab:)) {
+        [self didSubmit: self.selectedTextField];
 
     }
 
@@ -141,6 +159,13 @@
     return NO;
 }
 
+
+- (void) didSubmit: (NSTextField *) textField {
+    if (completion) {
+        completion(textField, @"anId");
+    }
+
+}
 
 /* Update the field editor with a suggested string. The additional suggested characters are auto selected.
 */
@@ -165,11 +190,13 @@
 
         if (suggestions.count == 0) {
             suggestedURL = nil;
+            selectedSuggestion = nil;
             [self.suggestionsController cancelSuggestions];
         } else {
             // We have at least 1 suggestion. Update the field editor to the first suggestion and show the suggestions window.
             NSDictionary *suggestion = [suggestions objectAtIndex: 0];
             suggestedURL = [suggestion objectForKey: kSuggestionImageURL];
+            selectedSuggestion = suggestion;
             [self updateFieldEditor: fieldEditor withSuggestion: [suggestion objectForKey: kSuggestionLabel]];
 
             self.suggestionsController.suggestions = suggestions;
@@ -186,9 +213,11 @@
 /* This is the action method for when the user changes the suggestion selection. Note, this action is called continuously as the suggestion selection changes while being tracked and does not denote user committal of the suggestion. For suggestion committal, the text field's action method is used (see above). This method is wired up programatically in the -controlTextDidBeginEditing: method below.
 */
 - (IBAction) updateWithSelectedSuggestion: (id) sender {
+
     NSDictionary *entry = [sender selectedSuggestion];
     if (entry) {
 
+        selectedSuggestion = entry;
         NSText *fieldEditor = [self.suggestionsController.currentTextField.window fieldEditor: NO forObject: self];
         if (fieldEditor) {
             [self updateFieldEditor: fieldEditor withSuggestion: [entry objectForKey: kSuggestionLabel]];
@@ -227,7 +256,9 @@
     NSMutableDictionary *entry = [[NSMutableDictionary alloc] init];
     [entry setObject: string forKey: kSuggestionLabel];
     [entry setObject: @"" forKey: kSuggestionDetailedLabel];
-    [entry setObject: [self imageStringForSuggestibleString: string] forKey: kSuggestionImageURL];
+
+    NSString *imageString = [self imageStringForSuggestibleString: string];
+    [entry setObject: imageString forKey: kSuggestionImageURL];
 
     return entry;
 

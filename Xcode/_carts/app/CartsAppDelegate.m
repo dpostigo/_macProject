@@ -15,13 +15,9 @@
 #import "TasksWindowController.h"
 #import "AutoCoding.h"
 #import "NSString+DPKitUtils.h"
-#import "ArrayController.h"
-#import "BOLoginWindow.h"
 
 @implementation CartsAppDelegate {
-    NSWindow *window;
     BOAPIStorage *storage;
-    ArrayController *arrayController;
     NSMutableArray *arrayTest;
 }
 
@@ -41,12 +37,24 @@
 }
 
 
-- (void) testBOAPIModel {
-    BOAPIModel *apiModel = [BOAPIModel sharedModel];
-    NSLog(@"apiModel.user = %@", apiModel.user);
-    NSLog(@"apiModel.storage = %@", apiModel.storage);
+- (void) initApp {
 
-    [apiModel.storage save];
+//    [self saveObject: @"nouser" forKey: kBOStoredUsername];
+
+    BOAPIModel *apiModel = [BOAPIModel sharedModel];
+    apiModel.delegate = _model.operationHandler;
+    [apiModel subscribeDelegate: self];
+    [_model subscribeDelegate: self];
+
+    NSLog(@"apiModel.user = %@", apiModel.user);
+
+    if (apiModel.hasCachedData) {
+        [self showTasksWindow];
+
+    } else {
+        NSWindowController *controller = [[NSWindowController alloc] initWithWindowNibName: @"LoginWindow"];
+        [controller.window makeKeyAndOrderFront: nil];
+    }
 
 }
 
@@ -98,14 +106,8 @@
     NSLog(@"storage = %@", storage);
 
 }
-//
-//- (void) observeValueForKeyPath: (NSString *) keyPath ofObject: (id) object change: (NSDictionary *) change context: (void *) context {
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
-//    if ([keyPath isEqualToString: @"items"]) {
-//        NSLog(@"%s", __PRETTY_FUNCTION__);
-//    }
-//    //    [super observeValueForKeyPath: keyPath ofObject: object change: change context: context];
-//
+
+
 //}
 
 
@@ -121,7 +123,6 @@
 
 }
 
-
 - (void) testStorage {
 
     //    BOAPIStorage *storage = [[BOAPIStorage alloc] initWithUsername: @"hello"];
@@ -132,28 +133,6 @@
     //    BOAPIStorage *unarchived = [BOAPIStorage objectWithContentsOfFile: storage.filename];
     //    NSLog(@"unarchived = %@", unarchived);
     //    NSLog(@"[unarchived.tasks count] = %lu", [unarchived.tasks count]);
-
-}
-
-- (void) initApp {
-
-    //    [self saveObject: @"nouser" forKey: kBOStoredUsername];
-
-    BOAPIModel *apiModel = [BOAPIModel sharedModel];
-    apiModel.delegate = _model.operationHandler;
-
-    [apiModel subscribeDelegate: self];
-    [_model subscribeDelegate: self];
-    //    [_model.masterNib load];
-
-    BOLoginWindow *loginWindow = [_model.masterNib objectWithIdentifier: @"LoginWindow"];
-    [loginWindow makeKeyAndOrderFront: nil];
-
-    NSLog(@"apiModel.hasCachedData = %d", apiModel.hasCachedData);
-    if (apiModel.hasCachedData) {
-        [loginWindow validate];
-
-    }
 
 }
 
@@ -209,7 +188,7 @@
 
 - (void) showTasksWindow {
     NSLog(@"%s", __PRETTY_FUNCTION__);
-    TasksWindowController *controller = [[TasksWindowController alloc] initWithWindowNibName: @"NewTasksWindow" owner: self];
+    TasksWindowController *controller = [[TasksWindowController alloc] initWithWindowNibName: @"TasksWindow"];
     [controller.window makeKeyAndOrderFront: nil];
 
 }
@@ -224,24 +203,28 @@
     [self showTasksWindow];
 }
 
-#pragma mark IBActions
-
-- (IBAction) signOut: (id) sender {
-    [_model signOut];
-}
-
 - (void) userDidSignOff {
     NSLog(@"%s", __PRETTY_FUNCTION__);
-    NSWindow *loginWindow = [_model.masterNib objectWithIdentifier: @"LoginWindow"];
 
+    // TODO: reimplement
+    //    NSWindow *loginWindow = [_model.masterNib objectWithIdentifier: @"LoginWindow"];
+    //
 
     NSArray *windows = [[NSApplication sharedApplication] windows];
     for (NSWindow *openWindow in windows) {
         [openWindow performClose: nil];
     }
 
-    [loginWindow makeKeyAndOrderFront: nil];
+    //    [loginWindow makeKeyAndOrderFront: nil];
 
 }
+
+#pragma mark IBActions
+
+- (IBAction) signOut: (id) sender {
+    [_model signOut];
+}
+
+
 
 @end

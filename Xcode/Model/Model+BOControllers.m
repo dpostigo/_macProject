@@ -11,16 +11,6 @@
 
 @implementation Model (BOControllers)
 
-- (NSViewController *) sidebarController {
-    return [self.masterNib controllerForClass: @"SidebarController"];
-    //    return [[CreateTaskController alloc] initWithNibName: @"TaskCreationView" bundle: nil];
-}
-
-
-- (NSViewController *) footerController {
-    return [[FooterController alloc] initWithNibName: @"FooterController" bundle: nil];
-}
-
 - (NSViewController *) taskCreationController {
     return [[CreateTaskController alloc] initWithNibName: @"CreateTaskController" bundle: nil];
 }

@@ -18,9 +18,11 @@
 #import "BOBackgroundTextField.h"
 #import "DPBackgroundTextField.h"
 #import "CALayer+InfoUtils.h"
+#import "NSDictionary+DPKit.h"
 
 @implementation CreateTaskController {
     NSArray *genders;
+    SuggestionsManager *suggestionsManager;
 }
 
 @synthesize jobButton;
@@ -29,6 +31,8 @@
 @synthesize submitButton;
 
 @synthesize selectedTask;
+
+@synthesize assigneeField;
 
 - (void) viewDidLoad {
     [super viewDidLoad];
@@ -43,15 +47,38 @@
 
     [self roundTextField: (BOBackgroundTextField *) jobField];
 
-    assigneeField.suggestionsController.defaultImage = [NSImage imageNamed: @"default-user"];
+    //    assigneeField.suggestionsController.defaultImage = [NSImage imageNamed: @"default-user"];
 
     [jobController bind: @"content" toObject: _model withKeyPath: @"jobs" options: nil];
 
     self.selectedJob = self.selectedTask.job;
 
-    SuggestionsManager *manager = [SuggestionsManager manager];
-    [manager addTextField: jobField suggestions: [_model.jobs titles]];
-    [manager setItemPrototype: @"TextSuggestionPrototype" textField: jobField];
+    suggestionsManager = [SuggestionsManager manager];
+
+    [suggestionsManager addTextField: jobField suggestions: [_model.jobs titles]];
+    [suggestionsManager addTextField: assigneeField suggestions: [self.assignees titles] images: self.assignees.thumbnailURLStrings];
+    [suggestionsManager setItemPrototype: @"TextSuggestionPrototype" textField: jobField];
+
+    __weak typeof (self) weakSelf = self;
+    suggestionsManager.completion = ^(NSTextField *textField, NSString *id) {
+        if (weakSelf.assigneeField == textField) {
+            NSLog(@"Did return assignees.");
+            NSLog(@"assigneeField.stringValue = %@", weakSelf.assigneeField.stringValue);
+
+        }
+
+    };
+
+    NSArray *array = [self.assignees dictionaryRepresentationsWithKeys: @[@"id", @"title", @"thumbnailURL"]];
+
+
+    NSMutableArray *newArray = [[NSMutableArray alloc] init];
+
+    for (NSDictionary *dictionary in array) {
+        NSDictionary *newDictionary = [dictionary dictionaryReplacingKey: @"thumbnailURL" withKey: @"image"];
+        [newArray addObject: newDictionary];
+    }
+    NSLog(@"newArray = %@", newArray);
 }
 
 
@@ -97,10 +124,10 @@
 }
 
 - (void) jobDidUpdate: (Job *) job assignees: (NSArray *) assignees {
-    [assigneeController setContent: self.assignees];
 
-    assigneeField.suggestibleStrings = [self.assignees titles];
-    assigneeField.suggestionImages = [self.assignees thumbnailURLs];
+    [suggestionsManager setSuggestionStrings: [self.assignees titles] textField: assigneeField];
+    [suggestionsManager setImages: [self.assignees thumbnailURLStrings] textField: assigneeField];
+
 }
 
 
